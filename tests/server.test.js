@@ -42,7 +42,7 @@ const server = app.listen(3002, async () => {
     // 4. Static Client index.html
     const indexRes = await get('/');
     assert.strictEqual(indexRes.status, 200);
-    assert.ok(indexRes.body.includes('Editorial Typographic Sanctuary'));
+    assert.ok(indexRes.body.includes('SayType'));
     assert.ok(indexRes.body.includes('styles/tokens.css'));
     assert.ok(indexRes.body.includes('js/app.js'));
     console.log('✓ GET / (client index.html) passed');

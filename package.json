@@ -1,7 +1,7 @@
 {
-  "name": "english-sentence-typing-trainer",
+  "name": "saytype",
   "version": "1.0.0",
-  "description": "Editorial Typographic Sanctuary — English sentence typing and pronunciation trainer",
+  "description": "SayType — English sentence typing and pronunciation trainer",
   "main": "server/app.js",
   "scripts": {
     "start": "node server/app.js",

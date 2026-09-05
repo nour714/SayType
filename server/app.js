@@ -31,7 +31,7 @@ app.use((req, res) => {
 // Start server if executed directly
 if (require.main === module) {
   app.listen(PORT, () => {
-    console.log(`Typographic Sanctuary Server listening at http://localhost:${PORT}`);
+    console.log(`SayType Server listening at http://localhost:${PORT}`);
     console.log(`API endpoints available at http://localhost:${PORT}/api/sentences`);
   });
 }
