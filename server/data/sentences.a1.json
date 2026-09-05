@@ -1,0 +1,12 @@
+[
+  { "id": 1, "text_en": "I am tired.", "text_ar": "أنا تعبان.", "level": "A1" },
+  { "id": 2, "text_en": "I like coffee.", "text_ar": "أنا بحب القهوة.", "level": "A1" },
+  { "id": 3, "text_en": "She is my sister.", "text_ar": "هي أختي.", "level": "A1" },
+  { "id": 4, "text_en": "I go to school every day.", "text_ar": "أنا بروح المدرسة كل يوم.", "level": "A1" },
+  { "id": 5, "text_en": "This is my house.", "text_ar": "ده بيتي.", "level": "A1" },
+  { "id": 6, "text_en": "I do not understand everything yet.", "text_ar": "لا أفهم كل شيء بعد.", "level": "A1" },
+  { "id": 7, "text_en": "We eat lunch at noon.", "text_ar": "بناكل غدا في الضهر.", "level": "A1" },
+  { "id": 8, "text_en": "He works in an office.", "text_ar": "هو بيشتغل في مكتب.", "level": "A1" },
+  { "id": 9, "text_en": "I drink water every morning.", "text_ar": "أنا بشرب مية كل يوم الصبح.", "level": "A1" },
+  { "id": 10, "text_en": "Thank you very much.", "text_ar": "شكرًا جزيلًا.", "level": "A1" }
+]

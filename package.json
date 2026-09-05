@@ -1,0 +1,24 @@
+{
+  "name": "english-sentence-typing-trainer",
+  "version": "1.0.0",
+  "description": "Editorial Typographic Sanctuary — English sentence typing and pronunciation trainer",
+  "main": "server/app.js",
+  "scripts": {
+    "start": "node server/app.js",
+    "dev": "node server/app.js",
+    "test": "node tests/server.test.js && node tests/client.test.mjs"
+  },
+  "keywords": [
+    "typing",
+    "english",
+    "arabic",
+    "pronunciation",
+    "sanctuary",
+    "editorial"
+  ],
+  "author": "Antigravity",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

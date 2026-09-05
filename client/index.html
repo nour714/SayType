@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editorial Typographic Sanctuary — English Typing & Pronunciation Trainer</title>
+  <meta name="description" content="A contemplative, archival English sentence typing and pronunciation trainer designed for Arabic speakers. Master rhythm, accuracy, and phonetics in an editorial sanctuary.">
+  <meta name="theme-color" content="#141312">
+
+  <!-- Google Fonts: Newsreader (Hero Display), Noto Serif Arabic (Whisper Subtext), Plus Jakarta Sans (UI Chrome) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&family=Noto+Serif+Arabic:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Modular CSS Design System -->
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/components.css">
+</head>
+<body>
+  <!-- Ambient Noise Overlay for tactile archival bookcraft texture -->
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <!-- Hidden proxy input to anchor focus & virtual keyboards without showing an input box -->
+  <input 
+    type="text" 
+    id="typing-anchor" 
+    class="typing-anchor" 
+    aria-label="Keystroke capture surface"
+    autocomplete="off" 
+    autocorrect="off" 
+    autocapitalize="off" 
+    spellcheck="false"
+  />
+
+  <div class="app-layout">
+    <!-- Top Chrome / Header Navigation -->
+    <header class="app-header">
+      <div class="header-left">
+        <button id="theme-toggle-btn" class="icon-btn theme-toggle" aria-label="Toggle between dark and light themes" title="Toggle theme (T)">
+          <!-- Moon Icon for Dark Mode -->
+          <svg class="icon icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <!-- Sun Icon for Light Mode -->
+          <svg class="icon icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+        <span class="sanctuary-mark">TYPING SANCTUARY</span>
+      </div>
+
+      <div class="header-right">
+        <span id="level-badge" class="badge level-pill">A1 FOUNDATIONS</span>
+        <div id="progress-indicator" class="progress-ratio" aria-live="polite">
+          <span id="progress-current" class="progress-val">1</span>
+          <span class="progress-divider">/</span>
+          <span id="progress-total" class="progress-val">10</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Focus Stage: Vertically centered visual core -->
+    <main class="main-content" id="main-content">
+      <h1 class="sr-only">English Sentence Typing & Pronunciation Practice</h1>
+
+      <div class="stage-container" id="stage-container">
+        
+        <!-- Focus prompt overlay if user unfocuses -->
+        <div id="focus-reminder" class="focus-reminder" style="display: none;">
+          <span>Click anywhere to continue typing</span>
+        </div>
+
+        <!-- The Inlaid Well: Carved plate receiving keystroke ink -->
+        <section class="sentence-vessel" id="sentence-vessel" aria-label="Active sentence arena">
+          
+          <!-- English Hero Display Sentence -->
+          <div 
+            id="sentence-en" 
+            class="sentence-en" 
+            aria-live="polite" 
+            aria-label="English sentence to type"
+          >
+            <!-- Characters will be dynamically rendered here -->
+          </div>
+
+          <!-- Arabic Translation Whisper Mirror Strip -->
+          <div 
+            id="sentence-ar" 
+            class="sentence-ar" 
+            dir="rtl" 
+            lang="ar" 
+            aria-label="Arabic translation"
+          >
+            <!-- Arabic text will be dynamically inserted here -->
+          </div>
+
+          <!-- Subtle hairline divider -->
+          <div class="vessel-hairline" aria-hidden="true"></div>
+
+          <!-- Floating Audio / Listen Button -->
+          <div class="audio-control-cluster">
+            <button 
+              id="listen-btn" 
+              class="listen-fab-btn" 
+              aria-label="Listen to sentence pronunciation" 
+              title="Pronounce aloud (Ctrl + Space or Tab)"
+            >
+              <div class="fab-halo" aria-hidden="true"></div>
+              <svg class="icon icon-speaker" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                <path class="speaker-wave wave-1" d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                <path class="speaker-wave wave-2" d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+              </svg>
+              <span class="listen-label">Listen</span>
+            </button>
+          </div>
+
+        </section>
+
+      </div>
+    </main>
+
+    <!-- Bottom Ambient Dock: Live WPM, Accuracy, and subtle interaction hints -->
+    <footer class="dock-bar" id="dock-bar">
+      <div class="dock-stats">
+        <div class="stat-pill" id="wpm-badge" title="Words per minute (live calculation)">
+          <span class="stat-label">SPEED</span>
+          <span class="stat-value" id="wpm-value">--</span>
+          <span class="stat-unit">WPM</span>
+        </div>
+
+        <div class="stat-pill" id="accuracy-badge" title="Keystroke accuracy">
+          <span class="stat-label">ACCURACY</span>
+          <span class="stat-value" id="accuracy-value">100%</span>
+        </div>
+
+        <div class="stat-pill mistakes-pill" id="mistakes-badge" title="Correction count">
+          <span class="stat-label">MISTAKES</span>
+          <span class="stat-value" id="mistakes-value">0</span>
+        </div>
+      </div>
+
+      <div class="dock-guide">
+        <span class="keyboard-guide">Type directly &bull; Correct errors in place &bull; <kbd class="kbd-key">Esc</kbd> resets sentence</span>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Sentence Completed Modal Card -->
+  <div id="sentence-complete-modal" class="modal-backdrop" aria-hidden="true">
+    <div class="modal-card completion-card" role="dialog" aria-labelledby="modal-title" aria-modal="true">
+      <div class="card-ornament">
+        <span class="ornament-glyph">✦</span>
+      </div>
+      
+      <h2 id="modal-title" class="completion-title">Sentence Completed</h2>
+      <p class="completion-subtext">Rhythmic cadence recorded with archival precision.</p>
+
+      <div class="completion-metrics">
+        <div class="metric-block">
+          <span class="metric-label">ACCURACY</span>
+          <span class="metric-number" id="modal-accuracy">100%</span>
+        </div>
+        <div class="metric-divider" aria-hidden="true"></div>
+        <div class="metric-block">
+          <span class="metric-label">SPEED</span>
+          <span class="metric-number" id="modal-wpm">48</span>
+          <span class="metric-unit">WPM</span>
+        </div>
+        <div class="metric-divider" aria-hidden="true"></div>
+        <div class="metric-block">
+          <span class="metric-label">MISTAKES</span>
+          <span class="metric-number" id="modal-mistakes">0</span>
+        </div>
+      </div>
+
+      <div class="completion-actions">
+        <button id="modal-listen-again-btn" class="action-btn secondary-btn" title="Listen once more">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          </svg>
+          <span>Listen Again</span>
+        </button>
+
+        <button id="next-sentence-btn" class="action-btn primary-btn" autofocus>
+          <span>Next Sentence</span>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+      </div>
+      
+      <div class="modal-shortcut-hint">
+        <span>Press <kbd class="kbd-key">Enter</kbd> or <kbd class="kbd-key">Space</kbd> for next sentence</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lesson Complete Modal Card (After 10th Sentence) -->
+  <div id="lesson-complete-modal" class="modal-backdrop" aria-hidden="true">
+    <div class="modal-card lesson-card" role="dialog" aria-labelledby="lesson-title" aria-modal="true">
+      <div class="card-ornament">
+        <span class="ornament-glyph">❧</span>
+      </div>
+
+      <span class="lesson-kicker">MILESTONE REACHED</span>
+      <h2 id="lesson-title" class="completion-title">Lesson Complete</h2>
+      <p class="completion-subtext">You have transcribed all 10 foundational A1 sentences.</p>
+
+      <div class="completion-metrics">
+        <div class="metric-block">
+          <span class="metric-label">OVERALL ACCURACY</span>
+          <span class="metric-number" id="lesson-accuracy">98%</span>
+        </div>
+        <div class="metric-divider" aria-hidden="true"></div>
+        <div class="metric-block">
+          <span class="metric-label">AVERAGE SPEED</span>
+          <span class="metric-number" id="lesson-wpm">52</span>
+          <span class="metric-unit">WPM</span>
+        </div>
+        <div class="metric-divider" aria-hidden="true"></div>
+        <div class="metric-block">
+          <span class="metric-label">TOTAL MISTAKES</span>
+          <span class="metric-number" id="lesson-mistakes">1</span>
+        </div>
+      </div>
+
+      <div class="completion-actions lesson-actions">
+        <button id="restart-lesson-btn" class="action-btn primary-btn">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="1 4 1 10 7 10"></polyline>
+            <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+          </svg>
+          <span>Restart Lesson</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modular ES Module Entry -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
