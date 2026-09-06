@@ -176,6 +176,31 @@ assert.strictEqual(sessionGated.currentState, 'LISTENING');
 assert.strictEqual(sessionGated.isLessonStarted, true);
 console.log('✓ SessionEngine Listen-First Gating passed!');
 
+console.log('--- Testing SessionEngine Empty Dataset Handling ---');
+const engineEmpty = new SentenceEngine();
+const metricsEmpty = new MetricsCalculator();
+const sessionEmpty = new SessionEngine(engineEmpty, metricsEmpty);
+let emptyLessonCompleted = false;
+let emptyLoadedEmitted = false;
+sessionEmpty.on('lesson:completed', () => { emptyLessonCompleted = true; });
+sessionEmpty.on('sentence:loaded', ({ sentence }) => {
+  if (sentence === null) emptyLoadedEmitted = true;
+});
+
+// An empty dataset must NOT auto-complete a lesson or fire lesson:completed
+sessionEmpty.setSentences([]);
+assert.strictEqual(emptyLessonCompleted, false);
+assert.strictEqual(emptyLoadedEmitted, true);
+assert.strictEqual(sessionEmpty.currentState, 'LOADING_SENTENCE');
+assert.strictEqual(sessionEmpty.currentSentence, null);
+// Typing against an empty set is a no-op
+assert.strictEqual(sessionEmpty.handleKey('H'), null);
+
+// beginLesson with no content is a safe no-op
+sessionEmpty.beginLesson();
+assert.strictEqual(emptyLessonCompleted, false);
+console.log('✓ SessionEngine Empty Dataset passed!');
+
 console.log('--- Testing ProgressService ---');
 const progress = new ProgressService('test_saytype_progress');
 progress.reset();

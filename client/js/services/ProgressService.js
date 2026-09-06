@@ -16,6 +16,7 @@ export class ProgressService extends EventEmitter {
     super();
     this.storageKey = storageKey;
     this._memoryFallback = null;
+    this._saveTimer = null;
     this.data = this._load();
   }
 
@@ -56,10 +57,34 @@ export class ProgressService extends EventEmitter {
   }
 
   /**
-   * Save current state to localStorage safely.
+   * Persist current state to localStorage.
+   * Debounced (300ms) so rapid mistake tracking doesn't hammer localStorage;
+   * pass immediate=true for high-value mutations like favorites/completions.
+   * @param {boolean} [immediate=false]
    * @private
    */
-  _save() {
+  _save(immediate = false) {
+    if (this._saveTimer) {
+      clearTimeout(this._saveTimer);
+      this._saveTimer = null;
+    }
+
+    if (immediate) {
+      this._persist();
+      return;
+    }
+
+    this._saveTimer = setTimeout(() => {
+      this._saveTimer = null;
+      this._persist();
+    }, 300);
+  }
+
+  /**
+   * Synchronous localStorage write + change notification.
+   * @private
+   */
+  _persist() {
     if (typeof window !== 'undefined' && window.localStorage) {
       try {
         window.localStorage.setItem(this.storageKey, JSON.stringify(this.data));
@@ -114,7 +139,7 @@ export class ProgressService extends EventEmitter {
       });
     }
 
-    this._save();
+    this._save(true);
   }
 
   /**
@@ -146,12 +171,12 @@ export class ProgressService extends EventEmitter {
 
     if (index >= 0) {
       this.data.favorites.splice(index, 1);
-      this._save();
+      this._save(true);
       this.emit('favorite:removed', { sentenceId: id });
       return false;
     } else {
       this.data.favorites.push(id);
-      this._save();
+      this._save(true);
       this.emit('favorite:added', { sentenceId: id });
       return true;
     }
@@ -221,6 +246,6 @@ export class ProgressService extends EventEmitter {
       favorites: [],
       difficultWords: {}
     };
-    this._save();
+    this._save(true);
   }
 }

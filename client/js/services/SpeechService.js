@@ -22,6 +22,9 @@ export class SpeechService extends EventEmitter {
     this.voices = [];
     this._isSpeaking = false;
     this._watchdogTimer = null;
+    // Generation counter invalidates stale utterances so completed/canceled
+    // sibling promises can never emit 'end' and unlock typing prematurely.
+    this._generation = 0;
 
     if (this.isSupported) {
       this._loadVoices();
@@ -94,9 +97,11 @@ export class SpeechService extends EventEmitter {
         return;
       }
 
-      // Cancel any ongoing utterance before beginning a new one
-      this.stop();
+      // Cancel any ongoing utterance silently. A new narration is starting,
+      // so the previous one must NOT emit 'end' (which would unlock typing).
+      this._cancelSpeech();
 
+      const generation = ++this._generation;
       const utterance = new SpeechSynthesisUtterance(text);
       utterance.lang = 'en-US';
       utterance.rate = rate; // Deliberate cadence for A1 learning
@@ -110,11 +115,15 @@ export class SpeechService extends EventEmitter {
       let settled = false;
       const cleanup = () => {
         if (settled) return;
-        settled = true;
-        if (this._watchdogTimer) {
-          clearTimeout(this._watchdogTimer);
-          this._watchdogTimer = null;
+        // Stale utterances (canceled in favor of a newer one) settle their
+        // promise without emitting 'end', otherwise listen-first gating
+        // would unlock typing before the current narration finishes.
+        if (generation !== this._generation) {
+          resolve();
+          return;
         }
+        settled = true;
+        this._clearWatchdog();
         this._isSpeaking = false;
         this.activeUtterance = null;
         this.emit('end');
@@ -122,6 +131,7 @@ export class SpeechService extends EventEmitter {
       };
 
       utterance.onstart = () => {
+        if (generation !== this._generation) return;
         this._isSpeaking = true;
         this.emit('start', { text });
       };
@@ -139,12 +149,17 @@ export class SpeechService extends EventEmitter {
       };
 
       // Watchdog timer: automatically resolve after (words * 1200ms + 2500ms)
-      // to ensure UI never freezes if browser speech engine hangs
+      // to ensure UI never freezes if browser speech engine hangs.
       const estimatedDuration = Math.max(3000, (text.split(' ').length * 1200) + 2500);
       this._watchdogTimer = setTimeout(() => {
-        if (!settled) {
+        this._watchdogTimer = null;
+        if (generation === this._generation && !settled) {
           console.warn('Speech watchdog triggered timeout, auto-completing.');
-          this.stop();
+          try {
+            window.speechSynthesis.cancel();
+          } catch (e) {
+            // Safe ignore
+          }
           cleanup();
         }
       }, estimatedDuration);
@@ -156,7 +171,13 @@ export class SpeechService extends EventEmitter {
         window.speechSynthesis.speak(utterance);
       } catch (err) {
         console.error('speechSynthesis.speak failed:', err);
-        cleanup();
+        this._isSpeaking = false;
+        if (generation === this._generation) {
+          this._generation++;
+          this.activeUtterance = null;
+          this.emit('end');
+        }
+        resolve();
       }
     });
   }
@@ -169,13 +190,32 @@ export class SpeechService extends EventEmitter {
   }
 
   /**
-   * Stop any current speech playback.
+   * Stop any current speech playback silently. Does NOT emit 'end',
+   * because the caller is about to start a new narration (or is choosing
+   * not to unlock the typing gate).
    */
   stop() {
+    this._cancelSpeech();
+  }
+
+  /**
+   * Clear the watchdog timer.
+   * @private
+   */
+  _clearWatchdog() {
     if (this._watchdogTimer) {
       clearTimeout(this._watchdogTimer);
       this._watchdogTimer = null;
     }
+  }
+
+  /**
+   * Invalidate any in-flight utterance and cancel browser speech.
+   * @private
+   */
+  _cancelSpeech() {
+    this._generation++;
+    this._clearWatchdog();
     this._isSpeaking = false;
     this.activeUtterance = null;
 
@@ -186,6 +226,5 @@ export class SpeechService extends EventEmitter {
         // Safe ignore
       }
     }
-    this.emit('end');
   }
 }

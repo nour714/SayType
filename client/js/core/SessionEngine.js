@@ -122,6 +122,15 @@ export class SessionEngine extends EventEmitter {
     this.isLessonCompleted = false;
     this.isLessonStarted = false;
     this.setState(SESSION_STATES.LOADING_SENTENCE);
+
+    // Guard against an empty set: do not auto-complete an empty "lesson".
+    if (this.sentences.length === 0) {
+      this.currentSentenceIndex = 0;
+      this.sentenceEngine.setSentence(null);
+      this.emit('sentence:loaded', { sentence: null, index: 0, total: 0 });
+      return;
+    }
+
     this.loadSentence(0);
   }
 

@@ -429,6 +429,19 @@
   text-shadow: var(--correct-glow);
 }
 
+/* Calm empty-state notice (e.g. filtered topic with no content) */
+.empty-state-msg {
+  font-family: var(--font-hero);
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.5;
+  color: var(--on-surface-muted);
+  opacity: 0.75;
+  padding: var(--space-lg);
+  user-select: text;
+}
+
 /* Active / Current Character with Caret */
 .char-current {
   color: var(--on-surface);
@@ -972,6 +985,10 @@
     line-height: 1.6;
     margin-top: var(--space-md);
     margin-bottom: var(--space-md);
+  }
+
+  .empty-state-msg {
+    font-size: 17px;
   }
 
   .dock-bar {

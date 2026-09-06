@@ -37,7 +37,7 @@
     <!-- Top Chrome / Header Navigation -->
     <header class="app-header">
       <div class="header-left">
-        <button id="theme-toggle-btn" class="icon-btn theme-toggle" aria-label="Toggle between dark and light themes" title="Toggle theme (T)">
+        <button id="theme-toggle-btn" class="icon-btn theme-toggle" aria-label="Toggle between dark and light themes" title="Toggle theme">
           <!-- Moon Icon for Dark Mode -->
           <svg class="icon icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
@@ -77,6 +77,9 @@
     <main class="main-content" id="main-content">
       <h1 class="sr-only">SayType — English Sentence Typing & Pronunciation Practice</h1>
 
+      <!-- Screen-reader announcement region (announced once per loaded sentence, not per keystroke) -->
+      <div id="sr-announce" class="sr-only" aria-live="polite"></div>
+
       <div class="stage-container" id="stage-container">
         
         <!-- Focus prompt overlay if user unfocuses -->
@@ -104,7 +107,6 @@
           <div 
             id="sentence-en" 
             class="sentence-en" 
-            aria-live="polite" 
             aria-label="English sentence to type"
           >
             <!-- Characters will be dynamically rendered here -->
@@ -130,7 +132,7 @@
               id="listen-btn" 
               class="listen-fab-btn" 
               aria-label="Listen to sentence pronunciation" 
-              title="Pronounce aloud (Ctrl + Space or Tab)"
+              title="Pronounce aloud (Ctrl + Space)"
             >
               <div class="fab-halo" aria-hidden="true"></div>
               <svg class="icon icon-speaker" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -186,12 +188,12 @@
       <div class="completion-metrics">
         <div class="metric-block">
           <span class="metric-label">ACCURACY</span>
-          <span class="metric-number" id="modal-accuracy">100%</span>
+          <span class="metric-number" id="modal-accuracy">--</span>
         </div>
         <div class="metric-divider" aria-hidden="true"></div>
         <div class="metric-block">
           <span class="metric-label">SPEED</span>
-          <span class="metric-number" id="modal-wpm">48</span>
+          <span class="metric-number" id="modal-wpm">--</span>
           <span class="metric-unit">WPM</span>
         </div>
         <div class="metric-divider" aria-hidden="true"></div>
@@ -234,23 +236,23 @@
 
       <span class="lesson-kicker">MILESTONE REACHED</span>
       <h2 id="lesson-title" class="completion-title">Lesson Complete</h2>
-      <p class="completion-subtext">You have transcribed all 10 foundational A1 sentences.</p>
+      <p class="completion-subtext" id="lesson-subtext">You have transcribed all 10 foundational A1 sentences.</p>
 
       <div class="completion-metrics">
         <div class="metric-block">
           <span class="metric-label">OVERALL ACCURACY</span>
-          <span class="metric-number" id="lesson-accuracy">98%</span>
+          <span class="metric-number" id="lesson-accuracy">--</span>
         </div>
         <div class="metric-divider" aria-hidden="true"></div>
         <div class="metric-block">
           <span class="metric-label">AVERAGE SPEED</span>
-          <span class="metric-number" id="lesson-wpm">52</span>
+          <span class="metric-number" id="lesson-wpm">--</span>
           <span class="metric-unit">WPM</span>
         </div>
         <div class="metric-divider" aria-hidden="true"></div>
         <div class="metric-block">
           <span class="metric-label">TOTAL MISTAKES</span>
-          <span class="metric-number" id="lesson-mistakes">1</span>
+          <span class="metric-number" id="lesson-mistakes">0</span>
         </div>
       </div>
 

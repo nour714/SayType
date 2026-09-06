@@ -76,15 +76,9 @@ function bootstrap() {
 
     const textToSpeak = text || (sentence ? (sentence.text_en || sentence.english) : '');
     if (textToSpeak) {
-      speechService.speak(textToSpeak)
-        .then(() => {
-          sessionEngine.finishListening();
-          trainingScreen.ensureTypingFocus();
-        })
-        .catch(() => {
-          sessionEngine.finishListening();
-          trainingScreen.showListenFallback();
-        });
+      // Typing stays locked in LISTENING; SpeechService emits 'end' when the
+      // current narration genuinely finishes, which unlocks READY typing.
+      speechService.speak(textToSpeak);
     } else {
       sessionEngine.finishListening();
     }
@@ -106,6 +100,7 @@ function bootstrap() {
   });
 
   trainingScreen.on('action:restart', () => {
+    speechService.stop();
     sessionEngine.restartLesson();
   });
 
@@ -134,7 +129,20 @@ function bootstrap() {
   });
 
   sessionEngine.on('sentence:loaded', ({ sentence, index, total }) => {
+    // Empty dataset (e.g. filtered topic with no content): show calm empty state.
+    if (!sentence) {
+      trainingScreen.showEmptyState();
+      trainingScreen.setFavorite(false);
+      progressIndicator.update({ current: 0, total: 0, level: 'A1' });
+      statsPills.reset();
+      return;
+    }
+
     trainingScreen.renderSentence(sentence);
+    const srAnnounce = document.getElementById('sr-announce');
+    if (srAnnounce) {
+      srAnnounce.textContent = `Listen: ${sentence.text_en || sentence.english || ''}`;
+    }
     const isFav = sentence ? progressService.isFavorite(sentence.id) : false;
     trainingScreen.setFavorite(isFav);
     progressIndicator.update({
@@ -189,11 +197,16 @@ function bootstrap() {
   // 9. Topic Selector Integration
   topicSelector.on('topic:change', ({ topic }) => {
     const query = topic ? { topic } : {};
+    speechService.stop();
     sentenceRepo.getSentences(query).then((sentences) => {
-      sessionEngine.setSentences(sentences);
-      // The topic change is a user gesture; resume the listen-first flow immediately.
-      trainingScreen.closeStartOverlay();
-      sessionEngine.beginLesson();
+      sessionEngine.setSentences(sentences || []);
+      if (sentences && sentences.length > 0) {
+        // The topic change is a user gesture; resume the listen-first flow immediately.
+        trainingScreen.closeStartOverlay();
+        sessionEngine.beginLesson();
+      }
+    }).catch((err) => {
+      console.warn('Failed to load sentences for topic:', err);
     });
   });
 
@@ -205,6 +218,14 @@ function bootstrap() {
 
   // 10. Global Keyboard Interactions
   window.addEventListener('keydown', (e) => {
+    // Escape first dismisses any open word tooltip — never reset the
+    // sentence while the learner is simply inspecting a word.
+    if (e.key === 'Escape' && trainingScreen.isTooltipVisible()) {
+      e.preventDefault();
+      trainingScreen.hideTooltip();
+      return;
+    }
+
     // If start overlay is open, Enter or Space starts the lesson
     if (trainingScreen.isStartOverlayOpen()) {
       if (e.key === 'Enter' || e.key === ' ') {
@@ -215,14 +236,31 @@ function bootstrap() {
       return;
     }
 
-    // Check if sentence/lesson modal is open: Space or Enter navigates
+    // If sentence/lesson modal is open: Enter, Space, or Escape navigates
     if (trainingScreen.isAnyModalOpen()) {
-      if (e.key === 'Enter' || e.key === ' ') {
+      if (e.key === 'Enter' || e.key === ' ' || e.key === 'Escape') {
         e.preventDefault();
         if (trainingScreen.sentenceModal?.classList.contains('is-open')) {
           sessionEngine.advanceToNextSentence();
         } else if (trainingScreen.lessonModal?.classList.contains('is-open')) {
           sessionEngine.restartLesson();
+        }
+        return;
+      }
+
+      // Keep focus trapped inside the open dialog while tabbing
+      if (e.key === 'Tab') {
+        const focusables = trainingScreen.getModalFocusables();
+        if (focusables.length > 0) {
+          const first = focusables[0];
+          const last = focusables[focusables.length - 1];
+          if (e.shiftKey && document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+          } else if (!e.shiftKey && document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
+          }
         }
       }
       return;

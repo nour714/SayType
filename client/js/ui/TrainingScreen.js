@@ -339,6 +339,59 @@ export class TrainingScreen extends EventEmitter {
   }
 
   /**
+   * Whether the word tooltip is currently visible.
+   * @returns {boolean}
+   */
+  isTooltipVisible() {
+    return Boolean(this.wordTooltip && this.wordTooltip.classList.contains('is-visible'));
+  }
+
+  /**
+   * Focusable elements within the currently open dialog (for focus trapping).
+   * @returns {HTMLElement[]}
+   */
+  getModalFocusables() {
+    let openModal = null;
+    if (this.sentenceModal && this.sentenceModal.classList.contains('is-open')) {
+      openModal = this.sentenceModal;
+    } else if (this.lessonModal && this.lessonModal.classList.contains('is-open')) {
+      openModal = this.lessonModal;
+    } else if (this.startOverlay && this.startOverlay.classList.contains('is-open')) {
+      openModal = this.startOverlay;
+    }
+    if (!openModal) return [];
+
+    return Array.from(
+      openModal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])')
+    ).filter((el) => !el.hasAttribute('disabled') && el.offsetParent !== null);
+  }
+
+  /**
+   * Show a calm empty state when the selected topic has no sentences.
+   */
+  showEmptyState() {
+    this.hideTooltip();
+    this.closeModals();
+
+    if (this.sentenceEnEl) {
+      this.sentenceEnEl.innerHTML = '';
+    }
+    this.charElements = [];
+
+    if (this.sentenceEnEl) {
+      const message = document.createElement('div');
+      message.className = 'empty-state-msg';
+      message.textContent = 'No sentences available for this topic yet.';
+      this.sentenceEnEl.appendChild(message);
+    }
+    if (this.sentenceArEl) {
+      this.sentenceArEl.textContent = 'لا توجد جمل متاحة لهذا الموضوع بعد.';
+    }
+
+    this.setStateIndicator('EMPTY');
+  }
+
+  /**
    * Update learning state indicator UI badge.
    * @param {string} state - Session state (IDLE, LISTENING, READY, TYPING, COMPLETED, RESULT)
    */
@@ -382,6 +435,10 @@ export class TrainingScreen extends EventEmitter {
       case 'RESULT':
         this.stateIndicator.classList.add('state-completed');
         this.stateText.textContent = 'COMPLETED';
+        break;
+      case 'EMPTY':
+        this.stateIndicator.classList.add('state-idle');
+        this.stateText.textContent = 'NO SENTENCES';
         break;
       default:
         this.stateIndicator.classList.add('state-idle');
@@ -429,11 +486,11 @@ export class TrainingScreen extends EventEmitter {
     if (!this.favoriteBtn) return;
     if (isFav) {
       this.favoriteBtn.classList.add('is-favorite');
-      this.favoriteBtn.setAttribute('title', 'Remove from favorites (F)');
+      this.favoriteBtn.setAttribute('title', 'Remove from favorites');
       this.favoriteBtn.setAttribute('aria-pressed', 'true');
     } else {
       this.favoriteBtn.classList.remove('is-favorite');
-      this.favoriteBtn.setAttribute('title', 'Save sentence to favorites (F)');
+      this.favoriteBtn.setAttribute('title', 'Save sentence to favorites');
       this.favoriteBtn.setAttribute('aria-pressed', 'false');
     }
   }
@@ -569,7 +626,7 @@ export class TrainingScreen extends EventEmitter {
 
   /**
    * Display lesson completion dialog with aggregated summary.
-   * @param {{ avgWpm: number, avgAccuracy: number, totalMistakes: number }} summary
+   * @param {{ avgWpm: number, avgAccuracy: number, totalMistakes: number, totalSentences?: number }} summary
    */
   showLessonModal(summary) {
     this.hideTooltip();
@@ -578,6 +635,12 @@ export class TrainingScreen extends EventEmitter {
     if (this.lessonWpm) this.lessonWpm.textContent = summary.avgWpm;
     if (this.lessonAccuracy) this.lessonAccuracy.textContent = `${summary.avgAccuracy}%`;
     if (this.lessonMistakes) this.lessonMistakes.textContent = summary.totalMistakes;
+
+    const lessonSubtext = document.getElementById('lesson-subtext');
+    if (lessonSubtext) {
+      const count = summary.totalSentences || 0;
+      lessonSubtext.textContent = `You have transcribed all ${count} foundational A1 sentences.`;
+    }
 
     if (this.lessonModal) {
       this.lessonModal.classList.add('is-open');
