@@ -1062,3 +1062,116 @@
     font-size: 26px;
   }
 }
+
+/* ==========================================================================
+   Auth Modal & Sync Button
+   ========================================================================== */
+.auth-btn {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--rounded-full);
+  background-color: var(--surface-container-highest);
+  color: var(--on-surface-muted);
+  border: 1px solid var(--vessel-border);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: all var(--duration-quick) var(--ease-fluid);
+  text-transform: uppercase;
+}
+
+.auth-btn:hover {
+  color: var(--on-surface);
+  border-color: var(--accent-sage);
+  background-color: rgba(122, 158, 142, 0.1);
+}
+
+.auth-btn.is-synced {
+  color: var(--accent-sage);
+  border-color: rgba(122, 158, 142, 0.35);
+  background: rgba(122, 158, 142, 0.08);
+}
+
+.auth-card {
+  text-align: left;
+  max-width: 400px;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.auth-input {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  background: var(--surface-container-low);
+  border: 1px solid var(--vessel-border);
+  border-radius: var(--rounded-md);
+  color: var(--on-surface);
+  font-family: var(--font-ui);
+  font-size: 13px;
+  outline: none;
+  transition: border-color var(--duration-quick) var(--ease-fluid);
+  box-sizing: border-box;
+}
+
+.auth-input::placeholder {
+  color: var(--on-surface-muted);
+}
+
+.auth-input:focus {
+  border-color: var(--accent-sage);
+}
+
+.auth-submit {
+  width: 100%;
+  margin-top: var(--space-2xs);
+}
+
+.auth-toggle {
+  background: none;
+  border: none;
+  color: var(--accent-sage);
+  font-family: var(--font-ui);
+  font-size: 12px;
+  cursor: pointer;
+  padding: var(--space-2xs) 0;
+  text-align: center;
+}
+
+.auth-toggle:hover {
+  text-decoration: underline;
+}
+
+.auth-error {
+  background: rgba(255, 180, 171, 0.08);
+  border: 1px solid rgba(255, 180, 171, 0.25);
+  color: var(--error);
+  font-size: 12px;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--rounded-md);
+  margin-bottom: var(--space-sm);
+  line-height: 1.4;
+}
+
+.auth-dismiss {
+  background: none;
+  border: none;
+  color: var(--on-surface-muted);
+  font-family: var(--font-ui);
+  font-size: 12px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.auth-dismiss:hover {
+  color: var(--on-surface-variant);
+  text-decoration: underline;
+}

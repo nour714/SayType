@@ -12,12 +12,16 @@ import { ThemeService } from './services/ThemeService.js';
 import { ProgressService } from './services/ProgressService.js';
 import { DictionaryService } from './services/DictionaryService.js';
 import { ReviewScheduler } from './services/ReviewScheduler.js';
+import { getSupabaseClient } from './services/SupabaseClient.js';
+import { AuthService } from './services/AuthService.js';
+import { SyncService } from './services/SyncService.js';
 import { TrainingScreen } from './ui/TrainingScreen.js';
 import { StatsPills } from './ui/StatsPills.js';
 import { ProgressIndicator } from './ui/ProgressIndicator.js';
 import { TopicSelector } from './ui/TopicSelector.js';
+import { AuthModal } from './ui/AuthModal.js';
 
-function bootstrap() {
+async function bootstrap() {
   // 1. Initialize Services
   const themeService = new ThemeService();
   const speechService = new SpeechService();
@@ -26,19 +30,27 @@ function bootstrap() {
   const sentenceRepo = new SentenceRepository();
   const reviewScheduler = new ReviewScheduler();
 
-  // 2. Initialize Core Engines (with listenFirst enabled by default)
+  // 2. Auth & Sync (optional — only active when user signs in)
+  const supabaseClient = getSupabaseClient();
+  const authService = new AuthService(supabaseClient);
+  const syncService = new SyncService(progressService, authService);
+  syncService.init();
+  await authService.init();
+
+  // 3. Initialize Core Engines (with listenFirst enabled by default)
   const sentenceEngine = new SentenceEngine();
   const metricsCalculator = new MetricsCalculator();
   const sessionEngine = new SessionEngine(sentenceEngine, metricsCalculator, { listenFirst: true });
 
-  // 3. Initialize UI Components
+  // 4. Initialize UI Components
   const trainingScreen = new TrainingScreen();
   trainingScreen.setDictionaryService(dictionaryService);
   const statsPills = new StatsPills();
   const progressIndicator = new ProgressIndicator();
   const topicSelector = new TopicSelector('topic-select');
+  const authModal = new AuthModal();
 
-  // 4. Review system transient state
+  // 5. Review system transient state
   let allSentencesPool = [];
   let reviewWordFailedThisSentence = false;
 
@@ -48,6 +60,56 @@ function bootstrap() {
   if (themeToggleBtn) {
     themeToggleBtn.addEventListener('click', () => themeService.toggle());
   }
+
+  // 4a. Wire Auth & Sync UI
+  const authBtn = document.getElementById('auth-btn');
+
+  function updateAuthButton() {
+    if (!authBtn) return;
+    if (authService.isAuthenticated) {
+      authBtn.classList.add('is-synced');
+      authBtn.textContent = '🔄 Synced';
+      authBtn.title = `Signed in as ${authService.email || 'account'} — click to sign out`;
+    } else {
+      authBtn.classList.remove('is-synced');
+      authBtn.innerHTML = `<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -1px;"><path d="M12 2a4 4 0 0 1 4 4c0 1.95-1.4 3.58-3.25 3.93"></path><path d="M12 2a4 4 0 0 0-4 4c0 1.95 1.4 3.58 3.25 3.93"></path><path d="M5.5 10.5A7 7 0 0 0 12 22a7 7 0 0 0 6.5-11.5"></path><path d="M12 16v2"></path></svg> Sync`;
+      authBtn.title = 'Sign in to sync progress across devices';
+    }
+  }
+
+  if (authBtn) {
+    authBtn.addEventListener('click', async () => {
+      if (authService.isAuthenticated) {
+        await authService.signOut();
+        updateAuthButton();
+      } else {
+        authModal.open();
+      }
+    });
+  }
+
+  authService.on('auth:signedIn', () => {
+    updateAuthButton();
+    authModal.close();
+  });
+
+  authService.on('auth:signedOut', () => {
+    updateAuthButton();
+  });
+
+  authModal.on('auth:submit', async ({ email, password, mode }) => {
+    authModal.setSubmitting(true);
+    let result;
+    if (mode === 'signup') {
+      result = await authService.signUp(email, password);
+    } else {
+      result = await authService.signIn(email, password);
+    }
+    authModal.setSubmitting(false);
+    if (result?.error) {
+      authModal.showError(result.error);
+    }
+  });
 
   // 5. Wire Speech Service to UI & Session
   speechService.on('start', () => {

@@ -19,6 +19,7 @@
   "author": "Antigravity",
   "license": "MIT",
   "dependencies": {
+    "dotenv": "^16.4.7",
     "express": "^5.2.1"
   }
 }

@@ -91,6 +91,14 @@ const server = app.listen(3002, async () => {
     assert.ok(jsRes.body.includes('bootstrap'));
     console.log('✓ GET /js/app.js passed');
 
+    // 9. Config endpoint (public Supabase config)
+    const configRes = await get('/api/config');
+    assert.strictEqual(configRes.status, 200);
+    const configJson = JSON.parse(configRes.body);
+    assert.strictEqual(typeof configJson.supabaseUrl, 'string');
+    assert.strictEqual(typeof configJson.supabaseAnonKey, 'string');
+    console.log('✓ GET /api/config passed');
+
     console.log('\nALL SERVER TESTS PASSED SUCCESSFULLY! 🎉');
     process.exit(0);
   } catch (err) {

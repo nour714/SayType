@@ -375,5 +375,196 @@ assert.strictEqual(sessionUp.sentences.length, 3);
 
 console.log('✓ SessionEngine.insertUpcoming passed!');
 
+console.log('--- Testing ProgressService.replaceAll ---');
+const progressReplace = new ProgressService('test_saytype_replaceall');
+progressReplace.reset();
+
+// Put some local state in
+progressReplace.recordSentenceCompletion({ sentenceId: 1, wpm: 50, accuracy: 95, mistakes: 1 });
+progressReplace.recordMistakeOnWord('hello');
+assert.strictEqual(progressReplace.getStats().completedSentenceCount, 1);
+
+// Simulate pulling server state (server wins)
+const serverData = {
+  completedSentenceIds: ['10', '11', '12'],
+  completedCount: 3,
+  bestWpm: 80,
+  averageWpm: 75,
+  averageAccuracy: 98,
+  totalMistakes: 5,
+  totalSessions: 10,
+  lastSessionDate: '2026-01-15T10:00:00.000Z',
+  favorites: ['10', '12'],
+  difficultWords: { 'world': 3 },
+  sentencesTypedTotal: 30,
+  wordReview: { 'world': { box: 1, dueAtCount: 40 } }
+};
+progressReplace.replaceAll(serverData);
+
+const statsAfter = progressReplace.getStats();
+assert.strictEqual(statsAfter.completedSentenceCount, 3);
+assert.strictEqual(statsAfter.bestWpm, 80);
+assert.strictEqual(statsAfter.favoritesCount, 2);
+assert.strictEqual(progressReplace.getSentencesTypedTotal(), 30);
+assert.strictEqual(progressReplace.isFavorite('10'), true);
+assert.strictEqual(progressReplace.isFavorite('12'), true);
+assert.strictEqual(progressReplace.isFavorite('1'), false);
+
+// replaceAll merges onto defaults — missing fields should still work
+const partialData = { completedSentenceIds: ['5'], bestWpm: 40 };
+progressReplace.replaceAll(partialData);
+assert.strictEqual(progressReplace.getStats().completedSentenceCount, 1);
+assert.strictEqual(progressReplace.getStats().bestWpm, 40);
+assert.strictEqual(progressReplace.getStats().averageAccuracy, 100); // default value
+assert.strictEqual(progressReplace.getDifficultWords().length, 0); // default value
+
+console.log('✓ ProgressService.replaceAll passed!');
+
+console.log('--- Testing SyncService migration vs server-wins branching ---');
+import { SyncService } from '../client/js/services/SyncService.js';
+
+// Mock AuthService
+function createMockAuthService(userId, clientStub) {
+  const listeners = {};
+  const mockAuth = {
+    _userId: userId,
+    get isAuthenticated() { return !!this._userId; },
+    get userId() { return this._userId; },
+    get email() { return userId ? `${userId}@test.com` : null; },
+    getClient() { return clientStub; },
+    on(event, fn) { (listeners[event] || (listeners[event] = [])).push(fn); },
+    emit(event, payload) { (listeners[event] || []).forEach(fn => fn(payload)); }
+  };
+  return mockAuth;
+}
+
+// Case 1: First-ever login — no server row → local data uploaded
+{
+  let upsertPayload = null;
+  const mockClient = {
+    from() {
+      return {
+        select() { return this; },
+        eq() { return this; },
+        async maybeSingle() { return { data: null, error: null }; },
+        async upsert(payload) { upsertPayload = payload; return { error: null }; }
+      };
+    }
+  };
+  const mockAuth = createMockAuthService('user-1', mockClient);
+  const ps = new ProgressService('test_sync_migration');
+  ps.reset();
+  ps.recordSentenceCompletion({ sentenceId: 42, wpm: 60, accuracy: 90, mistakes: 2 });
+  const beforeData = { ...ps.data };
+
+  const sync = new SyncService(ps, mockAuth);
+  sync.init();
+
+  // Simulate sign-in event
+  mockAuth.emit('auth:signedIn', { userId: 'user-1' });
+
+  // Wait for async sync
+  await new Promise(r => setTimeout(r, 50));
+
+  assert.ok(upsertPayload, 'upsert should have been called');
+  assert.strictEqual(upsertPayload.user_id, 'user-1');
+  assert.deepStrictEqual(upsertPayload.data.completedSentenceIds, beforeData.completedSentenceIds);
+  assert.strictEqual(upsertPayload.data.bestWpm, beforeData.bestWpm);
+  // Local state should be preserved (not overwritten)
+  assert.strictEqual(ps.getStats().completedSentenceCount, 1);
+}
+
+// Case 2: Returning device — server row exists → server wins
+{
+  const serverProgressData = {
+    completedSentenceIds: ['100', '200'],
+    completedCount: 2,
+    bestWpm: 90,
+    averageWpm: 85,
+    averageAccuracy: 99,
+    totalMistakes: 0,
+    totalSessions: 5,
+    lastSessionDate: '2026-06-01T00:00:00.000Z',
+    favorites: ['100'],
+    difficultWords: {},
+    sentencesTypedTotal: 50,
+    wordReview: {}
+  };
+  const mockClient = {
+    from() {
+      return {
+        select() { return this; },
+        eq() { return this; },
+        async maybeSingle() { return { data: { data: serverProgressData, updated_at: '2026-06-01' }, error: null }; },
+        async upsert() { return { error: null }; }
+      };
+    }
+  };
+  const mockAuth = createMockAuthService('user-2', mockClient);
+  const ps = new ProgressService('test_sync_serverwins');
+  ps.reset();
+  // Put some local guest data that should be overwritten
+  ps.recordSentenceCompletion({ sentenceId: 999, wpm: 30, accuracy: 70, mistakes: 10 });
+  assert.strictEqual(ps.getStats().completedSentenceCount, 1);
+
+  const sync = new SyncService(ps, mockAuth);
+  sync.init();
+
+  // Simulate sign-in event
+  mockAuth.emit('auth:signedIn', { userId: 'user-2' });
+
+  // Wait for async sync
+  await new Promise(r => setTimeout(r, 50));
+
+  // Server data should have overwritten local
+  assert.strictEqual(ps.getStats().completedSentenceCount, 2);
+  assert.strictEqual(ps.getStats().bestWpm, 90);
+  assert.deepStrictEqual(ps.data.completedSentenceIds, ['100', '200']);
+  assert.strictEqual(ps.getSentencesTypedTotal(), 50);
+}
+
+// Case 3: Sign-out stops pushing
+{
+  let upsertCount = 0;
+  const mockClient = {
+    from() {
+      return {
+        select() { return this; },
+        eq() { return this; },
+        async maybeSingle() { return { data: null, error: null }; },
+        async upsert() { upsertCount++; return { error: null }; }
+      };
+    }
+  };
+  const mockAuth = createMockAuthService('user-3', mockClient);
+  const ps = new ProgressService('test_sync_signout');
+  ps.reset();
+
+  const sync = new SyncService(ps, mockAuth);
+  sync.init();
+
+  mockAuth.emit('auth:signedIn', { userId: 'user-3' });
+  await new Promise(r => setTimeout(r, 50));
+
+  // Trigger a local change
+  ps.recordSentenceCompletion({ sentenceId: 1, wpm: 50, accuracy: 90, mistakes: 1 });
+  await new Promise(r => setTimeout(r, 1200));
+
+  const countAfterSignIn = upsertCount;
+
+  // Sign out
+  mockAuth._userId = null;
+  mockAuth.emit('auth:signedOut');
+  upsertCount = 0;
+
+  // Trigger another local change — should not push
+  ps.recordSentenceCompletion({ sentenceId: 2, wpm: 55, accuracy: 92, mistakes: 0 });
+  await new Promise(r => setTimeout(r, 1200));
+
+  assert.strictEqual(upsertCount, 0, 'No upsert should happen after sign-out');
+}
+
+console.log('✓ SyncService migration/server-wins/sign-out passed!');
+
 console.log('ALL CLIENT CORE UNIT TESTS PASSED SUCCESSFULLY! 🎉');
 process.exit(0);

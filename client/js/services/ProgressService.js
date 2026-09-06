@@ -356,6 +356,30 @@ export class ProgressService extends EventEmitter {
   }
 
   /**
+   * Replace all progress data (used when pulling authoritative server state on login).
+   * Merges onto the default shape so older server rows don't crash on missing fields.
+   * @param {object} data
+   */
+  replaceAll(data) {
+    const defaultData = {
+      completedSentenceIds: [],
+      completedCount: 0,
+      bestWpm: 0,
+      averageWpm: 0,
+      averageAccuracy: 100,
+      totalMistakes: 0,
+      totalSessions: 0,
+      lastSessionDate: null,
+      favorites: [],
+      difficultWords: {},
+      sentencesTypedTotal: 0,
+      wordReview: {}
+    };
+    this.data = { ...defaultData, ...data };
+    this._save(true);
+  }
+
+  /**
    * Clear all persisted progress.
    */
   reset() {

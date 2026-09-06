@@ -70,6 +70,15 @@
           <span class="progress-divider">/</span>
           <span id="progress-total" class="progress-val">10</span>
         </div>
+        <button id="auth-btn" class="badge auth-btn" aria-label="Sign in to sync progress across devices" title="Sync progress across devices">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -1px;">
+            <path d="M12 2a4 4 0 0 1 4 4c0 1.95-1.4 3.58-3.25 3.93"></path>
+            <path d="M12 2a4 4 0 0 0-4 4c0 1.95 1.4 3.58 3.25 3.93"></path>
+            <path d="M5.5 10.5A7 7 0 0 0 12 22a7 7 0 0 0 6.5-11.5"></path>
+            <path d="M12 16v2"></path>
+          </svg>
+          Sync
+        </button>
       </div>
     </header>
 
@@ -278,6 +287,31 @@
     <div class="tooltip-pronunciation" id="tooltip-pronunciation"></div>
     <div class="tooltip-translation" id="tooltip-translation" dir="rtl" lang="ar"></div>
     <div class="tooltip-example" id="tooltip-example"></div>
+  </div>
+
+  <!-- Auth Modal (Sign Up / Log In) -->
+  <div id="auth-modal" class="modal-backdrop" aria-hidden="true">
+    <div class="modal-card auth-card" role="dialog" aria-labelledby="auth-title" aria-modal="true">
+      <div class="card-ornament">
+        <span class="ornament-glyph">☁</span>
+      </div>
+      <span class="lesson-kicker">SYNC YOUR PROGRESS</span>
+      <h2 id="auth-title" class="completion-title">Sign In to SayType</h2>
+      <p class="completion-subtext">Save your progress and continue practicing on any device.</p>
+
+      <div id="auth-error" class="auth-error" hidden></div>
+
+      <div class="auth-form">
+        <input id="auth-email" class="auth-input" type="email" placeholder="Email address" autocomplete="email" />
+        <input id="auth-password" class="auth-input" type="password" placeholder="Password" autocomplete="current-password" />
+        <button id="auth-submit-btn" class="action-btn primary-btn auth-submit">Log In</button>
+        <button id="auth-toggle-btn" class="auth-toggle" type="button">Don't have an account? Sign Up</button>
+      </div>
+
+      <div class="modal-shortcut-hint">
+        <button id="auth-dismiss-btn" class="auth-dismiss" type="button">Continue as guest</button>
+      </div>
+    </div>
   </div>
 
   <!-- Lesson Start Autoplay Permission Overlay -->
