@@ -1,5 +1,8 @@
 import { EventEmitter } from '../core/EventEmitter.js';
 
+/** Leitner box intervals (in sentences-typed units) for review scheduling. */
+const BOX_INTERVALS = [10, 20, 40, 80];
+
 /**
  * ProgressService — manages local learner progress persistence in localStorage.
  * Tracks:
@@ -8,6 +11,7 @@ import { EventEmitter } from '../core/EventEmitter.js';
  * - Last session timestamp
  * - Favorite sentences (☆ / ★)
  * - Difficult words causing repeated mistakes
+ * - Smart spaced review system (Leitner boxes)
  * 
  * Completely free, no login or remote database required.
  */
@@ -35,7 +39,9 @@ export class ProgressService extends EventEmitter {
       totalSessions: 0,
       lastSessionDate: null,
       favorites: [],
-      difficultWords: {}
+      difficultWords: {},
+      sentencesTypedTotal: 0,
+      wordReview: {}
     };
 
     if (typeof window === 'undefined' || !window.localStorage) {
@@ -118,7 +124,10 @@ export class ProgressService extends EventEmitter {
     this.data.totalMistakes = (this.data.totalMistakes ?? 0) + (mistakes ?? 0);
     this.data.lastSessionDate = new Date().toISOString();
 
-    if (wpm > (this.data.bestWpm || 0)) {
+    // Increment the global sentences-typed counter (review scheduling clock)
+    this.data.sentencesTypedTotal = (this.data.sentencesTypedTotal ?? 0) + 1;
+
+    if (wpm > (this.data.bestWpm ?? 0)) {
       this.data.bestWpm = wpm;
     }
 
@@ -144,9 +153,11 @@ export class ProgressService extends EventEmitter {
 
   /**
    * Record a mistake against a specific word token.
+   * Also updates the Leitner review state for the word.
    * @param {string} word
+   * @param {boolean} [skipReview=false] - If true, don't update wordReview (for review sentences handled separately)
    */
-  recordMistakeOnWord(word) {
+  recordMistakeOnWord(word, skipReview = false) {
     if (!word || typeof word !== 'string') return;
     const clean = word.toLowerCase().trim();
     if (!clean) return;
@@ -156,7 +167,121 @@ export class ProgressService extends EventEmitter {
     }
 
     this.data.difficultWords[clean] = (this.data.difficultWords[clean] ?? 0) + 1;
+
+    // Update Leitner review state for this word (unless skipReview is set)
+    if (!skipReview) {
+      this._updateWordReviewOnMistake(clean);
+    }
+
     this._save();
+  }
+
+  /**
+   * Update wordReview state when a mistake occurs on a word.
+   * Sets the word to box 0, due at the current sentencesTypedTotal.
+   * @private
+   * @param {string} cleanWord
+   */
+  _updateWordReviewOnMistake(cleanWord) {
+    if (!this.data.wordReview) {
+      this.data.wordReview = {};
+    }
+
+    const current = this.data.wordReview[cleanWord];
+    // Don't override if currently in an active review (recordWordReviewOutcome handles that)
+    if (current && current._inReview) return;
+
+    this.data.wordReview[cleanWord] = {
+      box: 0,
+      dueAtCount: this.data.sentencesTypedTotal ?? 0,
+      mastered: false
+    };
+  }
+
+  /**
+   * Record the outcome of a review session for a specific word.
+   * @param {string} word
+   * @param {boolean} success - true if typed correctly, false if mistake occurred
+   */
+  recordWordReviewOutcome(word, success) {
+    if (!word || typeof word !== 'string') return;
+    const clean = word.toLowerCase().trim();
+    if (!clean) return;
+
+    if (!this.data.wordReview) {
+      this.data.wordReview = {};
+    }
+
+    const entry = this.data.wordReview[clean];
+    if (!entry) return;
+
+    // Clear the in-review flag
+    delete entry._inReview;
+
+    if (success) {
+      // Successful review: advance to next box
+      entry.box = (entry.box ?? 0) + 1;
+
+      // Check if word is now mastered (passed box 4)
+      if (entry.box >= BOX_INTERVALS.length) {
+        entry.mastered = true;
+        entry.dueAtCount = Infinity; // Never due again
+      } else {
+        // Schedule next review based on the interval for the new box
+        entry.dueAtCount = (this.data.sentencesTypedTotal ?? 0) + BOX_INTERVALS[entry.box - 1];
+      }
+    } else {
+      // Failed review: reset to box 0, due at current count
+      entry.box = 0;
+      entry.dueAtCount = this.data.sentencesTypedTotal ?? 0;
+    }
+
+    this._save(true);
+  }
+
+  /**
+   * Get words that are due for review.
+   * @param {number} limit - Maximum number of words to return (default 3)
+   * @returns {Array<{ word: string, box: number }>}
+   */
+  getDueReviewWords(limit = 3) {
+    if (!this.data.wordReview) return [];
+
+    const totalTyped = this.data.sentencesTypedTotal ?? 0;
+
+    return Object.entries(this.data.wordReview)
+      .filter(([, entry]) => !entry.mastered && entry.dueAtCount <= totalTyped)
+      .sort((a, b) => a[1].dueAtCount - b[1].dueAtCount) // Most overdue first
+      .slice(0, limit)
+      .map(([word, entry]) => ({ word, box: entry.box }));
+  }
+
+  /**
+   * Mark a word as currently in a review session.
+   * @param {string} word
+   */
+  markWordInReview(word) {
+    if (!word || typeof word !== 'string') return;
+    const clean = word.toLowerCase().trim();
+    if (!clean) return;
+
+    if (!this.data.wordReview) {
+      this.data.wordReview = {};
+    }
+
+    const entry = this.data.wordReview[clean];
+    if (entry) {
+      entry._inReview = true;
+      this._save();
+    }
+  }
+
+  /**
+   * Get the total number of sentences typed (review scheduling clock).
+   * @returns {number}
+   */
+  getSentencesTypedTotal() {
+    return this.data.sentencesTypedTotal ?? 0;
   }
 
   /**
@@ -244,7 +369,9 @@ export class ProgressService extends EventEmitter {
       totalSessions: 0,
       lastSessionDate: null,
       favorites: [],
-      difficultWords: {}
+      difficultWords: {},
+      sentencesTypedTotal: 0,
+      wordReview: {}
     };
     this._save(true);
   }

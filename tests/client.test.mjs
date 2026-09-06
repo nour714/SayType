@@ -263,5 +263,117 @@ assert.strictEqual(unknownWord.word, 'nonexistentwordxyz');
 assert.strictEqual(typeof unknownWord.translation, 'string');
 console.log('✓ DictionaryService passed!');
 
+console.log('--- Testing ProgressService Leitner Review State ---');
+const progressReview = new ProgressService('test_saytype_leitner');
+progressReview.reset();
+
+// Simulate 10 sentences typed, with 'coffee' as a difficult word
+for (let i = 0; i < 9; i++) {
+  progressReview.recordSentenceCompletion({ sentenceId: 100 + i, wpm: 40, accuracy: 95, mistakes: 0 });
+}
+progressReview.recordMistakeOnWord('coffee');
+progressReview.recordSentenceCompletion({ sentenceId: 110, wpm: 40, accuracy: 90, mistakes: 1 });
+
+// sentencesTypedTotal should be 10
+assert.strictEqual(progressReview.getSentencesTypedTotal(), 10);
+
+// 'coffee' should be due for review (box 0, dueAtCount = 0)
+let dueWords = progressReview.getDueReviewWords(3);
+assert.strictEqual(dueWords.length, 1);
+assert.strictEqual(dueWords[0].word, 'coffee');
+assert.strictEqual(dueWords[0].box, 0);
+
+// Successful review: advance coffee to box 1
+progressReview.recordWordReviewOutcome('coffee', true);
+dueWords = progressReview.getDueReviewWords(3);
+// Coffee is now box 1, dueAtCount = 10 + 10 = 20, not due yet
+assert.strictEqual(dueWords.length, 0);
+
+// Simulate 10 more sentences
+for (let i = 0; i < 10; i++) {
+  progressReview.recordSentenceCompletion({ sentenceId: 120 + i, wpm: 42, accuracy: 96, mistakes: 0 });
+}
+assert.strictEqual(progressReview.getSentencesTypedTotal(), 20);
+
+// Now coffee (box 1) should be due
+dueWords = progressReview.getDueReviewWords(3);
+assert.strictEqual(dueWords.length, 1);
+assert.strictEqual(dueWords[0].word, 'coffee');
+assert.strictEqual(dueWords[0].box, 1);
+
+// Failed review: reset coffee to box 0
+progressReview.recordWordReviewOutcome('coffee', false);
+dueWords = progressReview.getDueReviewWords(3);
+assert.strictEqual(dueWords.length, 1);
+assert.strictEqual(dueWords[0].box, 0);
+
+// Successful review: advance to box 1, then box 2, then box 3, then box 4 (mastered)
+progressReview.recordWordReviewOutcome('coffee', true); // box 1
+progressReview.markWordInReview('coffee');
+// Simulate 20 more sentences for box 1 interval
+for (let i = 0; i < 20; i++) {
+  progressReview.recordSentenceCompletion({ sentenceId: 140 + i, wpm: 43, accuracy: 97, mistakes: 0 });
+}
+dueWords = progressReview.getDueReviewWords(3);
+assert.strictEqual(dueWords.length, 1);
+assert.strictEqual(dueWords[0].box, 1);
+progressReview.recordWordReviewOutcome('coffee', true); // box 2
+progressReview.recordWordReviewOutcome('coffee', true); // box 3
+progressReview.recordWordReviewOutcome('coffee', true); // box 4 (mastered)
+dueWords = progressReview.getDueReviewWords(3);
+assert.strictEqual(dueWords.length, 0); // mastered, never due again
+
+console.log('✓ ProgressService Leitner Review State passed!');
+
+console.log('--- Testing ReviewScheduler ---');
+import { ReviewScheduler } from '../client/js/services/ReviewScheduler.js';
+const scheduler = new ReviewScheduler();
+
+const mockSentences = [
+  { id: 1, text_en: "I drink coffee.", words: [{ word: "coffee" }, { word: "drink" }] },
+  { id: 2, text_en: "She buys a book.", words: [{ word: "book" }, { word: "buys" }] },
+  { id: 3, text_en: "We need more coffee.", words: [{ word: "coffee" }, { word: "more" }] },
+];
+
+const due = [{ word: 'coffee', box: 0 }];
+const round = scheduler.buildReviewRound(mockSentences, due);
+assert.strictEqual(round.length, 1);
+assert.strictEqual(round[0].isReview, true);
+assert.strictEqual(round[0].reviewWord, 'coffee');
+assert.strictEqual([1, 3].includes(round[0].id), true);
+
+// Empty inputs
+assert.strictEqual(scheduler.buildReviewRound([], due).length, 0);
+assert.strictEqual(scheduler.buildReviewRound(mockSentences, []).length, 0);
+
+// No matching sentences
+const noMatch = scheduler.buildReviewRound(mockSentences, [{ word: 'xyz', box: 0 }]);
+assert.strictEqual(noMatch.length, 0);
+
+console.log('✓ ReviewScheduler passed!');
+
+console.log('--- Testing SessionEngine.insertUpcoming ---');
+const engineUp = new SentenceEngine();
+const metricsUp = new MetricsCalculator();
+const sessionUp = new SessionEngine(engineUp, metricsUp);
+sessionUp.setSentences([
+  { id: 1, text_en: "Hi.", text_ar: "مرحبا" },
+  { id: 2, text_en: "Go.", text_ar: "اذهب" },
+]);
+assert.strictEqual(sessionUp.sentences.length, 2);
+
+sessionUp.insertUpcoming([
+  { id: 99, text_en: "Review me.", text_ar: "راجعني", isReview: true, reviewWord: 'hi' }
+]);
+assert.strictEqual(sessionUp.sentences.length, 3);
+assert.strictEqual(sessionUp.sentences[1].id, 99);
+assert.strictEqual(sessionUp.sentences[1].isReview, true);
+
+// insertUpcoming with empty array is a no-op
+sessionUp.insertUpcoming([]);
+assert.strictEqual(sessionUp.sentences.length, 3);
+
+console.log('✓ SessionEngine.insertUpcoming passed!');
+
 console.log('ALL CLIENT CORE UNIT TESTS PASSED SUCCESSFULLY! 🎉');
 process.exit(0);

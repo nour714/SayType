@@ -339,6 +339,17 @@ export class SessionEngine extends EventEmitter {
   }
 
   /**
+   * Insert additional sentences into the queue immediately after the current one.
+   * Used by external orchestration (e.g. spaced review) to extend the lesson
+   * without disrupting the active sentence or state machine.
+   * @param {Array} sentences
+   */
+  insertUpcoming(sentences) {
+    if (!Array.isArray(sentences) || sentences.length === 0) return;
+    this.sentences.splice(this.currentSentenceIndex + 1, 0, ...sentences);
+  }
+
+  /**
    * Restart the lesson from sentence 0.
    * The restart button click is itself a user gesture, so the listen-first
    * flow may resume immediately without re-showing the start overlay.

@@ -11,6 +11,7 @@ import { SpeechService } from './services/SpeechService.js';
 import { ThemeService } from './services/ThemeService.js';
 import { ProgressService } from './services/ProgressService.js';
 import { DictionaryService } from './services/DictionaryService.js';
+import { ReviewScheduler } from './services/ReviewScheduler.js';
 import { TrainingScreen } from './ui/TrainingScreen.js';
 import { StatsPills } from './ui/StatsPills.js';
 import { ProgressIndicator } from './ui/ProgressIndicator.js';
@@ -23,6 +24,7 @@ function bootstrap() {
   const progressService = new ProgressService();
   const dictionaryService = new DictionaryService();
   const sentenceRepo = new SentenceRepository();
+  const reviewScheduler = new ReviewScheduler();
 
   // 2. Initialize Core Engines (with listenFirst enabled by default)
   const sentenceEngine = new SentenceEngine();
@@ -35,6 +37,10 @@ function bootstrap() {
   const statsPills = new StatsPills();
   const progressIndicator = new ProgressIndicator();
   const topicSelector = new TopicSelector('topic-select');
+
+  // 4. Review system transient state
+  let allSentencesPool = [];
+  let reviewWordFailedThisSentence = false;
 
   // 4. Wire Theme Service
   themeService.init();
@@ -129,6 +135,9 @@ function bootstrap() {
   });
 
   sessionEngine.on('sentence:loaded', ({ sentence, index, total }) => {
+    // Reset review tracking for this sentence
+    reviewWordFailedThisSentence = false;
+
     // Empty dataset (e.g. filtered topic with no content): show calm empty state.
     if (!sentence) {
       trainingScreen.showEmptyState();
@@ -145,6 +154,7 @@ function bootstrap() {
     }
     const isFav = sentence ? progressService.isFavorite(sentence.id) : false;
     trainingScreen.setFavorite(isFav);
+    trainingScreen.setReviewBadge(sentence);
     progressIndicator.update({
       current: index + 1,
       total,
@@ -174,6 +184,13 @@ function bootstrap() {
   });
 
   sessionEngine.on('word:mistake', ({ word }) => {
+    // Check if this is a review sentence with the target word
+    const currentSentence = sessionEngine.currentSentence;
+    if (currentSentence?.isReview && word.toLowerCase() === currentSentence.reviewWord.toLowerCase()) {
+      reviewWordFailedThisSentence = true;
+      // Don't call recordMistakeOnWord for review sentences — outcome recorded at completion
+      return;
+    }
     progressService.recordMistakeOnWord(word);
   });
 
@@ -184,6 +201,26 @@ function bootstrap() {
       accuracy: stats.accuracy,
       mistakes: stats.mistakes
     });
+
+    // Handle review sentence outcome
+    if (sentence?.isReview) {
+      const success = !reviewWordFailedThisSentence;
+      progressService.recordWordReviewOutcome(sentence.reviewWord, success);
+    }
+
+    // Check if we should schedule a review round (every 10 sentences typed)
+    const totalTyped = progressService.getSentencesTypedTotal();
+    if (totalTyped % 10 === 0) {
+      const dueWords = progressService.getDueReviewWords(3);
+      if (dueWords.length > 0) {
+        const reviewRound = reviewScheduler.buildReviewRound(allSentencesPool, dueWords);
+        if (reviewRound.length > 0) {
+          // Mark words as in-review so mistake tracking doesn't double-penalize
+          dueWords.forEach(({ word }) => progressService.markWordInReview(word));
+          sessionEngine.insertUpcoming(reviewRound);
+        }
+      }
+    }
 
     if (!isLast) {
       trainingScreen.showSentenceModal(stats);
@@ -200,6 +237,7 @@ function bootstrap() {
     speechService.stop();
     sentenceRepo.getSentences(query).then((sentences) => {
       sessionEngine.setSentences(sentences || []);
+      allSentencesPool = sentences || [];
       if (sentences && sentences.length > 0) {
         // The topic change is a user gesture; resume the listen-first flow immediately.
         trainingScreen.closeStartOverlay();
@@ -287,6 +325,8 @@ function bootstrap() {
   // 11. Load Initial Sentence Dataset & Start Session
   sentenceRepo.getSentences().then((sentences) => {
     sessionEngine.setSentences(sentences);
+    // Also populate the full pool for review sentence matching
+    allSentencesPool = sentences || [];
   }).catch((err) => {
     console.error('Failed to load sentences:', err);
   });

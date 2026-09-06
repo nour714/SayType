@@ -39,6 +39,9 @@ export class TrainingScreen extends EventEmitter {
     this.tooltipTranslation = document.getElementById('tooltip-translation');
     this.tooltipExample = document.getElementById('tooltip-example');
 
+    // Review Badge Element
+    this.reviewBadge = document.getElementById('review-badge');
+
     // Start Lesson Overlay Elements
     this.startOverlay = document.getElementById('lesson-start-overlay');
     this.startLessonBtn = document.getElementById('start-lesson-btn');
@@ -492,6 +495,20 @@ export class TrainingScreen extends EventEmitter {
       this.favoriteBtn.classList.remove('is-favorite');
       this.favoriteBtn.setAttribute('title', 'Save sentence to favorites');
       this.favoriteBtn.setAttribute('aria-pressed', 'false');
+    }
+  }
+
+  /**
+   * Show or hide the review badge based on sentence metadata.
+   * @param {object} sentence - sentence object (may have isReview/reviewWord)
+   */
+  setReviewBadge(sentence) {
+    if (!this.reviewBadge) return;
+    if (sentence && sentence.isReview) {
+      this.reviewBadge.textContent = `🔁 Review · ${sentence.reviewWord}`;
+      this.reviewBadge.hidden = false;
+    } else {
+      this.reviewBadge.hidden = true;
     }
   }
 
