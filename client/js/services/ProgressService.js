@@ -114,8 +114,8 @@ export class ProgressService extends EventEmitter {
     }
 
     this.data.completedCount = this.data.completedSentenceIds.length;
-    this.data.totalSessions = (this.data.totalSessions || 0) + 1;
-    this.data.totalMistakes = (this.data.totalMistakes || 0) + (mistakes || 0);
+    this.data.totalSessions = (this.data.totalSessions ?? 0) + 1;
+    this.data.totalMistakes = (this.data.totalMistakes ?? 0) + (mistakes ?? 0);
     this.data.lastSessionDate = new Date().toISOString();
 
     if (wpm > (this.data.bestWpm || 0)) {
@@ -155,7 +155,7 @@ export class ProgressService extends EventEmitter {
       this.data.difficultWords = {};
     }
 
-    this.data.difficultWords[clean] = (this.data.difficultWords[clean] || 0) + 1;
+    this.data.difficultWords[clean] = (this.data.difficultWords[clean] ?? 0) + 1;
     this._save();
   }
 
@@ -219,14 +219,14 @@ export class ProgressService extends EventEmitter {
     return {
       completedSentenceCount: this.data.completedSentenceIds.length,
       completedSentenceIds: [...this.data.completedSentenceIds],
-      bestWpm: this.data.bestWpm || 0,
-      averageWpm: this.data.averageWpm || 0,
-      averageAccuracy: this.data.averageAccuracy || 100,
-      totalMistakes: this.data.totalMistakes || 0,
-      totalSessions: this.data.totalSessions || 0,
+      bestWpm: this.data.bestWpm ?? 0,
+      averageWpm: this.data.averageWpm ?? 0,
+      averageAccuracy: this.data.averageAccuracy ?? 100,
+      totalMistakes: this.data.totalMistakes ?? 0,
+      totalSessions: this.data.totalSessions ?? 0,
       lastSessionDate: this.data.lastSessionDate,
-      favoritesCount: (this.data.favorites || []).length,
-      difficultWordsCount: Object.keys(this.data.difficultWords || {}).length
+      favoritesCount: (this.data.favorites ?? []).length,
+      difficultWordsCount: Object.keys(this.data.difficultWords ?? {}).length
     };
   }
 

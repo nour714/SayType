@@ -36,13 +36,20 @@ export class EventEmitter {
 
   /**
    * Emit an event with optional payload.
+   * Isolates listener errors so one faulty listener cannot break others.
    * @param {string} event
    * @param {...*} args
    */
   emit(event, ...args) {
     const list = this._listeners[event];
     if (list) {
-      list.forEach(fn => fn(...args));
+      list.forEach(fn => {
+        try {
+          fn(...args);
+        } catch (err) {
+          console.error(`EventEmitter: listener error on "${event}":`, err);
+        }
+      });
     }
   }
 }

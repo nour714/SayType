@@ -9,12 +9,12 @@ export class MetricsCalculator {
 
   /** Reset all counters and timers for a new sentence. */
   reset() {
+    this.stopLiveUpdates();
     /** @type {number|null} */
     this._startTime = null;
     this._correctKeystrokes = 0;
     this._totalAttempts = 0;
     this._mistakes = 0;
-    this._intervalId = null;
     /** @type {Function|null} */
     this._onUpdate = null;
   }
