@@ -78,6 +78,38 @@
   display: block;
 }
 
+/* Topic Selector Dropdown */
+.topic-selector-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.topic-select {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--on-surface-variant);
+  background-color: var(--surface-container-high);
+  border: 1px solid var(--vessel-border);
+  border-radius: var(--rounded-full);
+  padding: 0.22rem 0.75rem;
+  cursor: pointer;
+  outline: none;
+  transition: all var(--duration-quick) var(--ease-fluid);
+}
+
+.topic-select:hover {
+  color: var(--on-surface);
+  background-color: var(--surface-container-highest);
+  border-color: rgba(217, 119, 36, 0.35);
+}
+
+.topic-select:focus-visible {
+  outline: 2px solid var(--primary-container);
+  outline-offset: 2px;
+}
+
 /* Level Badge */
 .badge.level-pill {
   font-family: var(--font-ui);
@@ -179,6 +211,127 @@
 }
 
 /* ==========================================================================
+   Vessel Meta Bar: Learning State Indicator & Favorite Bookmark
+   ========================================================================== */
+.vessel-meta-bar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-block-end: var(--space-md);
+  padding-inline: var(--space-2xs);
+}
+
+.state-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.22rem 0.75rem;
+  border-radius: var(--rounded-full);
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid var(--vessel-border);
+  background: var(--surface-container-low);
+  color: var(--on-surface-muted);
+  transition: all var(--duration-norm) var(--ease-fluid);
+}
+
+.state-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: currentColor;
+  transition: all var(--duration-norm) var(--ease-fluid);
+}
+
+/* State: LISTENING (Pronunciation playing) */
+.state-indicator.state-listening {
+  color: var(--accent-sienna);
+  border-color: rgba(217, 119, 36, 0.4);
+  background: rgba(217, 119, 36, 0.08);
+}
+
+.state-indicator.state-listening .state-dot {
+  background-color: var(--accent-sienna);
+  box-shadow: 0 0 8px var(--caret-glow);
+  animation: pulse-dot 1.2s infinite ease-in-out;
+}
+
+/* State: READY (Typing unlocked) */
+.state-indicator.state-ready {
+  color: var(--secondary);
+  border-color: rgba(157, 208, 205, 0.35);
+  background: rgba(157, 208, 205, 0.08);
+}
+
+.state-indicator.state-ready .state-dot {
+  background-color: var(--secondary);
+}
+
+/* State: TYPING (Active typing) */
+.state-indicator.state-typing {
+  color: var(--on-surface);
+  border-color: var(--vessel-border);
+  background: var(--surface-container-high);
+}
+
+.state-indicator.state-typing .state-dot {
+  background-color: var(--primary);
+  box-shadow: 0 0 6px var(--correct-glow);
+}
+
+/* State: COMPLETED / RESULT */
+.state-indicator.state-completed {
+  color: var(--secondary);
+  border-color: rgba(157, 208, 205, 0.35);
+  background: rgba(157, 208, 205, 0.08);
+}
+
+.state-indicator.state-completed .state-dot {
+  background-color: var(--secondary);
+}
+
+@keyframes pulse-dot {
+  0%, 100% { transform: scale(0.8); opacity: 0.5; }
+  50% { transform: scale(1.35); opacity: 1; }
+}
+
+/* Favorite Bookmark Button */
+.favorite-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--on-surface-muted);
+  cursor: pointer;
+  padding: var(--space-2xs);
+  border-radius: var(--rounded-full);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--duration-quick) var(--ease-fluid);
+}
+
+.favorite-btn:hover {
+  color: var(--tertiary);
+  transform: scale(1.1);
+}
+
+.favorite-btn:focus-visible {
+  outline: 2px solid var(--primary-container);
+  outline-offset: 2px;
+}
+
+.favorite-btn.is-favorite {
+  color: var(--tertiary);
+}
+
+.favorite-btn.is-favorite .icon-star {
+  fill: currentColor;
+}
+
+/* ==========================================================================
    Typography: English Hero Sentence
    ========================================================================== */
 .sentence-en {
@@ -198,6 +351,19 @@
   align-items: baseline;
   justify-content: center;
   row-gap: 4px;
+}
+
+/* Word Tokens (Wraps individual character spans for lexical lookup) */
+.word-token {
+  display: inline;
+  position: relative;
+  border-radius: var(--rounded-sm);
+  transition: background-color var(--duration-quick) var(--ease-fluid);
+  cursor: pointer;
+}
+
+.word-token:hover {
+  background-color: rgba(217, 119, 36, 0.09);
 }
 
 /* Character Tokens */
@@ -237,7 +403,7 @@
 /* Soft Blinking Caret Indicator */
 .char-caret {
   position: absolute;
-  left: -1.5px;
+  inset-inline-start: -1.5px;
   top: 10%;
   bottom: 8%;
   width: 2.5px;
@@ -250,8 +416,8 @@
 
 /* When caret is at trailing end of sentence */
 .char-caret.caret-trail {
-  left: auto;
-  right: -2px;
+  inset-inline-start: auto;
+  inset-inline-end: -2px;
 }
 
 @keyframes caret-breathe {
@@ -638,6 +804,83 @@
 }
 
 /* ==========================================================================
+   Word Inspection Floating Tooltip & Start Lesson Overlay
+   ========================================================================== */
+.word-tooltip {
+  position: fixed;
+  z-index: 1000;
+  background: var(--modal-bg);
+  border: 1px solid var(--modal-border);
+  box-shadow: var(--modal-shadow);
+  border-radius: var(--rounded-md);
+  padding: 0.65rem 0.95rem;
+  max-width: 260px;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity var(--duration-quick) var(--ease-fluid),
+              transform var(--duration-quick) var(--ease-fluid);
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  text-align: start;
+}
+
+.word-tooltip.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.tooltip-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-sm);
+}
+
+.tooltip-word {
+  font-family: var(--font-hero);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--on-surface);
+}
+
+.tooltip-pos {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent-sienna);
+}
+
+.tooltip-pronunciation {
+  font-family: var(--font-hero);
+  font-size: 13px;
+  font-style: italic;
+  color: var(--on-surface-muted);
+}
+
+.tooltip-translation {
+  font-family: var(--font-arabic);
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--on-surface-variant);
+  margin-top: 2px;
+  direction: rtl;
+  text-align: right;
+}
+
+.start-overlay-backdrop {
+  z-index: 150;
+}
+
+.start-card {
+  max-width: 520px;
+}
+
+/* ==========================================================================
    Responsive Adaptations & Mobile Breakpoints
    ========================================================================== */
 @media (max-width: 640px) {
@@ -681,5 +924,20 @@
 
   .action-btn {
     width: 100%;
+  }
+
+  .topic-select {
+    font-size: 10px;
+    padding: 0.15rem 0.5rem;
+    max-width: 110px;
+  }
+
+  .vessel-meta-bar {
+    margin-block-end: var(--space-sm);
+  }
+
+  .state-indicator {
+    font-size: 10px;
+    padding: 0.18rem 0.5rem;
   }
 }

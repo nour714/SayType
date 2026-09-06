@@ -6,20 +6,38 @@ const sentencesRepository = require('../repositories/sentences.repository');
 class SentencesController {
   /**
    * GET /api/sentences
-   * Optional query param: ?level=A1
+   * Optional query params: ?level=A1&topic=daily-life
    */
   async getAllSentences(req, res) {
     try {
-      const { level } = req.query;
+      const { level, topic } = req.query;
       let data;
-      if (level) {
+      if (level && topic) {
+        data = await sentencesRepository.findByLevelAndTopic(level, topic);
+      } else if (level) {
         data = await sentencesRepository.findByLevel(level);
+      } else if (topic) {
+        data = await sentencesRepository.findByTopic(topic);
       } else {
         data = await sentencesRepository.findAll();
       }
       res.json(data);
     } catch (err) {
       console.error('Error in getAllSentences controller:', err);
+      res.status(500).json({ error: 'Internal Server Error' });
+    }
+  }
+
+  /**
+   * GET /api/sentences/topics
+   * Returns list of available topics
+   */
+  async getTopics(req, res) {
+    try {
+      const topics = await sentencesRepository.getTopics();
+      res.json(topics);
+    } catch (err) {
+      console.error('Error in getTopics controller:', err);
       res.status(500).json({ error: 'Internal Server Error' });
     }
   }

@@ -28,18 +28,35 @@ const server = app.listen(3002, async () => {
     assert.strictEqual(sentencesRes.status, 200);
     const sentences = JSON.parse(sentencesRes.body);
     assert.strictEqual(Array.isArray(sentences), true);
-    assert.strictEqual(sentences.length, 10);
+    assert.ok(sentences.length >= 10, `Expected at least 10 sentences, got ${sentences.length}`);
     assert.strictEqual(sentences[0].text_en, "I am tired.");
-    console.log('✓ GET /api/sentences passed (10 sentences)');
+    console.log(`✓ GET /api/sentences passed (${sentences.length} sentences)`);
 
     // 3. Single sentence API
     const singleRes = await get('/api/sentences/1');
     assert.strictEqual(singleRes.status, 200);
     const single = JSON.parse(singleRes.body);
-    assert.strictEqual(single.id, 1);
+    assert.strictEqual(Number(single.id), 1);
     console.log('✓ GET /api/sentences/1 passed');
 
-    // 4. Static Client index.html
+    // 4. Topic filtering API
+    const topicRes = await get('/api/sentences?topic=food');
+    assert.strictEqual(topicRes.status, 200);
+    const foodSentences = JSON.parse(topicRes.body);
+    assert.ok(foodSentences.length > 0);
+    assert.ok(foodSentences.every(s => s.topic === 'food'));
+    console.log(`✓ GET /api/sentences?topic=food passed (${foodSentences.length} sentences)`);
+
+    // 5. Topics list API
+    const topicsListRes = await get('/api/sentences/topics');
+    assert.strictEqual(topicsListRes.status, 200);
+    const topics = JSON.parse(topicsListRes.body);
+    assert.ok(Array.isArray(topics));
+    assert.ok(topics.some(t => t.id === 'food'));
+    assert.ok(topics.some(t => t.id === 'daily-life'));
+    console.log(`✓ GET /api/sentences/topics passed (${topics.length} topics)`);
+
+    // 6. Static Client index.html
     const indexRes = await get('/');
     assert.strictEqual(indexRes.status, 200);
     assert.ok(indexRes.body.includes('SayType'));
@@ -47,7 +64,7 @@ const server = app.listen(3002, async () => {
     assert.ok(indexRes.body.includes('js/app.js'));
     console.log('✓ GET / (client index.html) passed');
 
-    // 5. CSS files
+    // 7. CSS files
     const tokensRes = await get('/styles/tokens.css');
     assert.strictEqual(tokensRes.status, 200);
     assert.ok(tokensRes.body.includes('--surface: #141312'));
@@ -63,7 +80,7 @@ const server = app.listen(3002, async () => {
     assert.ok(compRes.body.includes('.sentence-vessel'));
     console.log('✓ GET /styles/components.css passed');
 
-    // 6. JS files
+    // 8. JS files
     const jsRes = await get('/js/app.js');
     assert.strictEqual(jsRes.status, 200);
     assert.ok(jsRes.body.includes('bootstrap'));

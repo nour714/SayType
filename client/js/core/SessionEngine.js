@@ -1,27 +1,51 @@
 import { EventEmitter } from './EventEmitter.js';
 
 /**
+ * Valid lifecycle states for the learning session.
+ */
+export const SESSION_STATES = {
+  IDLE: 'IDLE',
+  LISTENING: 'LISTENING',
+  READY: 'READY',
+  TYPING: 'TYPING',
+  COMPLETED: 'COMPLETED',
+  RESULT: 'RESULT'
+};
+
+/**
  * SessionEngine — orchestrates the complete lesson lifecycle.
- * Integrates SentenceEngine and MetricsCalculator, and emits session-level events:
+ * Centralizes the state machine (IDLE -> LISTENING -> READY -> TYPING -> COMPLETED -> RESULT),
+ * integrates SentenceEngine and MetricsCalculator, and emits session-level domain events:
+ * - 'state:change': { from, to, sentence }
  * - 'sentence:loaded': { sentence, index, total }
+ * - 'sentence:listen': { sentence, text }
  * - 'metrics:update': { wpm, accuracy, mistakes, elapsedSeconds }
  * - 'sentence:completed': { sentence, index, stats, isLast }
+ * - 'word:mistake': { word, sentenceId }
  * - 'lesson:completed': { history, avgWpm, avgAccuracy, totalMistakes, totalSentences }
  * - 'lesson:restarted': {}
  */
 export class SessionEngine extends EventEmitter {
+  static STATES = SESSION_STATES;
+
   /**
    * @param {import('./SentenceEngine.js').SentenceEngine} sentenceEngine
    * @param {import('./MetricsCalculator.js').MetricsCalculator} metricsCalculator
+   * @param {object} [options]
+   * @param {boolean} [options.listenFirst=false] - Whether pronunciation must finish before typing
    */
-  constructor(sentenceEngine, metricsCalculator) {
+  constructor(sentenceEngine, metricsCalculator, options = {}) {
     super();
     this.sentenceEngine = sentenceEngine;
     this.metrics = metricsCalculator;
+    this.listenFirst = Boolean(options.listenFirst);
+
+    this.state = SESSION_STATES.IDLE;
     this.sentences = [];
     this.currentSentenceIndex = 0;
     this.lessonHistory = [];
     this.isLessonCompleted = false;
+    this.difficultWords = new Map();
 
     // Forward events from SentenceEngine
     this.sentenceEngine.on('char:correct', (payload) => {
@@ -32,6 +56,15 @@ export class SessionEngine extends EventEmitter {
 
     this.sentenceEngine.on('char:wrong', (payload) => {
       this.metrics.recordMistake();
+      if (payload.word) {
+        const count = (this.difficultWords.get(payload.word) || 0) + 1;
+        this.difficultWords.set(payload.word, count);
+        this.emit('word:mistake', {
+          word: payload.word,
+          sentenceId: this.currentSentence?.id,
+          mistakeCount: count
+        });
+      }
       this.emit('char:wrong', payload);
       this.emit('metrics:update', this.metrics.snapshot());
     });
@@ -51,8 +84,31 @@ export class SessionEngine extends EventEmitter {
   }
 
   /**
+   * Transition session to a new state and emit domain event.
+   * @param {string} nextState
+   */
+  setState(nextState) {
+    if (this.state === nextState) return;
+    const previousState = this.state;
+    this.state = nextState;
+    this.emit('state:change', {
+      from: previousState,
+      to: nextState,
+      sentence: this.currentSentence
+    });
+  }
+
+  /**
+   * Configure listen-first gating.
+   * @param {boolean} enabled
+   */
+  setListenFirst(enabled) {
+    this.listenFirst = Boolean(enabled);
+  }
+
+  /**
    * Initialize or replace the sentence collection and start at index 0.
-   * @param {Array<{ id: number, text_en: string, text_ar: string, level?: string }>} sentences
+   * @param {Array<{ id: number|string, text_en: string, text_ar: string, level?: string }>} sentences
    */
   setSentences(sentences) {
     this.sentences = Array.isArray(sentences) && sentences.length > 0 ? sentences : [];
@@ -77,27 +133,52 @@ export class SessionEngine extends EventEmitter {
     this.metrics.reset();
     this.sentenceEngine.setSentence(sentence);
 
-    // Start live metrics update timer
-    this.metrics.startLiveUpdates((snapshot) => {
-      this.emit('metrics:update', snapshot);
-    }, 250);
-
     this.emit('sentence:loaded', {
       sentence,
       index: this.currentSentenceIndex,
       total: this.sentences.length
     });
 
-    // Initial metrics
+    // Start live metrics update timer
+    this.metrics.startLiveUpdates((snapshot) => {
+      this.emit('metrics:update', snapshot);
+    }, 250);
+
+    // Initial metrics snapshot
     this.emit('metrics:update', this.metrics.snapshot());
+
+    // Listen-first flow: if enabled, enter LISTENING; otherwise enter READY directly
+    if (this.listenFirst) {
+      this.setState(SESSION_STATES.LISTENING);
+      const textToSpeak = sentence.text_en || sentence.english || '';
+      this.emit('sentence:listen', { sentence, text: textToSpeak });
+    } else {
+      this.setState(SESSION_STATES.READY);
+    }
   }
 
   /**
-   * Delegate key stroke to typing engine and timer.
+   * Called when audio pronunciation completes (or is skipped).
+   * Unlocks typing by transitioning from LISTENING to READY.
+   */
+  finishListening() {
+    if (this.state === SESSION_STATES.LISTENING || this.state === SESSION_STATES.IDLE) {
+      this.setState(SESSION_STATES.READY);
+    }
+  }
+
+  /**
+   * Delegate keystroke to typing engine while respecting state machine gating.
    * @param {string} key
+   * @returns {object|null}
    */
   handleKey(key) {
-    if (this.isLessonCompleted || this.sentenceEngine.isCompleted) {
+    // Keystrokes are strictly disallowed during LISTENING, IDLE, COMPLETED, or RESULT
+    if (this.state === SESSION_STATES.LISTENING || this.state === SESSION_STATES.IDLE) {
+      return null;
+    }
+
+    if (this.isLessonCompleted || this.sentenceEngine.isCompleted || this.state === SESSION_STATES.COMPLETED || this.state === SESSION_STATES.RESULT) {
       return null;
     }
 
@@ -113,6 +194,13 @@ export class SessionEngine extends EventEmitter {
     if (key === 'Escape') {
       this.resetCurrentSentence();
       return null;
+    }
+
+    // When in READY state, the first typing key transitions session to TYPING
+    if (this.state === SESSION_STATES.READY) {
+      if (key === 'Backspace' || (typeof key === 'string' && key.length === 1)) {
+        this.setState(SESSION_STATES.TYPING);
+      }
     }
 
     // Start metrics timer on first typing attempt
@@ -135,12 +223,21 @@ export class SessionEngine extends EventEmitter {
       total: this.sentences.length
     });
     this.emit('metrics:update', this.metrics.snapshot());
+
+    if (this.listenFirst) {
+      this.setState(SESSION_STATES.LISTENING);
+      const textToSpeak = this.currentSentence ? (this.currentSentence.text_en || this.currentSentence.english || '') : '';
+      this.emit('sentence:listen', { sentence: this.currentSentence, text: textToSpeak });
+    } else {
+      this.setState(SESSION_STATES.READY);
+    }
   }
 
   /**
    * Internal handler when sentence completes.
    */
   _onSentenceFinished() {
+    this.setState(SESSION_STATES.COMPLETED);
     this.metrics.stopLiveUpdates();
     const stats = this.metrics.snapshot();
     const sentence = this.currentSentence;
@@ -160,6 +257,8 @@ export class SessionEngine extends EventEmitter {
       stats,
       isLast
     });
+
+    this.setState(SESSION_STATES.RESULT);
 
     if (isLast) {
       setTimeout(() => {
@@ -216,5 +315,9 @@ export class SessionEngine extends EventEmitter {
 
   get isCurrentSentenceCompleted() {
     return this.sentenceEngine.isCompleted;
+  }
+
+  get currentState() {
+    return this.state;
   }
 }

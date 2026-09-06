@@ -59,6 +59,11 @@
       </div>
 
       <div class="header-right">
+        <div class="topic-selector-wrapper">
+          <select id="topic-select" class="topic-select" aria-label="Filter sentences by topic">
+            <option value="">All Topics</option>
+          </select>
+        </div>
         <span id="level-badge" class="badge level-pill">A1 FOUNDATIONS</span>
         <div id="progress-indicator" class="progress-ratio" aria-live="polite">
           <span id="progress-current" class="progress-val">1</span>
@@ -82,6 +87,19 @@
         <!-- The Inlaid Well: Carved plate receiving keystroke ink -->
         <section class="sentence-vessel" id="sentence-vessel" aria-label="Active sentence arena">
           
+          <!-- Vessel Meta Bar: Learning State Indicator & Favorite Bookmark -->
+          <div class="vessel-meta-bar">
+            <div id="state-indicator" class="state-indicator state-idle" aria-live="polite">
+              <span class="state-dot" aria-hidden="true"></span>
+              <span id="state-indicator-text" class="state-text">READY</span>
+            </div>
+            <button id="favorite-btn" class="favorite-btn" aria-label="Toggle favorite sentence" title="Save sentence to favorites">
+              <svg class="icon icon-star" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+            </button>
+          </div>
+
           <!-- English Hero Display Sentence -->
           <div 
             id="sentence-en" 
@@ -244,6 +262,41 @@
           </svg>
           <span>Restart Lesson</span>
         </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Word Inspection Popover -->
+  <div id="word-tooltip" class="word-tooltip" role="tooltip" aria-hidden="true">
+    <div class="tooltip-header">
+      <span class="tooltip-word" id="tooltip-word"></span>
+      <span class="tooltip-pos" id="tooltip-pos"></span>
+    </div>
+    <div class="tooltip-pronunciation" id="tooltip-pronunciation"></div>
+    <div class="tooltip-translation" id="tooltip-translation" dir="rtl" lang="ar"></div>
+  </div>
+
+  <!-- Lesson Start Autoplay Permission Overlay -->
+  <div id="lesson-start-overlay" class="modal-backdrop is-open start-overlay-backdrop" aria-hidden="false">
+    <div class="modal-card start-card" role="dialog" aria-labelledby="start-title" aria-modal="true">
+      <div class="card-ornament">
+        <span class="ornament-glyph">✦</span>
+      </div>
+      <span class="lesson-kicker">WELCOME TO SAYTYPE</span>
+      <h2 id="start-title" class="completion-title">English Typing Sanctuary</h2>
+      <p class="completion-subtext">Listen attentively to each sentence before typing. Master natural rhythm, phonetics, and keystroke precision in an archival editorial sanctuary.</p>
+
+      <div class="completion-actions">
+        <button id="start-lesson-btn" class="action-btn primary-btn" autofocus>
+          <span>Begin Lesson</span>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal-shortcut-hint">
+        <span>Click to unlock speech pronunciation and start practicing</span>
       </div>
     </div>
   </div>

@@ -9,25 +9,32 @@ import { SessionEngine } from './core/SessionEngine.js';
 import { SentenceRepository } from './services/SentenceRepository.js';
 import { SpeechService } from './services/SpeechService.js';
 import { ThemeService } from './services/ThemeService.js';
+import { ProgressService } from './services/ProgressService.js';
+import { DictionaryService } from './services/DictionaryService.js';
 import { TrainingScreen } from './ui/TrainingScreen.js';
 import { StatsPills } from './ui/StatsPills.js';
 import { ProgressIndicator } from './ui/ProgressIndicator.js';
+import { TopicSelector } from './ui/TopicSelector.js';
 
 function bootstrap() {
   // 1. Initialize Services
   const themeService = new ThemeService();
   const speechService = new SpeechService();
+  const progressService = new ProgressService();
+  const dictionaryService = new DictionaryService();
   const sentenceRepo = new SentenceRepository();
 
-  // 2. Initialize Core Engines
+  // 2. Initialize Core Engines (with listenFirst enabled by default)
   const sentenceEngine = new SentenceEngine();
   const metricsCalculator = new MetricsCalculator();
-  const sessionEngine = new SessionEngine(sentenceEngine, metricsCalculator);
+  const sessionEngine = new SessionEngine(sentenceEngine, metricsCalculator, { listenFirst: true });
 
   // 3. Initialize UI Components
   const trainingScreen = new TrainingScreen();
+  trainingScreen.setDictionaryService(dictionaryService);
   const statsPills = new StatsPills();
   const progressIndicator = new ProgressIndicator();
+  const topicSelector = new TopicSelector('topic-select');
 
   // 4. Wire Theme Service
   themeService.init();
@@ -36,18 +43,58 @@ function bootstrap() {
     themeToggleBtn.addEventListener('click', () => themeService.toggle());
   }
 
-  // 5. Wire Speech Service to UI
-  speechService.on('start', () => trainingScreen.setSpeaking(true));
+  // 5. Wire Speech Service to UI & Session
+  speechService.on('start', () => {
+    trainingScreen.setSpeaking(true);
+  });
+
   speechService.on('end', () => {
     trainingScreen.setSpeaking(false);
+    sessionEngine.finishListening();
     trainingScreen.ensureTypingFocus();
   });
 
-  // 6. Wire UI Actions to Engines & Services
+  speechService.on('error', () => {
+    trainingScreen.setSpeaking(false);
+    sessionEngine.finishListening();
+    trainingScreen.ensureTypingFocus();
+  });
+
+  speechService.on('unsupported', () => {
+    sessionEngine.finishListening();
+  });
+
+  // 6. Listen-First Triggering
+  sessionEngine.on('sentence:listen', ({ sentence, text }) => {
+    // If the initial start overlay is open, wait for the learner's first gesture
+    if (trainingScreen.isStartOverlayOpen()) {
+      return;
+    }
+
+    const textToSpeak = text || (sentence ? (sentence.text_en || sentence.english) : '');
+    if (textToSpeak) {
+      speechService.speak(textToSpeak)
+        .then(() => {
+          sessionEngine.finishListening();
+          trainingScreen.ensureTypingFocus();
+        })
+        .catch(() => {
+          sessionEngine.finishListening();
+          trainingScreen.ensureTypingFocus();
+        });
+    } else {
+      sessionEngine.finishListening();
+    }
+  });
+
+  // 7. Wire UI Actions to Engines & Services
   trainingScreen.on('action:listen', () => {
     const current = sessionEngine.currentSentence;
-    if (current && current.text_en) {
-      speechService.speak(current.text_en);
+    if (current) {
+      const text = current.text_en || current.english || '';
+      if (text) {
+        speechService.speak(text);
+      }
     }
   });
 
@@ -59,13 +106,52 @@ function bootstrap() {
     sessionEngine.restartLesson();
   });
 
-  // 7. Wire Session Engine Events to UI Components
+  trainingScreen.on('action:favorite', () => {
+    const current = sessionEngine.currentSentence;
+    if (current && current.id !== undefined) {
+      const isNowFav = progressService.toggleFavorite(current.id);
+      trainingScreen.setFavorite(isNowFav);
+    }
+  });
+
+  trainingScreen.on('action:start-lesson', () => {
+    // Start lesson gesture unlocks speech in modern browsers
+    const current = sessionEngine.currentSentence;
+    if (current) {
+      const text = current.text_en || current.english || '';
+      if (text) {
+        speechService.speak(text)
+          .then(() => {
+            sessionEngine.finishListening();
+            trainingScreen.ensureTypingFocus();
+          })
+          .catch(() => {
+            sessionEngine.finishListening();
+            trainingScreen.ensureTypingFocus();
+          });
+      } else {
+        sessionEngine.finishListening();
+      }
+    }
+  });
+
+  trainingScreen.on('action:key', (key) => {
+    sessionEngine.handleKey(key);
+  });
+
+  // 8. Wire Session Engine Events to UI Components
+  sessionEngine.on('state:change', ({ to }) => {
+    trainingScreen.setStateIndicator(to);
+  });
+
   sessionEngine.on('sentence:loaded', ({ sentence, index, total }) => {
     trainingScreen.renderSentence(sentence);
+    const isFav = sentence ? progressService.isFavorite(sentence.id) : false;
+    trainingScreen.setFavorite(isFav);
     progressIndicator.update({
       current: index + 1,
       total,
-      level: sentence.level || 'A1'
+      level: (sentence && sentence.level) || 'A1'
     });
     statsPills.reset();
   });
@@ -90,7 +176,18 @@ function bootstrap() {
     statsPills.update(stats);
   });
 
-  sessionEngine.on('sentence:completed', ({ stats, isLast }) => {
+  sessionEngine.on('word:mistake', ({ word }) => {
+    progressService.recordMistakeOnWord(word);
+  });
+
+  sessionEngine.on('sentence:completed', ({ sentence, stats, isLast }) => {
+    progressService.recordSentenceCompletion({
+      sentenceId: sentence ? sentence.id : null,
+      wpm: stats.wpm,
+      accuracy: stats.accuracy,
+      mistakes: stats.mistakes
+    });
+
     if (!isLast) {
       trainingScreen.showSentenceModal(stats);
     }
@@ -100,9 +197,49 @@ function bootstrap() {
     trainingScreen.showLessonModal(summary);
   });
 
-  // 8. Global Keyboard Interactions
+  // 9. Topic Selector Integration
+  topicSelector.on('topic:change', ({ topic }) => {
+    const query = topic ? { topic } : {};
+    sentenceRepo.getSentences(query).then((sentences) => {
+      sessionEngine.setSentences(sentences);
+    });
+  });
+
+  sentenceRepo.getTopics().then((topics) => {
+    topicSelector.setTopics(topics);
+  }).catch((err) => {
+    console.warn('Failed to load topics:', err);
+  });
+
+  // 10. Global Keyboard Interactions
   window.addEventListener('keydown', (e) => {
-    // Check if modal is open: Space or Enter navigates
+    // If start overlay is open, Enter or Space starts the lesson
+    if (trainingScreen.isStartOverlayOpen()) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        trainingScreen.closeStartOverlay();
+        const current = sessionEngine.currentSentence;
+        if (current) {
+          const text = current.text_en || current.english || '';
+          if (text) {
+            speechService.speak(text)
+              .then(() => {
+                sessionEngine.finishListening();
+                trainingScreen.ensureTypingFocus();
+              })
+              .catch(() => {
+                sessionEngine.finishListening();
+                trainingScreen.ensureTypingFocus();
+              });
+          } else {
+            sessionEngine.finishListening();
+          }
+        }
+      }
+      return;
+    }
+
+    // Check if sentence/lesson modal is open: Space or Enter navigates
     if (trainingScreen.isAnyModalOpen()) {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
@@ -119,8 +256,9 @@ function bootstrap() {
     if ((e.ctrlKey || e.metaKey) && e.key === ' ') {
       e.preventDefault();
       const current = sessionEngine.currentSentence;
-      if (current && current.text_en) {
-        speechService.speak(current.text_en);
+      if (current) {
+        const text = current.text_en || current.english || '';
+        if (text) speechService.speak(text);
       }
       return;
     }
@@ -132,9 +270,11 @@ function bootstrap() {
     }
   });
 
-  // 9. Load Sentence Dataset & Start Session
+  // 11. Load Initial Sentence Dataset & Start Session
   sentenceRepo.getSentences().then((sentences) => {
     sessionEngine.setSentences(sentences);
+  }).catch((err) => {
+    console.error('Failed to load sentences:', err);
   });
 }
 

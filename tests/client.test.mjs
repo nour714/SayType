@@ -2,6 +2,8 @@ import assert from 'node:assert';
 import { SentenceEngine } from '../client/js/core/SentenceEngine.js';
 import { MetricsCalculator } from '../client/js/core/MetricsCalculator.js';
 import { SessionEngine } from '../client/js/core/SessionEngine.js';
+import { ProgressService } from '../client/js/services/ProgressService.js';
+import { DictionaryService } from '../client/js/services/DictionaryService.js';
 
 console.log('--- Testing SentenceEngine ---');
 const engine = new SentenceEngine();
@@ -98,4 +100,122 @@ await new Promise(r => setTimeout(r, 550));
 assert.strictEqual(lessonFinished, true);
 
 console.log('✓ SessionEngine passed!');
+
+console.log('--- Testing SentenceEngine Free Typing Mode ---');
+const freeEngine = new SentenceEngine();
+freeEngine.setSentence({ id: 99, text_en: "Sun.", text_ar: "شمس" });
+freeEngine.setTypingMode('free');
+assert.strictEqual(freeEngine.typingMode, 'free');
+
+// Type wrong char in free mode: advances cursor and records mistake without pending error block
+const freeRes1 = freeEngine.handleKey('x');
+assert.strictEqual(freeRes1.type, 'wrong');
+assert.strictEqual(freeEngine.charIndex, 1);
+assert.strictEqual(freeEngine.charMistakes[0], true);
+assert.strictEqual(freeEngine.charMistakes.filter(Boolean).length, 1);
+assert.strictEqual(freeEngine.hasPendingError, false);
+
+// Backspace in free mode steps back
+const freeRes2 = freeEngine.handleKey('Backspace');
+assert.strictEqual(freeRes2.type, 'backspace');
+assert.strictEqual(freeEngine.charIndex, 0);
+
+// Word helper test
+const wordInfo = freeEngine.getWordAt(0);
+assert.strictEqual(wordInfo.rawWord, 'Sun.');
+assert.strictEqual(wordInfo.word, 'sun');
+console.log('✓ SentenceEngine Free Mode passed!');
+
+console.log('--- Testing SessionEngine Listen-First Gating & State Machine ---');
+const engineGated = new SentenceEngine();
+const metricsGated = new MetricsCalculator();
+const sessionGated = new SessionEngine(engineGated, metricsGated, { listenFirst: true });
+
+let listenEventFired = false;
+let capturedStateChanges = [];
+sessionGated.on('sentence:listen', () => { listenEventFired = true; });
+sessionGated.on('state:change', ({ from, to }) => { capturedStateChanges.push({ from, to }); });
+
+sessionGated.setSentences([{ id: 10, text_en: "Hi.", text_ar: "مرحبا" }]);
+assert.strictEqual(sessionGated.currentState, 'LISTENING');
+assert.strictEqual(listenEventFired, true);
+
+// During LISTENING, keystrokes are rejected (returns null)
+const blockedKey = sessionGated.handleKey('H');
+assert.strictEqual(blockedKey, null);
+assert.strictEqual(sessionGated.currentState, 'LISTENING');
+
+// When speech finishes:
+sessionGated.finishListening();
+assert.strictEqual(sessionGated.currentState, 'READY');
+
+// Keystroke in READY transitions to TYPING
+const typingKey = sessionGated.handleKey('H');
+assert.strictEqual(typingKey.type, 'correct');
+assert.strictEqual(sessionGated.currentState, 'TYPING');
+console.log('✓ SessionEngine Listen-First Gating passed!');
+
+console.log('--- Testing ProgressService ---');
+const progress = new ProgressService('test_saytype_progress');
+progress.reset();
+
+// Test recording sentence completion
+progress.recordSentenceCompletion({
+  sentenceId: 101,
+  wpm: 45,
+  accuracy: 96,
+  mistakes: 2,
+  difficultWords: ['coffee']
+});
+
+const stats1 = progress.getStats();
+assert.strictEqual(stats1.completedSentenceCount, 1);
+assert.strictEqual(stats1.bestWpm, 45);
+assert.strictEqual(stats1.totalMistakes, 2);
+
+// Test favorites toggle
+assert.strictEqual(progress.isFavorite(101), false);
+assert.strictEqual(progress.toggleFavorite(101), true);
+assert.strictEqual(progress.isFavorite(101), true);
+assert.strictEqual(progress.toggleFavorite(101), false);
+assert.strictEqual(progress.isFavorite(101), false);
+
+// Test difficult words tracking
+progress.recordMistakeOnWord('station');
+progress.recordMistakeOnWord('station');
+const diffWords = progress.getDifficultWords();
+assert.strictEqual(diffWords[0].word, 'station');
+assert.strictEqual(diffWords[0].count, 2);
+console.log('✓ ProgressService passed!');
+
+console.log('--- Testing DictionaryService ---');
+const dictionary = new DictionaryService();
+
+// Sentence embedded word lookup
+const mockSentence = {
+  text_en: "I like coffee.",
+  words: [
+    { word: "like", translation: "يحب", pronunciation: "/laɪk/", partOfSpeech: "verb" }
+  ]
+};
+const foundWord = dictionary.lookup('like', mockSentence);
+assert.strictEqual(foundWord.word, 'like');
+assert.strictEqual(foundWord.translation, 'يحب');
+assert.strictEqual(foundWord.partOfSpeech, 'verb');
+
+// Fallback lexicon lookup
+const fallbackWord = dictionary.lookup('water');
+assert.strictEqual(fallbackWord.translation, 'ماء');
+
+// Punctuation stripping
+const punctWord = dictionary.lookup('"tea,');
+assert.strictEqual(punctWord.translation, 'شاي');
+
+// Unknown word graceful fallback
+const unknownWord = dictionary.lookup('nonexistentwordxyz');
+assert.strictEqual(unknownWord.word, 'nonexistentwordxyz');
+assert.strictEqual(typeof unknownWord.translation, 'string');
+console.log('✓ DictionaryService passed!');
+
 console.log('ALL CLIENT CORE UNIT TESTS PASSED SUCCESSFULLY! 🎉');
+process.exit(0);
