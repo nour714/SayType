@@ -1,181 +1,6 @@
 [
   {
-    "id": 1,
-    "level": "A1",
-    "topic": "daily-life",
-    "topic_label": "Daily Life",
-    "text_en": "I am tired.",
-    "text_ar": "أنا متعب.",
-    "english": "I am tired.",
-    "arabic": "أنا متعب.",
-    "words": [
-      { "word": "I", "translation": "أنا", "partOfSpeech": "pronoun", "pronunciation": "/aɪ/" },
-      { "word": "am", "translation": "أكون", "partOfSpeech": "verb", "pronunciation": "/æm/" },
-      { "word": "tired", "translation": "متعب / مرهق", "partOfSpeech": "adjective", "pronunciation": "/ˈtaɪərd/" }
-    ],
-    "tags": ["feelings", "daily"]
-  },
-  {
-    "id": 2,
-    "level": "A1",
-    "topic": "food",
-    "topic_label": "Food & Drink",
-    "text_en": "I like coffee.",
-    "text_ar": "أنا أحب القهوة.",
-    "english": "I like coffee.",
-    "arabic": "أنا أحب القهوة.",
-    "words": [
-      { "word": "I", "translation": "أنا", "partOfSpeech": "pronoun", "pronunciation": "/aɪ/" },
-      { "word": "like", "translation": "يحب / يفضل", "partOfSpeech": "verb", "pronunciation": "/laɪk/" },
-      { "word": "coffee", "translation": "قهوة", "partOfSpeech": "noun", "pronunciation": "/ˈkɔːfi/" }
-    ],
-    "tags": ["beverage", "preference"]
-  },
-  {
-    "id": 3,
-    "level": "A1",
-    "topic": "family",
-    "topic_label": "Family & Friends",
-    "text_en": "She is my sister.",
-    "text_ar": "هي أختي.",
-    "english": "She is my sister.",
-    "arabic": "هي أختي.",
-    "words": [
-      { "word": "She", "translation": "هي", "partOfSpeech": "pronoun", "pronunciation": "/ʃiː/" },
-      { "word": "is", "translation": "تكون", "partOfSpeech": "verb", "pronunciation": "/ɪz/" },
-      { "word": "my", "translation": "لي / ياء الملكية", "partOfSpeech": "determiner", "pronunciation": "/maɪ/" },
-      { "word": "sister", "translation": "أخت", "partOfSpeech": "noun", "pronunciation": "/ˈsɪstər/" }
-    ],
-    "tags": ["family", "relationship"]
-  },
-  {
-    "id": 4,
-    "level": "A1",
-    "topic": "university",
-    "topic_label": "University & Study",
-    "text_en": "I go to school every day.",
-    "text_ar": "أذهب إلى المدرسة كل يوم.",
-    "english": "I go to school every day.",
-    "arabic": "أذهب إلى المدرسة كل يوم.",
-    "words": [
-      { "word": "I", "translation": "أنا", "partOfSpeech": "pronoun", "pronunciation": "/aɪ/" },
-      { "word": "go", "translation": "يذهب", "partOfSpeech": "verb", "pronunciation": "/ɡoʊ/" },
-      { "word": "to", "translation": "إلى", "partOfSpeech": "preposition", "pronunciation": "/tuː/" },
-      { "word": "school", "translation": "مدرسة", "partOfSpeech": "noun", "pronunciation": "/skuːl/" },
-      { "word": "every", "translation": "كل", "partOfSpeech": "determiner", "pronunciation": "/ˈɛvri/" },
-      { "word": "day", "translation": "يوم", "partOfSpeech": "noun", "pronunciation": "/deɪ/" }
-    ],
-    "tags": ["routine", "education"]
-  },
-  {
-    "id": 5,
-    "level": "A1",
-    "topic": "daily-life",
-    "topic_label": "Daily Life",
-    "text_en": "This is my house.",
-    "text_ar": "هذا منزلي.",
-    "english": "This is my house.",
-    "arabic": "هذا منزلي.",
-    "words": [
-      { "word": "This", "translation": "هذا", "partOfSpeech": "pronoun", "pronunciation": "/ðɪs/" },
-      { "word": "is", "translation": "يكون", "partOfSpeech": "verb", "pronunciation": "/ɪz/" },
-      { "word": "my", "translation": "لي / ياء الملكية", "partOfSpeech": "determiner", "pronunciation": "/maɪ/" },
-      { "word": "house", "translation": "منزل / بيت", "partOfSpeech": "noun", "pronunciation": "/haʊs/" }
-    ],
-    "tags": ["home", "places"]
-  },
-  {
-    "id": 6,
-    "level": "A1",
-    "topic": "university",
-    "topic_label": "University & Study",
-    "text_en": "I do not understand everything yet.",
-    "text_ar": "لا أفهم كل شيء بعد.",
-    "english": "I do not understand everything yet.",
-    "arabic": "لا أفهم كل شيء بعد.",
-    "words": [
-      { "word": "I", "translation": "أنا", "partOfSpeech": "pronoun", "pronunciation": "/aɪ/" },
-      { "word": "do", "translation": "يفعل (فعل مساعد)", "partOfSpeech": "verb", "pronunciation": "/duː/" },
-      { "word": "not", "translation": "لا / ليس (نفي)", "partOfSpeech": "adverb", "pronunciation": "/nɒt/" },
-      { "word": "understand", "translation": "يفهم", "partOfSpeech": "verb", "pronunciation": "/ˌʌndərˈstænd/" },
-      { "word": "everything", "translation": "كل شيء", "partOfSpeech": "pronoun", "pronunciation": "/ˈɛvriθɪŋ/" },
-      { "word": "yet", "translation": "بعد / حتى الآن", "partOfSpeech": "adverb", "pronunciation": "/jɛt/" }
-    ],
-    "tags": ["learning", "communication"]
-  },
-  {
-    "id": 7,
-    "level": "A1",
-    "topic": "food",
-    "topic_label": "Food & Drink",
-    "text_en": "We eat lunch at noon.",
-    "text_ar": "نتناول الغداء عند الظهيرة.",
-    "english": "We eat lunch at noon.",
-    "arabic": "نتناول الغداء عند الظهيرة.",
-    "words": [
-      { "word": "We", "translation": "نحن", "partOfSpeech": "pronoun", "pronunciation": "/wiː/" },
-      { "word": "eat", "translation": "يأكل / يتناول", "partOfSpeech": "verb", "pronunciation": "/iːt/" },
-      { "word": "lunch", "translation": "وجبة الغداء", "partOfSpeech": "noun", "pronunciation": "/lʌntʃ/" },
-      { "word": "at", "translation": "في / عند", "partOfSpeech": "preposition", "pronunciation": "/æt/" },
-      { "word": "noon", "translation": "الظهيرة / منتصف النهار", "partOfSpeech": "noun", "pronunciation": "/nuːn/" }
-    ],
-    "tags": ["meals", "time"]
-  },
-  {
-    "id": 8,
-    "level": "A1",
-    "topic": "work",
-    "topic_label": "Work & Career",
-    "text_en": "He works in an office.",
-    "text_ar": "هو يعمل في مكتب.",
-    "english": "He works in an office.",
-    "arabic": "هو يعمل في مكتب.",
-    "words": [
-      { "word": "He", "translation": "هو", "partOfSpeech": "pronoun", "pronunciation": "/hiː/" },
-      { "word": "works", "translation": "يعمل", "partOfSpeech": "verb", "pronunciation": "/wɜːrks/" },
-      { "word": "in", "translation": "في", "partOfSpeech": "preposition", "pronunciation": "/ɪn/" },
-      { "word": "an", "translation": "أداة تنكير", "partOfSpeech": "article", "pronunciation": "/æn/" },
-      { "word": "office", "translation": "مكتب", "partOfSpeech": "noun", "pronunciation": "/ˈɔːfɪs/" }
-    ],
-    "tags": ["work", "career"]
-  },
-  {
-    "id": 9,
-    "level": "A1",
-    "topic": "daily-life",
-    "topic_label": "Daily Life",
-    "text_en": "I drink water every morning.",
-    "text_ar": "أشرب الماء كل صباح.",
-    "english": "I drink water every morning.",
-    "arabic": "أشرب الماء كل صباح.",
-    "words": [
-      { "word": "I", "translation": "أنا", "partOfSpeech": "pronoun", "pronunciation": "/aɪ/" },
-      { "word": "drink", "translation": "يشرب", "partOfSpeech": "verb", "pronunciation": "/drɪŋk/" },
-      { "word": "water", "translation": "ماء", "partOfSpeech": "noun", "pronunciation": "/ˈwɔːtər/" },
-      { "word": "every", "translation": "كل", "partOfSpeech": "determiner", "pronunciation": "/ˈɛvri/" },
-      { "word": "morning", "translation": "صباح", "partOfSpeech": "noun", "pronunciation": "/ˈmɔːrnɪŋ/" }
-    ],
-    "tags": ["health", "routine"]
-  },
-  {
-    "id": 10,
-    "level": "A1",
-    "topic": "daily-life",
-    "topic_label": "Daily Life",
-    "text_en": "Thank you very much.",
-    "text_ar": "شكرًا جزيلًا.",
-    "english": "Thank you very much.",
-    "arabic": "شكرًا جزيلًا.",
-    "words": [
-      { "word": "Thank", "translation": "يشكر", "partOfSpeech": "verb", "pronunciation": "/θæŋk/" },
-      { "word": "you", "translation": "أنت / كاف الخطاب", "partOfSpeech": "pronoun", "pronunciation": "/juː/" },
-      { "word": "very", "translation": "جدًا", "partOfSpeech": "adverb", "pronunciation": "/ˈvɛri/" },
-      { "word": "much", "translation": "كثيرًا", "partOfSpeech": "adverb", "pronunciation": "/mʌtʃ/" }
-    ],
-    "tags": ["politeness", "communication"]
-  },
-  {
-    "id": 11,
+    "id": "a1-daily-life-001",
     "level": "A1",
     "topic": "daily-life",
     "topic_label": "Daily Life",
@@ -183,31 +8,523 @@
     "text_ar": "أستيقظ في الساعة السابعة كل صباح.",
     "english": "I wake up at seven every morning.",
     "arabic": "أستيقظ في الساعة السابعة كل صباح.",
-    "words": [
-      { "word": "wake", "translation": "يستيقظ", "partOfSpeech": "verb", "pronunciation": "/weɪk/" },
-      { "word": "seven", "translation": "سبعة", "partOfSpeech": "number", "pronunciation": "/ˈsɛv.ən/" },
-      { "word": "morning", "translation": "صباح", "partOfSpeech": "noun", "pronunciation": "/ˈmɔːr.nɪŋ/" }
+    "tags": [
+      "routine",
+      "morning"
     ],
-    "tags": ["daily", "habits"]
+    "words": [
+      {
+        "word": "wake",
+        "translation": "يستيقظ",
+        "partOfSpeech": "verb",
+        "pronunciation": "/weɪk/"
+      },
+      {
+        "word": "seven",
+        "translation": "سبعة",
+        "partOfSpeech": "number",
+        "pronunciation": "/ˈsɛv.ən/"
+      },
+      {
+        "word": "morning",
+        "translation": "صباح",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈmɔːr.nɪŋ/"
+      }
+    ]
   },
   {
-    "id": 12,
+    "id": "a1-daily-life-002",
     "level": "A1",
     "topic": "daily-life",
     "topic_label": "Daily Life",
-    "text_en": "She reads a book before bed.",
-    "text_ar": "هي تقرأ كتابًا قبل النوم.",
-    "english": "She reads a book before bed.",
-    "arabic": "هي تقرأ كتابًا قبل النوم.",
-    "words": [
-      { "word": "reads", "translation": "تقرأ", "partOfSpeech": "verb", "pronunciation": "/riːdz/" },
-      { "word": "book", "translation": "كتاب", "partOfSpeech": "noun", "pronunciation": "/bʊk/" },
-      { "word": "bed", "translation": "السرير / النوم", "partOfSpeech": "noun", "pronunciation": "/bɛd/" }
+    "text_en": "I drink water every morning.",
+    "text_ar": "أشرب الماء كل صباح.",
+    "english": "I drink water every morning.",
+    "arabic": "أشرب الماء كل صباح.",
+    "tags": [
+      "routine",
+      "health"
     ],
-    "tags": ["habits", "evening"]
+    "words": [
+      {
+        "word": "drink",
+        "translation": "يشرب",
+        "partOfSpeech": "verb",
+        "pronunciation": "/drɪŋk/"
+      },
+      {
+        "word": "water",
+        "translation": "ماء",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈwɔː.tər/"
+      }
+    ]
   },
   {
-    "id": 13,
+    "id": "a1-daily-life-003",
+    "level": "A1",
+    "topic": "daily-life",
+    "topic_label": "Daily Life",
+    "text_en": "I take a shower before breakfast.",
+    "text_ar": "أستحم قبل الفطور.",
+    "english": "I take a shower before breakfast.",
+    "arabic": "أستحم قبل الفطور.",
+    "tags": [
+      "routine",
+      "morning"
+    ],
+    "words": [
+      {
+        "word": "take",
+        "translation": "يأخذ",
+        "partOfSpeech": "verb",
+        "pronunciation": "/teɪk/"
+      },
+      {
+        "word": "shower",
+        "translation": "استحمام / دوش",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈʃaʊ.ər/"
+      },
+      {
+        "word": "breakfast",
+        "translation": "الفطور",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈbrɛk.fəst/"
+      }
+    ]
+  },
+  {
+    "id": "a1-daily-life-004",
+    "level": "A1",
+    "topic": "daily-life",
+    "topic_label": "Daily Life",
+    "text_en": "I brush my teeth twice a day.",
+    "text_ar": "أنظف أسناني مرتين في اليوم.",
+    "english": "I brush my teeth twice a day.",
+    "arabic": "أنظف أسناني مرتين في اليوم.",
+    "tags": [
+      "routine",
+      "health"
+    ],
+    "words": [
+      {
+        "word": "brush",
+        "translation": "يفرش / ينظف",
+        "partOfSpeech": "verb",
+        "pronunciation": "/brʌʃ/"
+      },
+      {
+        "word": "teeth",
+        "translation": "أسنان",
+        "partOfSpeech": "noun",
+        "pronunciation": "/tiːθ/"
+      },
+      {
+        "word": "twice",
+        "translation": "مرتين",
+        "partOfSpeech": "adverb",
+        "pronunciation": "/twaɪs/"
+      }
+    ]
+  },
+  {
+    "id": "a1-daily-life-005",
+    "level": "A1",
+    "topic": "daily-life",
+    "topic_label": "Daily Life",
+    "text_en": "I drive to work on weekdays.",
+    "text_ar": "أقود السيارة إلى العمل في أيام الأسبوع.",
+    "english": "I drive to work on weekdays.",
+    "arabic": "أقود السيارة إلى العمل في أيام الأسبوع.",
+    "tags": [
+      "routine",
+      "work"
+    ],
+    "words": [
+      {
+        "word": "drive",
+        "translation": "يقود",
+        "partOfSpeech": "verb",
+        "pronunciation": "/draɪv/"
+      },
+      {
+        "word": "weekdays",
+        "translation": "أيام الأسبوع",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈwiːk.deɪz/"
+      }
+    ]
+  },
+  {
+    "id": "a1-daily-life-006",
+    "level": "A1",
+    "topic": "daily-life",
+    "topic_label": "Daily Life",
+    "text_en": "I have a cup of coffee after lunch.",
+    "text_ar": "أشرب فنجان قهوة بعد الغداء.",
+    "english": "I have a cup of coffee after lunch.",
+    "arabic": "أشرب فنجان قهوة بعد الغداء.",
+    "tags": [
+      "routine",
+      "food"
+    ],
+    "words": [
+      {
+        "word": "cup",
+        "translation": "فنجان / كوب",
+        "partOfSpeech": "noun",
+        "pronunciation": "/kʌp/"
+      },
+      {
+        "word": "coffee",
+        "translation": "قهوة",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈkɔː.fi/"
+      }
+    ]
+  },
+  {
+    "id": "a1-daily-life-007",
+    "level": "A1",
+    "topic": "daily-life",
+    "topic_label": "Daily Life",
+    "text_en": "I check my phone every few minutes.",
+    "text_ar": "أتفقد هاتفي كل بضع دقائق.",
+    "english": "I check my phone every few minutes.",
+    "arabic": "أتفقد هاتفي كل بضع دقائق.",
+    "tags": [
+      "routine",
+      "phone"
+    ],
+    "words": [
+      {
+        "word": "check",
+        "translation": "يتفقد / يفحص",
+        "partOfSpeech": "verb",
+        "pronunciation": "/tʃɛk/"
+      },
+      {
+        "word": "phone",
+        "translation": "هاتف",
+        "partOfSpeech": "noun",
+        "pronunciation": "/foʊn/"
+      },
+      {
+        "word": "minutes",
+        "translation": "دقائق",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈmɪn.ɪts/"
+      }
+    ]
+  },
+  {
+    "id": "a1-daily-life-008",
+    "level": "A1",
+    "topic": "daily-life",
+    "topic_label": "Daily Life",
+    "text_en": "I go to bed at ten every night.",
+    "text_ar": "أذهب إلى السرير في العاشرة كل ليلة.",
+    "english": "I go to bed at ten every night.",
+    "arabic": "أذهب إلى السرير في العاشرة كل ليلة.",
+    "tags": [
+      "routine",
+      "night"
+    ],
+    "words": [
+      {
+        "word": "bed",
+        "translation": "سرير",
+        "partOfSpeech": "noun",
+        "pronunciation": "/bɛd/"
+      },
+      {
+        "word": "ten",
+        "translation": "عشرة",
+        "partOfSpeech": "number",
+        "pronunciation": "/tɛn/"
+      }
+    ]
+  },
+  {
+    "id": "a1-daily-life-009",
+    "level": "A1",
+    "topic": "daily-life",
+    "topic_label": "Daily Life",
+    "text_en": "I watch the news in the evening.",
+    "text_ar": "أشاهد الأخبار في المساء.",
+    "english": "I watch the news in the evening.",
+    "arabic": "أشاهد الأخبار في المساء.",
+    "tags": [
+      "routine",
+      "evening"
+    ],
+    "words": [
+      {
+        "word": "watch",
+        "translation": "يشاهد",
+        "partOfSpeech": "verb",
+        "pronunciation": "/wɒtʃ/"
+      },
+      {
+        "word": "news",
+        "translation": "أخبار",
+        "partOfSpeech": "noun",
+        "pronunciation": "/njuːz/"
+      },
+      {
+        "word": "evening",
+        "translation": "مساء",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈiːv.nɪŋ/"
+      }
+    ]
+  },
+  {
+    "id": "a1-daily-life-010",
+    "level": "A1",
+    "topic": "daily-life",
+    "topic_label": "Daily Life",
+    "text_en": "I clean my room on Saturday.",
+    "text_ar": "أنظف غرفتي يوم السبت.",
+    "english": "I clean my room on Saturday.",
+    "arabic": "أنظف غرفتي يوم السبت.",
+    "tags": [
+      "routine",
+      "weekend"
+    ],
+    "words": [
+      {
+        "word": "clean",
+        "translation": "ينظف",
+        "partOfSpeech": "verb",
+        "pronunciation": "/kliːn/"
+      },
+      {
+        "word": "room",
+        "translation": "غرفة",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ruːm/"
+      },
+      {
+        "word": "Saturday",
+        "translation": "السبت",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈsæt.ər.deɪ/"
+      }
+    ]
+  },
+  {
+    "id": "a1-daily-life-011",
+    "level": "A1",
+    "topic": "daily-life",
+    "topic_label": "Daily Life",
+    "text_en": "I cook dinner with my family.",
+    "text_ar": "أطبخ العشاء مع عائلتي.",
+    "english": "I cook dinner with my family.",
+    "arabic": "أطبخ العشاء مع عائلتي.",
+    "tags": [
+      "family",
+      "food"
+    ],
+    "words": [
+      {
+        "word": "cook",
+        "translation": "يطبخ",
+        "partOfSpeech": "verb",
+        "pronunciation": "/kʊk/"
+      },
+      {
+        "word": "dinner",
+        "translation": "عشاء",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈdɪn.ər/"
+      },
+      {
+        "word": "family",
+        "translation": "عائلة",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈfæm.ɪ.li/"
+      }
+    ]
+  },
+  {
+    "id": "a1-daily-life-012",
+    "level": "A1",
+    "topic": "daily-life",
+    "topic_label": "Daily Life",
+    "text_en": "I sleep eight hours every night.",
+    "text_ar": "أنام ثماني ساعات كل ليلة.",
+    "english": "I sleep eight hours every night.",
+    "arabic": "أنام ثماني ساعات كل ليلة.",
+    "tags": [
+      "routine",
+      "health"
+    ],
+    "words": [
+      {
+        "word": "sleep",
+        "translation": "ينام",
+        "partOfSpeech": "verb",
+        "pronunciation": "/sliːp/"
+      },
+      {
+        "word": "eight",
+        "translation": "ثمانية",
+        "partOfSpeech": "number",
+        "pronunciation": "/eɪt/"
+      },
+      {
+        "word": "hours",
+        "translation": "ساعات",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈaʊ.ərz/"
+      }
+    ]
+  },
+  {
+    "id": "a1-daily-life-013",
+    "level": "A1",
+    "topic": "daily-life",
+    "topic_label": "Daily Life",
+    "text_en": "I read a book before I sleep.",
+    "text_ar": "أقرأ كتابًا قبل أن أنام.",
+    "english": "I read a book before I sleep.",
+    "arabic": "أقرأ كتابًا قبل أن أنام.",
+    "tags": [
+      "routine",
+      "reading"
+    ],
+    "words": [
+      {
+        "word": "read",
+        "translation": "يقرأ",
+        "partOfSpeech": "verb",
+        "pronunciation": "/riːd/"
+      },
+      {
+        "word": "book",
+        "translation": "كتاب",
+        "partOfSpeech": "noun",
+        "pronunciation": "/bʊk/"
+      }
+    ]
+  },
+  {
+    "id": "a1-daily-life-014",
+    "level": "A1",
+    "topic": "daily-life",
+    "topic_label": "Daily Life",
+    "text_en": "I do my homework after school.",
+    "text_ar": "أقوم بواجباتي بعد المدرسة.",
+    "english": "I do my homework after school.",
+    "arabic": "أقوم بواجباتي بعد المدرسة.",
+    "tags": [
+      "study",
+      "routine"
+    ],
+    "words": [
+      {
+        "word": "homework",
+        "translation": "واجبات مدرسية",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈhoʊm.wɜːrk/"
+      }
+    ]
+  },
+  {
+    "id": "a1-daily-life-015",
+    "level": "A1",
+    "topic": "daily-life",
+    "topic_label": "Daily Life",
+    "text_en": "I buy groceries once a week.",
+    "text_ar": "أشتري البقالة مرة في الأسبوع.",
+    "english": "I buy groceries once a week.",
+    "arabic": "أشتري البقالة مرة في الأسبوع.",
+    "tags": [
+      "shopping",
+      "routine"
+    ],
+    "words": [
+      {
+        "word": "buy",
+        "translation": "يشتري",
+        "partOfSpeech": "verb",
+        "pronunciation": "/baɪ/"
+      },
+      {
+        "word": "groceries",
+        "translation": "مشتريات بقالة",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈɡroʊ.sə.riz/"
+      },
+      {
+        "word": "once",
+        "translation": "مرة واحدة",
+        "partOfSpeech": "adverb",
+        "pronunciation": "/wʌns/"
+      }
+    ]
+  },
+  {
+    "id": "a1-daily-life-016",
+    "level": "A1",
+    "topic": "daily-life",
+    "topic_label": "Daily Life",
+    "text_en": "I am always busy on weekdays.",
+    "text_ar": "أنا مشغول دائمًا في أيام الأسبوع.",
+    "english": "I am always busy on weekdays.",
+    "arabic": "أنا مشغول دائمًا في أيام الأسبوع.",
+    "tags": [
+      "routine",
+      "schedule"
+    ],
+    "words": [
+      {
+        "word": "always",
+        "translation": "دائمًا",
+        "partOfSpeech": "adverb",
+        "pronunciation": "/ˈɔːl.weɪz/"
+      },
+      {
+        "word": "busy",
+        "translation": "مشغول",
+        "partOfSpeech": "adjective",
+        "pronunciation": "/ˈbɪz.i/"
+      }
+    ]
+  },
+  {
+    "id": "a1-family-001",
+    "level": "A1",
+    "topic": "family",
+    "topic_label": "Family & Friends",
+    "text_en": "She is my sister.",
+    "text_ar": "هي أختي.",
+    "english": "She is my sister.",
+    "arabic": "هي أختي.",
+    "tags": [
+      "family",
+      "relationship"
+    ],
+    "words": [
+      {
+        "word": "She",
+        "translation": "هي",
+        "partOfSpeech": "pronoun",
+        "pronunciation": "/ʃiː/"
+      },
+      {
+        "word": "sister",
+        "translation": "أخت",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈsɪs.tər/"
+      }
+    ]
+  },
+  {
+    "id": "a1-family-002",
     "level": "A1",
     "topic": "family",
     "topic_label": "Family & Friends",
@@ -215,15 +532,27 @@
     "text_ar": "والداي يعيشان في القاهرة.",
     "english": "My parents live in Cairo.",
     "arabic": "والداي يعيشان في القاهرة.",
-    "words": [
-      { "word": "parents", "translation": "الوالدان", "partOfSpeech": "noun", "pronunciation": "/ˈpɛr.ənts/" },
-      { "word": "live", "translation": "يعيش / يسكن", "partOfSpeech": "verb", "pronunciation": "/lɪv/" },
-      { "word": "Cairo", "translation": "القاهرة", "partOfSpeech": "noun", "pronunciation": "/ˈkaɪ.roʊ/" }
+    "tags": [
+      "family",
+      "places"
     ],
-    "tags": ["family", "places"]
+    "words": [
+      {
+        "word": "parents",
+        "translation": "الوالدان",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈpɛr.ənts/"
+      },
+      {
+        "word": "live",
+        "translation": "يعيش",
+        "partOfSpeech": "verb",
+        "pronunciation": "/lɪv/"
+      }
+    ]
   },
   {
-    "id": 14,
+    "id": "a1-family-003",
     "level": "A1",
     "topic": "family",
     "topic_label": "Family & Friends",
@@ -231,197 +560,33 @@
     "text_ar": "لدي أخوان أصغر مني.",
     "english": "I have two younger brothers.",
     "arabic": "لدي أخوان أصغر مني.",
-    "words": [
-      { "word": "have", "translation": "يمتلك / لديه", "partOfSpeech": "verb", "pronunciation": "/hæv/" },
-      { "word": "two", "translation": "اثنان", "partOfSpeech": "number", "pronunciation": "/tuː/" },
-      { "word": "younger", "translation": "أصغر سنًا", "partOfSpeech": "adjective", "pronunciation": "/ˈjʌŋ.ɡər/" },
-      { "word": "brothers", "translation": "إخوة ذكور", "partOfSpeech": "noun", "pronunciation": "/ˈbrʌð.ərz/" }
+    "tags": [
+      "family",
+      "siblings"
     ],
-    "tags": ["family", "siblings"]
+    "words": [
+      {
+        "word": "two",
+        "translation": "اثنان",
+        "partOfSpeech": "number",
+        "pronunciation": "/tuː/"
+      },
+      {
+        "word": "younger",
+        "translation": "أصغر سنًا",
+        "partOfSpeech": "adjective",
+        "pronunciation": "/ˈjʌŋ.ɡər/"
+      },
+      {
+        "word": "brothers",
+        "translation": "إخوة",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈbrʌð.ərz/"
+      }
+    ]
   },
   {
-    "id": 15,
-    "level": "A1",
-    "topic": "food",
-    "topic_label": "Food & Drink",
-    "text_en": "He drinks green tea after dinner.",
-    "text_ar": "هو يشرب الشاي الأخضر بعد العشاء.",
-    "english": "He drinks green tea after dinner.",
-    "arabic": "هو يشرب الشاي الأخضر بعد العشاء.",
-    "words": [
-      { "word": "drinks", "translation": "يشرب", "partOfSpeech": "verb", "pronunciation": "/drɪŋks/" },
-      { "word": "green", "translation": "أخضر", "partOfSpeech": "adjective", "pronunciation": "/ɡriːn/" },
-      { "word": "tea", "translation": "شاي", "partOfSpeech": "noun", "pronunciation": "/tiː/" },
-      { "word": "dinner", "translation": "وجبة العشاء", "partOfSpeech": "noun", "pronunciation": "/ˈdɪn.ər/" }
-    ],
-    "tags": ["food", "evening"]
-  },
-  {
-    "id": 16,
-    "level": "A1",
-    "topic": "food",
-    "topic_label": "Food & Drink",
-    "text_en": "We need fresh bread and cheese.",
-    "text_ar": "نحتاج إلى خبز طازج وجبن.",
-    "english": "We need fresh bread and cheese.",
-    "arabic": "نحتاج إلى خبز طازج وجبن.",
-    "words": [
-      { "word": "need", "translation": "يحتاج", "partOfSpeech": "verb", "pronunciation": "/niːd/" },
-      { "word": "fresh", "translation": "طازج", "partOfSpeech": "adjective", "pronunciation": "/frɛʃ/" },
-      { "word": "bread", "translation": "خبز", "partOfSpeech": "noun", "pronunciation": "/brɛd/" },
-      { "word": "cheese", "translation": "جبن", "partOfSpeech": "noun", "pronunciation": "/tʃiːz/" }
-    ],
-    "tags": ["groceries", "food"]
-  },
-  {
-    "id": 17,
-    "level": "A1",
-    "topic": "travel",
-    "topic_label": "Travel & Places",
-    "text_en": "Where is the nearest train station?",
-    "text_ar": "أين أقرب محطة قطار؟",
-    "english": "Where is the nearest train station?",
-    "arabic": "أين أقرب محطة قطار؟",
-    "words": [
-      { "word": "Where", "translation": "أين", "partOfSpeech": "adverb", "pronunciation": "/wɛər/" },
-      { "word": "nearest", "translation": "الأقرب", "partOfSpeech": "adjective", "pronunciation": "/ˈnɪər.ɪst/" },
-      { "word": "train", "translation": "قطار", "partOfSpeech": "noun", "pronunciation": "/treɪn/" },
-      { "word": "station", "translation": "محطة", "partOfSpeech": "noun", "pronunciation": "/ˈsteɪ.ʃən/" }
-    ],
-    "tags": ["travel", "directions"]
-  },
-  {
-    "id": 18,
-    "level": "A1",
-    "topic": "travel",
-    "topic_label": "Travel & Places",
-    "text_en": "The airport is far from here.",
-    "text_ar": "المطار بعيد عن هنا.",
-    "english": "The airport is far from here.",
-    "arabic": "المطار بعيد عن هنا.",
-    "words": [
-      { "word": "airport", "translation": "مطار", "partOfSpeech": "noun", "pronunciation": "/ˈɛər.pɔːrt/" },
-      { "word": "far", "translation": "بعيد", "partOfSpeech": "adjective", "pronunciation": "/fɑːr/" },
-      { "word": "here", "translation": "هنا", "partOfSpeech": "adverb", "pronunciation": "/hɪər/" }
-    ],
-    "tags": ["travel", "locations"]
-  },
-  {
-    "id": 19,
-    "level": "A1",
-    "topic": "university",
-    "topic_label": "University & Study",
-    "text_en": "She studies English literature at university.",
-    "text_ar": "هي تدرس الأدب الإنجليزي في الجامعة.",
-    "english": "She studies English literature at university.",
-    "arabic": "هي تدرس الأدب الإنجليزي في الجامعة.",
-    "words": [
-      { "word": "studies", "translation": "تدرس", "partOfSpeech": "verb", "pronunciation": "/ˈstʌd.iz/" },
-      { "word": "English", "translation": "الإنجليزية", "partOfSpeech": "noun", "pronunciation": "/ˈɪŋ.ɡlɪʃ/" },
-      { "word": "literature", "translation": "الأدب", "partOfSpeech": "noun", "pronunciation": "/ˈlɪt.ər.ə.tʃər/" },
-      { "word": "university", "translation": "جامعة", "partOfSpeech": "noun", "pronunciation": "/ˌjuː.nɪˈvɜːr.sə.ti/" }
-    ],
-    "tags": ["university", "study"]
-  },
-  {
-    "id": 20,
-    "level": "A1",
-    "topic": "university",
-    "topic_label": "University & Study",
-    "text_en": "The library is quiet in the morning.",
-    "text_ar": "المكتبة هادئة في الصباح.",
-    "english": "The library is quiet in the morning.",
-    "arabic": "المكتبة هادئة في الصباح.",
-    "words": [
-      { "word": "library", "translation": "مكتبة", "partOfSpeech": "noun", "pronunciation": "/ˈlaɪ.brɛr.i/" },
-      { "word": "quiet", "translation": "هادئ", "partOfSpeech": "adjective", "pronunciation": "/ˈkwaɪ.ət/" },
-      { "word": "morning", "translation": "الصباح", "partOfSpeech": "noun", "pronunciation": "/ˈmɔːr.nɪŋ/" }
-    ],
-    "tags": ["study", "places"]
-  },
-  {
-    "id": 21,
-    "level": "A1",
-    "topic": "work",
-    "topic_label": "Work & Career",
-    "text_en": "I start my job at nine o'clock.",
-    "text_ar": "أبدأ عملي في الساعة التاسعة تمامًا.",
-    "english": "I start my job at nine o'clock.",
-    "arabic": "أبدأ عملي في الساعة التاسعة تمامًا.",
-    "words": [
-      { "word": "start", "translation": "يبدأ", "partOfSpeech": "verb", "pronunciation": "/stɑːrt/" },
-      { "word": "job", "translation": "وظيفة / عمل", "partOfSpeech": "noun", "pronunciation": "/dʒɒb/" },
-      { "word": "nine", "translation": "تسعة", "partOfSpeech": "number", "pronunciation": "/naɪn/" }
-    ],
-    "tags": ["work", "schedule"]
-  },
-  {
-    "id": 22,
-    "level": "A1",
-    "topic": "work",
-    "topic_label": "Work & Career",
-    "text_en": "Our team meets every Monday.",
-    "text_ar": "فريقنا يجتمع كل يوم اثنين.",
-    "english": "Our team meets every Monday.",
-    "arabic": "فريقنا يجتمع كل يوم اثنين.",
-    "words": [
-      { "word": "team", "translation": "فريق", "partOfSpeech": "noun", "pronunciation": "/tiːm/" },
-      { "word": "meets", "translation": "يجتمع / يلتقي", "partOfSpeech": "verb", "pronunciation": "/miːts/" },
-      { "word": "Monday", "translation": "يوم الاثنين", "partOfSpeech": "noun", "pronunciation": "/ˈmʌn.deɪ/" }
-    ],
-    "tags": ["work", "meetings"]
-  },
-  {
-    "id": 23,
-    "level": "A1",
-    "topic": "shopping",
-    "topic_label": "Shopping & Numbers",
-    "text_en": "How much does this shirt cost?",
-    "text_ar": "كم ثمن هذا القميص؟",
-    "english": "How much does this shirt cost?",
-    "arabic": "كم ثمن هذا القميص؟",
-    "words": [
-      { "word": "much", "translation": "كم للثمن / كثير", "partOfSpeech": "adverb", "pronunciation": "/mʌtʃ/" },
-      { "word": "shirt", "translation": "قميص", "partOfSpeech": "noun", "pronunciation": "/ʃɜːrt/" },
-      { "word": "cost", "translation": "يكلف / ثمن", "partOfSpeech": "verb", "pronunciation": "/kɒst/" }
-    ],
-    "tags": ["shopping", "clothes"]
-  },
-  {
-    "id": 24,
-    "level": "A1",
-    "topic": "shopping",
-    "topic_label": "Shopping & Numbers",
-    "text_en": "I want to pay with cash.",
-    "text_ar": "أريد أن أدفع نقدًا.",
-    "english": "I want to pay with cash.",
-    "arabic": "أريد أن أدفع نقدًا.",
-    "words": [
-      { "word": "want", "translation": "يريد", "partOfSpeech": "verb", "pronunciation": "/wɒnt/" },
-      { "word": "pay", "translation": "يدفع مالًا", "partOfSpeech": "verb", "pronunciation": "/peɪ/" },
-      { "word": "cash", "translation": "نقدًا / كاش", "partOfSpeech": "noun", "pronunciation": "/kæʃ/" }
-    ],
-    "tags": ["shopping", "payment"]
-  },
-  {
-    "id": 25,
-    "level": "A1",
-    "topic": "travel",
-    "topic_label": "Travel & Places",
-    "text_en": "We stay at a quiet hotel near the beach.",
-    "text_ar": "نقيم في فندق هادئ بالقرب من الشاطئ.",
-    "english": "We stay at a quiet hotel near the beach.",
-    "arabic": "نقيم في فندق هادئ بالقرب من الشاطئ.",
-    "words": [
-      { "word": "stay", "translation": "يقيم / يمكث", "partOfSpeech": "verb", "pronunciation": "/steɪ/" },
-      { "word": "hotel", "translation": "فندق", "partOfSpeech": "noun", "pronunciation": "/hoʊˈtɛl/" },
-      { "word": "near", "translation": "بالقرب من", "partOfSpeech": "preposition", "pronunciation": "/nɪər/" },
-      { "word": "beach", "translation": "شاطئ", "partOfSpeech": "noun", "pronunciation": "/biːtʃ/" }
-    ],
-    "tags": ["travel", "vacation"]
-  },
-  {
-    "id": 26,
+    "id": "a1-family-004",
     "level": "A1",
     "topic": "family",
     "topic_label": "Family & Friends",
@@ -429,45 +594,3763 @@
     "text_ar": "جدي يروي قصصًا رائعة.",
     "english": "My grandfather tells wonderful stories.",
     "arabic": "جدي يروي قصصًا رائعة.",
-    "words": [
-      { "word": "grandfather", "translation": "جد", "partOfSpeech": "noun", "pronunciation": "/ˈɡræn.fɑː.ðər/" },
-      { "word": "tells", "translation": "يخبر / يروي", "partOfSpeech": "verb", "pronunciation": "/tɛlz/" },
-      { "word": "wonderful", "translation": "رائع", "partOfSpeech": "adjective", "pronunciation": "/ˈwʌn.dər.fəl/" },
-      { "word": "stories", "translation": "قصص", "partOfSpeech": "noun", "pronunciation": "/ˈstɔːr.iz/" }
+    "tags": [
+      "family",
+      "stories"
     ],
-    "tags": ["family", "stories"]
+    "words": [
+      {
+        "word": "grandfather",
+        "translation": "جد",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈɡræn.fɑː.ðər/"
+      },
+      {
+        "word": "tells",
+        "translation": "يروي",
+        "partOfSpeech": "verb",
+        "pronunciation": "/tɛlz/"
+      },
+      {
+        "word": "wonderful",
+        "translation": "رائع",
+        "partOfSpeech": "adjective",
+        "pronunciation": "/ˈwʌn.dər.fəl/"
+      },
+      {
+        "word": "stories",
+        "translation": "قصص",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈstɔːr.iz/"
+      }
+    ]
   },
   {
-    "id": 27,
+    "id": "a1-family-005",
     "level": "A1",
-    "topic": "shopping",
-    "topic_label": "Shopping & Numbers",
-    "text_en": "The supermarket closes at ten tonight.",
-    "text_ar": "السوبرماركت يغلق في الساعة العاشرة الليلة.",
-    "english": "The supermarket closes at ten tonight.",
-    "arabic": "السوبرماركت يغلق في الساعة العاشرة الليلة.",
-    "words": [
-      { "word": "supermarket", "translation": "سوبرماركت / متجر", "partOfSpeech": "noun", "pronunciation": "/ˈsuː.pərˌmɑːr.kɪt/" },
-      { "word": "closes", "translation": "يغلق", "partOfSpeech": "verb", "pronunciation": "/ˈkloʊ.zɪz/" },
-      { "word": "tonight", "translation": "الليلة", "partOfSpeech": "adverb", "pronunciation": "/təˈnaɪt/" }
+    "topic": "family",
+    "topic_label": "Family & Friends",
+    "text_en": "My grandmother cooks the best food.",
+    "text_ar": "جدتي تطبخ أفضل طعام.",
+    "english": "My grandmother cooks the best food.",
+    "arabic": "جدتي تطبخ أفضل طعام.",
+    "tags": [
+      "family",
+      "food"
     ],
-    "tags": ["shopping", "time"]
+    "words": [
+      {
+        "word": "grandmother",
+        "translation": "جدة",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈɡrænd.mʌð.ər/"
+      },
+      {
+        "word": "best",
+        "translation": "الأفضل",
+        "partOfSpeech": "adjective",
+        "pronunciation": "/bɛst/"
+      }
+    ]
   },
   {
-    "id": 28,
+    "id": "a1-family-006",
+    "level": "A1",
+    "topic": "family",
+    "topic_label": "Family & Friends",
+    "text_en": "My mother teaches at a school.",
+    "text_ar": "أمي تدرّس في مدرسة.",
+    "english": "My mother teaches at a school.",
+    "arabic": "أمي تدرّس في مدرسة.",
+    "tags": [
+      "family",
+      "work"
+    ],
+    "words": [
+      {
+        "word": "mother",
+        "translation": "أم",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈmʌð.ər/"
+      },
+      {
+        "word": "teaches",
+        "translation": "تدرّس",
+        "partOfSpeech": "verb",
+        "pronunciation": "/ˈtiː.tʃɪz/"
+      }
+    ]
+  },
+  {
+    "id": "a1-family-007",
+    "level": "A1",
+    "topic": "family",
+    "topic_label": "Family & Friends",
+    "text_en": "My father works in a bank.",
+    "text_ar": "أبي يعمل في بنك.",
+    "english": "My father works in a bank.",
+    "arabic": "أبي يعمل في بنك.",
+    "tags": [
+      "family",
+      "work"
+    ],
+    "words": [
+      {
+        "word": "father",
+        "translation": "أب",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈfɑː.ðər/"
+      },
+      {
+        "word": "bank",
+        "translation": "بنك",
+        "partOfSpeech": "noun",
+        "pronunciation": "/bæŋk/"
+      }
+    ]
+  },
+  {
+    "id": "a1-family-008",
+    "level": "A1",
+    "topic": "family",
+    "topic_label": "Family & Friends",
+    "text_en": "We visit our cousins every summer.",
+    "text_ar": "نزور أبناء عمومتنا كل صيف.",
+    "english": "We visit our cousins every summer.",
+    "arabic": "نزور أبناء عمومتنا كل صيف.",
+    "tags": [
+      "family",
+      "summer"
+    ],
+    "words": [
+      {
+        "word": "visit",
+        "translation": "يزور",
+        "partOfSpeech": "verb",
+        "pronunciation": "/ˈvɪz.ɪt/"
+      },
+      {
+        "word": "cousins",
+        "translation": "أبناء العم / الخال",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈkʌz.ənz/"
+      },
+      {
+        "word": "summer",
+        "translation": "صيف",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈsʌm.ər/"
+      }
+    ]
+  },
+  {
+    "id": "a1-family-009",
+    "level": "A1",
+    "topic": "family",
+    "topic_label": "Family & Friends",
+    "text_en": "My aunt lives near our house.",
+    "text_ar": "خالتي تسكن بالقرب من منزلنا.",
+    "english": "My aunt lives near our house.",
+    "arabic": "خالتي تسكن بالقرب من منزلنا.",
+    "tags": [
+      "family",
+      "places"
+    ],
+    "words": [
+      {
+        "word": "aunt",
+        "translation": "خالة / عمة",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ɑːnt/"
+      },
+      {
+        "word": "near",
+        "translation": "بالقرب من",
+        "partOfSpeech": "preposition",
+        "pronunciation": "/nɪər/"
+      }
+    ]
+  },
+  {
+    "id": "a1-family-010",
+    "level": "A1",
+    "topic": "family",
+    "topic_label": "Family & Friends",
+    "text_en": "My uncle has a beautiful garden.",
+    "text_ar": "خالي لديه حديقة جميلة.",
+    "english": "My uncle has a beautiful garden.",
+    "arabic": "خالي لديه حديقة جميلة.",
+    "tags": [
+      "family",
+      "home"
+    ],
+    "words": [
+      {
+        "word": "uncle",
+        "translation": "خال / عم",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈʌŋ.kəl/"
+      },
+      {
+        "word": "beautiful",
+        "translation": "جميل",
+        "partOfSpeech": "adjective",
+        "pronunciation": "/ˈbjuː.tɪ.fəl/"
+      },
+      {
+        "word": "garden",
+        "translation": "حديقة",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈɡɑːr.dən/"
+      }
+    ]
+  },
+  {
+    "id": "a1-family-011",
+    "level": "A1",
+    "topic": "family",
+    "topic_label": "Family & Friends",
+    "text_en": "I love my whole family very much.",
+    "text_ar": "أحب عائلتي بأكملها كثيرًا.",
+    "english": "I love my whole family very much.",
+    "arabic": "أحب عائلتي بأكملها كثيرًا.",
+    "tags": [
+      "family",
+      "feelings"
+    ],
+    "words": [
+      {
+        "word": "love",
+        "translation": "يحب",
+        "partOfSpeech": "verb",
+        "pronunciation": "/lʌv/"
+      },
+      {
+        "word": "whole",
+        "translation": "كامل / بأكمله",
+        "partOfSpeech": "adjective",
+        "pronunciation": "/hoʊl/"
+      }
+    ]
+  },
+  {
+    "id": "a1-family-012",
+    "level": "A1",
+    "topic": "family",
+    "topic_label": "Family & Friends",
+    "text_en": "My sister gives me good advice.",
+    "text_ar": "أختي تعطيني نصيحة جيدة.",
+    "english": "My sister gives me good advice.",
+    "arabic": "أختي تعطيني نصيحة جيدة.",
+    "tags": [
+      "family",
+      "advice"
+    ],
+    "words": [
+      {
+        "word": "gives",
+        "translation": "تعطي",
+        "partOfSpeech": "verb",
+        "pronunciation": "/ɡɪvz/"
+      },
+      {
+        "word": "advice",
+        "translation": "نصيحة",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ədˈvaɪs/"
+      }
+    ]
+  },
+  {
+    "id": "a1-family-013",
+    "level": "A1",
+    "topic": "family",
+    "topic_label": "Family & Friends",
+    "text_en": "We eat dinner together every Friday.",
+    "text_ar": "نتناول العشاء معًا كل يوم جمعة.",
+    "english": "We eat dinner together every Friday.",
+    "arabic": "نتناول العشاء معًا كل يوم جمعة.",
+    "tags": [
+      "family",
+      "food"
+    ],
+    "words": [
+      {
+        "word": "together",
+        "translation": "معًا",
+        "partOfSpeech": "adverb",
+        "pronunciation": "/təˈɡɛð.ər/"
+      },
+      {
+        "word": "Friday",
+        "translation": "الجمعة",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈfraɪ.deɪ/"
+      }
+    ]
+  },
+  {
+    "id": "a1-food-001",
+    "level": "A1",
+    "topic": "food",
+    "topic_label": "Food & Drink",
+    "text_en": "I like coffee.",
+    "text_ar": "أحب القهوة.",
+    "english": "I like coffee.",
+    "arabic": "أحب القهوة.",
+    "tags": [
+      "beverage",
+      "preference"
+    ],
+    "words": [
+      {
+        "word": "like",
+        "translation": "يحب",
+        "partOfSpeech": "verb",
+        "pronunciation": "/laɪk/"
+      },
+      {
+        "word": "coffee",
+        "translation": "قهوة",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈkɔː.fi/"
+      }
+    ]
+  },
+  {
+    "id": "a1-food-002",
+    "level": "A1",
+    "topic": "food",
+    "topic_label": "Food & Drink",
+    "text_en": "We eat lunch at noon.",
+    "text_ar": "نتناول الغداء عند الظهيرة.",
+    "english": "We eat lunch at noon.",
+    "arabic": "نتناول الغداء عند الظهيرة.",
+    "tags": [
+      "meals",
+      "time"
+    ],
+    "words": [
+      {
+        "word": "lunch",
+        "translation": "غداء",
+        "partOfSpeech": "noun",
+        "pronunciation": "/lʌntʃ/"
+      },
+      {
+        "word": "noon",
+        "translation": "الظهيرة",
+        "partOfSpeech": "noun",
+        "pronunciation": "/nuːn/"
+      }
+    ]
+  },
+  {
+    "id": "a1-food-003",
+    "level": "A1",
+    "topic": "food",
+    "topic_label": "Food & Drink",
+    "text_en": "He drinks green tea after dinner.",
+    "text_ar": "يشرب الشاي الأخضر بعد العشاء.",
+    "english": "He drinks green tea after dinner.",
+    "arabic": "يشرب الشاي الأخضر بعد العشاء.",
+    "tags": [
+      "beverage",
+      "dinner"
+    ],
+    "words": [
+      {
+        "word": "green",
+        "translation": "أخضر",
+        "partOfSpeech": "adjective",
+        "pronunciation": "/ɡriːn/"
+      },
+      {
+        "word": "tea",
+        "translation": "شاي",
+        "partOfSpeech": "noun",
+        "pronunciation": "/tiː/"
+      }
+    ]
+  },
+  {
+    "id": "a1-food-004",
+    "level": "A1",
+    "topic": "food",
+    "topic_label": "Food & Drink",
+    "text_en": "We need fresh bread and cheese.",
+    "text_ar": "نحتاج إلى خبز طازج وجبن.",
+    "english": "We need fresh bread and cheese.",
+    "arabic": "نحتاج إلى خبز طازج وجبن.",
+    "tags": [
+      "groceries",
+      "food"
+    ],
+    "words": [
+      {
+        "word": "need",
+        "translation": "يحتاج",
+        "partOfSpeech": "verb",
+        "pronunciation": "/niːd/"
+      },
+      {
+        "word": "fresh",
+        "translation": "طازج",
+        "partOfSpeech": "adjective",
+        "pronunciation": "/frɛʃ/"
+      },
+      {
+        "word": "bread",
+        "translation": "خبز",
+        "partOfSpeech": "noun",
+        "pronunciation": "/brɛd/"
+      },
+      {
+        "word": "cheese",
+        "translation": "جبن",
+        "partOfSpeech": "noun",
+        "pronunciation": "/tʃiːz/"
+      }
+    ]
+  },
+  {
+    "id": "a1-food-005",
+    "level": "A1",
+    "topic": "food",
+    "topic_label": "Food & Drink",
+    "text_en": "I eat fruit every day.",
+    "text_ar": "آكل الفواكه كل يوم.",
+    "english": "I eat fruit every day.",
+    "arabic": "آكل الفواكه كل يوم.",
+    "tags": [
+      "food",
+      "health"
+    ],
+    "words": [
+      {
+        "word": "eat",
+        "translation": "يأكل",
+        "partOfSpeech": "verb",
+        "pronunciation": "/iːt/"
+      },
+      {
+        "word": "fruit",
+        "translation": "فاكهة",
+        "partOfSpeech": "noun",
+        "pronunciation": "/fruːt/"
+      }
+    ]
+  },
+  {
+    "id": "a1-food-006",
+    "level": "A1",
+    "topic": "food",
+    "topic_label": "Food & Drink",
+    "text_en": "This soup is very hot.",
+    "text_ar": "هذا الحساء ساخن جدًا.",
+    "english": "This soup is very hot.",
+    "arabic": "هذا الحساء ساخن جدًا.",
+    "tags": [
+      "food",
+      "temperature"
+    ],
+    "words": [
+      {
+        "word": "soup",
+        "translation": "حساء / شوربة",
+        "partOfSpeech": "noun",
+        "pronunciation": "/suːp/"
+      },
+      {
+        "word": "hot",
+        "translation": "ساخن / حار",
+        "partOfSpeech": "adjective",
+        "pronunciation": "/hɒt/"
+      }
+    ]
+  },
+  {
+    "id": "a1-food-007",
+    "level": "A1",
+    "topic": "food",
+    "topic_label": "Food & Drink",
+    "text_en": "I want some water, please.",
+    "text_ar": "أريد بعض الماء، من فضلك.",
+    "english": "I want some water, please.",
+    "arabic": "أريد بعض الماء، من فضلك.",
+    "tags": [
+      "beverage",
+      "polite"
+    ],
+    "words": [
+      {
+        "word": "want",
+        "translation": "يريد",
+        "partOfSpeech": "verb",
+        "pronunciation": "/wɒnt/"
+      },
+      {
+        "word": "some",
+        "translation": "بعض",
+        "partOfSpeech": "determiner",
+        "pronunciation": "/sʌm/"
+      },
+      {
+        "word": "please",
+        "translation": "من فضلك",
+        "partOfSpeech": "interjection",
+        "pronunciation": "/pliːz/"
+      }
+    ]
+  },
+  {
+    "id": "a1-food-008",
+    "level": "A1",
+    "topic": "food",
+    "topic_label": "Food & Drink",
+    "text_en": "The rice is ready now.",
+    "text_ar": "الأرز جاهز الآن.",
+    "english": "The rice is ready now.",
+    "arabic": "الأرز جاهز الآن.",
+    "tags": [
+      "food",
+      "meals"
+    ],
+    "words": [
+      {
+        "word": "rice",
+        "translation": "أرز",
+        "partOfSpeech": "noun",
+        "pronunciation": "/raɪs/"
+      },
+      {
+        "word": "ready",
+        "translation": "جاهز",
+        "partOfSpeech": "adjective",
+        "pronunciation": "/ˈrɛd.i/"
+      }
+    ]
+  },
+  {
+    "id": "a1-food-009",
+    "level": "A1",
+    "topic": "food",
+    "topic_label": "Food & Drink",
+    "text_en": "Do you want sugar in your tea?",
+    "text_ar": "هل تريد سكرًا في شايك؟",
+    "english": "Do you want sugar in your tea?",
+    "arabic": "هل تريد سكرًا في شايك؟",
+    "tags": [
+      "beverage",
+      "question"
+    ],
+    "words": [
+      {
+        "word": "sugar",
+        "translation": "سكر",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈʃʊɡ.ər/"
+      }
+    ]
+  },
+  {
+    "id": "a1-food-010",
+    "level": "A1",
+    "topic": "food",
+    "topic_label": "Food & Drink",
+    "text_en": "I eat breakfast at home.",
+    "text_ar": "أتناول الفطور في المنزل.",
+    "english": "I eat breakfast at home.",
+    "arabic": "أتناول الفطور في المنزل.",
+    "tags": [
+      "meals",
+      "routine"
+    ],
+    "words": [
+      {
+        "word": "breakfast",
+        "translation": "فطور",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈbrɛk.fəst/"
+      },
+      {
+        "word": "home",
+        "translation": "منزل",
+        "partOfSpeech": "noun",
+        "pronunciation": "/hoʊm/"
+      }
+    ]
+  },
+  {
+    "id": "a1-food-011",
+    "level": "A1",
+    "topic": "food",
+    "topic_label": "Food & Drink",
+    "text_en": "The food at this restaurant is good.",
+    "text_ar": "الطعام في هذا المطعم جيد.",
+    "english": "The food at this restaurant is good.",
+    "arabic": "الطعام في هذا المطعم جيد.",
+    "tags": [
+      "food",
+      "restaurant"
+    ],
+    "words": [
+      {
+        "word": "restaurant",
+        "translation": "مطعم",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈrɛs.tə.rɒnt/"
+      },
+      {
+        "word": "good",
+        "translation": "جيد",
+        "partOfSpeech": "adjective",
+        "pronunciation": "/ɡʊd/"
+      }
+    ]
+  },
+  {
+    "id": "a1-food-012",
+    "level": "A1",
+    "topic": "food",
+    "topic_label": "Food & Drink",
+    "text_en": "I usually have milk with my cereal.",
+    "text_ar": "عادةً أشرب الحليب مع الحبوب.",
+    "english": "I usually have milk with my cereal.",
+    "arabic": "عادةً أشرب الحليب مع الحبوب.",
+    "tags": [
+      "breakfast",
+      "routine"
+    ],
+    "words": [
+      {
+        "word": "usually",
+        "translation": "عادةً",
+        "partOfSpeech": "adverb",
+        "pronunciation": "/ˈjuː.ʒu.ə.li/"
+      },
+      {
+        "word": "milk",
+        "translation": "حليب",
+        "partOfSpeech": "noun",
+        "pronunciation": "/mɪlk/"
+      },
+      {
+        "word": "cereal",
+        "translation": "حبوب إفطار",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈsɪə.ri.əl/"
+      }
+    ]
+  },
+  {
+    "id": "a1-travel-001",
+    "level": "A1",
+    "topic": "travel",
+    "topic_label": "Travel & Places",
+    "text_en": "Where is the nearest train station?",
+    "text_ar": "أين أقرب محطة قطار؟",
+    "english": "Where is the nearest train station?",
+    "arabic": "أين أقرب محطة قطار؟",
+    "tags": [
+      "directions",
+      "transport"
+    ],
+    "words": [
+      {
+        "word": "nearest",
+        "translation": "الأقرب",
+        "partOfSpeech": "adjective",
+        "pronunciation": "/ˈnɪər.ɪst/"
+      },
+      {
+        "word": "train",
+        "translation": "قطار",
+        "partOfSpeech": "noun",
+        "pronunciation": "/treɪn/"
+      },
+      {
+        "word": "station",
+        "translation": "محطة",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈsteɪ.ʃən/"
+      }
+    ]
+  },
+  {
+    "id": "a1-travel-002",
+    "level": "A1",
+    "topic": "travel",
+    "topic_label": "Travel & Places",
+    "text_en": "The airport is far from here.",
+    "text_ar": "المطار بعيد عن هنا.",
+    "english": "The airport is far from here.",
+    "arabic": "المطار بعيد عن هنا.",
+    "tags": [
+      "travel",
+      "locations"
+    ],
+    "words": [
+      {
+        "word": "airport",
+        "translation": "مطار",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈɛər.pɔːrt/"
+      },
+      {
+        "word": "far",
+        "translation": "بعيد",
+        "partOfSpeech": "adjective",
+        "pronunciation": "/fɑːr/"
+      }
+    ]
+  },
+  {
+    "id": "a1-travel-003",
+    "level": "A1",
+    "topic": "travel",
+    "topic_label": "Travel & Places",
+    "text_en": "We stay at a quiet hotel near the beach.",
+    "text_ar": "نقيم في فندق هادئ قرب الشاطئ.",
+    "english": "We stay at a quiet hotel near the beach.",
+    "arabic": "نقيم في فندق هادئ قرب الشاطئ.",
+    "tags": [
+      "travel",
+      "vacation"
+    ],
+    "words": [
+      {
+        "word": "stay",
+        "translation": "يقيم",
+        "partOfSpeech": "verb",
+        "pronunciation": "/steɪ/"
+      },
+      {
+        "word": "quiet",
+        "translation": "هادئ",
+        "partOfSpeech": "adjective",
+        "pronunciation": "/ˈkwaɪ.ət/"
+      },
+      {
+        "word": "hotel",
+        "translation": "فندق",
+        "partOfSpeech": "noun",
+        "pronunciation": "/hoʊˈtɛl/"
+      },
+      {
+        "word": "beach",
+        "translation": "شاطئ",
+        "partOfSpeech": "noun",
+        "pronunciation": "/biːtʃ/"
+      }
+    ]
+  },
+  {
+    "id": "a1-travel-004",
+    "level": "A1",
+    "topic": "travel",
+    "topic_label": "Travel & Places",
+    "text_en": "The bus goes to the city center.",
+    "text_ar": "الحافلة تتجه إلى وسط المدينة.",
+    "english": "The bus goes to the city center.",
+    "arabic": "الحافلة تتجه إلى وسط المدينة.",
+    "tags": [
+      "transport",
+      "city"
+    ],
+    "words": [
+      {
+        "word": "bus",
+        "translation": "حافلة",
+        "partOfSpeech": "noun",
+        "pronunciation": "/bʌs/"
+      },
+      {
+        "word": "city",
+        "translation": "مدينة",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈsɪt.i/"
+      },
+      {
+        "word": "center",
+        "translation": "وسط / مركز",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈsɛn.tər/"
+      }
+    ]
+  },
+  {
+    "id": "a1-travel-005",
+    "level": "A1",
+    "topic": "travel",
+    "topic_label": "Travel & Places",
+    "text_en": "I buy a ticket for the metro.",
+    "text_ar": "أشتري تذكرة للمترو.",
+    "english": "I buy a ticket for the metro.",
+    "arabic": "أشتري تذكرة للمترو.",
+    "tags": [
+      "transport",
+      "tickets"
+    ],
+    "words": [
+      {
+        "word": "ticket",
+        "translation": "تذكرة",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈtɪk.ɪt/"
+      },
+      {
+        "word": "metro",
+        "translation": "مترو",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈmɛt.rəʊ/"
+      }
+    ]
+  },
+  {
+    "id": "a1-travel-006",
+    "level": "A1",
+    "topic": "travel",
+    "topic_label": "Travel & Places",
+    "text_en": "The weather is nice for a walk.",
+    "text_ar": "الطقس جميل للنزهة.",
+    "english": "The weather is nice for a walk.",
+    "arabic": "الطقس جميل للنزهة.",
+    "tags": [
+      "weather",
+      "outdoors"
+    ],
+    "words": [
+      {
+        "word": "weather",
+        "translation": "طقس",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈwɛð.ər/"
+      },
+      {
+        "word": "nice",
+        "translation": "لطيف / جميل",
+        "partOfSpeech": "adjective",
+        "pronunciation": "/naɪs/"
+      },
+      {
+        "word": "walk",
+        "translation": "نزهة / مشي",
+        "partOfSpeech": "noun",
+        "pronunciation": "/wɔːk/"
+      }
+    ]
+  },
+  {
+    "id": "a1-travel-007",
+    "level": "A1",
+    "topic": "travel",
+    "topic_label": "Travel & Places",
+    "text_en": "We take the subway to the airport.",
+    "text_ar": "نأخذ مترو الأنفاق إلى المطار.",
+    "english": "We take the subway to the airport.",
+    "arabic": "نأخذ مترو الأنفاق إلى المطار.",
+    "tags": [
+      "transport",
+      "travel"
+    ],
+    "words": [
+      {
+        "word": "subway",
+        "translation": "مترو الأنفاق",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈsʌb.weɪ/"
+      }
+    ]
+  },
+  {
+    "id": "a1-travel-008",
+    "level": "A1",
+    "topic": "travel",
+    "topic_label": "Travel & Places",
+    "text_en": "The museum opens at nine.",
+    "text_ar": "المتحف يفتح في التاسعة.",
+    "english": "The museum opens at nine.",
+    "arabic": "المتحف يفتح في التاسعة.",
+    "tags": [
+      "places",
+      "sightseeing"
+    ],
+    "words": [
+      {
+        "word": "museum",
+        "translation": "متحف",
+        "partOfSpeech": "noun",
+        "pronunciation": "/mjuːˈziː.əm/"
+      },
+      {
+        "word": "opens",
+        "translation": "يفتح",
+        "partOfSpeech": "verb",
+        "pronunciation": "/ˈoʊ.pənz/"
+      }
+    ]
+  },
+  {
+    "id": "a1-travel-009",
+    "level": "A1",
+    "topic": "travel",
+    "topic_label": "Travel & Places",
+    "text_en": "I travel to Alexandria every year.",
+    "text_ar": "أسافر إلى الإسكندرية كل عام.",
+    "english": "I travel to Alexandria every year.",
+    "arabic": "أسافر إلى الإسكندرية كل عام.",
+    "tags": [
+      "travel",
+      "routine"
+    ],
+    "words": [
+      {
+        "word": "travel",
+        "translation": "يسافر",
+        "partOfSpeech": "verb",
+        "pronunciation": "/ˈtræv.əl/"
+      },
+      {
+        "word": "year",
+        "translation": "سنة / عام",
+        "partOfSpeech": "noun",
+        "pronunciation": "/jɪər/"
+      }
+    ]
+  },
+  {
+    "id": "a1-travel-010",
+    "level": "A1",
+    "topic": "travel",
+    "topic_label": "Travel & Places",
+    "text_en": "The car is parked near the market.",
+    "text_ar": "السيارة متوقفة بالقرب من السوق.",
+    "english": "The car is parked near the market.",
+    "arabic": "السيارة متوقفة بالقرب من السوق.",
+    "tags": [
+      "transport",
+      "places"
+    ],
+    "words": [
+      {
+        "word": "car",
+        "translation": "سيارة",
+        "partOfSpeech": "noun",
+        "pronunciation": "/kɑːr/"
+      },
+      {
+        "word": "parked",
+        "translation": "متوقفة",
+        "partOfSpeech": "adjective",
+        "pronunciation": "/pɑːrkt/"
+      },
+      {
+        "word": "market",
+        "translation": "سوق",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈmɑːr.kɪt/"
+      }
+    ]
+  },
+  {
+    "id": "a1-university-001",
+    "level": "A1",
+    "topic": "university",
+    "topic_label": "University & Study",
+    "text_en": "I go to school every day.",
+    "text_ar": "أذهب إلى المدرسة كل يوم.",
+    "english": "I go to school every day.",
+    "arabic": "أذهب إلى المدرسة كل يوم.",
+    "tags": [
+      "routine",
+      "education"
+    ],
+    "words": [
+      {
+        "word": "school",
+        "translation": "مدرسة",
+        "partOfSpeech": "noun",
+        "pronunciation": "/skuːl/"
+      },
+      {
+        "word": "day",
+        "translation": "يوم",
+        "partOfSpeech": "noun",
+        "pronunciation": "/deɪ/"
+      }
+    ]
+  },
+  {
+    "id": "a1-university-002",
+    "level": "A1",
+    "topic": "university",
+    "topic_label": "University & Study",
+    "text_en": "I do not understand everything yet.",
+    "text_ar": "لا أفهم كل شيء بعد.",
+    "english": "I do not understand everything yet.",
+    "arabic": "لا أفهم كل شيء بعد.",
+    "tags": [
+      "learning",
+      "communication"
+    ],
+    "words": [
+      {
+        "word": "understand",
+        "translation": "يفهم",
+        "partOfSpeech": "verb",
+        "pronunciation": "/ˌʌn.dərˈstænd/"
+      },
+      {
+        "word": "everything",
+        "translation": "كل شيء",
+        "partOfSpeech": "pronoun",
+        "pronunciation": "/ˈɛv.ri.θɪŋ/"
+      }
+    ]
+  },
+  {
+    "id": "a1-university-003",
+    "level": "A1",
+    "topic": "university",
+    "topic_label": "University & Study",
+    "text_en": "She studies English literature at university.",
+    "text_ar": "تدرس الأدب الإنجليزي في الجامعة.",
+    "english": "She studies English literature at university.",
+    "arabic": "تدرس الأدب الإنجليزي في الجامعة.",
+    "tags": [
+      "study",
+      "subject"
+    ],
+    "words": [
+      {
+        "word": "studies",
+        "translation": "تدرس",
+        "partOfSpeech": "verb",
+        "pronunciation": "/ˈstʌd.iz/"
+      },
+      {
+        "word": "literature",
+        "translation": "أدب",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈlɪt.ər.ə.tʃər/"
+      },
+      {
+        "word": "university",
+        "translation": "جامعة",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˌjuː.nɪˈvɜːr.sə.ti/"
+      }
+    ]
+  },
+  {
+    "id": "a1-university-004",
+    "level": "A1",
+    "topic": "university",
+    "topic_label": "University & Study",
+    "text_en": "The library is quiet in the morning.",
+    "text_ar": "المكتبة هادئة في الصباح.",
+    "english": "The library is quiet in the morning.",
+    "arabic": "المكتبة هادئة في الصباح.",
+    "tags": [
+      "study",
+      "places"
+    ],
+    "words": [
+      {
+        "word": "library",
+        "translation": "مكتبة",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈlaɪ.brər.i/"
+      }
+    ]
+  },
+  {
+    "id": "a1-university-005",
+    "level": "A1",
+    "topic": "university",
+    "topic_label": "University & Study",
+    "text_en": "I study math and science at school.",
+    "text_ar": "أدرس الرياضيات والعلوم في المدرسة.",
+    "english": "I study math and science at school.",
+    "arabic": "أدرس الرياضيات والعلوم في المدرسة.",
+    "tags": [
+      "study",
+      "subjects"
+    ],
+    "words": [
+      {
+        "word": "study",
+        "translation": "يدرس",
+        "partOfSpeech": "verb",
+        "pronunciation": "/ˈstʌd.i/"
+      },
+      {
+        "word": "math",
+        "translation": "رياضيات",
+        "partOfSpeech": "noun",
+        "pronunciation": "/mæθ/"
+      },
+      {
+        "word": "science",
+        "translation": "علوم",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈsaɪ.əns/"
+      }
+    ]
+  },
+  {
+    "id": "a1-university-006",
+    "level": "A1",
+    "topic": "university",
+    "topic_label": "University & Study",
+    "text_en": "Our teacher gives us homework.",
+    "text_ar": "معلمنا يعطينا واجبات.",
+    "english": "Our teacher gives us homework.",
+    "arabic": "معلمنا يعطينا واجبات.",
+    "tags": [
+      "class",
+      "homework"
+    ],
+    "words": [
+      {
+        "word": "teacher",
+        "translation": "معلم",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈtiː.tʃər/"
+      },
+      {
+        "word": "homework",
+        "translation": "واجبات",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈhoʊm.wɜːrk/"
+      }
+    ]
+  },
+  {
+    "id": "a1-university-007",
+    "level": "A1",
+    "topic": "university",
+    "topic_label": "University & Study",
+    "text_en": "The class starts at eight sharp.",
+    "text_ar": "المحاضرة تبدأ في الثامنة تمامًا.",
+    "english": "The class starts at eight sharp.",
+    "arabic": "المحاضرة تبدأ في الثامنة تمامًا.",
+    "tags": [
+      "class",
+      "time"
+    ],
+    "words": [
+      {
+        "word": "class",
+        "translation": "فصل / محاضرة",
+        "partOfSpeech": "noun",
+        "pronunciation": "/klɑːs/"
+      },
+      {
+        "word": "starts",
+        "translation": "تبدأ",
+        "partOfSpeech": "verb",
+        "pronunciation": "/stɑːrts/"
+      },
+      {
+        "word": "sharp",
+        "translation": "بالضبط",
+        "partOfSpeech": "adverb",
+        "pronunciation": "/ʃɑːrp/"
+      }
+    ]
+  },
+  {
+    "id": "a1-university-008",
+    "level": "A1",
+    "topic": "university",
+    "topic_label": "University & Study",
+    "text_en": "We write notes during the lesson.",
+    "text_ar": "نكتب ملاحظات أثناء الدرس.",
+    "english": "We write notes during the lesson.",
+    "arabic": "نكتب ملاحظات أثناء الدرس.",
+    "tags": [
+      "class",
+      "study"
+    ],
+    "words": [
+      {
+        "word": "write",
+        "translation": "يكتب",
+        "partOfSpeech": "verb",
+        "pronunciation": "/raɪt/"
+      },
+      {
+        "word": "notes",
+        "translation": "ملاحظات",
+        "partOfSpeech": "noun",
+        "pronunciation": "/noʊts/"
+      },
+      {
+        "word": "lesson",
+        "translation": "درس",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈlɛs.ən/"
+      }
+    ]
+  },
+  {
+    "id": "a1-university-009",
+    "level": "A1",
+    "topic": "university",
+    "topic_label": "University & Study",
+    "text_en": "My friend studies medicine.",
+    "text_ar": "صديقي يدرس الطب.",
+    "english": "My friend studies medicine.",
+    "arabic": "صديقي يدرس الطب.",
+    "tags": [
+      "study",
+      "medicine"
+    ],
+    "words": [
+      {
+        "word": "friend",
+        "translation": "صديق",
+        "partOfSpeech": "noun",
+        "pronunciation": "/frɛnd/"
+      },
+      {
+        "word": "medicine",
+        "translation": "طب",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈmɛd.ɪ.sɪn/"
+      }
+    ]
+  },
+  {
+    "id": "a1-university-010",
+    "level": "A1",
+    "topic": "university",
+    "topic_label": "University & Study",
+    "text_en": "I have four classes today.",
+    "text_ar": "لدي أربع محاضرات اليوم.",
+    "english": "I have four classes today.",
+    "arabic": "لدي أربع محاضرات اليوم.",
+    "tags": [
+      "schedule",
+      "class"
+    ],
+    "words": [
+      {
+        "word": "four",
+        "translation": "أربعة",
+        "partOfSpeech": "number",
+        "pronunciation": "/fɔːr/"
+      },
+      {
+        "word": "today",
+        "translation": "اليوم",
+        "partOfSpeech": "adverb",
+        "pronunciation": "/təˈdeɪ/"
+      }
+    ]
+  },
+  {
+    "id": "a1-university-011",
+    "level": "A1",
+    "topic": "university",
+    "topic_label": "University & Study",
+    "text_en": "The exam is next week.",
+    "text_ar": "الامتحان في الأسبوع القادم.",
+    "english": "The exam is next week.",
+    "arabic": "الامتحان في الأسبوع القادم.",
+    "tags": [
+      "exam",
+      "study"
+    ],
+    "words": [
+      {
+        "word": "exam",
+        "translation": "امتحان",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ɪɡˈzæm/"
+      },
+      {
+        "word": "week",
+        "translation": "أسبوع",
+        "partOfSpeech": "noun",
+        "pronunciation": "/wiːk/"
+      }
+    ]
+  },
+  {
+    "id": "a1-university-012",
+    "level": "A1",
+    "topic": "university",
+    "topic_label": "University & Study",
+    "text_en": "I learn new words every day.",
+    "text_ar": "أتعلم كلمات جديدة كل يوم.",
+    "english": "I learn new words every day.",
+    "arabic": "أتعلم كلمات جديدة كل يوم.",
+    "tags": [
+      "learning",
+      "vocabulary"
+    ],
+    "words": [
+      {
+        "word": "learn",
+        "translation": "يتعلم",
+        "partOfSpeech": "verb",
+        "pronunciation": "/lɜːrn/"
+      },
+      {
+        "word": "new",
+        "translation": "جديد",
+        "partOfSpeech": "adjective",
+        "pronunciation": "/njuː/"
+      },
+      {
+        "word": "words",
+        "translation": "كلمات",
+        "partOfSpeech": "noun",
+        "pronunciation": "/wɜːrdz/"
+      }
+    ]
+  },
+  {
+    "id": "a1-work-001",
+    "level": "A1",
+    "topic": "work",
+    "topic_label": "Work & Career",
+    "text_en": "He works in an office.",
+    "text_ar": "يعمل في مكتب.",
+    "english": "He works in an office.",
+    "arabic": "يعمل في مكتب.",
+    "tags": [
+      "job",
+      "office"
+    ],
+    "words": [
+      {
+        "word": "works",
+        "translation": "يعمل",
+        "partOfSpeech": "verb",
+        "pronunciation": "/wɜːrks/"
+      },
+      {
+        "word": "office",
+        "translation": "مكتب",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈɔː.fɪs/"
+      }
+    ]
+  },
+  {
+    "id": "a1-work-002",
+    "level": "A1",
+    "topic": "work",
+    "topic_label": "Work & Career",
+    "text_en": "I start my job at nine o'clock.",
+    "text_ar": "أبدأ عملي في التاسعة.",
+    "english": "I start my job at nine o'clock.",
+    "arabic": "أبدأ عملي في التاسعة.",
+    "tags": [
+      "job",
+      "schedule"
+    ],
+    "words": [
+      {
+        "word": "job",
+        "translation": "وظيفة",
+        "partOfSpeech": "noun",
+        "pronunciation": "/dʒɒb/"
+      },
+      {
+        "word": "nine",
+        "translation": "تسعة",
+        "partOfSpeech": "number",
+        "pronunciation": "/naɪn/"
+      }
+    ]
+  },
+  {
+    "id": "a1-work-003",
+    "level": "A1",
+    "topic": "work",
+    "topic_label": "Work & Career",
+    "text_en": "Our team meets every Monday.",
+    "text_ar": "فريقنا يجتمع كل يوم اثنين.",
+    "english": "Our team meets every Monday.",
+    "arabic": "فريقنا يجتمع كل يوم اثنين.",
+    "tags": [
+      "team",
+      "meetings"
+    ],
+    "words": [
+      {
+        "word": "team",
+        "translation": "فريق",
+        "partOfSpeech": "noun",
+        "pronunciation": "/tiːm/"
+      },
+      {
+        "word": "meets",
+        "translation": "يجتمع",
+        "partOfSpeech": "verb",
+        "pronunciation": "/miːts/"
+      },
+      {
+        "word": "Monday",
+        "translation": "الاثنين",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈmʌn.deɪ/"
+      }
+    ]
+  },
+  {
+    "id": "a1-work-004",
     "level": "A1",
     "topic": "work",
     "topic_label": "Work & Career",
     "text_en": "She sends important emails to clients.",
-    "text_ar": "هي ترسل رسائل بريد إلكتروني هامة للعملاء.",
+    "text_ar": "ترسل رسائل بريد هامة للعملاء.",
     "english": "She sends important emails to clients.",
-    "arabic": "هي ترسل رسائل بريد إلكتروني هامة للعملاء.",
-    "words": [
-      { "word": "sends", "translation": "ترسل", "partOfSpeech": "verb", "pronunciation": "/sɛndz/" },
-      { "word": "important", "translation": "هام / ضروري", "partOfSpeech": "adjective", "pronunciation": "/ɪmˈpɔːr.tənt/" },
-      { "word": "emails", "translation": "رسائل بريد إلكتروني", "partOfSpeech": "noun", "pronunciation": "/ˈiː.meɪlz/" },
-      { "word": "clients", "translation": "عملاء", "partOfSpeech": "noun", "pronunciation": "/ˈklaɪ.ənts/" }
+    "arabic": "ترسل رسائل بريد هامة للعملاء.",
+    "tags": [
+      "communication",
+      "job"
     ],
-    "tags": ["work", "communication"]
+    "words": [
+      {
+        "word": "sends",
+        "translation": "ترسل",
+        "partOfSpeech": "verb",
+        "pronunciation": "/sɛndz/"
+      },
+      {
+        "word": "important",
+        "translation": "هام",
+        "partOfSpeech": "adjective",
+        "pronunciation": "/ɪmˈpɔːr.tənt/"
+      },
+      {
+        "word": "emails",
+        "translation": "رسائل بريد",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈiː.meɪlz/"
+      },
+      {
+        "word": "clients",
+        "translation": "عملاء",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈklaɪ.ənts/"
+      }
+    ]
+  },
+  {
+    "id": "a1-work-005",
+    "level": "A1",
+    "topic": "work",
+    "topic_label": "Work & Career",
+    "text_en": "I have a meeting at three.",
+    "text_ar": "لدي اجتماع في الثالثة.",
+    "english": "I have a meeting at three.",
+    "arabic": "لدي اجتماع في الثالثة.",
+    "tags": [
+      "meetings",
+      "schedule"
+    ],
+    "words": [
+      {
+        "word": "meeting",
+        "translation": "اجتماع",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈmiː.tɪŋ/"
+      },
+      {
+        "word": "three",
+        "translation": "ثلاثة",
+        "partOfSpeech": "number",
+        "pronunciation": "/θriː/"
+      }
+    ]
+  },
+  {
+    "id": "a1-work-006",
+    "level": "A1",
+    "topic": "work",
+    "topic_label": "Work & Career",
+    "text_en": "My boss is very kind.",
+    "text_ar": "مديري لطيف جدًا.",
+    "english": "My boss is very kind.",
+    "arabic": "مديري لطيف جدًا.",
+    "tags": [
+      "boss",
+      "work"
+    ],
+    "words": [
+      {
+        "word": "boss",
+        "translation": "مدير",
+        "partOfSpeech": "noun",
+        "pronunciation": "/bɒs/"
+      },
+      {
+        "word": "kind",
+        "translation": "لطيف",
+        "partOfSpeech": "adjective",
+        "pronunciation": "/kaɪnd/"
+      }
+    ]
+  },
+  {
+    "id": "a1-work-007",
+    "level": "A1",
+    "topic": "work",
+    "topic_label": "Work & Career",
+    "text_en": "We finish work at five.",
+    "text_ar": "ننهي العمل في الخامسة.",
+    "english": "We finish work at five.",
+    "arabic": "ننهي العمل في الخامسة.",
+    "tags": [
+      "schedule",
+      "work"
+    ],
+    "words": [
+      {
+        "word": "finish",
+        "translation": "ينهي",
+        "partOfSpeech": "verb",
+        "pronunciation": "/ˈfɪn.ɪʃ/"
+      },
+      {
+        "word": "five",
+        "translation": "خمسة",
+        "partOfSpeech": "number",
+        "pronunciation": "/faɪv/"
+      }
+    ]
+  },
+  {
+    "id": "a1-work-008",
+    "level": "A1",
+    "topic": "work",
+    "topic_label": "Work & Career",
+    "text_en": "She answers the phone all day.",
+    "text_ar": "ترد على الهاتف طوال اليوم.",
+    "english": "She answers the phone all day.",
+    "arabic": "ترد على الهاتف طوال اليوم.",
+    "tags": [
+      "work",
+      "phone"
+    ],
+    "words": [
+      {
+        "word": "answers",
+        "translation": "ترد",
+        "partOfSpeech": "verb",
+        "pronunciation": "/ˈæn.sərz/"
+      },
+      {
+        "word": "all",
+        "translation": "كل / طوال",
+        "partOfSpeech": "determiner",
+        "pronunciation": "/ɔːl/"
+      }
+    ]
+  },
+  {
+    "id": "a1-work-009",
+    "level": "A1",
+    "topic": "work",
+    "topic_label": "Work & Career",
+    "text_en": "I work from home on Fridays.",
+    "text_ar": "أعمل من المنزل أيام الجمعة.",
+    "english": "I work from home on Fridays.",
+    "arabic": "أعمل من المنزل أيام الجمعة.",
+    "tags": [
+      "remote",
+      "work"
+    ],
+    "words": [
+      {
+        "word": "from",
+        "translation": "من",
+        "partOfSpeech": "preposition",
+        "pronunciation": "/frɒm/"
+      }
+    ]
+  },
+  {
+    "id": "a1-work-010",
+    "level": "A1",
+    "topic": "work",
+    "topic_label": "Work & Career",
+    "text_en": "My job starts early in the morning.",
+    "text_ar": "عملي يبدأ مبكرًا في الصباح.",
+    "english": "My job starts early in the morning.",
+    "arabic": "عملي يبدأ مبكرًا في الصباح.",
+    "tags": [
+      "job",
+      "schedule"
+    ],
+    "words": [
+      {
+        "word": "early",
+        "translation": "مبكرًا",
+        "partOfSpeech": "adverb",
+        "pronunciation": "/ˈɜːr.li/"
+      }
+    ]
+  },
+  {
+    "id": "a1-work-011",
+    "level": "A1",
+    "topic": "work",
+    "topic_label": "Work & Career",
+    "text_en": "We use computers at work.",
+    "text_ar": "نستخدم الحواسيب في العمل.",
+    "english": "We use computers at work.",
+    "arabic": "نستخدم الحواسيب في العمل.",
+    "tags": [
+      "technology",
+      "work"
+    ],
+    "words": [
+      {
+        "word": "use",
+        "translation": "يستخدم",
+        "partOfSpeech": "verb",
+        "pronunciation": "/juːz/"
+      },
+      {
+        "word": "computers",
+        "translation": "حواسيب",
+        "partOfSpeech": "noun",
+        "pronunciation": "/kəmˈpjuː.tərz/"
+      }
+    ]
+  },
+  {
+    "id": "a1-work-012",
+    "level": "A1",
+    "topic": "work",
+    "topic_label": "Work & Career",
+    "text_en": "The office is near my house.",
+    "text_ar": "المكتب قريب من منزلي.",
+    "english": "The office is near my house.",
+    "arabic": "المكتب قريب من منزلي.",
+    "tags": [
+      "office",
+      "places"
+    ],
+    "words": [
+      {
+        "word": "near",
+        "translation": "قريب من",
+        "partOfSpeech": "preposition",
+        "pronunciation": "/nɪər/"
+      }
+    ]
+  },
+  {
+    "id": "a1-shopping-001",
+    "level": "A1",
+    "topic": "shopping",
+    "topic_label": "Shopping & Numbers",
+    "text_en": "How much does this shirt cost?",
+    "text_ar": "كم ثمن هذا القميص؟",
+    "english": "How much does this shirt cost?",
+    "arabic": "كم ثمن هذا القميص؟",
+    "tags": [
+      "clothes",
+      "price"
+    ],
+    "words": [
+      {
+        "word": "much",
+        "translation": "كم (للثمن)",
+        "partOfSpeech": "adverb",
+        "pronunciation": "/mʌtʃ/"
+      },
+      {
+        "word": "shirt",
+        "translation": "قميص",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ʃɜːrt/"
+      },
+      {
+        "word": "cost",
+        "translation": "يكلف",
+        "partOfSpeech": "verb",
+        "pronunciation": "/kɒst/"
+      }
+    ]
+  },
+  {
+    "id": "a1-shopping-002",
+    "level": "A1",
+    "topic": "shopping",
+    "topic_label": "Shopping & Numbers",
+    "text_en": "I want to pay with cash.",
+    "text_ar": "أريد أن أدفع نقدًا.",
+    "english": "I want to pay with cash.",
+    "arabic": "أريد أن أدفع نقدًا.",
+    "tags": [
+      "payment",
+      "shopping"
+    ],
+    "words": [
+      {
+        "word": "pay",
+        "translation": "يدفع",
+        "partOfSpeech": "verb",
+        "pronunciation": "/peɪ/"
+      },
+      {
+        "word": "cash",
+        "translation": "نقد",
+        "partOfSpeech": "noun",
+        "pronunciation": "/kæʃ/"
+      }
+    ]
+  },
+  {
+    "id": "a1-shopping-003",
+    "level": "A1",
+    "topic": "shopping",
+    "topic_label": "Shopping & Numbers",
+    "text_en": "The supermarket closes at ten tonight.",
+    "text_ar": "السوبرماركت يغلق في العاشرة الليلة.",
+    "english": "The supermarket closes at ten tonight.",
+    "arabic": "السوبرماركت يغلق في العاشرة الليلة.",
+    "tags": [
+      "store",
+      "time"
+    ],
+    "words": [
+      {
+        "word": "supermarket",
+        "translation": "سوبرماركت",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈsuː.pər.mɑːr.kɪt/"
+      },
+      {
+        "word": "closes",
+        "translation": "يغلق",
+        "partOfSpeech": "verb",
+        "pronunciation": "/ˈkloʊ.zɪz/"
+      }
+    ]
+  },
+  {
+    "id": "a1-shopping-004",
+    "level": "A1",
+    "topic": "shopping",
+    "topic_label": "Shopping & Numbers",
+    "text_en": "This bag is too expensive.",
+    "text_ar": "هذه الحقيبة غالية جدًا.",
+    "english": "This bag is too expensive.",
+    "arabic": "هذه الحقيبة غالية جدًا.",
+    "tags": [
+      "clothes",
+      "price"
+    ],
+    "words": [
+      {
+        "word": "bag",
+        "translation": "حقيبة",
+        "partOfSpeech": "noun",
+        "pronunciation": "/bæɡ/"
+      },
+      {
+        "word": "expensive",
+        "translation": "غالية",
+        "partOfSpeech": "adjective",
+        "pronunciation": "/ɪkˈspɛn.sɪv/"
+      }
+    ]
+  },
+  {
+    "id": "a1-shopping-005",
+    "level": "A1",
+    "topic": "shopping",
+    "topic_label": "Shopping & Numbers",
+    "text_en": "I need a new phone charger.",
+    "text_ar": "أحتاج إلى شاحن هاتف جديد.",
+    "english": "I need a new phone charger.",
+    "arabic": "أحتاج إلى شاحن هاتف جديد.",
+    "tags": [
+      "electronics",
+      "shopping"
+    ],
+    "words": [
+      {
+        "word": "charger",
+        "translation": "شاحن",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈtʃɑːr.dʒər/"
+      }
+    ]
+  },
+  {
+    "id": "a1-shopping-006",
+    "level": "A1",
+    "topic": "shopping",
+    "topic_label": "Shopping & Numbers",
+    "text_en": "The shoes are on sale today.",
+    "text_ar": "الأحذية في التخفيضات اليوم.",
+    "english": "The shoes are on sale today.",
+    "arabic": "الأحذية في التخفيضات اليوم.",
+    "tags": [
+      "clothes",
+      "sale"
+    ],
+    "words": [
+      {
+        "word": "shoes",
+        "translation": "أحذية",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ʃuːz/"
+      },
+      {
+        "word": "sale",
+        "translation": "تخفيضات",
+        "partOfSpeech": "noun",
+        "pronunciation": "/seɪl/"
+      }
+    ]
+  },
+  {
+    "id": "a1-shopping-007",
+    "level": "A1",
+    "topic": "shopping",
+    "topic_label": "Shopping & Numbers",
+    "text_en": "I take my wallet with me.",
+    "text_ar": "آخذ محفظتي معي.",
+    "english": "I take my wallet with me.",
+    "arabic": "آخذ محفظتي معي.",
+    "tags": [
+      "shopping",
+      "money"
+    ],
+    "words": [
+      {
+        "word": "wallet",
+        "translation": "محفظة نقود",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈwɒl.ɪt/"
+      }
+    ]
+  },
+  {
+    "id": "a1-shopping-008",
+    "level": "A1",
+    "topic": "shopping",
+    "topic_label": "Shopping & Numbers",
+    "text_en": "The juice is in the fridge.",
+    "text_ar": "العصير في الثلاجة.",
+    "english": "The juice is in the fridge.",
+    "arabic": "العصير في الثلاجة.",
+    "tags": [
+      "food",
+      "shopping"
+    ],
+    "words": [
+      {
+        "word": "juice",
+        "translation": "عصير",
+        "partOfSpeech": "noun",
+        "pronunciation": "/dʒuːs/"
+      },
+      {
+        "word": "fridge",
+        "translation": "ثلاجة",
+        "partOfSpeech": "noun",
+        "pronunciation": "/frɪdʒ/"
+      }
+    ]
+  },
+  {
+    "id": "a1-health-001",
+    "level": "A1",
+    "topic": "health",
+    "topic_label": "Health & Body",
+    "text_en": "I am tired today.",
+    "text_ar": "أنا متعب اليوم.",
+    "english": "I am tired today.",
+    "arabic": "أنا متعب اليوم.",
+    "tags": [
+      "feelings",
+      "body"
+    ],
+    "words": [
+      {
+        "word": "tired",
+        "translation": "متعب",
+        "partOfSpeech": "adjective",
+        "pronunciation": "/ˈtaɪərd/"
+      }
+    ]
+  },
+  {
+    "id": "a1-health-002",
+    "level": "A1",
+    "topic": "health",
+    "topic_label": "Health & Body",
+    "text_en": "I have a headache this morning.",
+    "text_ar": "أعاني من صداع هذا الصباح.",
+    "english": "I have a headache this morning.",
+    "arabic": "أعاني من صداع هذا الصباح.",
+    "tags": [
+      "body",
+      "health"
+    ],
+    "words": [
+      {
+        "word": "headache",
+        "translation": "صداع",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈhɛd.eɪk/"
+      }
+    ]
+  },
+  {
+    "id": "a1-health-003",
+    "level": "A1",
+    "topic": "health",
+    "topic_label": "Health & Body",
+    "text_en": "The doctor is very busy today.",
+    "text_ar": "الطبيب مشغول جدًا اليوم.",
+    "english": "The doctor is very busy today.",
+    "arabic": "الطبيب مشغول جدًا اليوم.",
+    "tags": [
+      "doctor",
+      "health"
+    ],
+    "words": [
+      {
+        "word": "doctor",
+        "translation": "طبيب",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈdɒk.tər/"
+      }
+    ]
+  },
+  {
+    "id": "a1-health-004",
+    "level": "A1",
+    "topic": "health",
+    "topic_label": "Health & Body",
+    "text_en": "I need to rest my eyes.",
+    "text_ar": "أحتاج إلى راحة لعيني.",
+    "english": "I need to rest my eyes.",
+    "arabic": "أحتاج إلى راحة لعيني.",
+    "tags": [
+      "body",
+      "rest"
+    ],
+    "words": [
+      {
+        "word": "rest",
+        "translation": "راحة / يستريح",
+        "partOfSpeech": "verb",
+        "pronunciation": "/rɛst/"
+      },
+      {
+        "word": "eyes",
+        "translation": "عيون",
+        "partOfSpeech": "noun",
+        "pronunciation": "/aɪz/"
+      }
+    ]
+  },
+  {
+    "id": "a1-health-005",
+    "level": "A1",
+    "topic": "health",
+    "topic_label": "Health & Body",
+    "text_en": "The medicine is on the table.",
+    "text_ar": "الدواء على الطاولة.",
+    "english": "The medicine is on the table.",
+    "arabic": "الدواء على الطاولة.",
+    "tags": [
+      "medicine",
+      "health"
+    ],
+    "words": [
+      {
+        "word": "medicine",
+        "translation": "دواء",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈmɛd.sɪn/"
+      },
+      {
+        "word": "table",
+        "translation": "طاولة",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈteɪ.bəl/"
+      }
+    ]
+  },
+  {
+    "id": "a1-health-006",
+    "level": "A1",
+    "topic": "health",
+    "topic_label": "Health & Body",
+    "text_en": "I walk thirty minutes every day.",
+    "text_ar": "أمشي ثلاثين دقيقة كل يوم.",
+    "english": "I walk thirty minutes every day.",
+    "arabic": "أمشي ثلاثين دقيقة كل يوم.",
+    "tags": [
+      "exercise",
+      "health"
+    ],
+    "words": [
+      {
+        "word": "walk",
+        "translation": "يمشي",
+        "partOfSpeech": "verb",
+        "pronunciation": "/wɔːk/"
+      },
+      {
+        "word": "thirty",
+        "translation": "ثلاثون",
+        "partOfSpeech": "number",
+        "pronunciation": "/ˈθɜːr.ti/"
+      }
+    ]
+  },
+  {
+    "id": "a1-health-007",
+    "level": "A1",
+    "topic": "health",
+    "topic_label": "Health & Body",
+    "text_en": "The water is good for your health.",
+    "text_ar": "الماء مفيد لصحتك.",
+    "english": "The water is good for your health.",
+    "arabic": "الماء مفيد لصحتك.",
+    "tags": [
+      "health",
+      "advice"
+    ],
+    "words": [
+      {
+        "word": "health",
+        "translation": "صحة",
+        "partOfSpeech": "noun",
+        "pronunciation": "/hɛlθ/"
+      }
+    ]
+  },
+  {
+    "id": "a1-health-008",
+    "level": "A1",
+    "topic": "health",
+    "topic_label": "Health & Body",
+    "text_en": "I feel better after a good sleep.",
+    "text_ar": "أشعر بتحسن بعد نوم جيد.",
+    "english": "I feel better after a good sleep.",
+    "arabic": "أشعر بتحسن بعد نوم جيد.",
+    "tags": [
+      "feelings",
+      "sleep"
+    ],
+    "words": [
+      {
+        "word": "feel",
+        "translation": "يشعر",
+        "partOfSpeech": "verb",
+        "pronunciation": "/fiːl/"
+      },
+      {
+        "word": "better",
+        "translation": "أفضل / بتحسن",
+        "partOfSpeech": "adjective",
+        "pronunciation": "/ˈbɛt.ər/"
+      }
+    ]
+  },
+  {
+    "id": "a1-health-009",
+    "level": "A1",
+    "topic": "health",
+    "topic_label": "Health & Body",
+    "text_en": "She has a fever today.",
+    "text_ar": "لديها حمى اليوم.",
+    "english": "She has a fever today.",
+    "arabic": "لديها حمى اليوم.",
+    "tags": [
+      "body",
+      "sick"
+    ],
+    "words": [
+      {
+        "word": "fever",
+        "translation": "حمى / حرارة",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈfiː.vər/"
+      }
+    ]
+  },
+  {
+    "id": "a1-health-010",
+    "level": "A1",
+    "topic": "health",
+    "topic_label": "Health & Body",
+    "text_en": "I eat healthy food now.",
+    "text_ar": "آكل طعامًا صحيًا الآن.",
+    "english": "I eat healthy food now.",
+    "arabic": "آكل طعامًا صحيًا الآن.",
+    "tags": [
+      "food",
+      "health"
+    ],
+    "words": [
+      {
+        "word": "healthy",
+        "translation": "صحي",
+        "partOfSpeech": "adjective",
+        "pronunciation": "/ˈhɛl.θi/"
+      }
+    ]
+  },
+  {
+    "id": "a1-weather-001",
+    "level": "A1",
+    "topic": "weather",
+    "topic_label": "Weather & Seasons",
+    "text_en": "It is sunny today.",
+    "text_ar": "الطقس مشمس اليوم.",
+    "english": "It is sunny today.",
+    "arabic": "الطقس مشمس اليوم.",
+    "tags": [
+      "weather",
+      "sun"
+    ],
+    "words": [
+      {
+        "word": "sunny",
+        "translation": "مشمس",
+        "partOfSpeech": "adjective",
+        "pronunciation": "/ˈsʌn.i/"
+      }
+    ]
+  },
+  {
+    "id": "a1-weather-002",
+    "level": "A1",
+    "topic": "weather",
+    "topic_label": "Weather & Seasons",
+    "text_en": "It is raining outside now.",
+    "text_ar": "تمطر في الخارج الآن.",
+    "english": "It is raining outside now.",
+    "arabic": "تمطر في الخارج الآن.",
+    "tags": [
+      "weather",
+      "rain"
+    ],
+    "words": [
+      {
+        "word": "raining",
+        "translation": "تمطر",
+        "partOfSpeech": "verb",
+        "pronunciation": "/ˈreɪ.nɪŋ/"
+      },
+      {
+        "word": "outside",
+        "translation": "في الخارج",
+        "partOfSpeech": "adverb",
+        "pronunciation": "/aʊtˈsaɪd/"
+      }
+    ]
+  },
+  {
+    "id": "a1-weather-003",
+    "level": "A1",
+    "topic": "weather",
+    "topic_label": "Weather & Seasons",
+    "text_en": "The winter is very cold here.",
+    "text_ar": "الشتاء بارد جدًا هنا.",
+    "english": "The winter is very cold here.",
+    "arabic": "الشتاء بارد جدًا هنا.",
+    "tags": [
+      "seasons",
+      "cold"
+    ],
+    "words": [
+      {
+        "word": "winter",
+        "translation": "شتاء",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈwɪn.tər/"
+      },
+      {
+        "word": "cold",
+        "translation": "بارد",
+        "partOfSpeech": "adjective",
+        "pronunciation": "/koʊld/"
+      }
+    ]
+  },
+  {
+    "id": "a1-weather-004",
+    "level": "A1",
+    "topic": "weather",
+    "topic_label": "Weather & Seasons",
+    "text_en": "The summer is hot and dry.",
+    "text_ar": "الصيف حار وجاف.",
+    "english": "The summer is hot and dry.",
+    "arabic": "الصيف حار وجاف.",
+    "tags": [
+      "seasons",
+      "summer"
+    ],
+    "words": [
+      {
+        "word": "dry",
+        "translation": "جاف",
+        "partOfSpeech": "adjective",
+        "pronunciation": "/draɪ/"
+      }
+    ]
+  },
+  {
+    "id": "a1-weather-005",
+    "level": "A1",
+    "topic": "weather",
+    "topic_label": "Weather & Seasons",
+    "text_en": "There is a strong wind today.",
+    "text_ar": "هناك رياح قوية اليوم.",
+    "english": "There is a strong wind today.",
+    "arabic": "هناك رياح قوية اليوم.",
+    "tags": [
+      "weather",
+      "wind"
+    ],
+    "words": [
+      {
+        "word": "strong",
+        "translation": "قوي",
+        "partOfSpeech": "adjective",
+        "pronunciation": "/strɒŋ/"
+      },
+      {
+        "word": "wind",
+        "translation": "رياح",
+        "partOfSpeech": "noun",
+        "pronunciation": "/wɪnd/"
+      }
+    ]
+  },
+  {
+    "id": "a1-weather-006",
+    "level": "A1",
+    "topic": "weather",
+    "topic_label": "Weather & Seasons",
+    "text_en": "The sky is clear tonight.",
+    "text_ar": "السماء صافية الليلة.",
+    "english": "The sky is clear tonight.",
+    "arabic": "السماء صافية الليلة.",
+    "tags": [
+      "weather",
+      "night"
+    ],
+    "words": [
+      {
+        "word": "sky",
+        "translation": "سماء",
+        "partOfSpeech": "noun",
+        "pronunciation": "/skaɪ/"
+      },
+      {
+        "word": "clear",
+        "translation": "صافية",
+        "partOfSpeech": "adjective",
+        "pronunciation": "/klɪər/"
+      }
+    ]
+  },
+  {
+    "id": "a1-weather-007",
+    "level": "A1",
+    "topic": "weather",
+    "topic_label": "Weather & Seasons",
+    "text_en": "I like the weather in spring.",
+    "text_ar": "أحب الطقس في الربيع.",
+    "english": "I like the weather in spring.",
+    "arabic": "أحب الطقس في الربيع.",
+    "tags": [
+      "seasons",
+      "spring"
+    ],
+    "words": [
+      {
+        "word": "spring",
+        "translation": "الربيع",
+        "partOfSpeech": "noun",
+        "pronunciation": "/sprɪŋ/"
+      }
+    ]
+  },
+  {
+    "id": "a1-weather-008",
+    "level": "A1",
+    "topic": "weather",
+    "topic_label": "Weather & Seasons",
+    "text_en": "It is cloudy this afternoon.",
+    "text_ar": "السماء غائمة بعد ظهر اليوم.",
+    "english": "It is cloudy this afternoon.",
+    "arabic": "السماء غائمة بعد ظهر اليوم.",
+    "tags": [
+      "weather",
+      "clouds"
+    ],
+    "words": [
+      {
+        "word": "cloudy",
+        "translation": "غائم",
+        "partOfSpeech": "adjective",
+        "pronunciation": "/ˈklaʊ.di/"
+      },
+      {
+        "word": "afternoon",
+        "translation": "بعد الظهر",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˌɑːf.tərˈnuːn/"
+      }
+    ]
+  },
+  {
+    "id": "a1-weather-009",
+    "level": "A1",
+    "topic": "weather",
+    "topic_label": "Weather & Seasons",
+    "text_en": "The snow is white and soft.",
+    "text_ar": "الثلج أبيض وناعم.",
+    "english": "The snow is white and soft.",
+    "arabic": "الثلج أبيض وناعم.",
+    "tags": [
+      "weather",
+      "snow"
+    ],
+    "words": [
+      {
+        "word": "snow",
+        "translation": "ثلج",
+        "partOfSpeech": "noun",
+        "pronunciation": "/snoʊ/"
+      },
+      {
+        "word": "white",
+        "translation": "أبيض",
+        "partOfSpeech": "adjective",
+        "pronunciation": "/waɪt/"
+      },
+      {
+        "word": "soft",
+        "translation": "ناعم",
+        "partOfSpeech": "adjective",
+        "pronunciation": "/sɒft/"
+      }
+    ]
+  },
+  {
+    "id": "a1-weather-010",
+    "level": "A1",
+    "topic": "weather",
+    "topic_label": "Weather & Seasons",
+    "text_en": "We take an umbrella when it rains.",
+    "text_ar": "نأخذ مظلة عندما تمطر.",
+    "english": "We take an umbrella when it rains.",
+    "arabic": "نأخذ مظلة عندما تمطر.",
+    "tags": [
+      "weather",
+      "rain"
+    ],
+    "words": [
+      {
+        "word": "umbrella",
+        "translation": "مظلة",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ʌmˈbrɛl.ə/"
+      },
+      {
+        "word": "rains",
+        "translation": "تمطر",
+        "partOfSpeech": "verb",
+        "pronunciation": "/reɪnz/"
+      }
+    ]
+  },
+  {
+    "id": "a1-communication-001",
+    "level": "A1",
+    "topic": "communication",
+    "topic_label": "Communication",
+    "text_en": "Thank you very much.",
+    "text_ar": "شكرًا جزيلًا.",
+    "english": "Thank you very much.",
+    "arabic": "شكرًا جزيلًا.",
+    "tags": [
+      "polite",
+      "greeting"
+    ],
+    "words": [
+      {
+        "word": "Thank",
+        "translation": "يشكر",
+        "partOfSpeech": "verb",
+        "pronunciation": "/θæŋk/"
+      },
+      {
+        "word": "very",
+        "translation": "جدًا",
+        "partOfSpeech": "adverb",
+        "pronunciation": "/ˈvɛr.i/"
+      },
+      {
+        "word": "much",
+        "translation": "كثيرًا",
+        "partOfSpeech": "adverb",
+        "pronunciation": "/mʌtʃ/"
+      }
+    ]
+  },
+  {
+    "id": "a1-communication-002",
+    "level": "A1",
+    "topic": "communication",
+    "topic_label": "Communication",
+    "text_en": "Can you speak more slowly, please?",
+    "text_ar": "هل يمكنك التحدث ببطء أكثر، من فضلك؟",
+    "english": "Can you speak more slowly, please?",
+    "arabic": "هل يمكنك التحدث ببطء أكثر، من فضلك؟",
+    "tags": [
+      "polite",
+      "conversation"
+    ],
+    "words": [
+      {
+        "word": "speak",
+        "translation": "يتحدث",
+        "partOfSpeech": "verb",
+        "pronunciation": "/spiːk/"
+      },
+      {
+        "word": "slowly",
+        "translation": "ببطء",
+        "partOfSpeech": "adverb",
+        "pronunciation": "/ˈsloʊ.li/"
+      }
+    ]
+  },
+  {
+    "id": "a1-communication-003",
+    "level": "A1",
+    "topic": "communication",
+    "topic_label": "Communication",
+    "text_en": "I do not understand your question.",
+    "text_ar": "لا أفهم سؤالك.",
+    "english": "I do not understand your question.",
+    "arabic": "لا أفهم سؤالك.",
+    "tags": [
+      "conversation",
+      "question"
+    ],
+    "words": [
+      {
+        "word": "question",
+        "translation": "سؤال",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈkwɛs.tʃən/"
+      }
+    ]
+  },
+  {
+    "id": "a1-communication-004",
+    "level": "A1",
+    "topic": "communication",
+    "topic_label": "Communication",
+    "text_en": "Please say that again.",
+    "text_ar": "من فضلك قل ذلك مجددًا.",
+    "english": "Please say that again.",
+    "arabic": "من فضلك قل ذلك مجددًا.",
+    "tags": [
+      "polite",
+      "conversation"
+    ],
+    "words": [
+      {
+        "word": "say",
+        "translation": "يقول",
+        "partOfSpeech": "verb",
+        "pronunciation": "/seɪ/"
+      },
+      {
+        "word": "again",
+        "translation": "مجددًا",
+        "partOfSpeech": "adverb",
+        "pronunciation": "/əˈɡɛn/"
+      }
+    ]
+  },
+  {
+    "id": "a1-communication-005",
+    "level": "A1",
+    "topic": "communication",
+    "topic_label": "Communication",
+    "text_en": "I speak English a little.",
+    "text_ar": "أتحدث الإنجليزية قليلًا.",
+    "english": "I speak English a little.",
+    "arabic": "أتحدث الإنجليزية قليلًا.",
+    "tags": [
+      "language",
+      "conversation"
+    ],
+    "words": [
+      {
+        "word": "English",
+        "translation": "الإنجليزية",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈɪŋ.ɡlɪʃ/"
+      },
+      {
+        "word": "little",
+        "translation": "قليل",
+        "partOfSpeech": "adverb",
+        "pronunciation": "/ˈlɪt.əl/"
+      }
+    ]
+  },
+  {
+    "id": "a1-communication-006",
+    "level": "A1",
+    "topic": "communication",
+    "topic_label": "Communication",
+    "text_en": "Nice to meet you.",
+    "text_ar": "سعيد بلقائك.",
+    "english": "Nice to meet you.",
+    "arabic": "سعيد بلقائك.",
+    "tags": [
+      "greeting",
+      "conversation"
+    ],
+    "words": [
+      {
+        "word": "Nice",
+        "translation": "سعيد / لطيف",
+        "partOfSpeech": "adjective",
+        "pronunciation": "/naɪs/"
+      },
+      {
+        "word": "meet",
+        "translation": "يلتقي",
+        "partOfSpeech": "verb",
+        "pronunciation": "/miːt/"
+      }
+    ]
+  },
+  {
+    "id": "a1-communication-007",
+    "level": "A1",
+    "topic": "communication",
+    "topic_label": "Communication",
+    "text_en": "What does this word mean?",
+    "text_ar": "ماذا تعني هذه الكلمة؟",
+    "english": "What does this word mean?",
+    "arabic": "ماذا تعني هذه الكلمة؟",
+    "tags": [
+      "question",
+      "vocabulary"
+    ],
+    "words": [
+      {
+        "word": "mean",
+        "translation": "يعني",
+        "partOfSpeech": "verb",
+        "pronunciation": "/miːn/"
+      }
+    ]
+  },
+  {
+    "id": "a1-communication-008",
+    "level": "A1",
+    "topic": "communication",
+    "topic_label": "Communication",
+    "text_en": "I will call you tomorrow.",
+    "text_ar": "سأتصل بك غدًا.",
+    "english": "I will call you tomorrow.",
+    "arabic": "سأتصل بك غدًا.",
+    "tags": [
+      "contact",
+      "future"
+    ],
+    "words": [
+      {
+        "word": "call",
+        "translation": "يتصل",
+        "partOfSpeech": "verb",
+        "pronunciation": "/kɔːl/"
+      },
+      {
+        "word": "tomorrow",
+        "translation": "غدًا",
+        "partOfSpeech": "adverb",
+        "pronunciation": "/təˈmɒr.oʊ/"
+      }
+    ]
+  },
+  {
+    "id": "a1-communication-009",
+    "level": "A1",
+    "topic": "communication",
+    "topic_label": "Communication",
+    "text_en": "We talk on the phone every evening.",
+    "text_ar": "نتحدث على الهاتف كل مساء.",
+    "english": "We talk on the phone every evening.",
+    "arabic": "نتحدث على الهاتف كل مساء.",
+    "tags": [
+      "conversation",
+      "phone"
+    ],
+    "words": [
+      {
+        "word": "talk",
+        "translation": "يتحدث",
+        "partOfSpeech": "verb",
+        "pronunciation": "/tɔːk/"
+      }
+    ]
+  },
+  {
+    "id": "a1-communication-010",
+    "level": "A1",
+    "topic": "communication",
+    "topic_label": "Communication",
+    "text_en": "How do you spell your name?",
+    "text_ar": "كيف تهجي اسمك؟",
+    "english": "How do you spell your name?",
+    "arabic": "كيف تهجي اسمك؟",
+    "tags": [
+      "conversation",
+      "question"
+    ],
+    "words": [
+      {
+        "word": "spell",
+        "translation": "يهجي",
+        "partOfSpeech": "verb",
+        "pronunciation": "/spɛl/"
+      },
+      {
+        "word": "name",
+        "translation": "اسم",
+        "partOfSpeech": "noun",
+        "pronunciation": "/neɪm/"
+      }
+    ]
+  },
+  {
+    "id": "a1-communication-011",
+    "level": "A1",
+    "topic": "communication",
+    "topic_label": "Communication",
+    "text_en": "I send a message to my friend.",
+    "text_ar": "أرسل رسالة إلى صديقي.",
+    "english": "I send a message to my friend.",
+    "arabic": "أرسل رسالة إلى صديقي.",
+    "tags": [
+      "message",
+      "contact"
+    ],
+    "words": [
+      {
+        "word": "send",
+        "translation": "يرسل",
+        "partOfSpeech": "verb",
+        "pronunciation": "/sɛnd/"
+      },
+      {
+        "word": "message",
+        "translation": "رسالة",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈmɛs.ɪdʒ/"
+      }
+    ]
+  },
+  {
+    "id": "a1-food-013",
+    "level": "A1",
+    "topic": "food",
+    "topic_label": "Food & Drink",
+    "text_en": "I eat vegetables with dinner.",
+    "text_ar": "آكل الخضروات مع العشاء.",
+    "english": "I eat vegetables with dinner.",
+    "arabic": "آكل الخضروات مع العشاء.",
+    "tags": [
+      "food",
+      "meals"
+    ],
+    "words": [
+      {
+        "word": "vegetables",
+        "translation": "خضروات",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈvɛdʒ.tə.bəlz/"
+      }
+    ]
+  },
+  {
+    "id": "a1-food-014",
+    "level": "A1",
+    "topic": "food",
+    "topic_label": "Food & Drink",
+    "text_en": "The egg is boiling in the pot.",
+    "text_ar": "البيضة تغلي في الوعاء.",
+    "english": "The egg is boiling in the pot.",
+    "arabic": "البيضة تغلي في الوعاء.",
+    "tags": [
+      "food",
+      "cooking"
+    ],
+    "words": [
+      {
+        "word": "egg",
+        "translation": "بيضة",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ɛɡ/"
+      },
+      {
+        "word": "boiling",
+        "translation": "يغلي",
+        "partOfSpeech": "verb",
+        "pronunciation": "/ˈbɔɪ.lɪŋ/"
+      },
+      {
+        "word": "pot",
+        "translation": "وعاء / قدر",
+        "partOfSpeech": "noun",
+        "pronunciation": "/pɒt/"
+      }
+    ]
+  },
+  {
+    "id": "a1-food-015",
+    "level": "A1",
+    "topic": "food",
+    "topic_label": "Food & Drink",
+    "text_en": "This apple is sweet.",
+    "text_ar": "هذه التفاحة حلوة.",
+    "english": "This apple is sweet.",
+    "arabic": "هذه التفاحة حلوة.",
+    "tags": [
+      "fruit",
+      "taste"
+    ],
+    "words": [
+      {
+        "word": "apple",
+        "translation": "تفاحة",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈæp.əl/"
+      },
+      {
+        "word": "sweet",
+        "translation": "حلو",
+        "partOfSpeech": "adjective",
+        "pronunciation": "/swiːt/"
+      }
+    ]
+  },
+  {
+    "id": "a1-food-016",
+    "level": "A1",
+    "topic": "food",
+    "topic_label": "Food & Drink",
+    "text_en": "I am hungry and thirsty.",
+    "text_ar": "أنا جائع وعطشان.",
+    "english": "I am hungry and thirsty.",
+    "arabic": "أنا جائع وعطشان.",
+    "tags": [
+      "feelings",
+      "food"
+    ],
+    "words": [
+      {
+        "word": "hungry",
+        "translation": "جائع",
+        "partOfSpeech": "adjective",
+        "pronunciation": "/ˈhʌŋ.ɡri/"
+      },
+      {
+        "word": "thirsty",
+        "translation": "عطشان",
+        "partOfSpeech": "adjective",
+        "pronunciation": "/ˈθɜːr.sti/"
+      }
+    ]
+  },
+  {
+    "id": "a1-food-017",
+    "level": "A1",
+    "topic": "food",
+    "topic_label": "Food & Drink",
+    "text_en": "The cake tastes delicious.",
+    "text_ar": "طعم الكعكة لذيذ.",
+    "english": "The cake tastes delicious.",
+    "arabic": "طعم الكعكة لذيذ.",
+    "tags": [
+      "food",
+      "taste"
+    ],
+    "words": [
+      {
+        "word": "cake",
+        "translation": "كعكة",
+        "partOfSpeech": "noun",
+        "pronunciation": "/keɪk/"
+      },
+      {
+        "word": "tastes",
+        "translation": "طعمه",
+        "partOfSpeech": "verb",
+        "pronunciation": "/teɪsts/"
+      },
+      {
+        "word": "delicious",
+        "translation": "لذيذ",
+        "partOfSpeech": "adjective",
+        "pronunciation": "/dɪˈlɪʃ.əs/"
+      }
+    ]
+  },
+  {
+    "id": "a1-family-014",
+    "level": "A1",
+    "topic": "family",
+    "topic_label": "Family & Friends",
+    "text_en": "My brother plays football on Friday.",
+    "text_ar": "أخي يلعب كرة القدم يوم الجمعة.",
+    "english": "My brother plays football on Friday.",
+    "arabic": "أخي يلعب كرة القدم يوم الجمعة.",
+    "tags": [
+      "family",
+      "sport"
+    ],
+    "words": [
+      {
+        "word": "brother",
+        "translation": "أخ",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈbrʌð.ər/"
+      },
+      {
+        "word": "plays",
+        "translation": "يلعب",
+        "partOfSpeech": "verb",
+        "pronunciation": "/pleɪz/"
+      },
+      {
+        "word": "football",
+        "translation": "كرة قدم",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈfʊt.bɔːl/"
+      }
+    ]
+  },
+  {
+    "id": "a1-family-015",
+    "level": "A1",
+    "topic": "family",
+    "topic_label": "Family & Friends",
+    "text_en": "I spend time with my family at home.",
+    "text_ar": "أقضي الوقت مع عائلتي في المنزل.",
+    "english": "I spend time with my family at home.",
+    "arabic": "أقضي الوقت مع عائلتي في المنزل.",
+    "tags": [
+      "family",
+      "time"
+    ],
+    "words": [
+      {
+        "word": "spend",
+        "translation": "يقضي",
+        "partOfSpeech": "verb",
+        "pronunciation": "/spɛnd/"
+      },
+      {
+        "word": "time",
+        "translation": "وقت",
+        "partOfSpeech": "noun",
+        "pronunciation": "/taɪm/"
+      }
+    ]
+  },
+  {
+    "id": "a1-family-016",
+    "level": "A1",
+    "topic": "family",
+    "topic_label": "Family & Friends",
+    "text_en": "My cousins are very kind to me.",
+    "text_ar": "أبناء عمي لطفاء جدًا معي.",
+    "english": "My cousins are very kind to me.",
+    "arabic": "أبناء عمي لطفاء جدًا معي.",
+    "tags": [
+      "family",
+      "friends"
+    ],
+    "words": [
+      {
+        "word": "kind",
+        "translation": "لطيف",
+        "partOfSpeech": "adjective",
+        "pronunciation": "/kaɪnd/"
+      }
+    ]
+  },
+  {
+    "id": "a1-travel-011",
+    "level": "A1",
+    "topic": "travel",
+    "topic_label": "Travel & Places",
+    "text_en": "The map is on the wall.",
+    "text_ar": "الخريطة على الجدار.",
+    "english": "The map is on the wall.",
+    "arabic": "الخريطة على الجدار.",
+    "tags": [
+      "travel",
+      "directions"
+    ],
+    "words": [
+      {
+        "word": "map",
+        "translation": "خريطة",
+        "partOfSpeech": "noun",
+        "pronunciation": "/mæp/"
+      },
+      {
+        "word": "wall",
+        "translation": "جدار",
+        "partOfSpeech": "noun",
+        "pronunciation": "/wɔːl/"
+      }
+    ]
+  },
+  {
+    "id": "a1-travel-012",
+    "level": "A1",
+    "topic": "travel",
+    "topic_label": "Travel & Places",
+    "text_en": "We arrive at the station at noon.",
+    "text_ar": "نصل إلى المحطة عند الظهيرة.",
+    "english": "We arrive at the station at noon.",
+    "arabic": "نصل إلى المحطة عند الظهيرة.",
+    "tags": [
+      "travel",
+      "transport"
+    ],
+    "words": [
+      {
+        "word": "arrive",
+        "translation": "يصل",
+        "partOfSpeech": "verb",
+        "pronunciation": "/əˈraɪv/"
+      }
+    ]
+  },
+  {
+    "id": "a1-travel-013",
+    "level": "A1",
+    "topic": "travel",
+    "topic_label": "Travel & Places",
+    "text_en": "The taxi is waiting outside.",
+    "text_ar": "سيارة الأجرة تنتظر في الخارج.",
+    "english": "The taxi is waiting outside.",
+    "arabic": "سيارة الأجرة تنتظر في الخارج.",
+    "tags": [
+      "transport",
+      "city"
+    ],
+    "words": [
+      {
+        "word": "taxi",
+        "translation": "سيارة أجرة",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈtæk.si/"
+      },
+      {
+        "word": "waiting",
+        "translation": "تنتظر",
+        "partOfSpeech": "verb",
+        "pronunciation": "/ˈweɪ.tɪŋ/"
+      }
+    ]
+  },
+  {
+    "id": "a1-travel-014",
+    "level": "A1",
+    "topic": "travel",
+    "topic_label": "Travel & Places",
+    "text_en": "I go to the park with my dog.",
+    "text_ar": "أذهب إلى الحديقة مع كلبي.",
+    "english": "I go to the park with my dog.",
+    "arabic": "أذهب إلى الحديقة مع كلبي.",
+    "tags": [
+      "places",
+      "outdoors"
+    ],
+    "words": [
+      {
+        "word": "park",
+        "translation": "حديقة عامة",
+        "partOfSpeech": "noun",
+        "pronunciation": "/pɑːrk/"
+      },
+      {
+        "word": "dog",
+        "translation": "كلب",
+        "partOfSpeech": "noun",
+        "pronunciation": "/dɒɡ/"
+      }
+    ]
+  },
+  {
+    "id": "a1-travel-015",
+    "level": "A1",
+    "topic": "travel",
+    "topic_label": "Travel & Places",
+    "text_en": "The train leaves at six.",
+    "text_ar": "القطار يغادر في السادسة.",
+    "english": "The train leaves at six.",
+    "arabic": "القطار يغادر في السادسة.",
+    "tags": [
+      "transport",
+      "schedule"
+    ],
+    "words": [
+      {
+        "word": "leaves",
+        "translation": "يغادر",
+        "partOfSpeech": "verb",
+        "pronunciation": "/liːvz/"
+      },
+      {
+        "word": "six",
+        "translation": "ستة",
+        "partOfSpeech": "number",
+        "pronunciation": "/sɪks/"
+      }
+    ]
+  },
+  {
+    "id": "a1-travel-016",
+    "level": "A1",
+    "topic": "travel",
+    "topic_label": "Travel & Places",
+    "text_en": "The street is very crowded today.",
+    "text_ar": "الشارع مزدحم جدًا اليوم.",
+    "english": "The street is very crowded today.",
+    "arabic": "الشارع مزدحم جدًا اليوم.",
+    "tags": [
+      "city",
+      "places"
+    ],
+    "words": [
+      {
+        "word": "street",
+        "translation": "شارع",
+        "partOfSpeech": "noun",
+        "pronunciation": "/striːt/"
+      },
+      {
+        "word": "crowded",
+        "translation": "مزدحم",
+        "partOfSpeech": "adjective",
+        "pronunciation": "/ˈkraʊ.dɪd/"
+      }
+    ]
+  },
+  {
+    "id": "a1-university-013",
+    "level": "A1",
+    "topic": "university",
+    "topic_label": "University & Study",
+    "text_en": "I like my English class.",
+    "text_ar": "أحب فصل اللغة الإنجليزية.",
+    "english": "I like my English class.",
+    "arabic": "أحب فصل اللغة الإنجليزية.",
+    "tags": [
+      "class",
+      "subject"
+    ],
+    "words": [
+      {
+        "word": "English",
+        "translation": "الإنجليزية",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈɪŋ.ɡlɪʃ/"
+      },
+      {
+        "word": "class",
+        "translation": "فصل",
+        "partOfSpeech": "noun",
+        "pronunciation": "/klɑːs/"
+      }
+    ]
+  },
+  {
+    "id": "a1-university-014",
+    "level": "A1",
+    "topic": "university",
+    "topic_label": "University & Study",
+    "text_en": "We have a short break at noon.",
+    "text_ar": "لدينا استراحة قصيرة عند الظهيرة.",
+    "english": "We have a short break at noon.",
+    "arabic": "لدينا استراحة قصيرة عند الظهيرة.",
+    "tags": [
+      "school",
+      "schedule"
+    ],
+    "words": [
+      {
+        "word": "short",
+        "translation": "قصير",
+        "partOfSpeech": "adjective",
+        "pronunciation": "/ʃɔːrt/"
+      },
+      {
+        "word": "break",
+        "translation": "استراحة",
+        "partOfSpeech": "noun",
+        "pronunciation": "/breɪk/"
+      }
+    ]
+  },
+  {
+    "id": "a1-university-015",
+    "level": "A1",
+    "topic": "university",
+    "topic_label": "University & Study",
+    "text_en": "The homework is easy today.",
+    "text_ar": "الواجب سهل اليوم.",
+    "english": "The homework is easy today.",
+    "arabic": "الواجب سهل اليوم.",
+    "tags": [
+      "homework",
+      "study"
+    ],
+    "words": [
+      {
+        "word": "easy",
+        "translation": "سهل",
+        "partOfSpeech": "adjective",
+        "pronunciation": "/ˈiː.zi/"
+      }
+    ]
+  },
+  {
+    "id": "a1-university-016",
+    "level": "A1",
+    "topic": "university",
+    "topic_label": "University & Study",
+    "text_en": "I need a pen and a notebook.",
+    "text_ar": "أحتاج إلى قلم ودفتر.",
+    "english": "I need a pen and a notebook.",
+    "arabic": "أحتاج إلى قلم ودفتر.",
+    "tags": [
+      "school",
+      "supplies"
+    ],
+    "words": [
+      {
+        "word": "pen",
+        "translation": "قلم",
+        "partOfSpeech": "noun",
+        "pronunciation": "/pɛn/"
+      },
+      {
+        "word": "notebook",
+        "translation": "دفتر",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈnoʊt.bʊk/"
+      }
+    ]
+  },
+  {
+    "id": "a1-work-013",
+    "level": "A1",
+    "topic": "work",
+    "topic_label": "Work & Career",
+    "text_en": "I answer emails every morning.",
+    "text_ar": "أرد على رسائل البريد كل صباح.",
+    "english": "I answer emails every morning.",
+    "arabic": "أرد على رسائل البريد كل صباح.",
+    "tags": [
+      "work",
+      "email"
+    ],
+    "words": [
+      {
+        "word": "answer",
+        "translation": "يرد",
+        "partOfSpeech": "verb",
+        "pronunciation": "/ˈæn.sər/"
+      }
+    ]
+  },
+  {
+    "id": "a1-work-014",
+    "level": "A1",
+    "topic": "work",
+    "topic_label": "Work & Career",
+    "text_en": "The company is very successful.",
+    "text_ar": "الشركة ناجحة جدًا.",
+    "english": "The company is very successful.",
+    "arabic": "الشركة ناجحة جدًا.",
+    "tags": [
+      "company",
+      "work"
+    ],
+    "words": [
+      {
+        "word": "company",
+        "translation": "شركة",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈkʌm.pə.ni/"
+      },
+      {
+        "word": "successful",
+        "translation": "ناجح",
+        "partOfSpeech": "adjective",
+        "pronunciation": "/səkˈsɛs.fəl/"
+      }
+    ]
+  },
+  {
+    "id": "a1-work-015",
+    "level": "A1",
+    "topic": "work",
+    "topic_label": "Work & Career",
+    "text_en": "I have a busy day at work.",
+    "text_ar": "لدي يوم مشغول في العمل.",
+    "english": "I have a busy day at work.",
+    "arabic": "لدي يوم مشغول في العمل.",
+    "tags": [
+      "work",
+      "schedule"
+    ],
+    "words": [
+      {
+        "word": "busy",
+        "translation": "مشغول",
+        "partOfSpeech": "adjective",
+        "pronunciation": "/ˈbɪz.i/"
+      }
+    ]
+  },
+  {
+    "id": "a1-work-016",
+    "level": "A1",
+    "topic": "work",
+    "topic_label": "Work & Career",
+    "text_en": "My salary is good now.",
+    "text_ar": "راتبي جيد الآن.",
+    "english": "My salary is good now.",
+    "arabic": "راتبي جيد الآن.",
+    "tags": [
+      "money",
+      "job"
+    ],
+    "words": [
+      {
+        "word": "salary",
+        "translation": "راتب",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈsæl.ər.i/"
+      }
+    ]
+  },
+  {
+    "id": "a1-shopping-009",
+    "level": "A1",
+    "topic": "shopping",
+    "topic_label": "Shopping & Numbers",
+    "text_en": "I pay with my card at the store.",
+    "text_ar": "أدفع ببطاقتي في المتجر.",
+    "english": "I pay with my card at the store.",
+    "arabic": "أدفع ببطاقتي في المتجر.",
+    "tags": [
+      "payment",
+      "shopping"
+    ],
+    "words": [
+      {
+        "word": "card",
+        "translation": "بطاقة",
+        "partOfSpeech": "noun",
+        "pronunciation": "/kɑːrd/"
+      },
+      {
+        "word": "store",
+        "translation": "متجر",
+        "partOfSpeech": "noun",
+        "pronunciation": "/stɔːr/"
+      }
+    ]
+  },
+  {
+    "id": "a1-shopping-010",
+    "level": "A1",
+    "topic": "shopping",
+    "topic_label": "Shopping & Numbers",
+    "text_en": "The dress is beautiful and cheap.",
+    "text_ar": "الفستان جميل ورخيص.",
+    "english": "The dress is beautiful and cheap.",
+    "arabic": "الفستان جميل ورخيص.",
+    "tags": [
+      "clothes",
+      "price"
+    ],
+    "words": [
+      {
+        "word": "dress",
+        "translation": "فستان",
+        "partOfSpeech": "noun",
+        "pronunciation": "/drɛs/"
+      },
+      {
+        "word": "cheap",
+        "translation": "رخيص",
+        "partOfSpeech": "adjective",
+        "pronunciation": "/tʃiːp/"
+      }
+    ]
+  },
+  {
+    "id": "a1-shopping-011",
+    "level": "A1",
+    "topic": "shopping",
+    "topic_label": "Shopping & Numbers",
+    "text_en": "I find a good gift for my mother.",
+    "text_ar": "أجد هدية جيدة لأمي.",
+    "english": "I find a good gift for my mother.",
+    "arabic": "أجد هدية جيدة لأمي.",
+    "tags": [
+      "gift",
+      "shopping"
+    ],
+    "words": [
+      {
+        "word": "find",
+        "translation": "يجد",
+        "partOfSpeech": "verb",
+        "pronunciation": "/faɪnd/"
+      },
+      {
+        "word": "gift",
+        "translation": "هدية",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ɡɪft/"
+      }
+    ]
+  },
+  {
+    "id": "a1-shopping-012",
+    "level": "A1",
+    "topic": "shopping",
+    "topic_label": "Shopping & Numbers",
+    "text_en": "The clothes are in the next room.",
+    "text_ar": "الملابس في الغرفة المجاورة.",
+    "english": "The clothes are in the next room.",
+    "arabic": "الملابس في الغرفة المجاورة.",
+    "tags": [
+      "clothes",
+      "home"
+    ],
+    "words": [
+      {
+        "word": "clothes",
+        "translation": "ملابس",
+        "partOfSpeech": "noun",
+        "pronunciation": "/kloʊðz/"
+      }
+    ]
+  },
+  {
+    "id": "a1-health-011",
+    "level": "A1",
+    "topic": "health",
+    "topic_label": "Health & Body",
+    "text_en": "My back hurts today.",
+    "text_ar": "ظهري يؤلمني اليوم.",
+    "english": "My back hurts today.",
+    "arabic": "ظهري يؤلمني اليوم.",
+    "tags": [
+      "body",
+      "pain"
+    ],
+    "words": [
+      {
+        "word": "back",
+        "translation": "ظهر",
+        "partOfSpeech": "noun",
+        "pronunciation": "/bæk/"
+      },
+      {
+        "word": "hurts",
+        "translation": "يؤلم",
+        "partOfSpeech": "verb",
+        "pronunciation": "/hɜːrts/"
+      }
+    ]
+  },
+  {
+    "id": "a1-health-012",
+    "level": "A1",
+    "topic": "health",
+    "topic_label": "Health & Body",
+    "text_en": "I exercise in the morning.",
+    "text_ar": "أمارس الرياضة في الصباح.",
+    "english": "I exercise in the morning.",
+    "arabic": "أمارس الرياضة في الصباح.",
+    "tags": [
+      "exercise",
+      "health"
+    ],
+    "words": [
+      {
+        "word": "exercise",
+        "translation": "يمارس الرياضة",
+        "partOfSpeech": "verb",
+        "pronunciation": "/ˈɛk.sər.saɪz/"
+      }
+    ]
+  },
+  {
+    "id": "a1-health-013",
+    "level": "A1",
+    "topic": "health",
+    "topic_label": "Health & Body",
+    "text_en": "I drink orange juice for energy.",
+    "text_ar": "أشرب عصير البرتقال للطاقة.",
+    "english": "I drink orange juice for energy.",
+    "arabic": "أشرب عصير البرتقال للطاقة.",
+    "tags": [
+      "food",
+      "health"
+    ],
+    "words": [
+      {
+        "word": "orange",
+        "translation": "برتقال",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈɒr.ɪndʒ/"
+      },
+      {
+        "word": "energy",
+        "translation": "طاقة",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈɛn.ər.dʒi/"
+      }
+    ]
+  },
+  {
+    "id": "a1-health-014",
+    "level": "A1",
+    "topic": "health",
+    "topic_label": "Health & Body",
+    "text_en": "The nurse is very kind to me.",
+    "text_ar": "الممرضة لطيفة جدًا معي.",
+    "english": "The nurse is very kind to me.",
+    "arabic": "الممرضة لطيفة جدًا معي.",
+    "tags": [
+      "doctor",
+      "health"
+    ],
+    "words": [
+      {
+        "word": "nurse",
+        "translation": "ممرضة",
+        "partOfSpeech": "noun",
+        "pronunciation": "/nɜːrs/"
+      }
+    ]
+  },
+  {
+    "id": "a1-quality-001",
+    "level": "A1",
+    "topic": "daily-life",
+    "topic_label": "Daily Life",
+    "text_en": "This room is very clean.",
+    "text_ar": "هذه الغرفة نظيفة جدًا.",
+    "english": "This room is very clean.",
+    "arabic": "هذه الغرفة نظيفة جدًا.",
+    "tags": [
+      "home",
+      "quality"
+    ],
+    "words": [
+      {
+        "word": "clean",
+        "translation": "نظيف",
+        "partOfSpeech": "adjective",
+        "pronunciation": "/kliːn/"
+      }
+    ]
+  },
+  {
+    "id": "a1-quality-002",
+    "level": "A1",
+    "topic": "shopping",
+    "topic_label": "Shopping & Numbers",
+    "text_en": "The bag is heavy and full.",
+    "text_ar": "الحقيبة ثقيلة وممتلئة.",
+    "english": "The bag is heavy and full.",
+    "arabic": "الحقيبة ثقيلة وممتلئة.",
+    "tags": [
+      "object",
+      "quality"
+    ],
+    "words": [
+      {
+        "word": "heavy",
+        "translation": "ثقيل",
+        "partOfSpeech": "adjective",
+        "pronunciation": "/ˈhɛv.i/"
+      },
+      {
+        "word": "full",
+        "translation": "ممتلئ",
+        "partOfSpeech": "adjective",
+        "pronunciation": "/fʊl/"
+      }
+    ]
+  },
+  {
+    "id": "a1-quality-003",
+    "level": "A1",
+    "topic": "communication",
+    "topic_label": "Communication",
+    "text_en": "I am happy to see you.",
+    "text_ar": "أنا سعيد برؤيتك.",
+    "english": "I am happy to see you.",
+    "arabic": "أنا سعيد برؤيتك.",
+    "tags": [
+      "feelings",
+      "greeting"
+    ],
+    "words": [
+      {
+        "word": "happy",
+        "translation": "سعيد",
+        "partOfSpeech": "adjective",
+        "pronunciation": "/ˈhæp.i/"
+      },
+      {
+        "word": "see",
+        "translation": "يرى",
+        "partOfSpeech": "verb",
+        "pronunciation": "/siː/"
+      }
+    ]
+  },
+  {
+    "id": "a1-quality-004",
+    "level": "A1",
+    "topic": "communication",
+    "topic_label": "Communication",
+    "text_en": "I am sorry for the mistake.",
+    "text_ar": "أنا آسف على الخطأ.",
+    "english": "I am sorry for the mistake.",
+    "arabic": "أنا آسف على الخطأ.",
+    "tags": [
+      "feelings",
+      "apology"
+    ],
+    "words": [
+      {
+        "word": "sorry",
+        "translation": "آسف",
+        "partOfSpeech": "adjective",
+        "pronunciation": "/ˈsɒr.i/"
+      },
+      {
+        "word": "mistake",
+        "translation": "خطأ",
+        "partOfSpeech": "noun",
+        "pronunciation": "/mɪˈsteɪk/"
+      }
+    ]
+  },
+  {
+    "id": "a1-quality-005",
+    "level": "A1",
+    "topic": "daily-life",
+    "topic_label": "Daily Life",
+    "text_en": "The movie is interesting.",
+    "text_ar": "الفيلم مثير للاهتمام.",
+    "english": "The movie is interesting.",
+    "arabic": "الفيلم مثير للاهتمام.",
+    "tags": [
+      "entertainment",
+      "quality"
+    ],
+    "words": [
+      {
+        "word": "movie",
+        "translation": "فيلم",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈmuː.vi/"
+      },
+      {
+        "word": "interesting",
+        "translation": "مثير للاهتمام",
+        "partOfSpeech": "adjective",
+        "pronunciation": "/ˈɪn.trə.stɪŋ/"
+      }
+    ]
+  },
+  {
+    "id": "a1-quality-006",
+    "level": "A1",
+    "topic": "communication",
+    "topic_label": "Communication",
+    "text_en": "The song is very popular.",
+    "text_ar": "الأغنية مشهورة جدًا.",
+    "english": "The song is very popular.",
+    "arabic": "الأغنية مشهورة جدًا.",
+    "tags": [
+      "music",
+      "quality"
+    ],
+    "words": [
+      {
+        "word": "song",
+        "translation": "أغنية",
+        "partOfSpeech": "noun",
+        "pronunciation": "/sɒŋ/"
+      },
+      {
+        "word": "popular",
+        "translation": "شائع / مشهور",
+        "partOfSpeech": "adjective",
+        "pronunciation": "/ˈpɒp.jə.lər/"
+      }
+    ]
+  },
+  {
+    "id": "a1-quality-007",
+    "level": "A1",
+    "topic": "daily-life",
+    "topic_label": "Daily Life",
+    "text_en": "This chair is old but strong.",
+    "text_ar": "هذا الكرسي قديم لكنه قوي.",
+    "english": "This chair is old but strong.",
+    "arabic": "هذا الكرسي قديم لكنه قوي.",
+    "tags": [
+      "object",
+      "quality"
+    ],
+    "words": [
+      {
+        "word": "chair",
+        "translation": "كرسي",
+        "partOfSpeech": "noun",
+        "pronunciation": "/tʃɛər/"
+      },
+      {
+        "word": "old",
+        "translation": "قديم",
+        "partOfSpeech": "adjective",
+        "pronunciation": "/oʊld/"
+      }
+    ]
+  },
+  {
+    "id": "a1-quality-008",
+    "level": "A1",
+    "topic": "communication",
+    "topic_label": "Communication",
+    "text_en": "The new phone is fast.",
+    "text_ar": "الهاتف الجديد سريع.",
+    "english": "The new phone is fast.",
+    "arabic": "الهاتف الجديد سريع.",
+    "tags": [
+      "technology",
+      "quality"
+    ],
+    "words": [
+      {
+        "word": "new",
+        "translation": "جديد",
+        "partOfSpeech": "adjective",
+        "pronunciation": "/njuː/"
+      },
+      {
+        "word": "fast",
+        "translation": "سريع",
+        "partOfSpeech": "adjective",
+        "pronunciation": "/fɑːst/"
+      }
+    ]
+  },
+  {
+    "id": "a1-quality-009",
+    "level": "A1",
+    "topic": "daily-life",
+    "topic_label": "Daily Life",
+    "text_en": "I feel calm in this place.",
+    "text_ar": "أشعر بالهدوء في هذا المكان.",
+    "english": "I feel calm in this place.",
+    "arabic": "أشعر بالهدوء في هذا المكان.",
+    "tags": [
+      "feelings",
+      "place"
+    ],
+    "words": [
+      {
+        "word": "calm",
+        "translation": "هادئ / مسالم",
+        "partOfSpeech": "adjective",
+        "pronunciation": "/kɑːm/"
+      },
+      {
+        "word": "place",
+        "translation": "مكان",
+        "partOfSpeech": "noun",
+        "pronunciation": "/pleɪs/"
+      }
+    ]
+  },
+  {
+    "id": "a1-quality-010",
+    "level": "A1",
+    "topic": "shopping",
+    "topic_label": "Shopping & Numbers",
+    "text_en": "The shop is open on Sunday.",
+    "text_ar": "المتجر مفتوح يوم الأحد.",
+    "english": "The shop is open on Sunday.",
+    "arabic": "المتجر مفتوح يوم الأحد.",
+    "tags": [
+      "shop",
+      "schedule"
+    ],
+    "words": [
+      {
+        "word": "shop",
+        "translation": "متجر",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ʃɒp/"
+      },
+      {
+        "word": "open",
+        "translation": "مفتوح",
+        "partOfSpeech": "adjective",
+        "pronunciation": "/ˈoʊ.pən/"
+      },
+      {
+        "word": "Sunday",
+        "translation": "الأحد",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈsʌn.deɪ/"
+      }
+    ]
   }
 ]

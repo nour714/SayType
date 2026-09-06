@@ -50,14 +50,16 @@ export class SentenceRepository {
     } catch (err) {
       console.warn('SentenceRepository: getTopics fetch failed, using fallback topics.', err);
       return [
-        { id: 'all', label: 'All Topics', count: 28 },
-        { id: 'daily-life', label: 'Daily Life', count: 7 },
-        { id: 'family', label: 'Family & Friends', count: 4 },
-        { id: 'food', label: 'Food & Drink', count: 4 },
-        { id: 'travel', label: 'Travel & Places', count: 4 },
-        { id: 'university', label: 'University & Study', count: 4 },
-        { id: 'work', label: 'Work & Career', count: 4 },
-        { id: 'shopping', label: 'Shopping & Numbers', count: 4 }
+        { id: 'daily-life', label: 'Daily Life', count: 20 },
+        { id: 'family', label: 'Family & Friends', count: 16 },
+        { id: 'food', label: 'Food & Drink', count: 17 },
+        { id: 'travel', label: 'Travel & Places', count: 16 },
+        { id: 'university', label: 'University & Study', count: 16 },
+        { id: 'work', label: 'Work & Career', count: 16 },
+        { id: 'shopping', label: 'Shopping & Numbers', count: 14 },
+        { id: 'health', label: 'Health & Body', count: 14 },
+        { id: 'weather', label: 'Weather & Seasons', count: 10 },
+        { id: 'communication', label: 'Communication', count: 15 }
       ];
     }
   }
@@ -83,42 +85,28 @@ export class SentenceRepository {
 
   /**
    * Offline fallback dataset with word-level metadata.
+   * A representative sentence for each of the 10 V1 topics.
    * @private
    */
   _getFallbackSentences(filter = {}) {
     let data = [
       {
-        id: 1,
+        id: "a1-daily-life-001",
         level: "A1",
         topic: "daily-life",
         topic_label: "Daily Life",
-        text_en: "I am tired.",
-        text_ar: "أنا متعب.",
-        english: "I am tired.",
-        arabic: "أنا متعب.",
+        text_en: "I wake up at seven every morning.",
+        text_ar: "أستيقظ في الساعة السابعة كل صباح.",
+        english: "I wake up at seven every morning.",
+        arabic: "أستيقظ في الساعة السابعة كل صباح.",
         words: [
-          { word: "I", translation: "أنا", partOfSpeech: "pronoun", pronunciation: "/aɪ/" },
-          { word: "am", translation: "أكون", partOfSpeech: "verb", pronunciation: "/æm/" },
-          { word: "tired", translation: "متعب / مرهق", partOfSpeech: "adjective", pronunciation: "/ˈtaɪərd/" }
-        ]
+          { word: "wake", translation: "يستيقظ", partOfSpeech: "verb", pronunciation: "/weɪk/" },
+          { word: "seven", translation: "سبعة", partOfSpeech: "number", pronunciation: "/ˈsɛv.ən/" }
+        ],
+        tags: ["routine", "morning"]
       },
       {
-        id: 2,
-        level: "A1",
-        topic: "food",
-        topic_label: "Food & Drink",
-        text_en: "I like coffee.",
-        text_ar: "أنا أحب القهوة.",
-        english: "I like coffee.",
-        arabic: "أنا أحب القهوة.",
-        words: [
-          { word: "I", translation: "أنا", partOfSpeech: "pronoun", pronunciation: "/aɪ/" },
-          { word: "like", translation: "يحب", partOfSpeech: "verb", pronunciation: "/laɪk/" },
-          { word: "coffee", translation: "قهوة", partOfSpeech: "noun", pronunciation: "/ˈkɔːfi/" }
-        ]
-      },
-      {
-        id: 3,
+        id: "a1-family-001",
         level: "A1",
         topic: "family",
         topic_label: "Family & Friends",
@@ -128,38 +116,27 @@ export class SentenceRepository {
         arabic: "هي أختي.",
         words: [
           { word: "She", translation: "هي", partOfSpeech: "pronoun", pronunciation: "/ʃiː/" },
-          { word: "is", translation: "تكون", partOfSpeech: "verb", pronunciation: "/ɪz/" },
-          { word: "sister", translation: "أخت", partOfSpeech: "noun", pronunciation: "/ˈsɪstər/" }
-        ]
+          { word: "sister", translation: "أخت", partOfSpeech: "noun", pronunciation: "/ˈsɪs.tər/" }
+        ],
+        tags: ["family", "relationship"]
       },
       {
-        id: 4,
+        id: "a1-food-001",
         level: "A1",
-        topic: "university",
-        topic_label: "University & Study",
-        text_en: "I go to school every day.",
-        text_ar: "أذهب إلى المدرسة كل يوم.",
-        english: "I go to school every day.",
-        arabic: "أذهب إلى المدرسة كل يوم.",
+        topic: "food",
+        topic_label: "Food & Drink",
+        text_en: "I like coffee.",
+        text_ar: "أحب القهوة.",
+        english: "I like coffee.",
+        arabic: "أحب القهوة.",
         words: [
-          { word: "school", translation: "مدرسة", partOfSpeech: "noun", pronunciation: "/skuːl/" }
-        ]
+          { word: "like", translation: "يحب", partOfSpeech: "verb", pronunciation: "/laɪk/" },
+          { word: "coffee", translation: "قهوة", partOfSpeech: "noun", pronunciation: "/ˈkɔː.fi/" }
+        ],
+        tags: ["beverage", "preference"]
       },
       {
-        id: 5,
-        level: "A1",
-        topic: "daily-life",
-        topic_label: "Daily Life",
-        text_en: "This is my house.",
-        text_ar: "هذا منزلي.",
-        english: "This is my house.",
-        arabic: "هذا منزلي.",
-        words: [
-          { word: "house", translation: "منزل", partOfSpeech: "noun", pronunciation: "/haʊs/" }
-        ]
-      },
-      {
-        id: 6,
+        id: "a1-travel-001",
         level: "A1",
         topic: "travel",
         topic_label: "Travel & Places",
@@ -168,12 +145,43 @@ export class SentenceRepository {
         english: "The airport is far from here.",
         arabic: "المطار بعيد عن هنا.",
         words: [
-          { word: "airport", translation: "مطار", partOfSpeech: "noun", pronunciation: "/ˈɛərpɔːrt/" },
+          { word: "airport", translation: "مطار", partOfSpeech: "noun", pronunciation: "/ˈɛər.pɔːrt/" },
           { word: "far", translation: "بعيد", partOfSpeech: "adjective", pronunciation: "/fɑːr/" }
-        ]
+        ],
+        tags: ["travel", "locations"]
       },
       {
-        id: 7,
+        id: "a1-university-001",
+        level: "A1",
+        topic: "university",
+        topic_label: "University & Study",
+        text_en: "I study English at university.",
+        text_ar: "أدرس اللغة الإنجليزية في الجامعة.",
+        english: "I study English at university.",
+        arabic: "أدرس اللغة الإنجليزية في الجامعة.",
+        words: [
+          { word: "study", translation: "يدرس", partOfSpeech: "verb", pronunciation: "/ˈstʌd.i/" },
+          { word: "university", translation: "جامعة", partOfSpeech: "noun", pronunciation: "/ˌjuː.nɪˈvɜːr.sə.ti/" }
+        ],
+        tags: ["study", "subject"]
+      },
+      {
+        id: "a1-work-001",
+        level: "A1",
+        topic: "work",
+        topic_label: "Work & Career",
+        text_en: "He works in an office.",
+        text_ar: "يعمل في مكتب.",
+        english: "He works in an office.",
+        arabic: "يعمل في مكتب.",
+        words: [
+          { word: "works", translation: "يعمل", partOfSpeech: "verb", pronunciation: "/wɜːrks/" },
+          { word: "office", translation: "مكتب", partOfSpeech: "noun", pronunciation: "/ˈɔː.fɪs/" }
+        ],
+        tags: ["job", "office"]
+      },
+      {
+        id: "a1-shopping-001",
         level: "A1",
         topic: "shopping",
         topic_label: "Shopping & Numbers",
@@ -184,7 +192,52 @@ export class SentenceRepository {
         words: [
           { word: "pay", translation: "يدفع", partOfSpeech: "verb", pronunciation: "/peɪ/" },
           { word: "cash", translation: "نقد", partOfSpeech: "noun", pronunciation: "/kæʃ/" }
-        ]
+        ],
+        tags: ["shopping", "payment"]
+      },
+      {
+        id: "a1-health-001",
+        level: "A1",
+        topic: "health",
+        topic_label: "Health & Body",
+        text_en: "I walk thirty minutes every day.",
+        text_ar: "أمشي ثلاثين دقيقة كل يوم.",
+        english: "I walk thirty minutes every day.",
+        arabic: "أمشي ثلاثين دقيقة كل يوم.",
+        words: [
+          { word: "walk", translation: "يمشي", partOfSpeech: "verb", pronunciation: "/wɔːk/" },
+          { word: "thirty", translation: "ثلاثون", partOfSpeech: "number", pronunciation: "/ˈθɜːr.ti/" }
+        ],
+        tags: ["exercise", "health"]
+      },
+      {
+        id: "a1-weather-001",
+        level: "A1",
+        topic: "weather",
+        topic_label: "Weather & Seasons",
+        text_en: "It is sunny today.",
+        text_ar: "الطقس مشمس اليوم.",
+        english: "It is sunny today.",
+        arabic: "الطقس مشمس اليوم.",
+        words: [
+          { word: "sunny", translation: "مشمس", partOfSpeech: "adjective", pronunciation: "/ˈsʌn.i/" }
+        ],
+        tags: ["weather", "sun"]
+      },
+      {
+        id: "a1-communication-001",
+        level: "A1",
+        topic: "communication",
+        topic_label: "Communication",
+        text_en: "Thank you very much.",
+        text_ar: "شكرًا جزيلًا.",
+        english: "Thank you very much.",
+        arabic: "شكرًا جزيلًا.",
+        words: [
+          { word: "Thank", translation: "يشكر", partOfSpeech: "verb", pronunciation: "/θæŋk/" },
+          { word: "very", translation: "جدًا", partOfSpeech: "adverb", pronunciation: "/ˈvɛr.i/" }
+        ],
+        tags: ["polite", "greeting"]
       }
     ];
 

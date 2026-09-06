@@ -39,6 +39,14 @@ export class SpeechService extends EventEmitter {
     return this._isSpeaking;
   }
 
+  /**
+   * Whether the Web Speech API is available and usable in this browser.
+   * @returns {boolean}
+   */
+  get isUsable() {
+    return this.isSupported;
+  }
+
   _loadVoices() {
     if (this.isSupported) {
       try {
@@ -151,6 +159,13 @@ export class SpeechService extends EventEmitter {
         cleanup();
       }
     });
+  }
+
+  /**
+   * Stop any current speech playback (alias for stop()).
+   */
+  cancel() {
+    this.stop();
   }
 
   /**

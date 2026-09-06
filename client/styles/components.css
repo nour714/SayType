@@ -294,6 +294,41 @@
   background-color: var(--secondary);
 }
 
+/* State: LOADING_SENTENCE (content arriving) */
+.state-indicator.state-loading {
+  color: var(--on-surface-muted);
+  border-color: var(--vessel-border);
+  background: var(--surface-container-low);
+}
+
+.state-indicator.state-loading .state-dot {
+  background-color: var(--on-surface-muted);
+  animation: pulse-dot 1.4s infinite ease-in-out;
+}
+
+/* State: LESSON_START (awaiting first gesture) */
+.state-indicator.state-start {
+  color: var(--primary);
+  border-color: rgba(217, 119, 36, 0.35);
+  background: rgba(217, 119, 36, 0.07);
+}
+
+.state-indicator.state-start .state-dot {
+  background-color: var(--primary);
+}
+
+/* State: LISTEN fallback (auto speech failed — press Listen) */
+.state-indicator.state-listen-fallback {
+  color: var(--tertiary);
+  border-color: rgba(233, 195, 73, 0.4);
+  background: rgba(233, 195, 73, 0.09);
+}
+
+.state-indicator.state-listen-fallback .state-dot {
+  background-color: var(--tertiary);
+  animation: pulse-dot 1s infinite ease-in-out;
+}
+
 @keyframes pulse-dot {
   0%, 100% { transform: scale(0.8); opacity: 0.5; }
   50% { transform: scale(1.35); opacity: 1; }
@@ -533,6 +568,25 @@
 
 .listen-fab-btn.is-speaking .wave-2 {
   animation-delay: 0.2s;
+}
+
+/* Listen Fallback: auto-speech blocked — visually prompt the learner to press Listen */
+.listen-fab-btn.is-fallback {
+  color: var(--tertiary);
+  border-color: var(--tertiary);
+  background: var(--surface-container-high);
+  box-shadow: 0 0 18px var(--tertiary-glow, rgba(233, 195, 73, 0.35));
+  animation: fallback-glow 1.4s ease-in-out infinite;
+}
+
+.listen-fab-btn.is-fallback:hover {
+  color: var(--on-tertiary);
+  background: var(--tertiary);
+}
+
+@keyframes fallback-glow {
+  0%, 100% { box-shadow: 0 0 8px var(--tertiary-glow, rgba(233, 195, 73, 0.2)); }
+  50% { box-shadow: 0 0 22px var(--tertiary-glow, rgba(233, 195, 73, 0.5)); }
 }
 
 @keyframes pulse-wave {
@@ -870,6 +924,17 @@
   margin-top: 2px;
   direction: rtl;
   text-align: right;
+}
+
+.tooltip-example {
+  font-family: var(--font-hero);
+  font-size: 12.5px;
+  font-style: italic;
+  color: var(--on-surface-muted);
+  border-top: 1px solid var(--vessel-border);
+  margin-top: 0.35rem;
+  padding-top: 0.35rem;
+  line-height: 1.4;
 }
 
 .start-overlay-backdrop {

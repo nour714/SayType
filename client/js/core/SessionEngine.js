@@ -2,9 +2,12 @@ import { EventEmitter } from './EventEmitter.js';
 
 /**
  * Valid lifecycle states for the learning session.
+ * IDLE -> LESSON_START -> LOADING_SENTENCE -> LISTENING -> READY -> TYPING -> COMPLETED -> RESULT -> (loop)
  */
 export const SESSION_STATES = {
   IDLE: 'IDLE',
+  LESSON_START: 'LESSON_START',
+  LOADING_SENTENCE: 'LOADING_SENTENCE',
   LISTENING: 'LISTENING',
   READY: 'READY',
   TYPING: 'TYPING',
@@ -45,6 +48,7 @@ export class SessionEngine extends EventEmitter {
     this.currentSentenceIndex = 0;
     this.lessonHistory = [];
     this.isLessonCompleted = false;
+    this.isLessonStarted = false;
     this.difficultWords = new Map();
 
     // Forward events from SentenceEngine
@@ -108,13 +112,39 @@ export class SessionEngine extends EventEmitter {
 
   /**
    * Initialize or replace the sentence collection and start at index 0.
+   * After loading, the session sits in LOADING_SENTENCE until beginLesson()
+   * (the required user gesture) transitions it toward LISTENING.
    * @param {Array<{ id: number|string, text_en: string, text_ar: string, level?: string }>} sentences
    */
   setSentences(sentences) {
     this.sentences = Array.isArray(sentences) && sentences.length > 0 ? sentences : [];
     this.lessonHistory = [];
     this.isLessonCompleted = false;
+    this.isLessonStarted = false;
+    this.setState(SESSION_STATES.LOADING_SENTENCE);
     this.loadSentence(0);
+  }
+
+  /**
+   * Begin the lesson — the required first user gesture.
+   * Transitions from LOADING_SENTENCE to LISTENING (listen-first) or READY,
+   * and pronounces the current sentence.
+   */
+  beginLesson() {
+    if (this.isLessonStarted) return;
+    this.isLessonStarted = true;
+    if (this.state === SESSION_STATES.LOADING_SENTENCE && this.currentSentence) {
+      if (this.listenFirst) {
+        this.setState(SESSION_STATES.LISTENING);
+        const textToSpeak = this.currentSentence.text_en || this.currentSentence.english || '';
+        this.emit('sentence:listen', {
+          sentence: this.currentSentence,
+          text: textToSpeak
+        });
+      } else {
+        this.setState(SESSION_STATES.READY);
+      }
+    }
   }
 
   /**
@@ -127,6 +157,7 @@ export class SessionEngine extends EventEmitter {
       return;
     }
 
+    this.setState(SESSION_STATES.LOADING_SENTENCE);
     this.currentSentenceIndex = index;
     const sentence = this.sentences[this.currentSentenceIndex];
 
@@ -147,11 +178,14 @@ export class SessionEngine extends EventEmitter {
     // Initial metrics snapshot
     this.emit('metrics:update', this.metrics.snapshot());
 
-    // Listen-first flow: if enabled, enter LISTENING; otherwise enter READY directly
+    // Listen-first flow: if enabled and lesson already started, enter LISTENING;
+    // otherwise remain LOADING_SENTENCE until beginLesson() transitions.
     if (this.listenFirst) {
-      this.setState(SESSION_STATES.LISTENING);
-      const textToSpeak = sentence.text_en || sentence.english || '';
-      this.emit('sentence:listen', { sentence, text: textToSpeak });
+      if (this.isLessonStarted) {
+        this.setState(SESSION_STATES.LISTENING);
+        const textToSpeak = sentence.text_en || sentence.english || '';
+        this.emit('sentence:listen', { sentence, text: textToSpeak });
+      }
     } else {
       this.setState(SESSION_STATES.READY);
     }
@@ -224,7 +258,7 @@ export class SessionEngine extends EventEmitter {
     });
     this.emit('metrics:update', this.metrics.snapshot());
 
-    if (this.listenFirst) {
+    if (this.listenFirst && this.isLessonStarted) {
       this.setState(SESSION_STATES.LISTENING);
       const textToSpeak = this.currentSentence ? (this.currentSentence.text_en || this.currentSentence.english || '') : '';
       this.emit('sentence:listen', { sentence: this.currentSentence, text: textToSpeak });
@@ -297,10 +331,13 @@ export class SessionEngine extends EventEmitter {
 
   /**
    * Restart the lesson from sentence 0.
+   * The restart button click is itself a user gesture, so the listen-first
+   * flow may resume immediately without re-showing the start overlay.
    */
   restartLesson() {
     this.lessonHistory = [];
     this.isLessonCompleted = false;
+    this.isLessonStarted = true;
     this.emit('lesson:restarted');
     this.loadSentence(0);
   }

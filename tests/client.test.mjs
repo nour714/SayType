@@ -137,8 +137,18 @@ sessionGated.on('sentence:listen', () => { listenEventFired = true; });
 sessionGated.on('state:change', ({ from, to }) => { capturedStateChanges.push({ from, to }); });
 
 sessionGated.setSentences([{ id: 10, text_en: "Hi.", text_ar: "مرحبا" }]);
+assert.strictEqual(sessionGated.currentState, 'LOADING_SENTENCE');
+assert.strictEqual(sessionGated.isLessonStarted, false);
+assert.strictEqual(listenEventFired, false);
+
+// The first user gesture (beginLesson) unlocks listening
+sessionGated.beginLesson();
 assert.strictEqual(sessionGated.currentState, 'LISTENING');
 assert.strictEqual(listenEventFired, true);
+
+// beginLesson is idempotent
+sessionGated.beginLesson();
+assert.strictEqual(sessionGated.currentState, 'LISTENING');
 
 // During LISTENING, keystrokes are rejected (returns null)
 const blockedKey = sessionGated.handleKey('H');
@@ -153,6 +163,17 @@ assert.strictEqual(sessionGated.currentState, 'READY');
 const typingKey = sessionGated.handleKey('H');
 assert.strictEqual(typingKey.type, 'correct');
 assert.strictEqual(sessionGated.currentState, 'TYPING');
+
+// After lesson has started, advancing re-enters LISTENING (no overlay needed)
+sessionGated.setSentences([{ id: 10, text_en: "Hi.", text_ar: "مرحبا" }, { id: 11, text_en: "Go.", text_ar: "اذهب" }]);
+sessionGated.beginLesson();
+sessionGated.finishListening();
+sessionGated.handleKey('H');
+sessionGated.handleKey('i');
+sessionGated.handleKey('.');
+sessionGated.advanceToNextSentence();
+assert.strictEqual(sessionGated.currentState, 'LISTENING');
+assert.strictEqual(sessionGated.isLessonStarted, true);
 console.log('✓ SessionEngine Listen-First Gating passed!');
 
 console.log('--- Testing ProgressService ---');

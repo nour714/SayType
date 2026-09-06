@@ -29,15 +29,18 @@ const server = app.listen(3002, async () => {
     const sentences = JSON.parse(sentencesRes.body);
     assert.strictEqual(Array.isArray(sentences), true);
     assert.ok(sentences.length >= 10, `Expected at least 10 sentences, got ${sentences.length}`);
-    assert.strictEqual(sentences[0].text_en, "I am tired.");
+    assert.strictEqual(sentences[0].text_en, "I wake up at seven every morning.");
+    assert.strictEqual(sentences[0].level, "A1");
+    assert.ok(Array.isArray(sentences[0].words) && sentences[0].words.length > 0, 'Expected word-level metadata');
     console.log(`✓ GET /api/sentences passed (${sentences.length} sentences)`);
 
-    // 3. Single sentence API
-    const singleRes = await get('/api/sentences/1');
+    // 3. Single sentence API (string IDs like a1-daily-life-001)
+    const firstId = sentences[0].id;
+    const singleRes = await get(`/api/sentences/${firstId}`);
     assert.strictEqual(singleRes.status, 200);
     const single = JSON.parse(singleRes.body);
-    assert.strictEqual(Number(single.id), 1);
-    console.log('✓ GET /api/sentences/1 passed');
+    assert.strictEqual(single.id, firstId);
+    console.log(`✓ GET /api/sentences/${firstId} passed`);
 
     // 4. Topic filtering API
     const topicRes = await get('/api/sentences?topic=food');
@@ -52,8 +55,10 @@ const server = app.listen(3002, async () => {
     assert.strictEqual(topicsListRes.status, 200);
     const topics = JSON.parse(topicsListRes.body);
     assert.ok(Array.isArray(topics));
-    assert.ok(topics.some(t => t.id === 'food'));
-    assert.ok(topics.some(t => t.id === 'daily-life'));
+    const topicIds = topics.map(t => t.id);
+    const EXPECTED_TOPICS = ['daily-life', 'family', 'food', 'travel', 'university', 'work', 'shopping', 'health', 'weather', 'communication'];
+    EXPECTED_TOPICS.forEach(t => assert.ok(topicIds.includes(t), `Expected topic "${t}" in topics list`));
+    assert.strictEqual(topics.length, EXPECTED_TOPICS.length, 'Expected exactly 10 topics');
     console.log(`✓ GET /api/sentences/topics passed (${topics.length} topics)`);
 
     // 6. Static Client index.html

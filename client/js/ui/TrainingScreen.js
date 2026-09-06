@@ -37,6 +37,7 @@ export class TrainingScreen extends EventEmitter {
     this.tooltipPos = document.getElementById('tooltip-pos');
     this.tooltipPronunciation = document.getElementById('tooltip-pronunciation');
     this.tooltipTranslation = document.getElementById('tooltip-translation');
+    this.tooltipExample = document.getElementById('tooltip-example');
 
     // Start Lesson Overlay Elements
     this.startOverlay = document.getElementById('lesson-start-overlay');
@@ -299,6 +300,19 @@ export class TrainingScreen extends EventEmitter {
     if (this.tooltipPronunciation) this.tooltipPronunciation.textContent = info.pronunciation || '';
     if (this.tooltipTranslation) this.tooltipTranslation.textContent = info.translation || '';
 
+    // Example line: the sentence this word appears in (educational context).
+    if (this.tooltipExample) {
+      const exampleText = this.currentSentence
+        ? (this.currentSentence.text_en || this.currentSentence.english || '')
+        : '';
+      if (exampleText && /[a-z]/i.test(exampleText)) {
+        this.tooltipExample.textContent = `"${exampleText}"`;
+        this.tooltipExample.style.display = '';
+      } else {
+        this.tooltipExample.style.display = 'none';
+      }
+    }
+
     this.wordTooltip.classList.add('is-visible');
     this.wordTooltip.setAttribute('aria-hidden', 'false');
 
@@ -337,10 +351,21 @@ export class TrainingScreen extends EventEmitter {
       'state-ready',
       'state-typing',
       'state-completed',
-      'state-result'
+      'state-result',
+      'state-loading',
+      'state-start',
+      'state-listen-fallback'
     );
 
     switch (state) {
+      case 'LESSON_START':
+        this.stateIndicator.classList.add('state-start');
+        this.stateText.textContent = 'READY';
+        break;
+      case 'LOADING_SENTENCE':
+        this.stateIndicator.classList.add('state-loading');
+        this.stateText.textContent = 'LOADING';
+        break;
       case 'LISTENING':
         this.stateIndicator.classList.add('state-listening');
         this.stateText.textContent = 'LISTEN FIRST';
@@ -362,6 +387,37 @@ export class TrainingScreen extends EventEmitter {
         this.stateIndicator.classList.add('state-idle');
         this.stateText.textContent = 'READY';
         break;
+    }
+  }
+
+  /**
+   * Show a visible fallback prompt when automatic pronunciation fails
+   * (e.g. browser autoplay policy blocks speech). The learner can press
+   * the Listen button to hear the sentence manually.
+   */
+  showListenFallback() {
+    if (this.stateIndicator && this.stateText) {
+      this.stateIndicator.classList.remove(
+        'state-idle', 'state-listening', 'state-ready', 'state-typing',
+        'state-completed', 'state-result', 'state-loading', 'state-start'
+      );
+      this.stateIndicator.classList.add('state-listen-fallback');
+      this.stateText.textContent = 'PRESS LISTEN';
+    }
+    if (this.listenBtn) {
+      this.listenBtn.classList.add('is-fallback');
+    }
+    if (this.focusReminder) {
+      this.focusReminder.style.display = 'none';
+    }
+  }
+
+  /**
+   * Clear any listen-fallback highlight state.
+   */
+  clearListenFallback() {
+    if (this.listenBtn) {
+      this.listenBtn.classList.remove('is-fallback');
     }
   }
 
@@ -556,6 +612,7 @@ export class TrainingScreen extends EventEmitter {
     if (this.listenBtn) {
       if (speaking) {
         this.listenBtn.classList.add('is-speaking');
+        this.listenBtn.classList.remove('is-fallback');
       } else {
         this.listenBtn.classList.remove('is-speaking');
       }

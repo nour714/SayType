@@ -46,6 +46,7 @@ function bootstrap() {
   // 5. Wire Speech Service to UI & Session
   speechService.on('start', () => {
     trainingScreen.setSpeaking(true);
+    trainingScreen.clearListenFallback();
   });
 
   speechService.on('end', () => {
@@ -57,11 +58,13 @@ function bootstrap() {
   speechService.on('error', () => {
     trainingScreen.setSpeaking(false);
     sessionEngine.finishListening();
-    trainingScreen.ensureTypingFocus();
+    // Learner can recover manually by pressing the Listen button.
+    trainingScreen.showListenFallback();
   });
 
   speechService.on('unsupported', () => {
     sessionEngine.finishListening();
+    trainingScreen.showListenFallback();
   });
 
   // 6. Listen-First Triggering
@@ -80,7 +83,7 @@ function bootstrap() {
         })
         .catch(() => {
           sessionEngine.finishListening();
-          trainingScreen.ensureTypingFocus();
+          trainingScreen.showListenFallback();
         });
     } else {
       sessionEngine.finishListening();
@@ -115,24 +118,10 @@ function bootstrap() {
   });
 
   trainingScreen.on('action:start-lesson', () => {
-    // Start lesson gesture unlocks speech in modern browsers
-    const current = sessionEngine.currentSentence;
-    if (current) {
-      const text = current.text_en || current.english || '';
-      if (text) {
-        speechService.speak(text)
-          .then(() => {
-            sessionEngine.finishListening();
-            trainingScreen.ensureTypingFocus();
-          })
-          .catch(() => {
-            sessionEngine.finishListening();
-            trainingScreen.ensureTypingFocus();
-          });
-      } else {
-        sessionEngine.finishListening();
-      }
-    }
+    // Start lesson gesture unlocks speech in modern browsers.
+    // beginLesson() transitions LOADING_SENTENCE -> LISTENING and emits
+    // 'sentence:listen', which triggers pronunciation for the current sentence.
+    sessionEngine.beginLesson();
   });
 
   trainingScreen.on('action:key', (key) => {
@@ -202,6 +191,9 @@ function bootstrap() {
     const query = topic ? { topic } : {};
     sentenceRepo.getSentences(query).then((sentences) => {
       sessionEngine.setSentences(sentences);
+      // The topic change is a user gesture; resume the listen-first flow immediately.
+      trainingScreen.closeStartOverlay();
+      sessionEngine.beginLesson();
     });
   });
 
@@ -218,23 +210,7 @@ function bootstrap() {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
         trainingScreen.closeStartOverlay();
-        const current = sessionEngine.currentSentence;
-        if (current) {
-          const text = current.text_en || current.english || '';
-          if (text) {
-            speechService.speak(text)
-              .then(() => {
-                sessionEngine.finishListening();
-                trainingScreen.ensureTypingFocus();
-              })
-              .catch(() => {
-                sessionEngine.finishListening();
-                trainingScreen.ensureTypingFocus();
-              });
-          } else {
-            sessionEngine.finishListening();
-          }
-        }
+        sessionEngine.beginLesson();
       }
       return;
     }
