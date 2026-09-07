@@ -1,5 +1,7 @@
 const assert = require('assert');
 const http = require('http');
+const fs = require('fs');
+const path = require('path');
 const app = require('../server/app');
 
 const server = app.listen(3002, async () => {
@@ -156,9 +158,61 @@ const server = app.listen(3002, async () => {
     assert.strictEqual(typeof configJson.supabaseAnonKey, 'string');
     console.log('✓ GET /api/config passed');
 
-    // 12. Multi-file loading (using temp test data directory)
-    const fs = require('fs');
-    const path = require('path');
+    // 12. Content validation tests
+    console.log('\n--- Content Validation ---');
+    const a1Data = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'server', 'data', 'sentences.a1.json'), 'utf8'));
+    const a2Data = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'server', 'data', 'sentences.a2.json'), 'utf8'));
+    const allData = [...a1Data, ...a2Data];
+
+    // Unique IDs
+    const allIds = allData.map(s => s.id);
+    const uniqueIds = new Set(allIds);
+    assert.strictEqual(uniqueIds.size, allIds.length, `Duplicate IDs found: ${allIds.length - uniqueIds.size} duplicates`);
+    console.log(`✓ Content: ${allIds.length} unique IDs (${a1Data.length} A1 + ${a2Data.length} A2)`);
+
+    // Valid levels
+    const invalidLevels = allData.filter(s => s.level !== 'A1' && s.level !== 'A2');
+    assert.strictEqual(invalidLevels.length, 0, `Invalid levels: ${invalidLevels.map(s => s.id + ':' + s.level).join(', ')}`);
+    console.log('✓ Content: all levels valid');
+
+    // Valid topics
+    const validTopics = ['daily-life','family','food','travel','university','work','shopping','health','weather','communication','technology','emotions'];
+    const invalidTopics = allData.filter(s => !validTopics.includes(s.topic));
+    assert.strictEqual(invalidTopics.length, 0, `Invalid topics: ${[...new Set(invalidTopics.map(s => s.topic))].join(', ')}`);
+    console.log('✓ Content: all topics valid');
+
+    // Non-empty English
+    const emptyEn = allData.filter(s => !s.text_en || s.text_en.trim().length === 0);
+    assert.strictEqual(emptyEn.length, 0, `Empty English: ${emptyEn.map(s => s.id).join(', ')}`);
+    console.log('✓ Content: all English sentences non-empty');
+
+    // Non-empty Arabic
+    const emptyAr = allData.filter(s => !s.text_ar || s.text_ar.trim().length === 0);
+    assert.strictEqual(emptyAr.length, 0, `Empty Arabic: ${emptyAr.map(s => s.id).join(', ')}`);
+    console.log('✓ Content: all Arabic sentences non-empty');
+
+    // No corrupted characters (Chinese/Japanese/Thai ranges)
+    const corrupted = allData.filter(s => {
+      const text = s.text_ar || '';
+      return /[\u4e00-\u9fff\u3040-\u309f\u30a0-\u30ff\u0e00-\u0e7f]/.test(text);
+    });
+    assert.strictEqual(corrupted.length, 0, `Corrupted Arabic: ${corrupted.map(s => s.id + ':' + s.text_ar.substring(0, 20)).join(', ')}`);
+    console.log('✓ Content: no corrupted characters in Arabic');
+
+    // Valid words metadata
+    const badWords = allData.filter(s => !Array.isArray(s.words) || s.words.length === 0);
+    assert.strictEqual(badWords.length, 0, `Missing words: ${badWords.map(s => s.id).join(', ')}`);
+    const incompleteWords = allData.filter(s => s.words.some(w => !w.word || !w.translation || !w.pronunciation || !w.partOfSpeech));
+    assert.strictEqual(incompleteWords.length, 0, `Incomplete word metadata: ${incompleteWords.map(s => s.id).join(', ')}`);
+    console.log('✓ Content: all word metadata complete');
+
+    // Duplicate English sentences
+    const enSentences = allData.map(s => s.text_en);
+    const dupEn = enSentences.filter((s, i) => enSentences.indexOf(s) !== i);
+    assert.strictEqual(dupEn.length, 0, `Duplicate English: ${[...new Set(dupEn)].join('; ')}`);
+    console.log('✓ Content: no duplicate English sentences');
+
+    // 13. Multi-file loading (using temp test data directory)
     const tmpDir = path.join(__dirname, '.tmp-test-data');
     try {
       fs.mkdirSync(tmpDir, { recursive: true });

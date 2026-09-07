@@ -892,7 +892,7 @@
       },
       {
         "word": "mother",
-        "translation": "أميها",
+        "translation": "أمها",
         "partOfSpeech": "noun",
         "pronunciation": "/ˈmʌðər/"
       },
@@ -1365,13 +1365,13 @@
       },
       {
         "word": "young",
-        "translation": "الشباب",
+        "translation": "شباب",
         "partOfSpeech": "adjective",
         "pronunciation": "/jʌŋ/"
       },
       {
         "word": "people",
-        "translation": "الذين",
+        "translation": "الناس",
         "partOfSpeech": "noun",
         "pronunciation": "/ˈpiːpl/"
       }
@@ -1877,7 +1877,7 @@
       {
         "word": "least",
         "translation": "الأقل",
-        "partOfSpeech": "noun",
+        "partOfSpeech": "adverb",
         "pronunciation": "/liːst/"
       },
       {
@@ -2156,7 +2156,7 @@
     "words": [
       {
         "word": "going",
-        "translation": "سندخل",
+        "translation": "سنذهب",
         "partOfSpeech": "verb",
         "pronunciation": "/ˈɡoʊɪŋ/"
       },
@@ -3480,7 +3480,7 @@
       },
       {
         "word": "difficult",
-        "translation": "أكثر",
+        "translation": "صعبة",
         "partOfSpeech": "adjective",
         "pronunciation": "/ˈdɪfɪkəlt/"
       },
@@ -4442,7 +4442,7 @@
       },
       {
         "word": "shoes",
-        "translation": "هذه",
+        "translation": "الأحذية",
         "partOfSpeech": "noun",
         "pronunciation": "/ʃuːz/"
       },
@@ -4518,9 +4518,9 @@
     "topic": "shopping",
     "topic_label": "Shopping & Numbers",
     "text_en": "She bought four t-shirts and two pairs of jeans for only fifty dollars in total.",
-    "text_ar": "اشترت أربعة قمصان وسبتاً من الجينز بمبلغ خمسين دولار فقط في الإجمالي.",
+    "text_ar": "اشترت أربعة قمصان وزوجاً من الجينز بمبلغ خمسين دولار فقط في الإجمالي.",
     "english": "She bought four t-shirts and two pairs of jeans for only fifty dollars in total.",
-    "arabic": "اشترت أربعة قمصان وسبتاً من الجينز بمبلغ خمسين دولار فقط في الإجمالي.",
+    "arabic": "اشترت أربعة قمصان وزوجاً من الجينز بمبلغ خمسين دولار فقط في الإجمالي.",
     "tags": [
       "shopping",
       "numbers",
@@ -4541,7 +4541,7 @@
       },
       {
         "word": "pairs",
-        "translation": "سبتاً",
+        "translation": "زوجاً",
         "partOfSpeech": "noun",
         "pronunciation": "/peərz/"
       },
@@ -4611,9 +4611,9 @@
     "topic": "shopping",
     "topic_label": "Shopping & Numbers",
     "text_en": "You could not buy that computer because you do not have enough money, so you should save more.",
-    "text_ar": "لم تتمكن من شراء ذلك الحاسوب لأن لديك ما يكفي من المال، لذلك يجب أن توفر أكثر.",
+    "text_ar": "لم تتمكن من شراء ذلك الحاسوب لأن ليس لديك ما يكفي من المال، لذلك يجب أن توفر أكثر.",
     "english": "You could not buy that computer because you do not have enough money, so you should save more.",
-    "arabic": "لم تتمكن من شراء ذلك الحاسوب لأن لديك ما يكفي من المال، لذلك يجب أن توفر أكثر.",
+    "arabic": "لم تتمكن من شراء ذلك الحاسوب لأن ليس لديك ما يكفي من المال، لذلك يجب أن توفر أكثر.",
     "tags": [
       "shopping",
       "modal",
@@ -4825,7 +4825,7 @@
     "words": [
       {
         "word": "trousers",
-        "translation": "هذه",
+        "translation": "السراويل",
         "partOfSpeech": "noun",
         "pronunciation": "/ˈtraʊzərz/"
       },
@@ -5147,9 +5147,9 @@
     "topic": "health",
     "topic_label": "Health & Body",
     "text_en": "He was not feeling well yesterday, so he decided to stay home and rest all day.",
-    "text_ar": "لم يكن يشعر بالجيدة بالأمس، لذلك قرر البقاء في البيت والراحة طوال اليوم.",
+    "text_ar": "لم يكن يشعر بخير بالأمس، لذلك قرر البقاء في البيت والراحة طوال اليوم.",
     "english": "He was not feeling well yesterday, so he decided to stay home and rest all day.",
-    "arabic": "لم يكن يشعر بالجيدة بالأمس، لذلك قرر البقاء في البيت والراحة طوال اليوم.",
+    "arabic": "لم يكن يشعر بخير بالأمس، لذلك قرر البقاء في البيت والراحة طوال اليوم.",
     "tags": [
       "health",
       "past-simple",
@@ -5164,7 +5164,7 @@
       },
       {
         "word": "well",
-        "translation": "بالجيدة",
+        "translation": "بخير",
         "partOfSpeech": "adjective",
         "pronunciation": "/wel/"
       },
@@ -5633,9 +5633,9 @@
     "topic": "weather",
     "topic_label": "Weather & Seasons",
     "text_en": "Spring is nicer than winter because the flowers start to bloom and the days are longer.",
-    "text_ar": "الربيع أجمل من الشتاء لأن الأزهار تبدأ بالعروق والأيام أطول.",
+    "text_ar": "الربيع أجمل من الشتاء لأن الأزهار تبدأ بالتفتح والأيام أطول.",
     "english": "Spring is nicer than winter because the flowers start to bloom and the days are longer.",
-    "arabic": "الربيع أجمل من الشتاء لأن الأزهار تبدأ بالعروق والأيام أطول.",
+    "arabic": "الربيع أجمل من الشتاء لأن الأزهار تبدأ بالتفتح والأيام أطول.",
     "tags": [
       "weather",
       "comparative"
@@ -5661,7 +5661,7 @@
       },
       {
         "word": "bloom",
-        "translation": "بالعروق",
+        "translation": "بالتفتح",
         "partOfSpeech": "verb",
         "pronunciation": "/bluːm/"
       },
@@ -5753,9 +5753,9 @@
     "topic": "weather",
     "topic_label": "Weather & Seasons",
     "text_en": "It snowed heavily last night, so the schools had to close because the roads were too dangerous.",
-    "text_ar": "ก็ snowed بشكل ثقيل الليلة الماضية، لذلك اضطرت المدارس للإغلاق لأن الطرق كانت خطيرة جداً.",
+    "text_ar": "ثلج بكثرة الليلة الماضية، لذلك اضطرت المدارس للإغلاق لأن الطرق كانت خطيرة جداً.",
     "english": "It snowed heavily last night, so the schools had to close because the roads were too dangerous.",
-    "arabic": "ก็ snowed بشكل ثقيل الليلة الماضية، لذلك اضطرت المدارس للإغلاق لأن الطرق كانت خطيرة جداً.",
+    "arabic": "ثلج بكثرة الليلة الماضية، لذلك اضطرت المدارس للإغلاق لأن الطرق كانت خطيرة جداً.",
     "tags": [
       "weather",
       "past-simple",
@@ -5764,7 +5764,7 @@
     "words": [
       {
         "word": "snowed",
-        "translation": "snowed",
+        "translation": "ثلج",
         "partOfSpeech": "verb",
         "pronunciation": "/snoʊd/"
       },
@@ -7172,7 +7172,7 @@
       },
       {
         "word": "years",
-        "translation": "سنة",
+        "translation": "سنوات",
         "partOfSpeech": "noun",
         "pronunciation": "/jɪərz/"
       }
@@ -7339,9 +7339,9 @@
     "topic": "emotions",
     "topic_label": "Emotions & Feelings",
     "text_en": "I was so happy when I passed my exam that I called my parents immediately.",
-    "text_ar": " كنت سعيداً جداً عندما نجحت في امتحاني لدرجة أنني اتصلت بآبائي فوراً.",
+    "text_ar": "كنت سعيداً جداً عندما نجحت في امتحاني لدرجة أنني اتصلت بآبائي فوراً.",
     "english": "I was so happy when I passed my exam that I called my parents immediately.",
-    "arabic": " كنت سعيداً جداً عندما نجحت في امتحاني لدرجة أنني اتصلت بآبائي فوراً.",
+    "arabic": "كنت سعيداً جداً عندما نجحت في امتحاني لدرجة أنني اتصلت بآبائي فوراً.",
     "tags": [
       "emotions",
       "past-simple"
@@ -7414,7 +7414,7 @@
       {
         "word": "lot",
         "translation": "كثيراً",
-        "partOfSpeech": "noun",
+        "partOfSpeech": "adverb",
         "pronunciation": "/lɒt/"
       }
     ]
@@ -7424,9 +7424,9 @@
     "level": "A2",
     "topic": "emotions",
     "topic_label": "Emotions & Feelings",
-    "text_en": "You should not feel sad because you did not get the job, there will be many more opportunities.",
+    "text_en": "You should not feel sad because you did not get the job. There will be many more opportunities.",
     "text_ar": "يجب أن لا تشعر بالحزن لأنك لم تحصل على الوظيفة، ستكون هناك فرص كثيرة أخرى.",
-    "english": "You should not feel sad because you did not get the job, there will be many more opportunities.",
+    "english": "You should not feel sad because you did not get the job. There will be many more opportunities.",
     "arabic": "يجب أن لا تشعر بالحزن لأنك لم تحصل على الوظيفة، ستكون هناك فرص كثيرة أخرى.",
     "tags": [
       "emotions",
@@ -7778,7 +7778,7 @@
       },
       {
         "word": "shout",
-        "translation": "تصRIEND",
+        "translation": "تصيح",
         "partOfSpeech": "verb",
         "pronunciation": "/ʃaʊt/"
       },
