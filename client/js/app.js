@@ -106,9 +106,25 @@ async function bootstrap() {
     }
   }
 
+  const PAGE_ROUTES = {
+    '/': 'page-home',
+    '/learn': 'page-learn',
+    '/practice': 'page-practice',
+    '/review': 'page-review',
+    '/progress': 'page-progress',
+    '/profile': 'page-profile',
+    '/settings': 'page-settings'
+  };
+
   function showPage(route) {
     const pageContainers = document.querySelectorAll('.page-container');
     pageContainers.forEach(c => { c.style.display = 'none'; });
+
+    const activePageId = PAGE_ROUTES[route];
+    if (activePageId) {
+      const activePage = document.getElementById(activePageId);
+      if (activePage) activePage.style.display = '';
+    }
 
     const trainingOnly = document.querySelectorAll('.training-only');
     const isTrainingRoute = route === '/practice';
