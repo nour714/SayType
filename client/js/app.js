@@ -358,7 +358,7 @@ async function bootstrap() {
       }
     }).catch((err) => {
       console.warn('Failed to load sentences:', err);
-      trainingScreen.showEmptyState();
+      trainingScreen.showError();
     });
   }
 

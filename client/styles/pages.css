@@ -684,6 +684,33 @@
   color: var(--on-surface-muted);
 }
 
+.progress-word-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-top: var(--space-sm);
+}
+
+.progress-word-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: var(--vessel-bg);
+  border-radius: var(--rounded-sm);
+  font-size: 14px;
+}
+
+.progress-word-text {
+  font-weight: 600;
+  color: var(--on-surface);
+}
+
+.progress-word-count {
+  font-size: 12px;
+  color: var(--on-surface-muted);
+}
+
 /* ==========================================================================
    Profile Screen
    ========================================================================== */

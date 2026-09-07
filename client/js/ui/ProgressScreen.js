@@ -10,6 +10,9 @@ export class ProgressScreen {
     const streak = streakService ? streakService.getStreak() : 0;
     const completed = stats.completedSentenceCount || 0;
     const totalSessions = stats.totalSessions || 0;
+    const dueReviewCount = progressService.getDueReviewWords(50).length;
+    const difficultWords = progressService.getDifficultWords().slice(0, 5);
+    const favorites = progressService.getFavorites().length;
 
     this.el.innerHTML = `
       <div class="progress-page">
@@ -49,11 +52,11 @@ export class ProgressScreen {
                 <span class="progress-activity-label">Day Streak</span>
               </div>
               <div class="progress-activity-item">
-                <span class="progress-activity-value">${stats.totalMistakes}</span>
-                <span class="progress-activity-label">Total Mistakes</span>
+                <span class="progress-activity-value">${dueReviewCount}</span>
+                <span class="progress-activity-label">Review Due</span>
               </div>
               <div class="progress-activity-item">
-                <span class="progress-activity-value">${stats.favoritesCount}</span>
+                <span class="progress-activity-value">${favorites}</span>
                 <span class="progress-activity-label">Favorites</span>
               </div>
               <div class="progress-activity-item">
@@ -62,6 +65,20 @@ export class ProgressScreen {
               </div>
             </div>
           </div>
+
+          ${difficultWords.length > 0 ? `
+            <div class="progress-card">
+              <h2 class="progress-card-title">Difficult Words</h2>
+              <div class="progress-word-list">
+                ${difficultWords.map(({ word, count }) => `
+                  <div class="progress-word-item">
+                    <span class="progress-word-text">${word}</span>
+                    <span class="progress-word-count">${count} ${count === 1 ? 'mistake' : 'mistakes'}</span>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          ` : ''}
         </div>
       </div>
     `;

@@ -395,6 +395,31 @@ export class TrainingScreen extends EventEmitter {
   }
 
   /**
+   * Show error state when sentence loading fails.
+   */
+  showError() {
+    this.hideTooltip();
+    this.closeModals();
+
+    if (this.sentenceEnEl) {
+      this.sentenceEnEl.innerHTML = '';
+    }
+    this.charElements = [];
+
+    if (this.sentenceEnEl) {
+      const message = document.createElement('div');
+      message.className = 'empty-state-msg';
+      message.textContent = 'Failed to load sentences. Check your connection and try again.';
+      this.sentenceEnEl.appendChild(message);
+    }
+    if (this.sentenceArEl) {
+      this.sentenceArEl.textContent = 'فشل تحميل الجمل. تحقق من اتصالك وحاول مرة أخرى.';
+    }
+
+    this.setStateIndicator('EMPTY');
+  }
+
+  /**
    * Update learning state indicator UI badge.
    * @param {string} state - Session state (IDLE, LISTENING, READY, TYPING, COMPLETED, RESULT)
    */
