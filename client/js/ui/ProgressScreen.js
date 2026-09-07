@@ -3,16 +3,65 @@ export class ProgressScreen {
     this.el = document.getElementById('page-progress');
   }
 
-  render({ progressService, streakService, sentenceRepo }) {
+  async render({ progressService, streakService, sentenceRepo }) {
     if (!this.el) return;
 
     const stats = progressService.getStats();
     const streak = streakService ? streakService.getStreak() : 0;
     const completed = stats.completedSentenceCount || 0;
-    const totalSessions = stats.totalSessions || 0;
+    const completedIds = new Set(stats.completedSentenceIds || []);
     const dueReviewCount = progressService.getDueReviewWords(50).length;
-    const difficultWords = progressService.getDifficultWords().slice(0, 5);
-    const favorites = progressService.getFavorites().length;
+    const difficultWords = progressService.getDifficultWords().slice(0, 8);
+    const favoritesCount = progressService.getFavorites().length;
+    const wordReview = progressService.data.wordReview || {};
+    const allReviewWords = Object.entries(wordReview);
+    const learning = allReviewWords.filter(([, e]) => !e.mastered);
+    const mastered = allReviewWords.filter(([, e]) => e.mastered);
+
+    let levelCards = '';
+    let topicCards = '';
+    try {
+      const allSentences = await sentenceRepo.getSentences();
+      const levels = ['A1', 'A2'];
+      levelCards = levels.map(lv => {
+        const lvSentences = allSentences.filter(s => s.level === lv);
+        const lvCompleted = lvSentences.filter(s => completedIds.has(String(s.id))).length;
+        const pct = lvSentences.length > 0 ? Math.round((lvCompleted / lvSentences.length) * 100) : 0;
+        return `
+          <div class="progress-level-item">
+            <div class="progress-level-header">
+              <span class="progress-level-code">${lv}</span>
+              <span class="progress-level-pct">${pct}%</span>
+            </div>
+            <div class="progress-level-bar">
+              <div class="progress-level-bar-fill" style="width:${pct}%"></div>
+            </div>
+            <span class="progress-level-count">${lvCompleted} / ${lvSentences.length}</span>
+          </div>
+        `;
+      }).join('');
+
+      const topics = await sentenceRepo.getTopics('A1');
+      const topics2 = await sentenceRepo.getTopics('A2');
+      const allTopics = [...topics.map(t => ({ ...t, level: 'A1' })), ...topics2.map(t => ({ ...t, level: 'A2' }))];
+      topicCards = allTopics.map(t => {
+        const tSentences = allSentences.filter(s => s.topic === t.id && s.level === t.level);
+        const tCompleted = tSentences.filter(s => completedIds.has(String(s.id))).length;
+        const pct = tSentences.length > 0 ? Math.round((tCompleted / tSentences.length) * 100) : 0;
+        return `
+          <div class="progress-topic-item">
+            <div class="progress-topic-info">
+              <span class="progress-topic-name">${t.label}</span>
+              <span class="progress-topic-level">${t.level}</span>
+            </div>
+            <div class="progress-topic-bar">
+              <div class="progress-topic-bar-fill" style="width:${pct}%"></div>
+            </div>
+            <span class="progress-topic-count">${tCompleted}/${tSentences.length}</span>
+          </div>
+        `;
+      }).join('');
+    } catch (_) {}
 
     this.el.innerHTML = `
       <div class="progress-page">
@@ -23,19 +72,19 @@ export class ProgressScreen {
 
         <div class="progress-grid">
           <div class="progress-card progress-overview-card">
-            <h2 class="progress-card-title">Overall Progress</h2>
+            <h2 class="progress-card-title">Overall</h2>
             <div class="progress-overview-stats">
               <div class="progress-overview-item">
                 <span class="progress-overview-value">${completed}</span>
-                <span class="progress-overview-label">Completed Sentences</span>
+                <span class="progress-overview-label">Sentences</span>
               </div>
               <div class="progress-overview-item">
                 <span class="progress-overview-value">${stats.averageAccuracy}%</span>
-                <span class="progress-overview-label">Average Accuracy</span>
+                <span class="progress-overview-label">Accuracy</span>
               </div>
               <div class="progress-overview-item">
                 <span class="progress-overview-value">${stats.averageWpm}</span>
-                <span class="progress-overview-label">Average WPM</span>
+                <span class="progress-overview-label">Avg WPM</span>
               </div>
               <div class="progress-overview-item">
                 <span class="progress-overview-value">${stats.bestWpm}</span>
@@ -52,19 +101,51 @@ export class ProgressScreen {
                 <span class="progress-activity-label">Day Streak</span>
               </div>
               <div class="progress-activity-item">
-                <span class="progress-activity-value">${dueReviewCount}</span>
-                <span class="progress-activity-label">Review Due</span>
+                <span class="progress-activity-value">${stats.totalMistakes}</span>
+                <span class="progress-activity-label">Mistakes</span>
               </div>
               <div class="progress-activity-item">
-                <span class="progress-activity-value">${favorites}</span>
+                <span class="progress-activity-value">${favoritesCount}</span>
                 <span class="progress-activity-label">Favorites</span>
               </div>
               <div class="progress-activity-item">
-                <span class="progress-activity-value">${stats.difficultWordsCount}</span>
-                <span class="progress-activity-label">Difficult Words</span>
+                <span class="progress-activity-value">${stats.totalSessions}</span>
+                <span class="progress-activity-label">Sessions</span>
               </div>
             </div>
           </div>
+
+          ${levelCards ? `
+            <div class="progress-card">
+              <h2 class="progress-card-title">Level Progress</h2>
+              <div class="progress-level-list">${levelCards}</div>
+            </div>
+          ` : ''}
+
+          <div class="progress-card">
+            <h2 class="progress-card-title">Review Status</h2>
+            <div class="progress-activity">
+              <div class="progress-activity-item">
+                <span class="progress-activity-value">${dueReviewCount}</span>
+                <span class="progress-activity-label">Due Now</span>
+              </div>
+              <div class="progress-activity-item">
+                <span class="progress-activity-value">${learning.length}</span>
+                <span class="progress-activity-label">Learning</span>
+              </div>
+              <div class="progress-activity-item">
+                <span class="progress-activity-value">${mastered.length}</span>
+                <span class="progress-activity-label">Mastered</span>
+              </div>
+            </div>
+          </div>
+
+          ${topicCards ? `
+            <div class="progress-card progress-topics-card">
+              <h2 class="progress-card-title">Topic Progress</h2>
+              <div class="progress-topic-list">${topicCards}</div>
+            </div>
+          ` : ''}
 
           ${difficultWords.length > 0 ? `
             <div class="progress-card">
@@ -78,7 +159,12 @@ export class ProgressScreen {
                 `).join('')}
               </div>
             </div>
-          ` : ''}
+          ` : `
+            <div class="progress-card">
+              <h2 class="progress-card-title">Difficult Words</h2>
+              <div class="progress-empty">No difficult words recorded yet. Keep practicing!</div>
+            </div>
+          `}
         </div>
       </div>
     `;

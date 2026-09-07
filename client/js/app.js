@@ -120,6 +120,9 @@ async function bootstrap() {
     const pageContainers = document.querySelectorAll('.page-container');
     pageContainers.forEach(c => { c.style.display = 'none'; });
 
+    const notFound = document.querySelector('.not-found-page');
+    if (notFound) notFound.remove();
+
     const activePageId = PAGE_ROUTES[route];
     if (activePageId) {
       const activePage = document.getElementById(activePageId);
@@ -423,14 +426,14 @@ async function bootstrap() {
     if (currentPage === '/practice') cleanupPracticeSession();
     currentPage = '/';
     showPage('/');
-    await dashboardScreen.render(await getProgressContext());
+    await dashboardScreen.render({ ...(await getProgressContext()), sentenceRepo, progressService });
   });
 
-  router.register('/learn', async () => {
+  router.register('/learn', async (params) => {
     if (currentPage === '/practice') cleanupPracticeSession();
     currentPage = '/learn';
     showPage('/learn');
-    await levelScreen.render({ sentenceRepo, progressService });
+    await levelScreen.render({ sentenceRepo, progressService, level: params.level });
   });
 
   router.register('/practice', async (params) => {
@@ -483,6 +486,27 @@ async function bootstrap() {
     currentPage = '/settings';
     showPage('/settings');
     settingsScreen.render({ settingsService });
+  });
+
+  // 404 route
+  router.register('*', () => {
+    if (currentPage === '/practice') cleanupPracticeSession();
+    currentPage = null;
+    document.querySelectorAll('.page-container').forEach(c => { c.style.display = 'none'; });
+    const main = document.getElementById('main-content');
+    if (main) {
+      const notFound = document.createElement('div');
+      notFound.className = 'not-found-page';
+      notFound.innerHTML = `
+        <div class="not-found-content">
+          <h1 class="not-found-title">Page Not Found</h1>
+          <p class="not-found-text">The page you're looking for doesn't exist.</p>
+          <a href="#/" class="action-btn primary-btn">Go Home</a>
+        </div>
+      `;
+      main.appendChild(notFound);
+    }
+    navigation.setActive(null);
   });
 
   // =========================================================================

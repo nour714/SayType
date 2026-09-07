@@ -1030,3 +1030,360 @@
     transition: none;
   }
 }
+
+/* ==========================================================================
+   Home — Level Cards
+   ========================================================================== */
+.home-subtitle {
+  font-size: 14px;
+  color: var(--on-surface-variant);
+  margin-bottom: var(--space-lg);
+}
+
+.home-levels-section {
+  margin-top: var(--space-sm);
+}
+
+.home-level-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-md);
+}
+
+.home-level-card {
+  display: block;
+  background: var(--vessel-bg);
+  border: 1px solid var(--vessel-border);
+  border-radius: var(--rounded-lg);
+  padding: var(--space-lg);
+  text-decoration: none;
+  color: var(--on-surface);
+  transition: all var(--duration-norm) var(--ease-fluid);
+}
+
+.home-level-card:hover {
+  border-color: var(--accent-sage);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.3);
+}
+
+.home-level-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: var(--space-sm);
+}
+
+.home-level-code {
+  font-family: var(--font-mono);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--accent-sage);
+}
+
+.home-level-pct {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--on-surface-variant);
+}
+
+.home-level-bar {
+  height: 4px;
+  background: var(--surface-container-highest);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: var(--space-sm);
+}
+
+.home-level-bar-fill {
+  height: 100%;
+  background: var(--accent-sage);
+  border-radius: 2px;
+  transition: width var(--duration-slow) var(--ease-fluid);
+}
+
+.home-level-count {
+  font-size: 12px;
+  color: var(--on-surface-muted);
+}
+
+.home-card-link {
+  display: inline-block;
+  font-size: 13px;
+  color: var(--accent-sage);
+  text-decoration: none;
+  margin-top: var(--space-sm);
+  font-weight: 500;
+}
+
+.home-card-link:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   Level Card — Actions
+   ========================================================================== */
+.level-card-actions {
+  display: flex;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+.level-card-actions .action-btn {
+  flex: 1;
+  text-align: center;
+  font-size: 13px;
+  padding: 0.5rem 1rem;
+}
+
+.level-card-completed {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--on-surface-muted);
+}
+
+.back-link {
+  background: none;
+  border: none;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: var(--accent-sage);
+  cursor: pointer;
+  padding: 0;
+}
+
+.back-link:hover {
+  opacity: 0.8;
+}
+
+/* ==========================================================================
+   Topic Card — Completed
+   ========================================================================== */
+.topic-card-completed {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--on-surface-muted);
+}
+
+.topic-card-all {
+  border-style: dashed;
+  opacity: 0.7;
+}
+
+.topic-card-all:hover {
+  opacity: 1;
+}
+
+/* ==========================================================================
+   Review — Word Details
+   ========================================================================== */
+.review-list-section {
+  margin-top: var(--space-lg);
+}
+
+.review-word-main {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.review-word-mistakes {
+  font-size: 11px;
+  color: var(--on-surface-muted);
+}
+
+.review-word-mastered {
+  opacity: 0.6;
+}
+
+.review-word-check {
+  color: var(--accent-sage);
+  font-weight: 600;
+}
+
+.review-word-more {
+  font-size: 12px;
+  color: var(--on-surface-muted);
+  text-align: center;
+  padding: var(--space-sm);
+}
+
+.review-word-list-mastered {
+  opacity: 0.8;
+}
+
+/* ==========================================================================
+   Progress — Level & Topic Lists
+   ========================================================================== */
+.progress-level-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.progress-level-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.progress-level-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.progress-level-code {
+  font-family: var(--font-mono);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--accent-sage);
+}
+
+.progress-level-pct {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--on-surface-variant);
+}
+
+.progress-level-bar {
+  height: 4px;
+  background: var(--surface-container-highest);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-level-bar-fill {
+  height: 100%;
+  background: var(--accent-sage);
+  border-radius: 2px;
+}
+
+.progress-level-count {
+  font-size: 12px;
+  color: var(--on-surface-muted);
+}
+
+.progress-topic-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.progress-topic-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-xs) 0;
+}
+
+.progress-topic-info {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  min-width: 140px;
+}
+
+.progress-topic-name {
+  font-size: 13px;
+  color: var(--on-surface);
+}
+
+.progress-topic-level {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--on-surface-muted);
+  padding: 0.1rem 0.3rem;
+  background: var(--surface-container-high);
+  border-radius: var(--rounded-full);
+}
+
+.progress-topic-bar {
+  flex: 1;
+  height: 4px;
+  background: var(--surface-container-highest);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-topic-bar-fill {
+  height: 100%;
+  background: var(--accent-sage);
+  border-radius: 2px;
+}
+
+.progress-topic-count {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--on-surface-muted);
+  min-width: 40px;
+  text-align: right;
+}
+
+.progress-empty {
+  font-size: 13px;
+  color: var(--on-surface-muted);
+  padding: var(--space-sm) 0;
+}
+
+.progress-topics-card {
+  grid-column: 1 / -1;
+}
+
+/* ==========================================================================
+   Profile — Actions
+   ========================================================================== */
+.profile-actions {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.profile-actions .action-btn {
+  flex: 1;
+  text-align: center;
+}
+
+.profile-activity {
+  font-size: 12px;
+  color: var(--on-surface-muted);
+  text-align: center;
+}
+
+/* ==========================================================================
+   404 Not Found
+   ========================================================================== */
+.not-found-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+}
+
+.not-found-content {
+  text-align: center;
+}
+
+.not-found-title {
+  font-family: var(--font-hero);
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--on-surface);
+  margin-bottom: var(--space-sm);
+}
+
+.not-found-text {
+  font-size: 14px;
+  color: var(--on-surface-variant);
+  margin-bottom: var(--space-lg);
+}
+
+/* ==========================================================================
+   Review — Empty State CTA
+   ========================================================================== */
+.review-empty-state .action-btn {
+  margin-top: var(--space-lg);
+}

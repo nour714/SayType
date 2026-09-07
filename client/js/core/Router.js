@@ -37,7 +37,7 @@ export class Router extends EventEmitter {
       }
     }
 
-    const handler = this.routes[path];
+    const handler = this.routes[path] || this.routes['*'];
     if (handler) {
       this.current = path;
       handler(params);
