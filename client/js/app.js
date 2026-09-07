@@ -19,6 +19,7 @@ import { TrainingScreen } from './ui/TrainingScreen.js';
 import { StatsPills } from './ui/StatsPills.js';
 import { ProgressIndicator } from './ui/ProgressIndicator.js';
 import { TopicSelector } from './ui/TopicSelector.js';
+import { LevelSelector } from './ui/LevelSelector.js';
 import { AuthModal } from './ui/AuthModal.js';
 
 async function bootstrap() {
@@ -47,10 +48,13 @@ async function bootstrap() {
   trainingScreen.setDictionaryService(dictionaryService);
   const statsPills = new StatsPills();
   const progressIndicator = new ProgressIndicator();
+  const levelSelector = new LevelSelector('level-select', 'A1');
   const topicSelector = new TopicSelector('topic-select');
   const authModal = new AuthModal();
 
-  // 5. Review system transient state
+  // 5. Level & topic transient state
+  let currentLevel = 'A1';
+  let currentTopic = '';
   let allSentencesPool = [];
   let reviewWordFailedThisSentence = false;
 
@@ -293,30 +297,62 @@ async function bootstrap() {
     trainingScreen.showLessonModal(summary);
   });
 
-  // 9. Topic Selector Integration
-  topicSelector.on('topic:change', ({ topic }) => {
-    const query = topic ? { topic } : {};
+  // 9. Level & Topic Selector Integration
+  function loadSentencesForCurrentFilters() {
+    const query = { level: currentLevel };
+    if (currentTopic) query.topic = currentTopic;
     speechService.stop();
     sentenceRepo.getSentences(query).then((sentences) => {
       sessionEngine.setSentences(sentences || []);
-      allSentencesPool = sentences || [];
       if (sentences && sentences.length > 0) {
-        // The topic change is a user gesture; resume the listen-first flow immediately.
         trainingScreen.closeStartOverlay();
         sessionEngine.beginLesson();
       }
     }).catch((err) => {
-      console.warn('Failed to load sentences for topic:', err);
+      console.warn('Failed to load sentences:', err);
     });
+  }
+
+  function refreshTopicsForLevel() {
+    sentenceRepo.getTopics(currentLevel).then((topics) => {
+      topicSelector.setTopics(topics);
+      // If current topic is no longer available at this level, clear it
+      if (currentTopic && !topics.some((t) => t.id === currentTopic)) {
+        currentTopic = '';
+      }
+    }).catch((err) => {
+      console.warn('Failed to load topics:', err);
+    });
+    // Also refresh the level-scoped pool for review sentence matching
+    sentenceRepo.getSentences({ level: currentLevel }).then((sentences) => {
+      allSentencesPool = sentences || [];
+    }).catch(() => {});
+  }
+
+  levelSelector.on('level:change', ({ level }) => {
+    currentLevel = level;
+    currentTopic = '';
+    refreshTopicsForLevel();
+    loadSentencesForCurrentFilters();
   });
 
-  sentenceRepo.getTopics().then((topics) => {
-    topicSelector.setTopics(topics);
+  topicSelector.on('topic:change', ({ topic }) => {
+    currentTopic = topic;
+    loadSentencesForCurrentFilters();
+  });
+
+  // Initial topic load for default level
+  refreshTopicsForLevel();
+
+  // 10. Load Initial Sentence Dataset & Start Session
+  sentenceRepo.getSentences({ level: currentLevel }).then((sentences) => {
+    sessionEngine.setSentences(sentences);
+    allSentencesPool = sentences || [];
   }).catch((err) => {
-    console.warn('Failed to load topics:', err);
+    console.error('Failed to load sentences:', err);
   });
 
-  // 10. Global Keyboard Interactions
+  // 11. Global Keyboard Interactions
   window.addEventListener('keydown', (e) => {
     // Escape first dismisses any open word tooltip — never reset the
     // sentence while the learner is simply inspecting a word.

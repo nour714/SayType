@@ -39,12 +39,16 @@ export class SentenceRepository {
   }
 
   /**
-   * Fetch available topics from backend.
+   * Fetch available topics from backend, optionally filtered by level.
+   * @param {string} [level]
    * @returns {Promise<Array<{ id: string, label: string, count: number }>>}
    */
-  async getTopics() {
+  async getTopics(level) {
     try {
-      const response = await fetch(`${this.baseUrl}/topics`);
+      const params = new URLSearchParams();
+      if (level) params.append('level', level);
+      const queryString = params.toString() ? `?${params.toString()}` : '';
+      const response = await fetch(`${this.baseUrl}/topics${queryString}`);
       if (!response.ok) throw new Error(`HTTP error ${response.status}`);
       return await response.json();
     } catch (err) {

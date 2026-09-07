@@ -60,11 +60,14 @@
 
       <div class="header-right">
         <div class="topic-selector-wrapper">
+          <select id="level-select" class="topic-select level-select" aria-label="Filter sentences by level">
+            <option value="A1">A1 — Beginner</option>
+            <option value="A2">A2 — Elementary</option>
+          </select>
           <select id="topic-select" class="topic-select" aria-label="Filter sentences by topic">
             <option value="">All Topics</option>
           </select>
         </div>
-        <span id="level-badge" class="badge level-pill">A1 FOUNDATIONS</span>
         <div id="progress-indicator" class="progress-ratio" aria-live="polite">
           <span id="progress-current" class="progress-val">1</span>
           <span class="progress-divider">/</span>

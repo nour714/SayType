@@ -58,10 +58,55 @@ const server = app.listen(3002, async () => {
     const topicIds = topics.map(t => t.id);
     const EXPECTED_TOPICS = ['daily-life', 'family', 'food', 'travel', 'university', 'work', 'shopping', 'health', 'weather', 'communication'];
     EXPECTED_TOPICS.forEach(t => assert.ok(topicIds.includes(t), `Expected topic "${t}" in topics list`));
-    assert.strictEqual(topics.length, EXPECTED_TOPICS.length, 'Expected exactly 10 topics');
+    // With A2 content, there are now 12 topics total (10 original + 2 new A2-only)
+    assert.ok(topics.length >= 10, `Expected at least 10 topics, got ${topics.length}`);
     console.log(`✓ GET /api/sentences/topics passed (${topics.length} topics)`);
 
-    // 6. Static Client index.html
+    // 5a. Topics filtered by level
+    const topicsA1Res = await get('/api/sentences/topics?level=A1');
+    assert.strictEqual(topicsA1Res.status, 200);
+    const topicsA1 = JSON.parse(topicsA1Res.body);
+    assert.strictEqual(topicsA1.length, 10, 'A1 should have exactly 10 topics');
+    const a1Ids = topicsA1.map(t => t.id);
+    assert.ok(!a1Ids.includes('technology'), 'A1 topics should not include technology');
+    assert.ok(!a1Ids.includes('emotions'), 'A1 topics should not include emotions');
+    console.log(`✓ GET /api/sentences/topics?level=A1 passed (${topicsA1.length} topics)`);
+
+    const topicsA2Res = await get('/api/sentences/topics?level=A2');
+    assert.strictEqual(topicsA2Res.status, 200);
+    const topicsA2 = JSON.parse(topicsA2Res.body);
+    assert.strictEqual(topicsA2.length, 12, 'A2 should have 12 topics (10 shared + 2 new)');
+    const a2Ids = topicsA2.map(t => t.id);
+    assert.ok(a2Ids.includes('technology'), 'A2 topics should include technology');
+    assert.ok(a2Ids.includes('emotions'), 'A2 topics should include emotions');
+    console.log(`✓ GET /api/sentences/topics?level=A2 passed (${topicsA2.length} topics)`);
+
+    // 6. Level-filtered sentences
+    const sentencesA1Res = await get('/api/sentences?level=A1');
+    assert.strictEqual(sentencesA1Res.status, 200);
+    const sentencesA1 = JSON.parse(sentencesA1Res.body);
+    assert.ok(sentencesA1.length >= 100, `Expected many A1 sentences, got ${sentencesA1.length}`);
+    assert.ok(sentencesA1.every(s => s.level === 'A1'), 'All returned sentences should be A1');
+    console.log(`✓ GET /api/sentences?level=A1 passed (${sentencesA1.length} sentences)`);
+
+    const sentencesA2Res = await get('/api/sentences?level=A2');
+    assert.strictEqual(sentencesA2Res.status, 200);
+    const sentencesA2 = JSON.parse(sentencesA2Res.body);
+    assert.ok(sentencesA2.length >= 100, `Expected many A2 sentences, got ${sentencesA2.length}`);
+    assert.ok(sentencesA2.every(s => s.level === 'A2'), 'All returned sentences should be A2');
+    assert.ok(sentencesA2.some(s => s.topic === 'technology'), 'A2 should include technology topic');
+    assert.ok(sentencesA2.some(s => s.topic === 'emotions'), 'A2 should include emotions topic');
+    console.log(`✓ GET /api/sentences?level=A2 passed (${sentencesA2.length} sentences)`);
+
+    // 7. Level + topic combined filter
+    const combinedRes = await get('/api/sentences?level=A2&topic=technology');
+    assert.strictEqual(combinedRes.status, 200);
+    const combined = JSON.parse(combinedRes.body);
+    assert.ok(combined.length > 0, 'Should have A2 technology sentences');
+    assert.ok(combined.every(s => s.level === 'A2' && s.topic === 'technology'));
+    console.log(`✓ GET /api/sentences?level=A2&topic=technology passed (${combined.length} sentences)`);
+
+    // 8. Static Client index.html
     const indexRes = await get('/');
     assert.strictEqual(indexRes.status, 200);
     assert.ok(indexRes.body.includes('SayType'));
@@ -69,7 +114,7 @@ const server = app.listen(3002, async () => {
     assert.ok(indexRes.body.includes('js/app.js'));
     console.log('✓ GET / (client index.html) passed');
 
-    // 7. CSS files
+    // 9. CSS files
     const tokensRes = await get('/styles/tokens.css');
     assert.strictEqual(tokensRes.status, 200);
     assert.ok(tokensRes.body.includes('--surface: #0f1114'));
@@ -85,7 +130,7 @@ const server = app.listen(3002, async () => {
     assert.ok(compRes.body.includes('.sentence-vessel'));
     console.log('✓ GET /styles/components.css passed');
 
-    // 8. JS files
+    // 10. JS files
     const jsRes = await get('/js/app.js');
     assert.strictEqual(jsRes.status, 200);
     assert.ok(jsRes.body.includes('bootstrap'));
@@ -98,6 +143,42 @@ const server = app.listen(3002, async () => {
     assert.strictEqual(typeof configJson.supabaseUrl, 'string');
     assert.strictEqual(typeof configJson.supabaseAnonKey, 'string');
     console.log('✓ GET /api/config passed');
+
+    // 12. Multi-file loading (using temp test data directory)
+    const fs = require('fs');
+    const path = require('path');
+    const tmpDir = path.join(__dirname, '.tmp-test-data');
+    try {
+      fs.mkdirSync(tmpDir, { recursive: true });
+      fs.writeFileSync(path.join(tmpDir, 'sentences.alpha.json'), JSON.stringify([
+        { id: 'test-alpha-001', level: 'A1', topic: 'test', topic_label: 'Test', text_en: 'Alpha sentence.', text_ar: 'جملة ألف.', english: 'Alpha sentence.', arabic: 'جملة ألف.', words: [], tags: [] }
+      ]));
+      fs.writeFileSync(path.join(tmpDir, 'sentences.beta.json'), JSON.stringify([
+        { id: 'test-beta-001', level: 'A2', topic: 'test', topic_label: 'Test', text_en: 'Beta sentence.', text_ar: 'جملة بيتا.', english: 'Beta sentence.', arabic: 'جملة بيتا.', words: [], tags: [] }
+      ]));
+      // Also write a non-matching file to ensure it's ignored
+      fs.writeFileSync(path.join(tmpDir, 'sentences.readme.txt'), 'This should be ignored.');
+      fs.writeFileSync(path.join(tmpDir, 'other.json'), JSON.stringify([{ id: 'should-not-load' }]));
+
+      const { SentencesRepository } = require('../server/repositories/sentences.repository');
+      const testRepo = new SentencesRepository(tmpDir);
+      const loaded = await testRepo.findAll();
+      assert.strictEqual(loaded.length, 2, 'Should load exactly 2 sentences from 2 matching files');
+      const ids = loaded.map(s => s.id).sort();
+      assert.deepStrictEqual(ids, ['test-alpha-001', 'test-beta-001']);
+
+      // Level-aware getTopics on the test repo
+      const testTopicsA1 = await testRepo.getTopics('A1');
+      assert.strictEqual(testTopicsA1.length, 1);
+      assert.strictEqual(testTopicsA1[0].count, 1);
+      const testTopicsAll = await testRepo.getTopics();
+      assert.strictEqual(testTopicsAll.length, 1);
+      assert.strictEqual(testTopicsAll[0].count, 2);
+      console.log('✓ Multi-file loading + level-aware getTopics passed');
+    } finally {
+      // Clean up temp directory
+      fs.rmSync(tmpDir, { recursive: true, force: true });
+    }
 
     console.log('\nALL SERVER TESTS PASSED SUCCESSFULLY! 🎉');
     process.exit(0);

@@ -30,11 +30,12 @@ class SentencesController {
 
   /**
    * GET /api/sentences/topics
-   * Returns list of available topics
+   * Returns list of available topics, optionally filtered by level.
    */
   async getTopics(req, res) {
     try {
-      const topics = await sentencesRepository.getTopics();
+      const { level } = req.query;
+      const topics = await sentencesRepository.getTopics(level);
       res.json(topics);
     } catch (err) {
       console.error('Error in getTopics controller:', err);

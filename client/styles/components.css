@@ -109,6 +109,10 @@
   outline-offset: 2px;
 }
 
+.level-select {
+  margin-right: var(--space-2xs);
+}
+
 /* Level Badge */
 .badge.level-pill {
   font-family: var(--font-mono);
