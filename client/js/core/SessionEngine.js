@@ -50,6 +50,7 @@ export class SessionEngine extends EventEmitter {
     this.isLessonCompleted = false;
     this.isLessonStarted = false;
     this.difficultWords = new Map();
+    this._lessonCompleteTimer = null;
 
     // Forward events from SentenceEngine
     this.sentenceEngine.on('char:correct', (payload) => {
@@ -304,7 +305,8 @@ export class SessionEngine extends EventEmitter {
     this.setState(SESSION_STATES.RESULT);
 
     if (isLast) {
-      setTimeout(() => {
+      this._lessonCompleteTimer = setTimeout(() => {
+        this._lessonCompleteTimer = null;
         this.completeLesson();
       }, 450);
     }
@@ -355,6 +357,10 @@ export class SessionEngine extends EventEmitter {
    * flow may resume immediately without re-showing the start overlay.
    */
   restartLesson() {
+    if (this._lessonCompleteTimer) {
+      clearTimeout(this._lessonCompleteTimer);
+      this._lessonCompleteTimer = null;
+    }
     this.lessonHistory = [];
     this.isLessonCompleted = false;
     this.isLessonStarted = true;

@@ -33,7 +33,7 @@ import { ProgressScreen } from './ui/ProgressScreen.js';
 import { ProfileScreen } from './ui/ProfileScreen.js';
 import { SettingsScreen } from './ui/SettingsScreen.js';
 
-const TRAINING_PAGES = ['/', '/practice'];
+const VALID_LEVELS = ['A1', 'A2'];
 
 async function bootstrap() {
   // 1. Services
@@ -46,6 +46,9 @@ async function bootstrap() {
   const streakService = new StreakService();
   const settingsService = new SettingsService();
 
+  // Apply saved speech rate
+  speechService.setRate(settingsService.get('speechRate') || 1);
+
   // 2. Auth & Sync
   const supabaseClient = getSupabaseClient();
   const authService = new AuthService(supabaseClient);
@@ -57,6 +60,10 @@ async function bootstrap() {
   const sentenceEngine = new SentenceEngine();
   const metricsCalculator = new MetricsCalculator();
   const sessionEngine = new SessionEngine(sentenceEngine, metricsCalculator, { listenFirst: true });
+
+  // Apply saved typing mode
+  const savedTypingMode = settingsService.get('typingMode');
+  if (savedTypingMode) sentenceEngine.setTypingMode(savedTypingMode);
 
   // 4. UI Components
   const trainingScreen = new TrainingScreen();
@@ -90,12 +97,21 @@ async function bootstrap() {
   // =========================================================================
   // Helpers
   // =========================================================================
+  function cleanupPracticeSession() {
+    speechService.stop();
+    trainingScreen.closeModals();
+    trainingScreen.hideTooltip();
+    if (trainingScreen.focusReminder) {
+      trainingScreen.focusReminder.style.display = 'none';
+    }
+  }
+
   function showPage(route) {
     const pageContainers = document.querySelectorAll('.page-container');
     pageContainers.forEach(c => { c.style.display = 'none'; });
 
     const trainingOnly = document.querySelectorAll('.training-only');
-    const isTrainingRoute = TRAINING_PAGES.includes(route) || route === '/review';
+    const isTrainingRoute = route === '/practice';
 
     trainingOnly.forEach(el => {
       el.style.display = isTrainingRoute ? '' : 'none';
@@ -114,14 +130,16 @@ async function bootstrap() {
     navigation.setActive(route);
   }
 
-  function getProgressContext() {
+  async function getProgressContext() {
+    const topics = await sentenceRepo.getTopics(currentLevel).catch(() => []);
     return {
       stats: progressService.getStats(),
       streak: streakService.getStreak(),
       dueReviewCount: progressService.getDueReviewWords(50).length,
       lastLevel: currentLevel,
       lastTopic: currentTopic,
-      continueLesson: progressService.data.completedCount > 0
+      continueLesson: progressService.data.completedCount > 0,
+      topics
     };
   }
 
@@ -260,7 +278,7 @@ async function bootstrap() {
     if (!sentence) {
       trainingScreen.showEmptyState();
       trainingScreen.setFavorite(false);
-      progressIndicator.update({ current: 0, total: 0, level: currentLevel });
+      progressIndicator.update({ current: 0, total: 0 });
       statsPills.reset();
       return;
     }
@@ -268,9 +286,9 @@ async function bootstrap() {
     trainingScreen.renderSentence(sentence);
     const srAnnounce = document.getElementById('sr-announce');
     if (srAnnounce) srAnnounce.textContent = `Listen: ${sentence.text_en || sentence.english || ''}`;
-    trainingScreen.setFavorite(sentence ? progressService.isFavorite(sentence.id) : false);
+    trainingScreen.setFavorite(progressService.isFavorite(sentence.id));
     trainingScreen.setReviewBadge(sentence);
-    progressIndicator.update({ current: index + 1, total, level: sentence?.level || currentLevel });
+    progressIndicator.update({ current: index + 1, total });
     statsPills.reset();
   });
 
@@ -340,6 +358,7 @@ async function bootstrap() {
       }
     }).catch((err) => {
       console.warn('Failed to load sentences:', err);
+      trainingScreen.showEmptyState();
     });
   }
 
@@ -385,25 +404,28 @@ async function bootstrap() {
   // Routes
   // =========================================================================
   router.register('/', async () => {
+    if (currentPage === '/practice') cleanupPracticeSession();
     currentPage = '/';
     showPage('/');
-    await dashboardScreen.render(getProgressContext());
+    await dashboardScreen.render(await getProgressContext());
   });
 
   router.register('/learn', async () => {
+    if (currentPage === '/practice') cleanupPracticeSession();
     currentPage = '/learn';
     showPage('/learn');
     await levelScreen.render({ sentenceRepo, progressService });
   });
 
   router.register('/practice', async (params) => {
+    const prevPage = currentPage;
     currentPage = '/practice';
     showPage('/practice');
 
     const container = document.getElementById('page-practice');
     if (container) container.style.display = '';
 
-    if (params.level) {
+    if (params.level && VALID_LEVELS.includes(params.level)) {
       currentLevel = params.level;
       levelSelector.setLevel(params.level);
     }
@@ -412,29 +434,36 @@ async function bootstrap() {
       topicSelector.setTopic(params.topic);
     }
 
-    refreshTopicsForLevel();
-    loadSentencesForCurrentFilters();
+    // Only reload sentences if coming from a different page or changing filters
+    if (prevPage !== '/practice') {
+      refreshTopicsForLevel();
+      loadSentencesForCurrentFilters();
+    }
   });
 
   router.register('/review', async () => {
+    if (currentPage === '/practice') cleanupPracticeSession();
     currentPage = '/review';
     showPage('/review');
-    reviewScreen.render({ progressService, reviewScheduler, sentenceRepo });
+    reviewScreen.render({ progressService, reviewScheduler, sentenceRepo, currentLevel });
   });
 
   router.register('/progress', async () => {
+    if (currentPage === '/practice') cleanupPracticeSession();
     currentPage = '/progress';
     showPage('/progress');
     progressScreen.render({ progressService, streakService, sentenceRepo });
   });
 
   router.register('/profile', async () => {
+    if (currentPage === '/practice') cleanupPracticeSession();
     currentPage = '/profile';
     showPage('/profile');
     profileScreen.render({ authService, progressService, streakService });
   });
 
   router.register('/settings', async () => {
+    if (currentPage === '/practice') cleanupPracticeSession();
     currentPage = '/settings';
     showPage('/settings');
     settingsScreen.render({ settingsService });
@@ -447,6 +476,10 @@ async function bootstrap() {
     sentenceEngine.setTypingMode(value);
   });
 
+  settingsScreen.on('setting:speechRate', ({ value }) => {
+    speechService.setRate(value);
+  });
+
   settingsScreen.on('setting:theme', () => {
     themeService.toggle();
   });
@@ -455,7 +488,7 @@ async function bootstrap() {
   // Global Keyboard
   // =========================================================================
   window.addEventListener('keydown', (e) => {
-    if (currentPage !== '/practice' && currentPage !== '/') return;
+    if (currentPage !== '/practice') return;
 
     if (e.key === 'Escape' && trainingScreen.isTooltipVisible()) {
       e.preventDefault();

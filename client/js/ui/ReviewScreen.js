@@ -6,7 +6,7 @@ export class ReviewScreen extends EventEmitter {
     this.el = document.getElementById('page-review');
   }
 
-  render({ progressService, reviewScheduler, sentenceRepo }) {
+  render({ progressService, reviewScheduler, sentenceRepo, currentLevel }) {
     if (!this.el) return;
 
     const dueWords = progressService.getDueReviewWords(50);
@@ -45,7 +45,7 @@ export class ReviewScreen extends EventEmitter {
 
         ${dueWords.length > 0 ? `
           <div class="review-start-section">
-            <a href="#practice?level=A1&review=true" class="action-btn primary-btn review-start-btn">
+            <a href="#practice?level=${currentLevel || 'A1'}&review=true" class="action-btn primary-btn review-start-btn">
               Start Review
               <span class="review-start-count">${dueWords.length} words</span>
             </a>

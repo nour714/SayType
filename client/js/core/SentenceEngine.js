@@ -46,7 +46,16 @@ export class SentenceEngine extends EventEmitter {
    */
   setSentence(sentence) {
     this.targetSentence = sentence;
-    this.text = sentence && (sentence.text_en || sentence.english) ? (sentence.text_en || sentence.english) : '';
+    if (!sentence) {
+      this.text = '';
+      this.charIndex = 0;
+      this.hasPendingError = false;
+      this.isCompleted = false;
+      this.charMistakes = [];
+      this.emit('sentence:loaded', { sentence: null });
+      return;
+    }
+    this.text = sentence.text_en || sentence.english || '';
     this.charIndex = 0;
     this.hasPendingError = false;
     this.isCompleted = false;

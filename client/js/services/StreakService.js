@@ -6,9 +6,11 @@ function todayKey() {
 }
 
 function daysBetween(dateStr1, dateStr2) {
-  const d1 = new Date(dateStr1 + 'T00:00:00Z');
-  const d2 = new Date(dateStr2 + 'T00:00:00Z');
-  return Math.round((d2 - d1) / (1000 * 60 * 60 * 24));
+  const [y1, m1, d1] = dateStr1.split('-').map(Number);
+  const [y2, m2, d2] = dateStr2.split('-').map(Number);
+  const d1Local = new Date(y1, m1 - 1, d1);
+  const d2Local = new Date(y2, m2 - 1, d2);
+  return Math.round((d2Local - d1Local) / (1000 * 60 * 60 * 24));
 }
 
 export class StreakService {

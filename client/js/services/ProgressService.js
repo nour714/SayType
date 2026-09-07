@@ -375,6 +375,10 @@ export class ProgressService extends EventEmitter {
       sentencesTypedTotal: 0,
       wordReview: {}
     };
+    if (this._saveTimer) {
+      clearTimeout(this._saveTimer);
+      this._saveTimer = null;
+    }
     this.data = { ...defaultData, ...data };
     this._save(true);
   }

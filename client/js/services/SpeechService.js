@@ -22,9 +22,8 @@ export class SpeechService extends EventEmitter {
     this.voices = [];
     this._isSpeaking = false;
     this._watchdogTimer = null;
-    // Generation counter invalidates stale utterances so completed/canceled
-    // sibling promises can never emit 'end' and unlock typing prematurely.
     this._generation = 0;
+    this._rate = 0.88;
 
     if (this.isSupported) {
       this._loadVoices();
@@ -48,6 +47,24 @@ export class SpeechService extends EventEmitter {
    */
   get isUsable() {
     return this.isSupported;
+  }
+
+  /**
+   * Set the speech rate multiplier.
+   * @param {number} rate - 0.5 to 1.5
+   */
+  setRate(rate) {
+    if (typeof rate === 'number' && rate >= 0.5 && rate <= 1.5) {
+      this._rate = rate;
+    }
+  }
+
+  /**
+   * Get the current speech rate.
+   * @returns {number}
+   */
+  getRate() {
+    return this._rate;
   }
 
   _loadVoices() {
@@ -87,7 +104,7 @@ export class SpeechService extends EventEmitter {
    * @param {number} [rate=0.88]
    * @returns {Promise<void>}
    */
-  speak(text, rate = 0.88) {
+  speak(text, rate) {
     return new Promise((resolve) => {
       if (!this.isSupported || !text) {
         this._isSpeaking = false;
@@ -97,14 +114,12 @@ export class SpeechService extends EventEmitter {
         return;
       }
 
-      // Cancel any ongoing utterance silently. A new narration is starting,
-      // so the previous one must NOT emit 'end' (which would unlock typing).
       this._cancelSpeech();
 
       const generation = ++this._generation;
       const utterance = new SpeechSynthesisUtterance(text);
       utterance.lang = 'en-US';
-      utterance.rate = rate; // Deliberate cadence for A1 learning
+      utterance.rate = rate || this._rate;
       utterance.pitch = 1.0;
 
       const voice = this._getBestEnglishVoice();
