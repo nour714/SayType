@@ -1,8 +1,9 @@
 /**
- * Editorial Typographic Sanctuary — Application Entry Point
- * Assembly point only — initializes and wires decoupled services, engines, and UI components.
+ * SayType — Application Entry Point
+ * Wires routing, services, engines, and UI components.
  */
 
+import { Router } from './core/Router.js';
 import { SentenceEngine } from './core/SentenceEngine.js';
 import { MetricsCalculator } from './core/MetricsCalculator.js';
 import { SessionEngine } from './core/SessionEngine.js';
@@ -15,35 +16,49 @@ import { ReviewScheduler } from './services/ReviewScheduler.js';
 import { getSupabaseClient } from './services/SupabaseClient.js';
 import { AuthService } from './services/AuthService.js';
 import { SyncService } from './services/SyncService.js';
+import { StreakService } from './services/StreakService.js';
+import { SettingsService } from './services/SettingsService.js';
 import { TrainingScreen } from './ui/TrainingScreen.js';
 import { StatsPills } from './ui/StatsPills.js';
 import { ProgressIndicator } from './ui/ProgressIndicator.js';
 import { TopicSelector } from './ui/TopicSelector.js';
 import { LevelSelector } from './ui/LevelSelector.js';
 import { AuthModal } from './ui/AuthModal.js';
+import { Navigation } from './ui/Navigation.js';
+import { DashboardScreen } from './ui/DashboardScreen.js';
+import { LevelScreen } from './ui/LevelScreen.js';
+import { TopicScreen } from './ui/TopicScreen.js';
+import { ReviewScreen } from './ui/ReviewScreen.js';
+import { ProgressScreen } from './ui/ProgressScreen.js';
+import { ProfileScreen } from './ui/ProfileScreen.js';
+import { SettingsScreen } from './ui/SettingsScreen.js';
+
+const TRAINING_PAGES = ['/', '/practice'];
 
 async function bootstrap() {
-  // 1. Initialize Services
+  // 1. Services
   const themeService = new ThemeService();
   const speechService = new SpeechService();
   const progressService = new ProgressService();
   const dictionaryService = new DictionaryService();
   const sentenceRepo = new SentenceRepository();
   const reviewScheduler = new ReviewScheduler();
+  const streakService = new StreakService();
+  const settingsService = new SettingsService();
 
-  // 2. Auth & Sync (optional — only active when user signs in)
+  // 2. Auth & Sync
   const supabaseClient = getSupabaseClient();
   const authService = new AuthService(supabaseClient);
   const syncService = new SyncService(progressService, authService);
   syncService.init();
   await authService.init();
 
-  // 3. Initialize Core Engines (with listenFirst enabled by default)
+  // 3. Core Engines
   const sentenceEngine = new SentenceEngine();
   const metricsCalculator = new MetricsCalculator();
   const sessionEngine = new SessionEngine(sentenceEngine, metricsCalculator, { listenFirst: true });
 
-  // 4. Initialize UI Components
+  // 4. UI Components
   const trainingScreen = new TrainingScreen();
   trainingScreen.setDictionaryService(dictionaryService);
   const statsPills = new StatsPills();
@@ -51,28 +66,84 @@ async function bootstrap() {
   const levelSelector = new LevelSelector('level-select', 'A1');
   const topicSelector = new TopicSelector('topic-select');
   const authModal = new AuthModal();
+  const navigation = new Navigation();
 
-  // 5. Level & topic transient state
+  // 5. Screen instances
+  const dashboardScreen = new DashboardScreen();
+  const levelScreen = new LevelScreen();
+  const topicScreen = new TopicScreen();
+  const reviewScreen = new ReviewScreen();
+  const progressScreen = new ProgressScreen();
+  const profileScreen = new ProfileScreen();
+  const settingsScreen = new SettingsScreen();
+
+  // 6. Router
+  const router = new Router();
+
+  // 7. Transient state
   let currentLevel = 'A1';
   let currentTopic = '';
   let allSentencesPool = [];
   let reviewWordFailedThisSentence = false;
+  let currentPage = null;
 
-  // 4. Wire Theme Service
+  // =========================================================================
+  // Helpers
+  // =========================================================================
+  function showPage(route) {
+    const pageContainers = document.querySelectorAll('.page-container');
+    pageContainers.forEach(c => { c.style.display = 'none'; });
+
+    const trainingOnly = document.querySelectorAll('.training-only');
+    const isTrainingRoute = TRAINING_PAGES.includes(route) || route === '/review';
+
+    trainingOnly.forEach(el => {
+      el.style.display = isTrainingRoute ? '' : 'none';
+    });
+
+    const mobileNav = document.getElementById('mobile-nav');
+    if (mobileNav) {
+      mobileNav.classList.toggle('mobile-nav-hidden', route === '/practice');
+    }
+
+    const dock = document.getElementById('dock-bar');
+    if (dock) {
+      dock.style.display = isTrainingRoute ? '' : 'none';
+    }
+
+    navigation.setActive(route);
+  }
+
+  function getProgressContext() {
+    return {
+      stats: progressService.getStats(),
+      streak: streakService.getStreak(),
+      dueReviewCount: progressService.getDueReviewWords(50).length,
+      lastLevel: currentLevel,
+      lastTopic: currentTopic,
+      continueLesson: progressService.data.completedCount > 0
+    };
+  }
+
+  // =========================================================================
+  // Theme wiring
+  // =========================================================================
   themeService.init();
   const themeToggleBtn = document.getElementById('theme-toggle-btn');
   if (themeToggleBtn) {
     themeToggleBtn.addEventListener('click', () => themeService.toggle());
   }
 
-  // 4a. Wire Auth & Sync UI
+  // =========================================================================
+  // Auth UI wiring
+  // =========================================================================
   const authBtn = document.getElementById('auth-btn');
 
   function updateAuthButton() {
     if (!authBtn) return;
     if (authService.isAuthenticated) {
       authBtn.classList.add('is-synced');
-      authBtn.textContent = '🔄 Synced';
+      authBtn.textContent = 'Synced';
       authBtn.title = `Signed in as ${authService.email || 'account'} — click to sign out`;
     } else {
       authBtn.classList.remove('is-synced');
@@ -92,30 +163,21 @@ async function bootstrap() {
     });
   }
 
-  authService.on('auth:signedIn', () => {
-    updateAuthButton();
-    authModal.close();
-  });
-
-  authService.on('auth:signedOut', () => {
-    updateAuthButton();
-  });
+  authService.on('auth:signedIn', () => { updateAuthButton(); authModal.close(); });
+  authService.on('auth:signedOut', () => { updateAuthButton(); });
 
   authModal.on('auth:submit', async ({ email, password, mode }) => {
     authModal.setSubmitting(true);
-    let result;
-    if (mode === 'signup') {
-      result = await authService.signUp(email, password);
-    } else {
-      result = await authService.signIn(email, password);
-    }
+    const result = mode === 'signup'
+      ? await authService.signUp(email, password)
+      : await authService.signIn(email, password);
     authModal.setSubmitting(false);
-    if (result?.error) {
-      authModal.showError(result.error);
-    }
+    if (result?.error) authModal.showError(result.error);
   });
 
-  // 5. Wire Speech Service to UI & Session
+  // =========================================================================
+  // Speech Service wiring
+  // =========================================================================
   speechService.on('start', () => {
     trainingScreen.setSpeaking(true);
     trainingScreen.clearListenFallback();
@@ -130,7 +192,6 @@ async function bootstrap() {
   speechService.on('error', () => {
     trainingScreen.setSpeaking(false);
     sessionEngine.finishListening();
-    // Learner can recover manually by pressing the Listen button.
     trainingScreen.showListenFallback();
   });
 
@@ -139,31 +200,25 @@ async function bootstrap() {
     trainingScreen.showListenFallback();
   });
 
-  // 6. Listen-First Triggering
+  // Listen-First triggering
   sessionEngine.on('sentence:listen', ({ sentence, text }) => {
-    // If the initial start overlay is open, wait for the learner's first gesture
-    if (trainingScreen.isStartOverlayOpen()) {
-      return;
-    }
-
+    if (trainingScreen.isStartOverlayOpen()) return;
     const textToSpeak = text || (sentence ? (sentence.text_en || sentence.english) : '');
     if (textToSpeak) {
-      // Typing stays locked in LISTENING; SpeechService emits 'end' when the
-      // current narration genuinely finishes, which unlocks READY typing.
       speechService.speak(textToSpeak);
     } else {
       sessionEngine.finishListening();
     }
   });
 
-  // 7. Wire UI Actions to Engines & Services
+  // =========================================================================
+  // UI Actions -> Engines
+  // =========================================================================
   trainingScreen.on('action:listen', () => {
     const current = sessionEngine.currentSentence;
     if (current) {
       const text = current.text_en || current.english || '';
-      if (text) {
-        speechService.speak(text);
-      }
+      if (text) speechService.speak(text);
     }
   });
 
@@ -185,9 +240,6 @@ async function bootstrap() {
   });
 
   trainingScreen.on('action:start-lesson', () => {
-    // Start lesson gesture unlocks speech in modern browsers.
-    // beginLesson() transitions LOADING_SENTENCE -> LISTENING and emits
-    // 'sentence:listen', which triggers pronunciation for the current sentence.
     sessionEngine.beginLesson();
   });
 
@@ -195,72 +247,51 @@ async function bootstrap() {
     sessionEngine.handleKey(key);
   });
 
-  // 8. Wire Session Engine Events to UI Components
+  // =========================================================================
+  // Session Engine Events -> UI
+  // =========================================================================
   sessionEngine.on('state:change', ({ to }) => {
     trainingScreen.setStateIndicator(to);
   });
 
   sessionEngine.on('sentence:loaded', ({ sentence, index, total }) => {
-    // Reset review tracking for this sentence
     reviewWordFailedThisSentence = false;
 
-    // Empty dataset (e.g. filtered topic with no content): show calm empty state.
     if (!sentence) {
       trainingScreen.showEmptyState();
       trainingScreen.setFavorite(false);
-      progressIndicator.update({ current: 0, total: 0, level: 'A1' });
+      progressIndicator.update({ current: 0, total: 0, level: currentLevel });
       statsPills.reset();
       return;
     }
 
     trainingScreen.renderSentence(sentence);
     const srAnnounce = document.getElementById('sr-announce');
-    if (srAnnounce) {
-      srAnnounce.textContent = `Listen: ${sentence.text_en || sentence.english || ''}`;
-    }
-    const isFav = sentence ? progressService.isFavorite(sentence.id) : false;
-    trainingScreen.setFavorite(isFav);
+    if (srAnnounce) srAnnounce.textContent = `Listen: ${sentence.text_en || sentence.english || ''}`;
+    trainingScreen.setFavorite(sentence ? progressService.isFavorite(sentence.id) : false);
     trainingScreen.setReviewBadge(sentence);
-    progressIndicator.update({
-      current: index + 1,
-      total,
-      level: (sentence && sentence.level) || 'A1'
-    });
+    progressIndicator.update({ current: index + 1, total, level: sentence?.level || currentLevel });
     statsPills.reset();
   });
 
-  sessionEngine.on('char:correct', (payload) => {
-    trainingScreen.onCharCorrect(payload);
-  });
-
-  sessionEngine.on('char:wrong', (payload) => {
-    trainingScreen.onCharWrong(payload);
-  });
-
-  sessionEngine.on('backspace', (payload) => {
-    trainingScreen.onBackspace(payload);
-  });
-
-  sessionEngine.on('caret:update', (payload) => {
-    trainingScreen.updateCaret(payload);
-  });
-
-  sessionEngine.on('metrics:update', (stats) => {
-    statsPills.update(stats);
-  });
+  sessionEngine.on('char:correct', (p) => trainingScreen.onCharCorrect(p));
+  sessionEngine.on('char:wrong', (p) => trainingScreen.onCharWrong(p));
+  sessionEngine.on('backspace', (p) => trainingScreen.onBackspace(p));
+  sessionEngine.on('caret:update', (p) => trainingScreen.updateCaret(p));
+  sessionEngine.on('metrics:update', (stats) => statsPills.update(stats));
 
   sessionEngine.on('word:mistake', ({ word }) => {
-    // Check if this is a review sentence with the target word
     const currentSentence = sessionEngine.currentSentence;
     if (currentSentence?.isReview && word.toLowerCase() === currentSentence.reviewWord.toLowerCase()) {
       reviewWordFailedThisSentence = true;
-      // Don't call recordMistakeOnWord for review sentences — outcome recorded at completion
       return;
     }
     progressService.recordMistakeOnWord(word);
   });
 
   sessionEngine.on('sentence:completed', ({ sentence, stats, isLast }) => {
+    streakService.recordActivity();
+
     progressService.recordSentenceCompletion({
       sentenceId: sentence ? sentence.id : null,
       wpm: stats.wpm,
@@ -268,20 +299,17 @@ async function bootstrap() {
       mistakes: stats.mistakes
     });
 
-    // Handle review sentence outcome
     if (sentence?.isReview) {
       const success = !reviewWordFailedThisSentence;
       progressService.recordWordReviewOutcome(sentence.reviewWord, success);
     }
 
-    // Check if we should schedule a review round (every 10 sentences typed)
     const totalTyped = progressService.getSentencesTypedTotal();
     if (totalTyped % 10 === 0) {
       const dueWords = progressService.getDueReviewWords(3);
       if (dueWords.length > 0) {
         const reviewRound = reviewScheduler.buildReviewRound(allSentencesPool, dueWords);
         if (reviewRound.length > 0) {
-          // Mark words as in-review so mistake tracking doesn't double-penalize
           dueWords.forEach(({ word }) => progressService.markWordInReview(word));
           sessionEngine.insertUpcoming(reviewRound);
         }
@@ -297,7 +325,9 @@ async function bootstrap() {
     trainingScreen.showLessonModal(summary);
   });
 
-  // 9. Level & Topic Selector Integration
+  // =========================================================================
+  // Level & Topic Selector Integration (Training screen)
+  // =========================================================================
   function loadSentencesForCurrentFilters() {
     const query = { level: currentLevel };
     if (currentTopic) query.topic = currentTopic;
@@ -316,14 +346,11 @@ async function bootstrap() {
   function refreshTopicsForLevel() {
     sentenceRepo.getTopics(currentLevel).then((topics) => {
       topicSelector.setTopics(topics);
-      // If current topic is no longer available at this level, clear it
       if (currentTopic && !topics.some((t) => t.id === currentTopic)) {
         currentTopic = '';
       }
-    }).catch((err) => {
-      console.warn('Failed to load topics:', err);
-    });
-    // Also refresh the level-scoped pool for review sentence matching
+    }).catch(() => {});
+
     sentenceRepo.getSentences({ level: currentLevel }).then((sentences) => {
       allSentencesPool = sentences || [];
     }).catch(() => {});
@@ -341,28 +368,101 @@ async function bootstrap() {
     loadSentencesForCurrentFilters();
   });
 
-  // Initial topic load for default level
-  refreshTopicsForLevel();
-
-  // 10. Load Initial Sentence Dataset & Start Session
-  sentenceRepo.getSentences({ level: currentLevel }).then((sentences) => {
-    sessionEngine.setSentences(sentences);
-    allSentencesPool = sentences || [];
-  }).catch((err) => {
-    console.error('Failed to load sentences:', err);
+  // =========================================================================
+  // Navigation
+  // =========================================================================
+  navigation.on('navigate', ({ route }) => {
+    router.navigate(route);
   });
 
-  // 11. Global Keyboard Interactions
+  // Settings nav button
+  const settingsNavBtn = document.getElementById('settings-nav-btn');
+  if (settingsNavBtn) {
+    settingsNavBtn.addEventListener('click', () => router.navigate('/settings'));
+  }
+
+  // =========================================================================
+  // Routes
+  // =========================================================================
+  router.register('/', async () => {
+    currentPage = '/';
+    showPage('/');
+    await dashboardScreen.render(getProgressContext());
+  });
+
+  router.register('/learn', async () => {
+    currentPage = '/learn';
+    showPage('/learn');
+    await levelScreen.render({ sentenceRepo, progressService });
+  });
+
+  router.register('/practice', async (params) => {
+    currentPage = '/practice';
+    showPage('/practice');
+
+    const container = document.getElementById('page-practice');
+    if (container) container.style.display = '';
+
+    if (params.level) {
+      currentLevel = params.level;
+      levelSelector.setLevel(params.level);
+    }
+    if (params.topic) {
+      currentTopic = params.topic;
+      topicSelector.setTopic(params.topic);
+    }
+
+    refreshTopicsForLevel();
+    loadSentencesForCurrentFilters();
+  });
+
+  router.register('/review', async () => {
+    currentPage = '/review';
+    showPage('/review');
+    reviewScreen.render({ progressService, reviewScheduler, sentenceRepo });
+  });
+
+  router.register('/progress', async () => {
+    currentPage = '/progress';
+    showPage('/progress');
+    progressScreen.render({ progressService, streakService, sentenceRepo });
+  });
+
+  router.register('/profile', async () => {
+    currentPage = '/profile';
+    showPage('/profile');
+    profileScreen.render({ authService, progressService, streakService });
+  });
+
+  router.register('/settings', async () => {
+    currentPage = '/settings';
+    showPage('/settings');
+    settingsScreen.render({ settingsService });
+  });
+
+  // =========================================================================
+  // Settings screen events
+  // =========================================================================
+  settingsScreen.on('setting:typingMode', ({ value }) => {
+    sentenceEngine.setTypingMode(value);
+  });
+
+  settingsScreen.on('setting:theme', () => {
+    themeService.toggle();
+  });
+
+  // =========================================================================
+  // Global Keyboard
+  // =========================================================================
   window.addEventListener('keydown', (e) => {
-    // Escape first dismisses any open word tooltip — never reset the
-    // sentence while the learner is simply inspecting a word.
+    if (currentPage !== '/practice' && currentPage !== '/') return;
+
     if (e.key === 'Escape' && trainingScreen.isTooltipVisible()) {
       e.preventDefault();
       trainingScreen.hideTooltip();
       return;
     }
 
-    // If start overlay is open, Enter or Space starts the lesson
     if (trainingScreen.isStartOverlayOpen()) {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
@@ -372,7 +472,6 @@ async function bootstrap() {
       return;
     }
 
-    // If sentence/lesson modal is open: Enter, Space, or Escape navigates
     if (trainingScreen.isAnyModalOpen()) {
       if (e.key === 'Enter' || e.key === ' ' || e.key === 'Escape') {
         e.preventDefault();
@@ -384,7 +483,6 @@ async function bootstrap() {
         return;
       }
 
-      // Keep focus trapped inside the open dialog while tabbing
       if (e.key === 'Tab') {
         const focusables = trainingScreen.getModalFocusables();
         if (focusables.length > 0) {
@@ -402,7 +500,6 @@ async function bootstrap() {
       return;
     }
 
-    // Ctrl+Space or Cmd+Space shortcut for pronunciation audio
     if ((e.ctrlKey || e.metaKey) && e.key === ' ') {
       e.preventDefault();
       const current = sessionEngine.currentSentence;
@@ -413,24 +510,18 @@ async function bootstrap() {
       return;
     }
 
-    // Pass keystroke to session engine
     const result = sessionEngine.handleKey(e.key);
     if (result !== null) {
       e.preventDefault();
     }
   });
 
-  // 11. Load Initial Sentence Dataset & Start Session
-  sentenceRepo.getSentences().then((sentences) => {
-    sessionEngine.setSentences(sentences);
-    // Also populate the full pool for review sentence matching
-    allSentencesPool = sentences || [];
-  }).catch((err) => {
-    console.error('Failed to load sentences:', err);
-  });
+  // =========================================================================
+  // Init Router
+  // =========================================================================
+  router.init('/');
 }
 
-// Bootstrap once DOM content is ready
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', bootstrap);
 } else {

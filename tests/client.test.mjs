@@ -566,5 +566,138 @@ function createMockAuthService(userId, clientStub) {
 
 console.log('✓ SyncService migration/server-wins/sign-out passed!');
 
+console.log('--- Testing Router ---');
+import { Router } from '../client/js/core/Router.js';
+
+// Mock window for Node.js test environment
+const _originalWindow = globalThis.window;
+if (typeof globalThis.window === 'undefined') {
+  const listeners = {};
+  globalThis.window = {
+    location: { hash: '' },
+    addEventListener: (event, fn) => {
+      (listeners[event] || (listeners[event] = [])).push(fn);
+    },
+    removeEventListener: (event, fn) => {
+      if (listeners[event]) {
+        listeners[event] = listeners[event].filter(f => f !== fn);
+      }
+    },
+    _triggerHashChange: () => {
+      (listeners['hashchange'] || []).forEach(fn => fn());
+    }
+  };
+}
+
+// Router: register + navigate
+{
+  const router = new Router();
+  let routeCalled = false;
+  let capturedParams = null;
+
+  router.register('/test', (params) => {
+    routeCalled = true;
+    capturedParams = params;
+  });
+
+  window.location.hash = '#/test?level=A1&topic=food';
+  router._resolve();
+
+  assert.strictEqual(routeCalled, true);
+  assert.strictEqual(capturedParams.level, 'A1');
+  assert.strictEqual(capturedParams.topic, 'food');
+  assert.strictEqual(router.current, '/test');
+
+  // Navigate to unknown route should redirect to /
+  let homeCalled = false;
+  router.register('/', () => { homeCalled = true; });
+  window.location.hash = '#/unknown-route';
+  router._resolve();
+  // navigate('/') sets hash to '/', browser auto-prefixes '#'
+  assert.strictEqual(window.location.hash, '/');
+
+  router.destroy();
+}
+
+// Router: event emission
+{
+  const router2 = new Router();
+  let emittedRoute = null;
+  router2.on('route:change', ({ path }) => { emittedRoute = path; });
+
+  router2.register('/hello', () => {});
+  window.location.hash = '#/hello';
+  router2._resolve();
+  assert.strictEqual(emittedRoute, '/hello');
+  router2.destroy();
+}
+
+// Restore window
+if (_originalWindow === undefined) {
+  delete globalThis.window;
+} else {
+  globalThis.window = _originalWindow;
+}
+
+console.log('✓ Router passed!');
+
+console.log('--- Testing StreakService ---');
+import { StreakService } from '../client/js/services/StreakService.js';
+
+{
+  const streak = new StreakService();
+
+  // Fresh state
+  assert.strictEqual(streak.getStreak(), 0);
+  assert.strictEqual(streak.getLastActivityDate(), null);
+
+  // Record activity today
+  streak.recordActivity();
+  const today = new Date();
+  const todayKey = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
+  assert.strictEqual(streak.getStreak(), 1);
+  assert.strictEqual(streak.getLastActivityDate(), todayKey);
+
+  // Record again same day: streak should remain 1
+  streak.recordActivity();
+  assert.strictEqual(streak.getStreak(), 1);
+
+  // ReplaceAll
+  streak.replaceAll({ streak: 5, lastActivityDate: '2026-01-01', activityDays: ['2026-01-01'] });
+  assert.strictEqual(streak.getStreak(), 5);
+}
+
+console.log('✓ StreakService passed!');
+
+console.log('--- Testing SettingsService ---');
+import { SettingsService } from '../client/js/services/SettingsService.js';
+
+{
+  const settings = new SettingsService('test_saytype_settings_v1');
+
+  // Defaults
+  assert.strictEqual(settings.get('typingMode'), 'strict');
+  assert.strictEqual(settings.get('speechRate'), 1);
+  assert.strictEqual(settings.get('soundEnabled'), true);
+  assert.strictEqual(settings.get('interfaceLang'), 'en');
+
+  // Set
+  settings.set('typingMode', 'free');
+  assert.strictEqual(settings.get('typingMode'), 'free');
+
+  // getAll
+  const all = settings.getAll();
+  assert.strictEqual(all.typingMode, 'free');
+  assert.strictEqual(all.speechRate, 1);
+
+  // replaceAll merges onto defaults
+  settings.replaceAll({ speechRate: 1.5 });
+  assert.strictEqual(settings.get('speechRate'), 1.5);
+  assert.strictEqual(settings.get('typingMode'), 'strict'); // default, not preserved from previous set
+  assert.strictEqual(settings.get('soundEnabled'), true); // default
+}
+
+console.log('✓ SettingsService passed!');
+
 console.log('ALL CLIENT CORE UNIT TESTS PASSED SUCCESSFULLY! 🎉');
 process.exit(0);

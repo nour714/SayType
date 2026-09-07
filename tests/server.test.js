@@ -111,7 +111,13 @@ const server = app.listen(3002, async () => {
     assert.strictEqual(indexRes.status, 200);
     assert.ok(indexRes.body.includes('SayType'));
     assert.ok(indexRes.body.includes('styles/tokens.css'));
+    assert.ok(indexRes.body.includes('styles/pages.css'));
     assert.ok(indexRes.body.includes('js/app.js'));
+    assert.ok(indexRes.body.includes('desktop-nav'));
+    assert.ok(indexRes.body.includes('mobile-nav'));
+    assert.ok(indexRes.body.includes('page-home'));
+    assert.ok(indexRes.body.includes('page-practice'));
+    assert.ok(indexRes.body.includes('page-review'));
     console.log('✓ GET / (client index.html) passed');
 
     // 9. CSS files
@@ -129,6 +135,12 @@ const server = app.listen(3002, async () => {
     assert.strictEqual(compRes.status, 200);
     assert.ok(compRes.body.includes('.sentence-vessel'));
     console.log('✓ GET /styles/components.css passed');
+
+    const pagesRes = await get('/styles/pages.css');
+    assert.strictEqual(pagesRes.status, 200);
+    assert.ok(pagesRes.body.includes('.mobile-nav'));
+    assert.ok(pagesRes.body.includes('.home-container'));
+    console.log('✓ GET /styles/pages.css passed');
 
     // 10. JS files
     const jsRes = await get('/js/app.js');

@@ -1,124 +1,192 @@
-# SayType — English Sentence Typing & Pronunciation Trainer
+# SayType — English Typing & Pronunciation Trainer
 
-> A calm, editorial-think typing and pronunciation trainer designed for **Arabic speakers**. Listen to an A1 English sentence, then type it character-by-character with live phonetic, vocabulary, and accuracy feedback.
->
-> **Editorial Typographic Sanctuary** — a contemplative, archival English learning surface built with a modular, dependency-free architecture.
+> A calm, editorial typing and pronunciation trainer for **Arabic speakers**. Listen-first learning, character-by-character typing, and a coherent learning platform with levels, topics, review, and progress tracking.
 
 ---
 
 ## What SayType Does
 
-SayType is a listen-first English practice tool. For each sentence:
+SayType is a listen-first English practice platform. The learning flow:
 
-1. You **Listen** to a natural, deliberately paced English pronunciation.
-2. Typing stays **locked** until pronunciation finishes.
-3. You **Type** the sentence character-by-character.
-4. Wrong keystrokes are caught and corrected in place.
-5. On completion you get live **WPM**, **Accuracy**, and **Mistakes** metrics.
-6. Progress and favorites persist locally across visits.
+1. **Choose Level** — A1 (Beginner) or A2 (Elementary)
+2. **Choose Topic** — Daily Life, Food & Drink, Technology, etc.
+3. **Listen** — Hear the sentence pronounced naturally (typing stays locked)
+4. **Type** — Character-by-character with live accuracy feedback
+5. **Review** — Spaced repetition reinforces difficult words
+6. **Track Progress** — Monitor your learning journey
 
-The learner interface is minimal and focused — the sentence is the central visual element, not a dashboard.
+---
+
+## Pages & Navigation
+
+| Route | Page | Description |
+|-------|------|-------------|
+| `#/` | Home | Welcome, continue learning, quick stats, topic shortcuts |
+| `#/learn` | Learn | Level hub — choose A1 or A2 with progress bars |
+| `#/practice` | Practice | Core typing arena (supports `?level=` and `?topic=` params) |
+| `#/review` | Review | Spaced review dashboard — due words, learning, mastered |
+| `#/progress` | Progress | Overall metrics, streak, activity breakdown |
+| `#/profile` | Profile | Account info, learner stats |
+| `#/settings` | Settings | Typing mode, speech rate, theme, sound |
+
+Desktop: top navigation bar. Mobile: bottom navigation bar (hides during practice).
 
 ---
 
 ## Listen-First Learning
 
-- The first interaction is a **user gesture** (Begin Lesson) — this unlocks browser speech permission and starts the audio flow.
-- Sentences transition through a clear state machine: `LOADING → LISTENING → READY → TYPING → COMPLETED → RESULT`, with a visible state badge (**LISTEN FIRST / TYPE NOW / TYPING / COMPLETED**).
-- Keystrokes are **rejected during LISTENING** to enforce listening before typing.
-- If automatic speech is unavailable or blocked by autoplay policy, a visible **pressed-LISTEN fallback** appears so the learner is never stranded.
-- Listen is also available on demand via the on-screen button or `Ctrl` / `⌘` + `Space`.
+- A **user gesture** (Begin Lesson) unlocks browser speech permission.
+- State machine: `LOADING → LISTENING → READY → TYPING → COMPLETED → RESULT`.
+- Keystrokes are **rejected during LISTENING** — you must listen before typing.
+- Auto-speech fallback: visible **Press Listen** prompt if browser blocks autoplay.
+- On-demand listen: button or `Ctrl` / `⌘` + `Space`.
 
 ## Typing Modes
 
-- **Strict (default):** stop-at-error — a wrong keystroke does not advance the cursor until corrected with Backspace.
-- **Free:** wrong keystrokes are counted and marked but the cursor advances (extension hook; driven by `SentenceEngine.setTypingMode`).
+- **Strict (default):** wrong keystrokes don't advance the cursor until corrected.
+- **Free:** wrong keystrokes are counted but the cursor advances.
 
-Correct, current, and incorrect characters are visually distinct, with a breathing caret and subtle soft-shake feedback on errors (respects `prefers-reduced-motion`).
+Configurable in Settings. Character states (correct/current/wrong) are visually distinct with a breathing caret and soft-shake error animation.
 
 ## Word Dictionary
 
-- Hover (desktop) or tap (mobile) any word to open an inline **tooltip** showing the word, its part of speech, IPA-style pronunciation, **Arabic translation**, and the sentence itself as a usage example.
-- Tooltip stays in the viewport, dismisses on Escape / outside interaction / next character, and never blocks typing.
-- Lookup order: the sentence's own word metadata → a large bundled offline **lexicon** (~370 entries) → graceful empty fallback. No paid or remote dictionary API.
+Hover (desktop) or tap (mobile) any word for an inline tooltip: word, part of speech, IPA pronunciation, Arabic translation, and usage example. Lookup: sentence metadata → bundled offline lexicon (~370 words) → graceful fallback.
 
-## Topics
+---
 
-154 A1 sentences across exactly **10 topics**, each with per-word metadata and curated Arabic translations. Only topics that have real content are shown; counts match the real dataset.
+## Content Architecture
 
-- Daily Life (20) · Family & Friends (16) · Food & Drink (17) · Travel & Places (16) · University & Study (16) · Work & Career (16) · Shopping & Numbers (14) · Health & Body (14) · Weather & Seasons (10) · Communication (15)
+### Levels
 
-Switching a topic cancels speech, resets typing and lesson progress, loads the first sentence, and pronounces it with typing locked until speech ends. Empty/offline sets show a calm empty state instead of a spurious "lesson complete".
+| Level | Sentences | Topics |
+|-------|-----------|--------|
+| A1 | 154 | 10 |
+| A2 | 180 | 12 |
 
-## Progress Persistence
+A2 includes all A1 topics plus **Technology** and **Emotions**. Future levels (B1, B2, C1) are architecturally supported — just add `sentences.b1.json`.
 
-All learner data is stored locally in `localStorage` (no login, no remote database):
+### Topics
 
-- Completed sentences & count
-- Best / average WPM
-- Average accuracy
-- Total mistakes
-- Favorite sentences
-- Difficult words (repeated mistake tracking)
+**A1 (10):** Daily Life, Family & Friends, Food & Drink, Travel & Places, University & Study, Work & Career, Shopping & Numbers, Health & Body, Weather & Seasons, Communication
 
-Favorites, progress, difficult words, best WPM, and average accuracy all survive a browser refresh. Restarting a lesson does **not** erase learner history. If `localStorage` is unavailable, an in-memory fallback keeps the app fully functional.
+**A2 (12):** A1 topics + Technology, Emotions
 
-## Speech Technology
+Each topic shows real sentence counts and completion progress derived from the dataset.
 
-- Uses the native **Web Speech API** (`speechSynthesis`) — no paid API, no external service.
-- Prefers natural English voices, `en-US`, at a deliberate `0.88×` learning cadence.
-- Guards against overlapping playback and duplicate `end` events, includes a timeout watchdog, and degrades to the Listen fallback when unsupported.
-- Browser voices vary by platform (Windows, macOS, mobile); narration cadence and voice choice therefore differ across devices.
+---
+
+## Spaced Review (Leitner System)
+
+Words you mistype are scheduled for review using Leitner boxes with intervals of 10, 20, 40, and 80 sentences. After 4 successful reviews, a word is marked **mastered**.
+
+- Every 10 sentences typed, up to 3 due words are injected into the lesson.
+- Review outcomes (success/failure) update the Leitner box.
+- Review page shows: Due Today, Learning, Mastered, Total Reviewed.
+
+---
+
+## Streak Tracking
+
+A simple daily streak tracks consecutive learning days. Activity is recorded locally and syncs when authenticated. Timezone-safe: uses local date strings. Multiple activities on the same day count as one.
+
+---
+
+## User Accounts & Sync
+
+### Guest Mode (default)
+- Full learning experience, no login required.
+- All progress stored in localStorage.
+
+### Authenticated Mode
+- Sign in with email/password via Supabase.
+- Progress syncs across devices.
+- Server-wins conflict resolution on returning devices.
+- First-ever login uploads local state.
+
+### Sync Rules
+- Anonymous learning is always local.
+- Login never destroys local progress.
+- Merges compatible local + cloud progress.
+- Favorites, review state, streak, and history all sync.
+
+---
+
+## Settings
+
+| Setting | Options | Default |
+|---------|---------|---------|
+| Typing Mode | Strict, Free | Strict |
+| Speech Rate | 0.5x – 1.5x | 1x |
+| Sound Effects | On, Off | On |
+| Theme | Dark, Light | Dark |
+
+All preferences persist in localStorage.
+
+---
 
 ## Architecture
 
-Clean, decoupled, dependency-free (no React/Vue/Tailwind/Firebase). Vanilla ES modules + a small Express REST backend with a repository pattern.
+Vanilla ES modules (client), CommonJS (server). Zero frontend dependencies except Supabase via ESM CDN.
 
 ```
-├── client/
-│   ├── index.html              # Semantic, accessible structure (dark/light themes)
-│   ├── styles/
-│   │   ├── tokens.css          # Design-system tokens (dark "espresso" / light "book paper")
-│   │   ├── base.css            # Reset, layout shell, noise overlay, reduced-motion
-│   │   └── components.css      # Vessel, sentence, dock, modals, tooltip, responsive
-│   └── js/
-│       ├── core/
-│       │   ├── EventEmitter.js         # Tiny pub/sub
-│       │   ├── SentenceEngine.js       # Character matching, strict/free modes
-│       │   ├── MetricsCalculator.js    # Live WPM, accuracy, mistakes
-│       │   └── SessionEngine.js        # Lesson lifecycle & state machine
-│       ├── services/
-│       │   ├── SentenceRepository.js   # API fetch + offline fallback dataset
-│       │   ├── SpeechService.js        # Web Speech wrapper (cancel-safe)
-│       │   ├── ThemeService.js         # Dark/light theme & persistence
-│       │   ├── DictionaryService.js    # Offline word lexicon
-│       │   └── ProgressService.js      # localStorage progress + favorites
-│       ├── ui/
-│       │   ├── TrainingScreen.js       # Typing arena, tooltip, modals
-│       │   ├── StatsPills.js           # Live stats dock
-│       │   ├── ProgressIndicator.js    # Level + progress breadcrumbs
-│       │   └── TopicSelector.js        # Topic dropdown
-│       └── app.js              # Pure assembly entry
-├── server/
-│   ├── app.js                  # Express app (static + REST API)
-│   ├── routes/                 # /api/sentences router
-│   ├── controllers/            # Request/response handling
-│   ├── repositories/           # Repository pattern (JSON now → DB later)
-│   └── data/sentences.a1.json  # 154 A1 sentences, 10 topics, word metadata
-└── tests/
-    ├── server.test.js          # Server & API integration tests
-    └── client.test.mjs         # Core engine / service unit tests
+client/
+├── index.html              # SPA with page containers + navigation
+├── styles/
+│   ├── tokens.css          # Design tokens (Midnight Ink / Parchment)
+│   ├── base.css            # Reset, layout, noise overlay
+│   ├── components.css      # Training screen, modals, tooltip
+│   └── pages.css           # Navigation, home, levels, review, progress, settings
+└── js/
+    ├── core/
+    │   ├── Router.js           # Hash-based SPA router
+    │   ├── EventEmitter.js     # Lightweight pub/sub
+    │   ├── SentenceEngine.js   # Character matching, strict/free modes
+    │   ├── MetricsCalculator.js
+    │   └── SessionEngine.js    # Lesson lifecycle & state machine
+    ├── services/
+    │   ├── SentenceRepository.js   # API fetch + offline fallback
+    │   ├── SpeechService.js        # Web Speech wrapper
+    │   ├── ThemeService.js         # Dark/light theme
+    │   ├── DictionaryService.js    # Offline word lexicon
+    │   ├── ProgressService.js      # localStorage + Leitner review
+    │   ├── ReviewScheduler.js      # Review sentence selection
+    │   ├── StreakService.js        # Daily learning streak
+    │   ├── SettingsService.js      # User preferences
+    │   ├── AuthService.js          # Supabase auth
+    │   ├── SyncService.js          # Local ↔ cloud sync
+    │   └── SupabaseClient.js       # Supabase singleton
+    └── ui/
+        ├── TrainingScreen.js       # Core typing arena
+        ├── StatsPills.js           # Live WPM/Accuracy/Mistakes
+        ├── ProgressIndicator.js    # Header progress counter
+        ├── LevelSelector.js        # Level dropdown
+        ├── TopicSelector.js        # Topic dropdown
+        ├── Navigation.js           # Desktop + mobile nav
+        ├── DashboardScreen.js      # Home page
+        ├── LevelScreen.js          # Level hub
+        ├── TopicScreen.js          # Topic hub
+        ├── ReviewScreen.js         # Review page
+        ├── ProgressScreen.js       # Progress page
+        ├── ProfileScreen.js        # Profile page
+        ├── SettingsScreen.js       # Settings page
+        └── AuthModal.js            # Sign in/up modal
+server/
+├── app.js                  # Express + static + REST API
+├── controllers/            # Request handlers
+├── repositories/           # Multi-file JSON repository
+└── data/
+    ├── sentences.a1.json   # 154 A1 sentences
+    └── sentences.a2.json   # 180 A2 sentences
 ```
 
-**Offline behavior:** if the API is unreachable, the client falls back to a bundled representative dataset and fallback topic list, so the app still works.
+---
 
 ## Getting Started
 
 ### Prerequisites
 - Node.js v18+
 - npm
-
-A modern browser that supports the Web Speech API (`speechSynthesis`) is recommended for audio.
+- Modern browser with Web Speech API support
 
 ### Install & Run
 
@@ -129,7 +197,7 @@ npm install
 npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000). The server serves both the REST API and the client statics.
+Open [http://localhost:3000](http://localhost:3000).
 
 ### Test
 
@@ -137,22 +205,52 @@ Open [http://localhost:3000](http://localhost:3000). The server serves both the 
 npm test
 ```
 
-Runs the server/API integration suite and the client core unit suite.
+36 tests: 18 server/API integration + 18 client unit tests.
 
-## Shortcuts
+---
+
+## Keyboard Shortcuts
 
 | Shortcut | Action |
 |----------|--------|
-| `Ctrl` / `⌘` + `Space` | Listen to current sentence pronunciation |
-| `Esc` | Resets current sentence (or dismisses tooltip if open) |
-| `Enter` / `Space` / `Esc` | Advance / restart when a dialog is open |
+| `Ctrl` / `⌘` + `Space` | Listen to pronunciation |
+| `Esc` | Dismiss tooltip, close overlay, advance/restart modal |
+| `Enter` / `Space` | Next sentence / restart when modal is open |
 
-## Accessibility & Known Limitations
+---
 
-- Full keyboard navigation, visible focus, focus-trapping within dialogs, Escape handling, live-region screen-reader announcements, and `aria` labels/pressed states.
-- The typing anchor is a visually hidden input; virtual keyboards on mobile are captured via its input events.
-- **Known browser limitation:** automatic (autoplay) speech is restricted on many browsers until the learner performs the Begin Lesson gesture; a visible Listen fallback covers this.
-- Voice/pronunciation quality depends on the OS-provided `speechSynthesis` voices.
+## Technology Stack
+
+- **Frontend:** Vanilla ES modules, no framework
+- **Backend:** Express 5, CommonJS
+- **Database:** Supabase (optional, for sync)
+- **Storage:** localStorage (guest mode)
+- **Styling:** CSS custom properties, no preprocessor
+- **Fonts:** Newsreader (hero), Inter (UI), JetBrains Mono (stats), Noto Naskh Arabic (translations)
+- **Testing:** Node.js test runner (assert)
+
+---
+
+## Accessibility
+
+- Full keyboard navigation with visible focus
+- Focus trapping in modals and dialogs
+- `aria` labels, `aria-current` for navigation, `aria-live` regions
+- `prefers-reduced-motion` respected
+- Screen-reader announcements for sentence loads
+- Virtual keyboard support via hidden input anchor
+
+---
+
+## Known Limitations
+
+- Browser speech voices vary by platform (Windows/macOS/mobile)
+- Automatic speech may be blocked until user gesture (autoplay policy)
+- Voice quality depends on OS-provided `speechSynthesis` voices
+- No offline-first service worker yet (API fallback covers offline)
+
+---
 
 ## License
+
 MIT

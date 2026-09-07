@@ -60,4 +60,8 @@ export class TopicSelector extends EventEmitter {
       this.selectEl.value = topic || '';
     }
   }
+
+  setTopic(topic) {
+    this.setSelectedTopic(topic);
+  }
 }
