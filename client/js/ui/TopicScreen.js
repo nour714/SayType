@@ -49,8 +49,7 @@ export class TopicScreen extends EventEmitter {
       `;
 
       this.el.querySelectorAll('.topic-card').forEach(card => {
-        card.addEventListener('click', (e) => {
-          e.preventDefault();
+        card.addEventListener('click', () => {
           const topic = card.dataset.topic;
           this.emit('topic:select', { level, topic });
         });

@@ -331,9 +331,9 @@
     "topic": "daily-life",
     "topic_label": "Daily Life",
     "text_en": "We could not go to the park because it was raining heavily.",
-    "text_ar": "لم نتمكن من الذهاب إلى الحديقة لأنه كان يُ使劲下雨 بكثرة.",
+    "text_ar": "لم نتمكن من الذهاب إلى الحديقة لأنه كان يُمطر بشدة.",
     "english": "We could not go to the park because it was raining heavily.",
-    "arabic": "لم نتمكن من الذهاب إلى الحديقة لأنه كان يُ使劲下雨 بكثرة.",
+    "arabic": "لم نتمكن من الذهاب إلى الحديقة لأنه كان يُمطر بشدة.",
     "tags": [
       "weather",
       "past-simple",
@@ -360,7 +360,7 @@
       },
       {
         "word": "raining",
-        "translation": "يُ使劲下雨",
+        "translation": "يُمطر",
         "partOfSpeech": "verb",
         "pronunciation": "/ˈreɪnɪŋ/"
       },
@@ -2672,9 +2672,9 @@
     "topic": "travel",
     "topic_label": "Travel & Places",
     "text_en": "I should have brought my umbrella because it started to rain when we left the hotel.",
-    "text_ar": "كان يجب أن أحضر مظلتي لأنه بدأ يُ使劲下雨 عندما غادرنا الفندق.",
+    "text_ar": "كان يجب أن أحضر مظلتي لأنه بدأ يُمطر عندما غادرنا الفندق.",
     "english": "I should have brought my umbrella because it started to rain when we left the hotel.",
-    "arabic": "كان يجب أن أحضر مظلتي لأنه بدأ يُ使劲下雨 عندما غادرنا الفندق.",
+    "arabic": "كان يجب أن أحضر مظلتي لأنه بدأ يُمطر عندما غادرنا الفندق.",
     "tags": [
       "travel",
       "past-simple",
@@ -2701,7 +2701,7 @@
       },
       {
         "word": "rain",
-        "translation": "يُ使劲下雨",
+        "translation": "يُمطر",
         "partOfSpeech": "verb",
         "pronunciation": "/reɪn/"
       },
@@ -5476,9 +5476,9 @@
     "topic": "weather",
     "topic_label": "Weather & Seasons",
     "text_en": "It is raining heavily today, so you should take an umbrella with you.",
-    "text_ar": "يُ使劲下雨 بكثرة اليوم، لذلك يجب أن تأخذ مظلتك معك.",
+    "text_ar": "يُمطر بكثرة اليوم، لذلك يجب أن تأخذ مظلتك معك.",
     "english": "It is raining heavily today, so you should take an umbrella with you.",
-    "arabic": "يُ使劲下雨 بكثرة اليوم، لذلك يجب أن تأخذ مظلتك معك.",
+    "arabic": "يُمطر بكثرة اليوم، لذلك يجب أن تأخذ مظلتك معك.",
     "tags": [
       "weather",
       "modal"
@@ -5486,7 +5486,7 @@
     "words": [
       {
         "word": "raining",
-        "translation": "يُ使劲下雨",
+        "translation": "يُمطر",
         "partOfSpeech": "verb",
         "pronunciation": "/ˈreɪnɪŋ/"
       },
@@ -5898,9 +5898,9 @@
     "topic": "weather",
     "topic_label": "Weather & Seasons",
     "text_en": "I was walking to work when it started to rain, so I had to run to find shelter.",
-    "text_ar": "كنت أمشي إلى العمل عندما بدأ يُ使劲下雨، لذلك اضطررت للركض للبحث عن ملجأ.",
+    "text_ar": "كنت أمشي إلى العمل عندما بدأ يُمطر، لذلك اضطررت للركض للبحث عن ملجأ.",
     "english": "I was walking to work when it started to rain, so I had to run to find shelter.",
-    "arabic": "كنت أمشي إلى العمل عندما بدأ يُ使劲下雨، لذلك اضطررت للركض للبحث عن ملجأ.",
+    "arabic": "كنت أمشي إلى العمل عندما بدأ يُمطر، لذلك اضطررت للركض للبحث عن ملجأ.",
     "tags": [
       "weather",
       "past-continuous"
@@ -5920,7 +5920,7 @@
       },
       {
         "word": "rain",
-        "translation": "يُ使劲下雨",
+        "translation": "يُمطر",
         "partOfSpeech": "verb",
         "pronunciation": "/reɪn/"
       },
@@ -5990,9 +5990,9 @@
     "topic": "weather",
     "topic_label": "Weather & Seasons",
     "text_en": "We could not have our picnic last Sunday because it rained all day, so we stayed at home.",
-    "text_ar": "لم نتمكن من رحلتنا يوم الأحد الماضي لأنها ظلّت تُ使劲下雨 طوال اليوم، لذلك بقينا في البيت.",
+    "text_ar": "لم نتمكن من رحلتنا يوم الأحد الماضي لأنها ظلّت تُمطر طوال اليوم، لذلك بقينا في البيت.",
     "english": "We could not have our picnic last Sunday because it rained all day, so we stayed at home.",
-    "arabic": "لم نتمكن من رحلتنا يوم الأحد الماضي لأنها ظلّت تُ使劲下雨 طوال اليوم، لذلك بقينا في البيت.",
+    "arabic": "لم نتمكن من رحلتنا يوم الأحد الماضي لأنها ظلّت تُمطر طوال اليوم، لذلك بقينا في البيت.",
     "tags": [
       "weather",
       "past-simple",
@@ -6007,7 +6007,7 @@
       },
       {
         "word": "rained",
-        "translation": "ظلّت تُ使劲下雨",
+        "translation": "ظّت تُمطر",
         "partOfSpeech": "verb",
         "pronunciation": "/reɪnd/"
       },
