@@ -34,7 +34,7 @@ export class DashboardScreen extends EventEmitter {
         const lvCompleted = lvSentences.filter(s => completedIds.has(String(s.id))).length;
         const pct = lvSentences.length > 0 ? Math.round((lvCompleted / lvSentences.length) * 100) : 0;
         return `
-          <a href="#practice?level=${lv}" class="home-level-card">
+          <a href="#/practice?level=${lv}" class="home-level-card">
             <div class="home-level-header">
               <span class="home-level-code">${lv}</span>
               <span class="home-level-pct">${pct}%</span>
@@ -48,13 +48,13 @@ export class DashboardScreen extends EventEmitter {
       }).join('');
     } catch (_) {
       levelCards = `
-        <a href="#practice?level=A1" class="home-level-card">
+        <a href="#/practice?level=A1" class="home-level-card">
           <div class="home-level-header">
             <span class="home-level-code">A1</span>
           </div>
           <span class="home-level-count">Beginner</span>
         </a>
-        <a href="#practice?level=A2" class="home-level-card">
+        <a href="#/practice?level=A2" class="home-level-card">
           <div class="home-level-header">
             <span class="home-level-code">A2</span>
           </div>
@@ -91,7 +91,7 @@ export class DashboardScreen extends EventEmitter {
               <span class="home-stat-label">${dueReviewCount === 1 ? 'word' : 'words'} due</span>
             </div>
             ${dueReviewCount > 0
-              ? `<a href="#review" class="home-card-link">Start Review →</a>`
+              ? `<a href="#/review" class="home-card-link">Start Review →</a>`
               : '<div class="home-stat-sub">All caught up</div>'}
           </section>
 
@@ -140,7 +140,7 @@ export class DashboardScreen extends EventEmitter {
             <h2 class="home-section-title">Topics</h2>
             <div class="home-topic-list">
               ${topics.slice(0, 6).map(t => `
-                <a href="#practice?level=${levelLabel}&topic=${t.id}" class="home-topic-chip">
+                <a href="#/practice?level=${levelLabel}&topic=${t.id}" class="home-topic-chip">
                   <span class="home-topic-chip-name">${t.label}</span>
                   <span class="home-topic-chip-count">${t.count}</span>
                 </a>

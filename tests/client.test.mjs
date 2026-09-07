@@ -699,5 +699,119 @@ import { SettingsService } from '../client/js/services/SettingsService.js';
 
 console.log('✓ SettingsService passed!');
 
-console.log('ALL CLIENT CORE UNIT TESTS PASSED SUCCESSFULLY! 🎉');
+console.log('--- Testing Practice Initialization Regression ---');
+{
+  // Simulate practice initialization with a mock SentenceRepository
+  const engineP = new SentenceEngine();
+  const metricsP = new MetricsCalculator();
+  const sessionP = new SessionEngine(engineP, metricsP, { listenFirst: true });
+
+  // Test 1: A1 practice returns sentences
+  const a1Sentences = [
+    { id: 'a1-daily-life-001', level: 'A1', topic: 'daily-life', text_en: 'I wake up at seven every morning.', text_ar: 'أستيقظ في الساعة السابعة كل صباح.' },
+    { id: 'a1-daily-life-002', level: 'A1', topic: 'daily-life', text_en: 'She is my sister.', text_ar: 'هي أختي.' }
+  ];
+  sessionP.setSentences(a1Sentences);
+  assert.strictEqual(sessionP.sentences.length, 2);
+  assert.strictEqual(sessionP.currentSentence.text_en, 'I wake up at seven every morning.');
+  assert.strictEqual(sessionP.currentState, 'LOADING_SENTENCE');
+  console.log('✓ A1 practice initializes with sentences');
+
+  // Test 2: A2 practice returns sentences
+  const a2Sentences = [
+    { id: 'a2-technology-001', level: 'A2', topic: 'technology', text_en: 'Technology changes our lives.', text_ar: 'التكنولوجيا تغير حياتنا.' }
+  ];
+  sessionP.setSentences(a2Sentences);
+  assert.strictEqual(sessionP.sentences.length, 1);
+  assert.strictEqual(sessionP.currentSentence.text_en, 'Technology changes our lives.');
+  console.log('✓ A2 practice initializes with sentences');
+
+  // Test 3: Topic-filtered practice returns sentences
+  const topicSentences = [
+    { id: 'a1-food-001', level: 'A1', topic: 'food', text_en: 'I like coffee.', text_ar: 'أحب القهوة.' }
+  ];
+  sessionP.setSentences(topicSentences);
+  assert.strictEqual(sessionP.sentences.length, 1);
+  assert.strictEqual(sessionP.currentSentence.topic, 'food');
+  console.log('✓ Topic-filtered practice initializes with sentences');
+
+  // Test 4: Empty response renders empty state (null sentence emitted)
+  let emptySentenceLoaded = false;
+  const sessionEmpty2 = new SessionEngine(new SentenceEngine(), new MetricsCalculator());
+  sessionEmpty2.on('sentence:loaded', ({ sentence }) => {
+    if (sentence === null) emptySentenceLoaded = true;
+  });
+  sessionEmpty2.setSentences([]);
+  assert.strictEqual(emptySentenceLoaded, true);
+  assert.strictEqual(sessionEmpty2.currentSentence, null);
+  console.log('✓ Empty response emits null sentence for empty state');
+
+  // Test 5: Listen-first flow works after practice init
+  const sessionLF = new SessionEngine(new SentenceEngine(), new MetricsCalculator(), { listenFirst: true });
+  let listenFired = false;
+  sessionLF.on('sentence:listen', () => { listenFired = true; });
+  sessionLF.setSentences([{ id: 1, text_en: 'Hi.', text_ar: 'مرحبا' }]);
+  sessionLF.beginLesson();
+  assert.strictEqual(sessionLF.currentState, 'LISTENING');
+  assert.strictEqual(listenFired, true);
+  sessionLF.finishListening();
+  assert.strictEqual(sessionLF.currentState, 'READY');
+  const keyResult = sessionLF.handleKey('H');
+  assert.strictEqual(keyResult.type, 'correct');
+  assert.strictEqual(sessionLF.currentState, 'TYPING');
+  console.log('✓ Listen-first flow works after practice init');
+}
+
+console.log('--- Testing Route Link Consistency ---');
+{
+  // Verify that all nav link hrefs match Router paths
+  const fs = await import('fs');
+  const path = await import('path');
+  const html = fs.readFileSync(path.join(process.cwd(), 'client', 'index.html'), 'utf8');
+  
+  // Extract all href values from nav links
+  const hrefPattern = /href="(#[^"]+)"/g;
+  const routerPaths = ['/', '/learn', '/practice', '/review', '/progress', '/profile', '/settings'];
+  let match;
+  let linkCount = 0;
+  let brokenLinks = [];
+  while ((match = hrefPattern.exec(html)) !== null) {
+    const href = match[1];
+    if (href.startsWith('#/') || href === '#') {
+      const route = href === '#' ? '/' : href.slice(1);
+      const basePath = route.split('?')[0];
+      if (routerPaths.includes(basePath)) {
+        linkCount++;
+      } else {
+        brokenLinks.push(href);
+      }
+    } else {
+      brokenLinks.push(href);
+    }
+  }
+  assert.strictEqual(brokenLinks.length, 0, `Broken route links found: ${brokenLinks.join(', ')}`);
+  assert.ok(linkCount >= 10, `Expected at least 10 valid nav links, found ${linkCount}`);
+  console.log(`✓ All ${linkCount} navigation links use correct #/route format`);
+}
+
+console.log('--- Testing SentenceRepository API Response Structure ---');
+{
+  // Verify SentenceRepository fallback returns proper structure
+  const { SentenceRepository } = await import('../client/js/services/SentenceRepository.js');
+  const repo = new SentenceRepository('http://localhost:0/nonexistent');
+  
+  // Fallback should return sentences with required fields
+  const fallbackSentences = await repo._getFallbackSentences({ level: 'A1' });
+  assert.ok(Array.isArray(fallbackSentences), 'Fallback should return array');
+  assert.ok(fallbackSentences.length > 0, 'Fallback should have sentences');
+  
+  const first = fallbackSentences[0];
+  assert.ok(first.id, 'Sentence should have id');
+  assert.ok(first.level, 'Sentence should have level');
+  assert.ok(first.text_en || first.english, 'Sentence should have English text');
+  assert.ok(first.text_ar || first.arabic, 'Sentence should have Arabic text');
+  console.log(`✓ SentenceRepository fallback returns ${fallbackSentences.length} valid sentences`);
+}
+
+console.log('ALL REGRESSION TESTS PASSED SUCCESSFULLY! 🎉');
 process.exit(0);

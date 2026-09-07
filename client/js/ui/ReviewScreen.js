@@ -46,7 +46,7 @@ export class ReviewScreen extends EventEmitter {
 
         ${dueWords.length > 0 ? `
           <div class="review-start-section">
-            <a href="#practice?level=${currentLevel || 'A1'}&review=true" class="action-btn primary-btn review-start-btn">
+            <a href="#/practice?level=${currentLevel || 'A1'}&review=true" class="action-btn primary-btn review-start-btn">
               Start Review Session
               <span class="review-start-count">${dueWords.length} words</span>
             </a>
@@ -74,7 +74,7 @@ export class ReviewScreen extends EventEmitter {
             <div class="review-empty-icon">&#10003;</div>
             <h2 class="review-empty-title">You're all caught up</h2>
             <p class="review-empty-text">No words are due for review right now. Keep practicing to build your review queue.</p>
-            <a href="#practice?level=${currentLevel || 'A1'}" class="action-btn primary-btn">Continue Practicing</a>
+            <a href="#/practice?level=${currentLevel || 'A1'}" class="action-btn primary-btn">Continue Practicing</a>
           </div>
         `}
 

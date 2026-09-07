@@ -370,13 +370,19 @@ async function bootstrap() {
     if (currentTopic) query.topic = currentTopic;
     speechService.stop();
     sentenceRepo.getSentences(query).then((sentences) => {
-      sessionEngine.setSentences(sentences || []);
-      if (sentences && sentences.length > 0) {
+      if (!Array.isArray(sentences)) {
+        sentences = [];
+      }
+      sessionEngine.setSentences(sentences);
+      if (sentences.length > 0) {
         trainingScreen.closeStartOverlay();
         sessionEngine.beginLesson();
+      } else {
+        trainingScreen.showEmptyState();
       }
     }).catch((err) => {
       console.warn('Failed to load sentences:', err);
+      sessionEngine.setSentences([]);
       trainingScreen.showError();
     });
   }
@@ -444,17 +450,19 @@ async function bootstrap() {
     const container = document.getElementById('page-practice');
     if (container) container.style.display = '';
 
+    let filtersChanged = false;
     if (params.level && VALID_LEVELS.includes(params.level)) {
+      if (currentLevel !== params.level) filtersChanged = true;
       currentLevel = params.level;
       levelSelector.setLevel(params.level);
     }
-    if (params.topic) {
+    if (params.topic !== undefined) {
+      if (currentTopic !== params.topic) filtersChanged = true;
       currentTopic = params.topic;
       topicSelector.setTopic(params.topic);
     }
 
-    // Only reload sentences if coming from a different page or changing filters
-    if (prevPage !== '/practice') {
+    if (prevPage !== '/practice' || filtersChanged) {
       refreshTopicsForLevel();
       loadSentencesForCurrentFilters();
     }

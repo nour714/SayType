@@ -63,7 +63,7 @@ export class LevelScreen extends EventEmitter {
                   </div>
                   <div class="level-card-actions">
                     <button class="action-btn secondary-btn level-topics-btn" data-level="${lv.id}">View Topics</button>
-                    <a href="#practice?level=${lv.id}" class="action-btn primary-btn">Practice All</a>
+                    <a href="#/practice?level=${lv.id}" class="action-btn primary-btn">Practice All</a>
                   </div>
                 </div>
               `;
@@ -107,7 +107,7 @@ export class LevelScreen extends EventEmitter {
               const completedCount = topicSentences.filter(s => completedIds.has(String(s.id))).length;
               const pct = topicSentences.length > 0 ? Math.round((completedCount / topicSentences.length) * 100) : 0;
               return `
-                <a href="#practice?level=${level}&topic=${t.id}" class="topic-card">
+                <a href="#/practice?level=${level}&topic=${t.id}" class="topic-card">
                   <div class="topic-card-header">
                     <span class="topic-card-name">${t.label}</span>
                   </div>
@@ -121,7 +121,7 @@ export class LevelScreen extends EventEmitter {
                 </a>
               `;
             }).join('')}
-            <a href="#practice?level=${level}" class="topic-card topic-card-all">
+            <a href="#/practice?level=${level}" class="topic-card topic-card-all">
               <div class="topic-card-header">
                 <span class="topic-card-name">All Topics</span>
               </div>

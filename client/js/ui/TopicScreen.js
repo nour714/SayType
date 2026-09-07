@@ -20,7 +20,7 @@ export class TopicScreen extends EventEmitter {
       this.el.innerHTML = `
         <div class="topic-hub">
           <div class="page-header">
-            <a href="#learn" class="back-link">&larr; Back to Levels</a>
+            <a href="#/learn" class="back-link">&larr; Back to Levels</a>
             <h1 class="page-title">${level} Topics</h1>
             <p class="page-subtitle">Choose a topic to start practicing</p>
           </div>
@@ -30,7 +30,7 @@ export class TopicScreen extends EventEmitter {
               const completedCount = topicSentences.filter(s => completedIds.has(String(s.id))).length;
               const pct = topicSentences.length > 0 ? Math.round((completedCount / topicSentences.length) * 100) : 0;
               return `
-                <a href="#practice?level=${level}&topic=${t.id}" class="topic-card" data-topic="${t.id}">
+                <a href="#/practice?level=${level}&topic=${t.id}" class="topic-card" data-topic="${t.id}">
                   <div class="topic-card-header">
                     <span class="topic-card-name">${t.label}</span>
                   </div>

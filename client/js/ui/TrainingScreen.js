@@ -384,11 +384,17 @@ export class TrainingScreen extends EventEmitter {
     if (this.sentenceEnEl) {
       const message = document.createElement('div');
       message.className = 'empty-state-msg';
-      message.textContent = 'No sentences available for this topic yet.';
+      message.textContent = 'No lessons available for this topic.';
       this.sentenceEnEl.appendChild(message);
+      const link = document.createElement('a');
+      link.href = '#/learn';
+      link.className = 'action-btn secondary-btn';
+      link.textContent = 'Back to Learn';
+      link.style.marginTop = '16px';
+      this.sentenceEnEl.appendChild(link);
     }
     if (this.sentenceArEl) {
-      this.sentenceArEl.textContent = 'لا توجد جمل متاحة لهذا الموضوع بعد.';
+      this.sentenceArEl.textContent = 'لا توجد دروس متاحة لهذا الموضوع.';
     }
 
     this.setStateIndicator('EMPTY');
@@ -411,6 +417,12 @@ export class TrainingScreen extends EventEmitter {
       message.className = 'empty-state-msg';
       message.textContent = 'Failed to load sentences. Check your connection and try again.';
       this.sentenceEnEl.appendChild(message);
+      const link = document.createElement('a');
+      link.href = '#/';
+      link.className = 'action-btn secondary-btn';
+      link.textContent = 'Back to Home';
+      link.style.marginTop = '16px';
+      this.sentenceEnEl.appendChild(link);
     }
     if (this.sentenceArEl) {
       this.sentenceArEl.textContent = 'فشل تحميل الجمل. تحقق من اتصالك وحاول مرة أخرى.';
