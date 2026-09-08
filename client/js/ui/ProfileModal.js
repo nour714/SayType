@@ -99,6 +99,12 @@ export class ProfileModal extends EventEmitter {
     if (this.unlockedCountEl) this.unlockedCountEl.textContent = unlockedSet.size;
     if (this.totalBadgesEl) this.totalBadgesEl.textContent = BADGES.length;
 
+    const progressBar = typeof document !== 'undefined' ? document.getElementById('modal-badges-progress-bar') : null;
+    if (progressBar) {
+      const pct = BADGES.length > 0 ? Math.round((unlockedSet.size / BADGES.length) * 100) : 0;
+      progressBar.style.width = `${pct}%`;
+    }
+
     if (!this.badgesGrid) return;
 
     this.badgesGrid.innerHTML = '';

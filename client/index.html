@@ -34,23 +34,10 @@
     <!-- Desktop Navigation Header -->
     <header class="app-header">
       <div class="header-left">
-        <button id="theme-toggle-btn" class="icon-btn theme-toggle" aria-label="Toggle between dark and light themes" title="Toggle theme">
-          <svg class="icon icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-          </svg>
-          <svg class="icon icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="5"></circle>
-            <line x1="12" y1="1" x2="12" y2="3"></line>
-            <line x1="12" y1="21" x2="12" y2="23"></line>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-            <line x1="1" y1="12" x2="3" y2="12"></line>
-            <line x1="21" y1="12" x2="23" y2="12"></line>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-          </svg>
-        </button>
-        <a href="#/" class="sanctuary-mark brand-mark">Say<span class="brand-accent">Type</span></a>
+        <a href="#/" class="sanctuary-mark brand-mark" aria-label="SayType Home">
+          <span class="brand-emblem" aria-hidden="true">✦</span>
+          <span class="brand-text">Say<span class="brand-accent">Type</span></span>
+        </a>
       </div>
 
       <nav id="desktop-nav" class="desktop-nav" aria-label="Main navigation">
@@ -86,8 +73,30 @@
           </svg>
           Sync
         </button>
-        <span id="streak-badge" class="badge streak-badge" title="Current streak">🔥 <span id="streak-count">0</span></span>
-        <button id="profile-btn" class="badge profile-btn" aria-label="View profile and achievements" title="Profile & achievements">👤 Profile</button>
+        <span id="streak-badge" class="badge streak-badge" role="button" tabindex="0" title="Practice streak — click to view profile & achievements" aria-label="Current streak">
+          <span class="streak-flame" aria-hidden="true">🔥</span>
+          <span id="streak-count" class="streak-count-text">0</span>
+        </span>
+        <button id="profile-btn" class="badge profile-btn" aria-label="View profile and achievements" title="Profile & achievements">
+          <span class="profile-btn-icon" aria-hidden="true">👤</span>
+          <span>Profile</span>
+        </button>
+        <button id="theme-toggle-btn" class="icon-btn theme-toggle" aria-label="Toggle between dark and light themes" title="Toggle theme">
+          <svg class="icon icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <svg class="icon icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
         <button id="settings-nav-btn" class="icon-btn settings-nav-btn" aria-label="Settings" title="Settings">
           <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="3"></circle>
@@ -378,6 +387,7 @@
   <!-- Profile & Achievements Modal -->
   <div id="profile-modal" class="modal-backdrop" aria-hidden="true">
     <div class="modal-card profile-modal-card" role="dialog" aria-labelledby="profile-modal-title" aria-modal="true">
+      <button id="profile-modal-close-btn" class="modal-corner-close" aria-label="Close modal">&times;</button>
       <div class="card-ornament">
         <span class="ornament-glyph">&#10022;</span>
       </div>
@@ -433,6 +443,9 @@
         <div class="badges-header">
           <h3 class="badges-title">Badges & Milestones</h3>
           <span class="badges-counter"><span id="modal-badges-unlocked-count">0</span> / <span id="modal-badges-total-count">10</span> Unlocked</span>
+        </div>
+        <div class="badges-progress-track" aria-hidden="true">
+          <div id="modal-badges-progress-bar" class="badges-progress-fill" style="width: 0%;"></div>
         </div>
         <div id="modal-badges-grid" class="badges-grid" role="list">
           <!-- Rendered dynamically by ProfileModal.js -->

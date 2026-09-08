@@ -222,11 +222,17 @@ async function bootstrap() {
   // Streak & Profile Modal wiring
   // =========================================================================
   const streakCountEl = document.getElementById('streak-count');
+  const streakBadge = document.getElementById('streak-badge');
   const profileBtn = document.getElementById('profile-btn');
 
   function updateStreakUI() {
+    const stats = progressService.getStats();
+    const currentStreak = stats.currentStreak ?? 0;
     if (streakCountEl) {
-      streakCountEl.textContent = progressService.getStats().currentStreak;
+      streakCountEl.textContent = currentStreak;
+    }
+    if (streakBadge) {
+      streakBadge.classList.toggle('has-streak', currentStreak > 0);
     }
   }
   updateStreakUI();
@@ -238,10 +244,22 @@ async function bootstrap() {
     }
   });
 
+  const openProfile = () => {
+    profileModal.render(progressService.getStats(), progressService.data.unlockedBadges);
+    profileModal.open();
+  };
+
   if (profileBtn) {
-    profileBtn.addEventListener('click', () => {
-      profileModal.render(progressService.getStats(), progressService.data.unlockedBadges);
-      profileModal.open();
+    profileBtn.addEventListener('click', openProfile);
+  }
+
+  if (streakBadge) {
+    streakBadge.addEventListener('click', openProfile);
+    streakBadge.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openProfile();
+      }
     });
   }
 
