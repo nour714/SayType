@@ -813,5 +813,289 @@ console.log('--- Testing SentenceRepository API Response Structure ---');
   console.log(`✓ SentenceRepository fallback returns ${fallbackSentences.length} valid sentences`);
 }
 
+console.log('--- Testing Phase 4: Streak Tracking Across Day Boundaries ---');
+{
+  const { ProgressService } = await import('../client/js/services/ProgressService.js');
+  const ps = new ProgressService('test_phase4_streak');
+  ps.reset();
+
+  // Initial state verification
+  const initialStats = ps.getStats();
+  assert.strictEqual(initialStats.currentStreak, 0);
+  assert.strictEqual(initialStats.longestStreak, 0);
+  assert.strictEqual(initialStats.perfectAccuracyCount, 0);
+  assert.deepStrictEqual(ps.data.unlockedBadges, []);
+
+  // Session 1: Day 1 (2026-03-01 10:00)
+  ps.recordSentenceCompletion({
+    sentenceId: 1,
+    wpm: 35,
+    accuracy: 95,
+    mistakes: 1,
+    date: '2026-03-01T10:00:00.000Z'
+  });
+  assert.strictEqual(ps.data.currentStreak, 1);
+  assert.strictEqual(ps.data.longestStreak, 1);
+
+  // Session 2: Same calendar day (2026-03-01 23:30) — streak should remain 1
+  ps.recordSentenceCompletion({
+    sentenceId: 2,
+    wpm: 38,
+    accuracy: 92,
+    mistakes: 2,
+    date: '2026-03-01T23:30:00.000Z'
+  });
+  assert.strictEqual(ps.data.currentStreak, 1);
+  assert.strictEqual(ps.data.longestStreak, 1);
+
+  // Session 3: Next consecutive calendar day (2026-03-02 01:15) — streak increments to 2
+  ps.recordSentenceCompletion({
+    sentenceId: 3,
+    wpm: 42,
+    accuracy: 98,
+    mistakes: 1,
+    date: '2026-03-02T01:15:00.000Z'
+  });
+  assert.strictEqual(ps.data.currentStreak, 2);
+  assert.strictEqual(ps.data.longestStreak, 2);
+
+  // Session 4: Day 3 consecutive (2026-03-03 14:00) — streak increments to 3
+  ps.recordSentenceCompletion({
+    sentenceId: 4,
+    wpm: 45,
+    accuracy: 100,
+    mistakes: 0,
+    date: '2026-03-03T14:00:00.000Z'
+  });
+  assert.strictEqual(ps.data.currentStreak, 3);
+  assert.strictEqual(ps.data.longestStreak, 3);
+
+  // Session 5: Skip a day (2026-03-05 09:00, gap of 2 days) — streak resets to 1, longest stays 3
+  ps.recordSentenceCompletion({
+    sentenceId: 5,
+    wpm: 40,
+    accuracy: 90,
+    mistakes: 2,
+    date: '2026-03-05T09:00:00.000Z'
+  });
+  assert.strictEqual(ps.data.currentStreak, 1);
+  assert.strictEqual(ps.data.longestStreak, 3);
+
+  // Session 6: Next day again (2026-03-06 10:00) — streak increments to 2, longest stays 3
+  ps.recordSentenceCompletion({
+    sentenceId: 6,
+    wpm: 44,
+    accuracy: 100,
+    mistakes: 0,
+    date: '2026-03-06T10:00:00.000Z'
+  });
+  assert.strictEqual(ps.data.currentStreak, 2);
+  assert.strictEqual(ps.data.longestStreak, 3);
+
+  console.log('✓ Streak increment and reset across day boundaries passed!');
+}
+
+console.log('--- Testing Phase 4: perfectAccuracyCount Tracking ---');
+{
+  const { ProgressService } = await import('../client/js/services/ProgressService.js');
+  const ps = new ProgressService('test_phase4_accuracy');
+  ps.reset();
+
+  assert.strictEqual(ps.getStats().perfectAccuracyCount, 0);
+
+  // Sentence with 0 mistakes -> perfect count becomes 1
+  ps.recordSentenceCompletion({ sentenceId: 10, wpm: 30, accuracy: 100, mistakes: 0 });
+  assert.strictEqual(ps.getStats().perfectAccuracyCount, 1);
+
+  // Sentence with 2 mistakes -> perfect count stays 1
+  ps.recordSentenceCompletion({ sentenceId: 11, wpm: 32, accuracy: 90, mistakes: 2 });
+  assert.strictEqual(ps.getStats().perfectAccuracyCount, 1);
+
+  // Sentence with 0 mistakes again -> perfect count becomes 2
+  ps.recordSentenceCompletion({ sentenceId: 12, wpm: 35, accuracy: 100, mistakes: 0 });
+  assert.strictEqual(ps.getStats().perfectAccuracyCount, 2);
+
+  // Sentence with null/undefined mistakes -> treated as 0, increments to 3
+  ps.recordSentenceCompletion({ sentenceId: 13, wpm: 33, accuracy: 100 });
+  assert.strictEqual(ps.getStats().perfectAccuracyCount, 3);
+
+  console.log('✓ perfectAccuracyCount incrementing correctly passed!');
+}
+
+console.log('--- Testing Phase 4: Mastered Words Count & unlockBadge ---');
+{
+  const { ProgressService } = await import('../client/js/services/ProgressService.js');
+  const ps = new ProgressService('test_phase4_badges_ps');
+  ps.reset();
+
+  // Initially 0 mastered words
+  assert.strictEqual(ps.getMasteredWordsCount(), 0);
+  assert.strictEqual(ps.getStats().masteredWordsCount, 0);
+
+  // Add some mastered and unmastered words to wordReview
+  ps.data.wordReview = {
+    'apple': { box: 4, mastered: true },
+    'banana': { box: 2, mastered: false },
+    'cherry': { box: 4, mastered: true },
+    'date': { box: 0, mastered: false }
+  };
+  assert.strictEqual(ps.getMasteredWordsCount(), 2);
+  assert.strictEqual(ps.getStats().masteredWordsCount, 2);
+
+  // unlockBadge
+  assert.strictEqual(ps.unlockBadge('first-steps'), true);
+  assert.strictEqual(ps.data.unlockedBadges.includes('first-steps'), true);
+
+  // Duplicate unlock returns false and does not duplicate
+  assert.strictEqual(ps.unlockBadge('first-steps'), false);
+  assert.strictEqual(ps.data.unlockedBadges.length, 1);
+
+  // Another badge
+  assert.strictEqual(ps.unlockBadge('streak-3'), true);
+  assert.strictEqual(ps.data.unlockedBadges.length, 2);
+
+  console.log('✓ getMasteredWordsCount & unlockBadge passed!');
+}
+
+console.log('--- Testing Phase 4: AchievementService & Badge Catalog ---');
+{
+  const { ProgressService } = await import('../client/js/services/ProgressService.js');
+  const { AchievementService, BADGES } = await import('../client/js/services/AchievementService.js');
+
+  assert.strictEqual(BADGES.length, 10);
+  const expectedBadgeIds = [
+    'first-steps',
+    'half-century',
+    'century',
+    'streak-3',
+    'streak-7',
+    'streak-30',
+    'sharp-shooter',
+    'word-master',
+    'speed-demon',
+    'explorer'
+  ];
+  assert.deepStrictEqual(BADGES.map(b => b.id), expectedBadgeIds);
+
+  const ps = new ProgressService('test_phase4_achievements');
+  ps.reset();
+  const achievementService = new AchievementService();
+
+  // Initially, no badges unlocked
+  let newBadges = achievementService.checkNewlyUnlocked(ps);
+  assert.strictEqual(newBadges.length, 0);
+
+  // 1. Complete first sentence -> unlocks 'first-steps'
+  ps.recordSentenceCompletion({ sentenceId: 1, wpm: 25, accuracy: 90, mistakes: 1 });
+  newBadges = achievementService.checkNewlyUnlocked(ps);
+  assert.strictEqual(newBadges.length, 1);
+  assert.strictEqual(newBadges[0].id, 'first-steps');
+  assert.strictEqual(ps.data.unlockedBadges.includes('first-steps'), true);
+
+  // Subsequent check immediately: must return empty array (no re-unlocks)
+  newBadges = achievementService.checkNewlyUnlocked(ps);
+  assert.strictEqual(newBadges.length, 0);
+
+  // 2. Speed demon (bestWpm >= 40)
+  ps.recordSentenceCompletion({ sentenceId: 2, wpm: 45, accuracy: 95, mistakes: 1 });
+  newBadges = achievementService.checkNewlyUnlocked(ps);
+  assert.strictEqual(newBadges.length, 1);
+  assert.strictEqual(newBadges[0].id, 'speed-demon');
+
+  // Again, no duplicate re-unlocks
+  assert.strictEqual(achievementService.checkNewlyUnlocked(ps).length, 0);
+
+  // 3. Explorer (5 favorites)
+  for (let i = 1; i <= 5; i++) {
+    ps.toggleFavorite(i);
+  }
+  newBadges = achievementService.checkNewlyUnlocked(ps);
+  assert.strictEqual(newBadges.length, 1);
+  assert.strictEqual(newBadges[0].id, 'explorer');
+
+  // 4. Sharp Shooter (10 perfect accuracy sentences)
+  ps.reset();
+  ps.unlockBadge('first-steps'); // pretend already unlocked
+  for (let i = 0; i < 9; i++) {
+    ps.recordSentenceCompletion({ sentenceId: 100 + i, wpm: 30, accuracy: 100, mistakes: 0 });
+  }
+  assert.strictEqual(ps.data.perfectAccuracyCount, 9);
+  assert.strictEqual(achievementService.checkNewlyUnlocked(ps).length, 0);
+
+  // 10th perfect sentence
+  ps.recordSentenceCompletion({ sentenceId: 109, wpm: 30, accuracy: 100, mistakes: 0 });
+  assert.strictEqual(ps.data.perfectAccuracyCount, 10);
+  newBadges = achievementService.checkNewlyUnlocked(ps);
+  assert.strictEqual(newBadges.some(b => b.id === 'sharp-shooter'), true);
+
+  // Subsequent check: no re-unlock
+  assert.strictEqual(achievementService.checkNewlyUnlocked(ps).length, 0);
+
+  // 5. Streak 3-day
+  ps.data.currentStreak = 3;
+  newBadges = achievementService.checkNewlyUnlocked(ps);
+  assert.strictEqual(newBadges.some(b => b.id === 'streak-3'), true);
+  assert.strictEqual(achievementService.checkNewlyUnlocked(ps).length, 0);
+
+  // 6. Word Master (5 mastered words)
+  ps.data.wordReview = {
+    w1: { mastered: true },
+    w2: { mastered: true },
+    w3: { mastered: true },
+    w4: { mastered: true },
+    w5: { mastered: true }
+  };
+  newBadges = achievementService.checkNewlyUnlocked(ps);
+  assert.strictEqual(newBadges.some(b => b.id === 'word-master'), true);
+  assert.strictEqual(achievementService.checkNewlyUnlocked(ps).length, 0);
+
+  console.log('✓ AchievementService firing exactly once per badge passed!');
+}
+
+console.log('--- Testing Phase 4: Toast and ProfileModal UI Classes ---');
+{
+  const { Toast } = await import('../client/js/ui/Toast.js');
+  const { ProfileModal } = await import('../client/js/ui/ProfileModal.js');
+
+  assert.strictEqual(typeof Toast, 'function');
+  assert.strictEqual(typeof ProfileModal, 'function');
+
+  const appendedElements = [];
+  const mockContainer = {
+    appendChild: (el) => appendedElements.push(el)
+  };
+
+  const toast = new Toast();
+  toast.container = mockContainer;
+
+  const origRaf = globalThis.requestAnimationFrame;
+  globalThis.requestAnimationFrame = (fn) => setTimeout(fn, 0);
+
+  const origDoc = globalThis.document;
+  globalThis.document = {
+    getElementById: () => mockContainer,
+    createElement: () => {
+      const el = {
+        classList: { add() {}, remove() {} },
+        setAttribute() {},
+        querySelector() { return { textContent: '' }; },
+        remove() {}
+      };
+      return el;
+    }
+  };
+
+  toast.show({ icon: '🏆', title: 'Century', subtitle: 'Complete 100 sentences.' });
+  assert.strictEqual(appendedElements.length, 1);
+
+  if (origDoc) globalThis.document = origDoc;
+  else delete globalThis.document;
+  if (origRaf) globalThis.requestAnimationFrame = origRaf;
+  else delete globalThis.requestAnimationFrame;
+
+  console.log('✓ Toast and ProfileModal classes verified!');
+}
+
 console.log('ALL REGRESSION TESTS PASSED SUCCESSFULLY! 🎉');
 process.exit(0);
+

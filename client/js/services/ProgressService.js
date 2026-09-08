@@ -41,7 +41,11 @@ export class ProgressService extends EventEmitter {
       favorites: [],
       difficultWords: {},
       sentencesTypedTotal: 0,
-      wordReview: {}
+      wordReview: {},
+      currentStreak: 0,
+      longestStreak: 0,
+      perfectAccuracyCount: 0,
+      unlockedBadges: []
     };
 
     if (typeof window === 'undefined' || !window.localStorage) {
@@ -111,7 +115,7 @@ export class ProgressService extends EventEmitter {
    *   difficultWords?: string[]
    * }} result
    */
-  recordSentenceCompletion({ sentenceId, wpm, accuracy, mistakes, difficultWords = [] }) {
+  recordSentenceCompletion({ sentenceId, wpm, accuracy, mistakes, difficultWords = [], date = null }) {
     if (sentenceId !== undefined && sentenceId !== null) {
       const strId = String(sentenceId);
       if (!this.data.completedSentenceIds.includes(strId)) {
@@ -122,7 +126,27 @@ export class ProgressService extends EventEmitter {
     this.data.completedCount = this.data.completedSentenceIds.length;
     this.data.totalSessions = (this.data.totalSessions ?? 0) + 1;
     this.data.totalMistakes = (this.data.totalMistakes ?? 0) + (mistakes ?? 0);
-    this.data.lastSessionDate = new Date().toISOString();
+
+    // Compute streak using calendar-day comparison
+    const now = date ? new Date(date) : new Date();
+    const today = now.toISOString().slice(0, 10);
+    const prevDate = this.data.lastSessionDate ? this.data.lastSessionDate.slice(0, 10) : null;
+
+    if (prevDate !== today) {
+      if (prevDate) {
+        const diffDays = Math.round((new Date(today) - new Date(prevDate)) / 86400000);
+        this.data.currentStreak = diffDays === 1 ? (this.data.currentStreak ?? 0) + 1 : 1;
+      } else {
+        this.data.currentStreak = 1; // very first session ever
+      }
+      this.data.longestStreak = Math.max(this.data.longestStreak ?? 0, this.data.currentStreak);
+    }
+
+    this.data.lastSessionDate = now.toISOString();
+
+    if ((mistakes ?? 0) === 0) {
+      this.data.perfectAccuracyCount = (this.data.perfectAccuracyCount ?? 0) + 1;
+    }
 
     // Increment the global sentences-typed counter (review scheduling clock)
     this.data.sentencesTypedTotal = (this.data.sentencesTypedTotal ?? 0) + 1;
@@ -337,6 +361,27 @@ export class ProgressService extends EventEmitter {
   }
 
   /**
+   * Get total number of mastered words.
+   * @returns {number}
+   */
+  getMasteredWordsCount() {
+    return Object.values(this.data.wordReview || {}).filter((w) => w.mastered).length;
+  }
+
+  /**
+   * Unlock a badge by ID and persist if newly unlocked.
+   * @param {string} badgeId
+   * @returns {boolean} true if newly unlocked, false if already unlocked
+   */
+  unlockBadge(badgeId) {
+    if (!this.data.unlockedBadges) this.data.unlockedBadges = [];
+    if (this.data.unlockedBadges.includes(badgeId)) return false;
+    this.data.unlockedBadges.push(badgeId);
+    this._save(true);
+    return true;
+  }
+
+  /**
    * Get overall snapshot of learner metrics.
    * @returns {object}
    */
@@ -351,7 +396,11 @@ export class ProgressService extends EventEmitter {
       totalSessions: this.data.totalSessions ?? 0,
       lastSessionDate: this.data.lastSessionDate,
       favoritesCount: (this.data.favorites ?? []).length,
-      difficultWordsCount: Object.keys(this.data.difficultWords ?? {}).length
+      difficultWordsCount: Object.keys(this.data.difficultWords ?? {}).length,
+      currentStreak: this.data.currentStreak ?? 0,
+      longestStreak: this.data.longestStreak ?? 0,
+      perfectAccuracyCount: this.data.perfectAccuracyCount ?? 0,
+      masteredWordsCount: this.getMasteredWordsCount()
     };
   }
 
@@ -373,7 +422,11 @@ export class ProgressService extends EventEmitter {
       favorites: [],
       difficultWords: {},
       sentencesTypedTotal: 0,
-      wordReview: {}
+      wordReview: {},
+      currentStreak: 0,
+      longestStreak: 0,
+      perfectAccuracyCount: 0,
+      unlockedBadges: []
     };
     if (this._saveTimer) {
       clearTimeout(this._saveTimer);
@@ -399,7 +452,11 @@ export class ProgressService extends EventEmitter {
       favorites: [],
       difficultWords: {},
       sentencesTypedTotal: 0,
-      wordReview: {}
+      wordReview: {},
+      currentStreak: 0,
+      longestStreak: 0,
+      perfectAccuracyCount: 0,
+      unlockedBadges: []
     };
     this._save(true);
   }

@@ -1,3 +1,5 @@
+import { BADGES } from '../services/AchievementService.js';
+
 export class ProfileScreen {
   constructor() {
     this.el = document.getElementById('page-profile');
@@ -9,17 +11,17 @@ export class ProfileScreen {
     const isAuthenticated = authService?.isAuthenticated || false;
     const email = authService?.email || '';
     const stats = progressService.getStats();
-    const streak = streakService ? streakService.getStreak() : 0;
+    const streak = stats.currentStreak ?? (streakService ? streakService.getStreak() : 0);
+    const longestStreak = stats.longestStreak ?? 0;
     const favoritesCount = stats.favoritesCount ?? 0;
-    const difficultWordsCount = stats.difficultWordsCount ?? 0;
-    const wordReview = progressService.data.wordReview || {};
-    const mastered = Object.values(wordReview).filter(e => e.mastered).length;
+    const mastered = stats.masteredWordsCount ?? Object.values(progressService.data.wordReview || {}).filter(e => e.mastered).length;
+    const unlockedSet = new Set(progressService.data.unlockedBadges || []);
 
     this.el.innerHTML = `
       <div class="profile-page">
         <div class="page-header">
           <h1 class="page-title">Profile</h1>
-          <p class="page-subtitle">Your learner profile</p>
+          <p class="page-subtitle">Your learner profile & achievements</p>
         </div>
 
         <div class="profile-card">
@@ -54,6 +56,10 @@ export class ProfileScreen {
             <span class="profile-stat-label">Day Streak</span>
           </div>
           <div class="profile-stat">
+            <span class="profile-stat-value">${longestStreak}</span>
+            <span class="profile-stat-label">Best Streak</span>
+          </div>
+          <div class="profile-stat">
             <span class="profile-stat-value">${stats.totalSessions}</span>
             <span class="profile-stat-label">Sessions</span>
           </div>
@@ -64,6 +70,30 @@ export class ProfileScreen {
           <div class="profile-stat">
             <span class="profile-stat-value">${mastered}</span>
             <span class="profile-stat-label">Words Mastered</span>
+          </div>
+        </div>
+
+        <div class="profile-badges-section">
+          <div class="badges-header">
+            <h2 class="badges-title">Badges & Milestones</h2>
+            <span class="badges-counter">${unlockedSet.size} / ${BADGES.length} Unlocked</span>
+          </div>
+          <div class="badges-grid" role="list">
+            ${BADGES.map(badge => {
+              const isUnlocked = unlockedSet.has(badge.id);
+              return `
+                <div class="badge-card ${isUnlocked ? 'is-unlocked' : 'is-locked'}" role="listitem">
+                  <div class="badge-card-top">
+                    <span class="badge-card-icon">${isUnlocked ? badge.icon : '🔒'}</span>
+                    <span class="badge-card-status">${isUnlocked ? 'Unlocked' : 'Locked'}</span>
+                  </div>
+                  <div class="badge-card-info">
+                    <div class="badge-card-name">${badge.name}</div>
+                    <div class="badge-card-desc">${badge.description}</div>
+                  </div>
+                </div>
+              `;
+            }).join('')}
           </div>
         </div>
 

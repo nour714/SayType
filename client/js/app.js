@@ -18,6 +18,9 @@ import { AuthService } from './services/AuthService.js';
 import { SyncService } from './services/SyncService.js';
 import { StreakService } from './services/StreakService.js';
 import { SettingsService } from './services/SettingsService.js';
+import { AchievementService } from './services/AchievementService.js';
+import { Toast } from './ui/Toast.js';
+import { ProfileModal } from './ui/ProfileModal.js';
 import { TrainingScreen } from './ui/TrainingScreen.js';
 import { StatsPills } from './ui/StatsPills.js';
 import { ProgressIndicator } from './ui/ProgressIndicator.js';
@@ -45,6 +48,9 @@ async function bootstrap() {
   const reviewScheduler = new ReviewScheduler();
   const streakService = new StreakService();
   const settingsService = new SettingsService();
+  const achievementService = new AchievementService();
+  const toast = new Toast();
+  const profileModal = new ProfileModal();
 
   // Apply saved speech rate
   speechService.setRate(settingsService.get('speechRate') || 1);
@@ -213,6 +219,39 @@ async function bootstrap() {
   });
 
   // =========================================================================
+  // Streak & Profile Modal wiring
+  // =========================================================================
+  const streakCountEl = document.getElementById('streak-count');
+  const profileBtn = document.getElementById('profile-btn');
+
+  function updateStreakUI() {
+    if (streakCountEl) {
+      streakCountEl.textContent = progressService.getStats().currentStreak;
+    }
+  }
+  updateStreakUI();
+
+  progressService.on('change', () => {
+    updateStreakUI();
+    if (profileModal.isOpen()) {
+      profileModal.render(progressService.getStats(), progressService.data.unlockedBadges);
+    }
+  });
+
+  if (profileBtn) {
+    profileBtn.addEventListener('click', () => {
+      profileModal.render(progressService.getStats(), progressService.data.unlockedBadges);
+      profileModal.open();
+    });
+  }
+
+  profileModal.on('profile:dismiss', () => {
+    if (currentPage === '/practice') {
+      trainingScreen.ensureTypingFocus();
+    }
+  });
+
+  // =========================================================================
   // Speech Service wiring
   // =========================================================================
   speechService.on('start', () => {
@@ -352,6 +391,11 @@ async function bootstrap() {
         }
       }
     }
+
+    const newBadges = achievementService.checkNewlyUnlocked(progressService);
+    newBadges.forEach((badge) => {
+      toast.show({ icon: badge.icon, title: `New Badge: ${badge.name}`, subtitle: badge.description });
+    });
 
     if (!isLast) {
       trainingScreen.showSentenceModal(stats);
@@ -537,6 +581,7 @@ async function bootstrap() {
   // =========================================================================
   window.addEventListener('keydown', (e) => {
     if (currentPage !== '/practice') return;
+    if (authModal.isOpen() || profileModal.isOpen()) return;
 
     if (e.key === 'Escape' && trainingScreen.isTooltipVisible()) {
       e.preventDefault();
