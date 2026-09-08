@@ -1,10 +1,17 @@
 import { EventEmitter } from '../core/EventEmitter.js';
+import { DictionaryTooltip } from './DictionaryTooltip.js';
+import { TypingRenderer } from './TypingRenderer.js';
 
 /**
  * TrainingScreen — manages the interactive typing interface,
- * character rendering, caret movement, error feedback, focus handling,
- * word lexical inspection tooltips, learning state indicator,
- * favorite toggling, and completion dialogs.
+ * focus handling, learning state indicator, favorite toggling,
+ * and completion dialogs.
+ *
+ * Composes two sub-components that own their own DOM refs:
+ * - DictionaryTooltip: word lexical inspection tooltip
+ * - TypingRenderer: character-span rendering, typing feedback, caret
+ * Their methods are re-exposed here as delegates so this class keeps
+ * its exact existing public API and event contract.
  *
  * Emits UI events:
  * - 'action:next': when next sentence is requested
@@ -31,16 +38,6 @@ export class TrainingScreen extends EventEmitter {
     this.stateText = document.getElementById('state-indicator-text');
     this.favoriteBtn = document.getElementById('favorite-btn');
 
-    // Word Tooltip Popover Elements
-    this.wordTooltip = document.getElementById('word-tooltip');
-    this.tooltipWord = document.getElementById('tooltip-word');
-    this.tooltipPos = document.getElementById('tooltip-pos');
-    this.tooltipPronunciation = document.getElementById(
-      'tooltip-pronunciation'
-    );
-    this.tooltipTranslation = document.getElementById('tooltip-translation');
-    this.tooltipExample = document.getElementById('tooltip-example');
-
     // Review Badge Element
     this.reviewBadge = document.getElementById('review-badge');
 
@@ -65,8 +62,10 @@ export class TrainingScreen extends EventEmitter {
     this.lessonMistakes = document.getElementById('lesson-mistakes');
     this.restartLessonBtn = document.getElementById('restart-lesson-btn');
 
-    /** @type {HTMLSpanElement[]} */
-    this.charElements = [];
+    /** Composed sub-components, each owning its own DOM refs. */
+    this.dictionaryTooltip = new DictionaryTooltip();
+    this.typingRenderer = new TypingRenderer();
+
     this._modalTimeout = null;
     this.currentSentence = null;
     this.dictionaryService = null;
@@ -183,10 +182,7 @@ export class TrainingScreen extends EventEmitter {
             this.currentSentence
           );
           if (info) {
-            if (
-              this.wordTooltip?.classList.contains('is-visible') &&
-              this.tooltipWord?.textContent === info.word
-            ) {
+            if (this.dictionaryTooltip.isShowingWord(info.word)) {
               this.hideTooltip();
             } else {
               this.showTooltip(info, token.getBoundingClientRect());
@@ -260,6 +256,7 @@ export class TrainingScreen extends EventEmitter {
    */
   renderSentence(sentence) {
     this.currentSentence = sentence;
+    this.dictionaryTooltip.currentSentence = sentence;
     this.hideTooltip();
 
     if (this._modalTimeout) {
@@ -274,44 +271,9 @@ export class TrainingScreen extends EventEmitter {
     }
 
     if (!this.sentenceEnEl) return;
-    this.sentenceEnEl.innerHTML = '';
-    this.charElements = [];
 
     const text = sentence.text_en || sentence.english || '';
-    let currentWordSpan = null;
-    let currentWordRaw = '';
-
-    for (let i = 0; i < text.length; i++) {
-      const ch = text[i];
-      const span = document.createElement('span');
-      span.classList.add('char');
-
-      if (ch === ' ') {
-        span.classList.add('char-space', 'char-untyped');
-        span.textContent = ' ';
-        this.sentenceEnEl.appendChild(span);
-        this.charElements.push(span);
-        currentWordSpan = null;
-        currentWordRaw = '';
-      } else {
-        span.textContent = ch;
-        span.classList.add('char-untyped');
-
-        if (!currentWordSpan) {
-          currentWordSpan = document.createElement('span');
-          currentWordSpan.classList.add('word-token');
-          this.sentenceEnEl.appendChild(currentWordSpan);
-        }
-
-        currentWordSpan.appendChild(span);
-        this.charElements.push(span);
-        currentWordRaw += ch;
-        currentWordSpan.dataset.word = currentWordRaw.replace(
-          /^[^\w]+|[^\w]+$/g,
-          ''
-        );
-      }
-    }
+    this.typingRenderer.renderCharacters(text);
 
     this.updateCaret({
       charIndex: 0,
@@ -323,68 +285,29 @@ export class TrainingScreen extends EventEmitter {
 
   /**
    * Display lexical word tooltip near target element rect.
+   * Delegates to the composed DictionaryTooltip.
    * @param {{ word: string, translation: string, pronunciation: string, partOfSpeech: string }} info
    * @param {DOMRect} targetRect
    */
   showTooltip(info, targetRect) {
-    if (!this.wordTooltip || !info) return;
-
-    if (this.tooltipWord) this.tooltipWord.textContent = info.word;
-    if (this.tooltipPos) this.tooltipPos.textContent = info.partOfSpeech || '';
-    if (this.tooltipPronunciation)
-      this.tooltipPronunciation.textContent = info.pronunciation || '';
-    if (this.tooltipTranslation)
-      this.tooltipTranslation.textContent = info.translation || '';
-
-    // Example line: the sentence this word appears in (educational context).
-    if (this.tooltipExample) {
-      const exampleText = this.currentSentence
-        ? this.currentSentence.text_en || this.currentSentence.english || ''
-        : '';
-      if (exampleText && /[a-z]/i.test(exampleText)) {
-        this.tooltipExample.textContent = `"${exampleText}"`;
-        this.tooltipExample.style.display = '';
-      } else {
-        this.tooltipExample.style.display = 'none';
-      }
-    }
-
-    this.wordTooltip.classList.add('is-visible');
-    this.wordTooltip.setAttribute('aria-hidden', 'false');
-
-    const tooltipRect = this.wordTooltip.getBoundingClientRect();
-    let top = targetRect.top - tooltipRect.height - 8;
-    if (top < 10) {
-      top = targetRect.bottom + 8;
-    }
-    let left = targetRect.left + targetRect.width / 2 - tooltipRect.width / 2;
-    left = Math.max(
-      12,
-      Math.min(left, window.innerWidth - tooltipRect.width - 12)
-    );
-
-    this.wordTooltip.style.top = `${Math.round(top)}px`;
-    this.wordTooltip.style.left = `${Math.round(left)}px`;
+    this.dictionaryTooltip.showTooltip(info, targetRect);
   }
 
   /**
    * Hide lexical word inspection tooltip.
+   * Delegates to the composed DictionaryTooltip.
    */
   hideTooltip() {
-    if (this.wordTooltip && this.wordTooltip.classList.contains('is-visible')) {
-      this.wordTooltip.classList.remove('is-visible');
-      this.wordTooltip.setAttribute('aria-hidden', 'true');
-    }
+    this.dictionaryTooltip.hideTooltip();
   }
 
   /**
    * Whether the word tooltip is currently visible.
+   * Delegates to the composed DictionaryTooltip.
    * @returns {boolean}
    */
   isTooltipVisible() {
-    return Boolean(
-      this.wordTooltip && this.wordTooltip.classList.contains('is-visible')
-    );
+    return this.dictionaryTooltip.isTooltipVisible();
   }
 
   /**
@@ -425,10 +348,7 @@ export class TrainingScreen extends EventEmitter {
     this.hideTooltip();
     this.closeModals();
 
-    if (this.sentenceEnEl) {
-      this.sentenceEnEl.innerHTML = '';
-    }
-    this.charElements = [];
+    this.typingRenderer.clearCharacters();
 
     if (this.sentenceEnEl) {
       const message = document.createElement('div');
@@ -456,10 +376,7 @@ export class TrainingScreen extends EventEmitter {
     this.hideTooltip();
     this.closeModals();
 
-    if (this.sentenceEnEl) {
-      this.sentenceEnEl.innerHTML = '';
-    }
-    this.charElements = [];
+    this.typingRenderer.clearCharacters();
 
     if (this.sentenceEnEl) {
       const message = document.createElement('div');
@@ -629,91 +546,41 @@ export class TrainingScreen extends EventEmitter {
 
   /**
    * Handle correct character typing.
+   * Delegates to the composed TypingRenderer (tooltip dismissal stays here).
    * @param {{ index: number }} payload
    */
-  onCharCorrect({ index }) {
+  onCharCorrect(payload) {
     this.hideTooltip();
-    const span = this.charElements[index];
-    if (span) {
-      span.classList.remove('char-wrong', 'char-untyped');
-      span.classList.add('char-correct');
-    }
+    this.typingRenderer.onCharCorrect(payload);
   }
 
   /**
    * Handle mistaken keystroke at target position.
+   * Delegates to the composed TypingRenderer (tooltip dismissal stays here).
    * @param {{ index: number }} payload
    */
-  onCharWrong({ index }) {
+  onCharWrong(payload) {
     this.hideTooltip();
-    const span = this.charElements[index];
-    if (span) {
-      span.classList.remove('char-wrong');
-      // Trigger CSS reflow to restart shake animation
-      void span.offsetWidth;
-      span.classList.add('char-wrong');
-    }
+    this.typingRenderer.onCharWrong(payload);
   }
 
   /**
    * Handle backspace event.
+   * Delegates to the composed TypingRenderer (tooltip dismissal stays here).
    * @param {{ charIndex: number, clearedError: boolean }} payload
    */
-  onBackspace({ charIndex, clearedError }) {
+  onBackspace(payload) {
     this.hideTooltip();
-    const span = this.charElements[charIndex];
-    if (span) {
-      if (clearedError) {
-        span.classList.remove('char-wrong');
-      } else {
-        span.classList.remove('char-correct', 'char-wrong');
-        span.classList.add('char-current');
-      }
-    }
+    this.typingRenderer.onBackspace(payload);
   }
 
   /**
    * Synchronize caret position and character highlight classes.
+   * Delegates to the composed TypingRenderer.
    * @param {{ charIndex: number, hasPendingError: boolean, isCompleted?: boolean }} state
    */
-  updateCaret({ charIndex, hasPendingError }) {
-    if (!this.sentenceEnEl) return;
-
-    // Remove existing caret elements
-    const carets = this.sentenceEnEl.querySelectorAll('.char-caret');
-    carets.forEach((c) => c.remove());
-
-    this.charElements.forEach((span, idx) => {
-      span.classList.remove('char-current');
-      if (idx < charIndex) {
-        span.classList.remove('char-untyped', 'char-wrong');
-        span.classList.add('char-correct');
-      } else if (idx === charIndex) {
-        span.classList.remove('char-correct');
-        if (!hasPendingError) {
-          span.classList.remove('char-wrong');
-        }
-        span.classList.add('char-current');
-      } else {
-        span.classList.remove('char-correct', 'char-wrong', 'char-current');
-        span.classList.add('char-untyped');
-      }
-    });
-
-    if (charIndex < this.charElements.length) {
-      const activeSpan = this.charElements[charIndex];
-      const caret = document.createElement('span');
-      caret.className = 'char-caret';
-      caret.setAttribute('aria-hidden', 'true');
-      activeSpan.insertBefore(caret, activeSpan.firstChild);
-    } else if (this.charElements.length > 0) {
-      // Caret at end of finished sentence
-      const lastSpan = this.charElements[this.charElements.length - 1];
-      const caret = document.createElement('span');
-      caret.className = 'char-caret caret-trail';
-      caret.setAttribute('aria-hidden', 'true');
-      lastSpan.appendChild(caret);
-    }
+  updateCaret(state) {
+    this.typingRenderer.updateCaret(state);
   }
 
   /**
