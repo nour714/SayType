@@ -37,6 +37,52 @@ import { SettingsScreen } from './ui/SettingsScreen.js';
 
 const VALID_LEVELS = ['A1', 'A2'];
 
+/**
+ * Check for newly unlocked achievements and celebrate each with a toast.
+ * Wiring helper kept next to bootstrap() so the event handler below stays linear.
+ */
+function checkAndCelebrateAchievements(
+  progressService,
+  achievementService,
+  toast
+) {
+  const newBadges = achievementService.checkNewlyUnlocked(progressService);
+  newBadges.forEach((badge) => {
+    toast.show({
+      icon: badge.icon,
+      title: `New Badge: ${badge.name}`,
+      subtitle: badge.description
+    });
+  });
+}
+
+/**
+ * Every 10th typed sentence, inject due Leitner review words as an upcoming
+ * review round into the live session.
+ * Wiring helper kept next to bootstrap() so the event handler below stays linear.
+ */
+function maybeInjectReviewRound(
+  progressService,
+  reviewScheduler,
+  sessionEngine,
+  allSentencesPool
+) {
+  const totalTyped = progressService.getSentencesTypedTotal();
+  if (totalTyped % 10 === 0) {
+    const dueWords = progressService.getDueReviewWords(3);
+    if (dueWords.length > 0) {
+      const reviewRound = reviewScheduler.buildReviewRound(
+        allSentencesPool,
+        dueWords
+      );
+      if (reviewRound.length > 0) {
+        dueWords.forEach(({ word }) => progressService.markWordInReview(word));
+        sessionEngine.insertUpcoming(reviewRound);
+      }
+    }
+  }
+}
+
 async function bootstrap() {
   // 1. Services
   const themeService = new ThemeService();
@@ -101,7 +147,7 @@ async function bootstrap() {
   let currentPage = null;
 
   // =========================================================================
-  // Helpers
+  // 8. Helpers
   // =========================================================================
   function cleanupPracticeSession() {
     speechService.stop();
@@ -171,7 +217,7 @@ async function bootstrap() {
   }
 
   // =========================================================================
-  // Theme wiring
+  // 9. Theme wiring
   // =========================================================================
   themeService.init();
   const themeToggleBtn = document.getElementById('theme-toggle-btn');
@@ -180,7 +226,7 @@ async function bootstrap() {
   }
 
   // =========================================================================
-  // Auth UI wiring
+  // 10. Auth UI wiring
   // =========================================================================
   const authBtn = document.getElementById('auth-btn');
 
@@ -227,7 +273,7 @@ async function bootstrap() {
   });
 
   // =========================================================================
-  // Streak & Profile Modal wiring
+  // 11. Streak & Profile Modal wiring
   // =========================================================================
   const streakCountEl = document.getElementById('streak-count');
   const streakBadge = document.getElementById('streak-badge');
@@ -284,7 +330,7 @@ async function bootstrap() {
   });
 
   // =========================================================================
-  // Speech Service wiring
+  // 12. Speech Service wiring
   // =========================================================================
   speechService.on('start', () => {
     trainingScreen.setSpeaking(true);
@@ -321,7 +367,7 @@ async function bootstrap() {
   });
 
   // =========================================================================
-  // UI Actions -> Engines
+  // 13. UI Actions -> Engines
   // =========================================================================
   trainingScreen.on('action:listen', () => {
     const current = sessionEngine.currentSentence;
@@ -357,7 +403,7 @@ async function bootstrap() {
   });
 
   // =========================================================================
-  // Session Engine Events -> UI
+  // 14. Session Engine Events -> UI
   // =========================================================================
   sessionEngine.on('state:change', ({ to }) => {
     trainingScreen.setStateIndicator(to);
@@ -417,31 +463,13 @@ async function bootstrap() {
       progressService.recordWordReviewOutcome(sentence.reviewWord, success);
     }
 
-    const totalTyped = progressService.getSentencesTypedTotal();
-    if (totalTyped % 10 === 0) {
-      const dueWords = progressService.getDueReviewWords(3);
-      if (dueWords.length > 0) {
-        const reviewRound = reviewScheduler.buildReviewRound(
-          allSentencesPool,
-          dueWords
-        );
-        if (reviewRound.length > 0) {
-          dueWords.forEach(({ word }) =>
-            progressService.markWordInReview(word)
-          );
-          sessionEngine.insertUpcoming(reviewRound);
-        }
-      }
-    }
-
-    const newBadges = achievementService.checkNewlyUnlocked(progressService);
-    newBadges.forEach((badge) => {
-      toast.show({
-        icon: badge.icon,
-        title: `New Badge: ${badge.name}`,
-        subtitle: badge.description
-      });
-    });
+    maybeInjectReviewRound(
+      progressService,
+      reviewScheduler,
+      sessionEngine,
+      allSentencesPool
+    );
+    checkAndCelebrateAchievements(progressService, achievementService, toast);
 
     if (!isLast) {
       trainingScreen.showSentenceModal(stats);
@@ -453,7 +481,7 @@ async function bootstrap() {
   });
 
   // =========================================================================
-  // Level & Topic Selector Integration (Training screen)
+  // 15. Level & Topic Selector Integration (Training screen)
   // =========================================================================
   function loadSentencesForCurrentFilters() {
     const query = { level: currentLevel };
@@ -512,7 +540,7 @@ async function bootstrap() {
   });
 
   // =========================================================================
-  // Navigation
+  // 16. Navigation
   // =========================================================================
   navigation.on('navigate', ({ route }) => {
     router.navigate(route);
@@ -527,7 +555,7 @@ async function bootstrap() {
   }
 
   // =========================================================================
-  // Routes
+  // 17. Routes
   // =========================================================================
   router.register('/', async () => {
     if (currentPage === '/practice') cleanupPracticeSession();
@@ -610,7 +638,7 @@ async function bootstrap() {
     settingsScreen.render({ settingsService });
   });
 
-  // 404 route
+  // Catch-all 404 route
   router.register('*', () => {
     if (currentPage === '/practice') cleanupPracticeSession();
     currentPage = null;
@@ -634,7 +662,7 @@ async function bootstrap() {
   });
 
   // =========================================================================
-  // Settings screen events
+  // 18. Settings screen events
   // =========================================================================
   settingsScreen.on('setting:typingMode', ({ value }) => {
     sentenceEngine.setTypingMode(value);
@@ -649,7 +677,7 @@ async function bootstrap() {
   });
 
   // =========================================================================
-  // Global Keyboard
+  // 19. Global Keyboard
   // =========================================================================
   window.addEventListener('keydown', (e) => {
     if (currentPage !== '/practice') return;
@@ -715,7 +743,7 @@ async function bootstrap() {
   });
 
   // =========================================================================
-  // Init Router
+  // 20. Init Router
   // =========================================================================
   router.init('/');
 }
