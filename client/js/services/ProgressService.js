@@ -25,12 +25,15 @@ export class ProgressService extends EventEmitter {
   }
 
   /**
-   * Load data safely from localStorage or fallback memory.
+   * Canonical default progress shape. Single source of truth for _load(),
+   * replaceAll(), and reset() so new fields only need to be added once.
    * @private
    */
-  _load() {
-    const defaultData = {
+  _getDefaultData() {
+    return {
       completedSentenceIds: [],
+      // Legacy, write-only: getStats() derives the count from
+      // completedSentenceIds.length instead. Kept for synced-row compat.
       completedCount: 0,
       bestWpm: 0,
       averageWpm: 0,
@@ -47,6 +50,14 @@ export class ProgressService extends EventEmitter {
       perfectAccuracyCount: 0,
       unlockedBadges: []
     };
+  }
+
+  /**
+   * Load data safely from localStorage or fallback memory.
+   * @private
+   */
+  _load() {
+    const defaultData = this._getDefaultData();
 
     if (typeof window === 'undefined' || !window.localStorage) {
       this._memoryFallback = defaultData;
@@ -436,24 +447,7 @@ export class ProgressService extends EventEmitter {
    * @param {object} data
    */
   replaceAll(data) {
-    const defaultData = {
-      completedSentenceIds: [],
-      completedCount: 0,
-      bestWpm: 0,
-      averageWpm: 0,
-      averageAccuracy: 100,
-      totalMistakes: 0,
-      totalSessions: 0,
-      lastSessionDate: null,
-      favorites: [],
-      difficultWords: {},
-      sentencesTypedTotal: 0,
-      wordReview: {},
-      currentStreak: 0,
-      longestStreak: 0,
-      perfectAccuracyCount: 0,
-      unlockedBadges: []
-    };
+    const defaultData = this._getDefaultData();
     if (this._saveTimer) {
       clearTimeout(this._saveTimer);
       this._saveTimer = null;
@@ -466,24 +460,7 @@ export class ProgressService extends EventEmitter {
    * Clear all persisted progress.
    */
   reset() {
-    this.data = {
-      completedSentenceIds: [],
-      completedCount: 0,
-      bestWpm: 0,
-      averageWpm: 0,
-      averageAccuracy: 100,
-      totalMistakes: 0,
-      totalSessions: 0,
-      lastSessionDate: null,
-      favorites: [],
-      difficultWords: {},
-      sentencesTypedTotal: 0,
-      wordReview: {},
-      currentStreak: 0,
-      longestStreak: 0,
-      perfectAccuracyCount: 0,
-      unlockedBadges: []
-    };
+    this.data = this._getDefaultData();
     this._save(true);
   }
 }
