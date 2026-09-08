@@ -51,12 +51,14 @@ class SentencesController {
       const { id } = req.params;
       const sentence = await sentencesRepository.findById(id);
       if (!sentence) {
-        return res.status(404).json({ error: `Sentence with ID ${id} not found` });
+        return res
+          .status(404)
+          .json({ error: `Sentence with ID ${id} not found` });
       }
-      res.json(sentence);
+      return res.json(sentence);
     } catch (err) {
       console.error('Error in getSentenceById controller:', err);
-      res.status(500).json({ error: 'Internal Server Error' });
+      return res.status(500).json({ error: 'Internal Server Error' });
     }
   }
 }

@@ -6,11 +6,23 @@ export class DashboardScreen extends EventEmitter {
     this.el = document.getElementById('page-home');
   }
 
-  async render({ stats, streak, dueReviewCount, topics, lastLevel, lastTopic, continueLesson, sentenceRepo, progressService }) {
+  async render({
+    stats,
+    streak,
+    dueReviewCount,
+    topics,
+    lastLevel,
+    sentenceRepo
+  }) {
     if (!this.el) return;
 
     const hour = new Date().getHours();
-    const greeting = hour < 12 ? 'Good morning' : hour < 18 ? 'Good afternoon' : 'Good evening';
+    const greeting =
+      hour < 12
+        ? 'Good morning'
+        : hour < 18
+          ? 'Good afternoon'
+          : 'Good evening';
 
     const completed = stats?.completedSentenceCount || 0;
     const totalSessions = stats?.totalSessions || 0;
@@ -19,7 +31,6 @@ export class DashboardScreen extends EventEmitter {
     const bestWpm = stats?.bestWpm ?? 0;
     const totalMistakes = stats?.totalMistakes ?? 0;
     const favoritesCount = stats?.favoritesCount ?? 0;
-    const difficultWordsCount = stats?.difficultWordsCount ?? 0;
 
     const levelLabel = lastLevel || 'A1';
     const hasHistory = completed > 0;
@@ -29,11 +40,17 @@ export class DashboardScreen extends EventEmitter {
       const allSentences = await sentenceRepo.getSentences();
       const completedIds = new Set(stats.completedSentenceIds || []);
       const levels = ['A1', 'A2'];
-      levelCards = levels.map(lv => {
-        const lvSentences = allSentences.filter(s => s.level === lv);
-        const lvCompleted = lvSentences.filter(s => completedIds.has(String(s.id))).length;
-        const pct = lvSentences.length > 0 ? Math.round((lvCompleted / lvSentences.length) * 100) : 0;
-        return `
+      levelCards = levels
+        .map((lv) => {
+          const lvSentences = allSentences.filter((s) => s.level === lv);
+          const lvCompleted = lvSentences.filter((s) =>
+            completedIds.has(String(s.id))
+          ).length;
+          const pct =
+            lvSentences.length > 0
+              ? Math.round((lvCompleted / lvSentences.length) * 100)
+              : 0;
+          return `
           <a href="#/practice?level=${lv}" class="home-level-card">
             <div class="home-level-header">
               <span class="home-level-code">${lv}</span>
@@ -45,7 +62,8 @@ export class DashboardScreen extends EventEmitter {
             <span class="home-level-count">${lvCompleted}/${lvSentences.length} sentences</span>
           </a>
         `;
-      }).join('');
+        })
+        .join('');
     } catch (_) {
       levelCards = `
         <a href="#/practice?level=A1" class="home-level-card">
@@ -63,7 +81,9 @@ export class DashboardScreen extends EventEmitter {
       `;
     }
 
-    const ctaRoute = hasHistory ? `#practice?level=${levelLabel}` : '#practice?level=A1';
+    const ctaRoute = hasHistory
+      ? `#practice?level=${levelLabel}`
+      : '#practice?level=A1';
 
     this.el.innerHTML = `
       <div class="home-container">
@@ -90,9 +110,11 @@ export class DashboardScreen extends EventEmitter {
               <span class="home-stat-value">${dueReviewCount}</span>
               <span class="home-stat-label">${dueReviewCount === 1 ? 'word' : 'words'} due</span>
             </div>
-            ${dueReviewCount > 0
-              ? `<a href="#/review" class="home-card-link">Start Review →</a>`
-              : '<div class="home-stat-sub">All caught up</div>'}
+            ${
+              dueReviewCount > 0
+                ? `<a href="#/review" class="home-card-link">Start Review →</a>`
+                : '<div class="home-stat-sub">All caught up</div>'
+            }
           </section>
 
           <section class="home-card home-streak-card">
@@ -135,19 +157,28 @@ export class DashboardScreen extends EventEmitter {
           </div>
         </section>
 
-        ${topics && topics.length > 0 ? `
+        ${
+          topics && topics.length > 0
+            ? `
           <section class="home-topics-section">
             <h2 class="home-section-title">Topics</h2>
             <div class="home-topic-list">
-              ${topics.slice(0, 6).map(t => `
+              ${topics
+                .slice(0, 6)
+                .map(
+                  (t) => `
                 <a href="#/practice?level=${levelLabel}&topic=${t.id}" class="home-topic-chip">
                   <span class="home-topic-chip-name">${t.label}</span>
                   <span class="home-topic-chip-count">${t.count}</span>
                 </a>
-              `).join('')}
+              `
+                )
+                .join('')}
             </div>
           </section>
-        ` : ''}
+        `
+            : ''
+        }
       </div>
     `;
   }
@@ -159,11 +190,13 @@ export class DashboardScreen extends EventEmitter {
 
   showEmpty() {
     if (!this.el) return;
-    this.el.innerHTML = '<div class="page-empty">No content available yet.</div>';
+    this.el.innerHTML =
+      '<div class="page-empty">No content available yet.</div>';
   }
 
   showOffline() {
     if (!this.el) return;
-    this.el.innerHTML = '<div class="page-offline">You\'re offline. Your local progress is still available.</div>';
+    this.el.innerHTML =
+      '<div class="page-offline">You\'re offline. Your local progress is still available.</div>';
   }
 }

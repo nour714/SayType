@@ -30,7 +30,6 @@ import { AuthModal } from './ui/AuthModal.js';
 import { Navigation } from './ui/Navigation.js';
 import { DashboardScreen } from './ui/DashboardScreen.js';
 import { LevelScreen } from './ui/LevelScreen.js';
-import { TopicScreen } from './ui/TopicScreen.js';
 import { ReviewScreen } from './ui/ReviewScreen.js';
 import { ProgressScreen } from './ui/ProgressScreen.js';
 import { ProfileScreen } from './ui/ProfileScreen.js';
@@ -65,7 +64,9 @@ async function bootstrap() {
   // 3. Core Engines
   const sentenceEngine = new SentenceEngine();
   const metricsCalculator = new MetricsCalculator();
-  const sessionEngine = new SessionEngine(sentenceEngine, metricsCalculator, { listenFirst: true });
+  const sessionEngine = new SessionEngine(sentenceEngine, metricsCalculator, {
+    listenFirst: true
+  });
 
   // Apply saved typing mode
   const savedTypingMode = settingsService.get('typingMode');
@@ -84,7 +85,6 @@ async function bootstrap() {
   // 5. Screen instances
   const dashboardScreen = new DashboardScreen();
   const levelScreen = new LevelScreen();
-  const topicScreen = new TopicScreen();
   const reviewScreen = new ReviewScreen();
   const progressScreen = new ProgressScreen();
   const profileScreen = new ProfileScreen();
@@ -124,7 +124,9 @@ async function bootstrap() {
 
   function showPage(route) {
     const pageContainers = document.querySelectorAll('.page-container');
-    pageContainers.forEach(c => { c.style.display = 'none'; });
+    pageContainers.forEach((c) => {
+      c.style.display = 'none';
+    });
 
     const notFound = document.querySelector('.not-found-page');
     if (notFound) notFound.remove();
@@ -138,7 +140,7 @@ async function bootstrap() {
     const trainingOnly = document.querySelectorAll('.training-only');
     const isTrainingRoute = route === '/practice';
 
-    trainingOnly.forEach(el => {
+    trainingOnly.forEach((el) => {
       el.style.display = isTrainingRoute ? '' : 'none';
     });
 
@@ -206,14 +208,20 @@ async function bootstrap() {
     });
   }
 
-  authService.on('auth:signedIn', () => { updateAuthButton(); authModal.close(); });
-  authService.on('auth:signedOut', () => { updateAuthButton(); });
+  authService.on('auth:signedIn', () => {
+    updateAuthButton();
+    authModal.close();
+  });
+  authService.on('auth:signedOut', () => {
+    updateAuthButton();
+  });
 
   authModal.on('auth:submit', async ({ email, password, mode }) => {
     authModal.setSubmitting(true);
-    const result = mode === 'signup'
-      ? await authService.signUp(email, password)
-      : await authService.signIn(email, password);
+    const result =
+      mode === 'signup'
+        ? await authService.signUp(email, password)
+        : await authService.signIn(email, password);
     authModal.setSubmitting(false);
     if (result?.error) authModal.showError(result.error);
   });
@@ -240,12 +248,18 @@ async function bootstrap() {
   progressService.on('change', () => {
     updateStreakUI();
     if (profileModal.isOpen()) {
-      profileModal.render(progressService.getStats(), progressService.data.unlockedBadges);
+      profileModal.render(
+        progressService.getStats(),
+        progressService.data.unlockedBadges
+      );
     }
   });
 
   const openProfile = () => {
-    profileModal.render(progressService.getStats(), progressService.data.unlockedBadges);
+    profileModal.render(
+      progressService.getStats(),
+      progressService.data.unlockedBadges
+    );
     profileModal.open();
   };
 
@@ -297,7 +311,8 @@ async function bootstrap() {
   // Listen-First triggering
   sessionEngine.on('sentence:listen', ({ sentence, text }) => {
     if (trainingScreen.isStartOverlayOpen()) return;
-    const textToSpeak = text || (sentence ? (sentence.text_en || sentence.english) : '');
+    const textToSpeak =
+      text || (sentence ? sentence.text_en || sentence.english : '');
     if (textToSpeak) {
       speechService.speak(textToSpeak);
     } else {
@@ -361,7 +376,8 @@ async function bootstrap() {
 
     trainingScreen.renderSentence(sentence);
     const srAnnounce = document.getElementById('sr-announce');
-    if (srAnnounce) srAnnounce.textContent = `Listen: ${sentence.text_en || sentence.english || ''}`;
+    if (srAnnounce)
+      srAnnounce.textContent = `Listen: ${sentence.text_en || sentence.english || ''}`;
     trainingScreen.setFavorite(progressService.isFavorite(sentence.id));
     trainingScreen.setReviewBadge(sentence);
     progressIndicator.update({ current: index + 1, total });
@@ -376,7 +392,10 @@ async function bootstrap() {
 
   sessionEngine.on('word:mistake', ({ word }) => {
     const currentSentence = sessionEngine.currentSentence;
-    if (currentSentence?.isReview && word.toLowerCase() === currentSentence.reviewWord.toLowerCase()) {
+    if (
+      currentSentence?.isReview &&
+      word.toLowerCase() === currentSentence.reviewWord.toLowerCase()
+    ) {
       reviewWordFailedThisSentence = true;
       return;
     }
@@ -402,9 +421,14 @@ async function bootstrap() {
     if (totalTyped % 10 === 0) {
       const dueWords = progressService.getDueReviewWords(3);
       if (dueWords.length > 0) {
-        const reviewRound = reviewScheduler.buildReviewRound(allSentencesPool, dueWords);
+        const reviewRound = reviewScheduler.buildReviewRound(
+          allSentencesPool,
+          dueWords
+        );
         if (reviewRound.length > 0) {
-          dueWords.forEach(({ word }) => progressService.markWordInReview(word));
+          dueWords.forEach(({ word }) =>
+            progressService.markWordInReview(word)
+          );
           sessionEngine.insertUpcoming(reviewRound);
         }
       }
@@ -412,7 +436,11 @@ async function bootstrap() {
 
     const newBadges = achievementService.checkNewlyUnlocked(progressService);
     newBadges.forEach((badge) => {
-      toast.show({ icon: badge.icon, title: `New Badge: ${badge.name}`, subtitle: badge.description });
+      toast.show({
+        icon: badge.icon,
+        title: `New Badge: ${badge.name}`,
+        subtitle: badge.description
+      });
     });
 
     if (!isLast) {
@@ -431,35 +459,44 @@ async function bootstrap() {
     const query = { level: currentLevel };
     if (currentTopic) query.topic = currentTopic;
     speechService.stop();
-    sentenceRepo.getSentences(query).then((sentences) => {
-      if (!Array.isArray(sentences)) {
-        sentences = [];
-      }
-      sessionEngine.setSentences(sentences);
-      if (sentences.length > 0) {
-        trainingScreen.closeStartOverlay();
-        sessionEngine.beginLesson();
-      } else {
-        trainingScreen.showEmptyState();
-      }
-    }).catch((err) => {
-      console.warn('Failed to load sentences:', err);
-      sessionEngine.setSentences([]);
-      trainingScreen.showError();
-    });
+    sentenceRepo
+      .getSentences(query)
+      .then((sentences) => {
+        if (!Array.isArray(sentences)) {
+          sentences = [];
+        }
+        sessionEngine.setSentences(sentences);
+        if (sentences.length > 0) {
+          trainingScreen.closeStartOverlay();
+          sessionEngine.beginLesson();
+        } else {
+          trainingScreen.showEmptyState();
+        }
+      })
+      .catch((err) => {
+        console.warn('Failed to load sentences:', err);
+        sessionEngine.setSentences([]);
+        trainingScreen.showError();
+      });
   }
 
   function refreshTopicsForLevel() {
-    sentenceRepo.getTopics(currentLevel).then((topics) => {
-      topicSelector.setTopics(topics);
-      if (currentTopic && !topics.some((t) => t.id === currentTopic)) {
-        currentTopic = '';
-      }
-    }).catch(() => {});
+    sentenceRepo
+      .getTopics(currentLevel)
+      .then((topics) => {
+        topicSelector.setTopics(topics);
+        if (currentTopic && !topics.some((t) => t.id === currentTopic)) {
+          currentTopic = '';
+        }
+      })
+      .catch(() => {});
 
-    sentenceRepo.getSentences({ level: currentLevel }).then((sentences) => {
-      allSentencesPool = sentences || [];
-    }).catch(() => {});
+    sentenceRepo
+      .getSentences({ level: currentLevel })
+      .then((sentences) => {
+        allSentencesPool = sentences || [];
+      })
+      .catch(() => {});
   }
 
   levelSelector.on('level:change', ({ level }) => {
@@ -484,7 +521,9 @@ async function bootstrap() {
   // Settings nav button
   const settingsNavBtn = document.getElementById('settings-nav-btn');
   if (settingsNavBtn) {
-    settingsNavBtn.addEventListener('click', () => router.navigate('/settings'));
+    settingsNavBtn.addEventListener('click', () =>
+      router.navigate('/settings')
+    );
   }
 
   // =========================================================================
@@ -494,14 +533,22 @@ async function bootstrap() {
     if (currentPage === '/practice') cleanupPracticeSession();
     currentPage = '/';
     showPage('/');
-    await dashboardScreen.render({ ...(await getProgressContext()), sentenceRepo, progressService });
+    await dashboardScreen.render({
+      ...(await getProgressContext()),
+      sentenceRepo,
+      progressService
+    });
   });
 
   router.register('/learn', async (params) => {
     if (currentPage === '/practice') cleanupPracticeSession();
     currentPage = '/learn';
     showPage('/learn');
-    await levelScreen.render({ sentenceRepo, progressService, level: params.level });
+    await levelScreen.render({
+      sentenceRepo,
+      progressService,
+      level: params.level
+    });
   });
 
   router.register('/practice', async (params) => {
@@ -534,7 +581,12 @@ async function bootstrap() {
     if (currentPage === '/practice') cleanupPracticeSession();
     currentPage = '/review';
     showPage('/review');
-    reviewScreen.render({ progressService, reviewScheduler, sentenceRepo, currentLevel });
+    reviewScreen.render({
+      progressService,
+      reviewScheduler,
+      sentenceRepo,
+      currentLevel
+    });
   });
 
   router.register('/progress', async () => {
@@ -562,7 +614,9 @@ async function bootstrap() {
   router.register('*', () => {
     if (currentPage === '/practice') cleanupPracticeSession();
     currentPage = null;
-    document.querySelectorAll('.page-container').forEach(c => { c.style.display = 'none'; });
+    document.querySelectorAll('.page-container').forEach((c) => {
+      c.style.display = 'none';
+    });
     const main = document.getElementById('main-content');
     if (main) {
       const notFound = document.createElement('div');

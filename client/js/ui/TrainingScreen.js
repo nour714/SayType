@@ -35,7 +35,9 @@ export class TrainingScreen extends EventEmitter {
     this.wordTooltip = document.getElementById('word-tooltip');
     this.tooltipWord = document.getElementById('tooltip-word');
     this.tooltipPos = document.getElementById('tooltip-pos');
-    this.tooltipPronunciation = document.getElementById('tooltip-pronunciation');
+    this.tooltipPronunciation = document.getElementById(
+      'tooltip-pronunciation'
+    );
     this.tooltipTranslation = document.getElementById('tooltip-translation');
     this.tooltipExample = document.getElementById('tooltip-example');
 
@@ -52,7 +54,9 @@ export class TrainingScreen extends EventEmitter {
     this.modalAccuracy = document.getElementById('modal-accuracy');
     this.modalMistakes = document.getElementById('modal-mistakes');
     this.nextSentenceBtn = document.getElementById('next-sentence-btn');
-    this.modalListenAgainBtn = document.getElementById('modal-listen-again-btn');
+    this.modalListenAgainBtn = document.getElementById(
+      'modal-listen-again-btn'
+    );
 
     // Modal Elements (Lesson Complete)
     this.lessonModal = document.getElementById('lesson-complete-modal');
@@ -147,7 +151,10 @@ export class TrainingScreen extends EventEmitter {
       this.sentenceEnEl.addEventListener('mouseover', (e) => {
         const token = e.target.closest('.word-token');
         if (token && token.dataset.word && this.dictionaryService) {
-          const info = this.dictionaryService.lookup(token.dataset.word, this.currentSentence);
+          const info = this.dictionaryService.lookup(
+            token.dataset.word,
+            this.currentSentence
+          );
           if (info) {
             this.showTooltip(info, token.getBoundingClientRect());
           }
@@ -157,7 +164,9 @@ export class TrainingScreen extends EventEmitter {
       this.sentenceEnEl.addEventListener('mouseout', (e) => {
         const token = e.target.closest('.word-token');
         if (token) {
-          const related = e.relatedTarget ? e.relatedTarget.closest('.word-token') : null;
+          const related = e.relatedTarget
+            ? e.relatedTarget.closest('.word-token')
+            : null;
           if (related !== token) {
             this.hideTooltip();
           }
@@ -169,9 +178,15 @@ export class TrainingScreen extends EventEmitter {
         const token = e.target.closest('.word-token');
         if (token && token.dataset.word && this.dictionaryService) {
           e.stopPropagation();
-          const info = this.dictionaryService.lookup(token.dataset.word, this.currentSentence);
+          const info = this.dictionaryService.lookup(
+            token.dataset.word,
+            this.currentSentence
+          );
           if (info) {
-            if (this.wordTooltip?.classList.contains('is-visible') && this.tooltipWord?.textContent === info.word) {
+            if (
+              this.wordTooltip?.classList.contains('is-visible') &&
+              this.tooltipWord?.textContent === info.word
+            ) {
               this.hideTooltip();
             } else {
               this.showTooltip(info, token.getBoundingClientRect());
@@ -185,16 +200,25 @@ export class TrainingScreen extends EventEmitter {
 
     // Dismiss tooltip on outside click or scroll
     document.addEventListener('click', (e) => {
-      if (!e.target.closest('#word-tooltip') && !e.target.closest('.word-token')) {
+      if (
+        !e.target.closest('#word-tooltip') &&
+        !e.target.closest('.word-token')
+      ) {
         this.hideTooltip();
       }
     });
 
-    window.addEventListener('scroll', () => this.hideTooltip(), { passive: true });
+    window.addEventListener('scroll', () => this.hideTooltip(), {
+      passive: true
+    });
 
     // Focus management
     document.addEventListener('click', (e) => {
-      if (e.target.closest('button') || e.target.closest('.modal-card') || e.target.closest('select')) {
+      if (
+        e.target.closest('button') ||
+        e.target.closest('.modal-card') ||
+        e.target.closest('select')
+      ) {
         return;
       }
       this.ensureTypingFocus();
@@ -282,11 +306,18 @@ export class TrainingScreen extends EventEmitter {
         currentWordSpan.appendChild(span);
         this.charElements.push(span);
         currentWordRaw += ch;
-        currentWordSpan.dataset.word = currentWordRaw.replace(/^[^\w]+|[^\w]+$/g, '');
+        currentWordSpan.dataset.word = currentWordRaw.replace(
+          /^[^\w]+|[^\w]+$/g,
+          ''
+        );
       }
     }
 
-    this.updateCaret({ charIndex: 0, hasPendingError: false, isCompleted: false });
+    this.updateCaret({
+      charIndex: 0,
+      hasPendingError: false,
+      isCompleted: false
+    });
     this.ensureTypingFocus();
   }
 
@@ -300,13 +331,15 @@ export class TrainingScreen extends EventEmitter {
 
     if (this.tooltipWord) this.tooltipWord.textContent = info.word;
     if (this.tooltipPos) this.tooltipPos.textContent = info.partOfSpeech || '';
-    if (this.tooltipPronunciation) this.tooltipPronunciation.textContent = info.pronunciation || '';
-    if (this.tooltipTranslation) this.tooltipTranslation.textContent = info.translation || '';
+    if (this.tooltipPronunciation)
+      this.tooltipPronunciation.textContent = info.pronunciation || '';
+    if (this.tooltipTranslation)
+      this.tooltipTranslation.textContent = info.translation || '';
 
     // Example line: the sentence this word appears in (educational context).
     if (this.tooltipExample) {
       const exampleText = this.currentSentence
-        ? (this.currentSentence.text_en || this.currentSentence.english || '')
+        ? this.currentSentence.text_en || this.currentSentence.english || ''
         : '';
       if (exampleText && /[a-z]/i.test(exampleText)) {
         this.tooltipExample.textContent = `"${exampleText}"`;
@@ -324,8 +357,11 @@ export class TrainingScreen extends EventEmitter {
     if (top < 10) {
       top = targetRect.bottom + 8;
     }
-    let left = targetRect.left + (targetRect.width / 2) - (tooltipRect.width / 2);
-    left = Math.max(12, Math.min(left, window.innerWidth - tooltipRect.width - 12));
+    let left = targetRect.left + targetRect.width / 2 - tooltipRect.width / 2;
+    left = Math.max(
+      12,
+      Math.min(left, window.innerWidth - tooltipRect.width - 12)
+    );
 
     this.wordTooltip.style.top = `${Math.round(top)}px`;
     this.wordTooltip.style.left = `${Math.round(left)}px`;
@@ -346,7 +382,9 @@ export class TrainingScreen extends EventEmitter {
    * @returns {boolean}
    */
   isTooltipVisible() {
-    return Boolean(this.wordTooltip && this.wordTooltip.classList.contains('is-visible'));
+    return Boolean(
+      this.wordTooltip && this.wordTooltip.classList.contains('is-visible')
+    );
   }
 
   /**
@@ -355,17 +393,28 @@ export class TrainingScreen extends EventEmitter {
    */
   getModalFocusables() {
     let openModal = null;
-    if (this.sentenceModal && this.sentenceModal.classList.contains('is-open')) {
+    if (
+      this.sentenceModal &&
+      this.sentenceModal.classList.contains('is-open')
+    ) {
       openModal = this.sentenceModal;
-    } else if (this.lessonModal && this.lessonModal.classList.contains('is-open')) {
+    } else if (
+      this.lessonModal &&
+      this.lessonModal.classList.contains('is-open')
+    ) {
       openModal = this.lessonModal;
-    } else if (this.startOverlay && this.startOverlay.classList.contains('is-open')) {
+    } else if (
+      this.startOverlay &&
+      this.startOverlay.classList.contains('is-open')
+    ) {
       openModal = this.startOverlay;
     }
     if (!openModal) return [];
 
     return Array.from(
-      openModal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])')
+      openModal.querySelectorAll(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      )
     ).filter((el) => !el.hasAttribute('disabled') && el.offsetParent !== null);
   }
 
@@ -415,7 +464,8 @@ export class TrainingScreen extends EventEmitter {
     if (this.sentenceEnEl) {
       const message = document.createElement('div');
       message.className = 'empty-state-msg';
-      message.textContent = 'Failed to load sentences. Check your connection and try again.';
+      message.textContent =
+        'Failed to load sentences. Check your connection and try again.';
       this.sentenceEnEl.appendChild(message);
       const link = document.createElement('a');
       link.href = '#/';
@@ -425,7 +475,8 @@ export class TrainingScreen extends EventEmitter {
       this.sentenceEnEl.appendChild(link);
     }
     if (this.sentenceArEl) {
-      this.sentenceArEl.textContent = 'فشل تحميل الجمل. تحقق من اتصالك وحاول مرة أخرى.';
+      this.sentenceArEl.textContent =
+        'فشل تحميل الجمل. تحقق من اتصالك وحاول مرة أخرى.';
     }
 
     this.setStateIndicator('EMPTY');
@@ -495,8 +546,14 @@ export class TrainingScreen extends EventEmitter {
   showListenFallback() {
     if (this.stateIndicator && this.stateText) {
       this.stateIndicator.classList.remove(
-        'state-idle', 'state-listening', 'state-ready', 'state-typing',
-        'state-completed', 'state-result', 'state-loading', 'state-start'
+        'state-idle',
+        'state-listening',
+        'state-ready',
+        'state-typing',
+        'state-completed',
+        'state-result',
+        'state-loading',
+        'state-start'
       );
       this.stateIndicator.classList.add('state-listen-fallback');
       this.stateText.textContent = 'PRESS LISTEN';
@@ -565,7 +622,9 @@ export class TrainingScreen extends EventEmitter {
    * @returns {boolean}
    */
   isStartOverlayOpen() {
-    return Boolean(this.startOverlay && this.startOverlay.classList.contains('is-open'));
+    return Boolean(
+      this.startOverlay && this.startOverlay.classList.contains('is-open')
+    );
   }
 
   /**
@@ -664,7 +723,8 @@ export class TrainingScreen extends EventEmitter {
   showSentenceModal(stats) {
     this.hideTooltip();
     if (this.modalWpm) this.modalWpm.textContent = stats.wpm;
-    if (this.modalAccuracy) this.modalAccuracy.textContent = `${stats.accuracy}%`;
+    if (this.modalAccuracy)
+      this.modalAccuracy.textContent = `${stats.accuracy}%`;
     if (this.modalMistakes) this.modalMistakes.textContent = stats.mistakes;
 
     this._modalTimeout = setTimeout(() => {
@@ -687,8 +747,10 @@ export class TrainingScreen extends EventEmitter {
     this.closeModals();
 
     if (this.lessonWpm) this.lessonWpm.textContent = summary.avgWpm;
-    if (this.lessonAccuracy) this.lessonAccuracy.textContent = `${summary.avgAccuracy}%`;
-    if (this.lessonMistakes) this.lessonMistakes.textContent = summary.totalMistakes;
+    if (this.lessonAccuracy)
+      this.lessonAccuracy.textContent = `${summary.avgAccuracy}%`;
+    if (this.lessonMistakes)
+      this.lessonMistakes.textContent = summary.totalMistakes;
 
     const lessonSubtext = document.getElementById('lesson-subtext');
     if (lessonSubtext) {
@@ -740,8 +802,10 @@ export class TrainingScreen extends EventEmitter {
    * Return true if any dialog / modal / overlay is currently open.
    */
   isAnyModalOpen() {
-    const isSentenceOpen = this.sentenceModal && this.sentenceModal.classList.contains('is-open');
-    const isLessonOpen = this.lessonModal && this.lessonModal.classList.contains('is-open');
+    const isSentenceOpen =
+      this.sentenceModal && this.sentenceModal.classList.contains('is-open');
+    const isLessonOpen =
+      this.lessonModal && this.lessonModal.classList.contains('is-open');
     const isStartOpen = this.isStartOverlayOpen();
     return Boolean(isSentenceOpen || isLessonOpen || isStartOpen);
   }
@@ -750,7 +814,11 @@ export class TrainingScreen extends EventEmitter {
    * Focus hidden input anchor for reliable key capturing.
    */
   ensureTypingFocus() {
-    if (this.typingAnchor && document.activeElement !== this.typingAnchor && !this.isAnyModalOpen()) {
+    if (
+      this.typingAnchor &&
+      document.activeElement !== this.typingAnchor &&
+      !this.isAnyModalOpen()
+    ) {
       this.typingAnchor.focus();
     }
   }

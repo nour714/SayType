@@ -13,22 +13,50 @@ export class ProfileModal extends EventEmitter {
 
     const hasDoc = typeof document !== 'undefined';
     this.backdrop = hasDoc ? document.getElementById('profile-modal') : null;
-    this.closeBtn = hasDoc ? document.getElementById('profile-modal-close-btn') : null;
-    this.dismissBtn = hasDoc ? document.getElementById('profile-modal-dismiss-btn') : null;
+    this.closeBtn = hasDoc
+      ? document.getElementById('profile-modal-close-btn')
+      : null;
+    this.dismissBtn = hasDoc
+      ? document.getElementById('profile-modal-dismiss-btn')
+      : null;
 
-    this.currentStreakEl = hasDoc ? document.getElementById('modal-current-streak') : null;
-    this.longestStreakEl = hasDoc ? document.getElementById('modal-longest-streak') : null;
-    this.sentencesEl = hasDoc ? document.getElementById('modal-stat-sentences') : null;
-    this.bestWpmEl = hasDoc ? document.getElementById('modal-stat-best-wpm') : null;
-    this.avgWpmEl = hasDoc ? document.getElementById('modal-stat-avg-wpm') : null;
-    this.accuracyEl = hasDoc ? document.getElementById('modal-stat-accuracy') : null;
-    this.sessionsEl = hasDoc ? document.getElementById('modal-stat-sessions') : null;
-    this.favoritesEl = hasDoc ? document.getElementById('modal-stat-favorites') : null;
-    this.masteredEl = hasDoc ? document.getElementById('modal-stat-mastered') : null;
+    this.currentStreakEl = hasDoc
+      ? document.getElementById('modal-current-streak')
+      : null;
+    this.longestStreakEl = hasDoc
+      ? document.getElementById('modal-longest-streak')
+      : null;
+    this.sentencesEl = hasDoc
+      ? document.getElementById('modal-stat-sentences')
+      : null;
+    this.bestWpmEl = hasDoc
+      ? document.getElementById('modal-stat-best-wpm')
+      : null;
+    this.avgWpmEl = hasDoc
+      ? document.getElementById('modal-stat-avg-wpm')
+      : null;
+    this.accuracyEl = hasDoc
+      ? document.getElementById('modal-stat-accuracy')
+      : null;
+    this.sessionsEl = hasDoc
+      ? document.getElementById('modal-stat-sessions')
+      : null;
+    this.favoritesEl = hasDoc
+      ? document.getElementById('modal-stat-favorites')
+      : null;
+    this.masteredEl = hasDoc
+      ? document.getElementById('modal-stat-mastered')
+      : null;
 
-    this.badgesGrid = hasDoc ? document.getElementById('modal-badges-grid') : null;
-    this.unlockedCountEl = hasDoc ? document.getElementById('modal-badges-unlocked-count') : null;
-    this.totalBadgesEl = hasDoc ? document.getElementById('modal-badges-total-count') : null;
+    this.badgesGrid = hasDoc
+      ? document.getElementById('modal-badges-grid')
+      : null;
+    this.unlockedCountEl = hasDoc
+      ? document.getElementById('modal-badges-unlocked-count')
+      : null;
+    this.totalBadgesEl = hasDoc
+      ? document.getElementById('modal-badges-total-count')
+      : null;
 
     this._bindEvents();
   }
@@ -85,23 +113,36 @@ export class ProfileModal extends EventEmitter {
    * @param {string[]} unlockedBadgeIds - Array of unlocked badge IDs
    */
   render(stats = {}, unlockedBadgeIds = []) {
-    if (this.currentStreakEl) this.currentStreakEl.textContent = stats.currentStreak ?? 0;
-    if (this.longestStreakEl) this.longestStreakEl.textContent = stats.longestStreak ?? 0;
-    if (this.sentencesEl) this.sentencesEl.textContent = stats.completedSentenceCount ?? 0;
+    if (this.currentStreakEl)
+      this.currentStreakEl.textContent = stats.currentStreak ?? 0;
+    if (this.longestStreakEl)
+      this.longestStreakEl.textContent = stats.longestStreak ?? 0;
+    if (this.sentencesEl)
+      this.sentencesEl.textContent = stats.completedSentenceCount ?? 0;
     if (this.bestWpmEl) this.bestWpmEl.textContent = stats.bestWpm ?? 0;
     if (this.avgWpmEl) this.avgWpmEl.textContent = stats.averageWpm ?? 0;
-    if (this.accuracyEl) this.accuracyEl.textContent = `${stats.averageAccuracy ?? 100}%`;
+    if (this.accuracyEl)
+      this.accuracyEl.textContent = `${stats.averageAccuracy ?? 100}%`;
     if (this.sessionsEl) this.sessionsEl.textContent = stats.totalSessions ?? 0;
-    if (this.favoritesEl) this.favoritesEl.textContent = stats.favoritesCount ?? 0;
-    if (this.masteredEl) this.masteredEl.textContent = stats.masteredWordsCount ?? 0;
+    if (this.favoritesEl)
+      this.favoritesEl.textContent = stats.favoritesCount ?? 0;
+    if (this.masteredEl)
+      this.masteredEl.textContent = stats.masteredWordsCount ?? 0;
 
     const unlockedSet = new Set(unlockedBadgeIds || []);
-    if (this.unlockedCountEl) this.unlockedCountEl.textContent = unlockedSet.size;
+    if (this.unlockedCountEl)
+      this.unlockedCountEl.textContent = unlockedSet.size;
     if (this.totalBadgesEl) this.totalBadgesEl.textContent = BADGES.length;
 
-    const progressBar = typeof document !== 'undefined' ? document.getElementById('modal-badges-progress-bar') : null;
+    const progressBar =
+      typeof document !== 'undefined'
+        ? document.getElementById('modal-badges-progress-bar')
+        : null;
     if (progressBar) {
-      const pct = BADGES.length > 0 ? Math.round((unlockedSet.size / BADGES.length) * 100) : 0;
+      const pct =
+        BADGES.length > 0
+          ? Math.round((unlockedSet.size / BADGES.length) * 100)
+          : 0;
       progressBar.style.width = `${pct}%`;
     }
 

@@ -8,10 +8,7 @@
     "text_ar": "أستيقظ في الساعة السابعة كل صباح.",
     "english": "I wake up at seven every morning.",
     "arabic": "أستيقظ في الساعة السابعة كل صباح.",
-    "tags": [
-      "routine",
-      "morning"
-    ],
+    "tags": ["routine", "morning"],
     "words": [
       {
         "word": "wake",
@@ -42,10 +39,7 @@
     "text_ar": "أشرب الماء كل صباح.",
     "english": "I drink water every morning.",
     "arabic": "أشرب الماء كل صباح.",
-    "tags": [
-      "routine",
-      "health"
-    ],
+    "tags": ["routine", "health"],
     "words": [
       {
         "word": "drink",
@@ -70,10 +64,7 @@
     "text_ar": "أستحم قبل الفطور.",
     "english": "I take a shower before breakfast.",
     "arabic": "أستحم قبل الفطور.",
-    "tags": [
-      "routine",
-      "morning"
-    ],
+    "tags": ["routine", "morning"],
     "words": [
       {
         "word": "take",
@@ -104,10 +95,7 @@
     "text_ar": "أنظف أسناني مرتين في اليوم.",
     "english": "I brush my teeth twice a day.",
     "arabic": "أنظف أسناني مرتين في اليوم.",
-    "tags": [
-      "routine",
-      "health"
-    ],
+    "tags": ["routine", "health"],
     "words": [
       {
         "word": "brush",
@@ -138,10 +126,7 @@
     "text_ar": "أقود السيارة إلى العمل في أيام الأسبوع.",
     "english": "I drive to work on weekdays.",
     "arabic": "أقود السيارة إلى العمل في أيام الأسبوع.",
-    "tags": [
-      "routine",
-      "work"
-    ],
+    "tags": ["routine", "work"],
     "words": [
       {
         "word": "drive",
@@ -166,10 +151,7 @@
     "text_ar": "أشرب فنجان قهوة بعد الغداء.",
     "english": "I have a cup of coffee after lunch.",
     "arabic": "أشرب فنجان قهوة بعد الغداء.",
-    "tags": [
-      "routine",
-      "food"
-    ],
+    "tags": ["routine", "food"],
     "words": [
       {
         "word": "cup",
@@ -194,10 +176,7 @@
     "text_ar": "أتفقد هاتفي كل بضع دقائق.",
     "english": "I check my phone every few minutes.",
     "arabic": "أتفقد هاتفي كل بضع دقائق.",
-    "tags": [
-      "routine",
-      "phone"
-    ],
+    "tags": ["routine", "phone"],
     "words": [
       {
         "word": "check",
@@ -228,10 +207,7 @@
     "text_ar": "أذهب إلى السرير في العاشرة كل ليلة.",
     "english": "I go to bed at ten every night.",
     "arabic": "أذهب إلى السرير في العاشرة كل ليلة.",
-    "tags": [
-      "routine",
-      "night"
-    ],
+    "tags": ["routine", "night"],
     "words": [
       {
         "word": "bed",
@@ -256,10 +232,7 @@
     "text_ar": "أشاهد الأخبار في المساء.",
     "english": "I watch the news in the evening.",
     "arabic": "أشاهد الأخبار في المساء.",
-    "tags": [
-      "routine",
-      "evening"
-    ],
+    "tags": ["routine", "evening"],
     "words": [
       {
         "word": "watch",
@@ -290,10 +263,7 @@
     "text_ar": "أنظف غرفتي يوم السبت.",
     "english": "I clean my room on Saturday.",
     "arabic": "أنظف غرفتي يوم السبت.",
-    "tags": [
-      "routine",
-      "weekend"
-    ],
+    "tags": ["routine", "weekend"],
     "words": [
       {
         "word": "clean",
@@ -324,10 +294,7 @@
     "text_ar": "أطبخ العشاء مع عائلتي.",
     "english": "I cook dinner with my family.",
     "arabic": "أطبخ العشاء مع عائلتي.",
-    "tags": [
-      "family",
-      "food"
-    ],
+    "tags": ["family", "food"],
     "words": [
       {
         "word": "cook",
@@ -358,10 +325,7 @@
     "text_ar": "أنام ثماني ساعات كل ليلة.",
     "english": "I sleep eight hours every night.",
     "arabic": "أنام ثماني ساعات كل ليلة.",
-    "tags": [
-      "routine",
-      "health"
-    ],
+    "tags": ["routine", "health"],
     "words": [
       {
         "word": "sleep",
@@ -392,10 +356,7 @@
     "text_ar": "أقرأ كتابًا قبل أن أنام.",
     "english": "I read a book before I sleep.",
     "arabic": "أقرأ كتابًا قبل أن أنام.",
-    "tags": [
-      "routine",
-      "reading"
-    ],
+    "tags": ["routine", "reading"],
     "words": [
       {
         "word": "read",
@@ -420,10 +381,7 @@
     "text_ar": "أقوم بواجباتي بعد المدرسة.",
     "english": "I do my homework after school.",
     "arabic": "أقوم بواجباتي بعد المدرسة.",
-    "tags": [
-      "study",
-      "routine"
-    ],
+    "tags": ["study", "routine"],
     "words": [
       {
         "word": "homework",
@@ -442,10 +400,7 @@
     "text_ar": "أشتري البقالة مرة في الأسبوع.",
     "english": "I buy groceries once a week.",
     "arabic": "أشتري البقالة مرة في الأسبوع.",
-    "tags": [
-      "shopping",
-      "routine"
-    ],
+    "tags": ["shopping", "routine"],
     "words": [
       {
         "word": "buy",
@@ -476,10 +431,7 @@
     "text_ar": "أنا مشغول دائمًا في أيام الأسبوع.",
     "english": "I am always busy on weekdays.",
     "arabic": "أنا مشغول دائمًا في أيام الأسبوع.",
-    "tags": [
-      "routine",
-      "schedule"
-    ],
+    "tags": ["routine", "schedule"],
     "words": [
       {
         "word": "always",
@@ -504,10 +456,7 @@
     "text_ar": "هي أختي.",
     "english": "She is my sister.",
     "arabic": "هي أختي.",
-    "tags": [
-      "family",
-      "relationship"
-    ],
+    "tags": ["family", "relationship"],
     "words": [
       {
         "word": "She",
@@ -532,10 +481,7 @@
     "text_ar": "والداي يعيشان في القاهرة.",
     "english": "My parents live in Cairo.",
     "arabic": "والداي يعيشان في القاهرة.",
-    "tags": [
-      "family",
-      "places"
-    ],
+    "tags": ["family", "places"],
     "words": [
       {
         "word": "parents",
@@ -560,10 +506,7 @@
     "text_ar": "لدي أخوان أصغر مني.",
     "english": "I have two younger brothers.",
     "arabic": "لدي أخوان أصغر مني.",
-    "tags": [
-      "family",
-      "siblings"
-    ],
+    "tags": ["family", "siblings"],
     "words": [
       {
         "word": "two",
@@ -594,10 +537,7 @@
     "text_ar": "جدي يروي قصصًا رائعة.",
     "english": "My grandfather tells wonderful stories.",
     "arabic": "جدي يروي قصصًا رائعة.",
-    "tags": [
-      "family",
-      "stories"
-    ],
+    "tags": ["family", "stories"],
     "words": [
       {
         "word": "grandfather",
@@ -634,10 +574,7 @@
     "text_ar": "جدتي تطبخ أفضل طعام.",
     "english": "My grandmother cooks the best food.",
     "arabic": "جدتي تطبخ أفضل طعام.",
-    "tags": [
-      "family",
-      "food"
-    ],
+    "tags": ["family", "food"],
     "words": [
       {
         "word": "grandmother",
@@ -662,10 +599,7 @@
     "text_ar": "أمي تدرّس في مدرسة.",
     "english": "My mother teaches at a school.",
     "arabic": "أمي تدرّس في مدرسة.",
-    "tags": [
-      "family",
-      "work"
-    ],
+    "tags": ["family", "work"],
     "words": [
       {
         "word": "mother",
@@ -690,10 +624,7 @@
     "text_ar": "أبي يعمل في بنك.",
     "english": "My father works in a bank.",
     "arabic": "أبي يعمل في بنك.",
-    "tags": [
-      "family",
-      "work"
-    ],
+    "tags": ["family", "work"],
     "words": [
       {
         "word": "father",
@@ -718,10 +649,7 @@
     "text_ar": "نزور أبناء عمومتنا كل صيف.",
     "english": "We visit our cousins every summer.",
     "arabic": "نزور أبناء عمومتنا كل صيف.",
-    "tags": [
-      "family",
-      "summer"
-    ],
+    "tags": ["family", "summer"],
     "words": [
       {
         "word": "visit",
@@ -752,10 +680,7 @@
     "text_ar": "خالتي تسكن بالقرب من منزلنا.",
     "english": "My aunt lives near our house.",
     "arabic": "خالتي تسكن بالقرب من منزلنا.",
-    "tags": [
-      "family",
-      "places"
-    ],
+    "tags": ["family", "places"],
     "words": [
       {
         "word": "aunt",
@@ -780,10 +705,7 @@
     "text_ar": "خالي لديه حديقة جميلة.",
     "english": "My uncle has a beautiful garden.",
     "arabic": "خالي لديه حديقة جميلة.",
-    "tags": [
-      "family",
-      "home"
-    ],
+    "tags": ["family", "home"],
     "words": [
       {
         "word": "uncle",
@@ -814,10 +736,7 @@
     "text_ar": "أحب عائلتي بأكملها كثيرًا.",
     "english": "I love my whole family very much.",
     "arabic": "أحب عائلتي بأكملها كثيرًا.",
-    "tags": [
-      "family",
-      "feelings"
-    ],
+    "tags": ["family", "feelings"],
     "words": [
       {
         "word": "love",
@@ -842,10 +761,7 @@
     "text_ar": "أختي تعطيني نصيحة جيدة.",
     "english": "My sister gives me good advice.",
     "arabic": "أختي تعطيني نصيحة جيدة.",
-    "tags": [
-      "family",
-      "advice"
-    ],
+    "tags": ["family", "advice"],
     "words": [
       {
         "word": "gives",
@@ -870,10 +786,7 @@
     "text_ar": "نتناول العشاء معًا كل يوم جمعة.",
     "english": "We eat dinner together every Friday.",
     "arabic": "نتناول العشاء معًا كل يوم جمعة.",
-    "tags": [
-      "family",
-      "food"
-    ],
+    "tags": ["family", "food"],
     "words": [
       {
         "word": "together",
@@ -898,10 +811,7 @@
     "text_ar": "أحب القهوة.",
     "english": "I like coffee.",
     "arabic": "أحب القهوة.",
-    "tags": [
-      "beverage",
-      "preference"
-    ],
+    "tags": ["beverage", "preference"],
     "words": [
       {
         "word": "like",
@@ -926,10 +836,7 @@
     "text_ar": "نتناول الغداء عند الظهيرة.",
     "english": "We eat lunch at noon.",
     "arabic": "نتناول الغداء عند الظهيرة.",
-    "tags": [
-      "meals",
-      "time"
-    ],
+    "tags": ["meals", "time"],
     "words": [
       {
         "word": "lunch",
@@ -954,10 +861,7 @@
     "text_ar": "يشرب الشاي الأخضر بعد العشاء.",
     "english": "He drinks green tea after dinner.",
     "arabic": "يشرب الشاي الأخضر بعد العشاء.",
-    "tags": [
-      "beverage",
-      "dinner"
-    ],
+    "tags": ["beverage", "dinner"],
     "words": [
       {
         "word": "green",
@@ -982,10 +886,7 @@
     "text_ar": "نحتاج إلى خبز طازج وجبن.",
     "english": "We need fresh bread and cheese.",
     "arabic": "نحتاج إلى خبز طازج وجبن.",
-    "tags": [
-      "groceries",
-      "food"
-    ],
+    "tags": ["groceries", "food"],
     "words": [
       {
         "word": "need",
@@ -1022,10 +923,7 @@
     "text_ar": "آكل الفواكه كل يوم.",
     "english": "I eat fruit every day.",
     "arabic": "آكل الفواكه كل يوم.",
-    "tags": [
-      "food",
-      "health"
-    ],
+    "tags": ["food", "health"],
     "words": [
       {
         "word": "eat",
@@ -1050,10 +948,7 @@
     "text_ar": "هذا الحساء ساخن جدًا.",
     "english": "This soup is very hot.",
     "arabic": "هذا الحساء ساخن جدًا.",
-    "tags": [
-      "food",
-      "temperature"
-    ],
+    "tags": ["food", "temperature"],
     "words": [
       {
         "word": "soup",
@@ -1078,10 +973,7 @@
     "text_ar": "أريد بعض الماء، من فضلك.",
     "english": "I want some water, please.",
     "arabic": "أريد بعض الماء، من فضلك.",
-    "tags": [
-      "beverage",
-      "polite"
-    ],
+    "tags": ["beverage", "polite"],
     "words": [
       {
         "word": "want",
@@ -1112,10 +1004,7 @@
     "text_ar": "الأرز جاهز الآن.",
     "english": "The rice is ready now.",
     "arabic": "الأرز جاهز الآن.",
-    "tags": [
-      "food",
-      "meals"
-    ],
+    "tags": ["food", "meals"],
     "words": [
       {
         "word": "rice",
@@ -1140,10 +1029,7 @@
     "text_ar": "هل تريد سكرًا في شايك؟",
     "english": "Do you want sugar in your tea?",
     "arabic": "هل تريد سكرًا في شايك؟",
-    "tags": [
-      "beverage",
-      "question"
-    ],
+    "tags": ["beverage", "question"],
     "words": [
       {
         "word": "sugar",
@@ -1162,10 +1048,7 @@
     "text_ar": "أتناول الفطور في المنزل.",
     "english": "I eat breakfast at home.",
     "arabic": "أتناول الفطور في المنزل.",
-    "tags": [
-      "meals",
-      "routine"
-    ],
+    "tags": ["meals", "routine"],
     "words": [
       {
         "word": "breakfast",
@@ -1190,10 +1073,7 @@
     "text_ar": "الطعام في هذا المطعم جيد.",
     "english": "The food at this restaurant is good.",
     "arabic": "الطعام في هذا المطعم جيد.",
-    "tags": [
-      "food",
-      "restaurant"
-    ],
+    "tags": ["food", "restaurant"],
     "words": [
       {
         "word": "restaurant",
@@ -1218,10 +1098,7 @@
     "text_ar": "عادةً أشرب الحليب مع الحبوب.",
     "english": "I usually have milk with my cereal.",
     "arabic": "عادةً أشرب الحليب مع الحبوب.",
-    "tags": [
-      "breakfast",
-      "routine"
-    ],
+    "tags": ["breakfast", "routine"],
     "words": [
       {
         "word": "usually",
@@ -1252,10 +1129,7 @@
     "text_ar": "أين أقرب محطة قطار؟",
     "english": "Where is the nearest train station?",
     "arabic": "أين أقرب محطة قطار؟",
-    "tags": [
-      "directions",
-      "transport"
-    ],
+    "tags": ["directions", "transport"],
     "words": [
       {
         "word": "nearest",
@@ -1286,10 +1160,7 @@
     "text_ar": "المطار بعيد عن هنا.",
     "english": "The airport is far from here.",
     "arabic": "المطار بعيد عن هنا.",
-    "tags": [
-      "travel",
-      "locations"
-    ],
+    "tags": ["travel", "locations"],
     "words": [
       {
         "word": "airport",
@@ -1314,10 +1185,7 @@
     "text_ar": "نقيم في فندق هادئ قرب الشاطئ.",
     "english": "We stay at a quiet hotel near the beach.",
     "arabic": "نقيم في فندق هادئ قرب الشاطئ.",
-    "tags": [
-      "travel",
-      "vacation"
-    ],
+    "tags": ["travel", "vacation"],
     "words": [
       {
         "word": "stay",
@@ -1354,10 +1222,7 @@
     "text_ar": "الحافلة تتجه إلى وسط المدينة.",
     "english": "The bus goes to the city center.",
     "arabic": "الحافلة تتجه إلى وسط المدينة.",
-    "tags": [
-      "transport",
-      "city"
-    ],
+    "tags": ["transport", "city"],
     "words": [
       {
         "word": "bus",
@@ -1388,10 +1253,7 @@
     "text_ar": "أشتري تذكرة للمترو.",
     "english": "I buy a ticket for the metro.",
     "arabic": "أشتري تذكرة للمترو.",
-    "tags": [
-      "transport",
-      "tickets"
-    ],
+    "tags": ["transport", "tickets"],
     "words": [
       {
         "word": "ticket",
@@ -1416,10 +1278,7 @@
     "text_ar": "الطقس جميل للنزهة.",
     "english": "The weather is nice for a walk.",
     "arabic": "الطقس جميل للنزهة.",
-    "tags": [
-      "weather",
-      "outdoors"
-    ],
+    "tags": ["weather", "outdoors"],
     "words": [
       {
         "word": "weather",
@@ -1450,10 +1309,7 @@
     "text_ar": "نأخذ مترو الأنفاق إلى المطار.",
     "english": "We take the subway to the airport.",
     "arabic": "نأخذ مترو الأنفاق إلى المطار.",
-    "tags": [
-      "transport",
-      "travel"
-    ],
+    "tags": ["transport", "travel"],
     "words": [
       {
         "word": "subway",
@@ -1472,10 +1328,7 @@
     "text_ar": "المتحف يفتح في التاسعة.",
     "english": "The museum opens at nine.",
     "arabic": "المتحف يفتح في التاسعة.",
-    "tags": [
-      "places",
-      "sightseeing"
-    ],
+    "tags": ["places", "sightseeing"],
     "words": [
       {
         "word": "museum",
@@ -1500,10 +1353,7 @@
     "text_ar": "أسافر إلى الإسكندرية كل عام.",
     "english": "I travel to Alexandria every year.",
     "arabic": "أسافر إلى الإسكندرية كل عام.",
-    "tags": [
-      "travel",
-      "routine"
-    ],
+    "tags": ["travel", "routine"],
     "words": [
       {
         "word": "travel",
@@ -1528,10 +1378,7 @@
     "text_ar": "السيارة متوقفة بالقرب من السوق.",
     "english": "The car is parked near the market.",
     "arabic": "السيارة متوقفة بالقرب من السوق.",
-    "tags": [
-      "transport",
-      "places"
-    ],
+    "tags": ["transport", "places"],
     "words": [
       {
         "word": "car",
@@ -1562,10 +1409,7 @@
     "text_ar": "أذهب إلى المدرسة كل يوم.",
     "english": "I go to school every day.",
     "arabic": "أذهب إلى المدرسة كل يوم.",
-    "tags": [
-      "routine",
-      "education"
-    ],
+    "tags": ["routine", "education"],
     "words": [
       {
         "word": "school",
@@ -1590,10 +1434,7 @@
     "text_ar": "لا أفهم كل شيء بعد.",
     "english": "I do not understand everything yet.",
     "arabic": "لا أفهم كل شيء بعد.",
-    "tags": [
-      "learning",
-      "communication"
-    ],
+    "tags": ["learning", "communication"],
     "words": [
       {
         "word": "understand",
@@ -1618,10 +1459,7 @@
     "text_ar": "تدرس الأدب الإنجليزي في الجامعة.",
     "english": "She studies English literature at university.",
     "arabic": "تدرس الأدب الإنجليزي في الجامعة.",
-    "tags": [
-      "study",
-      "subject"
-    ],
+    "tags": ["study", "subject"],
     "words": [
       {
         "word": "studies",
@@ -1652,10 +1490,7 @@
     "text_ar": "المكتبة هادئة في الصباح.",
     "english": "The library is quiet in the morning.",
     "arabic": "المكتبة هادئة في الصباح.",
-    "tags": [
-      "study",
-      "places"
-    ],
+    "tags": ["study", "places"],
     "words": [
       {
         "word": "library",
@@ -1674,10 +1509,7 @@
     "text_ar": "أدرس الرياضيات والعلوم في المدرسة.",
     "english": "I study math and science at school.",
     "arabic": "أدرس الرياضيات والعلوم في المدرسة.",
-    "tags": [
-      "study",
-      "subjects"
-    ],
+    "tags": ["study", "subjects"],
     "words": [
       {
         "word": "study",
@@ -1708,10 +1540,7 @@
     "text_ar": "معلمنا يعطينا واجبات.",
     "english": "Our teacher gives us homework.",
     "arabic": "معلمنا يعطينا واجبات.",
-    "tags": [
-      "class",
-      "homework"
-    ],
+    "tags": ["class", "homework"],
     "words": [
       {
         "word": "teacher",
@@ -1736,10 +1565,7 @@
     "text_ar": "المحاضرة تبدأ في الثامنة تمامًا.",
     "english": "The class starts at eight sharp.",
     "arabic": "المحاضرة تبدأ في الثامنة تمامًا.",
-    "tags": [
-      "class",
-      "time"
-    ],
+    "tags": ["class", "time"],
     "words": [
       {
         "word": "class",
@@ -1770,10 +1596,7 @@
     "text_ar": "نكتب ملاحظات أثناء الدرس.",
     "english": "We write notes during the lesson.",
     "arabic": "نكتب ملاحظات أثناء الدرس.",
-    "tags": [
-      "class",
-      "study"
-    ],
+    "tags": ["class", "study"],
     "words": [
       {
         "word": "write",
@@ -1804,10 +1627,7 @@
     "text_ar": "صديقي يدرس الطب.",
     "english": "My friend studies medicine.",
     "arabic": "صديقي يدرس الطب.",
-    "tags": [
-      "study",
-      "medicine"
-    ],
+    "tags": ["study", "medicine"],
     "words": [
       {
         "word": "friend",
@@ -1832,10 +1652,7 @@
     "text_ar": "لدي أربع محاضرات اليوم.",
     "english": "I have four classes today.",
     "arabic": "لدي أربع محاضرات اليوم.",
-    "tags": [
-      "schedule",
-      "class"
-    ],
+    "tags": ["schedule", "class"],
     "words": [
       {
         "word": "four",
@@ -1860,10 +1677,7 @@
     "text_ar": "الامتحان في الأسبوع القادم.",
     "english": "The exam is next week.",
     "arabic": "الامتحان في الأسبوع القادم.",
-    "tags": [
-      "exam",
-      "study"
-    ],
+    "tags": ["exam", "study"],
     "words": [
       {
         "word": "exam",
@@ -1888,10 +1702,7 @@
     "text_ar": "أتعلم كلمات جديدة كل يوم.",
     "english": "I learn new words every day.",
     "arabic": "أتعلم كلمات جديدة كل يوم.",
-    "tags": [
-      "learning",
-      "vocabulary"
-    ],
+    "tags": ["learning", "vocabulary"],
     "words": [
       {
         "word": "learn",
@@ -1922,10 +1733,7 @@
     "text_ar": "يعمل في مكتب.",
     "english": "He works in an office.",
     "arabic": "يعمل في مكتب.",
-    "tags": [
-      "job",
-      "office"
-    ],
+    "tags": ["job", "office"],
     "words": [
       {
         "word": "works",
@@ -1950,10 +1758,7 @@
     "text_ar": "أبدأ عملي في التاسعة.",
     "english": "I start my job at nine o'clock.",
     "arabic": "أبدأ عملي في التاسعة.",
-    "tags": [
-      "job",
-      "schedule"
-    ],
+    "tags": ["job", "schedule"],
     "words": [
       {
         "word": "job",
@@ -1978,10 +1783,7 @@
     "text_ar": "فريقنا يجتمع كل يوم اثنين.",
     "english": "Our team meets every Monday.",
     "arabic": "فريقنا يجتمع كل يوم اثنين.",
-    "tags": [
-      "team",
-      "meetings"
-    ],
+    "tags": ["team", "meetings"],
     "words": [
       {
         "word": "team",
@@ -2012,10 +1814,7 @@
     "text_ar": "ترسل رسائل بريد هامة للعملاء.",
     "english": "She sends important emails to clients.",
     "arabic": "ترسل رسائل بريد هامة للعملاء.",
-    "tags": [
-      "communication",
-      "job"
-    ],
+    "tags": ["communication", "job"],
     "words": [
       {
         "word": "sends",
@@ -2052,10 +1851,7 @@
     "text_ar": "لدي اجتماع في الثالثة.",
     "english": "I have a meeting at three.",
     "arabic": "لدي اجتماع في الثالثة.",
-    "tags": [
-      "meetings",
-      "schedule"
-    ],
+    "tags": ["meetings", "schedule"],
     "words": [
       {
         "word": "meeting",
@@ -2080,10 +1876,7 @@
     "text_ar": "مديري لطيف جدًا.",
     "english": "My boss is very kind.",
     "arabic": "مديري لطيف جدًا.",
-    "tags": [
-      "boss",
-      "work"
-    ],
+    "tags": ["boss", "work"],
     "words": [
       {
         "word": "boss",
@@ -2108,10 +1901,7 @@
     "text_ar": "ننهي العمل في الخامسة.",
     "english": "We finish work at five.",
     "arabic": "ننهي العمل في الخامسة.",
-    "tags": [
-      "schedule",
-      "work"
-    ],
+    "tags": ["schedule", "work"],
     "words": [
       {
         "word": "finish",
@@ -2136,10 +1926,7 @@
     "text_ar": "ترد على الهاتف طوال اليوم.",
     "english": "She answers the phone all day.",
     "arabic": "ترد على الهاتف طوال اليوم.",
-    "tags": [
-      "work",
-      "phone"
-    ],
+    "tags": ["work", "phone"],
     "words": [
       {
         "word": "answers",
@@ -2164,10 +1951,7 @@
     "text_ar": "أعمل من المنزل أيام الجمعة.",
     "english": "I work from home on Fridays.",
     "arabic": "أعمل من المنزل أيام الجمعة.",
-    "tags": [
-      "remote",
-      "work"
-    ],
+    "tags": ["remote", "work"],
     "words": [
       {
         "word": "from",
@@ -2186,10 +1970,7 @@
     "text_ar": "عملي يبدأ مبكرًا في الصباح.",
     "english": "My job starts early in the morning.",
     "arabic": "عملي يبدأ مبكرًا في الصباح.",
-    "tags": [
-      "job",
-      "schedule"
-    ],
+    "tags": ["job", "schedule"],
     "words": [
       {
         "word": "early",
@@ -2208,10 +1989,7 @@
     "text_ar": "نستخدم الحواسيب في العمل.",
     "english": "We use computers at work.",
     "arabic": "نستخدم الحواسيب في العمل.",
-    "tags": [
-      "technology",
-      "work"
-    ],
+    "tags": ["technology", "work"],
     "words": [
       {
         "word": "use",
@@ -2236,10 +2014,7 @@
     "text_ar": "المكتب قريب من منزلي.",
     "english": "The office is near my house.",
     "arabic": "المكتب قريب من منزلي.",
-    "tags": [
-      "office",
-      "places"
-    ],
+    "tags": ["office", "places"],
     "words": [
       {
         "word": "near",
@@ -2258,10 +2033,7 @@
     "text_ar": "كم ثمن هذا القميص؟",
     "english": "How much does this shirt cost?",
     "arabic": "كم ثمن هذا القميص؟",
-    "tags": [
-      "clothes",
-      "price"
-    ],
+    "tags": ["clothes", "price"],
     "words": [
       {
         "word": "much",
@@ -2292,10 +2064,7 @@
     "text_ar": "أريد أن أدفع نقدًا.",
     "english": "I want to pay with cash.",
     "arabic": "أريد أن أدفع نقدًا.",
-    "tags": [
-      "payment",
-      "shopping"
-    ],
+    "tags": ["payment", "shopping"],
     "words": [
       {
         "word": "pay",
@@ -2320,10 +2089,7 @@
     "text_ar": "السوبرماركت يغلق في العاشرة الليلة.",
     "english": "The supermarket closes at ten tonight.",
     "arabic": "السوبرماركت يغلق في العاشرة الليلة.",
-    "tags": [
-      "store",
-      "time"
-    ],
+    "tags": ["store", "time"],
     "words": [
       {
         "word": "supermarket",
@@ -2348,10 +2114,7 @@
     "text_ar": "هذه الحقيبة غالية جدًا.",
     "english": "This bag is too expensive.",
     "arabic": "هذه الحقيبة غالية جدًا.",
-    "tags": [
-      "clothes",
-      "price"
-    ],
+    "tags": ["clothes", "price"],
     "words": [
       {
         "word": "bag",
@@ -2376,10 +2139,7 @@
     "text_ar": "أحتاج إلى شاحن هاتف جديد.",
     "english": "I need a new phone charger.",
     "arabic": "أحتاج إلى شاحن هاتف جديد.",
-    "tags": [
-      "electronics",
-      "shopping"
-    ],
+    "tags": ["electronics", "shopping"],
     "words": [
       {
         "word": "charger",
@@ -2398,10 +2158,7 @@
     "text_ar": "الأحذية في التخفيضات اليوم.",
     "english": "The shoes are on sale today.",
     "arabic": "الأحذية في التخفيضات اليوم.",
-    "tags": [
-      "clothes",
-      "sale"
-    ],
+    "tags": ["clothes", "sale"],
     "words": [
       {
         "word": "shoes",
@@ -2426,10 +2183,7 @@
     "text_ar": "آخذ محفظتي معي.",
     "english": "I take my wallet with me.",
     "arabic": "آخذ محفظتي معي.",
-    "tags": [
-      "shopping",
-      "money"
-    ],
+    "tags": ["shopping", "money"],
     "words": [
       {
         "word": "wallet",
@@ -2448,10 +2202,7 @@
     "text_ar": "العصير في الثلاجة.",
     "english": "The juice is in the fridge.",
     "arabic": "العصير في الثلاجة.",
-    "tags": [
-      "food",
-      "shopping"
-    ],
+    "tags": ["food", "shopping"],
     "words": [
       {
         "word": "juice",
@@ -2476,10 +2227,7 @@
     "text_ar": "أنا متعب اليوم.",
     "english": "I am tired today.",
     "arabic": "أنا متعب اليوم.",
-    "tags": [
-      "feelings",
-      "body"
-    ],
+    "tags": ["feelings", "body"],
     "words": [
       {
         "word": "tired",
@@ -2498,10 +2246,7 @@
     "text_ar": "أعاني من صداع هذا الصباح.",
     "english": "I have a headache this morning.",
     "arabic": "أعاني من صداع هذا الصباح.",
-    "tags": [
-      "body",
-      "health"
-    ],
+    "tags": ["body", "health"],
     "words": [
       {
         "word": "headache",
@@ -2520,10 +2265,7 @@
     "text_ar": "الطبيب مشغول جدًا اليوم.",
     "english": "The doctor is very busy today.",
     "arabic": "الطبيب مشغول جدًا اليوم.",
-    "tags": [
-      "doctor",
-      "health"
-    ],
+    "tags": ["doctor", "health"],
     "words": [
       {
         "word": "doctor",
@@ -2542,10 +2284,7 @@
     "text_ar": "أحتاج إلى راحة لعيني.",
     "english": "I need to rest my eyes.",
     "arabic": "أحتاج إلى راحة لعيني.",
-    "tags": [
-      "body",
-      "rest"
-    ],
+    "tags": ["body", "rest"],
     "words": [
       {
         "word": "rest",
@@ -2570,10 +2309,7 @@
     "text_ar": "الدواء على الطاولة.",
     "english": "The medicine is on the table.",
     "arabic": "الدواء على الطاولة.",
-    "tags": [
-      "medicine",
-      "health"
-    ],
+    "tags": ["medicine", "health"],
     "words": [
       {
         "word": "medicine",
@@ -2598,10 +2334,7 @@
     "text_ar": "أمشي ثلاثين دقيقة كل يوم.",
     "english": "I walk thirty minutes every day.",
     "arabic": "أمشي ثلاثين دقيقة كل يوم.",
-    "tags": [
-      "exercise",
-      "health"
-    ],
+    "tags": ["exercise", "health"],
     "words": [
       {
         "word": "walk",
@@ -2626,10 +2359,7 @@
     "text_ar": "الماء مفيد لصحتك.",
     "english": "The water is good for your health.",
     "arabic": "الماء مفيد لصحتك.",
-    "tags": [
-      "health",
-      "advice"
-    ],
+    "tags": ["health", "advice"],
     "words": [
       {
         "word": "health",
@@ -2648,10 +2378,7 @@
     "text_ar": "أشعر بتحسن بعد نوم جيد.",
     "english": "I feel better after a good sleep.",
     "arabic": "أشعر بتحسن بعد نوم جيد.",
-    "tags": [
-      "feelings",
-      "sleep"
-    ],
+    "tags": ["feelings", "sleep"],
     "words": [
       {
         "word": "feel",
@@ -2676,10 +2403,7 @@
     "text_ar": "لديها حمى اليوم.",
     "english": "She has a fever today.",
     "arabic": "لديها حمى اليوم.",
-    "tags": [
-      "body",
-      "sick"
-    ],
+    "tags": ["body", "sick"],
     "words": [
       {
         "word": "fever",
@@ -2698,10 +2422,7 @@
     "text_ar": "آكل طعامًا صحيًا الآن.",
     "english": "I eat healthy food now.",
     "arabic": "آكل طعامًا صحيًا الآن.",
-    "tags": [
-      "food",
-      "health"
-    ],
+    "tags": ["food", "health"],
     "words": [
       {
         "word": "healthy",
@@ -2720,10 +2441,7 @@
     "text_ar": "الطقس مشمس اليوم.",
     "english": "It is sunny today.",
     "arabic": "الطقس مشمس اليوم.",
-    "tags": [
-      "weather",
-      "sun"
-    ],
+    "tags": ["weather", "sun"],
     "words": [
       {
         "word": "sunny",
@@ -2742,10 +2460,7 @@
     "text_ar": "تمطر في الخارج الآن.",
     "english": "It is raining outside now.",
     "arabic": "تمطر في الخارج الآن.",
-    "tags": [
-      "weather",
-      "rain"
-    ],
+    "tags": ["weather", "rain"],
     "words": [
       {
         "word": "raining",
@@ -2770,10 +2485,7 @@
     "text_ar": "الشتاء بارد جدًا هنا.",
     "english": "The winter is very cold here.",
     "arabic": "الشتاء بارد جدًا هنا.",
-    "tags": [
-      "seasons",
-      "cold"
-    ],
+    "tags": ["seasons", "cold"],
     "words": [
       {
         "word": "winter",
@@ -2798,10 +2510,7 @@
     "text_ar": "الصيف حار وجاف.",
     "english": "The summer is hot and dry.",
     "arabic": "الصيف حار وجاف.",
-    "tags": [
-      "seasons",
-      "summer"
-    ],
+    "tags": ["seasons", "summer"],
     "words": [
       {
         "word": "dry",
@@ -2820,10 +2529,7 @@
     "text_ar": "هناك رياح قوية اليوم.",
     "english": "There is a strong wind today.",
     "arabic": "هناك رياح قوية اليوم.",
-    "tags": [
-      "weather",
-      "wind"
-    ],
+    "tags": ["weather", "wind"],
     "words": [
       {
         "word": "strong",
@@ -2848,10 +2554,7 @@
     "text_ar": "السماء صافية الليلة.",
     "english": "The sky is clear tonight.",
     "arabic": "السماء صافية الليلة.",
-    "tags": [
-      "weather",
-      "night"
-    ],
+    "tags": ["weather", "night"],
     "words": [
       {
         "word": "sky",
@@ -2876,10 +2579,7 @@
     "text_ar": "أحب الطقس في الربيع.",
     "english": "I like the weather in spring.",
     "arabic": "أحب الطقس في الربيع.",
-    "tags": [
-      "seasons",
-      "spring"
-    ],
+    "tags": ["seasons", "spring"],
     "words": [
       {
         "word": "spring",
@@ -2898,10 +2598,7 @@
     "text_ar": "السماء غائمة بعد ظهر اليوم.",
     "english": "It is cloudy this afternoon.",
     "arabic": "السماء غائمة بعد ظهر اليوم.",
-    "tags": [
-      "weather",
-      "clouds"
-    ],
+    "tags": ["weather", "clouds"],
     "words": [
       {
         "word": "cloudy",
@@ -2926,10 +2623,7 @@
     "text_ar": "الثلج أبيض وناعم.",
     "english": "The snow is white and soft.",
     "arabic": "الثلج أبيض وناعم.",
-    "tags": [
-      "weather",
-      "snow"
-    ],
+    "tags": ["weather", "snow"],
     "words": [
       {
         "word": "snow",
@@ -2960,10 +2654,7 @@
     "text_ar": "نأخذ مظلة عندما تمطر.",
     "english": "We take an umbrella when it rains.",
     "arabic": "نأخذ مظلة عندما تمطر.",
-    "tags": [
-      "weather",
-      "rain"
-    ],
+    "tags": ["weather", "rain"],
     "words": [
       {
         "word": "umbrella",
@@ -2988,10 +2679,7 @@
     "text_ar": "شكرًا جزيلًا.",
     "english": "Thank you very much.",
     "arabic": "شكرًا جزيلًا.",
-    "tags": [
-      "polite",
-      "greeting"
-    ],
+    "tags": ["polite", "greeting"],
     "words": [
       {
         "word": "Thank",
@@ -3022,10 +2710,7 @@
     "text_ar": "هل يمكنك التحدث ببطء أكثر، من فضلك؟",
     "english": "Can you speak more slowly, please?",
     "arabic": "هل يمكنك التحدث ببطء أكثر، من فضلك؟",
-    "tags": [
-      "polite",
-      "conversation"
-    ],
+    "tags": ["polite", "conversation"],
     "words": [
       {
         "word": "speak",
@@ -3050,10 +2735,7 @@
     "text_ar": "لا أفهم سؤالك.",
     "english": "I do not understand your question.",
     "arabic": "لا أفهم سؤالك.",
-    "tags": [
-      "conversation",
-      "question"
-    ],
+    "tags": ["conversation", "question"],
     "words": [
       {
         "word": "question",
@@ -3072,10 +2754,7 @@
     "text_ar": "من فضلك قل ذلك مجددًا.",
     "english": "Please say that again.",
     "arabic": "من فضلك قل ذلك مجددًا.",
-    "tags": [
-      "polite",
-      "conversation"
-    ],
+    "tags": ["polite", "conversation"],
     "words": [
       {
         "word": "say",
@@ -3100,10 +2779,7 @@
     "text_ar": "أتحدث الإنجليزية قليلًا.",
     "english": "I speak English a little.",
     "arabic": "أتحدث الإنجليزية قليلًا.",
-    "tags": [
-      "language",
-      "conversation"
-    ],
+    "tags": ["language", "conversation"],
     "words": [
       {
         "word": "English",
@@ -3128,10 +2804,7 @@
     "text_ar": "سعيد بلقائك.",
     "english": "Nice to meet you.",
     "arabic": "سعيد بلقائك.",
-    "tags": [
-      "greeting",
-      "conversation"
-    ],
+    "tags": ["greeting", "conversation"],
     "words": [
       {
         "word": "Nice",
@@ -3156,10 +2829,7 @@
     "text_ar": "ماذا تعني هذه الكلمة؟",
     "english": "What does this word mean?",
     "arabic": "ماذا تعني هذه الكلمة؟",
-    "tags": [
-      "question",
-      "vocabulary"
-    ],
+    "tags": ["question", "vocabulary"],
     "words": [
       {
         "word": "mean",
@@ -3178,10 +2848,7 @@
     "text_ar": "سأتصل بك غدًا.",
     "english": "I will call you tomorrow.",
     "arabic": "سأتصل بك غدًا.",
-    "tags": [
-      "contact",
-      "future"
-    ],
+    "tags": ["contact", "future"],
     "words": [
       {
         "word": "call",
@@ -3206,10 +2873,7 @@
     "text_ar": "نتحدث على الهاتف كل مساء.",
     "english": "We talk on the phone every evening.",
     "arabic": "نتحدث على الهاتف كل مساء.",
-    "tags": [
-      "conversation",
-      "phone"
-    ],
+    "tags": ["conversation", "phone"],
     "words": [
       {
         "word": "talk",
@@ -3228,10 +2892,7 @@
     "text_ar": "كيف تهجي اسمك؟",
     "english": "How do you spell your name?",
     "arabic": "كيف تهجي اسمك؟",
-    "tags": [
-      "conversation",
-      "question"
-    ],
+    "tags": ["conversation", "question"],
     "words": [
       {
         "word": "spell",
@@ -3256,10 +2917,7 @@
     "text_ar": "أرسل رسالة إلى صديقي.",
     "english": "I send a message to my friend.",
     "arabic": "أرسل رسالة إلى صديقي.",
-    "tags": [
-      "message",
-      "contact"
-    ],
+    "tags": ["message", "contact"],
     "words": [
       {
         "word": "send",
@@ -3284,10 +2942,7 @@
     "text_ar": "آكل الخضروات مع العشاء.",
     "english": "I eat vegetables with dinner.",
     "arabic": "آكل الخضروات مع العشاء.",
-    "tags": [
-      "food",
-      "meals"
-    ],
+    "tags": ["food", "meals"],
     "words": [
       {
         "word": "vegetables",
@@ -3306,10 +2961,7 @@
     "text_ar": "البيضة تغلي في الوعاء.",
     "english": "The egg is boiling in the pot.",
     "arabic": "البيضة تغلي في الوعاء.",
-    "tags": [
-      "food",
-      "cooking"
-    ],
+    "tags": ["food", "cooking"],
     "words": [
       {
         "word": "egg",
@@ -3340,10 +2992,7 @@
     "text_ar": "هذه التفاحة حلوة.",
     "english": "This apple is sweet.",
     "arabic": "هذه التفاحة حلوة.",
-    "tags": [
-      "fruit",
-      "taste"
-    ],
+    "tags": ["fruit", "taste"],
     "words": [
       {
         "word": "apple",
@@ -3368,10 +3017,7 @@
     "text_ar": "أنا جائع وعطشان.",
     "english": "I am hungry and thirsty.",
     "arabic": "أنا جائع وعطشان.",
-    "tags": [
-      "feelings",
-      "food"
-    ],
+    "tags": ["feelings", "food"],
     "words": [
       {
         "word": "hungry",
@@ -3396,10 +3042,7 @@
     "text_ar": "طعم الكعكة لذيذ.",
     "english": "The cake tastes delicious.",
     "arabic": "طعم الكعكة لذيذ.",
-    "tags": [
-      "food",
-      "taste"
-    ],
+    "tags": ["food", "taste"],
     "words": [
       {
         "word": "cake",
@@ -3430,10 +3073,7 @@
     "text_ar": "أخي يلعب كرة القدم يوم الجمعة.",
     "english": "My brother plays football on Friday.",
     "arabic": "أخي يلعب كرة القدم يوم الجمعة.",
-    "tags": [
-      "family",
-      "sport"
-    ],
+    "tags": ["family", "sport"],
     "words": [
       {
         "word": "brother",
@@ -3464,10 +3104,7 @@
     "text_ar": "أقضي الوقت مع عائلتي في المنزل.",
     "english": "I spend time with my family at home.",
     "arabic": "أقضي الوقت مع عائلتي في المنزل.",
-    "tags": [
-      "family",
-      "time"
-    ],
+    "tags": ["family", "time"],
     "words": [
       {
         "word": "spend",
@@ -3492,10 +3129,7 @@
     "text_ar": "أبناء عمي لطفاء جدًا معي.",
     "english": "My cousins are very kind to me.",
     "arabic": "أبناء عمي لطفاء جدًا معي.",
-    "tags": [
-      "family",
-      "friends"
-    ],
+    "tags": ["family", "friends"],
     "words": [
       {
         "word": "kind",
@@ -3514,10 +3148,7 @@
     "text_ar": "الخريطة على الجدار.",
     "english": "The map is on the wall.",
     "arabic": "الخريطة على الجدار.",
-    "tags": [
-      "travel",
-      "directions"
-    ],
+    "tags": ["travel", "directions"],
     "words": [
       {
         "word": "map",
@@ -3542,10 +3173,7 @@
     "text_ar": "نصل إلى المحطة عند الظهيرة.",
     "english": "We arrive at the station at noon.",
     "arabic": "نصل إلى المحطة عند الظهيرة.",
-    "tags": [
-      "travel",
-      "transport"
-    ],
+    "tags": ["travel", "transport"],
     "words": [
       {
         "word": "arrive",
@@ -3564,10 +3192,7 @@
     "text_ar": "سيارة الأجرة تنتظر في الخارج.",
     "english": "The taxi is waiting outside.",
     "arabic": "سيارة الأجرة تنتظر في الخارج.",
-    "tags": [
-      "transport",
-      "city"
-    ],
+    "tags": ["transport", "city"],
     "words": [
       {
         "word": "taxi",
@@ -3592,10 +3217,7 @@
     "text_ar": "أذهب إلى الحديقة مع كلبي.",
     "english": "I go to the park with my dog.",
     "arabic": "أذهب إلى الحديقة مع كلبي.",
-    "tags": [
-      "places",
-      "outdoors"
-    ],
+    "tags": ["places", "outdoors"],
     "words": [
       {
         "word": "park",
@@ -3620,10 +3242,7 @@
     "text_ar": "القطار يغادر في السادسة.",
     "english": "The train leaves at six.",
     "arabic": "القطار يغادر في السادسة.",
-    "tags": [
-      "transport",
-      "schedule"
-    ],
+    "tags": ["transport", "schedule"],
     "words": [
       {
         "word": "leaves",
@@ -3648,10 +3267,7 @@
     "text_ar": "الشارع مزدحم جدًا اليوم.",
     "english": "The street is very crowded today.",
     "arabic": "الشارع مزدحم جدًا اليوم.",
-    "tags": [
-      "city",
-      "places"
-    ],
+    "tags": ["city", "places"],
     "words": [
       {
         "word": "street",
@@ -3676,10 +3292,7 @@
     "text_ar": "أحب فصل اللغة الإنجليزية.",
     "english": "I like my English class.",
     "arabic": "أحب فصل اللغة الإنجليزية.",
-    "tags": [
-      "class",
-      "subject"
-    ],
+    "tags": ["class", "subject"],
     "words": [
       {
         "word": "English",
@@ -3704,10 +3317,7 @@
     "text_ar": "لدينا استراحة قصيرة عند الظهيرة.",
     "english": "We have a short break at noon.",
     "arabic": "لدينا استراحة قصيرة عند الظهيرة.",
-    "tags": [
-      "school",
-      "schedule"
-    ],
+    "tags": ["school", "schedule"],
     "words": [
       {
         "word": "short",
@@ -3732,10 +3342,7 @@
     "text_ar": "الواجب سهل اليوم.",
     "english": "The homework is easy today.",
     "arabic": "الواجب سهل اليوم.",
-    "tags": [
-      "homework",
-      "study"
-    ],
+    "tags": ["homework", "study"],
     "words": [
       {
         "word": "easy",
@@ -3754,10 +3361,7 @@
     "text_ar": "أحتاج إلى قلم ودفتر.",
     "english": "I need a pen and a notebook.",
     "arabic": "أحتاج إلى قلم ودفتر.",
-    "tags": [
-      "school",
-      "supplies"
-    ],
+    "tags": ["school", "supplies"],
     "words": [
       {
         "word": "pen",
@@ -3782,10 +3386,7 @@
     "text_ar": "أرد على رسائل البريد كل صباح.",
     "english": "I answer emails every morning.",
     "arabic": "أرد على رسائل البريد كل صباح.",
-    "tags": [
-      "work",
-      "email"
-    ],
+    "tags": ["work", "email"],
     "words": [
       {
         "word": "answer",
@@ -3804,10 +3405,7 @@
     "text_ar": "الشركة ناجحة جدًا.",
     "english": "The company is very successful.",
     "arabic": "الشركة ناجحة جدًا.",
-    "tags": [
-      "company",
-      "work"
-    ],
+    "tags": ["company", "work"],
     "words": [
       {
         "word": "company",
@@ -3832,10 +3430,7 @@
     "text_ar": "لدي يوم مشغول في العمل.",
     "english": "I have a busy day at work.",
     "arabic": "لدي يوم مشغول في العمل.",
-    "tags": [
-      "work",
-      "schedule"
-    ],
+    "tags": ["work", "schedule"],
     "words": [
       {
         "word": "busy",
@@ -3854,10 +3449,7 @@
     "text_ar": "راتبي جيد الآن.",
     "english": "My salary is good now.",
     "arabic": "راتبي جيد الآن.",
-    "tags": [
-      "money",
-      "job"
-    ],
+    "tags": ["money", "job"],
     "words": [
       {
         "word": "salary",
@@ -3876,10 +3468,7 @@
     "text_ar": "أدفع ببطاقتي في المتجر.",
     "english": "I pay with my card at the store.",
     "arabic": "أدفع ببطاقتي في المتجر.",
-    "tags": [
-      "payment",
-      "shopping"
-    ],
+    "tags": ["payment", "shopping"],
     "words": [
       {
         "word": "card",
@@ -3904,10 +3493,7 @@
     "text_ar": "الفستان جميل ورخيص.",
     "english": "The dress is beautiful and cheap.",
     "arabic": "الفستان جميل ورخيص.",
-    "tags": [
-      "clothes",
-      "price"
-    ],
+    "tags": ["clothes", "price"],
     "words": [
       {
         "word": "dress",
@@ -3932,10 +3518,7 @@
     "text_ar": "أجد هدية جيدة لأمي.",
     "english": "I find a good gift for my mother.",
     "arabic": "أجد هدية جيدة لأمي.",
-    "tags": [
-      "gift",
-      "shopping"
-    ],
+    "tags": ["gift", "shopping"],
     "words": [
       {
         "word": "find",
@@ -3960,10 +3543,7 @@
     "text_ar": "الملابس في الغرفة المجاورة.",
     "english": "The clothes are in the next room.",
     "arabic": "الملابس في الغرفة المجاورة.",
-    "tags": [
-      "clothes",
-      "home"
-    ],
+    "tags": ["clothes", "home"],
     "words": [
       {
         "word": "clothes",
@@ -3982,10 +3562,7 @@
     "text_ar": "ظهري يؤلمني اليوم.",
     "english": "My back hurts today.",
     "arabic": "ظهري يؤلمني اليوم.",
-    "tags": [
-      "body",
-      "pain"
-    ],
+    "tags": ["body", "pain"],
     "words": [
       {
         "word": "back",
@@ -4010,10 +3587,7 @@
     "text_ar": "أمارس الرياضة في الصباح.",
     "english": "I exercise in the morning.",
     "arabic": "أمارس الرياضة في الصباح.",
-    "tags": [
-      "exercise",
-      "health"
-    ],
+    "tags": ["exercise", "health"],
     "words": [
       {
         "word": "exercise",
@@ -4032,10 +3606,7 @@
     "text_ar": "أشرب عصير البرتقال للطاقة.",
     "english": "I drink orange juice for energy.",
     "arabic": "أشرب عصير البرتقال للطاقة.",
-    "tags": [
-      "food",
-      "health"
-    ],
+    "tags": ["food", "health"],
     "words": [
       {
         "word": "orange",
@@ -4060,10 +3631,7 @@
     "text_ar": "الممرضة لطيفة جدًا معي.",
     "english": "The nurse is very kind to me.",
     "arabic": "الممرضة لطيفة جدًا معي.",
-    "tags": [
-      "doctor",
-      "health"
-    ],
+    "tags": ["doctor", "health"],
     "words": [
       {
         "word": "nurse",
@@ -4082,10 +3650,7 @@
     "text_ar": "هذه الغرفة نظيفة جدًا.",
     "english": "This room is very clean.",
     "arabic": "هذه الغرفة نظيفة جدًا.",
-    "tags": [
-      "home",
-      "quality"
-    ],
+    "tags": ["home", "quality"],
     "words": [
       {
         "word": "clean",
@@ -4104,10 +3669,7 @@
     "text_ar": "الحقيبة ثقيلة وممتلئة.",
     "english": "The bag is heavy and full.",
     "arabic": "الحقيبة ثقيلة وممتلئة.",
-    "tags": [
-      "object",
-      "quality"
-    ],
+    "tags": ["object", "quality"],
     "words": [
       {
         "word": "heavy",
@@ -4132,10 +3694,7 @@
     "text_ar": "أنا سعيد برؤيتك.",
     "english": "I am happy to see you.",
     "arabic": "أنا سعيد برؤيتك.",
-    "tags": [
-      "feelings",
-      "greeting"
-    ],
+    "tags": ["feelings", "greeting"],
     "words": [
       {
         "word": "happy",
@@ -4160,10 +3719,7 @@
     "text_ar": "أنا آسف على الخطأ.",
     "english": "I am sorry for the mistake.",
     "arabic": "أنا آسف على الخطأ.",
-    "tags": [
-      "feelings",
-      "apology"
-    ],
+    "tags": ["feelings", "apology"],
     "words": [
       {
         "word": "sorry",
@@ -4188,10 +3744,7 @@
     "text_ar": "الفيلم مثير للاهتمام.",
     "english": "The movie is interesting.",
     "arabic": "الفيلم مثير للاهتمام.",
-    "tags": [
-      "entertainment",
-      "quality"
-    ],
+    "tags": ["entertainment", "quality"],
     "words": [
       {
         "word": "movie",
@@ -4216,10 +3769,7 @@
     "text_ar": "الأغنية مشهورة جدًا.",
     "english": "The song is very popular.",
     "arabic": "الأغنية مشهورة جدًا.",
-    "tags": [
-      "music",
-      "quality"
-    ],
+    "tags": ["music", "quality"],
     "words": [
       {
         "word": "song",
@@ -4244,10 +3794,7 @@
     "text_ar": "هذا الكرسي قديم لكنه قوي.",
     "english": "This chair is old but strong.",
     "arabic": "هذا الكرسي قديم لكنه قوي.",
-    "tags": [
-      "object",
-      "quality"
-    ],
+    "tags": ["object", "quality"],
     "words": [
       {
         "word": "chair",
@@ -4272,10 +3819,7 @@
     "text_ar": "الهاتف الجديد سريع.",
     "english": "The new phone is fast.",
     "arabic": "الهاتف الجديد سريع.",
-    "tags": [
-      "technology",
-      "quality"
-    ],
+    "tags": ["technology", "quality"],
     "words": [
       {
         "word": "new",
@@ -4300,10 +3844,7 @@
     "text_ar": "أشعر بالهدوء في هذا المكان.",
     "english": "I feel calm in this place.",
     "arabic": "أشعر بالهدوء في هذا المكان.",
-    "tags": [
-      "feelings",
-      "place"
-    ],
+    "tags": ["feelings", "place"],
     "words": [
       {
         "word": "calm",
@@ -4328,10 +3869,7 @@
     "text_ar": "المتجر مفتوح يوم الأحد.",
     "english": "The shop is open on Sunday.",
     "arabic": "المتجر مفتوح يوم الأحد.",
-    "tags": [
-      "shop",
-      "schedule"
-    ],
+    "tags": ["shop", "schedule"],
     "words": [
       {
         "word": "shop",

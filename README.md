@@ -19,15 +19,15 @@ SayType is a listen-first English practice platform. The learning flow:
 
 ## Pages & Navigation
 
-| Route | Page | Description |
-|-------|------|-------------|
-| `#/` | Home | Welcome, continue learning, quick stats, topic shortcuts |
-| `#/learn` | Learn | Level hub — choose A1 or A2 with progress bars |
+| Route        | Page     | Description                                                 |
+| ------------ | -------- | ----------------------------------------------------------- |
+| `#/`         | Home     | Welcome, continue learning, quick stats, topic shortcuts    |
+| `#/learn`    | Learn    | Level hub — choose A1 or A2 with progress bars              |
 | `#/practice` | Practice | Core typing arena (supports `?level=` and `?topic=` params) |
-| `#/review` | Review | Spaced review dashboard — due words, learning, mastered |
-| `#/progress` | Progress | Overall metrics, streak, activity breakdown |
-| `#/profile` | Profile | Account info, learner stats |
-| `#/settings` | Settings | Typing mode, speech rate, theme, sound |
+| `#/review`   | Review   | Spaced review dashboard — due words, learning, mastered     |
+| `#/progress` | Progress | Overall metrics, streak, activity breakdown                 |
+| `#/profile`  | Profile  | Account info, learner stats                                 |
+| `#/settings` | Settings | Typing mode, speech rate, theme, sound                      |
 
 Desktop: top navigation bar. Mobile: bottom navigation bar (hides during practice).
 
@@ -59,9 +59,9 @@ Hover (desktop) or tap (mobile) any word for an inline tooltip: word, part of sp
 ### Levels
 
 | Level | Sentences | Topics |
-|-------|-----------|--------|
-| A1 | 154 | 10 |
-| A2 | 180 | 12 |
+| ----- | --------- | ------ |
+| A1    | 154       | 10     |
+| A2    | 180       | 12     |
 
 A2 includes all A1 topics plus **Technology** and **Emotions**. Future levels (B1, B2, C1) are architecturally supported — just add `sentences.b1.json`.
 
@@ -94,16 +94,19 @@ A simple daily streak tracks consecutive learning days. Activity is recorded loc
 ## User Accounts & Sync
 
 ### Guest Mode (default)
+
 - Full learning experience, no login required.
 - All progress stored in localStorage.
 
 ### Authenticated Mode
+
 - Sign in with email/password via Supabase.
 - Progress syncs across devices.
 - Server-wins conflict resolution on returning devices.
 - First-ever login uploads local state.
 
 ### Sync Rules
+
 - Anonymous learning is always local.
 - Login never destroys local progress.
 - Merges compatible local + cloud progress.
@@ -113,12 +116,12 @@ A simple daily streak tracks consecutive learning days. Activity is recorded loc
 
 ## Settings
 
-| Setting | Options | Default |
-|---------|---------|---------|
-| Typing Mode | Strict, Free | Strict |
-| Speech Rate | 0.5x – 1.5x | 1x |
-| Sound Effects | On, Off | On |
-| Theme | Dark, Light | Dark |
+| Setting       | Options      | Default |
+| ------------- | ------------ | ------- |
+| Typing Mode   | Strict, Free | Strict  |
+| Speech Rate   | 0.5x – 1.5x  | 1x      |
+| Sound Effects | On, Off      | On      |
+| Theme         | Dark, Light  | Dark    |
 
 All preferences persist in localStorage.
 
@@ -184,6 +187,7 @@ server/
 ## Getting Started
 
 ### Prerequisites
+
 - Node.js v18+
 - npm
 - Modern browser with Web Speech API support
@@ -211,11 +215,11 @@ npm test
 
 ## Keyboard Shortcuts
 
-| Shortcut | Action |
-|----------|--------|
-| `Ctrl` / `⌘` + `Space` | Listen to pronunciation |
-| `Esc` | Dismiss tooltip, close overlay, advance/restart modal |
-| `Enter` / `Space` | Next sentence / restart when modal is open |
+| Shortcut               | Action                                                |
+| ---------------------- | ----------------------------------------------------- |
+| `Ctrl` / `⌘` + `Space` | Listen to pronunciation                               |
+| `Esc`                  | Dismiss tooltip, close overlay, advance/restart modal |
+| `Enter` / `Space`      | Next sentence / restart when modal is open            |
 
 ---
 

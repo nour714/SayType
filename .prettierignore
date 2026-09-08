@@ -1,0 +1,5 @@
+node_modules/
+coverage/
+package-lock.json
+# tests/ are the pinned behavior oracle for refactor work — keep byte-identical.
+tests/

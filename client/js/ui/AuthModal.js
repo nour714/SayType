@@ -78,12 +78,14 @@ export class AuthModal extends EventEmitter {
 
   _renderMode() {
     if (this.submitBtn) {
-      this.submitBtn.textContent = this._mode === 'signup' ? 'Create Account' : 'Log In';
+      this.submitBtn.textContent =
+        this._mode === 'signup' ? 'Create Account' : 'Log In';
     }
     if (this.toggleBtn) {
-      this.toggleBtn.textContent = this._mode === 'signup'
-        ? 'Already have an account? Log In'
-        : "Don't have an account? Sign Up";
+      this.toggleBtn.textContent =
+        this._mode === 'signup'
+          ? 'Already have an account? Log In'
+          : "Don't have an account? Sign Up";
     }
   }
 
@@ -125,7 +127,11 @@ export class AuthModal extends EventEmitter {
   setSubmitting(submitting) {
     if (this.submitBtn) {
       this.submitBtn.disabled = submitting;
-      this.submitBtn.textContent = submitting ? 'Please wait...' : (this._mode === 'signup' ? 'Create Account' : 'Log In');
+      this.submitBtn.textContent = submitting
+        ? 'Please wait...'
+        : this._mode === 'signup'
+          ? 'Create Account'
+          : 'Log In';
     }
   }
 }

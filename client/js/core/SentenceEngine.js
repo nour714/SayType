@@ -5,7 +5,7 @@ import { EventEmitter } from './EventEmitter.js';
  * Supports:
  * - "strict" mode (default): Stop-at-error. Wrong keystroke does not advance cursor.
  * - "free" mode: Free typing. Wrong keystroke is counted, marked as mistake, and advances cursor.
- * 
+ *
  * Emits granular domain events:
  * - 'char:correct': { index, char, isComplete }
  * - 'char:wrong': { index, expected, actual, word }
@@ -111,16 +111,30 @@ export class SentenceEngine extends EventEmitter {
         if (this.hasPendingError) {
           // Clear pending error at the current character index
           this.hasPendingError = false;
-          this.emit('backspace', { charIndex: this.charIndex, clearedError: true });
+          this.emit('backspace', {
+            charIndex: this.charIndex,
+            clearedError: true
+          });
           this.emit('caret:update', this.state);
-          return { type: 'backspace', clearedError: true, charIndex: this.charIndex };
+          return {
+            type: 'backspace',
+            clearedError: true,
+            charIndex: this.charIndex
+          };
         } else if (this.charIndex > 0) {
           // Step back one character
           this.charIndex--;
           this.hasPendingError = false;
-          this.emit('backspace', { charIndex: this.charIndex, clearedError: false });
+          this.emit('backspace', {
+            charIndex: this.charIndex,
+            clearedError: false
+          });
           this.emit('caret:update', this.state);
-          return { type: 'backspace', clearedError: false, charIndex: this.charIndex };
+          return {
+            type: 'backspace',
+            clearedError: false,
+            charIndex: this.charIndex
+          };
         }
       } else {
         // Free mode Backspace: step back and clear mistake state for that character
@@ -129,9 +143,16 @@ export class SentenceEngine extends EventEmitter {
           const wasMistake = this.charMistakes[this.charIndex];
           this.charMistakes[this.charIndex] = false;
           this.hasPendingError = false;
-          this.emit('backspace', { charIndex: this.charIndex, clearedError: wasMistake });
+          this.emit('backspace', {
+            charIndex: this.charIndex,
+            clearedError: wasMistake
+          });
           this.emit('caret:update', this.state);
-          return { type: 'backspace', clearedError: wasMistake, charIndex: this.charIndex };
+          return {
+            type: 'backspace',
+            clearedError: wasMistake,
+            charIndex: this.charIndex
+          };
         }
       }
       return null;
@@ -157,14 +178,25 @@ export class SentenceEngine extends EventEmitter {
         this.isCompleted = true;
       }
 
-      this.emit('char:correct', { index: currentIndex, char: key, isComplete, word });
+      this.emit('char:correct', {
+        index: currentIndex,
+        char: key,
+        isComplete,
+        word
+      });
       this.emit('caret:update', this.state);
 
       if (isComplete) {
         this.emit('sentence:complete', { sentence: this.targetSentence });
       }
 
-      return { type: 'correct', index: currentIndex, char: key, isComplete, word };
+      return {
+        type: 'correct',
+        index: currentIndex,
+        char: key,
+        isComplete,
+        word
+      };
     } else {
       // Mistaken keystroke
       const currentIndex = this.charIndex;

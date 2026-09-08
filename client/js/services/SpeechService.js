@@ -7,7 +7,7 @@ import { EventEmitter } from '../core/EventEmitter.js';
  * - Safe overlapping speech cancellation
  * - Real-time isSpeaking property
  * - Graceful fallback when Web Speech is unsupported or blocked by autoplay policy
- * 
+ *
  * Emits events:
  * - 'start': { text }
  * - 'end': {}
@@ -18,7 +18,8 @@ export class SpeechService extends EventEmitter {
   constructor() {
     super();
     this.activeUtterance = null;
-    this.isSupported = typeof window !== 'undefined' && 'speechSynthesis' in window;
+    this.isSupported =
+      typeof window !== 'undefined' && 'speechSynthesis' in window;
     this.voices = [];
     this._isSpeaking = false;
     this._watchdogTimer = null;
@@ -165,7 +166,10 @@ export class SpeechService extends EventEmitter {
 
       // Watchdog timer: automatically resolve after (words * 1200ms + 2500ms)
       // to ensure UI never freezes if browser speech engine hangs.
-      const estimatedDuration = Math.max(3000, (text.split(' ').length * 1200) + 2500);
+      const estimatedDuration = Math.max(
+        3000,
+        text.split(' ').length * 1200 + 2500
+      );
       this._watchdogTimer = setTimeout(() => {
         this._watchdogTimer = null;
         if (generation === this._generation && !settled) {

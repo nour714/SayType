@@ -12,7 +12,7 @@ const BOX_INTERVALS = [10, 20, 40, 80];
  * - Favorite sentences (☆ / ★)
  * - Difficult words causing repeated mistakes
  * - Smart spaced review system (Leitner boxes)
- * 
+ *
  * Completely free, no login or remote database required.
  */
 export class ProgressService extends EventEmitter {
@@ -60,7 +60,10 @@ export class ProgressService extends EventEmitter {
         return { ...defaultData, ...parsed };
       }
     } catch (e) {
-      console.warn('Could not read from localStorage, using in-memory state:', e.message);
+      console.warn(
+        'Could not read from localStorage, using in-memory state:',
+        e.message
+      );
     }
 
     return defaultData;
@@ -115,7 +118,14 @@ export class ProgressService extends EventEmitter {
    *   difficultWords?: string[]
    * }} result
    */
-  recordSentenceCompletion({ sentenceId, wpm, accuracy, mistakes, difficultWords = [], date = null }) {
+  recordSentenceCompletion({
+    sentenceId,
+    wpm,
+    accuracy,
+    mistakes,
+    difficultWords = [],
+    date = null
+  }) {
     if (sentenceId !== undefined && sentenceId !== null) {
       const strId = String(sentenceId);
       if (!this.data.completedSentenceIds.includes(strId)) {
@@ -130,22 +140,31 @@ export class ProgressService extends EventEmitter {
     // Compute streak using calendar-day comparison
     const now = date ? new Date(date) : new Date();
     const today = now.toISOString().slice(0, 10);
-    const prevDate = this.data.lastSessionDate ? this.data.lastSessionDate.slice(0, 10) : null;
+    const prevDate = this.data.lastSessionDate
+      ? this.data.lastSessionDate.slice(0, 10)
+      : null;
 
     if (prevDate !== today) {
       if (prevDate) {
-        const diffDays = Math.round((new Date(today) - new Date(prevDate)) / 86400000);
-        this.data.currentStreak = diffDays === 1 ? (this.data.currentStreak ?? 0) + 1 : 1;
+        const diffDays = Math.round(
+          (new Date(today) - new Date(prevDate)) / 86400000
+        );
+        this.data.currentStreak =
+          diffDays === 1 ? (this.data.currentStreak ?? 0) + 1 : 1;
       } else {
         this.data.currentStreak = 1; // very first session ever
       }
-      this.data.longestStreak = Math.max(this.data.longestStreak ?? 0, this.data.currentStreak);
+      this.data.longestStreak = Math.max(
+        this.data.longestStreak ?? 0,
+        this.data.currentStreak
+      );
     }
 
     this.data.lastSessionDate = now.toISOString();
 
     if ((mistakes ?? 0) === 0) {
-      this.data.perfectAccuracyCount = (this.data.perfectAccuracyCount ?? 0) + 1;
+      this.data.perfectAccuracyCount =
+        (this.data.perfectAccuracyCount ?? 0) + 1;
     }
 
     // Increment the global sentences-typed counter (review scheduling clock)
@@ -161,8 +180,12 @@ export class ProgressService extends EventEmitter {
       this.data.averageWpm = wpm;
       this.data.averageAccuracy = accuracy;
     } else {
-      this.data.averageWpm = Math.round(((this.data.averageWpm * (n - 1)) + wpm) / n);
-      this.data.averageAccuracy = Math.round(((this.data.averageAccuracy * (n - 1)) + accuracy) / n);
+      this.data.averageWpm = Math.round(
+        (this.data.averageWpm * (n - 1) + wpm) / n
+      );
+      this.data.averageAccuracy = Math.round(
+        (this.data.averageAccuracy * (n - 1) + accuracy) / n
+      );
     }
 
     // Record difficult words
@@ -190,7 +213,8 @@ export class ProgressService extends EventEmitter {
       this.data.difficultWords = {};
     }
 
-    this.data.difficultWords[clean] = (this.data.difficultWords[clean] ?? 0) + 1;
+    this.data.difficultWords[clean] =
+      (this.data.difficultWords[clean] ?? 0) + 1;
 
     // Update Leitner review state for this word (unless skipReview is set)
     if (!skipReview) {
@@ -252,7 +276,8 @@ export class ProgressService extends EventEmitter {
         entry.dueAtCount = Infinity; // Never due again
       } else {
         // Schedule next review based on the interval for the new box
-        entry.dueAtCount = (this.data.sentencesTypedTotal ?? 0) + BOX_INTERVALS[entry.box - 1];
+        entry.dueAtCount =
+          (this.data.sentencesTypedTotal ?? 0) + BOX_INTERVALS[entry.box - 1];
       }
     } else {
       // Failed review: reset to box 0, due at current count
@@ -365,7 +390,8 @@ export class ProgressService extends EventEmitter {
    * @returns {number}
    */
   getMasteredWordsCount() {
-    return Object.values(this.data.wordReview || {}).filter((w) => w.mastered).length;
+    return Object.values(this.data.wordReview || {}).filter((w) => w.mastered)
+      .length;
   }
 
   /**

@@ -118,7 +118,8 @@ export class SessionEngine extends EventEmitter {
    * @param {Array<{ id: number|string, text_en: string, text_ar: string, level?: string }>} sentences
    */
   setSentences(sentences) {
-    this.sentences = Array.isArray(sentences) && sentences.length > 0 ? sentences : [];
+    this.sentences =
+      Array.isArray(sentences) && sentences.length > 0 ? sentences : [];
     this.lessonHistory = [];
     this.isLessonCompleted = false;
     this.isLessonStarted = false;
@@ -143,10 +144,14 @@ export class SessionEngine extends EventEmitter {
   beginLesson() {
     if (this.isLessonStarted) return;
     this.isLessonStarted = true;
-    if (this.state === SESSION_STATES.LOADING_SENTENCE && this.currentSentence) {
+    if (
+      this.state === SESSION_STATES.LOADING_SENTENCE &&
+      this.currentSentence
+    ) {
       if (this.listenFirst) {
         this.setState(SESSION_STATES.LISTENING);
-        const textToSpeak = this.currentSentence.text_en || this.currentSentence.english || '';
+        const textToSpeak =
+          this.currentSentence.text_en || this.currentSentence.english || '';
         this.emit('sentence:listen', {
           sentence: this.currentSentence,
           text: textToSpeak
@@ -206,7 +211,10 @@ export class SessionEngine extends EventEmitter {
    * Unlocks typing by transitioning from LISTENING to READY.
    */
   finishListening() {
-    if (this.state === SESSION_STATES.LISTENING || this.state === SESSION_STATES.IDLE) {
+    if (
+      this.state === SESSION_STATES.LISTENING ||
+      this.state === SESSION_STATES.IDLE
+    ) {
       this.setState(SESSION_STATES.READY);
     }
   }
@@ -218,19 +226,37 @@ export class SessionEngine extends EventEmitter {
    */
   handleKey(key) {
     // Keystrokes are strictly disallowed during LISTENING, IDLE, COMPLETED, or RESULT
-    if (this.state === SESSION_STATES.LISTENING || this.state === SESSION_STATES.IDLE) {
+    if (
+      this.state === SESSION_STATES.LISTENING ||
+      this.state === SESSION_STATES.IDLE
+    ) {
       return null;
     }
 
-    if (this.isLessonCompleted || this.sentenceEngine.isCompleted || this.state === SESSION_STATES.COMPLETED || this.state === SESSION_STATES.RESULT) {
+    if (
+      this.isLessonCompleted ||
+      this.sentenceEngine.isCompleted ||
+      this.state === SESSION_STATES.COMPLETED ||
+      this.state === SESSION_STATES.RESULT
+    ) {
       return null;
     }
 
     // Ignore non-printable modifier/navigation keys
-    if (key === 'Shift' || key === 'Control' || key === 'Alt' || 
-        key === 'Meta' || key === 'CapsLock' || key === 'Tab' || 
-        key.startsWith('Arrow') || key === 'PageUp' || key === 'PageDown' ||
-        key === 'Home' || key === 'End' || key === 'Insert') {
+    if (
+      key === 'Shift' ||
+      key === 'Control' ||
+      key === 'Alt' ||
+      key === 'Meta' ||
+      key === 'CapsLock' ||
+      key === 'Tab' ||
+      key.startsWith('Arrow') ||
+      key === 'PageUp' ||
+      key === 'PageDown' ||
+      key === 'Home' ||
+      key === 'End' ||
+      key === 'Insert'
+    ) {
       return null;
     }
 
@@ -242,7 +268,10 @@ export class SessionEngine extends EventEmitter {
 
     // When in READY state, the first typing key transitions session to TYPING
     if (this.state === SESSION_STATES.READY) {
-      if (key === 'Backspace' || (typeof key === 'string' && key.length === 1)) {
+      if (
+        key === 'Backspace' ||
+        (typeof key === 'string' && key.length === 1)
+      ) {
         this.setState(SESSION_STATES.TYPING);
       }
     }
@@ -270,8 +299,13 @@ export class SessionEngine extends EventEmitter {
 
     if (this.listenFirst && this.isLessonStarted) {
       this.setState(SESSION_STATES.LISTENING);
-      const textToSpeak = this.currentSentence ? (this.currentSentence.text_en || this.currentSentence.english || '') : '';
-      this.emit('sentence:listen', { sentence: this.currentSentence, text: textToSpeak });
+      const textToSpeak = this.currentSentence
+        ? this.currentSentence.text_en || this.currentSentence.english || ''
+        : '';
+      this.emit('sentence:listen', {
+        sentence: this.currentSentence,
+        text: textToSpeak
+      });
     } else {
       this.setState(SESSION_STATES.READY);
     }
@@ -320,9 +354,18 @@ export class SessionEngine extends EventEmitter {
     this.metrics.stopLiveUpdates();
 
     const totalSentences = this.lessonHistory.length || 1;
-    const avgWpm = Math.round(this.lessonHistory.reduce((sum, item) => sum + item.wpm, 0) / totalSentences);
-    const avgAccuracy = Math.round(this.lessonHistory.reduce((sum, item) => sum + item.accuracy, 0) / totalSentences);
-    const totalMistakes = this.lessonHistory.reduce((sum, item) => sum + item.mistakes, 0);
+    const avgWpm = Math.round(
+      this.lessonHistory.reduce((sum, item) => sum + item.wpm, 0) /
+        totalSentences
+    );
+    const avgAccuracy = Math.round(
+      this.lessonHistory.reduce((sum, item) => sum + item.accuracy, 0) /
+        totalSentences
+    );
+    const totalMistakes = this.lessonHistory.reduce(
+      (sum, item) => sum + item.mistakes,
+      0
+    );
 
     this.emit('lesson:completed', {
       history: [...this.lessonHistory],

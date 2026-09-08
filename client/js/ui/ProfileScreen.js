@@ -11,10 +11,15 @@ export class ProfileScreen {
     const isAuthenticated = authService?.isAuthenticated || false;
     const email = authService?.email || '';
     const stats = progressService.getStats();
-    const streak = stats.currentStreak ?? (streakService ? streakService.getStreak() : 0);
+    const streak =
+      stats.currentStreak ?? (streakService ? streakService.getStreak() : 0);
     const longestStreak = stats.longestStreak ?? 0;
     const favoritesCount = stats.favoritesCount ?? 0;
-    const mastered = stats.masteredWordsCount ?? Object.values(progressService.data.wordReview || {}).filter(e => e.mastered).length;
+    const mastered =
+      stats.masteredWordsCount ??
+      Object.values(progressService.data.wordReview || {}).filter(
+        (e) => e.mastered
+      ).length;
     const unlockedSet = new Set(progressService.data.unlockedBadges || []);
 
     this.el.innerHTML = `
@@ -79,7 +84,7 @@ export class ProfileScreen {
             <span class="badges-counter">${unlockedSet.size} / ${BADGES.length} Unlocked</span>
           </div>
           <div class="badges-grid" role="list">
-            ${BADGES.map(badge => {
+            ${BADGES.map((badge) => {
               const isUnlocked = unlockedSet.has(badge.id);
               return `
                 <div class="badge-card ${isUnlocked ? 'is-unlocked' : 'is-locked'}" role="listitem">
@@ -98,15 +103,18 @@ export class ProfileScreen {
         </div>
 
         <div class="profile-activity">
-          ${stats.lastSessionDate
-            ? `<span>Last active: ${new Date(stats.lastSessionDate).toLocaleDateString()}</span>`
-            : '<span>No activity yet</span>'}
+          ${
+            stats.lastSessionDate
+              ? `<span>Last active: ${new Date(stats.lastSessionDate).toLocaleDateString()}</span>`
+              : '<span>No activity yet</span>'
+          }
         </div>
 
         <div class="profile-actions">
-          ${isAuthenticated
-            ? `<button id="profile-signout-btn" class="action-btn secondary-btn">Sign Out</button>`
-            : `<a href="#" id="profile-signin-btn" class="action-btn primary-btn">Sign In to Sync</a>`
+          ${
+            isAuthenticated
+              ? `<button id="profile-signout-btn" class="action-btn secondary-btn">Sign Out</button>`
+              : `<a href="#" id="profile-signin-btn" class="action-btn primary-btn">Sign In to Sync</a>`
           }
         </div>
       </div>

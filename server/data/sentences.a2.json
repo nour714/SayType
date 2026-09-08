@@ -8,11 +8,7 @@
     "text_ar": "عادةً أستيقظ عند الساعة السابعة صباحاً.",
     "english": "I usually wake up at seven o'clock in the morning.",
     "arabic": "عادةً أستيقظ عند الساعة السابعة صباحاً.",
-    "tags": [
-      "daily-routine",
-      "time",
-      "present-simple"
-    ],
+    "tags": ["daily-routine", "time", "present-simple"],
     "words": [
       {
         "word": "usually",
@@ -43,10 +39,7 @@
     "text_ar": "فركت أسنانها قبل أن تذهب إلى السرير الليلة الماضية.",
     "english": "She brushed her teeth before she went to bed last night.",
     "arabic": "فركت أسنانها قبل أن تذهب إلى السرير الليلة الماضية.",
-    "tags": [
-      "daily-routine",
-      "past-simple"
-    ],
+    "tags": ["daily-routine", "past-simple"],
     "words": [
       {
         "word": "brushed",
@@ -89,10 +82,7 @@
     "text_ar": "أمي تطبخ العشاء في المطبخ الآن.",
     "english": "My mother is cooking dinner in the kitchen right now.",
     "arabic": "أمي تطبخ العشاء في المطبخ الآن.",
-    "tags": [
-      "daily-routine",
-      "present-continuous"
-    ],
+    "tags": ["daily-routine", "present-continuous"],
     "words": [
       {
         "word": "mother",
@@ -135,11 +125,7 @@
     "text_ar": "يجب أن نغادر مبكراً لأن المرور سيء دائماً في الصباح.",
     "english": "We should leave early because the traffic is always bad in the morning.",
     "arabic": "يجب أن نغادر مبكراً لأن المرور سيء دائماً في الصباح.",
-    "tags": [
-      "daily-routine",
-      "modal",
-      "connector"
-    ],
+    "tags": ["daily-routine", "modal", "connector"],
     "words": [
       {
         "word": "should",
@@ -194,10 +180,7 @@
     "text_ar": "يأخذ دش كل يوم قبل أن يذهب إلى العمل.",
     "english": "He takes a shower every day before he goes to work.",
     "arabic": "يأخذ دش كل يوم قبل أن يذهب إلى العمل.",
-    "tags": [
-      "daily-routine",
-      "present-simple"
-    ],
+    "tags": ["daily-routine", "present-simple"],
     "words": [
       {
         "word": "takes",
@@ -240,11 +223,7 @@
     "text_ar": "يجب عليّ أن أنهي واجبي المدرسي قبل أن أتمكن من مشاهدة التلفاز.",
     "english": "I have to finish my homework before I can watch television.",
     "arabic": "يجب عليّ أن أنهي واجبي المدرسي قبل أن أتمكن من مشاهدة التلفاز.",
-    "tags": [
-      "daily-routine",
-      "modal",
-      "obligation"
-    ],
+    "tags": ["daily-routine", "modal", "obligation"],
     "words": [
       {
         "word": "have",
@@ -287,11 +266,7 @@
     "text_ar": "تلبس بسرعة لأن لديها اجتماعاً في التاسعة.",
     "english": "She gets dressed quickly because she has a meeting at nine.",
     "arabic": "تلبس بسرعة لأن لديها اجتماعاً في التاسعة.",
-    "tags": [
-      "daily-routine",
-      "present-simple",
-      "connector"
-    ],
+    "tags": ["daily-routine", "present-simple", "connector"],
     "words": [
       {
         "word": "gets",
@@ -334,11 +309,7 @@
     "text_ar": "لم نتمكن من الذهاب إلى الحديقة لأنه كان يُمطر بشدة.",
     "english": "We could not go to the park because it was raining heavily.",
     "arabic": "لم نتمكن من الذهاب إلى الحديقة لأنه كان يُمطر بشدة.",
-    "tags": [
-      "weather",
-      "past-simple",
-      "modal"
-    ],
+    "tags": ["weather", "past-simple", "modal"],
     "words": [
       {
         "word": "could",
@@ -381,11 +352,7 @@
     "text_ar": "يقرأ أبي الجريدة كل صباح بينما يشرب قهوته.",
     "english": "My father reads the newspaper every morning while he drinks his coffee.",
     "arabic": "يقرأ أبي الجريدة كل صباح بينما يشرب قهوته.",
-    "tags": [
-      "daily-routine",
-      "present-simple",
-      "connector"
-    ],
+    "tags": ["daily-routine", "present-simple", "connector"],
     "words": [
       {
         "word": "reads",
@@ -428,11 +395,7 @@
     "text_ar": "أبحث عن مفاتيحي لكنني لا أستطيع العثور عليها في أي مكان.",
     "english": "I am looking for my keys but I cannot find them anywhere.",
     "arabic": "أبحث عن مفاتيحي لكنني لا أستطيع العثور عليها في أي مكان.",
-    "tags": [
-      "daily-routine",
-      "present-continuous",
-      "connector"
-    ],
+    "tags": ["daily-routine", "present-continuous", "connector"],
     "words": [
       {
         "word": "looking",
@@ -481,11 +444,7 @@
     "text_ar": "ذهبت للتسوق بالأمس واشترت فستاناً جديداً للحفل.",
     "english": "She went shopping yesterday and bought a new dress for the party.",
     "arabic": "ذهبت للتسوق بالأمس واشترت فستاناً جديداً للحفل.",
-    "tags": [
-      "daily-routine",
-      "past-simple",
-      "shopping"
-    ],
+    "tags": ["daily-routine", "past-simple", "shopping"],
     "words": [
       {
         "word": "went",
@@ -534,11 +493,7 @@
     "text_ar": "يجب على الأطفال تنظيف غرفهم قبل أن يذهبوا للعب.",
     "english": "The children have to clean their rooms before they go out to play.",
     "arabic": "يجب على الأطفال تنظيف غرفهم قبل أن يذهبوا للعب.",
-    "tags": [
-      "daily-routine",
-      "modal",
-      "obligation"
-    ],
+    "tags": ["daily-routine", "modal", "obligation"],
     "words": [
       {
         "word": "children",
@@ -581,11 +536,7 @@
     "text_ar": "أفضل المشي إلى العمل عندما يكون الطقس جميلاً.",
     "english": "I prefer to walk to work when the weather is nice.",
     "arabic": "أفضل المشي إلى العمل عندما يكون الطقس جميلاً.",
-    "tags": [
-      "daily-routine",
-      "present-simple",
-      "weather"
-    ],
+    "tags": ["daily-routine", "present-simple", "weather"],
     "words": [
       {
         "word": "prefer",
@@ -628,11 +579,7 @@
     "text_ar": "عادةً تقوم بالتسوق في صباحات السبت في السوق المحلي.",
     "english": "She usually does her shopping on Saturday mornings at the local market.",
     "arabic": "عادةً تقوم بالتسوق في صباحات السبت في السوق المحلي.",
-    "tags": [
-      "daily-routine",
-      "present-simple",
-      "shopping"
-    ],
+    "tags": ["daily-routine", "present-simple", "shopping"],
     "words": [
       {
         "word": "usually",
@@ -681,11 +628,7 @@
     "text_ar": "يجب أن تشرب ماءً أكثر لأنه مهم جداً لصحتك.",
     "english": "You should drink more water because it is very important for your health.",
     "arabic": "يجب أن تشرب ماءً أكثر لأنه مهم جداً لصحتك.",
-    "tags": [
-      "daily-routine",
-      "modal",
-      "health"
-    ],
+    "tags": ["daily-routine", "modal", "health"],
     "words": [
       {
         "word": "should",
@@ -734,10 +677,7 @@
     "text_ar": "أختي الكبيرة أطول من أخي الأصغر.",
     "english": "My older sister is taller than my younger brother.",
     "arabic": "أختي الكبيرة أطول من أخي الأصغر.",
-    "tags": [
-      "family",
-      "comparative"
-    ],
+    "tags": ["family", "comparative"],
     "words": [
       {
         "word": "older",
@@ -780,10 +720,7 @@
     "text_ar": "زرنا جدّتنا وجدّنا في عطلة نهاية الأسبوع الماضية واستمتعنا كثيراً.",
     "english": "We visited our grandparents last weekend and had a wonderful time.",
     "arabic": "زرنا جدّتنا وجدّنا في عطلة نهاية الأسبوع الماضية واستمتعنا كثيراً.",
-    "tags": [
-      "family",
-      "past-simple"
-    ],
+    "tags": ["family", "past-simple"],
     "words": [
       {
         "word": "visited",
@@ -820,11 +757,7 @@
     "text_ar": "ابن عمّي يعيش في القاهرة، لكنه يزورنا كل صيف.",
     "english": "My cousin lives in Cairo, but he visits us every summer.",
     "arabic": "ابن عمّي يعيش في القاهرة، لكنه يزورنا كل صيف.",
-    "tags": [
-      "family",
-      "present-simple",
-      "connector"
-    ],
+    "tags": ["family", "present-simple", "connector"],
     "words": [
       {
         "word": "cousin",
@@ -867,10 +800,7 @@
     "text_ar": "تبدو أشبه بأمها من أبيها.",
     "english": "She looks more like her mother than her father.",
     "arabic": "تبدو أشبه بأمها من أبيها.",
-    "tags": [
-      "family",
-      "comparative"
-    ],
+    "tags": ["family", "comparative"],
     "words": [
       {
         "word": "looks",
@@ -913,11 +843,7 @@
     "text_ar": "يجب أن يحضر عمّي الحفل لأنه يعيش قرب بيتنا.",
     "english": "My uncle should come to the party because he lives near our house.",
     "arabic": "يجب أن يحضر عمّي الحفل لأنه يعيش قرب بيتنا.",
-    "tags": [
-      "family",
-      "modal",
-      "connector"
-    ],
+    "tags": ["family", "modal", "connector"],
     "words": [
       {
         "word": "uncle",
@@ -966,11 +892,7 @@
     "text_ar": "كلا جدّيّ يتجاوز عمره ثمانين سنة.",
     "english": "Both of my grandparents are over eighty years old.",
     "arabic": "كلا جدّيّ يتجاوز عمره ثمانين سنة.",
-    "tags": [
-      "family",
-      "present-simple",
-      "numbers"
-    ],
+    "tags": ["family", "present-simple", "numbers"],
     "words": [
       {
         "word": "both",
@@ -1013,11 +935,7 @@
     "text_ar": "لديّ أختان وأخ واحد، ونتوافق جميعاً مع بعضنا البعض.",
     "english": "I have two sisters and one brother, and we all get along well.",
     "arabic": "لديّ أختان وأخ واحد، ونتوافق جميعاً مع بعضنا البعض.",
-    "tags": [
-      "family",
-      "present-simple",
-      "numbers"
-    ],
+    "tags": ["family", "present-simple", "numbers"],
     "words": [
       {
         "word": "two",
@@ -1060,11 +978,7 @@
     "text_ar": "يجب على أمي العمل حتى وقت متأخر اليوم، لذلك لا تستطيع استلامي من المدرسة.",
     "english": "My mother has to work late today, so she cannot pick me up from school.",
     "arabic": "يجب على أمي العمل حتى وقت متأخر اليوم، لذلك لا تستطيع استلامي من المدرسة.",
-    "tags": [
-      "family",
-      "modal",
-      "connector"
-    ],
+    "tags": ["family", "modal", "connector"],
     "words": [
       {
         "word": "has",
@@ -1113,10 +1027,7 @@
     "text_ar": "أخي الصغير أكثر نشاطاً منا جميعاً.",
     "english": "My little brother is more energetic than all of us.",
     "arabic": "أخي الصغير أكثر نشاطاً منا جميعاً.",
-    "tags": [
-      "family",
-      "comparative"
-    ],
+    "tags": ["family", "comparative"],
     "words": [
       {
         "word": "little",
@@ -1153,11 +1064,7 @@
     "text_ar": "כולנו ذاهبون إلى بيت خالتي لتناول العشاء يوم الجمعة مساءً.",
     "english": "We are all going to my aunt's house for dinner on Friday evening.",
     "arabic": "כולנו ذاهبون إلى بيت خالتي لتناول العشاء يوم الجمعة مساءً.",
-    "tags": [
-      "family",
-      "future",
-      "food"
-    ],
+    "tags": ["family", "future", "food"],
     "words": [
       {
         "word": "going",
@@ -1200,10 +1107,7 @@
     "text_ar": "هو أصغر فرد في عائلتنا والجميع يحبه.",
     "english": "He is the youngest member of our family and everyone loves him.",
     "arabic": "هو أصغر فرد في عائلتنا والجميع يحبه.",
-    "tags": [
-      "family",
-      "present-simple"
-    ],
+    "tags": ["family", "present-simple"],
     "words": [
       {
         "word": "youngest",
@@ -1246,11 +1150,7 @@
     "text_ar": "أعتقد أن أختي أكثر ذكاءً مني لأنها دائماً تحقق درجات جيدة.",
     "english": "I think my sister is smarter than me because she always gets good marks.",
     "arabic": "أعتقد أن أختي أكثر ذكاءً مني لأنها دائماً تحقق درجات جيدة.",
-    "tags": [
-      "family",
-      "comparative",
-      "connector"
-    ],
+    "tags": ["family", "comparative", "connector"],
     "words": [
       {
         "word": "think",
@@ -1293,11 +1193,7 @@
     "text_ar": "يجب أن نتصل بآبائنا أكثر لأنهم يفتقدوننا.",
     "english": "We should call our parents more often because they miss us.",
     "arabic": "يجب أن نتصل بآبائنا أكثر لأنهم يفتقدوننا.",
-    "tags": [
-      "family",
-      "modal",
-      "connector"
-    ],
+    "tags": ["family", "modal", "connector"],
     "words": [
       {
         "word": "should",
@@ -1340,10 +1236,7 @@
     "text_ar": "جدّي أقوى من معظم الشباب الذين أعرفهم.",
     "english": "My grandfather is stronger than most young people I know.",
     "arabic": "جدّي أقوى من معظم الشباب الذين أعرفهم.",
-    "tags": [
-      "family",
-      "comparative"
-    ],
+    "tags": ["family", "comparative"],
     "words": [
       {
         "word": "grandfather",
@@ -1386,10 +1279,7 @@
     "text_ar": "أطفال جيراننا مؤدبون جداً ودائماً يقولون لنا مرحباً.",
     "english": "Our neighbours' children are very polite and they always say hello to us.",
     "arabic": "أطفال جيراننا مؤدبون جداً ودائماً يقولون لنا مرحباً.",
-    "tags": [
-      "family",
-      "present-simple"
-    ],
+    "tags": ["family", "present-simple"],
     "words": [
       {
         "word": "neighbours",
@@ -1432,10 +1322,7 @@
     "text_ar": "أودّ أن أطلب سلطة دجاج وكوباً من عصير البرتقال من فضلك.",
     "english": "I would like to order a chicken salad and a glass of orange juice, please.",
     "arabic": "أودّ أن أطلب سلطة دجاج وكوباً من عصير البرتقال من فضلك.",
-    "tags": [
-      "food",
-      "restaurant"
-    ],
+    "tags": ["food", "restaurant"],
     "words": [
       {
         "word": "would",
@@ -1490,10 +1377,7 @@
     "text_ar": "طبخت وجبة لذيذة لعائلتها يوم الأحد الماضي.",
     "english": "She cooked a delicious meal for her family last Sunday.",
     "arabic": "طبخت وجبة لذيذة لعائلتها يوم الأحد الماضي.",
-    "tags": [
-      "food",
-      "past-simple"
-    ],
+    "tags": ["food", "past-simple"],
     "words": [
       {
         "word": "cooked",
@@ -1536,10 +1420,7 @@
     "text_ar": "هذا البيتزا أفضل بكثير من الذي أكلناه بالأمس.",
     "english": "This pizza is much better than the one we had yesterday.",
     "arabic": "هذا البيتزا أفضل بكثير من الذي أكلناه بالأمس.",
-    "tags": [
-      "food",
-      "comparative"
-    ],
+    "tags": ["food", "comparative"],
     "words": [
       {
         "word": "pizza",
@@ -1582,11 +1463,7 @@
     "text_ar": "يجب أن نأكل المزيد من الخضار لأنها جيدة لصحتنا.",
     "english": "We should eat more vegetables because they are good for our health.",
     "arabic": "يجب أن نأكل المزيد من الخضار لأنها جيدة لصحتنا.",
-    "tags": [
-      "food",
-      "modal",
-      "health"
-    ],
+    "tags": ["food", "modal", "health"],
     "words": [
       {
         "word": "should",
@@ -1635,11 +1512,7 @@
     "text_ar": "أصنع كوب شاي لأنني أشعر بالتعب قليلاً الآن.",
     "english": "I am making a cup of tea because I feel a little tired right now.",
     "arabic": "أصنع كوب شاي لأنني أشعر بالتعب قليلاً الآن.",
-    "tags": [
-      "food",
-      "present-continuous",
-      "health"
-    ],
+    "tags": ["food", "present-continuous", "health"],
     "words": [
       {
         "word": "making",
@@ -1682,10 +1555,7 @@
     "text_ar": "الطعام في هذا المطعم أرخص من الذي بالقرب من بيتنا.",
     "english": "The food at this restaurant is cheaper than the one near my house.",
     "arabic": "الطعام في هذا المطعم أرخص من الذي بالقرب من بيتنا.",
-    "tags": [
-      "food",
-      "comparative"
-    ],
+    "tags": ["food", "comparative"],
     "words": [
       {
         "word": "food",
@@ -1722,11 +1592,7 @@
     "text_ar": "يجب عليها تجنب تناول السكر الكثير لأنها في حمية غذائية.",
     "english": "She has to avoid eating too much sugar because she is on a diet.",
     "arabic": "يجب عليها تجنب تناول السكر الكثير لأنها في حمية غذائية.",
-    "tags": [
-      "food",
-      "modal",
-      "health"
-    ],
+    "tags": ["food", "modal", "health"],
     "words": [
       {
         "word": "has",
@@ -1763,10 +1629,7 @@
     "text_ar": "أمي تصنع كعكة والمطبخ يفوح منه رائحة رائعة.",
     "english": "My mother is making a cake, and the kitchen smells wonderful.",
     "arabic": "أمي تصنع كعكة والمطبخ يفوح منه رائحة رائعة.",
-    "tags": [
-      "food",
-      "present-continuous"
-    ],
+    "tags": ["food", "present-continuous"],
     "words": [
       {
         "word": "making",
@@ -1809,11 +1672,7 @@
     "text_ar": "أكلت الكثير من الطعام في الحفل الليلة الماضية وشعرت بالمرض بعدها.",
     "english": "I ate too much food at the party last night and felt sick afterwards.",
     "arabic": "أكلت الكثير من الطعام في الحفل الليلة الماضية وشعرت بالمرض بعدها.",
-    "tags": [
-      "food",
-      "past-simple",
-      "health"
-    ],
+    "tags": ["food", "past-simple", "health"],
     "words": [
       {
         "word": "ate",
@@ -1856,11 +1715,7 @@
     "text_ar": "يجب أن تشرب على الأقل ثمانية أكواب من الماء كل يوم.",
     "english": "You should drink at least eight glasses of water every day.",
     "arabic": "يجب أن تشرب على الأقل ثمانية أكواب من الماء كل يوم.",
-    "tags": [
-      "food",
-      "modal",
-      "numbers"
-    ],
+    "tags": ["food", "modal", "numbers"],
     "words": [
       {
         "word": "should",
@@ -1909,10 +1764,7 @@
     "text_ar": "الفواكه الطازجة من هذا السوق أفضل بكثير من الفواكه المجمدة في السوبرماركت.",
     "english": "The fresh fruit from this market is much nicer than the frozen fruit in the supermarket.",
     "arabic": "الفواكه الطازجة من هذا السوق أفضل بكثير من الفواكه المجمدة في السوبرماركت.",
-    "tags": [
-      "food",
-      "comparative"
-    ],
+    "tags": ["food", "comparative"],
     "words": [
       {
         "word": "fresh",
@@ -1961,10 +1813,7 @@
     "text_ar": "أفضّل الأكل في البيت بدلاً من المطعم لأن الطعام أكثر صحة.",
     "english": "I would rather eat at home than at a restaurant because the food is healthier.",
     "arabic": "أفضّل الأكل في البيت بدلاً من المطعم لأن الطعام أكثر صحة.",
-    "tags": [
-      "food",
-      "preference"
-    ],
+    "tags": ["food", "preference"],
     "words": [
       {
         "word": "rather",
@@ -2001,11 +1850,7 @@
     "text_ar": "يجب على الأطفال عدم تناول الحلوى قبل العشاء لأنها تفسد شهيتهم.",
     "english": "The children must not eat candy before dinner because it ruins their appetite.",
     "arabic": "يجب على الأطفال عدم تناول الحلوى قبل العشاء لأنها تفسد شهيتهم.",
-    "tags": [
-      "food",
-      "modal",
-      "health"
-    ],
+    "tags": ["food", "modal", "health"],
     "words": [
       {
         "word": "must",
@@ -2048,11 +1893,7 @@
     "text_ar": "تشرب الحليب كل صباح لأنه يجعل عظامها أقوى.",
     "english": "She drinks milk every morning because it makes her bones stronger.",
     "arabic": "تشرب الحليب كل صباح لأنه يجعل عظامها أقوى.",
-    "tags": [
-      "food",
-      "present-simple",
-      "health"
-    ],
+    "tags": ["food", "present-simple", "health"],
     "words": [
       {
         "word": "drinks",
@@ -2101,11 +1942,7 @@
     "text_ar": "يجب أن نطبخ العشاء الليلة لأنه لا مطاعم مفتوحة بالقرب منا.",
     "english": "We have to cook dinner tonight because there are no restaurants open near us.",
     "arabic": "يجب أن نطبخ العشاء الليلة لأنه لا مطاعم مفتوحة بالقرب منا.",
-    "tags": [
-      "food",
-      "modal",
-      "present-simple"
-    ],
+    "tags": ["food", "modal", "present-simple"],
     "words": [
       {
         "word": "have",
@@ -2148,11 +1985,7 @@
     "text_ar": "سندخل بزيارة باريس الصيف الجاي لأن زوجتي دائماً أردت رؤية برج إيفل.",
     "english": "We are going to visit Paris next summer because my wife has always wanted to see the Eiffel Tower.",
     "arabic": "سندخل بزيارة باريس الصيف الجاي لأن زوجتي دائماً أردت رؤية برج إيفل.",
-    "tags": [
-      "travel",
-      "future",
-      "connector"
-    ],
+    "tags": ["travel", "future", "connector"],
     "words": [
       {
         "word": "going",
@@ -2201,11 +2034,7 @@
     "text_ar": "الفندق الذي أقمنا فيه الصيف الماضي كان أفضل بكثير من هذا.",
     "english": "The hotel we stayed at last summer was much nicer than this one.",
     "arabic": "الفندق الذي أقمنا فيه الصيف الماضي كان أفضل بكثير من هذا.",
-    "tags": [
-      "travel",
-      "comparative",
-      "past-simple"
-    ],
+    "tags": ["travel", "comparative", "past-simple"],
     "words": [
       {
         "word": "hotel",
@@ -2248,11 +2077,7 @@
     "text_ar": "لم أتمكن من فهم اللغة الأجنبية عندما زرت اليابان العام الماضي.",
     "english": "I could not understand the foreign language when I visited Japan last year.",
     "arabic": "لم أتمكن من فهم اللغة الأجنبية عندما زرت اليابان العام الماضي.",
-    "tags": [
-      "travel",
-      "past-simple",
-      "modal"
-    ],
+    "tags": ["travel", "past-simple", "modal"],
     "words": [
       {
         "word": "could",
@@ -2301,11 +2126,7 @@
     "text_ar": "يجب أن تحجز تذاكرك مبكراً لأن الأسعار ترتفع قبل العطل.",
     "english": "You should book your tickets early because prices go up before holidays.",
     "arabic": "يجب أن تحجز تذاكرك مبكراً لأن الأسعار ترتفع قبل العطل.",
-    "tags": [
-      "travel",
-      "modal",
-      "connector"
-    ],
+    "tags": ["travel", "modal", "connector"],
     "words": [
       {
         "word": "should",
@@ -2354,11 +2175,7 @@
     "text_ar": "كان المطار مكتظاً بشكل كبير، لذا اضطررنا للانتظار ثلاث ساعات.",
     "english": "The airport was extremely crowded, so we had to wait for three hours.",
     "arabic": "كان المطار مكتظاً بشكل كبير، لذا اضطررنا للانتظار ثلاث ساعات.",
-    "tags": [
-      "travel",
-      "past-simple",
-      "connector"
-    ],
+    "tags": ["travel", "past-simple", "connector"],
     "words": [
       {
         "word": "airport",
@@ -2401,11 +2218,7 @@
     "text_ar": "تسافر أكثر من أخيها لأنها تعمل في شركة دولية.",
     "english": "She travels more often than her brother because she works for an international company.",
     "arabic": "تسافر أكثر من أخيها لأنها تعمل في شركة دولية.",
-    "tags": [
-      "travel",
-      "comparative",
-      "connector"
-    ],
+    "tags": ["travel", "comparative", "connector"],
     "words": [
       {
         "word": "travels",
@@ -2448,11 +2261,7 @@
     "text_ar": "اضطررنا لأخذ التاكسي لأننا فاتنا آخر قطار إلى وسط المدينة.",
     "english": "We had to take a taxi because we missed the last train to the city centre.",
     "arabic": "اضطررنا لأخذ التاكسي لأننا فاتنا آخر قطار إلى وسط المدينة.",
-    "tags": [
-      "travel",
-      "past-simple",
-      "modal"
-    ],
+    "tags": ["travel", "past-simple", "modal"],
     "words": [
       {
         "word": "take",
@@ -2495,11 +2304,7 @@
     "text_ar": "المتحف الذي زرناه بالأمس كان أكبر سناً بكثير مما توقعت.",
     "english": "The museum we visited yesterday was much older than I expected it to be.",
     "arabic": "المتحف الذي زرناه بالأمس كان أكبر سناً بكثير مما توقعت.",
-    "tags": [
-      "travel",
-      "comparative",
-      "past-simple"
-    ],
+    "tags": ["travel", "comparative", "past-simple"],
     "words": [
       {
         "word": "museum",
@@ -2542,11 +2347,7 @@
     "text_ar": "يجب أن تصل إلى المطار قبل ساعتين على الأقل من رحلتك الجوية.",
     "english": "You have to arrive at the airport at least two hours before your flight.",
     "arabic": "يجب أن تصل إلى المطار قبل ساعتين على الأقل من رحلتك الجوية.",
-    "tags": [
-      "travel",
-      "modal",
-      "numbers"
-    ],
+    "tags": ["travel", "modal", "numbers"],
     "words": [
       {
         "word": "have",
@@ -2589,10 +2390,7 @@
     "text_ar": "نودّ أن نستأجر سيارة حتى نتمكن من استكشاف الريف بحرية.",
     "english": "We would like to rent a car so that we can explore the countryside freely.",
     "arabic": "نودّ أن نستأجر سيارة حتى نتمكن من استكشاف الريف بحرية.",
-    "tags": [
-      "travel",
-      "future"
-    ],
+    "tags": ["travel", "future"],
     "words": [
       {
         "word": "rent",
@@ -2635,10 +2433,7 @@
     "text_ar": "الشاطئ الذي زرناه الصيف الماضي كان أقل ازدحاماً من الذي زرناه قبل سنتين.",
     "english": "The beach we went to last summer was less crowded than the one we visited two years ago.",
     "arabic": "الشاطئ الذي زرناه الصيف الماضي كان أقل ازدحاماً من الذي زرناه قبل سنتين.",
-    "tags": [
-      "travel",
-      "comparative"
-    ],
+    "tags": ["travel", "comparative"],
     "words": [
       {
         "word": "beach",
@@ -2675,11 +2470,7 @@
     "text_ar": "كان يجب أن أحضر مظلتي لأنه بدأ يُمطر عندما غادرنا الفندق.",
     "english": "I should have brought my umbrella because it started to rain when we left the hotel.",
     "arabic": "كان يجب أن أحضر مظلتي لأنه بدأ يُمطر عندما غادرنا الفندق.",
-    "tags": [
-      "travel",
-      "past-simple",
-      "modal"
-    ],
+    "tags": ["travel", "past-simple", "modal"],
     "words": [
       {
         "word": "should",
@@ -2728,10 +2519,7 @@
     "text_ar": "هي أكثر اهتماماً بزيارة المتاحف من الذهاب إلى مراكز التسوق.",
     "english": "She is more interested in visiting museums than going to shopping centres.",
     "arabic": "هي أكثر اهتماماً بزيارة المتاحف من الذهاب إلى مراكز التسوق.",
-    "tags": [
-      "travel",
-      "comparative"
-    ],
+    "tags": ["travel", "comparative"],
     "words": [
       {
         "word": "interested",
@@ -2774,12 +2562,7 @@
     "text_ar": "يجب أن تجرب الطعام المحلي عندما تسافر إلى بلد جديد لأنه دائماً مثير للاهتمام.",
     "english": "You should try the local food when you travel to a new country because it is always interesting.",
     "arabic": "يجب أن تجرب الطعام المحلي عندما تسافر إلى بلد جديد لأنه دائماً مثير للاهتمام.",
-    "tags": [
-      "travel",
-      "modal",
-      "food",
-      "connector"
-    ],
+    "tags": ["travel", "modal", "food", "connector"],
     "words": [
       {
         "word": "try",
@@ -2822,11 +2605,7 @@
     "text_ar": "لم نتمكن من إيجاد غرفة في الفندق لأنها كانت الموسم السياحي الذروي.",
     "english": "We could not find a hotel room because it was the peak tourist season.",
     "arabic": "لم نتمكن من إيجاد غرفة في الفندق لأنها كانت الموسم السياحي الذروي.",
-    "tags": [
-      "travel",
-      "past-simple",
-      "modal"
-    ],
+    "tags": ["travel", "past-simple", "modal"],
     "words": [
       {
         "word": "could",
@@ -2875,10 +2654,7 @@
     "text_ar": "يجب على الطلاب تسليم أبحاثهم قبل الموعد النهائي يوم الجمعة القادم.",
     "english": "The students have to submit their essays before the deadline next Friday.",
     "arabic": "يجب على الطلاب تسليم أبحاثهم قبل الموعد النهائي يوم الجمعة القادم.",
-    "tags": [
-      "university",
-      "modal"
-    ],
+    "tags": ["university", "modal"],
     "words": [
       {
         "word": "students",
@@ -2921,10 +2697,7 @@
     "text_ar": "تدرس بجد أكبر من زملائها في الصف لأنها تريد الحصول على أفضل الدرجات.",
     "english": "She studies harder than her classmates because she wants to get the best grades.",
     "arabic": "تدرس بجد أكبر من زملائها في الصف لأنها تريد الحصول على أفضل الدرجات.",
-    "tags": [
-      "university",
-      "comparative"
-    ],
+    "tags": ["university", "comparative"],
     "words": [
       {
         "word": "studies",
@@ -2967,11 +2740,7 @@
     "text_ar": "شرح المدرس الدرس، لكن بعض الطلاب لم يفهموا ذلك بعد.",
     "english": "The professor explained the lesson, but some students still did not understand it.",
     "arabic": "شرح المدرس الدرس، لكن بعض الطلاب لم يفهموا ذلك بعد.",
-    "tags": [
-      "university",
-      "past-simple",
-      "connector"
-    ],
+    "tags": ["university", "past-simple", "connector"],
     "words": [
       {
         "word": "professor",
@@ -3014,11 +2783,7 @@
     "text_ar": "يجب أن أدرس بجد أكبر لأن الامتحان قادم قريباً جداً.",
     "english": "I should study harder because the exam is coming very soon.",
     "arabic": "يجب أن أدرس بجد أكبر لأن الامتحان قادم قريباً جداً.",
-    "tags": [
-      "university",
-      "modal",
-      "connector"
-    ],
+    "tags": ["university", "modal", "connector"],
     "words": [
       {
         "word": "should",
@@ -3061,11 +2826,7 @@
     "text_ar": "المكتبة أكثر هدوءاً من قاعة المحاضرات، لذلك أفضل الدراسة هناك.",
     "english": "The library is quieter than the lecture hall, so I prefer to study there.",
     "arabic": "المكتبة أكثر هدوءاً من قاعة المحاضرات، لذلك أفضل الدراسة هناك.",
-    "tags": [
-      "university",
-      "comparative",
-      "connector"
-    ],
+    "tags": ["university", "comparative", "connector"],
     "words": [
       {
         "word": "library",
@@ -3108,10 +2869,7 @@
     "text_ar": "يجب على المعلم تصحيح خمسين واجباً منزلياً قبل صباح الاثنين.",
     "english": "The teacher has to mark fifty homework assignments before Monday morning.",
     "arabic": "يجب على المعلم تصحيح خمسين واجباً منزلياً قبل صباح الاثنين.",
-    "tags": [
-      "university",
-      "modal"
-    ],
+    "tags": ["university", "modal"],
     "words": [
       {
         "word": "teacher",
@@ -3154,11 +2912,7 @@
     "text_ar": "نجح في جميع امتحاناته في الفصل الماضي لأنه عمل بجد كبير.",
     "english": "He passed all his exams last semester because he worked very hard.",
     "arabic": "نجح في جميع امتحاناته في الفصل الماضي لأنه عمل بجد كبير.",
-    "tags": [
-      "university",
-      "past-simple",
-      "connector"
-    ],
+    "tags": ["university", "past-simple", "connector"],
     "words": [
       {
         "word": "passed",
@@ -3201,10 +2955,7 @@
     "text_ar": "الجامعة أكبر من الكلية لأنها تأسست منذ أكثر من مئتي سنة.",
     "english": "The university is older than the college because it was founded over two hundred years ago.",
     "arabic": "الجامعة أكبر من الكلية لأنها تأسست منذ أكثر من مئتي سنة.",
-    "tags": [
-      "university",
-      "comparative"
-    ],
+    "tags": ["university", "comparative"],
     "words": [
       {
         "word": "university",
@@ -3247,11 +2998,7 @@
     "text_ar": "لم تتمكن من الدخول إلى الفصل لأنك وصلت متأخراً والباب كان مقفل.",
     "english": "You could not enter the classroom because you arrived late and the door was locked.",
     "arabic": "لم تتمكن من الدخول إلى الفصل لأنك وصلت متأخراً والباب كان مقفل.",
-    "tags": [
-      "university",
-      "past-simple",
-      "modal"
-    ],
+    "tags": ["university", "past-simple", "modal"],
     "words": [
       {
         "word": "enter",
@@ -3288,10 +3035,7 @@
     "text_ar": "يجب أن ندوّن ملاحظات أثناء المحاضرة حتى نتمكن من مراجعة المادة لاحقاً.",
     "english": "We should take notes during the lecture so that we can review the material later.",
     "arabic": "يجب أن ندوّن ملاحظات أثناء المحاضرة حتى نتمكن من مراجعة المادة لاحقاً.",
-    "tags": [
-      "university",
-      "modal"
-    ],
+    "tags": ["university", "modal"],
     "words": [
       {
         "word": "take",
@@ -3334,11 +3078,7 @@
     "text_ar": "الطلاب الجدد أكثر توتراً من الطلاب الأكبر سنعاً لأنهم لا يعرفون أحداً.",
     "english": "The new students are more nervous than the older students because they do not know anyone.",
     "arabic": "الطلاب الجدد أكثر توتراً من الطلاب الأكبر سنعاً لأنهم لا يعرفون أحداً.",
-    "tags": [
-      "university",
-      "comparative",
-      "connector"
-    ],
+    "tags": ["university", "comparative", "connector"],
     "words": [
       {
         "word": "nervous",
@@ -3375,10 +3115,7 @@
     "text_ar": "كنت أدرس في المكتبة عندما اتصل بي صديقي على الهاتف.",
     "english": "I was studying in the library when my friend called me on the phone.",
     "arabic": "كنت أدرس في المكتبة عندما اتصل بي صديقي على الهاتف.",
-    "tags": [
-      "university",
-      "past-continuous"
-    ],
+    "tags": ["university", "past-continuous"],
     "words": [
       {
         "word": "studying",
@@ -3421,10 +3158,7 @@
     "text_ar": "يجب أن تنهي أوراق أبحاثها قبل أن تتمكن من السفر في إجازة مع أصدقائها.",
     "english": "She has to finish her research paper before she can go on holiday with her friends.",
     "arabic": "يجب أن تنهي أوراق أبحاثها قبل أن تتمكن من السفر في إجازة مع أصدقائها.",
-    "tags": [
-      "university",
-      "modal"
-    ],
+    "tags": ["university", "modal"],
     "words": [
       {
         "word": "finish",
@@ -3461,10 +3195,7 @@
     "text_ar": "دورة علوم الحاسوب أكثر صعوبة من دورة الأدب الإنجليزي.",
     "english": "The computer science course is more difficult than the English literature course.",
     "arabic": "دورة علوم الحاسوب أكثر صعوبة من دورة الأدب الإنجليزي.",
-    "tags": [
-      "university",
-      "comparative"
-    ],
+    "tags": ["university", "comparative"],
     "words": [
       {
         "word": "computer",
@@ -3501,12 +3232,7 @@
     "text_ar": "لم أتمكن من حضور المحاضرة بالأمس لأنني كنت أشعر بالمرض الشديد.",
     "english": "I could not attend the lecture yesterday because I was feeling very sick.",
     "arabic": "لم أتمكن من حضور المحاضرة بالأمس لأنني كنت أشعر بالمرض الشديد.",
-    "tags": [
-      "university",
-      "past-simple",
-      "modal",
-      "health"
-    ],
+    "tags": ["university", "past-simple", "modal", "health"],
     "words": [
       {
         "word": "attend",
@@ -3537,10 +3263,7 @@
     "text_ar": "يعمل بجد أكبر من زملائه لأنه يريد الحصول على ترقية قريباً.",
     "english": "He works harder than his colleagues because he wants to get a promotion soon.",
     "arabic": "يعمل بجد أكبر من زملائه لأنه يريد الحصول على ترقية قريباً.",
-    "tags": [
-      "work",
-      "comparative"
-    ],
+    "tags": ["work", "comparative"],
     "words": [
       {
         "word": "works",
@@ -3583,11 +3306,7 @@
     "text_ar": "يجب أن ننهي هذا المشروع قبل نهاية الشهر، لذلك نعمل إضافياً.",
     "english": "We have to finish this project before the end of the month, so we are working overtime.",
     "arabic": "يجب أن ننهي هذا المشروع قبل نهاية الشهر، لذلك نعمل إضافياً.",
-    "tags": [
-      "work",
-      "modal",
-      "present-continuous"
-    ],
+    "tags": ["work", "modal", "present-continuous"],
     "words": [
       {
         "word": "finish",
@@ -3630,10 +3349,7 @@
     "text_ar": "المكتب الجديد أكبر بكثير من القديم والجميع سعيد جداً بذلك.",
     "english": "The new office is much bigger than the old one, and everyone is very happy about it.",
     "arabic": "المكتب الجديد أكبر بكثير من القديم والجميع سعيد جداً بذلك.",
-    "tags": [
-      "work",
-      "comparative"
-    ],
+    "tags": ["work", "comparative"],
     "words": [
       {
         "word": "office",
@@ -3670,10 +3386,7 @@
     "text_ar": "يجب أن تصل مبكراً غداً لأن لديها اجتماعاً مهماً مع المدير.",
     "english": "She should arrive early tomorrow because she has an important meeting with the manager.",
     "arabic": "يجب أن تصل مبكراً غداً لأن لديها اجتماعاً مهماً مع المدير.",
-    "tags": [
-      "work",
-      "modal"
-    ],
+    "tags": ["work", "modal"],
     "words": [
       {
         "word": "arrive",
@@ -3716,11 +3429,7 @@
     "text_ar": "أبحث عن وظيفة جديدة لأن راتبي منخفض جداً وأحتاج المزيد من المال.",
     "english": "I am looking for a new job because my salary is too low, and I need more money.",
     "arabic": "أبحث عن وظيفة جديدة لأن راتبي منخفض جداً وأحتاج المزيد من المال.",
-    "tags": [
-      "work",
-      "present-continuous",
-      "connector"
-    ],
+    "tags": ["work", "present-continuous", "connector"],
     "words": [
       {
         "word": "looking",
@@ -3763,10 +3472,7 @@
     "text_ar": "ذهب رئيسي إلى مؤتمر أعمال في لندن الأسبوع الماضي لكنه عاد بالأمس.",
     "english": "My boss went to a business conference in London last week, but he returned yesterday.",
     "arabic": "ذهب رئيسي إلى مؤتمر أعمال في لندن الأسبوع الماضي لكنه عاد بالأمس.",
-    "tags": [
-      "work",
-      "past-simple"
-    ],
+    "tags": ["work", "past-simple"],
     "words": [
       {
         "word": "boss",
@@ -3803,10 +3509,7 @@
     "text_ar": "الموظفون الجدد أكثر خبرة من القدامى لأنهم عملوا في شركات مشابهة.",
     "english": "The new employees are more experienced than the old ones because they have worked in similar companies.",
     "arabic": "الموظفون الجدد أكثر خبرة من القدامى لأنهم عملوا في شركات مشابهة.",
-    "tags": [
-      "work",
-      "comparative"
-    ],
+    "tags": ["work", "comparative"],
     "words": [
       {
         "word": "employees",
@@ -3843,11 +3546,7 @@
     "text_ar": "لم نتمكن من الوفاء بالموعد النهائي لأن نظام الحاسوب لدينا تعطل يوم الاثنين الماضي.",
     "english": "We could not meet the deadline because our computer system crashed last Monday.",
     "arabic": "لم نتمكن من الوفاء بالموعد النهائي لأن نظام الحاسوب لدينا تعطل يوم الاثنين الماضي.",
-    "tags": [
-      "work",
-      "past-simple",
-      "modal"
-    ],
+    "tags": ["work", "past-simple", "modal"],
     "words": [
       {
         "word": "meet",
@@ -3890,10 +3589,7 @@
     "text_ar": "يجب أن يأخذ استراحة لأنه يعمل منذ ست ساعات دون توقف.",
     "english": "He should take a break because he has been working for six hours without stopping.",
     "arabic": "يجب أن يأخذ استراحة لأنه يعمل منذ ست ساعات دون توقف.",
-    "tags": [
-      "work",
-      "modal"
-    ],
+    "tags": ["work", "modal"],
     "words": [
       {
         "word": "break",
@@ -3930,10 +3626,7 @@
     "text_ar": "المدير أقل صرامة من المدير التنفيذي، لذلك الموظفون يفضلون العمل معها.",
     "english": "The manager is less strict than the director, so the employees prefer working with her.",
     "arabic": "المدير أقل صرامة من المدير التنفيذي، لذلك الموظفون يفضلون العمل معها.",
-    "tags": [
-      "work",
-      "comparative"
-    ],
+    "tags": ["work", "comparative"],
     "words": [
       {
         "word": "manager",
@@ -3976,12 +3669,7 @@
     "text_ar": "تعمل من البيت اليوم لأنها يجب أن تعتني بطفلها المريض.",
     "english": "She is working from home today because she has to take care of her sick child.",
     "arabic": "تعمل من البيت اليوم لأنها يجب أن تعتني بطفلها المريض.",
-    "tags": [
-      "work",
-      "present-continuous",
-      "modal",
-      "health"
-    ],
+    "tags": ["work", "present-continuous", "modal", "health"],
     "words": [
       {
         "word": "working",
@@ -4024,10 +3712,7 @@
     "text_ar": "كان الاجتماع أكثر إنتاجية من اجتماع الأسبوع الماضي لأن الجميع تجهزوا جيداً.",
     "english": "The meeting was more productive than last week's meeting because everyone had prepared well.",
     "arabic": "كان الاجتماع أكثر إنتاجية من اجتماع الأسبوع الماضي لأن الجميع تجهزوا جيداً.",
-    "tags": [
-      "work",
-      "comparative"
-    ],
+    "tags": ["work", "comparative"],
     "words": [
       {
         "word": "meeting",
@@ -4064,10 +3749,7 @@
     "text_ar": "يجب أن نعقد اجتماعاً للفريق لمناقشة المشروع الجديد حتى نتمكن من التخطيط لكل شيء معاً.",
     "english": "We should have a team meeting to discuss the new project so that we can plan everything together.",
     "arabic": "يجب أن نعقد اجتماعاً للفريق لمناقشة المشروع الجديد حتى نتمكن من التخطيط لكل شيء معاً.",
-    "tags": [
-      "work",
-      "modal"
-    ],
+    "tags": ["work", "modal"],
     "words": [
       {
         "word": "meeting",
@@ -4110,10 +3792,7 @@
     "text_ar": "كان يعمل بجد كبير الشهر الماضي لأنه أراد إنهاء التقرير قبل الموعد النهائي.",
     "english": "He was working very hard last month because he wanted to finish the report before the deadline.",
     "arabic": "كان يعمل بجد كبير الشهر الماضي لأنه أراد إنهاء التقرير قبل الموعد النهائي.",
-    "tags": [
-      "work",
-      "past-continuous"
-    ],
+    "tags": ["work", "past-continuous"],
     "words": [
       {
         "word": "working",
@@ -4144,11 +3823,7 @@
     "text_ar": "الراتب هنا أعلى من معظم الشركات الأخرى، لذلك كثير من الناس يريدون العمل هنا.",
     "english": "The salary here is higher than at most other companies, so many people want to work here.",
     "arabic": "الراتب هنا أعلى من معظم الشركات الأخرى، لذلك كثير من الناس يريدون العمل هنا.",
-    "tags": [
-      "work",
-      "comparative",
-      "connector"
-    ],
+    "tags": ["work", "comparative", "connector"],
     "words": [
       {
         "word": "salary",
@@ -4191,10 +3866,7 @@
     "text_ar": "الأحذية في هذا المحل أرخص من تلك في مركز التسوق.",
     "english": "The shoes in this shop are cheaper than the ones in the shopping centre.",
     "arabic": "الأحذية في هذا المحل أرخص من تلك في مركز التسوق.",
-    "tags": [
-      "shopping",
-      "comparative"
-    ],
+    "tags": ["shopping", "comparative"],
     "words": [
       {
         "word": "shoes",
@@ -4237,10 +3909,7 @@
     "text_ar": "أحتاج أن أشتري خمسة وعشرين برتقالة وثلاثة كيلوات من التفاح وزجاجة زيت زيتون.",
     "english": "I need to buy twenty-five oranges, three kilos of apples, and a bottle of olive oil.",
     "arabic": "أحتاج أن أشتري خمسة وعشرين برتقالة وثلاثة كيلوات من التفاح وزجاجة زيت زيتون.",
-    "tags": [
-      "shopping",
-      "numbers"
-    ],
+    "tags": ["shopping", "numbers"],
     "words": [
       {
         "word": "buy",
@@ -4295,11 +3964,7 @@
     "text_ar": "أنفقت أكثر من ثلاثمئة جنيه على ملابس في متجر الأزياء بالأمس.",
     "english": "She spent over three hundred pounds on clothes at the department store yesterday.",
     "arabic": "أنفقت أكثر من ثلاثمئة جنيه على ملابس في متجر الأزياء بالأمس.",
-    "tags": [
-      "shopping",
-      "numbers",
-      "past-simple"
-    ],
+    "tags": ["shopping", "numbers", "past-simple"],
     "words": [
       {
         "word": "spent",
@@ -4342,11 +4007,7 @@
     "text_ar": "يجب أن تقارن الأسعار قبل أن تشتري شيئاً لأنك غالباً ما تجد عرضاً أفضل.",
     "english": "You should compare prices before you buy something because you can often find a better deal.",
     "arabic": "يجب أن تقارن الأسعار قبل أن تشتري شيئاً لأنك غالباً ما تجد عرضاً أفضل.",
-    "tags": [
-      "shopping",
-      "modal",
-      "comparative"
-    ],
+    "tags": ["shopping", "modal", "comparative"],
     "words": [
       {
         "word": "compare",
@@ -4395,10 +4056,7 @@
     "text_ar": "هذا القميص أغلى من ذاك لكنه أيضاً من جودة أفضل.",
     "english": "This shirt is more expensive than that one, but it is also better quality.",
     "arabic": "هذا القميص أغلى من ذاك لكنه أيضاً من جودة أفضل.",
-    "tags": [
-      "shopping",
-      "comparative"
-    ],
+    "tags": ["shopping", "comparative"],
     "words": [
       {
         "word": "shirt",
@@ -4429,10 +4087,7 @@
     "text_ar": "يجب أن نُعيد هذه الأحذية لأنها صغيرة جداً ونحتاج مقاساً أكبر.",
     "english": "We have to return these shoes because they are too small, and we need a larger size.",
     "arabic": "يجب أن نُعيد هذه الأحذية لأنها صغيرة جداً ونحتاج مقاساً أكبر.",
-    "tags": [
-      "shopping",
-      "modal"
-    ],
+    "tags": ["shopping", "modal"],
     "words": [
       {
         "word": "return",
@@ -4475,10 +4130,7 @@
     "text_ar": "عادةً أذهب إلى السوبرماركت في صباحات السبت لأنه أقل ازدحاماً حينها.",
     "english": "I usually go to the supermarket on Saturday mornings because it is less crowded then.",
     "arabic": "عادةً أذهب إلى السوبرماركت في صباحات السبت لأنه أقل ازدحاماً حينها.",
-    "tags": [
-      "shopping",
-      "comparative"
-    ],
+    "tags": ["shopping", "comparative"],
     "words": [
       {
         "word": "usually",
@@ -4521,11 +4173,7 @@
     "text_ar": "اشترت أربعة قمصان وزوجاً من الجينز بمبلغ خمسين دولار فقط في الإجمالي.",
     "english": "She bought four t-shirts and two pairs of jeans for only fifty dollars in total.",
     "arabic": "اشترت أربعة قمصان وزوجاً من الجينز بمبلغ خمسين دولار فقط في الإجمالي.",
-    "tags": [
-      "shopping",
-      "numbers",
-      "past-simple"
-    ],
+    "tags": ["shopping", "numbers", "past-simple"],
     "words": [
       {
         "word": "bought",
@@ -4574,10 +4222,7 @@
     "text_ar": "الحاسوب المحمول الجديد أغلى بكثير من القديم لكنه أيضاً أسرع بكثير.",
     "english": "The new laptop is much more expensive than my old one, but it is also much faster.",
     "arabic": "الحاسوب المحمول الجديد أغلى بكثير من القديم لكنه أيضاً أسرع بكثير.",
-    "tags": [
-      "shopping",
-      "comparative"
-    ],
+    "tags": ["shopping", "comparative"],
     "words": [
       {
         "word": "laptop",
@@ -4614,11 +4259,7 @@
     "text_ar": "لم تتمكن من شراء ذلك الحاسوب لأن ليس لديك ما يكفي من المال، لذلك يجب أن توفر أكثر.",
     "english": "You could not buy that computer because you do not have enough money, so you should save more.",
     "arabic": "لم تتمكن من شراء ذلك الحاسوب لأن ليس لديك ما يكفي من المال، لذلك يجب أن توفر أكثر.",
-    "tags": [
-      "shopping",
-      "modal",
-      "connector"
-    ],
+    "tags": ["shopping", "modal", "connector"],
     "words": [
       {
         "word": "could",
@@ -4649,11 +4290,7 @@
     "text_ar": "التخفيضات في متجر الأزياء تبدأ غداً، لذلك يجب أن نذهب مبكراً للحصول على أفضل العروض.",
     "english": "The sale at the department store starts tomorrow, so we should go early to get the best bargains.",
     "arabic": "التخفيضات في متجر الأزياء تبدأ غداً، لذلك يجب أن نذهب مبكراً للحصول على أفضل العروض.",
-    "tags": [
-      "shopping",
-      "modal",
-      "future"
-    ],
+    "tags": ["shopping", "modal", "future"],
     "words": [
       {
         "word": "sale",
@@ -4690,10 +4327,7 @@
     "text_ar": "هذا الكتاب أقل إثارة من الذي قرأته الشهر الماضي لذلك لا أوصي به.",
     "english": "This book is less interesting than the one I read last month, so I do not recommend it.",
     "arabic": "هذا الكتاب أقل إثارة من الذي قرأته الشهر الماضي لذلك لا أوصي به.",
-    "tags": [
-      "shopping",
-      "comparative"
-    ],
+    "tags": ["shopping", "comparative"],
     "words": [
       {
         "word": "book",
@@ -4730,11 +4364,7 @@
     "text_ar": "يجب أن نشتري غسالة هذه لأنها أرخص وأكثر موثوقية من الأخرى.",
     "english": "We should buy this washing machine because it is cheaper and more reliable than the other one.",
     "arabic": "يجب أن نشتري غسالة هذه لأنها أرخص وأكثر موثوقية من الأخرى.",
-    "tags": [
-      "shopping",
-      "comparative",
-      "modal"
-    ],
+    "tags": ["shopping", "comparative", "modal"],
     "words": [
       {
         "word": "buy",
@@ -4777,10 +4407,7 @@
     "text_ar": "سعر الحليب ارتفع بنسبة خمسة عشر بالمئة منذ العام الماضي، لذلك يجب أن نشتري أقل.",
     "english": "The price of milk has increased by fifteen percent since last year, so we should buy less.",
     "arabic": "سعر الحليب ارتفع بنسبة خمسة عشر بالمئة منذ العام الماضي، لذلك يجب أن نشتري أقل.",
-    "tags": [
-      "shopping",
-      "numbers"
-    ],
+    "tags": ["shopping", "numbers"],
     "words": [
       {
         "word": "price",
@@ -4817,11 +4444,7 @@
     "text_ar": "يجب أن أُعيد هذه السراويل لأنها طويلة جداً والمحل لا يبيع أقصر.",
     "english": "I have to return these trousers because they are much too long, and the shop does not sell shorter ones.",
     "arabic": "يجب أن أُعيد هذه السراويل لأنها طويلة جداً والمحل لا يبيع أقصر.",
-    "tags": [
-      "shopping",
-      "modal",
-      "comparative"
-    ],
+    "tags": ["shopping", "modal", "comparative"],
     "words": [
       {
         "word": "trousers",
@@ -4864,10 +4487,7 @@
     "text_ar": "يجب أن تشرب ماءً أكثر كل يوم لأنه مهم جداً لجسمك.",
     "english": "You should drink more water every day because it is very important for your body.",
     "arabic": "يجب أن تشرب ماءً أكثر كل يوم لأنه مهم جداً لجسمك.",
-    "tags": [
-      "health",
-      "modal"
-    ],
+    "tags": ["health", "modal"],
     "words": [
       {
         "word": "should",
@@ -4910,10 +4530,7 @@
     "text_ar": "ذهبت إلى المستشفى الأسبوع الماضي لأنها كانت تعاني من صداع شديد.",
     "english": "She went to the hospital last week because she had a very bad headache.",
     "arabic": "ذهبت إلى المستشفى الأسبوع الماضي لأنها كانت تعاني من صداع شديد.",
-    "tags": [
-      "health",
-      "past-simple"
-    ],
+    "tags": ["health", "past-simple"],
     "words": [
       {
         "word": "hospital",
@@ -4950,10 +4567,7 @@
     "text_ar": "الركض كل يوم أفضل بكثير لصحتك من الجلوس على الأريكة طوال اليوم.",
     "english": "Running every day is much better for your health than sitting on the couch all day.",
     "arabic": "الركض كل يوم أفضل بكثير لصحتك من الجلوس على الأريكة طوال اليوم.",
-    "tags": [
-      "health",
-      "comparative"
-    ],
+    "tags": ["health", "comparative"],
     "words": [
       {
         "word": "running",
@@ -4996,10 +4610,7 @@
     "text_ar": "يجب أن أتناول هذا الدواء ثلاث مرات في اليوم لأن الطبيب أخبرني بذلك.",
     "english": "I have to take this medicine three times a day because the doctor told me to do so.",
     "arabic": "يجب أن أتناول هذا الدواء ثلاث مرات في اليوم لأن الطبيب أخبرني بذلك.",
-    "tags": [
-      "health",
-      "modal"
-    ],
+    "tags": ["health", "modal"],
     "words": [
       {
         "word": "take",
@@ -5036,10 +4647,7 @@
     "text_ar": "تشعر بالتعب أكثر الآن لأنها عملت بجد كبير لمدة أسبوعين.",
     "english": "She feels more tired now because she has been working very hard for two weeks.",
     "arabic": "تشعر بالتعب أكثر الآن لأنها عملت بجد كبير لمدة أسبوعين.",
-    "tags": [
-      "health",
-      "present-continuous"
-    ],
+    "tags": ["health", "present-continuous"],
     "words": [
       {
         "word": "tired",
@@ -5076,10 +4684,7 @@
     "text_ar": "الصالة الرياضية الجديدة أقرب من بيتنا من القديمة، لذلك نذهب هناك أكثر.",
     "english": "The new gym is closer to our house than the old one, so we go there more often.",
     "arabic": "الصالة الرياضية الجديدة أقرب من بيتنا من القديمة، لذلك نذهب هناك أكثر.",
-    "tags": [
-      "health",
-      "comparative"
-    ],
+    "tags": ["health", "comparative"],
     "words": [
       {
         "word": "gym",
@@ -5110,10 +4715,7 @@
     "text_ar": "يجب أن تتمرن بانتظام لأنه يساعدك على النوم بشكل أفضل في الليل.",
     "english": "You should exercise regularly because it helps you sleep better at night.",
     "arabic": "يجب أن تتمرن بانتظام لأنه يساعدك على النوم بشكل أفضل في الليل.",
-    "tags": [
-      "health",
-      "modal"
-    ],
+    "tags": ["health", "modal"],
     "words": [
       {
         "word": "exercise",
@@ -5150,11 +4752,7 @@
     "text_ar": "لم يكن يشعر بخير بالأمس، لذلك قرر البقاء في البيت والراحة طوال اليوم.",
     "english": "He was not feeling well yesterday, so he decided to stay home and rest all day.",
     "arabic": "لم يكن يشعر بخير بالأمس، لذلك قرر البقاء في البيت والراحة طوال اليوم.",
-    "tags": [
-      "health",
-      "past-simple",
-      "connector"
-    ],
+    "tags": ["health", "past-simple", "connector"],
     "words": [
       {
         "word": "feeling",
@@ -5197,10 +4795,7 @@
     "text_ar": "قال الطبيب أن المريض يجب أن لا يأكل أي سكر لمدة ثلاثة أشهر.",
     "english": "The doctor said that the patient must not eat any sugar for the next three months.",
     "arabic": "قال الطبيب أن المريض يجب أن لا يأكل أي سكر لمدة ثلاثة أشهر.",
-    "tags": [
-      "health",
-      "modal"
-    ],
+    "tags": ["health", "modal"],
     "words": [
       {
         "word": "doctor",
@@ -5243,10 +4838,7 @@
     "text_ar": "أكل الخضار أكثر أهمية للأطفال من الأكل السريع لأنه أكثر صحة.",
     "english": "Eating vegetables is more important for children than eating fast food because it is healthier.",
     "arabic": "أكل الخضار أكثر أهمية للأطفال من الأكل السريع لأنه أكثر صحة.",
-    "tags": [
-      "health",
-      "comparative"
-    ],
+    "tags": ["health", "comparative"],
     "words": [
       {
         "word": "eating",
@@ -5289,11 +4881,7 @@
     "text_ar": "لم أتمكن من الذهاب إلى الصالة الرياضية صباح اليوم لأنني أعاني من ألم أسنان شديد.",
     "english": "I could not go to the gym this morning because I had a terrible toothache.",
     "arabic": "لم أتمكن من الذهاب إلى الصالة الرياضية صباح اليوم لأنني أعاني من ألم أسنان شديد.",
-    "tags": [
-      "health",
-      "past-simple",
-      "modal"
-    ],
+    "tags": ["health", "past-simple", "modal"],
     "words": [
       {
         "word": "gym",
@@ -5324,11 +4912,7 @@
     "text_ar": "يجب أن ترى طبيباً لأن ألم ظهرها يزداد سوءاً كل يوم.",
     "english": "She should see a doctor because her back pain is getting worse every day.",
     "arabic": "يجب أن ترى طبيباً لأن ألم ظهرها يزداد سوءاً كل يوم.",
-    "tags": [
-      "health",
-      "modal",
-      "comparative"
-    ],
+    "tags": ["health", "modal", "comparative"],
     "words": [
       {
         "word": "should",
@@ -5371,10 +4955,7 @@
     "text_ar": "أخي كان يشعر بالقلق الشديد مؤخراً، لذلك بدأ ممارسة اليوغا للإرخاء.",
     "english": "My brother has been feeling very anxious lately, so he started doing yoga to relax.",
     "arabic": "أخي كان يشعر بالقلق الشديد مؤخراً، لذلك بدأ ممارسة اليوغا للإرخاء.",
-    "tags": [
-      "health",
-      "present-perfect"
-    ],
+    "tags": ["health", "present-perfect"],
     "words": [
       {
         "word": "anxious",
@@ -5405,10 +4986,7 @@
     "text_ar": "يجب أن تأكل الفطور كل صباح لأنه يعطيك طاقة لكـل اليوم.",
     "english": "You have to eat breakfast every morning because it gives you energy for the whole day.",
     "arabic": "يجب أن تأكل الفطور كل صباح لأنه يعطيك طاقة لكـل اليوم.",
-    "tags": [
-      "health",
-      "modal"
-    ],
+    "tags": ["health", "modal"],
     "words": [
       {
         "word": "eat",
@@ -5445,10 +5023,7 @@
     "text_ar": "الأطفال أكثر صحة الآن من العام الماضي لأنهم يأكلون المزيد من الفواكه والخضار.",
     "english": "The children are healthier now than they were last year because they eat more fruit and vegetables.",
     "arabic": "الأطفال أكثر صحة الآن من العام الماضي لأنهم يأكلون المزيد من الفواكه والخضار.",
-    "tags": [
-      "health",
-      "comparative"
-    ],
+    "tags": ["health", "comparative"],
     "words": [
       {
         "word": "healthier",
@@ -5479,10 +5054,7 @@
     "text_ar": "يُمطر بكثرة اليوم، لذلك يجب أن تأخذ مظلتك معك.",
     "english": "It is raining heavily today, so you should take an umbrella with you.",
     "arabic": "يُمطر بكثرة اليوم، لذلك يجب أن تأخذ مظلتك معك.",
-    "tags": [
-      "weather",
-      "modal"
-    ],
+    "tags": ["weather", "modal"],
     "words": [
       {
         "word": "raining",
@@ -5519,11 +5091,7 @@
     "text_ar": "الشتاء الماضي كان أبرد بكثير من هذا الشتاء وكان هناك الكثير من الثلج.",
     "english": "Last winter was much colder than this winter, and there was a lot of snow.",
     "arabic": "الشتاء الماضي كان أبرد بكثير من هذا الشتاء وكان هناك الكثير من الثلج.",
-    "tags": [
-      "weather",
-      "comparative",
-      "past-simple"
-    ],
+    "tags": ["weather", "comparative", "past-simple"],
     "words": [
       {
         "word": "winter",
@@ -5554,11 +5122,7 @@
     "text_ar": "تنبؤات الطقس تقول إن سيكون مشمساً غداً، لذلك يجب أن نخطط لرحلة إلى الشاطئ.",
     "english": "The weather forecast says it will be sunny tomorrow, so we should plan a trip to the beach.",
     "arabic": "تنبؤات الطقس تقول إن سيكون مشمساً غداً، لذلك يجب أن نخطط لرحلة إلى الشاطئ.",
-    "tags": [
-      "weather",
-      "future",
-      "modal"
-    ],
+    "tags": ["weather", "future", "modal"],
     "words": [
       {
         "word": "forecast",
@@ -5595,11 +5159,7 @@
     "text_ar": "كان حاراً جداً الصيف الماضي لدرجة أننا لم نتمكن من الخروج بعد الظهر.",
     "english": "It was so hot last summer that we could not go outside during the afternoon.",
     "arabic": "كان حاراً جداً الصيف الماضي لدرجة أننا لم نتمكن من الخروج بعد الظهر.",
-    "tags": [
-      "weather",
-      "past-simple",
-      "modal"
-    ],
+    "tags": ["weather", "past-simple", "modal"],
     "words": [
       {
         "word": "hot",
@@ -5636,10 +5196,7 @@
     "text_ar": "الربيع أجمل من الشتاء لأن الأزهار تبدأ بالتفتح والأيام أطول.",
     "english": "Spring is nicer than winter because the flowers start to bloom and the days are longer.",
     "arabic": "الربيع أجمل من الشتاء لأن الأزهار تبدأ بالتفتح والأيام أطول.",
-    "tags": [
-      "weather",
-      "comparative"
-    ],
+    "tags": ["weather", "comparative"],
     "words": [
       {
         "word": "spring",
@@ -5682,10 +5239,7 @@
     "text_ar": "يجب أن نبقى في الداخل اليوم لأن هناك عاصفة قوية في الخارج وهي خطيرة جداً.",
     "english": "We should stay indoors today because there is a strong storm outside, and it is very dangerous.",
     "arabic": "يجب أن نبقى في الداخل اليوم لأن هناك عاصفة قوية في الخارج وهي خطيرة جداً.",
-    "tags": [
-      "weather",
-      "modal"
-    ],
+    "tags": ["weather", "modal"],
     "words": [
       {
         "word": "indoors",
@@ -5716,10 +5270,7 @@
     "text_ar": "الصيف هنا أكثر حرارة بكثير من الصيف في بلدي ولا أستطيع التعود عليه.",
     "english": "The summer here is much hotter than the summer in my country, and I cannot get used to it.",
     "arabic": "الصيف هنا أكثر حرارة بكثير من الصيف في بلدي ولا أستطيع التعود عليه.",
-    "tags": [
-      "weather",
-      "comparative"
-    ],
+    "tags": ["weather", "comparative"],
     "words": [
       {
         "word": "summer",
@@ -5756,11 +5307,7 @@
     "text_ar": "ثلج بكثرة الليلة الماضية، لذلك اضطرت المدارس للإغلاق لأن الطرق كانت خطيرة جداً.",
     "english": "It snowed heavily last night, so the schools had to close because the roads were too dangerous.",
     "arabic": "ثلج بكثرة الليلة الماضية، لذلك اضطرت المدارس للإغلاق لأن الطرق كانت خطيرة جداً.",
-    "tags": [
-      "weather",
-      "past-simple",
-      "modal"
-    ],
+    "tags": ["weather", "past-simple", "modal"],
     "words": [
       {
         "word": "snowed",
@@ -5809,10 +5356,7 @@
     "text_ar": "الخريف أقل دفئاً من الشتاء لكنه أكثر جمالاً وألواناً من أي موسم آخر.",
     "english": "Autumn is less warm than summer, but it is more colourful and beautiful than any other season.",
     "arabic": "الخريف أقل دفئاً من الشتاء لكنه أكثر جمالاً وألواناً من أي موسم آخر.",
-    "tags": [
-      "weather",
-      "comparative"
-    ],
+    "tags": ["weather", "comparative"],
     "words": [
       {
         "word": "autumn",
@@ -5855,10 +5399,7 @@
     "text_ar": "يجب أن تتحقق دائماً من تنبؤات الطقس قبل الذهاب للمشي لأن الطقس يتغير بسرعة.",
     "english": "You should always check the weather forecast before you go hiking because the weather can change quickly.",
     "arabic": "يجب أن تتحقق دائماً من تنبؤات الطقس قبل الذهاب للمشي لأن الطقس يتغير بسرعة.",
-    "tags": [
-      "weather",
-      "modal"
-    ],
+    "tags": ["weather", "modal"],
     "words": [
       {
         "word": "always",
@@ -5901,10 +5442,7 @@
     "text_ar": "كنت أمشي إلى العمل عندما بدأ يُمطر، لذلك اضطررت للركض للبحث عن ملجأ.",
     "english": "I was walking to work when it started to rain, so I had to run to find shelter.",
     "arabic": "كنت أمشي إلى العمل عندما بدأ يُمطر، لذلك اضطررت للركض للبحث عن ملجأ.",
-    "tags": [
-      "weather",
-      "past-continuous"
-    ],
+    "tags": ["weather", "past-continuous"],
     "words": [
       {
         "word": "walking",
@@ -5947,10 +5485,7 @@
     "text_ar": "درجة الحرارة اليوم أعلى بخمس درجات من الأمس سأرتدي ملابس أخف.",
     "english": "The temperature today is five degrees higher than it was yesterday, so I will wear lighter clothes.",
     "arabic": "درجة الحرارة اليوم أعلى بخمس درجات من الأمس سأرتدي ملابس أخف.",
-    "tags": [
-      "weather",
-      "comparative"
-    ],
+    "tags": ["weather", "comparative"],
     "words": [
       {
         "word": "temperature",
@@ -5993,11 +5528,7 @@
     "text_ar": "لم نتمكن من رحلتنا يوم الأحد الماضي لأنها ظلّت تُمطر طوال اليوم، لذلك بقينا في البيت.",
     "english": "We could not have our picnic last Sunday because it rained all day, so we stayed at home.",
     "arabic": "لم نتمكن من رحلتنا يوم الأحد الماضي لأنها ظلّت تُمطر طوال اليوم، لذلك بقينا في البيت.",
-    "tags": [
-      "weather",
-      "past-simple",
-      "modal"
-    ],
+    "tags": ["weather", "past-simple", "modal"],
     "words": [
       {
         "word": "picnic",
@@ -6028,10 +5559,7 @@
     "text_ar": "هذا الصيف ليس حاراً كالصيف الماضي، لذلك يمكننا الاستمتاع بالذهاب للحديقة أكثر.",
     "english": "This summer is not as hot as last summer, so we can enjoy going to the park more often.",
     "arabic": "هذا الصيف ليس حاراً كالصيف الماضي، لذلك يمكننا الاستمتاع بالذهاب للحديقة أكثر.",
-    "tags": [
-      "weather",
-      "comparative"
-    ],
+    "tags": ["weather", "comparative"],
     "words": [
       {
         "word": "as",
@@ -6074,10 +5602,7 @@
     "text_ar": "الرياح قوية جداً اليوم، لذلك يجب أن ترتدي سترة دافئة لأن الهواء البارد ليس جيداً لصحتك.",
     "english": "It is very windy today, so you should wear a warm jacket because the cold air is not good for your health.",
     "arabic": "الرياح قوية جداً اليوم، لذلك يجب أن ترتدي سترة دافئة لأن الهواء البارد ليس جيداً لصحتك.",
-    "tags": [
-      "weather",
-      "modal"
-    ],
+    "tags": ["weather", "modal"],
     "words": [
       {
         "word": "windy",
@@ -6120,10 +5645,7 @@
     "text_ar": "حاولت الاتصال بك الليلة الماضية لكن هاتفك كان مطفأاً، لذلك تركت رسالة.",
     "english": "I tried to call you last night, but your phone was switched off, so I left a message.",
     "arabic": "حاولت الاتصال بك الليلة الماضية لكن هاتفك كان مطفأاً، لذلك تركت رسالة.",
-    "tags": [
-      "communication",
-      "past-simple"
-    ],
+    "tags": ["communication", "past-simple"],
     "words": [
       {
         "word": "tried",
@@ -6160,10 +5682,7 @@
     "text_ar": "تتحدث الفرنسية بطلاقة أكبر من الإنجليزية لأنها عاشت في باريس خمس سنوات.",
     "english": "She speaks French more fluently than English because she lived in Paris for five years.",
     "arabic": "تتحدث الفرنسية بطلاقة أكبر من الإنجليزية لأنها عاشت في باريس خمس سنوات.",
-    "tags": [
-      "communication",
-      "comparative"
-    ],
+    "tags": ["communication", "comparative"],
     "words": [
       {
         "word": "speaks",
@@ -6206,10 +5725,7 @@
     "text_ar": "يجب أن ترسل البريد الإلكتروني قبل الساعة الخامسة لأن المدير يحتاج لقراءته اليوم.",
     "english": "You should send the email before five o'clock because the manager needs to read it today.",
     "arabic": "يجب أن ترسل البريد الإلكتروني قبل الساعة الخامسة لأن المدير يحتاج لقراءته اليوم.",
-    "tags": [
-      "communication",
-      "modal"
-    ],
+    "tags": ["communication", "modal"],
     "words": [
       {
         "word": "send",
@@ -6246,10 +5762,7 @@
     "text_ar": "الإنترنت أسرع من الهاتف لإرسال المعلومات لكنه ليس موثوقاً دائماً.",
     "english": "The internet is faster than the telephone for sending information, but it is not always reliable.",
     "arabic": "الإنترنت أسرع من الهاتف لإرسال المعلومات لكنه ليس موثوقاً دائماً.",
-    "tags": [
-      "communication",
-      "comparative"
-    ],
+    "tags": ["communication", "comparative"],
     "words": [
       {
         "word": "internet",
@@ -6286,10 +5799,7 @@
     "text_ar": "كنت أتحدث مع صديقي على الهاتف عندما دخلت أمي إلى الغرفة.",
     "english": "I was talking to my friend on the phone when my mother came into the room.",
     "arabic": "كنت أتحدث مع صديقي على الهاتف عندما دخلت أمي إلى الغرفة.",
-    "tags": [
-      "communication",
-      "past-continuous"
-    ],
+    "tags": ["communication", "past-continuous"],
     "words": [
       {
         "word": "talking",
@@ -6332,10 +5842,7 @@
     "text_ar": "يجب أن نخبرهم عن الاجتماع لأنهم لم يتلقوا الدعوة.",
     "english": "We have to tell them about the meeting because they did not receive the invitation.",
     "arabic": "يجب أن نخبرهم عن الاجتماع لأنهم لم يتلقوا الدعوة.",
-    "tags": [
-      "communication",
-      "modal"
-    ],
+    "tags": ["communication", "modal"],
     "words": [
       {
         "word": "tell",
@@ -6372,10 +5879,7 @@
     "text_ar": "خطّه أسوأ بكثير من خطّي، لذلك لا أحد يستطيع قراءة ما يكتبه.",
     "english": "His handwriting is much worse than mine, so nobody can read what he writes.",
     "arabic": "خطّه أسوأ بكثير من خطّي، لذلك لا أحد يستطيع قراءة ما يكتبه.",
-    "tags": [
-      "communication",
-      "comparative"
-    ],
+    "tags": ["communication", "comparative"],
     "words": [
       {
         "word": "handwriting",
@@ -6418,10 +5922,7 @@
     "text_ar": "يجب أن تتمرن على التحدث بالإنجليزية كل يوم حتى تتمكن من أن تصبح أكثر ثقة.",
     "english": "She should practise speaking English every day so that she can become more confident.",
     "arabic": "يجب أن تتمرن على التحدث بالإنجليزية كل يوم حتى تتمكن من أن تصبح أكثر ثقة.",
-    "tags": [
-      "communication",
-      "modal"
-    ],
+    "tags": ["communication", "modal"],
     "words": [
       {
         "word": "practise",
@@ -6452,11 +5953,7 @@
     "text_ar": "لم نتمكن من فهم المعلم الأجنبي لأنه تحدث بسرعة كبيرة جداً.",
     "english": "We could not understand the foreign teacher because he spoke too quickly.",
     "arabic": "لم نتمكن من فهم المعلم الأجنبي لأنه تحدث بسرعة كبيرة جداً.",
-    "tags": [
-      "communication",
-      "past-simple",
-      "modal"
-    ],
+    "tags": ["communication", "past-simple", "modal"],
     "words": [
       {
         "word": "understand",
@@ -6499,10 +5996,7 @@
     "text_ar": "يجب أن أكتب تقريراً لرئيسي، لذلك لا أستطيع التحدث معك الآن.",
     "english": "I have to write a report for my boss, so I cannot talk to you right now.",
     "arabic": "يجب أن أكتب تقريراً لرئيسي، لذلك لا أستطيع التحدث معك الآن.",
-    "tags": [
-      "communication",
-      "modal"
-    ],
+    "tags": ["communication", "modal"],
     "words": [
       {
         "word": "write",
@@ -6539,10 +6033,7 @@
     "text_ar": "الهاتف المحمول الجديد أفضل من القديم لأنه يحتوي على شاشة أوضح.",
     "english": "The new mobile phone is better than my old one because it has a clearer screen.",
     "arabic": "الهاتف المحمول الجديد أفضل من القديم لأنه يحتوي على شاشة أوضح.",
-    "tags": [
-      "communication",
-      "comparative"
-    ],
+    "tags": ["communication", "comparative"],
     "words": [
       {
         "word": "mobile",
@@ -6579,10 +6070,7 @@
     "text_ar": "كنت تكتب بريداً إلكترونياً عندما توقف حاسوبها عن العمل، لذلك اضطرت لاستخدام هاتفها.",
     "english": "She was writing an email when her computer stopped working, so she had to use her phone.",
     "arabic": "كنت تكتب بريداً إلكترونياً عندما توقف حاسوبها عن العمل، لذلك اضطرت لاستخدام هاتفها.",
-    "tags": [
-      "communication",
-      "past-continuous"
-    ],
+    "tags": ["communication", "past-continuous"],
     "words": [
       {
         "word": "writing",
@@ -6619,10 +6107,7 @@
     "text_ar": "يجب أن ترد على الرسائل دائماً وبسرعة لأن ذلك مؤدب.",
     "english": "You should always reply to messages quickly because it is polite to do so.",
     "arabic": "يجب أن ترد على الرسائل دائماً وبسرعة لأن ذلك مؤدب.",
-    "tags": [
-      "communication",
-      "modal"
-    ],
+    "tags": ["communication", "modal"],
     "words": [
       {
         "word": "reply",
@@ -6659,10 +6144,7 @@
     "text_ar": "الراديو أقل فائدة من الإنترنت للحصول على الأخبار في هذه الأيام.",
     "english": "The radio is less useful than the internet for finding news these days.",
     "arabic": "الراديو أقل فائدة من الإنترنت للحصول على الأخبار في هذه الأيام.",
-    "tags": [
-      "communication",
-      "comparative"
-    ],
+    "tags": ["communication", "comparative"],
     "words": [
       {
         "word": "radio",
@@ -6705,10 +6187,7 @@
     "text_ar": "كنت أشاهد الأخبار على التلفاز عندما انقطعت الكهرباء، لذلك لم أتمكن من إنهاء المشاهدة.",
     "english": "I was watching the news on television when the power went out, so I could not finish watching it.",
     "arabic": "كنت أشاهد الأخبار على التلفاز عندما انقطعت الكهرباء، لذلك لم أتمكن من إنهاء المشاهدة.",
-    "tags": [
-      "communication",
-      "past-continuous"
-    ],
+    "tags": ["communication", "past-continuous"],
     "words": [
       {
         "word": "watching",
@@ -6745,10 +6224,7 @@
     "text_ar": "الهاتف الذكي الجديد أغلى من حاسوبي القديم لكنه يحتوي على ميزات أفضل بكثير.",
     "english": "The new smartphone is more expensive than my old laptop, but it has much better features.",
     "arabic": "الهاتف الذكي الجديد أغلى من حاسوبي القديم لكنه يحتوي على ميزات أفضل بكثير.",
-    "tags": [
-      "technology",
-      "comparative"
-    ],
+    "tags": ["technology", "comparative"],
     "words": [
       {
         "word": "smartphone",
@@ -6785,10 +6261,7 @@
     "text_ar": "يجب أن أحدّث حاسوبه لأنه يعمل ببطء شديد ويتوقف باستمرار.",
     "english": "I should update my computer because it is running very slowly and it keeps crashing.",
     "arabic": "يجب أن أحدّث حاسوبه لأنه يعمل ببطء شديد ويتوقف باستمرار.",
-    "tags": [
-      "technology",
-      "modal"
-    ],
+    "tags": ["technology", "modal"],
     "words": [
       {
         "word": "update",
@@ -6825,10 +6298,7 @@
     "text_ar": "وسائل التواصل الاجتماعي أقل موثوقية من مصادر الأخبار التقليدية للحصول على معلومات دقيقة.",
     "english": "Social media is less reliable than traditional news sources for getting accurate information.",
     "arabic": "وسائل التواصل الاجتماعي أقل موثوقية من مصادر الأخبار التقليدية للحصول على معلومات دقيقة.",
-    "tags": [
-      "technology",
-      "comparative"
-    ],
+    "tags": ["technology", "comparative"],
     "words": [
       {
         "word": "social",
@@ -6871,10 +6341,7 @@
     "text_ar": "يجب أن تحذر على الإنترنت لأن ليس كل ما تقرأه على الإنترنت صحيحاً.",
     "english": "You have to be careful online because not everything you read on the internet is true.",
     "arabic": "يجب أن تحذر على الإنترنت لأن ليس كل ما تقرأه على الإنترنت صحيحاً.",
-    "tags": [
-      "technology",
-      "modal"
-    ],
+    "tags": ["technology", "modal"],
     "words": [
       {
         "word": "careful",
@@ -6905,10 +6372,7 @@
     "text_ar": "هاتفي أقدم من هاتفك، لذلك لا يستطيع تشغيل أحدث التطبيقات.",
     "english": "My phone is older than yours, so it cannot run the newest apps.",
     "arabic": "هاتفي أقدم من هاتفك، لذلك لا يستطيع تشغيل أحدث التطبيقات.",
-    "tags": [
-      "technology",
-      "comparative"
-    ],
+    "tags": ["technology", "comparative"],
     "words": [
       {
         "word": "older",
@@ -6945,10 +6409,7 @@
     "text_ar": "يجب أن نحفظ ملفاتنا على السحابة لأنها أكثر أماناً من حفظها على حواسيبنا.",
     "english": "We should save our files to the cloud because it is safer than saving them on our computers.",
     "arabic": "يجب أن نحفظ ملفاتنا على السحابة لأنها أكثر أماناً من حفظها على حواسيبنا.",
-    "tags": [
-      "technology",
-      "modal"
-    ],
+    "tags": ["technology", "modal"],
     "words": [
       {
         "word": "save",
@@ -6985,11 +6446,7 @@
     "text_ar": "كان اتصال الإنترنت بطيئاً جداً بالأمس لدرجة أننا لم نتمكن من مشاهدة أي مقاطع فيديو.",
     "english": "The internet connection was so slow yesterday that we could not watch any videos online.",
     "arabic": "كان اتصال الإنترنت بطيئاً جداً بالأمس لدرجة أننا لم نتمكن من مشاهدة أي مقاطع فيديو.",
-    "tags": [
-      "technology",
-      "past-simple",
-      "modal"
-    ],
+    "tags": ["technology", "past-simple", "modal"],
     "words": [
       {
         "word": "connection",
@@ -7020,10 +6477,7 @@
     "text_ar": "تستخدم حاسوبها المحمول أكثر من حاسوبها المكتبي لأنه أكثر ملاءمة.",
     "english": "She uses her laptop more often than her desktop computer because it is more convenient.",
     "arabic": "تستخدم حاسوبها المحمول أكثر من حاسوبها المكتبي لأنه أكثر ملاءمة.",
-    "tags": [
-      "technology",
-      "comparative"
-    ],
+    "tags": ["technology", "comparative"],
     "words": [
       {
         "word": "uses",
@@ -7060,11 +6514,7 @@
     "text_ar": "يجب أن يقضي أخي وقتاً أقل في ألعاب الفيديو لأنه ليس جيداً لعينيه.",
     "english": "My brother should spend less time playing video games because it is not good for his eyes.",
     "arabic": "يجب أن يقضي أخي وقتاً أقل في ألعاب الفيديو لأنه ليس جيداً لعينيه.",
-    "tags": [
-      "technology",
-      "modal",
-      "health"
-    ],
+    "tags": ["technology", "modal", "health"],
     "words": [
       {
         "word": "spend",
@@ -7101,10 +6551,7 @@
     "text_ar": "كنت أحمّل ملفاً عندما توقف الإنترنت عن العمل، لذلك اضطرت للبدء من جديد.",
     "english": "I was downloading a file when the internet stopped working, so I had to start over again.",
     "arabic": "كنت أحمّل ملفاً عندما توقف الإنترنت عن العمل، لذلك اضطرت للبدء من جديد.",
-    "tags": [
-      "technology",
-      "past-continuous"
-    ],
+    "tags": ["technology", "past-continuous"],
     "words": [
       {
         "word": "downloading",
@@ -7141,10 +6588,7 @@
     "text_ar": "التكنولوجيا الجديدة تجعل حياتنا أسهل بكثير من كانت عليه قبل عشرين سنة.",
     "english": "New technology makes our lives much easier than they were twenty years ago.",
     "arabic": "التكنولوجيا الجديدة تجعل حياتنا أسهل بكثير من كانت عليه قبل عشرين سنة.",
-    "tags": [
-      "technology",
-      "comparative"
-    ],
+    "tags": ["technology", "comparative"],
     "words": [
       {
         "word": "technology",
@@ -7187,10 +6631,7 @@
     "text_ar": "يجب ألا تشارك كلمة مرورك مع أي شخص لأنها قد تكون خطيرة جداً.",
     "english": "You should not share your password with anyone because it could be very dangerous.",
     "arabic": "يجب ألا تشارك كلمة مرورك مع أي شخص لأنها قد تكون خطيرة جداً.",
-    "tags": [
-      "technology",
-      "modal"
-    ],
+    "tags": ["technology", "modal"],
     "words": [
       {
         "word": "share",
@@ -7221,10 +6662,7 @@
     "text_ar": "الجهاز اللوحي أصغر من الحاسوب المحمول، لذلك أسهل في حمله معك.",
     "english": "The tablet is smaller than the laptop, so it is easier to carry around with you.",
     "arabic": "الجهاز اللوحي أصغر من الحاسوب المحمول، لذلك أسهل في حمله معك.",
-    "tags": [
-      "technology",
-      "comparative"
-    ],
+    "tags": ["technology", "comparative"],
     "words": [
       {
         "word": "tablet",
@@ -7261,11 +6699,7 @@
     "text_ar": "لم نتمكن من إرسال البريد الإلكتروني لأن اتصالنا بالإنترنت لم يكن يعمل على الإطلاق.",
     "english": "We could not send the email because our internet connection was not working at all.",
     "arabic": "لم نتمكن من إرسال البريد الإلكتروني لأن اتصالنا بالإنترنت لم يكن يعمل على الإطلاق.",
-    "tags": [
-      "technology",
-      "past-simple",
-      "modal"
-    ],
+    "tags": ["technology", "past-simple", "modal"],
     "words": [
       {
         "word": "send",
@@ -7302,10 +6736,7 @@
     "text_ar": "البرنامج الجديد أسرع بكثير من النسخة القديمة وله أيضاً العديد من الميزات الجديدة.",
     "english": "The new software is much faster than the old version, and it also has many new features.",
     "arabic": "البرنامج الجديد أسرع بكثير من النسخة القديمة وله أيضاً العديد من الميزات الجديدة.",
-    "tags": [
-      "technology",
-      "comparative"
-    ],
+    "tags": ["technology", "comparative"],
     "words": [
       {
         "word": "software",
@@ -7342,10 +6773,7 @@
     "text_ar": "كنت سعيداً جداً عندما نجحت في امتحاني لدرجة أنني اتصلت بآبائي فوراً.",
     "english": "I was so happy when I passed my exam that I called my parents immediately.",
     "arabic": "كنت سعيداً جداً عندما نجحت في امتحاني لدرجة أنني اتصلت بآبائي فوراً.",
-    "tags": [
-      "emotions",
-      "past-simple"
-    ],
+    "tags": ["emotions", "past-simple"],
     "words": [
       {
         "word": "happy",
@@ -7388,10 +6816,7 @@
     "text_ar": "تشعر بالثقة أكثر الآن من العام الماضي لأنها تدربت كثيراً.",
     "english": "She feels more confident now than she did last year because she has practised a lot.",
     "arabic": "تشعر بالثقة أكثر الآن من العام الماضي لأنها تدربت كثيراً.",
-    "tags": [
-      "emotions",
-      "comparative"
-    ],
+    "tags": ["emotions", "comparative"],
     "words": [
       {
         "word": "confident",
@@ -7428,10 +6853,7 @@
     "text_ar": "يجب أن لا تشعر بالحزن لأنك لم تحصل على الوظيفة، ستكون هناك فرص كثيرة أخرى.",
     "english": "You should not feel sad because you did not get the job. There will be many more opportunities.",
     "arabic": "يجب أن لا تشعر بالحزن لأنك لم تحصل على الوظيفة، ستكون هناك فرص كثيرة أخرى.",
-    "tags": [
-      "emotions",
-      "modal"
-    ],
+    "tags": ["emotions", "modal"],
     "words": [
       {
         "word": "sad",
@@ -7462,10 +6884,7 @@
     "text_ar": "كان أكثر توتراً بشأن المقابلة مما توقعت منه.",
     "english": "He was more nervous about the interview than I expected him to be.",
     "arabic": "كان أكثر توتراً بشأن المقابلة مما توقعت منه.",
-    "tags": [
-      "emotions",
-      "comparative"
-    ],
+    "tags": ["emotions", "comparative"],
     "words": [
       {
         "word": "nervous",
@@ -7496,10 +6915,7 @@
     "text_ar": "أنا متحمس جداً للرحلة لأننا سنذهب لزيارة بلد جديد.",
     "english": "I am very excited about the trip because we are going to visit a new country.",
     "arabic": "أنا متحمس جداً للرحلة لأننا سنذهب لزيارة بلد جديد.",
-    "tags": [
-      "emotions",
-      "present-continuous"
-    ],
+    "tags": ["emotions", "present-continuous"],
     "words": [
       {
         "word": "excited",
@@ -7536,10 +6952,7 @@
     "text_ar": "كانت غاضبة من صديقها لأنه لم يفي بوعدته.",
     "english": "She was angry with her friend because he did not keep his promise.",
     "arabic": "كانت غاضبة من صديقها لأنه لم يفي بوعدته.",
-    "tags": [
-      "emotions",
-      "past-simple"
-    ],
+    "tags": ["emotions", "past-simple"],
     "words": [
       {
         "word": "angry",
@@ -7570,11 +6983,7 @@
     "text_ar": "لم أتمكن من النوم الليلة الماضية لأنني كنت أشعر بالقلق الشديد بشأن امتحاني اليوم.",
     "english": "I could not sleep last night because I was feeling very anxious about my exam today.",
     "arabic": "لم أتمكن من النوم الليلة الماضية لأنني كنت أشعر بالقلق الشديد بشأن امتحاني اليوم.",
-    "tags": [
-      "emotions",
-      "past-simple",
-      "modal"
-    ],
+    "tags": ["emotions", "past-simple", "modal"],
     "words": [
       {
         "word": "sleep",
@@ -7605,10 +7014,7 @@
     "text_ar": "هو أكثر خوفاً من العناكب من أخته الصغرى، وهو ما يفاجئ الجميع.",
     "english": "He is more afraid of spiders than his younger sister, which surprises everyone.",
     "arabic": "هو أكثر خوفاً من العناكب من أخته الصغرى، وهو ما يفاجئ الجميع.",
-    "tags": [
-      "emotions",
-      "comparative"
-    ],
+    "tags": ["emotions", "comparative"],
     "words": [
       {
         "word": "afraid",
@@ -7645,10 +7051,7 @@
     "text_ar": "يجب أن نحاول البقاء إيجابيين حتى عندما تكون الأمور صعبة لأنه يساعدنا على الشعور بتحسن.",
     "english": "We should try to stay positive even when things are difficult because it helps us feel better.",
     "arabic": "يجب أن نحاول البقاء إيجابيين حتى عندما تكون الأمور صعبة لأنه يساعدنا على الشعور بتحسن.",
-    "tags": [
-      "emotions",
-      "modal"
-    ],
+    "tags": ["emotions", "modal"],
     "words": [
       {
         "word": "positive",
@@ -7685,10 +7088,7 @@
     "text_ar": "كنت متعباً جداً بالأمس لدرجة أنني ذهبت إلى السرير عند الساعة الثامنة مساءً.",
     "english": "I was so tired yesterday that I went to bed at eight o'clock in the evening.",
     "arabic": "كنت متعباً جداً بالأمس لدرجة أنني ذهبت إلى السرير عند الساعة الثامنة مساءً.",
-    "tags": [
-      "emotions",
-      "past-simple"
-    ],
+    "tags": ["emotions", "past-simple"],
     "words": [
       {
         "word": "tired",
@@ -7719,10 +7119,7 @@
     "text_ar": "أختي أكثر صبراً مني، لذلك هي أفضل في التعامل مع الأطفال.",
     "english": "My sister is more patient than me, so she is better at dealing with children.",
     "arabic": "أختي أكثر صبراً مني، لذلك هي أفضل في التعامل مع الأطفال.",
-    "tags": [
-      "emotions",
-      "comparative"
-    ],
+    "tags": ["emotions", "comparative"],
     "words": [
       {
         "word": "patient",
@@ -7759,10 +7156,7 @@
     "text_ar": "يجب أن أتحكم في غضبي لأنه ليس جيداً أن تصرخ على الناس عندما تكون منزعجاً.",
     "english": "I have to control my anger because it is not good to shout at people when you are upset.",
     "arabic": "يجب أن أتحكم في غضبي لأنه ليس جيداً أن تصرخ على الناس عندما تكون منزعجاً.",
-    "tags": [
-      "emotions",
-      "modal"
-    ],
+    "tags": ["emotions", "modal"],
     "words": [
       {
         "word": "control",
@@ -7799,10 +7193,7 @@
     "text_ar": "كانت محبط أكثر من الغاضبة عندما اكتشفت الحقيقة عما حدث.",
     "english": "She was more disappointed than angry when she found out the truth about what happened.",
     "arabic": "كانت محبط أكثر من الغاضبة عندما اكتشفت الحقيقة عما حدث.",
-    "tags": [
-      "emotions",
-      "comparative"
-    ],
+    "tags": ["emotions", "comparative"],
     "words": [
       {
         "word": "disappointed",
@@ -7839,10 +7230,7 @@
     "text_ar": "يجب ألا تخاف من ارتكاب أخطاء لأن الجميع يرتكبها أحياناً.",
     "english": "You should not be afraid to make mistakes because everyone makes them sometimes.",
     "arabic": "يجب ألا تخاف من ارتكاب أخطاء لأن الجميع يرتكبها أحياناً.",
-    "tags": [
-      "emotions",
-      "modal"
-    ],
+    "tags": ["emotions", "modal"],
     "words": [
       {
         "word": "afraid",
@@ -7879,10 +7267,7 @@
     "text_ar": "أشعر بالتحسن كثيراً الآن بعد أن تحدثت مع صديقي عن مشاكلي.",
     "english": "I feel much better now that I have talked to my friend about my problems.",
     "arabic": "أشعر بالتحسن كثيراً الآن بعد أن تحدثت مع صديقي عن مشاكلي.",
-    "tags": [
-      "emotions",
-      "present-perfect"
-    ],
+    "tags": ["emotions", "present-perfect"],
     "words": [
       {
         "word": "better",

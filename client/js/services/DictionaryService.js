@@ -12,414 +12,1870 @@ export class DictionaryService {
      */
     this.fallbackLexicon = {
       // Pronouns & Determiners
-      i: { translation: "أنا", pronunciation: "/aɪ/", partOfSpeech: "pronoun" },
-      you: { translation: "أنتَ / أنتِ", pronunciation: "/juː/", partOfSpeech: "pronoun" },
-      he: { translation: "هو", pronunciation: "/hiː/", partOfSpeech: "pronoun" },
-      she: { translation: "هي", pronunciation: "/ʃiː/", partOfSpeech: "pronoun" },
-      we: { translation: "نحن", pronunciation: "/wiː/", partOfSpeech: "pronoun" },
-      they: { translation: "هم / هن", pronunciation: "/ðeɪ/", partOfSpeech: "pronoun" },
-      it: { translation: "هو / هي (غير العاقل)", pronunciation: "/ɪt/", partOfSpeech: "pronoun" },
-      me: { translation: "أنا (مفعول به)", pronunciation: "/miː/", partOfSpeech: "pronoun" },
-      us: { translation: "نحن (مفعول به)", pronunciation: "/ʌs/", partOfSpeech: "pronoun" },
-      this: { translation: "هذا / هذه", pronunciation: "/ðɪs/", partOfSpeech: "pronoun" },
-      that: { translation: "ذلك / تلك", pronunciation: "/ðæt/", partOfSpeech: "pronoun" },
-      what: { translation: "ماذا", pronunciation: "/wɒt/", partOfSpeech: "question word" },
-      where: { translation: "أين", pronunciation: "/wɛər/", partOfSpeech: "question word" },
-      when: { translation: "متى", pronunciation: "/wɛn/", partOfSpeech: "question word" },
-      how: { translation: "كيف", pronunciation: "/haʊ/", partOfSpeech: "question word" },
-      my: { translation: "لي (ياء الملكية)", pronunciation: "/maɪ/", partOfSpeech: "determiner" },
-      your: { translation: "لك (كاف الملكية)", pronunciation: "/jɔːr/", partOfSpeech: "determiner" },
-      his: { translation: "له", pronunciation: "/hɪz/", partOfSpeech: "determiner" },
-      her: { translation: "لها", pronunciation: "/hɜːr/", partOfSpeech: "determiner" },
-      our: { translation: "لنا (نا الفاعلين)", pronunciation: "/aʊər/", partOfSpeech: "determiner" },
-      some: { translation: "بعض", pronunciation: "/sʌm/", partOfSpeech: "determiner" },
-      all: { translation: "كل / جميع", pronunciation: "/ɔːl/", partOfSpeech: "determiner" },
-      every: { translation: "كل", pronunciation: "/ˈɛv.ri/", partOfSpeech: "determiner" },
-      a: { translation: "أداة تنكير", pronunciation: "/ə/", partOfSpeech: "article" },
-      an: { translation: "أداة تنكير", pronunciation: "/æn/", partOfSpeech: "article" },
-      the: { translation: "أداة تعريف", pronunciation: "/ðə/", partOfSpeech: "article" },
+      i: { translation: 'أنا', pronunciation: '/aɪ/', partOfSpeech: 'pronoun' },
+      you: {
+        translation: 'أنتَ / أنتِ',
+        pronunciation: '/juː/',
+        partOfSpeech: 'pronoun'
+      },
+      he: {
+        translation: 'هو',
+        pronunciation: '/hiː/',
+        partOfSpeech: 'pronoun'
+      },
+      she: {
+        translation: 'هي',
+        pronunciation: '/ʃiː/',
+        partOfSpeech: 'pronoun'
+      },
+      we: {
+        translation: 'نحن',
+        pronunciation: '/wiː/',
+        partOfSpeech: 'pronoun'
+      },
+      they: {
+        translation: 'هم / هن',
+        pronunciation: '/ðeɪ/',
+        partOfSpeech: 'pronoun'
+      },
+      it: {
+        translation: 'هو / هي (غير العاقل)',
+        pronunciation: '/ɪt/',
+        partOfSpeech: 'pronoun'
+      },
+      me: {
+        translation: 'أنا (مفعول به)',
+        pronunciation: '/miː/',
+        partOfSpeech: 'pronoun'
+      },
+      us: {
+        translation: 'نحن (مفعول به)',
+        pronunciation: '/ʌs/',
+        partOfSpeech: 'pronoun'
+      },
+      this: {
+        translation: 'هذا / هذه',
+        pronunciation: '/ðɪs/',
+        partOfSpeech: 'pronoun'
+      },
+      that: {
+        translation: 'ذلك / تلك',
+        pronunciation: '/ðæt/',
+        partOfSpeech: 'pronoun'
+      },
+      what: {
+        translation: 'ماذا',
+        pronunciation: '/wɒt/',
+        partOfSpeech: 'question word'
+      },
+      where: {
+        translation: 'أين',
+        pronunciation: '/wɛər/',
+        partOfSpeech: 'question word'
+      },
+      when: {
+        translation: 'متى',
+        pronunciation: '/wɛn/',
+        partOfSpeech: 'question word'
+      },
+      how: {
+        translation: 'كيف',
+        pronunciation: '/haʊ/',
+        partOfSpeech: 'question word'
+      },
+      my: {
+        translation: 'لي (ياء الملكية)',
+        pronunciation: '/maɪ/',
+        partOfSpeech: 'determiner'
+      },
+      your: {
+        translation: 'لك (كاف الملكية)',
+        pronunciation: '/jɔːr/',
+        partOfSpeech: 'determiner'
+      },
+      his: {
+        translation: 'له',
+        pronunciation: '/hɪz/',
+        partOfSpeech: 'determiner'
+      },
+      her: {
+        translation: 'لها',
+        pronunciation: '/hɜːr/',
+        partOfSpeech: 'determiner'
+      },
+      our: {
+        translation: 'لنا (نا الفاعلين)',
+        pronunciation: '/aʊər/',
+        partOfSpeech: 'determiner'
+      },
+      some: {
+        translation: 'بعض',
+        pronunciation: '/sʌm/',
+        partOfSpeech: 'determiner'
+      },
+      all: {
+        translation: 'كل / جميع',
+        pronunciation: '/ɔːl/',
+        partOfSpeech: 'determiner'
+      },
+      every: {
+        translation: 'كل',
+        pronunciation: '/ˈɛv.ri/',
+        partOfSpeech: 'determiner'
+      },
+      a: {
+        translation: 'أداة تنكير',
+        pronunciation: '/ə/',
+        partOfSpeech: 'article'
+      },
+      an: {
+        translation: 'أداة تنكير',
+        pronunciation: '/æn/',
+        partOfSpeech: 'article'
+      },
+      the: {
+        translation: 'أداة تعريف',
+        pronunciation: '/ðə/',
+        partOfSpeech: 'article'
+      },
 
       // Verbs (Be & Auxiliaries)
-      am: { translation: "أكون", pronunciation: "/æm/", partOfSpeech: "verb" },
-      is: { translation: "يكون / تكون", pronunciation: "/ɪz/", partOfSpeech: "verb" },
-      are: { translation: "يكونون", pronunciation: "/ɑːr/", partOfSpeech: "verb" },
-      was: { translation: "كان", pronunciation: "/wɒz/", partOfSpeech: "verb" },
-      were: { translation: "كانوا", pronunciation: "/wɜːr/", partOfSpeech: "verb" },
-      do: { translation: "يفعل (فعل مساعد)", pronunciation: "/duː/", partOfSpeech: "verb" },
-      does: { translation: "يفعل (فعل مساعد)", pronunciation: "/dʌz/", partOfSpeech: "verb" },
-      have: { translation: "يمتلك / لديه", pronunciation: "/hæv/", partOfSpeech: "verb" },
-      has: { translation: "يمتلك / لديه", pronunciation: "/hæz/", partOfSpeech: "verb" },
-      can: { translation: "يستطيع", pronunciation: "/kæn/", partOfSpeech: "verb" },
-      will: { translation: "سوف (للمستقبل)", pronunciation: "/wɪl/", partOfSpeech: "verb" },
+      am: { translation: 'أكون', pronunciation: '/æm/', partOfSpeech: 'verb' },
+      is: {
+        translation: 'يكون / تكون',
+        pronunciation: '/ɪz/',
+        partOfSpeech: 'verb'
+      },
+      are: {
+        translation: 'يكونون',
+        pronunciation: '/ɑːr/',
+        partOfSpeech: 'verb'
+      },
+      was: { translation: 'كان', pronunciation: '/wɒz/', partOfSpeech: 'verb' },
+      were: {
+        translation: 'كانوا',
+        pronunciation: '/wɜːr/',
+        partOfSpeech: 'verb'
+      },
+      do: {
+        translation: 'يفعل (فعل مساعد)',
+        pronunciation: '/duː/',
+        partOfSpeech: 'verb'
+      },
+      does: {
+        translation: 'يفعل (فعل مساعد)',
+        pronunciation: '/dʌz/',
+        partOfSpeech: 'verb'
+      },
+      have: {
+        translation: 'يمتلك / لديه',
+        pronunciation: '/hæv/',
+        partOfSpeech: 'verb'
+      },
+      has: {
+        translation: 'يمتلك / لديه',
+        pronunciation: '/hæz/',
+        partOfSpeech: 'verb'
+      },
+      can: {
+        translation: 'يستطيع',
+        pronunciation: '/kæn/',
+        partOfSpeech: 'verb'
+      },
+      will: {
+        translation: 'سوف (للمستقبل)',
+        pronunciation: '/wɪl/',
+        partOfSpeech: 'verb'
+      },
 
       // Common Verbs
-      answer: { translation: "يرد / يجيب", pronunciation: "/ˈæn.sər/", partOfSpeech: "verb" },
-      answers: { translation: "يرد / يجيب", pronunciation: "/ˈæn.sərz/", partOfSpeech: "verb" },
-      arrive: { translation: "يصل", pronunciation: "/əˈraɪv/", partOfSpeech: "verb" },
-      boiling: { translation: "يغلي", pronunciation: "/ˈbɔɪ.lɪŋ/", partOfSpeech: "verb" },
-      brush: { translation: "يفرش / ينظف", pronunciation: "/brʌʃ/", partOfSpeech: "verb" },
-      buy: { translation: "يشتري", pronunciation: "/baɪ/", partOfSpeech: "verb" },
-      call: { translation: "يتصل / ينادي", pronunciation: "/kɔːl/", partOfSpeech: "verb" },
-      check: { translation: "يتفقد / يفحص", pronunciation: "/tʃɛk/", partOfSpeech: "verb" },
-      clean: { translation: "ينظف", pronunciation: "/kliːn/", partOfSpeech: "verb" },
-      closes: { translation: "يغلق", pronunciation: "/ˈkloʊ.zɪz/", partOfSpeech: "verb" },
-      cook: { translation: "يطبخ", pronunciation: "/kʊk/", partOfSpeech: "verb" },
-      cost: { translation: "يكلف / سعر", pronunciation: "/kɒst/", partOfSpeech: "verb / noun" },
-      drive: { translation: "يقود", pronunciation: "/draɪv/", partOfSpeech: "verb" },
-      drink: { translation: "يشرب", pronunciation: "/drɪŋk/", partOfSpeech: "verb" },
-      drinks: { translation: "يشرب", pronunciation: "/drɪŋks/", partOfSpeech: "verb" },
-      eat: { translation: "يأكل", pronunciation: "/iːt/", partOfSpeech: "verb" },
-      exercise: { translation: "يمارس الرياضة", pronunciation: "/ˈɛk.sər.saɪz/", partOfSpeech: "verb / noun" },
-      feel: { translation: "يشعر", pronunciation: "/fiːl/", partOfSpeech: "verb" },
-      find: { translation: "يجد", pronunciation: "/faɪnd/", partOfSpeech: "verb" },
-      finish: { translation: "ينهي", pronunciation: "/ˈfɪn.ɪʃ/", partOfSpeech: "verb" },
-      gives: { translation: "يعطي", pronunciation: "/ɡɪvz/", partOfSpeech: "verb" },
-      go: { translation: "يذهب", pronunciation: "/ɡoʊ/", partOfSpeech: "verb" },
-      goes: { translation: "يذهب", pronunciation: "/ɡoʊz/", partOfSpeech: "verb" },
-      homework: { translation: "واجبات مدرسية", pronunciation: "/ˈhoʊm.wɜːrk/", partOfSpeech: "noun" },
-      hurts: { translation: "يؤلم", pronunciation: "/hɜːrts/", partOfSpeech: "verb" },
-      learn: { translation: "يتعلم", pronunciation: "/lɜːrn/", partOfSpeech: "verb" },
-      leaves: { translation: "يغادر / يترك", pronunciation: "/liːvz/", partOfSpeech: "verb" },
-      like: { translation: "يحب / يفضل", pronunciation: "/laɪk/", partOfSpeech: "verb" },
-      live: { translation: "يعيش / يسكن", pronunciation: "/lɪv/", partOfSpeech: "verb" },
-      lives: { translation: "يعيش / يسكن", pronunciation: "/lɪvz/", partOfSpeech: "verb" },
-      love: { translation: "يحب", pronunciation: "/lʌv/", partOfSpeech: "verb" },
-      mean: { translation: "يعني", pronunciation: "/miːn/", partOfSpeech: "verb" },
-      meet: { translation: "يلتقي", pronunciation: "/miːt/", partOfSpeech: "verb" },
-      meets: { translation: "يجتمع / يلتقي", pronunciation: "/miːts/", partOfSpeech: "verb" },
-      need: { translation: "يحتاج", pronunciation: "/niːd/", partOfSpeech: "verb" },
-      opens: { translation: "يفتح", pronunciation: "/ˈoʊ.pənz/", partOfSpeech: "verb" },
-      pay: { translation: "يدفع مالًا", pronunciation: "/peɪ/", partOfSpeech: "verb" },
-      plays: { translation: "يلعب", pronunciation: "/pleɪz/", partOfSpeech: "verb" },
-      raining: { translation: "تمطر", pronunciation: "/ˈreɪ.nɪŋ/", partOfSpeech: "verb" },
-      rains: { translation: "تمطر", pronunciation: "/reɪnz/", partOfSpeech: "verb" },
-      read: { translation: "يقرأ", pronunciation: "/riːd/", partOfSpeech: "verb" },
-      reads: { translation: "تقرأ / يقرأ", pronunciation: "/riːdz/", partOfSpeech: "verb" },
-      rest: { translation: "يستريح / راحة", pronunciation: "/rɛst/", partOfSpeech: "verb / noun" },
-      say: { translation: "يقول", pronunciation: "/seɪ/", partOfSpeech: "verb" },
-      see: { translation: "يرى", pronunciation: "/siː/", partOfSpeech: "verb" },
-      send: { translation: "يرسل", pronunciation: "/sɛnd/", partOfSpeech: "verb" },
-      sends: { translation: "يرسل", pronunciation: "/sɛndz/", partOfSpeech: "verb" },
-      sleep: { translation: "ينام", pronunciation: "/sliːp/", partOfSpeech: "verb" },
-      speak: { translation: "يتحدث", pronunciation: "/spiːk/", partOfSpeech: "verb" },
-      spell: { translation: "يهجي الحروف", pronunciation: "/spɛl/", partOfSpeech: "verb" },
-      spend: { translation: "يقضي (وقتًا أو مالًا)", pronunciation: "/spɛnd/", partOfSpeech: "verb" },
-      start: { translation: "يبدأ", pronunciation: "/stɑːrt/", partOfSpeech: "verb" },
-      starts: { translation: "يبدأ", pronunciation: "/stɑːrts/", partOfSpeech: "verb" },
-      stay: { translation: "يقيم / يمكث", pronunciation: "/steɪ/", partOfSpeech: "verb" },
-      study: { translation: "يدرس", pronunciation: "/ˈstʌd.i/", partOfSpeech: "verb" },
-      studies: { translation: "يدرس / تدرس", pronunciation: "/ˈstʌd.iz/", partOfSpeech: "verb" },
-      take: { translation: "يأخذ", pronunciation: "/teɪk/", partOfSpeech: "verb" },
-      talk: { translation: "يتحدث / يتكلم", pronunciation: "/tɔːk/", partOfSpeech: "verb" },
-      tastes: { translation: "طعمه", pronunciation: "/teɪsts/", partOfSpeech: "verb" },
-      teaches: { translation: "يدرّس", pronunciation: "/ˈtiː.tʃɪz/", partOfSpeech: "verb" },
-      tells: { translation: "يخبر / يروي", pronunciation: "/tɛlz/", partOfSpeech: "verb" },
-      travel: { translation: "يسافر", pronunciation: "/ˈtræv.əl/", partOfSpeech: "verb" },
-      understand: { translation: "يفهم", pronunciation: "/ˌʌn.dərˈstænd/", partOfSpeech: "verb" },
-      use: { translation: "يستخدم", pronunciation: "/juːz/", partOfSpeech: "verb" },
-      visit: { translation: "يزور", pronunciation: "/ˈvɪz.ɪt/", partOfSpeech: "verb" },
-      waiting: { translation: "ينتظر", pronunciation: "/ˈweɪ.tɪŋ/", partOfSpeech: "verb" },
-      wake: { translation: "يستيقظ", pronunciation: "/weɪk/", partOfSpeech: "verb" },
-      walk: { translation: "يمشي", pronunciation: "/wɔːk/", partOfSpeech: "verb" },
-      want: { translation: "يريد", pronunciation: "/wɒnt/", partOfSpeech: "verb" },
-      watch: { translation: "يشاهد", pronunciation: "/wɒtʃ/", partOfSpeech: "verb" },
-      work: { translation: "يعمل / عمل", pronunciation: "/wɜːrk/", partOfSpeech: "verb / noun" },
-      works: { translation: "يعمل", pronunciation: "/wɜːrks/", partOfSpeech: "verb" },
-      write: { translation: "يكتب", pronunciation: "/raɪt/", partOfSpeech: "verb" },
+      answer: {
+        translation: 'يرد / يجيب',
+        pronunciation: '/ˈæn.sər/',
+        partOfSpeech: 'verb'
+      },
+      answers: {
+        translation: 'يرد / يجيب',
+        pronunciation: '/ˈæn.sərz/',
+        partOfSpeech: 'verb'
+      },
+      arrive: {
+        translation: 'يصل',
+        pronunciation: '/əˈraɪv/',
+        partOfSpeech: 'verb'
+      },
+      boiling: {
+        translation: 'يغلي',
+        pronunciation: '/ˈbɔɪ.lɪŋ/',
+        partOfSpeech: 'verb'
+      },
+      brush: {
+        translation: 'يفرش / ينظف',
+        pronunciation: '/brʌʃ/',
+        partOfSpeech: 'verb'
+      },
+      buy: {
+        translation: 'يشتري',
+        pronunciation: '/baɪ/',
+        partOfSpeech: 'verb'
+      },
+      call: {
+        translation: 'يتصل / ينادي',
+        pronunciation: '/kɔːl/',
+        partOfSpeech: 'verb'
+      },
+      check: {
+        translation: 'يتفقد / يفحص',
+        pronunciation: '/tʃɛk/',
+        partOfSpeech: 'verb'
+      },
+      clean: {
+        translation: 'ينظف',
+        pronunciation: '/kliːn/',
+        partOfSpeech: 'verb'
+      },
+      closes: {
+        translation: 'يغلق',
+        pronunciation: '/ˈkloʊ.zɪz/',
+        partOfSpeech: 'verb'
+      },
+      cook: {
+        translation: 'يطبخ',
+        pronunciation: '/kʊk/',
+        partOfSpeech: 'verb'
+      },
+      cost: {
+        translation: 'يكلف / سعر',
+        pronunciation: '/kɒst/',
+        partOfSpeech: 'verb / noun'
+      },
+      drive: {
+        translation: 'يقود',
+        pronunciation: '/draɪv/',
+        partOfSpeech: 'verb'
+      },
+      drink: {
+        translation: 'يشرب',
+        pronunciation: '/drɪŋk/',
+        partOfSpeech: 'verb'
+      },
+      drinks: {
+        translation: 'يشرب',
+        pronunciation: '/drɪŋks/',
+        partOfSpeech: 'verb'
+      },
+      eat: {
+        translation: 'يأكل',
+        pronunciation: '/iːt/',
+        partOfSpeech: 'verb'
+      },
+      exercise: {
+        translation: 'يمارس الرياضة',
+        pronunciation: '/ˈɛk.sər.saɪz/',
+        partOfSpeech: 'verb / noun'
+      },
+      feel: {
+        translation: 'يشعر',
+        pronunciation: '/fiːl/',
+        partOfSpeech: 'verb'
+      },
+      find: {
+        translation: 'يجد',
+        pronunciation: '/faɪnd/',
+        partOfSpeech: 'verb'
+      },
+      finish: {
+        translation: 'ينهي',
+        pronunciation: '/ˈfɪn.ɪʃ/',
+        partOfSpeech: 'verb'
+      },
+      gives: {
+        translation: 'يعطي',
+        pronunciation: '/ɡɪvz/',
+        partOfSpeech: 'verb'
+      },
+      go: { translation: 'يذهب', pronunciation: '/ɡoʊ/', partOfSpeech: 'verb' },
+      goes: {
+        translation: 'يذهب',
+        pronunciation: '/ɡoʊz/',
+        partOfSpeech: 'verb'
+      },
+      homework: {
+        translation: 'واجبات مدرسية',
+        pronunciation: '/ˈhoʊm.wɜːrk/',
+        partOfSpeech: 'noun'
+      },
+      hurts: {
+        translation: 'يؤلم',
+        pronunciation: '/hɜːrts/',
+        partOfSpeech: 'verb'
+      },
+      learn: {
+        translation: 'يتعلم',
+        pronunciation: '/lɜːrn/',
+        partOfSpeech: 'verb'
+      },
+      leaves: {
+        translation: 'يغادر / يترك',
+        pronunciation: '/liːvz/',
+        partOfSpeech: 'verb'
+      },
+      like: {
+        translation: 'يحب / يفضل',
+        pronunciation: '/laɪk/',
+        partOfSpeech: 'verb'
+      },
+      live: {
+        translation: 'يعيش / يسكن',
+        pronunciation: '/lɪv/',
+        partOfSpeech: 'verb'
+      },
+      lives: {
+        translation: 'يعيش / يسكن',
+        pronunciation: '/lɪvz/',
+        partOfSpeech: 'verb'
+      },
+      love: {
+        translation: 'يحب',
+        pronunciation: '/lʌv/',
+        partOfSpeech: 'verb'
+      },
+      mean: {
+        translation: 'يعني',
+        pronunciation: '/miːn/',
+        partOfSpeech: 'verb'
+      },
+      meet: {
+        translation: 'يلتقي',
+        pronunciation: '/miːt/',
+        partOfSpeech: 'verb'
+      },
+      meets: {
+        translation: 'يجتمع / يلتقي',
+        pronunciation: '/miːts/',
+        partOfSpeech: 'verb'
+      },
+      need: {
+        translation: 'يحتاج',
+        pronunciation: '/niːd/',
+        partOfSpeech: 'verb'
+      },
+      opens: {
+        translation: 'يفتح',
+        pronunciation: '/ˈoʊ.pənz/',
+        partOfSpeech: 'verb'
+      },
+      pay: {
+        translation: 'يدفع مالًا',
+        pronunciation: '/peɪ/',
+        partOfSpeech: 'verb'
+      },
+      plays: {
+        translation: 'يلعب',
+        pronunciation: '/pleɪz/',
+        partOfSpeech: 'verb'
+      },
+      raining: {
+        translation: 'تمطر',
+        pronunciation: '/ˈreɪ.nɪŋ/',
+        partOfSpeech: 'verb'
+      },
+      rains: {
+        translation: 'تمطر',
+        pronunciation: '/reɪnz/',
+        partOfSpeech: 'verb'
+      },
+      read: {
+        translation: 'يقرأ',
+        pronunciation: '/riːd/',
+        partOfSpeech: 'verb'
+      },
+      reads: {
+        translation: 'تقرأ / يقرأ',
+        pronunciation: '/riːdz/',
+        partOfSpeech: 'verb'
+      },
+      rest: {
+        translation: 'يستريح / راحة',
+        pronunciation: '/rɛst/',
+        partOfSpeech: 'verb / noun'
+      },
+      say: {
+        translation: 'يقول',
+        pronunciation: '/seɪ/',
+        partOfSpeech: 'verb'
+      },
+      see: { translation: 'يرى', pronunciation: '/siː/', partOfSpeech: 'verb' },
+      send: {
+        translation: 'يرسل',
+        pronunciation: '/sɛnd/',
+        partOfSpeech: 'verb'
+      },
+      sends: {
+        translation: 'يرسل',
+        pronunciation: '/sɛndz/',
+        partOfSpeech: 'verb'
+      },
+      sleep: {
+        translation: 'ينام',
+        pronunciation: '/sliːp/',
+        partOfSpeech: 'verb'
+      },
+      speak: {
+        translation: 'يتحدث',
+        pronunciation: '/spiːk/',
+        partOfSpeech: 'verb'
+      },
+      spell: {
+        translation: 'يهجي الحروف',
+        pronunciation: '/spɛl/',
+        partOfSpeech: 'verb'
+      },
+      spend: {
+        translation: 'يقضي (وقتًا أو مالًا)',
+        pronunciation: '/spɛnd/',
+        partOfSpeech: 'verb'
+      },
+      start: {
+        translation: 'يبدأ',
+        pronunciation: '/stɑːrt/',
+        partOfSpeech: 'verb'
+      },
+      starts: {
+        translation: 'يبدأ',
+        pronunciation: '/stɑːrts/',
+        partOfSpeech: 'verb'
+      },
+      stay: {
+        translation: 'يقيم / يمكث',
+        pronunciation: '/steɪ/',
+        partOfSpeech: 'verb'
+      },
+      study: {
+        translation: 'يدرس',
+        pronunciation: '/ˈstʌd.i/',
+        partOfSpeech: 'verb'
+      },
+      studies: {
+        translation: 'يدرس / تدرس',
+        pronunciation: '/ˈstʌd.iz/',
+        partOfSpeech: 'verb'
+      },
+      take: {
+        translation: 'يأخذ',
+        pronunciation: '/teɪk/',
+        partOfSpeech: 'verb'
+      },
+      talk: {
+        translation: 'يتحدث / يتكلم',
+        pronunciation: '/tɔːk/',
+        partOfSpeech: 'verb'
+      },
+      tastes: {
+        translation: 'طعمه',
+        pronunciation: '/teɪsts/',
+        partOfSpeech: 'verb'
+      },
+      teaches: {
+        translation: 'يدرّس',
+        pronunciation: '/ˈtiː.tʃɪz/',
+        partOfSpeech: 'verb'
+      },
+      tells: {
+        translation: 'يخبر / يروي',
+        pronunciation: '/tɛlz/',
+        partOfSpeech: 'verb'
+      },
+      travel: {
+        translation: 'يسافر',
+        pronunciation: '/ˈtræv.əl/',
+        partOfSpeech: 'verb'
+      },
+      understand: {
+        translation: 'يفهم',
+        pronunciation: '/ˌʌn.dərˈstænd/',
+        partOfSpeech: 'verb'
+      },
+      use: {
+        translation: 'يستخدم',
+        pronunciation: '/juːz/',
+        partOfSpeech: 'verb'
+      },
+      visit: {
+        translation: 'يزور',
+        pronunciation: '/ˈvɪz.ɪt/',
+        partOfSpeech: 'verb'
+      },
+      waiting: {
+        translation: 'ينتظر',
+        pronunciation: '/ˈweɪ.tɪŋ/',
+        partOfSpeech: 'verb'
+      },
+      wake: {
+        translation: 'يستيقظ',
+        pronunciation: '/weɪk/',
+        partOfSpeech: 'verb'
+      },
+      walk: {
+        translation: 'يمشي',
+        pronunciation: '/wɔːk/',
+        partOfSpeech: 'verb'
+      },
+      want: {
+        translation: 'يريد',
+        pronunciation: '/wɒnt/',
+        partOfSpeech: 'verb'
+      },
+      watch: {
+        translation: 'يشاهد',
+        pronunciation: '/wɒtʃ/',
+        partOfSpeech: 'verb'
+      },
+      work: {
+        translation: 'يعمل / عمل',
+        pronunciation: '/wɜːrk/',
+        partOfSpeech: 'verb / noun'
+      },
+      works: {
+        translation: 'يعمل',
+        pronunciation: '/wɜːrks/',
+        partOfSpeech: 'verb'
+      },
+      write: {
+        translation: 'يكتب',
+        pronunciation: '/raɪt/',
+        partOfSpeech: 'verb'
+      },
 
       // Body & Health Nouns
-      eyes: { translation: "عيون", pronunciation: "/aɪz/", partOfSpeech: "noun" },
-      back: { translation: "ظهر", pronunciation: "/bæk/", partOfSpeech: "noun" },
-      headache: { translation: "صداع", pronunciation: "/ˈhɛd.eɪk/", partOfSpeech: "noun" },
-      fever: { translation: "حمى / حرارة", pronunciation: "/ˈfiː.vər/", partOfSpeech: "noun" },
-      doctor: { translation: "طبيب", pronunciation: "/ˈdɒk.tər/", partOfSpeech: "noun" },
-      nurse: { translation: "ممرضة / ممرض", pronunciation: "/nɜːrs/", partOfSpeech: "noun" },
-      medicine: { translation: "دواء / طب", pronunciation: "/ˈmɛd.sɪn/", partOfSpeech: "noun" },
-      health: { translation: "صحة", pronunciation: "/hɛlθ/", partOfSpeech: "noun" },
-      healthy: { translation: "صحي", pronunciation: "/ˈhɛl.θi/", partOfSpeech: "adjective" },
+      eyes: {
+        translation: 'عيون',
+        pronunciation: '/aɪz/',
+        partOfSpeech: 'noun'
+      },
+      back: {
+        translation: 'ظهر',
+        pronunciation: '/bæk/',
+        partOfSpeech: 'noun'
+      },
+      headache: {
+        translation: 'صداع',
+        pronunciation: '/ˈhɛd.eɪk/',
+        partOfSpeech: 'noun'
+      },
+      fever: {
+        translation: 'حمى / حرارة',
+        pronunciation: '/ˈfiː.vər/',
+        partOfSpeech: 'noun'
+      },
+      doctor: {
+        translation: 'طبيب',
+        pronunciation: '/ˈdɒk.tər/',
+        partOfSpeech: 'noun'
+      },
+      nurse: {
+        translation: 'ممرضة / ممرض',
+        pronunciation: '/nɜːrs/',
+        partOfSpeech: 'noun'
+      },
+      medicine: {
+        translation: 'دواء / طب',
+        pronunciation: '/ˈmɛd.sɪn/',
+        partOfSpeech: 'noun'
+      },
+      health: {
+        translation: 'صحة',
+        pronunciation: '/hɛlθ/',
+        partOfSpeech: 'noun'
+      },
+      healthy: {
+        translation: 'صحي',
+        pronunciation: '/ˈhɛl.θi/',
+        partOfSpeech: 'adjective'
+      },
 
       // Food & Drink
-      coffee: { translation: "قهوة", pronunciation: "/ˈkɔːfi/", partOfSpeech: "noun" },
-      tea: { translation: "شاي", pronunciation: "/tiː/", partOfSpeech: "noun" },
-      water: { translation: "ماء", pronunciation: "/ˈwɔːtər/", partOfSpeech: "noun" },
-      milk: { translation: "حليب", pronunciation: "/mɪlk/", partOfSpeech: "noun" },
-      juice: { translation: "عصير", pronunciation: "/dʒuːs/", partOfSpeech: "noun" },
-      soup: { translation: "حساء / شوربة", pronunciation: "/suːp/", partOfSpeech: "noun" },
-      rice: { translation: "أرز", pronunciation: "/raɪs/", partOfSpeech: "noun" },
-      bread: { translation: "خبز", pronunciation: "/brɛd/", partOfSpeech: "noun" },
-      cheese: { translation: "جبن", pronunciation: "/tʃiːz/", partOfSpeech: "noun" },
-      egg: { translation: "بيضة", pronunciation: "/ɛɡ/", partOfSpeech: "noun" },
-      apple: { translation: "تفاحة", pronunciation: "/ˈæp.əl/", partOfSpeech: "noun" },
-      orange: { translation: "برتقال", pronunciation: "/ˈɒr.ɪndʒ/", partOfSpeech: "noun" },
-      fruit: { translation: "فاكهة", pronunciation: "/fruːt/", partOfSpeech: "noun" },
-      vegetables: { translation: "خضروات", pronunciation: "/ˈvɛdʒ.tə.bəlz/", partOfSpeech: "noun" },
-      cake: { translation: "كعكة", pronunciation: "/keɪk/", partOfSpeech: "noun" },
-      sugar: { translation: "سكر", pronunciation: "/ˈʃʊɡ.ər/", partOfSpeech: "noun" },
-      cereal: { translation: "حبوب الإفطار", pronunciation: "/ˈsɪə.ri.əl/", partOfSpeech: "noun" },
-      pot: { translation: "وعاء / قدر", pronunciation: "/pɒt/", partOfSpeech: "noun" },
-      breakfast: { translation: "وجبة الإفطار", pronunciation: "/ˈbrɛk.fəst/", partOfSpeech: "noun" },
-      lunch: { translation: "وجبة الغداء", pronunciation: "/lʌntʃ/", partOfSpeech: "noun" },
-      dinner: { translation: "وجبة العشاء", pronunciation: "/ˈdɪnər/", partOfSpeech: "noun" },
-      restaurant: { translation: "مطعم", pronunciation: "/ˈrɛs.tə.rɒnt/", partOfSpeech: "noun" },
-      food: { translation: "طعام", pronunciation: "/fuːd/", partOfSpeech: "noun" },
-      hungry: { translation: "جائع", pronunciation: "/ˈhʌŋ.ɡri/", partOfSpeech: "adjective" },
-      thirsty: { translation: "عطشان", pronunciation: "/ˈθɜːr.sti/", partOfSpeech: "adjective" },
-      delicious: { translation: "لذيذ", pronunciation: "/dɪˈlɪʃ.əs/", partOfSpeech: "adjective" },
-      sweet: { translation: "حلو", pronunciation: "/swiːt/", partOfSpeech: "adjective" },
-      fresh: { translation: "طازج", pronunciation: "/frɛʃ/", partOfSpeech: "adjective" },
+      coffee: {
+        translation: 'قهوة',
+        pronunciation: '/ˈkɔːfi/',
+        partOfSpeech: 'noun'
+      },
+      tea: { translation: 'شاي', pronunciation: '/tiː/', partOfSpeech: 'noun' },
+      water: {
+        translation: 'ماء',
+        pronunciation: '/ˈwɔːtər/',
+        partOfSpeech: 'noun'
+      },
+      milk: {
+        translation: 'حليب',
+        pronunciation: '/mɪlk/',
+        partOfSpeech: 'noun'
+      },
+      juice: {
+        translation: 'عصير',
+        pronunciation: '/dʒuːs/',
+        partOfSpeech: 'noun'
+      },
+      soup: {
+        translation: 'حساء / شوربة',
+        pronunciation: '/suːp/',
+        partOfSpeech: 'noun'
+      },
+      rice: {
+        translation: 'أرز',
+        pronunciation: '/raɪs/',
+        partOfSpeech: 'noun'
+      },
+      bread: {
+        translation: 'خبز',
+        pronunciation: '/brɛd/',
+        partOfSpeech: 'noun'
+      },
+      cheese: {
+        translation: 'جبن',
+        pronunciation: '/tʃiːz/',
+        partOfSpeech: 'noun'
+      },
+      egg: { translation: 'بيضة', pronunciation: '/ɛɡ/', partOfSpeech: 'noun' },
+      apple: {
+        translation: 'تفاحة',
+        pronunciation: '/ˈæp.əl/',
+        partOfSpeech: 'noun'
+      },
+      orange: {
+        translation: 'برتقال',
+        pronunciation: '/ˈɒr.ɪndʒ/',
+        partOfSpeech: 'noun'
+      },
+      fruit: {
+        translation: 'فاكهة',
+        pronunciation: '/fruːt/',
+        partOfSpeech: 'noun'
+      },
+      vegetables: {
+        translation: 'خضروات',
+        pronunciation: '/ˈvɛdʒ.tə.bəlz/',
+        partOfSpeech: 'noun'
+      },
+      cake: {
+        translation: 'كعكة',
+        pronunciation: '/keɪk/',
+        partOfSpeech: 'noun'
+      },
+      sugar: {
+        translation: 'سكر',
+        pronunciation: '/ˈʃʊɡ.ər/',
+        partOfSpeech: 'noun'
+      },
+      cereal: {
+        translation: 'حبوب الإفطار',
+        pronunciation: '/ˈsɪə.ri.əl/',
+        partOfSpeech: 'noun'
+      },
+      pot: {
+        translation: 'وعاء / قدر',
+        pronunciation: '/pɒt/',
+        partOfSpeech: 'noun'
+      },
+      breakfast: {
+        translation: 'وجبة الإفطار',
+        pronunciation: '/ˈbrɛk.fəst/',
+        partOfSpeech: 'noun'
+      },
+      lunch: {
+        translation: 'وجبة الغداء',
+        pronunciation: '/lʌntʃ/',
+        partOfSpeech: 'noun'
+      },
+      dinner: {
+        translation: 'وجبة العشاء',
+        pronunciation: '/ˈdɪnər/',
+        partOfSpeech: 'noun'
+      },
+      restaurant: {
+        translation: 'مطعم',
+        pronunciation: '/ˈrɛs.tə.rɒnt/',
+        partOfSpeech: 'noun'
+      },
+      food: {
+        translation: 'طعام',
+        pronunciation: '/fuːd/',
+        partOfSpeech: 'noun'
+      },
+      hungry: {
+        translation: 'جائع',
+        pronunciation: '/ˈhʌŋ.ɡri/',
+        partOfSpeech: 'adjective'
+      },
+      thirsty: {
+        translation: 'عطشان',
+        pronunciation: '/ˈθɜːr.sti/',
+        partOfSpeech: 'adjective'
+      },
+      delicious: {
+        translation: 'لذيذ',
+        pronunciation: '/dɪˈlɪʃ.əs/',
+        partOfSpeech: 'adjective'
+      },
+      sweet: {
+        translation: 'حلو',
+        pronunciation: '/swiːt/',
+        partOfSpeech: 'adjective'
+      },
+      fresh: {
+        translation: 'طازج',
+        pronunciation: '/frɛʃ/',
+        partOfSpeech: 'adjective'
+      },
 
       // Family
-      sister: { translation: "أخت", pronunciation: "/ˈsɪstər/", partOfSpeech: "noun" },
-      brother: { translation: "أخ", pronunciation: "/ˈbrʌðər/", partOfSpeech: "noun" },
-      brothers: { translation: "إخوة", pronunciation: "/ˈbrʌðərz/", partOfSpeech: "noun" },
-      parents: { translation: "الوالدان", pronunciation: "/ˈpɛrənts/", partOfSpeech: "noun" },
-      mother: { translation: "أم", pronunciation: "/ˈmʌð.ər/", partOfSpeech: "noun" },
-      father: { translation: "أب", pronunciation: "/ˈfɑː.ðər/", partOfSpeech: "noun" },
-      grandfather: { translation: "جد", pronunciation: "/ˈɡrændˌfɑːðər/", partOfSpeech: "noun" },
-      grandmother: { translation: "جدة", pronunciation: "/ˈɡrændˌmʌðər/", partOfSpeech: "noun" },
-      aunt: { translation: "عمة / خالة", pronunciation: "/ɑːnt/", partOfSpeech: "noun" },
-      uncle: { translation: "عم / خال", pronunciation: "/ˈʌŋ.kəl/", partOfSpeech: "noun" },
-      cousins: { translation: "أبناء العم / الخال", pronunciation: "/ˈkʌz.ənz/", partOfSpeech: "noun" },
-      family: { translation: "عائلة", pronunciation: "/ˈfæm.ɪ.li/", partOfSpeech: "noun" },
+      sister: {
+        translation: 'أخت',
+        pronunciation: '/ˈsɪstər/',
+        partOfSpeech: 'noun'
+      },
+      brother: {
+        translation: 'أخ',
+        pronunciation: '/ˈbrʌðər/',
+        partOfSpeech: 'noun'
+      },
+      brothers: {
+        translation: 'إخوة',
+        pronunciation: '/ˈbrʌðərz/',
+        partOfSpeech: 'noun'
+      },
+      parents: {
+        translation: 'الوالدان',
+        pronunciation: '/ˈpɛrənts/',
+        partOfSpeech: 'noun'
+      },
+      mother: {
+        translation: 'أم',
+        pronunciation: '/ˈmʌð.ər/',
+        partOfSpeech: 'noun'
+      },
+      father: {
+        translation: 'أب',
+        pronunciation: '/ˈfɑː.ðər/',
+        partOfSpeech: 'noun'
+      },
+      grandfather: {
+        translation: 'جد',
+        pronunciation: '/ˈɡrændˌfɑːðər/',
+        partOfSpeech: 'noun'
+      },
+      grandmother: {
+        translation: 'جدة',
+        pronunciation: '/ˈɡrændˌmʌðər/',
+        partOfSpeech: 'noun'
+      },
+      aunt: {
+        translation: 'عمة / خالة',
+        pronunciation: '/ɑːnt/',
+        partOfSpeech: 'noun'
+      },
+      uncle: {
+        translation: 'عم / خال',
+        pronunciation: '/ˈʌŋ.kəl/',
+        partOfSpeech: 'noun'
+      },
+      cousins: {
+        translation: 'أبناء العم / الخال',
+        pronunciation: '/ˈkʌz.ənz/',
+        partOfSpeech: 'noun'
+      },
+      family: {
+        translation: 'عائلة',
+        pronunciation: '/ˈfæm.ɪ.li/',
+        partOfSpeech: 'noun'
+      },
 
       // Home & Places
-      house: { translation: "منزل / بيت", pronunciation: "/haʊs/", partOfSpeech: "noun" },
-      home: { translation: "بيت / وطن", pronunciation: "/hoʊm/", partOfSpeech: "noun" },
-      room: { translation: "غرفة", pronunciation: "/ruːm/", partOfSpeech: "noun" },
-      bed: { translation: "سرير / نوم", pronunciation: "/bɛd/", partOfSpeech: "noun" },
-      chair: { translation: "كرسي", pronunciation: "/tʃɛər/", partOfSpeech: "noun" },
-      table: { translation: "طاولة", pronunciation: "/ˈteɪ.bəl/", partOfSpeech: "noun" },
-      wall: { translation: "جدار", pronunciation: "/wɔːl/", partOfSpeech: "noun" },
-      garden: { translation: "حديقة", pronunciation: "/ˈɡɑːr.dən/", partOfSpeech: "noun" },
-      park: { translation: "حديقة عامة", pronunciation: "/pɑːrk/", partOfSpeech: "noun" },
-      street: { translation: "شارع", pronunciation: "/striːt/", partOfSpeech: "noun" },
-      map: { translation: "خريطة", pronunciation: "/mæp/", partOfSpeech: "noun" },
-      place: { translation: "مكان", pronunciation: "/pleɪs/", partOfSpeech: "noun" },
-      fridge: { translation: "ثلاجة", pronunciation: "/frɪdʒ/", partOfSpeech: "noun" },
-      shower: { translation: "استحمام / دوش", pronunciation: "/ˈʃaʊ.ər/", partOfSpeech: "noun" },
+      house: {
+        translation: 'منزل / بيت',
+        pronunciation: '/haʊs/',
+        partOfSpeech: 'noun'
+      },
+      home: {
+        translation: 'بيت / وطن',
+        pronunciation: '/hoʊm/',
+        partOfSpeech: 'noun'
+      },
+      room: {
+        translation: 'غرفة',
+        pronunciation: '/ruːm/',
+        partOfSpeech: 'noun'
+      },
+      bed: {
+        translation: 'سرير / نوم',
+        pronunciation: '/bɛd/',
+        partOfSpeech: 'noun'
+      },
+      chair: {
+        translation: 'كرسي',
+        pronunciation: '/tʃɛər/',
+        partOfSpeech: 'noun'
+      },
+      table: {
+        translation: 'طاولة',
+        pronunciation: '/ˈteɪ.bəl/',
+        partOfSpeech: 'noun'
+      },
+      wall: {
+        translation: 'جدار',
+        pronunciation: '/wɔːl/',
+        partOfSpeech: 'noun'
+      },
+      garden: {
+        translation: 'حديقة',
+        pronunciation: '/ˈɡɑːr.dən/',
+        partOfSpeech: 'noun'
+      },
+      park: {
+        translation: 'حديقة عامة',
+        pronunciation: '/pɑːrk/',
+        partOfSpeech: 'noun'
+      },
+      street: {
+        translation: 'شارع',
+        pronunciation: '/striːt/',
+        partOfSpeech: 'noun'
+      },
+      map: {
+        translation: 'خريطة',
+        pronunciation: '/mæp/',
+        partOfSpeech: 'noun'
+      },
+      place: {
+        translation: 'مكان',
+        pronunciation: '/pleɪs/',
+        partOfSpeech: 'noun'
+      },
+      fridge: {
+        translation: 'ثلاجة',
+        pronunciation: '/frɪdʒ/',
+        partOfSpeech: 'noun'
+      },
+      shower: {
+        translation: 'استحمام / دوش',
+        pronunciation: '/ˈʃaʊ.ər/',
+        partOfSpeech: 'noun'
+      },
 
       // School & Study
-      school: { translation: "مدرسة", pronunciation: "/skuːl/", partOfSpeech: "noun" },
-      university: { translation: "جامعة", pronunciation: "/ˌjuːnɪˈvɜːrsəti/", partOfSpeech: "noun" },
-      library: { translation: "مكتبة للقراءة", pronunciation: "/ˈlaɪbrɛri/", partOfSpeech: "noun" },
-      classroom: { translation: "قاعة صف", pronunciation: "/ˈklɑːs.ruːm/", partOfSpeech: "noun" },
-      teacher: { translation: "معلم", pronunciation: "/ˈtiː.tʃər/", partOfSpeech: "noun" },
-      class: { translation: "فصل / محاضرة", pronunciation: "/klɑːs/", partOfSpeech: "noun" },
-      classes: { translation: "فصول / محاضرات", pronunciation: "/ˈklɑː.sɪz/", partOfSpeech: "noun" },
-      lesson: { translation: "درس", pronunciation: "/ˈlɛs.ən/", partOfSpeech: "noun" },
-      exam: { translation: "امتحان", pronunciation: "/ɪɡˈzæm/", partOfSpeech: "noun" },
-      math: { translation: "رياضيات", pronunciation: "/mæθ/", partOfSpeech: "noun" },
-      science: { translation: "علوم", pronunciation: "/ˈsaɪ.əns/", partOfSpeech: "noun" },
-      pen: { translation: "قلم", pronunciation: "/pɛn/", partOfSpeech: "noun" },
-      notebook: { translation: "دفتر", pronunciation: "/ˈnoʊt.bʊk/", partOfSpeech: "noun" },
-      notes: { translation: "ملاحظات", pronunciation: "/noʊts/", partOfSpeech: "noun" },
-      book: { translation: "كتاب", pronunciation: "/bʊk/", partOfSpeech: "noun" },
-      literature: { translation: "أدب", pronunciation: "/ˈlɪtərətʃər/", partOfSpeech: "noun" },
-      english: { translation: "اللغة الإنجليزية", pronunciation: "/ˈɪŋɡlɪʃ/", partOfSpeech: "noun" },
-      word: { translation: "كلمة", pronunciation: "/wɜːrd/", partOfSpeech: "noun" },
-      words: { translation: "كلمات", pronunciation: "/wɜːrdz/", partOfSpeech: "noun" },
-      easy: { translation: "سهل", pronunciation: "/ˈiː.zi/", partOfSpeech: "adjective" },
-      break: { translation: "استراحة", pronunciation: "/breɪk/", partOfSpeech: "noun" },
-      medicine_study: { translation: "دراسة الطب", pronunciation: "/ˈmɛd.sɪn/", partOfSpeech: "noun" },
+      school: {
+        translation: 'مدرسة',
+        pronunciation: '/skuːl/',
+        partOfSpeech: 'noun'
+      },
+      university: {
+        translation: 'جامعة',
+        pronunciation: '/ˌjuːnɪˈvɜːrsəti/',
+        partOfSpeech: 'noun'
+      },
+      library: {
+        translation: 'مكتبة للقراءة',
+        pronunciation: '/ˈlaɪbrɛri/',
+        partOfSpeech: 'noun'
+      },
+      classroom: {
+        translation: 'قاعة صف',
+        pronunciation: '/ˈklɑːs.ruːm/',
+        partOfSpeech: 'noun'
+      },
+      teacher: {
+        translation: 'معلم',
+        pronunciation: '/ˈtiː.tʃər/',
+        partOfSpeech: 'noun'
+      },
+      class: {
+        translation: 'فصل / محاضرة',
+        pronunciation: '/klɑːs/',
+        partOfSpeech: 'noun'
+      },
+      classes: {
+        translation: 'فصول / محاضرات',
+        pronunciation: '/ˈklɑː.sɪz/',
+        partOfSpeech: 'noun'
+      },
+      lesson: {
+        translation: 'درس',
+        pronunciation: '/ˈlɛs.ən/',
+        partOfSpeech: 'noun'
+      },
+      exam: {
+        translation: 'امتحان',
+        pronunciation: '/ɪɡˈzæm/',
+        partOfSpeech: 'noun'
+      },
+      math: {
+        translation: 'رياضيات',
+        pronunciation: '/mæθ/',
+        partOfSpeech: 'noun'
+      },
+      science: {
+        translation: 'علوم',
+        pronunciation: '/ˈsaɪ.əns/',
+        partOfSpeech: 'noun'
+      },
+      pen: { translation: 'قلم', pronunciation: '/pɛn/', partOfSpeech: 'noun' },
+      notebook: {
+        translation: 'دفتر',
+        pronunciation: '/ˈnoʊt.bʊk/',
+        partOfSpeech: 'noun'
+      },
+      notes: {
+        translation: 'ملاحظات',
+        pronunciation: '/noʊts/',
+        partOfSpeech: 'noun'
+      },
+      book: {
+        translation: 'كتاب',
+        pronunciation: '/bʊk/',
+        partOfSpeech: 'noun'
+      },
+      literature: {
+        translation: 'أدب',
+        pronunciation: '/ˈlɪtərətʃər/',
+        partOfSpeech: 'noun'
+      },
+      english: {
+        translation: 'اللغة الإنجليزية',
+        pronunciation: '/ˈɪŋɡlɪʃ/',
+        partOfSpeech: 'noun'
+      },
+      word: {
+        translation: 'كلمة',
+        pronunciation: '/wɜːrd/',
+        partOfSpeech: 'noun'
+      },
+      words: {
+        translation: 'كلمات',
+        pronunciation: '/wɜːrdz/',
+        partOfSpeech: 'noun'
+      },
+      easy: {
+        translation: 'سهل',
+        pronunciation: '/ˈiː.zi/',
+        partOfSpeech: 'adjective'
+      },
+      break: {
+        translation: 'استراحة',
+        pronunciation: '/breɪk/',
+        partOfSpeech: 'noun'
+      },
+      medicine_study: {
+        translation: 'دراسة الطب',
+        pronunciation: '/ˈmɛd.sɪn/',
+        partOfSpeech: 'noun'
+      },
 
       // Work & Career
-      office: { translation: "مكتب عمل", pronunciation: "/ˈɔːfɪs/", partOfSpeech: "noun" },
-      job: { translation: "وظيفة / عمل", pronunciation: "/dʒɒb/", partOfSpeech: "noun" },
-      boss: { translation: "مدير / رئيس", pronunciation: "/bɒs/", partOfSpeech: "noun" },
-      team: { translation: "فريق", pronunciation: "/tiːm/", partOfSpeech: "noun" },
-      company: { translation: "شركة", pronunciation: "/ˈkʌm.pə.ni/", partOfSpeech: "noun" },
-      meeting: { translation: "اجتماع", pronunciation: "/ˈmiː.tɪŋ/", partOfSpeech: "noun" },
-      salary: { translation: "راتب", pronunciation: "/ˈsæl.ər.i/", partOfSpeech: "noun" },
-      computers: { translation: "حواسيب", pronunciation: "/kəmˈpjuː.tərz/", partOfSpeech: "noun" },
-      successful: { translation: "ناجح", pronunciation: "/səkˈsɛs.fəl/", partOfSpeech: "adjective" },
-      busy: { translation: "مشغول", pronunciation: "/ˈbɪz.i/", partOfSpeech: "adjective" },
-      important: { translation: "هام / ضروري", pronunciation: "/ɪmˈpɔːr.tənt/", partOfSpeech: "adjective" },
-      emails: { translation: "رسائل بريد إلكتروني", pronunciation: "/ˈiː.meɪlz/", partOfSpeech: "noun" },
-      clients: { translation: "عملاء", pronunciation: "/ˈklaɪ.ənts/", partOfSpeech: "noun" },
+      office: {
+        translation: 'مكتب عمل',
+        pronunciation: '/ˈɔːfɪs/',
+        partOfSpeech: 'noun'
+      },
+      job: {
+        translation: 'وظيفة / عمل',
+        pronunciation: '/dʒɒb/',
+        partOfSpeech: 'noun'
+      },
+      boss: {
+        translation: 'مدير / رئيس',
+        pronunciation: '/bɒs/',
+        partOfSpeech: 'noun'
+      },
+      team: {
+        translation: 'فريق',
+        pronunciation: '/tiːm/',
+        partOfSpeech: 'noun'
+      },
+      company: {
+        translation: 'شركة',
+        pronunciation: '/ˈkʌm.pə.ni/',
+        partOfSpeech: 'noun'
+      },
+      meeting: {
+        translation: 'اجتماع',
+        pronunciation: '/ˈmiː.tɪŋ/',
+        partOfSpeech: 'noun'
+      },
+      salary: {
+        translation: 'راتب',
+        pronunciation: '/ˈsæl.ər.i/',
+        partOfSpeech: 'noun'
+      },
+      computers: {
+        translation: 'حواسيب',
+        pronunciation: '/kəmˈpjuː.tərz/',
+        partOfSpeech: 'noun'
+      },
+      successful: {
+        translation: 'ناجح',
+        pronunciation: '/səkˈsɛs.fəl/',
+        partOfSpeech: 'adjective'
+      },
+      busy: {
+        translation: 'مشغول',
+        pronunciation: '/ˈbɪz.i/',
+        partOfSpeech: 'adjective'
+      },
+      important: {
+        translation: 'هام / ضروري',
+        pronunciation: '/ɪmˈpɔːr.tənt/',
+        partOfSpeech: 'adjective'
+      },
+      emails: {
+        translation: 'رسائل بريد إلكتروني',
+        pronunciation: '/ˈiː.meɪlz/',
+        partOfSpeech: 'noun'
+      },
+      clients: {
+        translation: 'عملاء',
+        pronunciation: '/ˈklaɪ.ənts/',
+        partOfSpeech: 'noun'
+      },
 
       // Travel & Transport
-      train: { translation: "قطار", pronunciation: "/treɪn/", partOfSpeech: "noun" },
-      station: { translation: "محطة", pronunciation: "/ˈsteɪʃən/", partOfSpeech: "noun" },
-      airport: { translation: "مطار", pronunciation: "/ˈɛərpɔːrt/", partOfSpeech: "noun" },
-      far: { translation: "بعيد", pronunciation: "/fɑːr/", partOfSpeech: "adjective" },
-      bus: { translation: "حافلة", pronunciation: "/bʌs/", partOfSpeech: "noun" },
-      car: { translation: "سيارة", pronunciation: "/kɑːr/", partOfSpeech: "noun" },
-      taxi: { translation: "سيارة أجرة", pronunciation: "/ˈtæk.si/", partOfSpeech: "noun" },
-      metro: { translation: "مترو", pronunciation: "/ˈmɛt.rəʊ/", partOfSpeech: "noun" },
-      subway: { translation: "مترو الأنفاق", pronunciation: "/ˈsʌb.weɪ/", partOfSpeech: "noun" },
-      ticket: { translation: "تذكرة", pronunciation: "/ˈtɪk.ɪt/", partOfSpeech: "noun" },
-      hotel: { translation: "فندق", pronunciation: "/hoʊˈtɛl/", partOfSpeech: "noun" },
-      beach: { translation: "شاطئ", pronunciation: "/biːtʃ/", partOfSpeech: "noun" },
-      city: { translation: "مدينة", pronunciation: "/ˈsɪt.i/", partOfSpeech: "noun" },
-      center: { translation: "وسط / مركز", pronunciation: "/ˈsɛn.tər/", partOfSpeech: "noun" },
-      museum: { translation: "متحف", pronunciation: "/mjuːˈziː.əm/", partOfSpeech: "noun" },
-      nearest: { translation: "الأقرب", pronunciation: "/ˈnɪər.ɪst/", partOfSpeech: "adjective" },
-      near: { translation: "قريب من", pronunciation: "/nɪər/", partOfSpeech: "preposition" },
-      crowded: { translation: "مزدحم", pronunciation: "/ˈkraʊ.dɪd/", partOfSpeech: "adjective" },
+      train: {
+        translation: 'قطار',
+        pronunciation: '/treɪn/',
+        partOfSpeech: 'noun'
+      },
+      station: {
+        translation: 'محطة',
+        pronunciation: '/ˈsteɪʃən/',
+        partOfSpeech: 'noun'
+      },
+      airport: {
+        translation: 'مطار',
+        pronunciation: '/ˈɛərpɔːrt/',
+        partOfSpeech: 'noun'
+      },
+      far: {
+        translation: 'بعيد',
+        pronunciation: '/fɑːr/',
+        partOfSpeech: 'adjective'
+      },
+      bus: {
+        translation: 'حافلة',
+        pronunciation: '/bʌs/',
+        partOfSpeech: 'noun'
+      },
+      car: {
+        translation: 'سيارة',
+        pronunciation: '/kɑːr/',
+        partOfSpeech: 'noun'
+      },
+      taxi: {
+        translation: 'سيارة أجرة',
+        pronunciation: '/ˈtæk.si/',
+        partOfSpeech: 'noun'
+      },
+      metro: {
+        translation: 'مترو',
+        pronunciation: '/ˈmɛt.rəʊ/',
+        partOfSpeech: 'noun'
+      },
+      subway: {
+        translation: 'مترو الأنفاق',
+        pronunciation: '/ˈsʌb.weɪ/',
+        partOfSpeech: 'noun'
+      },
+      ticket: {
+        translation: 'تذكرة',
+        pronunciation: '/ˈtɪk.ɪt/',
+        partOfSpeech: 'noun'
+      },
+      hotel: {
+        translation: 'فندق',
+        pronunciation: '/hoʊˈtɛl/',
+        partOfSpeech: 'noun'
+      },
+      beach: {
+        translation: 'شاطئ',
+        pronunciation: '/biːtʃ/',
+        partOfSpeech: 'noun'
+      },
+      city: {
+        translation: 'مدينة',
+        pronunciation: '/ˈsɪt.i/',
+        partOfSpeech: 'noun'
+      },
+      center: {
+        translation: 'وسط / مركز',
+        pronunciation: '/ˈsɛn.tər/',
+        partOfSpeech: 'noun'
+      },
+      museum: {
+        translation: 'متحف',
+        pronunciation: '/mjuːˈziː.əm/',
+        partOfSpeech: 'noun'
+      },
+      nearest: {
+        translation: 'الأقرب',
+        pronunciation: '/ˈnɪər.ɪst/',
+        partOfSpeech: 'adjective'
+      },
+      near: {
+        translation: 'قريب من',
+        pronunciation: '/nɪər/',
+        partOfSpeech: 'preposition'
+      },
+      crowded: {
+        translation: 'مزدحم',
+        pronunciation: '/ˈkraʊ.dɪd/',
+        partOfSpeech: 'adjective'
+      },
 
       // Shopping
-      supermarket: { translation: "سوبرماركت", pronunciation: "/ˈsuːpərˌmɑːrkɪt/", partOfSpeech: "noun" },
-      shirt: { translation: "قميص", pronunciation: "/ʃɜːrt/", partOfSpeech: "noun" },
-      cash: { translation: "نقد / كاش", pronunciation: "/kæʃ/", partOfSpeech: "noun" },
-      bag: { translation: "حقيبة", pronunciation: "/bæɡ/", partOfSpeech: "noun" },
-      wallet: { translation: "محفظة نقود", pronunciation: "/ˈwɒl.ɪt/", partOfSpeech: "noun" },
-      card: { translation: "بطاقة", pronunciation: "/kɑːrd/", partOfSpeech: "noun" },
-      dress: { translation: "فستان", pronunciation: "/drɛs/", partOfSpeech: "noun" },
-      shoes: { translation: "أحذية", pronunciation: "/ʃuːz/", partOfSpeech: "noun" },
-      clothes: { translation: "ملابس", pronunciation: "/kloʊðz/", partOfSpeech: "noun" },
-      store: { translation: "متجر", pronunciation: "/stɔːr/", partOfSpeech: "noun" },
-      shop: { translation: "متجر", pronunciation: "/ʃɒp/", partOfSpeech: "noun" },
-      sale: { translation: "تخفيضات / عرض", pronunciation: "/seɪl/", partOfSpeech: "noun" },
-      gift: { translation: "هدية", pronunciation: "/ɡɪft/", partOfSpeech: "noun" },
-      groceries: { translation: "مشتريات بقالة", pronunciation: "/ˈɡroʊ.sə.riz/", partOfSpeech: "noun" },
-      expensive: { translation: "غالٍ / مكلف", pronunciation: "/ɪkˈspɛn.sɪv/", partOfSpeech: "adjective" },
-      cheap: { translation: "رخيص", pronunciation: "/tʃiːp/", partOfSpeech: "adjective" },
+      supermarket: {
+        translation: 'سوبرماركت',
+        pronunciation: '/ˈsuːpərˌmɑːrkɪt/',
+        partOfSpeech: 'noun'
+      },
+      shirt: {
+        translation: 'قميص',
+        pronunciation: '/ʃɜːrt/',
+        partOfSpeech: 'noun'
+      },
+      cash: {
+        translation: 'نقد / كاش',
+        pronunciation: '/kæʃ/',
+        partOfSpeech: 'noun'
+      },
+      bag: {
+        translation: 'حقيبة',
+        pronunciation: '/bæɡ/',
+        partOfSpeech: 'noun'
+      },
+      wallet: {
+        translation: 'محفظة نقود',
+        pronunciation: '/ˈwɒl.ɪt/',
+        partOfSpeech: 'noun'
+      },
+      card: {
+        translation: 'بطاقة',
+        pronunciation: '/kɑːrd/',
+        partOfSpeech: 'noun'
+      },
+      dress: {
+        translation: 'فستان',
+        pronunciation: '/drɛs/',
+        partOfSpeech: 'noun'
+      },
+      shoes: {
+        translation: 'أحذية',
+        pronunciation: '/ʃuːz/',
+        partOfSpeech: 'noun'
+      },
+      clothes: {
+        translation: 'ملابس',
+        pronunciation: '/kloʊðz/',
+        partOfSpeech: 'noun'
+      },
+      store: {
+        translation: 'متجر',
+        pronunciation: '/stɔːr/',
+        partOfSpeech: 'noun'
+      },
+      shop: {
+        translation: 'متجر',
+        pronunciation: '/ʃɒp/',
+        partOfSpeech: 'noun'
+      },
+      sale: {
+        translation: 'تخفيضات / عرض',
+        pronunciation: '/seɪl/',
+        partOfSpeech: 'noun'
+      },
+      gift: {
+        translation: 'هدية',
+        pronunciation: '/ɡɪft/',
+        partOfSpeech: 'noun'
+      },
+      groceries: {
+        translation: 'مشتريات بقالة',
+        pronunciation: '/ˈɡroʊ.sə.riz/',
+        partOfSpeech: 'noun'
+      },
+      expensive: {
+        translation: 'غالٍ / مكلف',
+        pronunciation: '/ɪkˈspɛn.sɪv/',
+        partOfSpeech: 'adjective'
+      },
+      cheap: {
+        translation: 'رخيص',
+        pronunciation: '/tʃiːp/',
+        partOfSpeech: 'adjective'
+      },
 
       // Weather & Seasons
-      weather: { translation: "طقس", pronunciation: "/ˈwɛð.ər/", partOfSpeech: "noun" },
-      sunny: { translation: "مشمس", pronunciation: "/ˈsʌn.i/", partOfSpeech: "adjective" },
-      cloudy: { translation: "غائم", pronunciation: "/ˈklaʊ.di/", partOfSpeech: "adjective" },
-      cold: { translation: "بارد", pronunciation: "/koʊld/", partOfSpeech: "adjective" },
-      hot: { translation: "حار / ساخن", pronunciation: "/hɒt/", partOfSpeech: "adjective" },
-      dry: { translation: "جاف", pronunciation: "/draɪ/", partOfSpeech: "adjective" },
-      strong: { translation: "قوي", pronunciation: "/strɒŋ/", partOfSpeech: "adjective" },
-      soft: { translation: "ناعم", pronunciation: "/sɒft/", partOfSpeech: "adjective" },
-      wind: { translation: "رياح", pronunciation: "/wɪnd/", partOfSpeech: "noun" },
-      sky: { translation: "سماء", pronunciation: "/skaɪ/", partOfSpeech: "noun" },
-      snow: { translation: "ثلج", pronunciation: "/snoʊ/", partOfSpeech: "noun" },
-      umbrella: { translation: "مظلة", pronunciation: "/ʌmˈbrɛl.ə/", partOfSpeech: "noun" },
-      clear: { translation: "صافٍ", pronunciation: "/klɪər/", partOfSpeech: "adjective" },
-      white: { translation: "أبيض", pronunciation: "/waɪt/", partOfSpeech: "adjective" },
-      spring: { translation: "الربيع", pronunciation: "/sprɪŋ/", partOfSpeech: "noun" },
-      summer: { translation: "الصيف", pronunciation: "/ˈsʌm.ər/", partOfSpeech: "noun" },
-      winter: { translation: "الشتاء", pronunciation: "/ˈwɪn.tər/", partOfSpeech: "noun" },
-      afternoon: { translation: "بعد الظهر", pronunciation: "/ˌɑːf.tərˈnuːn/", partOfSpeech: "noun" },
+      weather: {
+        translation: 'طقس',
+        pronunciation: '/ˈwɛð.ər/',
+        partOfSpeech: 'noun'
+      },
+      sunny: {
+        translation: 'مشمس',
+        pronunciation: '/ˈsʌn.i/',
+        partOfSpeech: 'adjective'
+      },
+      cloudy: {
+        translation: 'غائم',
+        pronunciation: '/ˈklaʊ.di/',
+        partOfSpeech: 'adjective'
+      },
+      cold: {
+        translation: 'بارد',
+        pronunciation: '/koʊld/',
+        partOfSpeech: 'adjective'
+      },
+      hot: {
+        translation: 'حار / ساخن',
+        pronunciation: '/hɒt/',
+        partOfSpeech: 'adjective'
+      },
+      dry: {
+        translation: 'جاف',
+        pronunciation: '/draɪ/',
+        partOfSpeech: 'adjective'
+      },
+      strong: {
+        translation: 'قوي',
+        pronunciation: '/strɒŋ/',
+        partOfSpeech: 'adjective'
+      },
+      soft: {
+        translation: 'ناعم',
+        pronunciation: '/sɒft/',
+        partOfSpeech: 'adjective'
+      },
+      wind: {
+        translation: 'رياح',
+        pronunciation: '/wɪnd/',
+        partOfSpeech: 'noun'
+      },
+      sky: {
+        translation: 'سماء',
+        pronunciation: '/skaɪ/',
+        partOfSpeech: 'noun'
+      },
+      snow: {
+        translation: 'ثلج',
+        pronunciation: '/snoʊ/',
+        partOfSpeech: 'noun'
+      },
+      umbrella: {
+        translation: 'مظلة',
+        pronunciation: '/ʌmˈbrɛl.ə/',
+        partOfSpeech: 'noun'
+      },
+      clear: {
+        translation: 'صافٍ',
+        pronunciation: '/klɪər/',
+        partOfSpeech: 'adjective'
+      },
+      white: {
+        translation: 'أبيض',
+        pronunciation: '/waɪt/',
+        partOfSpeech: 'adjective'
+      },
+      spring: {
+        translation: 'الربيع',
+        pronunciation: '/sprɪŋ/',
+        partOfSpeech: 'noun'
+      },
+      summer: {
+        translation: 'الصيف',
+        pronunciation: '/ˈsʌm.ər/',
+        partOfSpeech: 'noun'
+      },
+      winter: {
+        translation: 'الشتاء',
+        pronunciation: '/ˈwɪn.tər/',
+        partOfSpeech: 'noun'
+      },
+      afternoon: {
+        translation: 'بعد الظهر',
+        pronunciation: '/ˌɑːf.tərˈnuːn/',
+        partOfSpeech: 'noun'
+      },
 
       // Communication
-      thank: { translation: "يشكر", pronunciation: "/θæŋk/", partOfSpeech: "verb" },
-      very: { translation: "جدًا", pronunciation: "/ˈvɛri/", partOfSpeech: "adverb" },
-      much: { translation: "كثيرًا / كم", pronunciation: "/mʌtʃ/", partOfSpeech: "adverb" },
-      slowly: { translation: "ببطء", pronunciation: "/ˈsloʊ.li/", partOfSpeech: "adverb" },
-      question: { translation: "سؤال", pronunciation: "/ˈkwɛs.tʃən/", partOfSpeech: "noun" },
-      message: { translation: "رسالة", pronunciation: "/ˈmɛs.ɪdʒ/", partOfSpeech: "noun" },
-      name: { translation: "اسم", pronunciation: "/neɪm/", partOfSpeech: "noun" },
-      again: { translation: "مجددًا", pronunciation: "/əˈɡɛn/", partOfSpeech: "adverb" },
-      little: { translation: "قليل", pronunciation: "/ˈlɪt.əl/", partOfSpeech: "adverb" },
-      nice: { translation: "لطيف / جميل", pronunciation: "/naɪs/", partOfSpeech: "adjective" },
-      tomorrow: { translation: "غدًا", pronunciation: "/təˈmɒr.oʊ/", partOfSpeech: "adverb" },
-      phone: { translation: "هاتف", pronunciation: "/foʊn/", partOfSpeech: "noun" },
-      advice: { translation: "نصيحة", pronunciation: "/ədˈvaɪs/", partOfSpeech: "noun" },
-      whole: { translation: "كامل", pronunciation: "/hoʊl/", partOfSpeech: "adjective" },
+      thank: {
+        translation: 'يشكر',
+        pronunciation: '/θæŋk/',
+        partOfSpeech: 'verb'
+      },
+      very: {
+        translation: 'جدًا',
+        pronunciation: '/ˈvɛri/',
+        partOfSpeech: 'adverb'
+      },
+      much: {
+        translation: 'كثيرًا / كم',
+        pronunciation: '/mʌtʃ/',
+        partOfSpeech: 'adverb'
+      },
+      slowly: {
+        translation: 'ببطء',
+        pronunciation: '/ˈsloʊ.li/',
+        partOfSpeech: 'adverb'
+      },
+      question: {
+        translation: 'سؤال',
+        pronunciation: '/ˈkwɛs.tʃən/',
+        partOfSpeech: 'noun'
+      },
+      message: {
+        translation: 'رسالة',
+        pronunciation: '/ˈmɛs.ɪdʒ/',
+        partOfSpeech: 'noun'
+      },
+      name: {
+        translation: 'اسم',
+        pronunciation: '/neɪm/',
+        partOfSpeech: 'noun'
+      },
+      again: {
+        translation: 'مجددًا',
+        pronunciation: '/əˈɡɛn/',
+        partOfSpeech: 'adverb'
+      },
+      little: {
+        translation: 'قليل',
+        pronunciation: '/ˈlɪt.əl/',
+        partOfSpeech: 'adverb'
+      },
+      nice: {
+        translation: 'لطيف / جميل',
+        pronunciation: '/naɪs/',
+        partOfSpeech: 'adjective'
+      },
+      tomorrow: {
+        translation: 'غدًا',
+        pronunciation: '/təˈmɒr.oʊ/',
+        partOfSpeech: 'adverb'
+      },
+      phone: {
+        translation: 'هاتف',
+        pronunciation: '/foʊn/',
+        partOfSpeech: 'noun'
+      },
+      advice: {
+        translation: 'نصيحة',
+        pronunciation: '/ədˈvaɪs/',
+        partOfSpeech: 'noun'
+      },
+      whole: {
+        translation: 'كامل',
+        pronunciation: '/hoʊl/',
+        partOfSpeech: 'adjective'
+      },
 
       // Time & Numbers
-      morning: { translation: "صباح", pronunciation: "/ˈmɔːrnɪŋ/", partOfSpeech: "noun" },
-      night: { translation: "ليل", pronunciation: "/naɪt/", partOfSpeech: "noun" },
-      tonight: { translation: "الليلة", pronunciation: "/təˈnaɪt/", partOfSpeech: "adverb" },
-      day: { translation: "يوم", pronunciation: "/deɪ/", partOfSpeech: "noun" },
-      week: { translation: "أسبوع", pronunciation: "/wiːk/", partOfSpeech: "noun" },
-      weekdays: { translation: "أيام الأسبوع", pronunciation: "/ˈwiːk.deɪz/", partOfSpeech: "noun" },
-      minutes: { translation: "دقائق", pronunciation: "/ˈmɪn.ɪts/", partOfSpeech: "noun" },
-      hours: { translation: "ساعات", pronunciation: "/ˈaʊ.ərz/", partOfSpeech: "noun" },
-      time: { translation: "وقت", pronunciation: "/taɪm/", partOfSpeech: "noun" },
-      today: { translation: "اليوم", pronunciation: "/təˈdeɪ/", partOfSpeech: "adverb" },
-      evening: { translation: "مساء", pronunciation: "/ˈiːv.nɪŋ/", partOfSpeech: "noun" },
-      noon: { translation: "الظهيرة", pronunciation: "/nuːn/", partOfSpeech: "noun" },
-      oclock: { translation: "بالساعة (تمامًا)", pronunciation: "/əˈklɒk/", partOfSpeech: "adverb" },
-      once: { translation: "مرة واحدة", pronunciation: "/wʌns/", partOfSpeech: "adverb" },
-      twice: { translation: "مرتين", pronunciation: "/twaɪs/", partOfSpeech: "adverb" },
-      early: { translation: "مبكرًا", pronunciation: "/ˈɜːr.li/", partOfSpeech: "adverb" },
-      always: { translation: "دائمًا", pronunciation: "/ˈɔːl.weɪz/", partOfSpeech: "adverb" },
-      usually: { translation: "عادةً", pronunciation: "/ˈjuː.ʒu.ə.li/", partOfSpeech: "adverb" },
-      sharp: { translation: "بالضبط", pronunciation: "/ʃɑːrp/", partOfSpeech: "adverb" },
-      monday: { translation: "الاثنين", pronunciation: "/ˈmʌn.deɪ/", partOfSpeech: "noun" },
-      friday: { translation: "الجمعة", pronunciation: "/ˈfraɪ.deɪ/", partOfSpeech: "noun" },
-      saturday: { translation: "السبت", pronunciation: "/ˈsæt.ər.deɪ/", partOfSpeech: "noun" },
-      sunday: { translation: "الأحد", pronunciation: "/ˈsʌn.deɪ/", partOfSpeech: "noun" },
-      year: { translation: "سنة / عام", pronunciation: "/jɪər/", partOfSpeech: "noun" },
-      few: { translation: "قليل", pronunciation: "/fjuː/", partOfSpeech: "determiner" },
+      morning: {
+        translation: 'صباح',
+        pronunciation: '/ˈmɔːrnɪŋ/',
+        partOfSpeech: 'noun'
+      },
+      night: {
+        translation: 'ليل',
+        pronunciation: '/naɪt/',
+        partOfSpeech: 'noun'
+      },
+      tonight: {
+        translation: 'الليلة',
+        pronunciation: '/təˈnaɪt/',
+        partOfSpeech: 'adverb'
+      },
+      day: { translation: 'يوم', pronunciation: '/deɪ/', partOfSpeech: 'noun' },
+      week: {
+        translation: 'أسبوع',
+        pronunciation: '/wiːk/',
+        partOfSpeech: 'noun'
+      },
+      weekdays: {
+        translation: 'أيام الأسبوع',
+        pronunciation: '/ˈwiːk.deɪz/',
+        partOfSpeech: 'noun'
+      },
+      minutes: {
+        translation: 'دقائق',
+        pronunciation: '/ˈmɪn.ɪts/',
+        partOfSpeech: 'noun'
+      },
+      hours: {
+        translation: 'ساعات',
+        pronunciation: '/ˈaʊ.ərz/',
+        partOfSpeech: 'noun'
+      },
+      time: {
+        translation: 'وقت',
+        pronunciation: '/taɪm/',
+        partOfSpeech: 'noun'
+      },
+      today: {
+        translation: 'اليوم',
+        pronunciation: '/təˈdeɪ/',
+        partOfSpeech: 'adverb'
+      },
+      evening: {
+        translation: 'مساء',
+        pronunciation: '/ˈiːv.nɪŋ/',
+        partOfSpeech: 'noun'
+      },
+      noon: {
+        translation: 'الظهيرة',
+        pronunciation: '/nuːn/',
+        partOfSpeech: 'noun'
+      },
+      oclock: {
+        translation: 'بالساعة (تمامًا)',
+        pronunciation: '/əˈklɒk/',
+        partOfSpeech: 'adverb'
+      },
+      once: {
+        translation: 'مرة واحدة',
+        pronunciation: '/wʌns/',
+        partOfSpeech: 'adverb'
+      },
+      twice: {
+        translation: 'مرتين',
+        pronunciation: '/twaɪs/',
+        partOfSpeech: 'adverb'
+      },
+      early: {
+        translation: 'مبكرًا',
+        pronunciation: '/ˈɜːr.li/',
+        partOfSpeech: 'adverb'
+      },
+      always: {
+        translation: 'دائمًا',
+        pronunciation: '/ˈɔːl.weɪz/',
+        partOfSpeech: 'adverb'
+      },
+      usually: {
+        translation: 'عادةً',
+        pronunciation: '/ˈjuː.ʒu.ə.li/',
+        partOfSpeech: 'adverb'
+      },
+      sharp: {
+        translation: 'بالضبط',
+        pronunciation: '/ʃɑːrp/',
+        partOfSpeech: 'adverb'
+      },
+      monday: {
+        translation: 'الاثنين',
+        pronunciation: '/ˈmʌn.deɪ/',
+        partOfSpeech: 'noun'
+      },
+      friday: {
+        translation: 'الجمعة',
+        pronunciation: '/ˈfraɪ.deɪ/',
+        partOfSpeech: 'noun'
+      },
+      saturday: {
+        translation: 'السبت',
+        pronunciation: '/ˈsæt.ər.deɪ/',
+        partOfSpeech: 'noun'
+      },
+      sunday: {
+        translation: 'الأحد',
+        pronunciation: '/ˈsʌn.deɪ/',
+        partOfSpeech: 'noun'
+      },
+      year: {
+        translation: 'سنة / عام',
+        pronunciation: '/jɪər/',
+        partOfSpeech: 'noun'
+      },
+      few: {
+        translation: 'قليل',
+        pronunciation: '/fjuː/',
+        partOfSpeech: 'determiner'
+      },
 
       // Numbers
-      one: { translation: "واحد", pronunciation: "/wʌn/", partOfSpeech: "number" },
-      two: { translation: "اثنان", pronunciation: "/tuː/", partOfSpeech: "number" },
-      three: { translation: "ثلاثة", pronunciation: "/θriː/", partOfSpeech: "number" },
-      four: { translation: "أربعة", pronunciation: "/fɔːr/", partOfSpeech: "number" },
-      five: { translation: "خمسة", pronunciation: "/faɪv/", partOfSpeech: "number" },
-      six: { translation: "ستة", pronunciation: "/sɪks/", partOfSpeech: "number" },
-      seven: { translation: "سبعة", pronunciation: "/ˈsɛv.ən/", partOfSpeech: "number" },
-      eight: { translation: "ثمانية", pronunciation: "/eɪt/", partOfSpeech: "number" },
-      nine: { translation: "تسعة", pronunciation: "/naɪn/", partOfSpeech: "number" },
-      ten: { translation: "عشرة", pronunciation: "/tɛn/", partOfSpeech: "number" },
-      thirty: { translation: "ثلاثون", pronunciation: "/ˈθɜːr.ti/", partOfSpeech: "number" },
+      one: {
+        translation: 'واحد',
+        pronunciation: '/wʌn/',
+        partOfSpeech: 'number'
+      },
+      two: {
+        translation: 'اثنان',
+        pronunciation: '/tuː/',
+        partOfSpeech: 'number'
+      },
+      three: {
+        translation: 'ثلاثة',
+        pronunciation: '/θriː/',
+        partOfSpeech: 'number'
+      },
+      four: {
+        translation: 'أربعة',
+        pronunciation: '/fɔːr/',
+        partOfSpeech: 'number'
+      },
+      five: {
+        translation: 'خمسة',
+        pronunciation: '/faɪv/',
+        partOfSpeech: 'number'
+      },
+      six: {
+        translation: 'ستة',
+        pronunciation: '/sɪks/',
+        partOfSpeech: 'number'
+      },
+      seven: {
+        translation: 'سبعة',
+        pronunciation: '/ˈsɛv.ən/',
+        partOfSpeech: 'number'
+      },
+      eight: {
+        translation: 'ثمانية',
+        pronunciation: '/eɪt/',
+        partOfSpeech: 'number'
+      },
+      nine: {
+        translation: 'تسعة',
+        pronunciation: '/naɪn/',
+        partOfSpeech: 'number'
+      },
+      ten: {
+        translation: 'عشرة',
+        pronunciation: '/tɛn/',
+        partOfSpeech: 'number'
+      },
+      thirty: {
+        translation: 'ثلاثون',
+        pronunciation: '/ˈθɜːr.ti/',
+        partOfSpeech: 'number'
+      },
 
       // Feelings & Quality
-      tired: { translation: "متعب / مرهق", pronunciation: "/ˈtaɪərd/", partOfSpeech: "adjective" },
-      happy: { translation: "سعيد", pronunciation: "/ˈhæp.i/", partOfSpeech: "adjective" },
-      sorry: { translation: "آسف", pronunciation: "/ˈsɒr.i/", partOfSpeech: "adjective" },
-      calm: { translation: "هادئ", pronunciation: "/kɑːm/", partOfSpeech: "adjective" },
-      quiet: { translation: "هادئ", pronunciation: "/ˈkwaɪət/", partOfSpeech: "adjective" },
-      wonderful: { translation: "رائع / بديع", pronunciation: "/ˈwʌndərfəl/", partOfSpeech: "adjective" },
-      beautiful: { translation: "جميل", pronunciation: "/ˈbjuː.tɪ.fəl/", partOfSpeech: "adjective" },
-      interesting: { translation: "مثير للاهتمام", pronunciation: "/ˈɪn.trə.stɪŋ/", partOfSpeech: "adjective" },
-      popular: { translation: "شائع / مشهور", pronunciation: "/ˈpɒp.jə.lər/", partOfSpeech: "adjective" },
-      good: { translation: "جيد", pronunciation: "/ɡʊd/", partOfSpeech: "adjective" },
-      better: { translation: "أفضل", pronunciation: "/ˈbɛt.ər/", partOfSpeech: "adjective" },
-      best: { translation: "الأفضل", pronunciation: "/bɛst/", partOfSpeech: "adjective" },
-      kind: { translation: "لطيف", pronunciation: "/kaɪnd/", partOfSpeech: "adjective" },
-      new: { translation: "جديد", pronunciation: "/njuː/", partOfSpeech: "adjective" },
-      old: { translation: "قديم", pronunciation: "/oʊld/", partOfSpeech: "adjective" },
-      fast: { translation: "سريع", pronunciation: "/fɑːst/", partOfSpeech: "adjective" },
-      heavy: { translation: "ثقيل", pronunciation: "/ˈhɛv.i/", partOfSpeech: "adjective" },
-      full: { translation: "ممتلئ", pronunciation: "/fʊl/", partOfSpeech: "adjective" },
-      short: { translation: "قصير", pronunciation: "/ʃɔːrt/", partOfSpeech: "adjective" },
-      open: { translation: "مفتوح", pronunciation: "/ˈoʊ.pən/", partOfSpeech: "adjective" },
-      ripe: { translation: "ناضج", pronunciation: "/raɪp/", partOfSpeech: "adjective" },
-      ready: { translation: "جاهز", pronunciation: "/ˈrɛd.i/", partOfSpeech: "adjective" },
-      crowded: { translation: "مزدحم", pronunciation: "/ˈkraʊ.dɪd/", partOfSpeech: "adjective" },
-      green: { translation: "أخضر", pronunciation: "/ɡriːn/", partOfSpeech: "adjective" },
-      mistake: { translation: "خطأ", pronunciation: "/mɪˈsteɪk/", partOfSpeech: "noun" },
+      tired: {
+        translation: 'متعب / مرهق',
+        pronunciation: '/ˈtaɪərd/',
+        partOfSpeech: 'adjective'
+      },
+      happy: {
+        translation: 'سعيد',
+        pronunciation: '/ˈhæp.i/',
+        partOfSpeech: 'adjective'
+      },
+      sorry: {
+        translation: 'آسف',
+        pronunciation: '/ˈsɒr.i/',
+        partOfSpeech: 'adjective'
+      },
+      calm: {
+        translation: 'هادئ',
+        pronunciation: '/kɑːm/',
+        partOfSpeech: 'adjective'
+      },
+      quiet: {
+        translation: 'هادئ',
+        pronunciation: '/ˈkwaɪət/',
+        partOfSpeech: 'adjective'
+      },
+      wonderful: {
+        translation: 'رائع / بديع',
+        pronunciation: '/ˈwʌndərfəl/',
+        partOfSpeech: 'adjective'
+      },
+      beautiful: {
+        translation: 'جميل',
+        pronunciation: '/ˈbjuː.tɪ.fəl/',
+        partOfSpeech: 'adjective'
+      },
+      interesting: {
+        translation: 'مثير للاهتمام',
+        pronunciation: '/ˈɪn.trə.stɪŋ/',
+        partOfSpeech: 'adjective'
+      },
+      popular: {
+        translation: 'شائع / مشهور',
+        pronunciation: '/ˈpɒp.jə.lər/',
+        partOfSpeech: 'adjective'
+      },
+      good: {
+        translation: 'جيد',
+        pronunciation: '/ɡʊd/',
+        partOfSpeech: 'adjective'
+      },
+      better: {
+        translation: 'أفضل',
+        pronunciation: '/ˈbɛt.ər/',
+        partOfSpeech: 'adjective'
+      },
+      best: {
+        translation: 'الأفضل',
+        pronunciation: '/bɛst/',
+        partOfSpeech: 'adjective'
+      },
+      kind: {
+        translation: 'لطيف',
+        pronunciation: '/kaɪnd/',
+        partOfSpeech: 'adjective'
+      },
+      new: {
+        translation: 'جديد',
+        pronunciation: '/njuː/',
+        partOfSpeech: 'adjective'
+      },
+      old: {
+        translation: 'قديم',
+        pronunciation: '/oʊld/',
+        partOfSpeech: 'adjective'
+      },
+      fast: {
+        translation: 'سريع',
+        pronunciation: '/fɑːst/',
+        partOfSpeech: 'adjective'
+      },
+      heavy: {
+        translation: 'ثقيل',
+        pronunciation: '/ˈhɛv.i/',
+        partOfSpeech: 'adjective'
+      },
+      full: {
+        translation: 'ممتلئ',
+        pronunciation: '/fʊl/',
+        partOfSpeech: 'adjective'
+      },
+      short: {
+        translation: 'قصير',
+        pronunciation: '/ʃɔːrt/',
+        partOfSpeech: 'adjective'
+      },
+      open: {
+        translation: 'مفتوح',
+        pronunciation: '/ˈoʊ.pən/',
+        partOfSpeech: 'adjective'
+      },
+      ripe: {
+        translation: 'ناضج',
+        pronunciation: '/raɪp/',
+        partOfSpeech: 'adjective'
+      },
+      ready: {
+        translation: 'جاهز',
+        pronunciation: '/ˈrɛd.i/',
+        partOfSpeech: 'adjective'
+      },
+      crowded: {
+        translation: 'مزدحم',
+        pronunciation: '/ˈkraʊ.dɪd/',
+        partOfSpeech: 'adjective'
+      },
+      green: {
+        translation: 'أخضر',
+        pronunciation: '/ɡriːn/',
+        partOfSpeech: 'adjective'
+      },
+      mistake: {
+        translation: 'خطأ',
+        pronunciation: '/mɪˈsteɪk/',
+        partOfSpeech: 'noun'
+      },
 
       // Objects & Misc
-      movie: { translation: "فيلم", pronunciation: "/ˈmuː.vi/", partOfSpeech: "noun" },
-      song: { translation: "أغنية", pronunciation: "/sɒŋ/", partOfSpeech: "noun" },
-      news: { translation: "أخبار", pronunciation: "/njuːz/", partOfSpeech: "noun" },
-      dog: { translation: "كلب", pronunciation: "/dɒɡ/", partOfSpeech: "noun" },
-      football: { translation: "كرة القدم", pronunciation: "/ˈfʊt.bɔːl/", partOfSpeech: "noun" },
-      charger: { translation: "شاحن", pronunciation: "/ˈtʃɑːr.dʒər/", partOfSpeech: "noun" },
-      cup: { translation: "كوب / فنجان", pronunciation: "/kʌp/", partOfSpeech: "noun" },
-      stories: { translation: "قصص", pronunciation: "/ˈstɔːriz/", partOfSpeech: "noun" },
-      energy: { translation: "طاقة", pronunciation: "/ˈɛn.ər.dʒi/", partOfSpeech: "noun" },
-      teeth: { translation: "أسنان", pronunciation: "/tiːθ/", partOfSpeech: "noun" },
-      park_verb: { translation: "يركن / يوقف", pronunciation: "/pɑːrk/", partOfSpeech: "verb" },
-      parked: { translation: "متوقف", pronunciation: "/pɑːrkt/", partOfSpeech: "adjective" },
-      young: { translation: "صغير السن", pronunciation: "/jʌŋ/", partOfSpeech: "adjective" },
-      younger: { translation: "أصغر سنًا", pronunciation: "/ˈjʌŋ.ɡər/", partOfSpeech: "adjective" },
-      more: { translation: "أكثر", pronunciation: "/mɔːr/", partOfSpeech: "adverb" },
-      also: { translation: "أيضًا", pronunciation: "/ˈɔːl.soʊ/", partOfSpeech: "adverb" },
+      movie: {
+        translation: 'فيلم',
+        pronunciation: '/ˈmuː.vi/',
+        partOfSpeech: 'noun'
+      },
+      song: {
+        translation: 'أغنية',
+        pronunciation: '/sɒŋ/',
+        partOfSpeech: 'noun'
+      },
+      news: {
+        translation: 'أخبار',
+        pronunciation: '/njuːz/',
+        partOfSpeech: 'noun'
+      },
+      dog: { translation: 'كلب', pronunciation: '/dɒɡ/', partOfSpeech: 'noun' },
+      football: {
+        translation: 'كرة القدم',
+        pronunciation: '/ˈfʊt.bɔːl/',
+        partOfSpeech: 'noun'
+      },
+      charger: {
+        translation: 'شاحن',
+        pronunciation: '/ˈtʃɑːr.dʒər/',
+        partOfSpeech: 'noun'
+      },
+      cup: {
+        translation: 'كوب / فنجان',
+        pronunciation: '/kʌp/',
+        partOfSpeech: 'noun'
+      },
+      stories: {
+        translation: 'قصص',
+        pronunciation: '/ˈstɔːriz/',
+        partOfSpeech: 'noun'
+      },
+      energy: {
+        translation: 'طاقة',
+        pronunciation: '/ˈɛn.ər.dʒi/',
+        partOfSpeech: 'noun'
+      },
+      teeth: {
+        translation: 'أسنان',
+        pronunciation: '/tiːθ/',
+        partOfSpeech: 'noun'
+      },
+      park_verb: {
+        translation: 'يركن / يوقف',
+        pronunciation: '/pɑːrk/',
+        partOfSpeech: 'verb'
+      },
+      parked: {
+        translation: 'متوقف',
+        pronunciation: '/pɑːrkt/',
+        partOfSpeech: 'adjective'
+      },
+      young: {
+        translation: 'صغير السن',
+        pronunciation: '/jʌŋ/',
+        partOfSpeech: 'adjective'
+      },
+      younger: {
+        translation: 'أصغر سنًا',
+        pronunciation: '/ˈjʌŋ.ɡər/',
+        partOfSpeech: 'adjective'
+      },
+      more: {
+        translation: 'أكثر',
+        pronunciation: '/mɔːr/',
+        partOfSpeech: 'adverb'
+      },
+      also: {
+        translation: 'أيضًا',
+        pronunciation: '/ˈɔːl.soʊ/',
+        partOfSpeech: 'adverb'
+      },
 
       // Prepositions & Conjunctions
-      at: { translation: "في / عند", pronunciation: "/æt/", partOfSpeech: "preposition" },
-      in: { translation: "في", pronunciation: "/ɪn/", partOfSpeech: "preposition" },
-      on: { translation: "على", pronunciation: "/ɒn/", partOfSpeech: "preposition" },
-      from: { translation: "من", pronunciation: "/frɒm/", partOfSpeech: "preposition" },
-      with: { translation: "مع", pronunciation: "/wɪð/", partOfSpeech: "preposition" },
-      to: { translation: "إلى", pronunciation: "/tuː/", partOfSpeech: "preposition" },
-      for: { translation: "لـ / من أجل", pronunciation: "/fɔːr/", partOfSpeech: "preposition" },
-      before: { translation: "قبل", pronunciation: "/bɪˈfɔːr/", partOfSpeech: "preposition" },
-      after: { translation: "بعد", pronunciation: "/ˈɑːf.tər/", partOfSpeech: "preposition" },
-      during: { translation: "أثناء", pronunciation: "/ˈdjʊə.rɪŋ/", partOfSpeech: "preposition" },
-      outside: { translation: "في الخارج", pronunciation: "/ˌaʊtˈsaɪd/", partOfSpeech: "adverb" },
-      together: { translation: "معًا", pronunciation: "/təˈɡɛð.ər/", partOfSpeech: "adverb" },
-      and: { translation: "و", pronunciation: "/ænd/", partOfSpeech: "conjunction" },
-      but: { translation: "لكن", pronunciation: "/bʌt/", partOfSpeech: "conjunction" },
-      please: { translation: "من فضلك", pronunciation: "/pliːz/", partOfSpeech: "interjection" },
-      not: { translation: "لا / ليس", pronunciation: "/nɒt/", partOfSpeech: "adverb" },
-      too: { translation: "أيضًا / جدًا", pronunciation: "/tuː/", partOfSpeech: "adverb" },
-      here: { translation: "هنا", pronunciation: "/hɪər/", partOfSpeech: "adverb" },
-      now: { translation: "الآن", pronunciation: "/naʊ/", partOfSpeech: "adverb" },
-      up: { translation: "لأعلى", pronunciation: "/ʌp/", partOfSpeech: "adverb" },
-      next: { translation: "التالي", pronunciation: "/nɛkst/", partOfSpeech: "adjective" },
-      cairo: { translation: "القاهرة", pronunciation: "/ˈkaɪ.roʊ/", partOfSpeech: "noun" },
-      alexandria: { translation: "الإسكندرية", pronunciation: "/ˌæl.ɪɡˈzæn.dri.ə/", partOfSpeech: "noun" }
+      at: {
+        translation: 'في / عند',
+        pronunciation: '/æt/',
+        partOfSpeech: 'preposition'
+      },
+      in: {
+        translation: 'في',
+        pronunciation: '/ɪn/',
+        partOfSpeech: 'preposition'
+      },
+      on: {
+        translation: 'على',
+        pronunciation: '/ɒn/',
+        partOfSpeech: 'preposition'
+      },
+      from: {
+        translation: 'من',
+        pronunciation: '/frɒm/',
+        partOfSpeech: 'preposition'
+      },
+      with: {
+        translation: 'مع',
+        pronunciation: '/wɪð/',
+        partOfSpeech: 'preposition'
+      },
+      to: {
+        translation: 'إلى',
+        pronunciation: '/tuː/',
+        partOfSpeech: 'preposition'
+      },
+      for: {
+        translation: 'لـ / من أجل',
+        pronunciation: '/fɔːr/',
+        partOfSpeech: 'preposition'
+      },
+      before: {
+        translation: 'قبل',
+        pronunciation: '/bɪˈfɔːr/',
+        partOfSpeech: 'preposition'
+      },
+      after: {
+        translation: 'بعد',
+        pronunciation: '/ˈɑːf.tər/',
+        partOfSpeech: 'preposition'
+      },
+      during: {
+        translation: 'أثناء',
+        pronunciation: '/ˈdjʊə.rɪŋ/',
+        partOfSpeech: 'preposition'
+      },
+      outside: {
+        translation: 'في الخارج',
+        pronunciation: '/ˌaʊtˈsaɪd/',
+        partOfSpeech: 'adverb'
+      },
+      together: {
+        translation: 'معًا',
+        pronunciation: '/təˈɡɛð.ər/',
+        partOfSpeech: 'adverb'
+      },
+      and: {
+        translation: 'و',
+        pronunciation: '/ænd/',
+        partOfSpeech: 'conjunction'
+      },
+      but: {
+        translation: 'لكن',
+        pronunciation: '/bʌt/',
+        partOfSpeech: 'conjunction'
+      },
+      please: {
+        translation: 'من فضلك',
+        pronunciation: '/pliːz/',
+        partOfSpeech: 'interjection'
+      },
+      not: {
+        translation: 'لا / ليس',
+        pronunciation: '/nɒt/',
+        partOfSpeech: 'adverb'
+      },
+      too: {
+        translation: 'أيضًا / جدًا',
+        pronunciation: '/tuː/',
+        partOfSpeech: 'adverb'
+      },
+      here: {
+        translation: 'هنا',
+        pronunciation: '/hɪər/',
+        partOfSpeech: 'adverb'
+      },
+      now: {
+        translation: 'الآن',
+        pronunciation: '/naʊ/',
+        partOfSpeech: 'adverb'
+      },
+      up: {
+        translation: 'لأعلى',
+        pronunciation: '/ʌp/',
+        partOfSpeech: 'adverb'
+      },
+      next: {
+        translation: 'التالي',
+        pronunciation: '/nɛkst/',
+        partOfSpeech: 'adjective'
+      },
+      cairo: {
+        translation: 'القاهرة',
+        pronunciation: '/ˈkaɪ.roʊ/',
+        partOfSpeech: 'noun'
+      },
+      alexandria: {
+        translation: 'الإسكندرية',
+        pronunciation: '/ˌæl.ɪɡˈzæn.dri.ə/',
+        partOfSpeech: 'noun'
+      }
     };
   }
 

@@ -52,7 +52,10 @@ export class SyncService {
         .maybeSingle();
 
       if (error) {
-        console.warn('SyncService: failed to query user_progress:', error.message);
+        console.warn(
+          'SyncService: failed to query user_progress:',
+          error.message
+        );
         return;
       }
 

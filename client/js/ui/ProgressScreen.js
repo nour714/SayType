@@ -23,11 +23,17 @@ export class ProgressScreen {
     try {
       const allSentences = await sentenceRepo.getSentences();
       const levels = ['A1', 'A2'];
-      levelCards = levels.map(lv => {
-        const lvSentences = allSentences.filter(s => s.level === lv);
-        const lvCompleted = lvSentences.filter(s => completedIds.has(String(s.id))).length;
-        const pct = lvSentences.length > 0 ? Math.round((lvCompleted / lvSentences.length) * 100) : 0;
-        return `
+      levelCards = levels
+        .map((lv) => {
+          const lvSentences = allSentences.filter((s) => s.level === lv);
+          const lvCompleted = lvSentences.filter((s) =>
+            completedIds.has(String(s.id))
+          ).length;
+          const pct =
+            lvSentences.length > 0
+              ? Math.round((lvCompleted / lvSentences.length) * 100)
+              : 0;
+          return `
           <div class="progress-level-item">
             <div class="progress-level-header">
               <span class="progress-level-code">${lv}</span>
@@ -39,16 +45,28 @@ export class ProgressScreen {
             <span class="progress-level-count">${lvCompleted} / ${lvSentences.length}</span>
           </div>
         `;
-      }).join('');
+        })
+        .join('');
 
       const topics = await sentenceRepo.getTopics('A1');
       const topics2 = await sentenceRepo.getTopics('A2');
-      const allTopics = [...topics.map(t => ({ ...t, level: 'A1' })), ...topics2.map(t => ({ ...t, level: 'A2' }))];
-      topicCards = allTopics.map(t => {
-        const tSentences = allSentences.filter(s => s.topic === t.id && s.level === t.level);
-        const tCompleted = tSentences.filter(s => completedIds.has(String(s.id))).length;
-        const pct = tSentences.length > 0 ? Math.round((tCompleted / tSentences.length) * 100) : 0;
-        return `
+      const allTopics = [
+        ...topics.map((t) => ({ ...t, level: 'A1' })),
+        ...topics2.map((t) => ({ ...t, level: 'A2' }))
+      ];
+      topicCards = allTopics
+        .map((t) => {
+          const tSentences = allSentences.filter(
+            (s) => s.topic === t.id && s.level === t.level
+          );
+          const tCompleted = tSentences.filter((s) =>
+            completedIds.has(String(s.id))
+          ).length;
+          const pct =
+            tSentences.length > 0
+              ? Math.round((tCompleted / tSentences.length) * 100)
+              : 0;
+          return `
           <div class="progress-topic-item">
             <div class="progress-topic-info">
               <span class="progress-topic-name">${t.label}</span>
@@ -60,7 +78,8 @@ export class ProgressScreen {
             <span class="progress-topic-count">${tCompleted}/${tSentences.length}</span>
           </div>
         `;
-      }).join('');
+        })
+        .join('');
     } catch (_) {}
 
     this.el.innerHTML = `
@@ -115,12 +134,16 @@ export class ProgressScreen {
             </div>
           </div>
 
-          ${levelCards ? `
+          ${
+            levelCards
+              ? `
             <div class="progress-card">
               <h2 class="progress-card-title">Level Progress</h2>
               <div class="progress-level-list">${levelCards}</div>
             </div>
-          ` : ''}
+          `
+              : ''
+          }
 
           <div class="progress-card">
             <h2 class="progress-card-title">Review Status</h2>
@@ -140,31 +163,43 @@ export class ProgressScreen {
             </div>
           </div>
 
-          ${topicCards ? `
+          ${
+            topicCards
+              ? `
             <div class="progress-card progress-topics-card">
               <h2 class="progress-card-title">Topic Progress</h2>
               <div class="progress-topic-list">${topicCards}</div>
             </div>
-          ` : ''}
+          `
+              : ''
+          }
 
-          ${difficultWords.length > 0 ? `
+          ${
+            difficultWords.length > 0
+              ? `
             <div class="progress-card">
               <h2 class="progress-card-title">Difficult Words</h2>
               <div class="progress-word-list">
-                ${difficultWords.map(({ word, count }) => `
+                ${difficultWords
+                  .map(
+                    ({ word, count }) => `
                   <div class="progress-word-item">
                     <span class="progress-word-text">${word}</span>
                     <span class="progress-word-count">${count} ${count === 1 ? 'mistake' : 'mistakes'}</span>
                   </div>
-                `).join('')}
+                `
+                  )
+                  .join('')}
               </div>
             </div>
-          ` : `
+          `
+              : `
             <div class="progress-card">
               <h2 class="progress-card-title">Difficult Words</h2>
               <div class="progress-empty">No difficult words recorded yet. Keep practicing!</div>
             </div>
-          `}
+          `
+          }
         </div>
       </div>
     `;

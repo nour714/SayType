@@ -64,7 +64,7 @@
   align-items: center;
 }
 
-[data-theme="light"] .mobile-nav {
+[data-theme='light'] .mobile-nav {
   background: rgba(245, 243, 239, 0.94);
 }
 

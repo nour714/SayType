@@ -31,7 +31,10 @@ export class ThemeService extends EventEmitter {
 
     const metaThemeColor = document.querySelector('meta[name="theme-color"]');
     if (metaThemeColor) {
-      metaThemeColor.setAttribute('content', this.theme === 'dark' ? '#0f1114' : '#f5f3ef');
+      metaThemeColor.setAttribute(
+        'content',
+        this.theme === 'dark' ? '#0f1114' : '#f5f3ef'
+      );
     }
 
     this.emit('change', { theme: this.theme });

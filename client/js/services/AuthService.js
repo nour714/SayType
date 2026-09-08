@@ -26,7 +26,9 @@ export class AuthService extends EventEmitter {
     if (!this._client) return;
 
     // Restore existing session
-    const { data: { session } } = await this._client.auth.getSession();
+    const {
+      data: { session }
+    } = await this._client.auth.getSession();
     if (session?.user) {
       this._userId = session.user.id;
       this._email = session.user.email;
@@ -40,7 +42,10 @@ export class AuthService extends EventEmitter {
         this._userId = session.user.id;
         this._email = session.user.email;
         if (prevId !== this._userId) {
-          this.emit('auth:signedIn', { userId: this._userId, email: this._email });
+          this.emit('auth:signedIn', {
+            userId: this._userId,
+            email: this._email
+          });
         }
       } else if (this._userId) {
         this._userId = null;
@@ -87,7 +92,10 @@ export class AuthService extends EventEmitter {
    */
   async signIn(email, password) {
     if (!this._client) return { error: 'Sync not available.' };
-    const { error } = await this._client.auth.signInWithPassword({ email, password });
+    const { error } = await this._client.auth.signInWithPassword({
+      email,
+      password
+    });
     if (error) return { error: error.message };
     return {};
   }

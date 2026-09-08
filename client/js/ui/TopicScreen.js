@@ -25,11 +25,19 @@ export class TopicScreen extends EventEmitter {
             <p class="page-subtitle">Choose a topic to start practicing</p>
           </div>
           <div class="topic-grid">
-            ${topics.map(t => {
-              const topicSentences = allSentences.filter(s => s.topic === t.id);
-              const completedCount = topicSentences.filter(s => completedIds.has(String(s.id))).length;
-              const pct = topicSentences.length > 0 ? Math.round((completedCount / topicSentences.length) * 100) : 0;
-              return `
+            ${topics
+              .map((t) => {
+                const topicSentences = allSentences.filter(
+                  (s) => s.topic === t.id
+                );
+                const completedCount = topicSentences.filter((s) =>
+                  completedIds.has(String(s.id))
+                ).length;
+                const pct =
+                  topicSentences.length > 0
+                    ? Math.round((completedCount / topicSentences.length) * 100)
+                    : 0;
+                return `
                 <a href="#/practice?level=${level}&topic=${t.id}" class="topic-card" data-topic="${t.id}">
                   <div class="topic-card-header">
                     <span class="topic-card-name">${t.label}</span>
@@ -43,23 +51,26 @@ export class TopicScreen extends EventEmitter {
                   </div>
                 </a>
               `;
-            }).join('')}
+              })
+              .join('')}
           </div>
         </div>
       `;
 
-      this.el.querySelectorAll('.topic-card').forEach(card => {
+      this.el.querySelectorAll('.topic-card').forEach((card) => {
         card.addEventListener('click', () => {
           const topic = card.dataset.topic;
           this.emit('topic:select', { level, topic });
         });
       });
     } catch (err) {
-      this.el.innerHTML = '<div class="page-empty">Failed to load topics. Please try again.</div>';
+      this.el.innerHTML =
+        '<div class="page-empty">Failed to load topics. Please try again.</div>';
     }
   }
 
   showLoading() {
-    if (this.el) this.el.innerHTML = '<div class="page-loading">Loading...</div>';
+    if (this.el)
+      this.el.innerHTML = '<div class="page-loading">Loading...</div>';
   }
 }

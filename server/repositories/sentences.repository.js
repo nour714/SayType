@@ -39,49 +39,79 @@ class SentencesRepository {
       // Fallback in-memory dataset (representative subset of the 10 V1 topics)
       return [
         {
-          id: "a1-daily-life-001",
-          level: "A1",
-          topic: "daily-life",
-          topic_label: "Daily Life",
-          text_en: "I wake up at seven every morning.",
-          text_ar: "أستيقظ في الساعة السابعة كل صباح.",
-          english: "I wake up at seven every morning.",
-          arabic: "أستيقظ في الساعة السابعة كل صباح.",
+          id: 'a1-daily-life-001',
+          level: 'A1',
+          topic: 'daily-life',
+          topic_label: 'Daily Life',
+          text_en: 'I wake up at seven every morning.',
+          text_ar: 'أستيقظ في الساعة السابعة كل صباح.',
+          english: 'I wake up at seven every morning.',
+          arabic: 'أستيقظ في الساعة السابعة كل صباح.',
           words: [
-            { word: "wake", translation: "يستيقظ", partOfSpeech: "verb", pronunciation: "/weɪk/" },
-            { word: "seven", translation: "سبعة", partOfSpeech: "number", pronunciation: "/ˈsɛv.ən/" }
+            {
+              word: 'wake',
+              translation: 'يستيقظ',
+              partOfSpeech: 'verb',
+              pronunciation: '/weɪk/'
+            },
+            {
+              word: 'seven',
+              translation: 'سبعة',
+              partOfSpeech: 'number',
+              pronunciation: '/ˈsɛv.ən/'
+            }
           ],
-          tags: ["routine", "morning"]
+          tags: ['routine', 'morning']
         },
         {
-          id: "a1-family-001",
-          level: "A1",
-          topic: "family",
-          topic_label: "Family & Friends",
-          text_en: "She is my sister.",
-          text_ar: "هي أختي.",
-          english: "She is my sister.",
-          arabic: "هي أختي.",
+          id: 'a1-family-001',
+          level: 'A1',
+          topic: 'family',
+          topic_label: 'Family & Friends',
+          text_en: 'She is my sister.',
+          text_ar: 'هي أختي.',
+          english: 'She is my sister.',
+          arabic: 'هي أختي.',
           words: [
-            { word: "She", translation: "هي", partOfSpeech: "pronoun", pronunciation: "/ʃiː/" },
-            { word: "sister", translation: "أخت", partOfSpeech: "noun", pronunciation: "/ˈsɪs.tər/" }
+            {
+              word: 'She',
+              translation: 'هي',
+              partOfSpeech: 'pronoun',
+              pronunciation: '/ʃiː/'
+            },
+            {
+              word: 'sister',
+              translation: 'أخت',
+              partOfSpeech: 'noun',
+              pronunciation: '/ˈsɪs.tər/'
+            }
           ],
-          tags: ["family", "relationship"]
+          tags: ['family', 'relationship']
         },
         {
-          id: "a1-food-001",
-          level: "A1",
-          topic: "food",
-          topic_label: "Food & Drink",
-          text_en: "I like coffee.",
-          text_ar: "أحب القهوة.",
-          english: "I like coffee.",
-          arabic: "أحب القهوة.",
+          id: 'a1-food-001',
+          level: 'A1',
+          topic: 'food',
+          topic_label: 'Food & Drink',
+          text_en: 'I like coffee.',
+          text_ar: 'أحب القهوة.',
+          english: 'I like coffee.',
+          arabic: 'أحب القهوة.',
           words: [
-            { word: "like", translation: "يحب", partOfSpeech: "verb", pronunciation: "/laɪk/" },
-            { word: "coffee", translation: "قهوة", partOfSpeech: "noun", pronunciation: "/ˈkɔː.fi/" }
+            {
+              word: 'like',
+              translation: 'يحب',
+              partOfSpeech: 'verb',
+              pronunciation: '/laɪk/'
+            },
+            {
+              word: 'coffee',
+              translation: 'قهوة',
+              partOfSpeech: 'noun',
+              pronunciation: '/ˈkɔː.fi/'
+            }
           ],
-          tags: ["beverage", "preference"]
+          tags: ['beverage', 'preference']
         }
       ];
     }
@@ -159,7 +189,9 @@ class SentencesRepository {
     const map = new Map();
     sentences.forEach((s) => {
       const id = s.topic || 'daily-life';
-      const label = s.topic_label || id.charAt(0).toUpperCase() + id.slice(1).replace('-', ' ');
+      const label =
+        s.topic_label ||
+        id.charAt(0).toUpperCase() + id.slice(1).replace('-', ' ');
       if (!map.has(id)) {
         map.set(id, { id, label, count: 0 });
       }

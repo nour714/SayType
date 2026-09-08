@@ -5,8 +5,10 @@
 export class StatsPills {
   constructor(options = {}) {
     this.wpmEl = options.wpmEl || document.getElementById('wpm-value');
-    this.accuracyEl = options.accuracyEl || document.getElementById('accuracy-value');
-    this.mistakesEl = options.mistakesEl || document.getElementById('mistakes-value');
+    this.accuracyEl =
+      options.accuracyEl || document.getElementById('accuracy-value');
+    this.mistakesEl =
+      options.mistakesEl || document.getElementById('mistakes-value');
   }
 
   /**

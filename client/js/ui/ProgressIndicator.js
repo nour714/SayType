@@ -3,7 +3,8 @@
  */
 export class ProgressIndicator {
   constructor(options = {}) {
-    this.currentEl = options.currentEl || document.getElementById('progress-current');
+    this.currentEl =
+      options.currentEl || document.getElementById('progress-current');
     this.totalEl = options.totalEl || document.getElementById('progress-total');
   }
 

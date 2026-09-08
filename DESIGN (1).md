@@ -141,11 +141,13 @@ spacing:
 This design system delivers a quiet, scholarly haven for Arabic speakers mastering English through focused reading and deliberate sentence typing. The interface rejects gamified, frenetic language-learning tropes—dispensing with neon streaks, aggressive badges, and cartoonish mascots. Instead, it embodies the calm, meditative atmosphere of a private library, pairing archival book craft with modern precision tools.
 
 ### Brand Personality & Emotional Tenor
+
 - **Contemplative & Archival:** The screen feels like aged stock, ink, and binding thread. It evokes the stillness of an uninterrupted reading session.
 - **Dignified & Unrushed:** Learning is treated as an intellectual pursuit. Errors are soft deviations, not loud penalizing alerts; successes settle smoothly into place.
 - **Bilingual Equilibrium:** English (the subject of study) and Arabic (the anchor of understanding) hold deliberate typographic balance. Neither language feels subordinated or awkwardly retrofitted.
 
 ### Design Style
+
 An organic hybrid of **Editorial Archival Minimalism** and **Tactile Bookcraft**. Surfaces rely on delicate fiber-like paper tones, warm espresso inks, hairline rule-lines (`0.5px` to `1px`), and warm, muted glowing focus rings that resemble ink soaking subtly into laid paper.
 
 ## Colors
@@ -153,6 +155,7 @@ An organic hybrid of **Editorial Archival Minimalism** and **Tactile Bookcraft**
 The palette draws directly from bookbinding materials: bookbinder board, raw sienna ink, patinated bronze teal, and warm rag paper. The default mode is **dark** ("Warm Espresso"), calibrated to reduce eye strain during extended night reading and typing sessions, complemented by an equally refined "Warm Cream Book Paper" light mode.
 
 ### Dark Mode (Default)
+
 - **Base Canvas (`#141312`):** Deep charcoal steeped in warm espresso bean tones.
 - **Surface Elevation 1 (`#1C1B1A`):** Low-contrast resting cards and sentence vessels.
 - **Surface Elevation 2 (`#242220`):** Elevated reading blocks, glosses, and active drawer plates.
@@ -162,6 +165,7 @@ The palette draws directly from bookbinding materials: bookbinder board, raw sie
   - Muted Inactive / Glyphs: `#6B665E` (Dry graphite).
 
 ### Light Mode (Warm Cream Paper)
+
 - **Base Canvas (`#FAF8F5`):** Unbleached book rag paper.
 - **Surface Elevation 1 (`#F3EFEA`):** Pressed deckle-edge card surfaces.
 - **Surface Elevation 2 (`#EAE3DA`):** Inset typing gutters and tool trays.
@@ -171,18 +175,20 @@ The palette draws directly from bookbinding materials: bookbinder board, raw sie
   - Muted Inactive: `#9E9689` (Faded stamp ink).
 
 ### Accent & Feedback Inks
+
 - **Raw Sienna Primary (`#D97724`):** Focal anchor. Used for active typing cursors, phoneme accents, and key interactive touchpoints.
 - **Bronze Teal Secondary (`#2A5C5A`):** Grammar markers, morphology breakdowns, and parts of speech.
 - **Warm Gold Tertiary (`#D4AF37`):** Mastery milestones, retention markers, and review markers.
 - **Ink Feedback (Typing Accuracy):**
-  - *Correct Strike:* Settles into Primary Hero Ink (`#F5F2EC` in dark, `#1C1B1A` in light) with a micro-glow of `#D9772433`.
-  - *Deviant Strike:* Muted terracotta wash (`#8C3827`), avoiding abrasive red alarms.
+  - _Correct Strike:_ Settles into Primary Hero Ink (`#F5F2EC` in dark, `#1C1B1A` in light) with a micro-glow of `#D9772433`.
+  - _Deviant Strike:_ Muted terracotta wash (`#8C3827`), avoiding abrasive red alarms.
 
 ## Typography
 
 Typography is the absolute core of the experience. The typography stack balances optical beauty with linguistic precision.
 
 ### Typographic Roles
+
 1. **The Hero Sentence (Newsreader):** Set with high optical care, italicized alternatives for stress patterns, and gentle tracking. It breathes at the center of the viewport, inviting rhythmic reading and keystrokes.
 2. **The Arabic Counterpart (Noto Serif / Amiri):** Arabic requires generous vertical clearance and appropriate leading to prevent mark clipping. Set at roughly 1.15x to 1.25x line-height compared to Latin script.
 3. **The Utility Shell (Plus Jakarta Sans):** Low-noise geometric sans handles progress ratios, speed metrics (WPM), vocabulary frequency flags, and navigation chrome.
@@ -193,6 +199,7 @@ Typography is the absolute core of the experience. The typography stack balances
 The layout is built around a **Contemplative Focus Stage** rather than dense multi-column dashboard layouts.
 
 ### Structure & Grid Philosophy
+
 - **The Stage:** All core interaction happens within a central column constrained to a maximum width of `760px`. This keeps Latin line lengths under 70 characters and ensures the Arabic translation rests squarely within the reader’s peripheral gaze.
 - **Vertical Spacing Rhythm:** Generous vertical intervals (`space-2xl` and `space-3xl`) isolate the active sentence from distracting meta-controls. Secondary metadata sits at the edges of the perimeter.
 - **Breakpoints:**
@@ -205,11 +212,12 @@ The layout is built around a **Contemplative Focus Stage** rather than dense mul
 This system avoids synthetic drop shadows, elevated gloss, and high-contrast layered cards. Depth is produced purely through **surface tint shifts, ruled hairlines, and ambient backlights**.
 
 ### Depth Layers
+
 - **Ground (Canvas):** Pure resting plane (`#141312` dark / `#FAF8F5` light).
 - **Inlaid Wells (The Typing Track):** Recessed rather than elevated. The typing arena utilizes a slightly deepened hue with soft inset borders (`1px solid rgba(255, 255, 255, 0.04)` in dark; `1px solid rgba(0, 0, 0, 0.05)` in light) indicating a carved plate ready to receive ink.
 - **Floating Annotations (Lexical Slates):** When a word is inspected, its dictionary slate emerges with an ambient glow:
-  - *Dark Mode:* `box-shadow: 0 12px 32px -4px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(217, 119, 36, 0.12);`
-  - *Light Mode:* `box-shadow: 0 12px 32px -4px rgba(28, 27, 26, 0.08), 0 0 0 1px rgba(192, 94, 18, 0.15);`
+  - _Dark Mode:_ `box-shadow: 0 12px 32px -4px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(217, 119, 36, 0.12);`
+  - _Light Mode:_ `box-shadow: 0 12px 32px -4px rgba(28, 27, 26, 0.08), 0 0 0 1px rgba(192, 94, 18, 0.15);`
 
 ## Shapes
 
@@ -222,23 +230,28 @@ The design uses **Soft (Level 1)** geometry, drawing inspiration from trimmed pa
 ## Components
 
 ### Hero Typing Surface
+
 - **Container:** Framed by a delicate `1px` border with `0.25rem` radius. Never looks like an HTML `<textarea>`.
 - **Ghost Target Text:** Rendered in `sentence-hero` at `35%` opacity in dry graphite ink.
 - **Carret / Beam:** An amber sienna cursor (`#D97724`), `2.5px` wide, with a faint breathing glow (`0 0 8px rgba(217, 119, 36, 0.45)`).
 - **Arabic Mirror Strip:** Situated directly beneath or above the active typing track, rendered in `sentence-arabic-sub` using `Noto Serif` with directional text isolation (`dir="rtl"`).
 
 ### Word-Level Grammar Chips
+
 - **Resting:** Micro-pill with subtle hairline border (`rgba(255, 255, 255, 0.08)` in dark), transparent background, uppercase label (`label-caps`).
 - **Interactive:** Hovering or tabbing illuminates the chip in bronze teal (`#2A5C5A`), revealing the Arabic root meaning in a calm tooltip.
 
 ### Action Buttons & Keystroke Triggers
+
 - **Primary Action (Commit / Next Cadence):** Minimal fill in Raw Sienna (`#D97724`), text in deep charcoal (`#141312`), font `body-ui-strong`. No harsh gradients. Micro-interaction: `transform: translateY(1px)` on active press.
 - **Secondary (Audio Pronunciation, Loop Segment):** Transparent surface with subtle border, shifting to `#242220` (dark) or `#EAE3DA` (light) on hover.
 
 ### Inputs & Translation Drawers
+
 - Text fields use no background fill; only an active bottom baseline border that transitions from muted graphite to raw sienna upon entry.
 - Lexical drawer slides from the stage base with clean horizontal hairline separators (`0.5px solid rgba(255, 255, 255, 0.08)`).
 
 ### Quiet Progress & Metronome Indicators
+
 - A continuous, ultra-thin progress thread (`1.5px`) anchored at the top or base of the stage container.
 - WPM, Accuracy, and Rhythm statistics are displayed in low-contrast, non-blinking `label-stats`, prioritizing undisturbed focus over high-intensity gamification.

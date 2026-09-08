@@ -10,7 +10,8 @@ export class SettingsScreen extends EventEmitter {
     if (!this.el) return;
 
     const settings = settingsService.getAll();
-    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    const isDark =
+      document.documentElement.getAttribute('data-theme') === 'dark';
 
     this.el.innerHTML = `
       <div class="settings-page">
@@ -44,7 +45,7 @@ export class SettingsScreen extends EventEmitter {
               <select id="setting-speech-rate" class="settings-select" aria-label="Speech rate">
                 <option value="0.5" ${settings.speechRate === 0.5 ? 'selected' : ''}>0.5x</option>
                 <option value="0.75" ${settings.speechRate === 0.75 ? 'selected' : ''}>0.75x</option>
-                <option value="1" ${(settings.speechRate === 1 || !settings.speechRate) ? 'selected' : ''}>1x</option>
+                <option value="1" ${settings.speechRate === 1 || !settings.speechRate ? 'selected' : ''}>1x</option>
                 <option value="1.25" ${settings.speechRate === 1.25 ? 'selected' : ''}>1.25x</option>
                 <option value="1.5" ${settings.speechRate === 1.5 ? 'selected' : ''}>1.5x</option>
               </select>
@@ -93,7 +94,8 @@ export class SettingsScreen extends EventEmitter {
     if (themeToggle) {
       themeToggle.addEventListener('click', () => {
         this.emit('setting:theme');
-        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        const isDark =
+          document.documentElement.getAttribute('data-theme') === 'dark';
         themeToggle.classList.toggle('is-on', !isDark);
         themeToggle.setAttribute('aria-checked', String(!isDark));
         const desc = this.el?.querySelector('.settings-item-desc');

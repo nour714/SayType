@@ -4,7 +4,10 @@
 export class Toast {
   constructor(containerId = 'toast-container') {
     this.containerId = containerId;
-    this.container = typeof document !== 'undefined' ? document.getElementById(containerId) : null;
+    this.container =
+      typeof document !== 'undefined'
+        ? document.getElementById(containerId)
+        : null;
   }
 
   /**

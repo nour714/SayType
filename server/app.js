@@ -41,7 +41,9 @@ app.use((req, res) => {
 if (require.main === module) {
   app.listen(PORT, () => {
     console.log(`SayType Server listening at http://localhost:${PORT}`);
-    console.log(`API endpoints available at http://localhost:${PORT}/api/sentences`);
+    console.log(
+      `API endpoints available at http://localhost:${PORT}/api/sentences`
+    );
   });
 }
 

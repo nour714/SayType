@@ -32,8 +32,16 @@ export class LevelScreen extends EventEmitter {
       const completedIds = new Set(stats.completedSentenceIds || []);
 
       const levels = [
-        { id: 'A1', name: 'Beginner', description: 'Everyday expressions and basic phrases' },
-        { id: 'A2', name: 'Elementary', description: 'More complex sentences and vocabulary' }
+        {
+          id: 'A1',
+          name: 'Beginner',
+          description: 'Everyday expressions and basic phrases'
+        },
+        {
+          id: 'A2',
+          name: 'Elementary',
+          description: 'More complex sentences and vocabulary'
+        }
       ];
 
       this.el.innerHTML = `
@@ -43,11 +51,19 @@ export class LevelScreen extends EventEmitter {
             <p class="page-subtitle">Select a CEFR level to begin practicing</p>
           </div>
           <div class="level-grid">
-            ${levels.map(lv => {
-              const lvSentences = allSentences.filter(s => s.level === lv.id);
-              const lvCompleted = lvSentences.filter(s => completedIds.has(String(s.id))).length;
-              const pct = lvSentences.length > 0 ? Math.round((lvCompleted / lvSentences.length) * 100) : 0;
-              return `
+            ${levels
+              .map((lv) => {
+                const lvSentences = allSentences.filter(
+                  (s) => s.level === lv.id
+                );
+                const lvCompleted = lvSentences.filter((s) =>
+                  completedIds.has(String(s.id))
+                ).length;
+                const pct =
+                  lvSentences.length > 0
+                    ? Math.round((lvCompleted / lvSentences.length) * 100)
+                    : 0;
+                return `
                 <div class="level-card" data-level="${lv.id}">
                   <div class="level-card-header">
                     <span class="level-card-code">${lv.id}</span>
@@ -67,12 +83,13 @@ export class LevelScreen extends EventEmitter {
                   </div>
                 </div>
               `;
-            }).join('')}
+              })
+              .join('')}
           </div>
         </div>
       `;
 
-      this.el.querySelectorAll('.level-topics-btn').forEach(btn => {
+      this.el.querySelectorAll('.level-topics-btn').forEach((btn) => {
         btn.addEventListener('click', (e) => {
           e.preventDefault();
           const lv = btn.dataset.level;
@@ -81,7 +98,8 @@ export class LevelScreen extends EventEmitter {
         });
       });
     } catch (err) {
-      this.el.innerHTML = '<div class="page-empty">Failed to load levels. Please try again.</div>';
+      this.el.innerHTML =
+        '<div class="page-empty">Failed to load levels. Please try again.</div>';
     }
   }
 
@@ -102,11 +120,19 @@ export class LevelScreen extends EventEmitter {
             <p class="page-subtitle">Choose a topic to start practicing</p>
           </div>
           <div class="topic-grid">
-            ${topics.map(t => {
-              const topicSentences = allSentences.filter(s => s.topic === t.id);
-              const completedCount = topicSentences.filter(s => completedIds.has(String(s.id))).length;
-              const pct = topicSentences.length > 0 ? Math.round((completedCount / topicSentences.length) * 100) : 0;
-              return `
+            ${topics
+              .map((t) => {
+                const topicSentences = allSentences.filter(
+                  (s) => s.topic === t.id
+                );
+                const completedCount = topicSentences.filter((s) =>
+                  completedIds.has(String(s.id))
+                ).length;
+                const pct =
+                  topicSentences.length > 0
+                    ? Math.round((completedCount / topicSentences.length) * 100)
+                    : 0;
+                return `
                 <a href="#/practice?level=${level}&topic=${t.id}" class="topic-card">
                   <div class="topic-card-header">
                     <span class="topic-card-name">${t.label}</span>
@@ -120,7 +146,8 @@ export class LevelScreen extends EventEmitter {
                   </div>
                 </a>
               `;
-            }).join('')}
+              })
+              .join('')}
             <a href="#/practice?level=${level}" class="topic-card topic-card-all">
               <div class="topic-card-header">
                 <span class="topic-card-name">All Topics</span>
@@ -141,7 +168,8 @@ export class LevelScreen extends EventEmitter {
         });
       }
     } catch (err) {
-      this.el.innerHTML = '<div class="page-empty">Failed to load topics. Please try again.</div>';
+      this.el.innerHTML =
+        '<div class="page-empty">Failed to load topics. Please try again.</div>';
     }
   }
 }

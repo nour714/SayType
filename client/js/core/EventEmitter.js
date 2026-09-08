@@ -29,7 +29,7 @@ export class EventEmitter {
   off(event, fn) {
     const list = this._listeners[event];
     if (list) {
-      this._listeners[event] = list.filter(f => f !== fn);
+      this._listeners[event] = list.filter((f) => f !== fn);
     }
     return this;
   }
@@ -43,7 +43,7 @@ export class EventEmitter {
   emit(event, ...args) {
     const list = this._listeners[event];
     if (list) {
-      list.forEach(fn => {
+      list.forEach((fn) => {
         try {
           fn(...args);
         } catch (err) {

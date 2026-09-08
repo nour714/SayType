@@ -62,13 +62,19 @@ export class MetricsCalculator {
   }
 
   /** @returns {number} */
-  get mistakes() { return this._mistakes; }
+  get mistakes() {
+    return this._mistakes;
+  }
 
   /** @returns {number} */
-  get correctKeystrokes() { return this._correctKeystrokes; }
+  get correctKeystrokes() {
+    return this._correctKeystrokes;
+  }
 
   /** @returns {number} */
-  get totalAttempts() { return this._totalAttempts; }
+  get totalAttempts() {
+    return this._totalAttempts;
+  }
 
   /**
    * Elapsed seconds since the first keystroke.
@@ -109,7 +115,7 @@ export class MetricsCalculator {
       wpm: this.wpm,
       accuracy: this.accuracy,
       mistakes: this.mistakes,
-      elapsedSeconds: this.elapsedSeconds,
+      elapsedSeconds: this.elapsedSeconds
     };
   }
 }
