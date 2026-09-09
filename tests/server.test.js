@@ -31,7 +31,7 @@ const server = app.listen(3002, async () => {
     const sentences = JSON.parse(sentencesRes.body);
     assert.strictEqual(Array.isArray(sentences), true);
     assert.ok(sentences.length >= 10, `Expected at least 10 sentences, got ${sentences.length}`);
-    assert.strictEqual(sentences[0].text_en, "I wake up at seven every morning.");
+    assert.strictEqual(sentences[0].text_en, "Hello!");
     assert.strictEqual(sentences[0].level, "A1");
     assert.ok(Array.isArray(sentences[0].words) && sentences[0].words.length > 0, 'Expected word-level metadata');
     console.log(`✓ GET /api/sentences passed (${sentences.length} sentences)`);
@@ -58,17 +58,17 @@ const server = app.listen(3002, async () => {
     const topics = JSON.parse(topicsListRes.body);
     assert.ok(Array.isArray(topics));
     const topicIds = topics.map(t => t.id);
-    const EXPECTED_TOPICS = ['daily-life', 'family', 'food', 'travel', 'university', 'work', 'shopping', 'health', 'weather', 'communication'];
+    const EXPECTED_TOPICS = ['greetings', 'daily-life', 'shopping', 'food', 'basics', 'work', 'travel', 'emotions', 'health', 'technology', 'communication'];
     EXPECTED_TOPICS.forEach(t => assert.ok(topicIds.includes(t), `Expected topic "${t}" in topics list`));
-    // With A2 content, there are now 12 topics total (10 original + 2 new A2-only)
-    assert.ok(topics.length >= 10, `Expected at least 10 topics, got ${topics.length}`);
+    // 500-sentence curriculum: 11 topics total (5 A1 + 6 A2)
+    assert.strictEqual(topics.length, 11, `Expected 11 topics, got ${topics.length}`);
     console.log(`✓ GET /api/sentences/topics passed (${topics.length} topics)`);
 
     // 5a. Topics filtered by level
     const topicsA1Res = await get('/api/sentences/topics?level=A1');
     assert.strictEqual(topicsA1Res.status, 200);
     const topicsA1 = JSON.parse(topicsA1Res.body);
-    assert.strictEqual(topicsA1.length, 10, 'A1 should have exactly 10 topics');
+    assert.strictEqual(topicsA1.length, 5, 'A1 should have exactly 5 topics');
     const a1Ids = topicsA1.map(t => t.id);
     assert.ok(!a1Ids.includes('technology'), 'A1 topics should not include technology');
     assert.ok(!a1Ids.includes('emotions'), 'A1 topics should not include emotions');
@@ -77,7 +77,7 @@ const server = app.listen(3002, async () => {
     const topicsA2Res = await get('/api/sentences/topics?level=A2');
     assert.strictEqual(topicsA2Res.status, 200);
     const topicsA2 = JSON.parse(topicsA2Res.body);
-    assert.strictEqual(topicsA2.length, 12, 'A2 should have 12 topics (10 shared + 2 new)');
+    assert.strictEqual(topicsA2.length, 6, 'A2 should have 6 topics');
     const a2Ids = topicsA2.map(t => t.id);
     assert.ok(a2Ids.includes('technology'), 'A2 topics should include technology');
     assert.ok(a2Ids.includes('emotions'), 'A2 topics should include emotions');
@@ -176,7 +176,7 @@ const server = app.listen(3002, async () => {
     console.log('✓ Content: all levels valid');
 
     // Valid topics
-    const validTopics = ['daily-life','family','food','travel','university','work','shopping','health','weather','communication','technology','emotions'];
+    const validTopics = ['greetings','daily-life','shopping','food','basics','work','travel','emotions','health','technology','communication'];
     const invalidTopics = allData.filter(s => !validTopics.includes(s.topic));
     assert.strictEqual(invalidTopics.length, 0, `Invalid topics: ${[...new Set(invalidTopics.map(s => s.topic))].join(', ')}`);
     console.log('✓ Content: all topics valid');

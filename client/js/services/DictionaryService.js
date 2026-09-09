@@ -1375,6 +1375,73 @@ export class DictionaryService {
         partOfSpeech: 'adjective'
       },
 
+      // Everyday expressions (cover the greetings & basics content set)
+      hello: {
+        translation: 'مرحبًا',
+        pronunciation: '/həˈloʊ/',
+        partOfSpeech: 'interjection'
+      },
+      no: {
+        translation: 'لا',
+        pronunciation: '/noʊ/',
+        partOfSpeech: 'adverb'
+      },
+      problem: {
+        translation: 'مشكلة',
+        pronunciation: '/ˈprɒb.ləm/',
+        partOfSpeech: 'noun'
+      },
+      congratulations: {
+        translation: 'تهانينا',
+        pronunciation: '/kənˌɡrætʃ.əˈleɪ.ʃənz/',
+        partOfSpeech: 'interjection'
+      },
+      practice: {
+        translation: 'يتدرب / ممارسة',
+        pronunciation: '/ˈpræk.tɪs/',
+        partOfSpeech: 'verb'
+      },
+      progress: {
+        translation: 'تقدم',
+        pronunciation: '/ˈprɒɡ.res/',
+        partOfSpeech: 'noun'
+      },
+      keep: {
+        translation: 'يستمر / يحافظ',
+        pronunciation: '/kiːp/',
+        partOfSpeech: 'verb'
+      },
+      careful: {
+        translation: 'حذر',
+        pronunciation: '/ˈkeə.fəl/',
+        partOfSpeech: 'adjective'
+      },
+      really: {
+        translation: 'حقًا',
+        pronunciation: '/ˈrɪə.li/',
+        partOfSpeech: 'adverb'
+      },
+      course: {
+        translation: 'دورة / مسار',
+        pronunciation: '/kɔːs/',
+        partOfSpeech: 'noun'
+      },
+      absolutely: {
+        translation: 'بالتأكيد',
+        pronunciation: '/ˈæb.sə.luːt.li/',
+        partOfSpeech: 'adverb'
+      },
+      maybe: {
+        translation: 'ربما',
+        pronunciation: '/ˈmeɪ.bi/',
+        partOfSpeech: 'adverb'
+      },
+      probably: {
+        translation: 'على الأرجح',
+        pronunciation: '/ˈprɒb.ə.bli/',
+        partOfSpeech: 'adverb'
+      },
+
       // Time & Numbers
       morning: {
         translation: 'صباح',
