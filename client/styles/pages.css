@@ -1314,10 +1314,6 @@
     display: none;
   }
 
-  .profile-btn span:last-child {
-    display: none;
-  }
-
   .page-container {
     padding-block: var(--space-6);
     padding-bottom: calc(5.5rem + var(--space-6));

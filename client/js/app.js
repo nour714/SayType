@@ -277,7 +277,6 @@ async function bootstrap() {
   // =========================================================================
   const streakCountEl = document.getElementById('streak-count');
   const streakBadge = document.getElementById('streak-badge');
-  const profileBtn = document.getElementById('profile-btn');
 
   function updateStreakUI() {
     const stats = progressService.getStats();
@@ -308,10 +307,6 @@ async function bootstrap() {
     );
     profileModal.open();
   };
-
-  if (profileBtn) {
-    profileBtn.addEventListener('click', openProfile);
-  }
 
   if (streakBadge) {
     streakBadge.addEventListener('click', openProfile);
