@@ -28,11 +28,16 @@ export class Toast {
       <div class="toast-text">
         <div class="toast-title"></div>
         <div class="toast-subtitle"></div>
-      </div>`;
+      </div>
+      <button class="toast-dismiss" type="button" aria-label="Dismiss notification">&times;</button>`;
 
     el.querySelector('.toast-icon').textContent = icon;
     el.querySelector('.toast-title').textContent = title;
     el.querySelector('.toast-subtitle').textContent = subtitle || '';
+
+    const dismiss = () => el.remove();
+    // Optional chaining: unit-test DOM stubs may not implement listeners.
+    el.querySelector('.toast-dismiss')?.addEventListener?.('click', dismiss);
 
     this.container.appendChild(el);
 

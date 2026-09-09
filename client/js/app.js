@@ -635,7 +635,7 @@ async function bootstrap() {
     if (currentPage === '/practice') cleanupPracticeSession();
     currentPage = '/settings';
     showPage('/settings');
-    settingsScreen.render({ settingsService });
+    settingsScreen.render({ settingsService, authService });
   });
 
   // Catch-all 404 route

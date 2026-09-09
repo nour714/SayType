@@ -89,7 +89,7 @@ export class ProfileScreen {
               return `
                 <div class="badge-card ${isUnlocked ? 'is-unlocked' : 'is-locked'}" role="listitem">
                   <div class="badge-card-top">
-                    <span class="badge-card-icon">${isUnlocked ? badge.icon : '🔒'}</span>
+                    <span class="badge-card-icon">${isUnlocked ? badge.icon : '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>'}</span>
                     <span class="badge-card-status">${isUnlocked ? 'Unlocked' : 'Locked'}</span>
                   </div>
                   <div class="badge-card-info">

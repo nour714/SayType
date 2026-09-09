@@ -516,7 +516,7 @@ export class TrainingScreen extends EventEmitter {
   setReviewBadge(sentence) {
     if (!this.reviewBadge) return;
     if (sentence && sentence.isReview) {
-      this.reviewBadge.textContent = `🔁 Review · ${sentence.reviewWord}`;
+      this.reviewBadge.textContent = `Review · ${sentence.reviewWord}`;
       this.reviewBadge.hidden = false;
     } else {
       this.reviewBadge.hidden = true;

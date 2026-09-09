@@ -33,7 +33,7 @@ export class ThemeService extends EventEmitter {
     if (metaThemeColor) {
       metaThemeColor.setAttribute(
         'content',
-        this.theme === 'dark' ? '#0f1114' : '#f5f3ef'
+        this.theme === 'dark' ? '#0b0d0f' : '#f5f2ea'
       );
     }
 

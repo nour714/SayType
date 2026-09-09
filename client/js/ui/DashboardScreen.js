@@ -12,6 +12,7 @@ export class DashboardScreen extends EventEmitter {
     dueReviewCount,
     topics,
     lastLevel,
+    lastTopic,
     sentenceRepo
   }) {
     if (!this.el) return;
@@ -34,11 +35,15 @@ export class DashboardScreen extends EventEmitter {
 
     const levelLabel = lastLevel || 'A1';
     const hasHistory = completed > 0;
+    const currentTopicLabel =
+      (topics || []).find((t) => t.id === lastTopic)?.label || 'All topics';
 
+    let allSentences = [];
+    let completedIds = new Set(stats.completedSentenceIds || []);
     let levelCards = '';
     try {
-      const allSentences = await sentenceRepo.getSentences();
-      const completedIds = new Set(stats.completedSentenceIds || []);
+      allSentences = await sentenceRepo.getSentences();
+      completedIds = new Set(stats.completedSentenceIds || []);
       const levels = ['A1', 'A2'];
       levelCards = levels
         .map((lv) => {
@@ -88,10 +93,12 @@ export class DashboardScreen extends EventEmitter {
     this.el.innerHTML = `
       <div class="home-container">
         <section class="home-hero">
-          <p class="home-greeting">${greeting}</p>
-          <h1 class="home-title">${hasHistory ? 'Continue your English practice' : 'Welcome to SayType'}</h1>
-          <p class="home-subtitle">${hasHistory ? 'Pick up where you left off.' : 'Start learning English through typing and listening.'}</p>
+          <p class="home-greeting">${greeting} · English typing trainer</p>
+          <h1 class="home-title">Learn English by typing.</h1>
+          <p class="home-subtitle">Listen. Type. Remember.</p>
           <a href="${ctaRoute}" class="action-btn primary-btn home-cta">${hasHistory ? 'Continue Learning' : 'Start Learning'}</a>
+          <p class="home-cta-meta"><strong>${levelLabel}</strong><span aria-hidden="true">·</span><span>${currentTopicLabel}</span><span aria-hidden="true">·</span><span>${completed} sentences</span></p>
+          <p class="home-arabic" dir="rtl" lang="ar">استمع إلى الجملة، اكتبها، وتذكّرها — دقائق قليلة كل يوم تصنع الفرق.</p>
         </section>
 
         <div class="home-grid">
@@ -165,14 +172,30 @@ export class DashboardScreen extends EventEmitter {
             <div class="home-topic-list">
               ${topics
                 .slice(0, 6)
-                .map(
-                  (t) => `
+                .map((t) => {
+                  const tSentences = allSentences.filter(
+                    (s) => s.level === levelLabel && s.topic === t.id
+                  );
+                  const tDone = tSentences.filter((s) =>
+                    completedIds.has(String(s.id))
+                  ).length;
+                  const pct =
+                    tSentences.length > 0
+                      ? Math.round((tDone / tSentences.length) * 100)
+                      : 0;
+                  return `
                 <a href="#/practice?level=${levelLabel}&topic=${t.id}" class="home-topic-chip">
-                  <span class="home-topic-chip-name">${t.label}</span>
-                  <span class="home-topic-chip-count">${t.count}</span>
+                  <span class="home-topic-chip-top">
+                    <span class="home-topic-chip-name">${t.label}</span>
+                    <span class="home-topic-chip-pct">${pct}%</span>
+                  </span>
+                  <span class="home-topic-bar" aria-hidden="true">
+                    <span class="home-topic-bar-fill" style="width:${pct}%"></span>
+                  </span>
+                  <span class="home-topic-chip-count">${tDone}/${tSentences.length || t.count} sentences</span>
                 </a>
-              `
-                )
+              `;
+                })
                 .join('')}
             </div>
           </section>

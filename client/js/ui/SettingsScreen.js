@@ -6,12 +6,14 @@ export class SettingsScreen extends EventEmitter {
     this.el = document.getElementById('page-settings');
   }
 
-  render({ settingsService }) {
+  render({ settingsService, authService }) {
     if (!this.el) return;
 
     const settings = settingsService.getAll();
     const isDark =
       document.documentElement.getAttribute('data-theme') === 'dark';
+    const isAuthenticated = authService?.isAuthenticated || false;
+    const email = authService?.email || '';
 
     this.el.innerHTML = `
       <div class="settings-page">
@@ -21,6 +23,19 @@ export class SettingsScreen extends EventEmitter {
         </div>
 
         <div class="settings-list">
+          <div class="settings-group">
+            <h2 class="settings-group-title">Appearance</h2>
+            <div class="settings-item">
+              <div class="settings-item-info">
+                <span class="settings-item-label">Theme</span>
+                <span class="settings-item-desc">Currently: ${isDark ? 'Dark' : 'Light'}</span>
+              </div>
+              <button id="setting-theme-toggle" class="settings-toggle ${isDark ? 'is-on' : ''}" role="switch" aria-checked="${isDark}" aria-label="Toggle theme">
+                <span class="settings-toggle-thumb"></span>
+              </button>
+            </div>
+          </div>
+
           <div class="settings-group">
             <h2 class="settings-group-title">Typing</h2>
             <div class="settings-item">
@@ -53,25 +68,31 @@ export class SettingsScreen extends EventEmitter {
           </div>
 
           <div class="settings-group">
-            <h2 class="settings-group-title">Appearance</h2>
+            <h2 class="settings-group-title">Account</h2>
             <div class="settings-item">
               <div class="settings-item-info">
-                <span class="settings-item-label">Theme</span>
-                <span class="settings-item-desc">Currently: ${isDark ? 'Dark' : 'Light'}</span>
+                <span class="settings-item-label">${isAuthenticated ? 'Signed in' : 'Guest mode'}</span>
+                ${
+                  isAuthenticated
+                    ? `<span class="settings-account-email">${email}</span>`
+                    : '<span class="settings-item-desc">Sign in to sync progress across devices</span>'
+                }
               </div>
-              <button id="setting-theme-toggle" class="settings-toggle ${isDark ? 'is-on' : ''}" role="switch" aria-checked="${isDark}" aria-label="Toggle theme">
-                <span class="settings-toggle-thumb"></span>
-              </button>
+              ${
+                isAuthenticated
+                  ? '<button id="setting-signout-btn" class="action-btn danger-btn">Sign Out</button>'
+                  : '<button id="setting-signin-btn" class="action-btn secondary-btn">Sign In</button>'
+              }
             </div>
           </div>
         </div>
       </div>
     `;
 
-    this._bindSettings(settingsService);
+    this._bindSettings(settingsService, authService);
   }
 
-  _bindSettings(settingsService) {
+  _bindSettings(settingsService, authService) {
     const typingMode = document.getElementById('setting-typing-mode');
     const speechRate = document.getElementById('setting-speech-rate');
     const themeToggle = document.getElementById('setting-theme-toggle');
@@ -100,6 +121,22 @@ export class SettingsScreen extends EventEmitter {
         themeToggle.setAttribute('aria-checked', String(!isDark));
         const desc = this.el?.querySelector('.settings-item-desc');
         if (desc) desc.textContent = `Currently: ${isDark ? 'Light' : 'Dark'}`;
+      });
+    }
+
+    const signInBtn = document.getElementById('setting-signin-btn');
+    if (signInBtn) {
+      signInBtn.addEventListener('click', () => {
+        const authBtn = document.getElementById('auth-btn');
+        if (authBtn) authBtn.click();
+      });
+    }
+
+    const signOutBtn = document.getElementById('setting-signout-btn');
+    if (signOutBtn && authService) {
+      signOutBtn.addEventListener('click', async () => {
+        await authService.signOut();
+        this.render({ settingsService, authService });
       });
     }
   }

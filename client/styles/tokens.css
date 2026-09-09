@@ -1,137 +1,109 @@
 /* ==========================================================================
-   Midnight Ink — Design System Tokens
-   A contemplative, editorial typing surface for language learning.
+   SayType — Design Tokens
+   Premium Educational Minimalism: calm, intelligent, editorial.
+   Single source of truth for color, type, space, radius, shadow, motion.
+   Never hard-code raw values in components or pages — use these tokens.
    ========================================================================== */
 
 :root {
-  /* Dark Mode Palette ("Midnight Ink") */
-  --surface: #0f1114;
-  --surface-dim: #090a0c;
-  --surface-bright: #1c1f25;
-  --surface-container-lowest: #060709;
-  --surface-container-low: #121418;
-  --surface-container: #171a1f;
-  --surface-container-high: #1e2228;
-  --surface-container-highest: #262b32;
+  /* ---- Dark theme: Ink & Lime -------------------------------------------
+     Primary background #0B0D0F · Accent #B8F36A · Secondary accent #D9C7A2 */
+  --bg: #0b0d0f;
+  --bg-2: #111417;
+  --surface: #171b1f;
+  --surface-2: #1d2227;
+  --elevated: #232a30;
 
-  --on-surface: #eceae6;
-  --on-surface-variant: #b4b1ab;
-  --on-surface-muted: #646870;
-  --inverse-surface: #eceae6;
-  --inverse-on-surface: #171a1f;
+  --text: #f5f1e8;
+  --text-2: #a9b0b7;
+  --muted: #707981;
 
-  --outline: #3e434b;
-  --outline-variant: #282c33;
-  --surface-tint: #7ec3a2;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.14);
 
-  --primary: #7ec3a2;
-  --on-primary: #0a100d;
-  --primary-container: #5a7d6d;
-  --on-primary-container: #d4ece2;
-  --inverse-primary: #a3c4b6;
+  --accent: #b8f36a;
+  --on-accent: #131a08;
+  --accent-soft: rgba(184, 243, 106, 0.12);
+  --accent-line: rgba(184, 243, 106, 0.35);
+  --accent-2: #d9c7a2;
+  --on-accent-2: #241b0c;
 
-  --secondary: #b8c4d4;
-  --on-secondary: #1a2233;
-  --secondary-container: #2a3548;
-  --on-secondary-container: #c8d4e4;
+  --success: #8fd694;
+  --success-soft: rgba(143, 214, 148, 0.12);
+  --error: #ff7a7a;
+  --error-soft: rgba(255, 122, 122, 0.1);
+  --warning: #e8c979;
+  --warning-soft: rgba(232, 201, 121, 0.12);
+  --info: #8ab4f8;
+  --info-soft: rgba(138, 180, 248, 0.12);
 
-  --tertiary: #dfbe93;
-  --on-tertiary: #2a1f0f;
-  --tertiary-container: #a88d66;
+  --caret: #b8f36a;
 
-  --accent-bloom: #c084fc;
-  --on-tertiary-container: #f0e0c8;
+  /* Header / dock translucent fills */
+  --chrome-bg: rgba(11, 13, 15, 0.78);
+  --overlay-bg: rgba(6, 7, 8, 0.72);
 
-  --streak-flame: #ff7849;
-  --streak-flame-alt: #ffb020;
-  --streak-gradient: linear-gradient(135deg, #ff7849 0%, #ffb020 100%);
-  --streak-glow: 0 0 16px rgba(255, 120, 73, 0.35);
+  /* Shadows: soft and restrained */
+  --shadow-subtle: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --shadow-medium: 0 8px 24px -8px rgba(0, 0, 0, 0.55);
+  --shadow-elevated: 0 24px 64px -16px rgba(0, 0, 0, 0.7);
 
-  --error: #ffb4ab;
-  --on-error: #690005;
-  --error-container: #93000a;
-  --on-error-container: #ffdad6;
-  --error-strike: #f87171;
-  --error-glow: rgba(248, 113, 113, 0.3);
+  --focus-ring: 0 0 0 2px var(--bg), 0 0 0 4px var(--accent);
 
-  --accent-sage: #7ec3a2;
-  --caret-color: #7ec3a2;
-  --caret-glow:
-    0 0 12px rgba(126, 195, 162, 0.45), 0 0 24px rgba(126, 195, 162, 0.2);
-  --correct-glow: 0 0 10px rgba(126, 195, 162, 0.25);
-
-  /* Background Gradient Mesh */
-  --bg-gradient:
-    radial-gradient(
-      circle at 50% 0%,
-      rgba(126, 195, 162, 0.07) 0%,
-      transparent 55%
-    ),
-    radial-gradient(
-      circle at 85% 85%,
-      rgba(79, 110, 160, 0.05) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      circle at 15% 75%,
-      rgba(255, 120, 73, 0.035) 0%,
-      transparent 45%
-    ),
-    var(--surface);
-  --noise-opacity: 0.024;
-  --vessel-bg: rgba(23, 26, 31, 0.72);
-  --vessel-border: rgba(255, 255, 255, 0.08);
-  --vessel-shadow:
-    inset 0 1px 0 0 rgba(255, 255, 255, 0.06),
-    inset 0 2px 14px rgba(0, 0, 0, 0.4), 0 24px 60px -12px rgba(0, 0, 0, 0.65);
-  --modal-bg: rgba(20, 23, 28, 0.96);
-  --modal-border: rgba(126, 195, 162, 0.22);
-  --modal-shadow:
-    inset 0 1px 0 0 rgba(255, 255, 255, 0.08),
-    0 32px 80px -10px rgba(0, 0, 0, 0.85), 0 0 0 1px rgba(255, 255, 255, 0.05);
-
-  --glass-border: rgba(255, 255, 255, 0.08);
-  --glass-highlight: inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
-  --glass-shadow:
-    0 16px 40px -8px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.05);
-  --card-hover-shadow:
-    0 20px 48px -10px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(126, 195, 162, 0.3);
-
-  /* Typography Stacks */
-  --font-hero: 'Newsreader', Georgia, 'Times New Roman', serif;
-  --font-arabic: 'Noto Naskh Arabic', 'Amiri', 'Traditional Arabic', serif;
-  --font-ui:
+  /* ---- Typography ------------------------------------------------------ */
+  --font-display: 'Newsreader', Georgia, 'Times New Roman', serif;
+  --font-body:
     'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
     sans-serif;
-  --font-mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', monospace;
+  --font-mono:
+    'JetBrains Mono', 'SF Mono', ui-monospace, 'Fira Code', monospace;
+  --font-arabic: 'Noto Naskh Arabic', 'Amiri', 'Traditional Arabic', serif;
 
-  /* Spacing Tokens */
-  --space-2xs: 0.25rem;
-  --space-xs: 0.5rem;
-  --space-sm: 0.75rem;
-  --space-md: 1rem;
-  --space-lg: 1.5rem;
-  --space-xl: 2.25rem;
-  --space-2xl: 3.5rem;
-  --space-3xl: 5rem;
-  --stage-max-width: 800px;
+  --text-xs: 0.6875rem; /* 11px — micro labels */
+  --text-sm: 0.8125rem; /* 13px — secondary UI */
+  --text-md: 0.9375rem; /* 15px — body */
+  --text-lg: 1.125rem; /* 18px — lead */
+  --text-xl: 1.5rem; /* 24px — section titles */
+  --text-2xl: 2rem; /* 32px — page titles */
+  --text-3xl: 2.625rem; /* 42px — hero / typing canvas */
+  --text-4xl: 3.5rem; /* 56px — display */
 
-  /* Border Radii */
-  --rounded-sm: 0.3rem;
-  --rounded-base: 0.45rem;
-  --rounded-md: 0.65rem;
-  --rounded-lg: 0.85rem;
-  --rounded-xl: 1.15rem;
-  --rounded-full: 9999px;
+  --leading-tight: 1.15;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.75;
 
-  /* Transitions */
-  --ease-fluid: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
-  --duration-quick: 140ms;
-  --duration-norm: 240ms;
-  --duration-slow: 380ms;
+  /* ---- Spacing (4px base) ---------------------------------------------- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
 
-  /* Z-Index Scale */
+  /* ---- Radius: refined, never childish ---------------------------------- */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+
+  /* ---- Motion: quiet and purposeful ------------------------------------- */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --ease-emphasized: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 120ms;
+  --duration-normal: 220ms;
+  --duration-slow: 360ms;
+
+  /* ---- Layout ------------------------------------------------------------ */
+  --layout-max: 80rem; /* 1280px shell */
+  --content-max: 60rem; /* 960px readable measure */
+  --practice-max: 50rem; /* 800px typing canvas */
+
+  /* ---- Z-index scale ------------------------------------------------------ */
   --z-base: 1;
   --z-sticky: 10;
   --z-overlay: 100;
@@ -140,90 +112,47 @@
 }
 
 /* ==========================================================================
-   Light Mode ("Parchment & Ink")
+   Light theme: Parchment & Moss
+   Background #F5F2EA · Accent #557A35 · Secondary accent #9B7B43
    ========================================================================== */
 [data-theme='light'] {
-  --surface: #f7f5f0;
-  --surface-dim: #ece8e0;
-  --surface-bright: #ffffff;
-  --surface-container-lowest: #ffffff;
-  --surface-container-low: #f2eee6;
-  --surface-container: #eae5dc;
-  --surface-container-high: #e2ddd3;
-  --surface-container-highest: #d8d2c6;
+  --bg: #f5f2ea;
+  --bg-2: #ece9e1;
+  --surface: #ffffff;
+  --surface-2: #f1ede4;
+  --elevated: #ffffff;
 
-  --on-surface: #191715;
-  --on-surface-variant: #484541;
-  --on-surface-muted: #858077;
-  --inverse-surface: #191715;
-  --inverse-on-surface: #f7f5f0;
+  --text: #171a1d;
+  --text-2: #5e666d;
+  --muted: #8b9298;
 
-  --outline: #949086;
-  --outline-variant: #d0cbc0;
-  --surface-tint: #4d7362;
+  --border: rgba(20, 25, 30, 0.1);
+  --border-strong: rgba(20, 25, 30, 0.18);
 
-  --primary: #4d7362;
-  --on-primary: #ffffff;
-  --primary-container: #d4ece2;
-  --on-primary-container: #152d22;
-  --inverse-primary: #7ec3a2;
+  --accent: #557a35;
+  --on-accent: #ffffff;
+  --accent-soft: #dceccb;
+  --accent-line: rgba(85, 122, 53, 0.4);
+  --accent-2: #9b7b43;
+  --on-accent-2: #ffffff;
 
-  --secondary: #36485b;
-  --on-secondary: #ffffff;
-  --secondary-container: #d8e4f4;
-  --on-secondary-container: #162433;
+  --success: #3d8b52;
+  --success-soft: rgba(61, 139, 82, 0.1);
+  --error: #c65353;
+  --error-soft: rgba(198, 83, 83, 0.08);
+  --warning: #9a741e;
+  --warning-soft: rgba(154, 116, 30, 0.1);
+  --info: #466ea8;
+  --info-soft: rgba(70, 110, 168, 0.1);
 
-  --tertiary: #785c3b;
-  --on-tertiary: #ffffff;
-  --tertiary-container: #f0e0c8;
-  --on-tertiary-container: #261b0c;
+  --caret: #557a35;
 
-  --streak-flame: #e25822;
-  --streak-flame-alt: #d97706;
-  --streak-gradient: linear-gradient(135deg, #e25822 0%, #f59e0b 100%);
-  --streak-glow: 0 0 12px rgba(226, 88, 34, 0.25);
+  --chrome-bg: rgba(245, 242, 234, 0.82);
+  --overlay-bg: rgba(38, 34, 28, 0.45);
 
-  --error: #ba1a1a;
-  --on-error: #ffffff;
-  --error-container: #ffdad6;
-  --on-error-container: #410002;
-  --error-strike: #dc2626;
-  --error-glow: rgba(220, 38, 38, 0.2);
+  --shadow-subtle: 0 1px 2px rgba(30, 28, 24, 0.08);
+  --shadow-medium: 0 8px 24px -10px rgba(30, 28, 24, 0.16);
+  --shadow-elevated: 0 24px 64px -20px rgba(30, 28, 24, 0.28);
 
-  --accent-sage: #4d7362;
-  --caret-color: #4d7362;
-  --caret-glow: 0 0 10px rgba(77, 115, 98, 0.35);
-  --correct-glow: 0 0 6px rgba(77, 115, 98, 0.16);
-
-  --bg-gradient:
-    radial-gradient(
-      circle at 50% 0%,
-      rgba(77, 115, 98, 0.05) 0%,
-      transparent 60%
-    ),
-    radial-gradient(
-      circle at 85% 85%,
-      rgba(54, 72, 91, 0.035) 0%,
-      transparent 50%
-    ),
-    var(--surface);
-  --noise-opacity: 0.016;
-  --vessel-bg: rgba(245, 242, 236, 0.85);
-  --vessel-border: rgba(25, 23, 21, 0.09);
-  --vessel-shadow:
-    inset 0 1px 0 0 rgba(255, 255, 255, 0.8),
-    inset 0 1px 4px rgba(0, 0, 0, 0.03),
-    0 20px 48px -12px rgba(72, 69, 65, 0.12);
-  --modal-bg: rgba(248, 246, 241, 0.98);
-  --modal-border: rgba(77, 115, 98, 0.25);
-  --modal-shadow:
-    inset 0 1px 0 0 rgba(255, 255, 255, 0.9),
-    0 32px 76px -8px rgba(72, 69, 65, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.04);
-
-  --glass-border: rgba(0, 0, 0, 0.08);
-  --glass-highlight: inset 0 1px 0 0 rgba(255, 255, 255, 0.8);
-  --glass-shadow:
-    0 16px 36px -8px rgba(72, 69, 65, 0.14), 0 0 0 1px rgba(0, 0, 0, 0.04);
-  --card-hover-shadow:
-    0 20px 44px -8px rgba(72, 69, 65, 0.22), 0 0 0 1px rgba(77, 115, 98, 0.35);
+  --focus-ring: 0 0 0 2px var(--bg), 0 0 0 4px var(--accent);
 }

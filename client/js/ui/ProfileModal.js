@@ -160,7 +160,7 @@ export class ProfileModal extends EventEmitter {
 
       card.innerHTML = `
         <div class="badge-card-top">
-          <div class="badge-card-icon" aria-hidden="true">${isUnlocked ? badge.icon : '🔒'}</div>
+          <div class="badge-card-icon" aria-hidden="true">${isUnlocked ? badge.icon : '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>'}</div>
           <span class="badge-card-status">${isUnlocked ? 'Unlocked' : 'Locked'}</span>
         </div>
         <div class="badge-card-info">

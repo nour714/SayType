@@ -18,6 +18,23 @@ export class ProgressScreen {
     const learning = allReviewWords.filter(([, e]) => !e.mastered);
     const mastered = allReviewWords.filter(([, e]) => e.mastered);
 
+    // Last-14-days activity strip, derived from already-tracked activity days.
+    const activeDays = new Set(streakService?.data?.activityDays || []);
+    const today = new Date();
+    const strip = [];
+    for (let i = 13; i >= 0; i--) {
+      const d = new Date(today);
+      d.setDate(d.getDate() - i);
+      const key = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+      strip.push({
+        key,
+        label: 'SMTWTFS'[d.getDay()],
+        active: activeDays.has(key),
+        today: i === 0
+      });
+    }
+    const activeCount = strip.filter((d) => d.active).length;
+
     let levelCards = '';
     let topicCards = '';
     try {
@@ -120,6 +137,10 @@ export class ProgressScreen {
                 <span class="progress-activity-label">Day Streak</span>
               </div>
               <div class="progress-activity-item">
+                <span class="progress-activity-value">${stats.longestStreak ?? 0}</span>
+                <span class="progress-activity-label">Best Streak</span>
+              </div>
+              <div class="progress-activity-item">
                 <span class="progress-activity-value">${stats.totalMistakes}</span>
                 <span class="progress-activity-label">Mistakes</span>
               </div>
@@ -132,6 +153,19 @@ export class ProgressScreen {
                 <span class="progress-activity-label">Sessions</span>
               </div>
             </div>
+            <div class="activity-strip" role="img" aria-label="Practice activity over the last 14 days">
+              ${strip
+                .map(
+                  (d) => `
+                <div class="activity-day${d.active ? ' is-active' : ''}${d.today ? ' is-today' : ''}" title="${d.key}">
+                  <span class="activity-day-bar"></span>
+                  <span class="activity-day-label">${d.label}</span>
+                </div>
+              `
+                )
+                .join('')}
+            </div>
+            <p class="activity-legend">${activeCount} active ${activeCount === 1 ? 'day' : 'days'} in the last 2 weeks</p>
           </div>
 
           ${

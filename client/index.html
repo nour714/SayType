@@ -6,9 +6,9 @@
     <title>SayType — English Typing & Pronunciation Trainer</title>
     <meta
       name="description"
-      content="SayType — A contemplative, archival English sentence typing and pronunciation trainer designed for Arabic speakers. Master rhythm, accuracy, and phonetics in an editorial sanctuary."
+      content="SayType — Learn English by typing. Listen, type, and remember sentences with calm, focused practice designed for Arabic speakers."
     />
-    <meta name="theme-color" content="#0f1114" />
+    <meta name="theme-color" content="#0b0d0f" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -23,8 +23,6 @@
     <link rel="stylesheet" href="styles/pages.css" />
   </head>
   <body>
-    <div class="noise-overlay" aria-hidden="true"></div>
-
     <input
       type="text"
       id="typing-anchor"
@@ -132,7 +130,21 @@
             title="Practice streak — click to view profile & achievements"
             aria-label="Current streak"
           >
-            <span class="streak-flame" aria-hidden="true">🔥</span>
+            <span class="streak-flame" aria-hidden="true"
+              ><svg
+                viewBox="0 0 24 24"
+                width="14"
+                height="14"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"
+                ></path></svg
+            ></span>
             <span id="streak-count" class="streak-count-text">0</span>
           </span>
           <button
@@ -141,7 +153,20 @@
             aria-label="View profile and achievements"
             title="Profile & achievements"
           >
-            <span class="profile-btn-icon" aria-hidden="true">👤</span>
+            <span class="profile-btn-icon" aria-hidden="true"
+              ><svg
+                viewBox="0 0 24 24"
+                width="14"
+                height="14"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle></svg
+            ></span>
             <span>Profile</span>
           </button>
           <button
@@ -329,6 +354,10 @@
                     ></path>
                   </svg>
                   <span class="listen-label">Listen</span>
+                  <span class="listen-kbd" aria-hidden="true"
+                    ><kbd class="kbd-key">Ctrl</kbd
+                    ><kbd class="kbd-key">Space</kbd></span
+                  >
                 </button>
               </div>
             </section>
@@ -492,13 +521,8 @@
         aria-labelledby="modal-title"
         aria-modal="true"
       >
-        <div class="card-ornament">
-          <span class="ornament-glyph">&#10022;</span>
-        </div>
         <h2 id="modal-title" class="completion-title">Sentence Completed</h2>
-        <p class="completion-subtext">
-          Rhythmic cadence recorded with archival precision.
-        </p>
+        <p class="completion-subtext">Take a breath, then keep going.</p>
         <div class="completion-metrics">
           <div class="metric-block">
             <span class="metric-label">ACCURACY</span>
@@ -575,9 +599,6 @@
         aria-labelledby="lesson-title"
         aria-modal="true"
       >
-        <div class="card-ornament">
-          <span class="ornament-glyph">&#10087;</span>
-        </div>
         <span class="lesson-kicker">MILESTONE REACHED</span>
         <h2 id="lesson-title" class="completion-title">Lesson Complete</h2>
         <p class="completion-subtext" id="lesson-subtext">
@@ -650,9 +671,6 @@
         aria-labelledby="auth-title"
         aria-modal="true"
       >
-        <div class="card-ornament">
-          <span class="ornament-glyph">&#9729;</span>
-        </div>
         <span class="lesson-kicker">SYNC YOUR PROGRESS</span>
         <h2 id="auth-title" class="completion-title">Sign In to SayType</h2>
         <p class="completion-subtext">
@@ -704,16 +722,13 @@
         aria-labelledby="start-title"
         aria-modal="true"
       >
-        <div class="card-ornament">
-          <span class="ornament-glyph">&#10022;</span>
-        </div>
-        <span class="lesson-kicker">WELCOME TO SAYTYPE</span>
+        <span class="lesson-kicker">LISTEN FIRST</span>
         <h2 id="start-title" class="completion-title">
-          English Typing Sanctuary
+          Hear it. Then type it.
         </h2>
         <p class="completion-subtext">
-          Listen attentively to each sentence before typing. Master natural
-          rhythm, phonetics, and keystroke precision.
+          Listen carefully to each sentence, then type it from memory and
+          rhythm. Short daily sessions beat long ones.
         </p>
         <div class="completion-actions">
           <button
@@ -757,22 +772,31 @@
         >
           &times;
         </button>
-        <div class="card-ornament">
-          <span class="ornament-glyph">&#10022;</span>
-        </div>
-        <span class="lesson-kicker">LEARNER PROFILE & ACHIEVEMENTS</span>
+        <span class="lesson-kicker">STREAK & ACHIEVEMENTS</span>
         <h2 id="profile-modal-title" class="completion-title">
           Your Progress & Badges
         </h2>
         <p class="completion-subtext">
-          Archival record of rhythm, accuracy, and mastery.
+          A quiet record of consistency and mastery.
         </p>
 
         <!-- Streak Banner -->
         <div class="profile-modal-streak-banner">
-          <div class="streak-flame-wrapper">
-            <span class="streak-flame">🔥</span>
-          </div>
+          <span class="streak-flame-wrapper" aria-hidden="true"
+            ><svg
+              viewBox="0 0 24 24"
+              width="22"
+              height="22"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"
+              ></path></svg
+          ></span>
           <div class="streak-banner-details">
             <div class="streak-banner-current">
               <span id="modal-current-streak">0</span> Day Streak

@@ -125,7 +125,7 @@ const server = app.listen(3002, async () => {
     // 9. CSS files
     const tokensRes = await get('/styles/tokens.css');
     assert.strictEqual(tokensRes.status, 200);
-    assert.ok(tokensRes.body.includes('--surface: #0f1114'));
+    assert.ok(tokensRes.body.includes('--surface: #171b1f'));
     console.log('✓ GET /styles/tokens.css passed');
 
     const baseRes = await get('/styles/base.css');
