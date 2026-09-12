@@ -27,6 +27,7 @@ import { ProgressIndicator } from './ui/ProgressIndicator.js';
 import { TopicSelector } from './ui/TopicSelector.js';
 import { LevelSelector } from './ui/LevelSelector.js';
 import { AuthModal } from './ui/AuthModal.js';
+import { TrackModal } from './ui/TrackModal.js';
 import { Navigation } from './ui/Navigation.js';
 import { DashboardScreen } from './ui/DashboardScreen.js';
 import { LevelScreen } from './ui/LevelScreen.js';
@@ -126,6 +127,7 @@ async function bootstrap() {
   const levelSelector = new LevelSelector('level-select', 'A1');
   const topicSelector = new TopicSelector('topic-select');
   const authModal = new AuthModal();
+  const trackModal = new TrackModal(sentenceRepo);
   const navigation = new Navigation();
 
   // 5. Screen instances
@@ -534,6 +536,32 @@ async function bootstrap() {
     loadSentencesForCurrentFilters();
   });
 
+  trackModal.on('track:selected', ({ level, topic }) => {
+    currentLevel = level;
+    currentTopic = topic;
+    levelSelector.setLevel(level);
+    refreshTopicsForLevel();
+    topicSelector.setSelectedTopic(topic);
+    loadSentencesForCurrentFilters();
+    trainingScreen.ensureTypingFocus();
+  });
+
+  trackModal.on('track:dismiss', () => {
+    if (currentPage === '/practice') {
+      if (!sessionEngine.sentences || sessionEngine.sentences.length === 0) {
+        loadSentencesForCurrentFilters();
+      }
+      trainingScreen.ensureTypingFocus();
+    }
+  });
+
+  const changeTrackBtn = document.getElementById('change-track-btn');
+  if (changeTrackBtn) {
+    changeTrackBtn.addEventListener('click', () => {
+      trackModal.open({ level: currentLevel, topic: currentTopic });
+    });
+  }
+
   // =========================================================================
   // 16. Navigation
   // =========================================================================
@@ -591,12 +619,23 @@ async function bootstrap() {
     if (params.topic !== undefined) {
       if (currentTopic !== params.topic) filtersChanged = true;
       currentTopic = params.topic;
-      topicSelector.setTopic(params.topic);
+      topicSelector.setSelectedTopic(params.topic);
     }
 
-    if (prevPage !== '/practice' || filtersChanged) {
+    // Prompt user to choose track if no topic in URL and not already running this track
+    if (
+      params.topic === undefined &&
+      (prevPage !== '/practice' ||
+        !sessionEngine.sentences ||
+        sessionEngine.sentences.length === 0)
+    ) {
       refreshTopicsForLevel();
-      loadSentencesForCurrentFilters();
+      trackModal.open({ level: currentLevel, topic: currentTopic });
+    } else {
+      if (prevPage !== '/practice' || filtersChanged) {
+        refreshTopicsForLevel();
+        loadSentencesForCurrentFilters();
+      }
     }
   });
 

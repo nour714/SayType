@@ -43,10 +43,18 @@
   --chrome-bg: rgba(11, 13, 15, 0.78);
   --overlay-bg: rgba(6, 7, 8, 0.72);
 
-  /* Shadows: soft and restrained */
+  /* Shadows & Glows */
   --shadow-subtle: 0 1px 2px rgba(0, 0, 0, 0.35);
   --shadow-medium: 0 8px 24px -8px rgba(0, 0, 0, 0.55);
   --shadow-elevated: 0 24px 64px -16px rgba(0, 0, 0, 0.7);
+  --shadow-card: 0 12px 36px -8px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.07);
+  --glow-accent: 0 0 24px rgba(184, 243, 106, 0.22);
+  --glow-accent-subtle: 0 0 12px rgba(184, 243, 106, 0.15);
+
+  /* Glassmorphic surfaces */
+  --glass-bg: rgba(23, 27, 31, 0.68);
+  --glass-border: rgba(255, 255, 255, 0.09);
+  --glass-blur: blur(16px);
 
   --focus-ring: 0 0 0 2px var(--bg), 0 0 0 4px var(--accent);
 
@@ -153,6 +161,13 @@
   --shadow-subtle: 0 1px 2px rgba(30, 28, 24, 0.08);
   --shadow-medium: 0 8px 24px -10px rgba(30, 28, 24, 0.16);
   --shadow-elevated: 0 24px 64px -20px rgba(30, 28, 24, 0.28);
+  --shadow-card: 0 12px 32px -8px rgba(30, 28, 24, 0.12), 0 0 0 1px rgba(20, 25, 30, 0.08);
+  --glow-accent: 0 0 24px rgba(85, 122, 53, 0.18);
+  --glow-accent-subtle: 0 0 12px rgba(85, 122, 53, 0.12);
+
+  --glass-bg: rgba(255, 255, 255, 0.78);
+  --glass-border: rgba(20, 25, 30, 0.08);
+  --glass-blur: blur(16px);
 
   --focus-ring: 0 0 0 2px var(--bg), 0 0 0 4px var(--accent);
 }

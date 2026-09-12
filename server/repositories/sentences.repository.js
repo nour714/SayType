@@ -39,14 +39,33 @@ class SentencesRepository {
       // Fallback in-memory dataset (representative subset of the 10 V1 topics)
       return [
         {
+          id: 'a1-greetings-001',
+          level: 'A1',
+          topic: 'greetings',
+          topic_label: 'Greetings & Introductions',
+          text_en: 'Hello!',
+          text_ar: 'مرحبًا!',
+          english: 'Hello!',
+          arabic: 'مرحبًا!',
+          words: [
+            {
+              word: 'hello',
+              translation: 'مرحبًا',
+              partOfSpeech: 'interjection',
+              pronunciation: '/həˈloʊ/'
+            }
+          ],
+          tags: ['greetings', 'introductions']
+        },
+        {
           id: 'a1-daily-life-001',
           level: 'A1',
           topic: 'daily-life',
-          topic_label: 'Daily Life',
-          text_en: 'I wake up at seven every morning.',
-          text_ar: 'أستيقظ في الساعة السابعة كل صباح.',
-          english: 'I wake up at seven every morning.',
-          arabic: 'أستيقظ في الساعة السابعة كل صباح.',
+          topic_label: 'Daily Life & Routine',
+          text_en: 'I usually wake up at seven.',
+          text_ar: 'عادةً أستيقظ في السابعة.',
+          english: 'I usually wake up at seven.',
+          arabic: 'عادةً أستيقظ في السابعة.',
           words: [
             {
               word: 'wake',
@@ -61,57 +80,32 @@ class SentencesRepository {
               pronunciation: '/ˈsɛv.ən/'
             }
           ],
-          tags: ['routine', 'morning']
+          tags: ['daily-life', 'routine']
         },
         {
-          id: 'a1-family-001',
+          id: 'a1-work-study-001',
           level: 'A1',
-          topic: 'family',
-          topic_label: 'Family & Friends',
-          text_en: 'She is my sister.',
-          text_ar: 'هي أختي.',
-          english: 'She is my sister.',
-          arabic: 'هي أختي.',
+          topic: 'work-study',
+          topic_label: 'Study & Work',
+          text_en: 'I study at the university.',
+          text_ar: 'أنا أدرس في الجامعة.',
+          english: 'I study at the university.',
+          arabic: 'أنا أدرس في الجامعة.',
           words: [
             {
-              word: 'She',
-              translation: 'هي',
-              partOfSpeech: 'pronoun',
-              pronunciation: '/ʃiː/'
-            },
-            {
-              word: 'sister',
-              translation: 'أخت',
-              partOfSpeech: 'noun',
-              pronunciation: '/ˈsɪs.tər/'
-            }
-          ],
-          tags: ['family', 'relationship']
-        },
-        {
-          id: 'a1-food-001',
-          level: 'A1',
-          topic: 'food',
-          topic_label: 'Food & Drink',
-          text_en: 'I like coffee.',
-          text_ar: 'أحب القهوة.',
-          english: 'I like coffee.',
-          arabic: 'أحب القهوة.',
-          words: [
-            {
-              word: 'like',
-              translation: 'يحب',
+              word: 'study',
+              translation: 'يدرس',
               partOfSpeech: 'verb',
-              pronunciation: '/laɪk/'
+              pronunciation: '/ˈstʌd.i/'
             },
             {
-              word: 'coffee',
-              translation: 'قهوة',
+              word: 'university',
+              translation: 'جامعة',
               partOfSpeech: 'noun',
-              pronunciation: '/ˈkɔː.fi/'
+              pronunciation: '/ˌjuː.nɪˈvɜːr.sə.ti/'
             }
           ],
-          tags: ['beverage', 'preference']
+          tags: ['study', 'work']
         }
       ];
     }

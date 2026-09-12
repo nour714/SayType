@@ -35,11 +35,64 @@ export class SentenceRepository {
       return data;
     } catch (err) {
       console.warn(
-        'SentenceRepository: API fetch failed, falling back to local dataset.',
+        'SentenceRepository: API fetch failed, checking static dataset fallback...',
         err
       );
+      const staticData = await this._loadStaticDataset();
+      if (staticData && staticData.length > 0) {
+        let data = staticData;
+        if (filter.level) {
+          data = data.filter(
+            (s) => s.level && s.level.toLowerCase() === filter.level.toLowerCase()
+          );
+        }
+        if (filter.topic && filter.topic !== 'all') {
+          data = data.filter(
+            (s) => s.topic && s.topic.toLowerCase() === filter.topic.toLowerCase()
+          );
+        }
+        this._cache = staticData;
+        return data;
+      }
       return this._getFallbackSentences(filter);
     }
+  }
+
+  /**
+   * Load static JSON datasets when API is unreachable.
+   * @private
+   */
+  async _loadStaticDataset() {
+    if (this._staticCache && this._staticCache.length > 0) {
+      return this._staticCache;
+    }
+    const all = [];
+    const files = ['data/sentences.a1.json', 'data/sentences.a2.json'];
+    for (const f of files) {
+      try {
+        const res = await fetch(f);
+        if (res.ok) {
+          const list = await res.json();
+          if (Array.isArray(list)) all.push(...list);
+        }
+      } catch (_) {}
+    }
+    if (all.length === 0) {
+      for (const f of ['/data/sentences.a1.json', '/data/sentences.a2.json']) {
+        try {
+          const res = await fetch(f);
+          if (res.ok) {
+            const list = await res.json();
+            if (Array.isArray(list)) all.push(...list);
+          }
+        } catch (_) {}
+      }
+    }
+    if (all.length > 0) {
+      this._staticCache = all;
+      return all;
+    }
+    return null;
   }
 
   /**
@@ -60,18 +113,24 @@ export class SentenceRepository {
         'SentenceRepository: getTopics fetch failed, using fallback topics.',
         err
       );
-      return [
-        { id: 'daily-life', label: 'Daily Life', count: 20 },
-        { id: 'family', label: 'Family & Friends', count: 16 },
-        { id: 'food', label: 'Food & Drink', count: 17 },
-        { id: 'travel', label: 'Travel & Places', count: 16 },
-        { id: 'university', label: 'University & Study', count: 16 },
-        { id: 'work', label: 'Work & Career', count: 16 },
-        { id: 'shopping', label: 'Shopping & Numbers', count: 14 },
-        { id: 'health', label: 'Health & Body', count: 14 },
-        { id: 'weather', label: 'Weather & Seasons', count: 10 },
-        { id: 'communication', label: 'Communication', count: 15 }
+      const allTopics = [
+        { id: 'greetings', label: 'Greetings & Introductions', level: 'A1', count: 50 },
+        { id: 'daily-life', label: 'Daily Life & Routine', level: 'A1', count: 50 },
+        { id: 'work-study', label: 'Study & Work', level: 'A1', count: 50 },
+        { id: 'shopping-food', label: 'Shopping & Food', level: 'A1', count: 50 },
+        { id: 'travel', label: 'Travel & Transport', level: 'A1', count: 50 },
+        { id: 'feelings-opinions', label: 'Feelings & Opinions', level: 'A2', count: 50 },
+        { id: 'health', label: 'Health & Help', level: 'A2', count: 50 },
+        { id: 'technology', label: 'Technology & Internet', level: 'A2', count: 50 },
+        { id: 'plans-conversations', label: 'Plans & Conversations', level: 'A2', count: 50 },
+        { id: 'general', label: 'General Essentials', level: 'A2', count: 50 }
       ];
+      if (level) {
+        return allTopics.filter(
+          (t) => t.level.toLowerCase() === level.toLowerCase()
+        );
+      }
+      return allTopics;
     }
   }
 
@@ -105,14 +164,33 @@ export class SentenceRepository {
   _getFallbackSentences(filter = {}) {
     let data = [
       {
+        id: 'a1-greetings-001',
+        level: 'A1',
+        topic: 'greetings',
+        topic_label: 'Greetings & Introductions',
+        text_en: 'Hello!',
+        text_ar: 'مرحبًا!',
+        english: 'Hello!',
+        arabic: 'مرحبًا!',
+        words: [
+          {
+            word: 'hello',
+            translation: 'مرحبًا',
+            partOfSpeech: 'interjection',
+            pronunciation: '/həˈloʊ/'
+          }
+        ],
+        tags: ['greetings', 'introductions']
+      },
+      {
         id: 'a1-daily-life-001',
         level: 'A1',
         topic: 'daily-life',
-        topic_label: 'Daily Life',
-        text_en: 'I wake up at seven every morning.',
-        text_ar: 'أستيقظ في الساعة السابعة كل صباح.',
-        english: 'I wake up at seven every morning.',
-        arabic: 'أستيقظ في الساعة السابعة كل صباح.',
+        topic_label: 'Daily Life & Routine',
+        text_en: 'I usually wake up at seven.',
+        text_ar: 'عادةً أستيقظ في السابعة.',
+        english: 'I usually wake up at seven.',
+        arabic: 'عادةً أستيقظ في السابعة.',
         words: [
           {
             word: 'wake',
@@ -127,92 +205,17 @@ export class SentenceRepository {
             pronunciation: '/ˈsɛv.ən/'
           }
         ],
-        tags: ['routine', 'morning']
+        tags: ['daily-life', 'routine']
       },
       {
-        id: 'a1-family-001',
+        id: 'a1-work-study-001',
         level: 'A1',
-        topic: 'family',
-        topic_label: 'Family & Friends',
-        text_en: 'She is my sister.',
-        text_ar: 'هي أختي.',
-        english: 'She is my sister.',
-        arabic: 'هي أختي.',
-        words: [
-          {
-            word: 'She',
-            translation: 'هي',
-            partOfSpeech: 'pronoun',
-            pronunciation: '/ʃiː/'
-          },
-          {
-            word: 'sister',
-            translation: 'أخت',
-            partOfSpeech: 'noun',
-            pronunciation: '/ˈsɪs.tər/'
-          }
-        ],
-        tags: ['family', 'relationship']
-      },
-      {
-        id: 'a1-food-001',
-        level: 'A1',
-        topic: 'food',
-        topic_label: 'Food & Drink',
-        text_en: 'I like coffee.',
-        text_ar: 'أحب القهوة.',
-        english: 'I like coffee.',
-        arabic: 'أحب القهوة.',
-        words: [
-          {
-            word: 'like',
-            translation: 'يحب',
-            partOfSpeech: 'verb',
-            pronunciation: '/laɪk/'
-          },
-          {
-            word: 'coffee',
-            translation: 'قهوة',
-            partOfSpeech: 'noun',
-            pronunciation: '/ˈkɔː.fi/'
-          }
-        ],
-        tags: ['beverage', 'preference']
-      },
-      {
-        id: 'a1-travel-001',
-        level: 'A1',
-        topic: 'travel',
-        topic_label: 'Travel & Places',
-        text_en: 'The airport is far from here.',
-        text_ar: 'المطار بعيد عن هنا.',
-        english: 'The airport is far from here.',
-        arabic: 'المطار بعيد عن هنا.',
-        words: [
-          {
-            word: 'airport',
-            translation: 'مطار',
-            partOfSpeech: 'noun',
-            pronunciation: '/ˈɛər.pɔːrt/'
-          },
-          {
-            word: 'far',
-            translation: 'بعيد',
-            partOfSpeech: 'adjective',
-            pronunciation: '/fɑːr/'
-          }
-        ],
-        tags: ['travel', 'locations']
-      },
-      {
-        id: 'a1-university-001',
-        level: 'A1',
-        topic: 'university',
-        topic_label: 'University & Study',
-        text_en: 'I study English at university.',
-        text_ar: 'أدرس اللغة الإنجليزية في الجامعة.',
-        english: 'I study English at university.',
-        arabic: 'أدرس اللغة الإنجليزية في الجامعة.',
+        topic: 'work-study',
+        topic_label: 'Study & Work',
+        text_en: 'I study at the university.',
+        text_ar: 'أنا أدرس في الجامعة.',
+        english: 'I study at the university.',
+        arabic: 'أنا أدرس في الجامعة.',
         words: [
           {
             word: 'study',
@@ -227,126 +230,164 @@ export class SentenceRepository {
             pronunciation: '/ˌjuː.nɪˈvɜːr.sə.ti/'
           }
         ],
-        tags: ['study', 'subject']
+        tags: ['study', 'work']
       },
       {
-        id: 'a1-work-001',
+        id: 'a1-shopping-food-001',
         level: 'A1',
-        topic: 'work',
-        topic_label: 'Work & Career',
-        text_en: 'He works in an office.',
-        text_ar: 'يعمل في مكتب.',
-        english: 'He works in an office.',
-        arabic: 'يعمل في مكتب.',
+        topic: 'shopping-food',
+        topic_label: 'Shopping & Food',
+        text_en: 'How much is this?',
+        text_ar: 'بكم هذا؟',
+        english: 'How much is this?',
+        arabic: 'بكم هذا؟',
         words: [
           {
-            word: 'works',
-            translation: 'يعمل',
-            partOfSpeech: 'verb',
-            pronunciation: '/wɜːrks/'
+            word: 'how',
+            translation: 'كيف',
+            partOfSpeech: 'question word',
+            pronunciation: '/haʊ/'
           },
           {
-            word: 'office',
-            translation: 'مكتب',
+            word: 'this',
+            translation: 'هذا / هذه',
+            partOfSpeech: 'pronoun',
+            pronunciation: '/ðɪs/'
+          }
+        ],
+        tags: ['shopping', 'food']
+      },
+      {
+        id: 'a1-travel-001',
+        level: 'A1',
+        topic: 'travel',
+        topic_label: 'Travel & Transport',
+        text_en: 'Where is the train station?',
+        text_ar: 'أين محطة القطار؟',
+        english: 'Where is the train station?',
+        arabic: 'أين محطة القطار؟',
+        words: [
+          {
+            word: 'where',
+            translation: 'أين',
+            partOfSpeech: 'question word',
+            pronunciation: '/wɛər/'
+          },
+          {
+            word: 'station',
+            translation: 'محطة',
             partOfSpeech: 'noun',
-            pronunciation: '/ˈɔː.fɪs/'
+            pronunciation: '/ˈsteɪ.ʃən/'
           }
         ],
-        tags: ['job', 'office']
+        tags: ['travel', 'transport']
       },
       {
-        id: 'a1-shopping-001',
-        level: 'A1',
-        topic: 'shopping',
-        topic_label: 'Shopping & Numbers',
-        text_en: 'I want to pay with cash.',
-        text_ar: 'أريد أن أدفع نقدًا.',
-        english: 'I want to pay with cash.',
-        arabic: 'أريد أن أدفع نقدًا.',
+        id: 'a2-feelings-opinions-001',
+        level: 'A2',
+        topic: 'feelings-opinions',
+        topic_label: 'Feelings & Opinions',
+        text_en: 'I am happy today.',
+        text_ar: 'أنا سعيد اليوم.',
+        english: 'I am happy today.',
+        arabic: 'أنا سعيد اليوم.',
         words: [
           {
-            word: 'pay',
-            translation: 'يدفع',
-            partOfSpeech: 'verb',
-            pronunciation: '/peɪ/'
-          },
-          {
-            word: 'cash',
-            translation: 'نقد',
-            partOfSpeech: 'noun',
-            pronunciation: '/kæʃ/'
-          }
-        ],
-        tags: ['shopping', 'payment']
-      },
-      {
-        id: 'a1-health-001',
-        level: 'A1',
-        topic: 'health',
-        topic_label: 'Health & Body',
-        text_en: 'I walk thirty minutes every day.',
-        text_ar: 'أمشي ثلاثين دقيقة كل يوم.',
-        english: 'I walk thirty minutes every day.',
-        arabic: 'أمشي ثلاثين دقيقة كل يوم.',
-        words: [
-          {
-            word: 'walk',
-            translation: 'يمشي',
-            partOfSpeech: 'verb',
-            pronunciation: '/wɔːk/'
-          },
-          {
-            word: 'thirty',
-            translation: 'ثلاثون',
-            partOfSpeech: 'number',
-            pronunciation: '/ˈθɜːr.ti/'
-          }
-        ],
-        tags: ['exercise', 'health']
-      },
-      {
-        id: 'a1-weather-001',
-        level: 'A1',
-        topic: 'weather',
-        topic_label: 'Weather & Seasons',
-        text_en: 'It is sunny today.',
-        text_ar: 'الطقس مشمس اليوم.',
-        english: 'It is sunny today.',
-        arabic: 'الطقس مشمس اليوم.',
-        words: [
-          {
-            word: 'sunny',
-            translation: 'مشمس',
+            word: 'happy',
+            translation: 'سعيد',
             partOfSpeech: 'adjective',
-            pronunciation: '/ˈsʌn.i/'
-          }
-        ],
-        tags: ['weather', 'sun']
-      },
-      {
-        id: 'a1-communication-001',
-        level: 'A1',
-        topic: 'communication',
-        topic_label: 'Communication',
-        text_en: 'Thank you very much.',
-        text_ar: 'شكرًا جزيلًا.',
-        english: 'Thank you very much.',
-        arabic: 'شكرًا جزيلًا.',
-        words: [
-          {
-            word: 'Thank',
-            translation: 'يشكر',
-            partOfSpeech: 'verb',
-            pronunciation: '/θæŋk/'
+            pronunciation: '/ˈhæp.i/'
           },
           {
-            word: 'very',
-            translation: 'جدًا',
+            word: 'today',
+            translation: 'اليوم',
             partOfSpeech: 'adverb',
-            pronunciation: '/ˈvɛr.i/'
+            pronunciation: '/təˈdeɪ/'
           }
         ],
-        tags: ['polite', 'greeting']
+        tags: ['feelings', 'opinions']
+      },
+      {
+        id: 'a2-health-001',
+        level: 'A2',
+        topic: 'health',
+        topic_label: 'Health & Help',
+        text_en: 'I feel sick.',
+        text_ar: 'أشعر بالمرض.',
+        english: 'I feel sick.',
+        arabic: 'أشعر بالمرض.',
+        words: [
+          {
+            word: 'feel',
+            translation: 'يشعر',
+            partOfSpeech: 'verb',
+            pronunciation: '/fiːl/'
+          },
+          {
+            word: 'sick',
+            translation: 'مريض',
+            partOfSpeech: 'adjective',
+            pronunciation: '/sɪk/'
+          }
+        ],
+        tags: ['health', 'help']
+      },
+      {
+        id: 'a2-technology-001',
+        level: 'A2',
+        topic: 'technology',
+        topic_label: 'Technology & Internet',
+        text_en: 'Where is my phone?',
+        text_ar: 'أين هاتفي؟',
+        english: 'Where is my phone?',
+        arabic: 'أين هاتفي؟',
+        words: [
+          {
+            word: 'phone',
+            translation: 'هاتف',
+            partOfSpeech: 'noun',
+            pronunciation: '/foʊn/'
+          }
+        ],
+        tags: ['technology', 'internet']
+      },
+      {
+        id: 'a2-plans-conversations-001',
+        level: 'A2',
+        topic: 'plans-conversations',
+        topic_label: 'Plans & Conversations',
+        text_en: 'What are your plans for tomorrow?',
+        text_ar: 'ما هي خططك للغد؟',
+        english: 'What are your plans for tomorrow?',
+        arabic: 'ما هي خططك للغد؟',
+        words: [
+          {
+            word: 'tomorrow',
+            translation: 'غدًا',
+            partOfSpeech: 'adverb',
+            pronunciation: '/təˈmɔːr.oʊ/'
+          }
+        ],
+        tags: ['plans', 'conversations']
+      },
+      {
+        id: 'a2-general-001',
+        level: 'A2',
+        topic: 'general',
+        topic_label: 'General Essentials',
+        text_en: 'Everything will be fine.',
+        text_ar: 'كل شيء سيكون على ما يرام.',
+        english: 'Everything will be fine.',
+        arabic: 'كل شيء سيكون على ما يرام.',
+        words: [
+          {
+            word: 'fine',
+            translation: 'بخير / جيد',
+            partOfSpeech: 'adjective',
+            pronunciation: '/faɪn/'
+          }
+        ],
+        tags: ['general', 'essentials']
       }
     ];
 

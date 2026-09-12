@@ -168,7 +168,7 @@
 .home-topic-bar,
 .progress-level-bar,
 .progress-topic-bar {
-  height: 4px;
+  height: 5px;
   background-color: var(--surface-2);
   border-radius: var(--radius-full);
   overflow: hidden;
@@ -182,9 +182,10 @@
 .progress-topic-bar-fill {
   display: block;
   height: 100%;
-  background-color: var(--accent);
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
   border-radius: var(--radius-full);
   transition: width var(--duration-slow) var(--ease-standard);
+  box-shadow: 0 0 8px var(--glow-accent);
 }
 
 /* ==========================================================================
@@ -198,25 +199,32 @@
 
 .home-hero {
   text-align: start;
-  padding-block: var(--space-8) var(--space-2);
-  max-width: 44rem;
+  padding-block: var(--space-8) var(--space-4);
+  max-width: 48rem;
 }
 
 .home-greeting {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
   font-family: var(--font-mono);
   font-size: var(--text-xs);
-  font-weight: 500;
-  letter-spacing: 0.1em;
+  font-weight: 600;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--accent);
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-line);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
   margin-bottom: var(--space-3);
 }
 
 .home-title {
   font-family: var(--font-display);
-  font-size: var(--text-4xl);
-  font-weight: 500;
-  letter-spacing: -0.02em;
+  font-size: clamp(2.5rem, 5vw, 3.75rem);
+  font-weight: 600;
+  letter-spacing: -0.025em;
   line-height: var(--leading-tight);
   color: var(--text);
   margin-bottom: var(--space-3);
@@ -232,14 +240,31 @@
 
 .home-arabic {
   font-family: var(--font-arabic);
-  font-size: var(--text-md);
-  color: var(--muted);
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--text-2);
   margin-top: var(--space-6);
+  direction: rtl;
+  text-align: right;
+  border-inline-start: 3px solid var(--accent);
+  padding-inline-start: var(--space-4);
 }
 
 .home-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
   font-size: var(--text-md);
-  padding: var(--space-4) var(--space-8);
+  font-weight: 600;
+  padding: var(--space-3) var(--space-8);
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 20px rgba(184, 243, 106, 0.28);
+  transition: all var(--duration-fast) var(--ease-standard);
+}
+
+.home-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(184, 243, 106, 0.42);
 }
 
 .home-cta-meta {
@@ -348,10 +373,11 @@
   gap: var(--space-3);
   background-color: var(--surface);
   border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl);
   padding: var(--space-5);
   text-decoration: none;
   color: var(--text);
+  box-shadow: var(--shadow-card);
   transition:
     border-color var(--duration-fast) var(--ease-standard),
     transform var(--duration-fast) var(--ease-standard),
@@ -360,8 +386,8 @@
 
 .home-level-card:hover {
   border-color: var(--accent-line);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-medium);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-elevated), 0 0 16px var(--glow-accent);
 }
 
 .home-level-header {
@@ -409,18 +435,21 @@
   gap: var(--space-2);
   background-color: var(--surface);
   border: 1px solid var(--border);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   padding: var(--space-4);
   text-decoration: none;
   color: var(--text);
+  box-shadow: var(--shadow-subtle);
   transition:
     border-color var(--duration-fast) var(--ease-standard),
-    transform var(--duration-fast) var(--ease-standard);
+    transform var(--duration-fast) var(--ease-standard),
+    box-shadow var(--duration-fast) var(--ease-standard);
 }
 
 .home-topic-chip:hover {
   border-color: var(--accent-line);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card);
 }
 
 .home-topic-chip-top {
@@ -469,12 +498,13 @@
 .level-card {
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
+  gap: var(--space-4);
   background-color: var(--surface);
   border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl);
   padding: var(--space-6);
   color: var(--text);
+  box-shadow: var(--shadow-card);
   transition:
     border-color var(--duration-fast) var(--ease-standard),
     transform var(--duration-fast) var(--ease-standard),
@@ -483,8 +513,8 @@
 
 .level-card:hover {
   border-color: var(--accent-line);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-medium);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-elevated), 0 0 16px var(--glow-accent);
 }
 
 .level-card-header {
@@ -556,10 +586,11 @@
   gap: var(--space-3);
   background-color: var(--surface);
   border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl);
   padding: var(--space-5);
   text-decoration: none;
   color: var(--text);
+  box-shadow: var(--shadow-card);
   transition:
     border-color var(--duration-fast) var(--ease-standard),
     transform var(--duration-fast) var(--ease-standard),
@@ -568,8 +599,8 @@
 
 .topic-card:hover {
   border-color: var(--accent-line);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-medium);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-elevated), 0 0 16px var(--glow-accent);
 }
 
 .topic-card-header {
@@ -623,13 +654,20 @@
 .review-stat {
   background-color: var(--surface);
   border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl);
   padding: var(--space-5);
+  box-shadow: var(--shadow-subtle);
   text-align: start;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: var(--space-1);
+  transition: transform var(--duration-fast) var(--ease-standard), box-shadow var(--duration-fast) var(--ease-standard);
+}
+
+.review-stat:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card);
 }
 
 /* Due Today carries the page: accent figure, quiet frame */
@@ -690,9 +728,10 @@
   display: flex;
   flex-direction: column;
   border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl);
   overflow: hidden;
   background-color: var(--surface);
+  box-shadow: var(--shadow-card);
 }
 
 .review-word-item {
@@ -820,8 +859,9 @@
 .progress-card {
   background-color: var(--surface);
   border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl);
   padding: var(--space-6);
+  box-shadow: var(--shadow-card);
 }
 
 .progress-topics-card {
@@ -1061,8 +1101,9 @@
   gap: var(--space-4);
   background-color: var(--surface);
   border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: var(--space-5);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-card);
 }
 
 .profile-avatar {
@@ -1115,6 +1156,13 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-1);
+  box-shadow: var(--shadow-subtle);
+  transition: transform var(--duration-fast) var(--ease-standard), box-shadow var(--duration-fast) var(--ease-standard);
+}
+
+.profile-stat:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card);
 }
 
 .profile-stat-value {
@@ -1163,8 +1211,9 @@
 .settings-group {
   background-color: var(--surface);
   border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl);
   padding: var(--space-2) var(--space-5) var(--space-3);
+  box-shadow: var(--shadow-card);
 }
 
 .settings-group-title {
@@ -1307,11 +1356,6 @@
     min-height: 3.5rem;
     padding-inline: var(--space-4);
     gap: var(--space-2);
-  }
-
-  .header-right .topic-selector-wrapper,
-  .header-right .progress-ratio {
-    display: none;
   }
 
   .page-container {

@@ -72,32 +72,6 @@
         </nav>
 
         <div class="header-right">
-          <div class="topic-selector-wrapper training-only">
-            <select
-              id="level-select"
-              class="topic-select level-select"
-              aria-label="Filter sentences by level"
-            >
-              <option value="A1">A1 — Beginner</option>
-              <option value="A2">A2 — Elementary</option>
-            </select>
-            <select
-              id="topic-select"
-              class="topic-select"
-              aria-label="Filter sentences by topic"
-            >
-              <option value="">All Topics</option>
-            </select>
-          </div>
-          <div
-            id="progress-indicator"
-            class="progress-ratio training-only"
-            aria-live="polite"
-          >
-            <span id="progress-current" class="progress-val">1</span>
-            <span class="progress-divider">/</span>
-            <span id="progress-total" class="progress-val">10</span>
-          </div>
           <button
             id="auth-btn"
             class="badge auth-btn"
@@ -227,7 +201,133 @@
         <div id="page-learn" class="page-container"></div>
 
         <!-- Page: Practice / Training Screen -->
-        <div id="page-practice" class="page-container">
+        <div id="page-practice" class="page-container practice-layout">
+          <!-- Left Sidebar Controls: Elegant Distinctive Cards -->
+          <aside class="practice-sidebar-left training-only" id="practice-sidebar-left" aria-label="لوحة تحكم التدريب">
+            <!-- Card 1: Track & Level / Topic Selection -->
+            <div class="practice-card practice-track-card">
+              <div class="practice-card-header">
+                <span class="practice-card-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+                  </svg>
+                </span>
+                <span class="practice-card-title">مسار التدريب</span>
+              </div>
+
+              <div class="practice-control-group">
+                <label for="level-select" class="practice-field-label">المستوى (Level)</label>
+                <div class="practice-select-wrapper">
+                  <select
+                    id="level-select"
+                    class="practice-select level-select"
+                    aria-label="Filter sentences by level"
+                  >
+                    <option value="A1">A1 — Beginner</option>
+                    <option value="A2">A2 — Elementary</option>
+                  </select>
+                  <span class="practice-select-arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                  </span>
+                </div>
+              </div>
+
+              <div class="practice-control-group">
+                <label for="topic-select" class="practice-field-label">الموضوع (Topic)</label>
+                <div class="practice-select-wrapper">
+                  <select
+                    id="topic-select"
+                    class="practice-select topic-select"
+                    aria-label="Filter sentences by topic"
+                  >
+                    <option value="">All Topics</option>
+                  </select>
+                  <span class="practice-select-arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                  </span>
+                </div>
+              </div>
+
+              <button
+                type="button"
+                id="change-track-btn"
+                class="action-btn secondary-btn change-track-btn"
+                title="Choose your learning track"
+              >
+                <span>✦ اختيار / تغيير المسار</span>
+              </button>
+            </div>
+
+            <!-- Card 2: Session Progress Counter & Bar -->
+            <div class="practice-card practice-progress-card">
+              <div class="practice-card-header">
+                <span class="practice-card-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="20" x2="18" y2="10"></line>
+                    <line x1="12" y1="20" x2="12" y2="4"></line>
+                    <line x1="6" y1="20" x2="6" y2="14"></line>
+                  </svg>
+                </span>
+                <span class="practice-card-title">تقدّم الجلسة</span>
+              </div>
+
+              <div class="practice-counter-container">
+                <div
+                  id="progress-indicator"
+                  class="practice-counter-display"
+                  aria-live="polite"
+                >
+                  <span id="progress-current" class="counter-val current-val">1</span>
+                  <span class="counter-sep">/</span>
+                  <span id="progress-total" class="counter-val total-val">10</span>
+                </div>
+                <span class="counter-caption">الجمل المكتملة</span>
+              </div>
+
+              <div class="practice-mini-progress">
+                <div class="practice-progress-track">
+                  <div id="session-progress-bar-fill" class="practice-progress-fill" style="width: 10%;"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3: Quick Shortcuts & Tips -->
+            <div class="practice-card practice-tips-card">
+              <div class="practice-card-header">
+                <span class="practice-card-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                    <line x1="6" y1="8" x2="6.01" y2="8"></line>
+                    <line x1="10" y1="8" x2="10.01" y2="8"></line>
+                    <line x1="14" y1="8" x2="14.01" y2="8"></line>
+                    <line x1="18" y1="8" x2="18.01" y2="8"></line>
+                    <line x1="8" y1="12" x2="8.01" y2="12"></line>
+                    <line x1="12" y1="12" x2="12.01" y2="12"></line>
+                    <line x1="16" y1="12" x2="16.01" y2="12"></line>
+                    <line x1="7" y1="16" x2="17" y2="16"></line>
+                  </svg>
+                </span>
+                <span class="practice-card-title">اختصارات سريعة</span>
+              </div>
+
+              <ul class="practice-shortcuts-list">
+                <li class="practice-shortcut-item">
+                  <span class="shortcut-desc">نطق الجملة</span>
+                  <kbd class="shortcut-kbd">Ctrl + Space</kbd>
+                </li>
+                <li class="practice-shortcut-item">
+                  <span class="shortcut-desc">إعادة الجملة</span>
+                  <kbd class="shortcut-kbd">Esc</kbd>
+                </li>
+                <li class="practice-shortcut-item">
+                  <span class="shortcut-desc">ترجمة الكلمة</span>
+                  <span class="shortcut-hint">انقر الكلمة</span>
+                </li>
+              </ul>
+            </div>
+          </aside>
+
           <div class="stage-container" id="stage-container">
             <div
               id="focus-reminder"
@@ -489,6 +589,83 @@
           <span class="mobile-nav-label">Profile</span>
         </a>
       </nav>
+    </div>
+
+    <!-- Track Selection Modal -->
+    <div id="track-modal" class="modal-backdrop" aria-hidden="true">
+      <div
+        class="modal-card track-modal-card"
+        role="dialog"
+        aria-labelledby="track-modal-title"
+        aria-modal="true"
+      >
+        <button
+          type="button"
+          id="track-modal-close-btn"
+          class="modal-corner-close"
+          aria-label="Close track selection"
+          title="Close"
+        >
+          &times;
+        </button>
+        <div class="track-modal-header">
+          <span class="lesson-kicker">مسار التعلم والتمرين · Learning Tracks</span>
+          <h2 id="track-modal-title" class="completion-title">اختر مسار التدريب</h2>
+          <p class="completion-subtext">اختر المستوى والموضوع للبدء في كتابة وتدريب الجمل</p>
+        </div>
+
+        <!-- Level Selector Tabs -->
+        <div class="track-level-tabs" role="tablist" aria-label="Select Level">
+          <button
+            type="button"
+            class="track-level-tab is-active"
+            data-level="A1"
+            role="tab"
+            aria-selected="true"
+          >
+            <span class="track-tab-code">A1</span>
+            <div class="track-tab-info">
+              <span class="track-tab-name">مبتدئ · Beginner</span>
+              <span class="track-tab-count">250 جملة · 5 مواضيع</span>
+            </div>
+          </button>
+          <button
+            type="button"
+            class="track-level-tab"
+            data-level="A2"
+            role="tab"
+            aria-selected="false"
+          >
+            <span class="track-tab-code">A2</span>
+            <div class="track-tab-info">
+              <span class="track-tab-name">متوسط · Elementary</span>
+              <span class="track-tab-count">250 جملة · 5 مواضيع</span>
+            </div>
+          </button>
+        </div>
+
+        <!-- Topics Selection Grid -->
+        <div class="track-topics-container">
+          <div class="track-topics-header">
+            <span class="track-topics-label">اختر الموضوع (Select Topic):</span>
+          </div>
+          <div id="track-modal-topics-grid" class="track-topics-grid">
+            <!-- Dynamically rendered topic cards -->
+          </div>
+        </div>
+
+        <!-- Start Action Button -->
+        <div class="track-modal-footer">
+          <button
+            type="button"
+            id="track-modal-start-btn"
+            class="action-btn primary-btn track-start-btn"
+          >
+            <span>ابدأ التدريب الآن ✦</span>
+            <span class="track-start-sub">Start Practice</span>
+          </button>
+        </div>
+      </div>
     </div>
 
     <!-- Sentence Completed Modal Card -->

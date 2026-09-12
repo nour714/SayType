@@ -6,6 +6,8 @@ export class ProgressIndicator {
     this.currentEl =
       options.currentEl || document.getElementById('progress-current');
     this.totalEl = options.totalEl || document.getElementById('progress-total');
+    this.barEl =
+      options.barEl || document.getElementById('session-progress-bar-fill');
   }
 
   update({ current, total }) {
@@ -14,6 +16,10 @@ export class ProgressIndicator {
     }
     if (this.totalEl) {
       this.totalEl.textContent = total;
+    }
+    if (this.barEl && total > 0) {
+      const pct = Math.min(100, Math.round((current / total) * 100));
+      this.barEl.style.width = `${pct}%`;
     }
   }
 }

@@ -674,7 +674,26 @@ export class TrainingScreen extends EventEmitter {
     const isLessonOpen =
       this.lessonModal && this.lessonModal.classList.contains('is-open');
     const isStartOpen = this.isStartOverlayOpen();
-    return Boolean(isSentenceOpen || isLessonOpen || isStartOpen);
+    const isTrackOpen = Boolean(
+      typeof document !== 'undefined' &&
+        document.getElementById('track-modal')?.classList.contains('is-open')
+    );
+    const isProfileOpen = Boolean(
+      typeof document !== 'undefined' &&
+        document.getElementById('profile-modal')?.classList.contains('is-open')
+    );
+    const isAuthOpen = Boolean(
+      typeof document !== 'undefined' &&
+        document.getElementById('auth-modal')?.classList.contains('is-open')
+    );
+    return Boolean(
+      isSentenceOpen ||
+        isLessonOpen ||
+        isStartOpen ||
+        isTrackOpen ||
+        isProfileOpen ||
+        isAuthOpen
+    );
   }
 
   /**
