@@ -65,6 +65,50 @@
   padding-inline: var(--space-4);
 }
 
+/* Page Transition Animations */
+@keyframes page-enter {
+  0% {
+    opacity: 0;
+    transform: translateY(16px) scale(0.995);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.page-enter {
+  animation: page-enter 0.36s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity;
+}
+
+@keyframes element-fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-enter .page-header {
+  animation: element-fade-up 0.38s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+
+.page-enter .home-hero {
+  animation: element-fade-up 0.4s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+
+.page-enter .home-levels,
+.page-enter .home-topics-section,
+.page-enter .stats-pills-bar,
+.page-enter .progress-overview,
+.page-enter .settings-grid {
+  animation: element-fade-up 0.46s 0.05s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+
 .page-header {
   margin-bottom: var(--space-8);
   max-width: 44rem;
@@ -1468,12 +1512,16 @@
    collapses durations; here we remove decorative loops explicitly). */
 @media (prefers-reduced-motion: reduce) {
   .page-loading,
+  .page-enter,
+  .page-enter *,
+  .vessel-enter,
   .state-indicator.state-listening .state-dot,
   .state-indicator.state-loading .state-dot,
   .state-indicator.state-listen-fallback .state-dot,
   .listen-fab-btn.is-speaking .speaker-wave,
   .char-caret {
-    animation: none;
+    animation: none !important;
+    transform: none !important;
   }
 }
 

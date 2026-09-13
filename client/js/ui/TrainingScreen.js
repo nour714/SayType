@@ -275,6 +275,12 @@ export class TrainingScreen extends EventEmitter {
     const text = sentence.text_en || sentence.english || '';
     this.typingRenderer.renderCharacters(text);
 
+    if (this.sentenceVessel) {
+      this.sentenceVessel.classList.remove('vessel-enter');
+      void this.sentenceVessel.offsetWidth;
+      this.sentenceVessel.classList.add('vessel-enter');
+    }
+
     this.updateCaret({
       charIndex: 0,
       hasPendingError: false,
@@ -593,6 +599,14 @@ export class TrainingScreen extends EventEmitter {
     if (this.modalAccuracy)
       this.modalAccuracy.textContent = `${stats.accuracy}%`;
     if (this.modalMistakes) this.modalMistakes.textContent = stats.mistakes;
+
+    if (this.sentenceVessel) {
+      this.sentenceVessel.classList.add('vessel-success');
+      setTimeout(
+        () => this.sentenceVessel?.classList.remove('vessel-success'),
+        700
+      );
+    }
 
     this._modalTimeout = setTimeout(() => {
       if (this.sentenceModal) {

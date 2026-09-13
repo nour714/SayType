@@ -182,7 +182,12 @@ async function bootstrap() {
     const activePageId = PAGE_ROUTES[route];
     if (activePageId) {
       const activePage = document.getElementById(activePageId);
-      if (activePage) activePage.style.display = '';
+      if (activePage) {
+        activePage.style.display = '';
+        activePage.classList.remove('page-enter');
+        void activePage.offsetWidth; // Force CSS reflow to re-trigger transition
+        activePage.classList.add('page-enter');
+      }
     }
 
     const trainingOnly = document.querySelectorAll('.training-only');
