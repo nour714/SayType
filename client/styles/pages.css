@@ -1353,8 +1353,10 @@
   }
 
   .app-header {
-    min-height: 3.5rem;
-    padding-inline: var(--space-4);
+    top: 8px;
+    width: calc(100% - 1rem);
+    min-height: 3.25rem;
+    padding-inline: 12px;
     gap: var(--space-2);
   }
 
