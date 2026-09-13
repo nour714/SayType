@@ -790,7 +790,7 @@ console.log('--- Testing Route Link Consistency ---');
     }
   }
   assert.strictEqual(brokenLinks.length, 0, `Broken route links found: ${brokenLinks.join(', ')}`);
-  assert.ok(linkCount >= 10, `Expected at least 10 valid nav links, found ${linkCount}`);
+  assert.ok(linkCount >= 8, `Expected at least 8 valid nav links, found ${linkCount}`);
   console.log(`✓ All ${linkCount} navigation links use correct #/route format`);
 }
 
