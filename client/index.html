@@ -204,62 +204,7 @@
         <div id="page-practice" class="page-container practice-layout">
           <!-- Left Sidebar Controls: Elegant Distinctive Cards -->
           <aside class="practice-sidebar-left training-only" id="practice-sidebar-left" aria-label="لوحة تحكم التدريب">
-            <!-- Card 1: Track & Level / Topic Selection -->
-            <div class="practice-card practice-track-card">
-              <div class="practice-card-header">
-                <span class="practice-card-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
-                  </svg>
-                </span>
-                <span class="practice-card-title">مسار التدريب</span>
-              </div>
-
-              <div class="practice-control-group">
-                <label for="level-select" class="practice-field-label">المستوى (Level)</label>
-                <div class="practice-select-wrapper">
-                  <select
-                    id="level-select"
-                    class="practice-select level-select"
-                    aria-label="Filter sentences by level"
-                  >
-                    <option value="A1">A1 — Beginner</option>
-                    <option value="A2">A2 — Elementary</option>
-                  </select>
-                  <span class="practice-select-arrow" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                  </span>
-                </div>
-              </div>
-
-              <div class="practice-control-group">
-                <label for="topic-select" class="practice-field-label">الموضوع (Topic)</label>
-                <div class="practice-select-wrapper">
-                  <select
-                    id="topic-select"
-                    class="practice-select topic-select"
-                    aria-label="Filter sentences by topic"
-                  >
-                    <option value="">All Topics</option>
-                  </select>
-                  <span class="practice-select-arrow" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                  </span>
-                </div>
-              </div>
-
-              <button
-                type="button"
-                id="change-track-btn"
-                class="action-btn secondary-btn change-track-btn"
-                title="Choose your learning track"
-              >
-                <span>✦ اختيار / تغيير المسار</span>
-              </button>
-            </div>
-
-            <!-- Card 2: Session Progress Counter & Bar -->
+            <!-- Card 1: Session Progress Counter & Bar -->
             <div class="practice-card practice-progress-card">
               <div class="practice-card-header">
                 <span class="practice-card-icon" aria-hidden="true">
@@ -290,6 +235,15 @@
                   <div id="session-progress-bar-fill" class="practice-progress-fill" style="width: 10%;"></div>
                 </div>
               </div>
+
+              <button
+                type="button"
+                id="change-track-btn"
+                class="action-btn secondary-btn change-track-btn"
+                title="Choose your learning track"
+              >
+                <span>✦ تغيير المسار</span>
+              </button>
             </div>
 
             <!-- Card 3: Quick Shortcuts & Tips -->
