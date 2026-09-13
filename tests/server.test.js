@@ -31,7 +31,7 @@ const server = app.listen(3002, async () => {
     const sentences = JSON.parse(sentencesRes.body);
     assert.strictEqual(Array.isArray(sentences), true);
     assert.ok(sentences.length >= 10, `Expected at least 10 sentences, got ${sentences.length}`);
-    assert.strictEqual(sentences[0].text_en, "Hello!");
+    assert.strictEqual(sentences[0].text_en, "Hello");
     assert.strictEqual(sentences[0].level, "A1");
     assert.ok(Array.isArray(sentences[0].words) && sentences[0].words.length > 0, 'Expected word-level metadata');
     console.log(`✓ GET /api/sentences passed (${sentences.length} sentences)`);

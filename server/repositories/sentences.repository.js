@@ -43,10 +43,10 @@ class SentencesRepository {
           level: 'A1',
           topic: 'greetings',
           topic_label: 'Greetings & Introductions',
-          text_en: 'Hello!',
-          text_ar: 'مرحبًا!',
-          english: 'Hello!',
-          arabic: 'مرحبًا!',
+          text_en: 'Hello',
+          text_ar: 'مرحبًا',
+          english: 'Hello',
+          arabic: 'مرحبًا',
           words: [
             {
               word: 'hello',
@@ -62,10 +62,10 @@ class SentencesRepository {
           level: 'A1',
           topic: 'daily-life',
           topic_label: 'Daily Life & Routine',
-          text_en: 'I usually wake up at seven.',
-          text_ar: 'عادةً أستيقظ في السابعة.',
-          english: 'I usually wake up at seven.',
-          arabic: 'عادةً أستيقظ في السابعة.',
+          text_en: 'I usually wake up at seven',
+          text_ar: 'عادةً أستيقظ في السابعة',
+          english: 'I usually wake up at seven',
+          arabic: 'عادةً أستيقظ في السابعة',
           words: [
             {
               word: 'wake',
@@ -87,10 +87,10 @@ class SentencesRepository {
           level: 'A1',
           topic: 'work-study',
           topic_label: 'Study & Work',
-          text_en: 'I study at the university.',
-          text_ar: 'أنا أدرس في الجامعة.',
-          english: 'I study at the university.',
-          arabic: 'أنا أدرس في الجامعة.',
+          text_en: 'I study at the university',
+          text_ar: 'أنا أدرس في الجامعة',
+          english: 'I study at the university',
+          arabic: 'أنا أدرس في الجامعة',
           words: [
             {
               word: 'study',

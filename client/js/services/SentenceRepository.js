@@ -168,10 +168,10 @@ export class SentenceRepository {
         level: 'A1',
         topic: 'greetings',
         topic_label: 'Greetings & Introductions',
-        text_en: 'Hello!',
-        text_ar: 'مرحبًا!',
-        english: 'Hello!',
-        arabic: 'مرحبًا!',
+        text_en: 'Hello',
+        text_ar: 'مرحبًا',
+        english: 'Hello',
+        arabic: 'مرحبًا',
         words: [
           {
             word: 'hello',
@@ -187,10 +187,10 @@ export class SentenceRepository {
         level: 'A1',
         topic: 'daily-life',
         topic_label: 'Daily Life & Routine',
-        text_en: 'I usually wake up at seven.',
-        text_ar: 'عادةً أستيقظ في السابعة.',
-        english: 'I usually wake up at seven.',
-        arabic: 'عادةً أستيقظ في السابعة.',
+        text_en: 'I usually wake up at seven',
+        text_ar: 'عادةً أستيقظ في السابعة',
+        english: 'I usually wake up at seven',
+        arabic: 'عادةً أستيقظ في السابعة',
         words: [
           {
             word: 'wake',
@@ -212,10 +212,10 @@ export class SentenceRepository {
         level: 'A1',
         topic: 'work-study',
         topic_label: 'Study & Work',
-        text_en: 'I study at the university.',
-        text_ar: 'أنا أدرس في الجامعة.',
-        english: 'I study at the university.',
-        arabic: 'أنا أدرس في الجامعة.',
+        text_en: 'I study at the university',
+        text_ar: 'أنا أدرس في الجامعة',
+        english: 'I study at the university',
+        arabic: 'أنا أدرس في الجامعة',
         words: [
           {
             word: 'study',
@@ -237,10 +237,10 @@ export class SentenceRepository {
         level: 'A1',
         topic: 'shopping-food',
         topic_label: 'Shopping & Food',
-        text_en: 'How much is this?',
-        text_ar: 'بكم هذا؟',
-        english: 'How much is this?',
-        arabic: 'بكم هذا؟',
+        text_en: 'How much is this',
+        text_ar: 'بكم هذا',
+        english: 'How much is this',
+        arabic: 'بكم هذا',
         words: [
           {
             word: 'how',
@@ -262,10 +262,10 @@ export class SentenceRepository {
         level: 'A1',
         topic: 'travel',
         topic_label: 'Travel & Transport',
-        text_en: 'Where is the train station?',
-        text_ar: 'أين محطة القطار؟',
-        english: 'Where is the train station?',
-        arabic: 'أين محطة القطار؟',
+        text_en: 'Where is the train station',
+        text_ar: 'أين محطة القطار',
+        english: 'Where is the train station',
+        arabic: 'أين محطة القطار',
         words: [
           {
             word: 'where',
@@ -287,10 +287,10 @@ export class SentenceRepository {
         level: 'A2',
         topic: 'feelings-opinions',
         topic_label: 'Feelings & Opinions',
-        text_en: 'I am happy today.',
-        text_ar: 'أنا سعيد اليوم.',
-        english: 'I am happy today.',
-        arabic: 'أنا سعيد اليوم.',
+        text_en: 'I am happy today',
+        text_ar: 'أنا سعيد اليوم',
+        english: 'I am happy today',
+        arabic: 'أنا سعيد اليوم',
         words: [
           {
             word: 'happy',
@@ -312,10 +312,10 @@ export class SentenceRepository {
         level: 'A2',
         topic: 'health',
         topic_label: 'Health & Help',
-        text_en: 'I feel sick.',
-        text_ar: 'أشعر بالمرض.',
-        english: 'I feel sick.',
-        arabic: 'أشعر بالمرض.',
+        text_en: 'I feel sick',
+        text_ar: 'أشعر بالمرض',
+        english: 'I feel sick',
+        arabic: 'أشعر بالمرض',
         words: [
           {
             word: 'feel',
@@ -337,10 +337,10 @@ export class SentenceRepository {
         level: 'A2',
         topic: 'technology',
         topic_label: 'Technology & Internet',
-        text_en: 'Where is my phone?',
-        text_ar: 'أين هاتفي؟',
-        english: 'Where is my phone?',
-        arabic: 'أين هاتفي؟',
+        text_en: 'Where is my phone',
+        text_ar: 'أين هاتفي',
+        english: 'Where is my phone',
+        arabic: 'أين هاتفي',
         words: [
           {
             word: 'phone',
@@ -356,10 +356,10 @@ export class SentenceRepository {
         level: 'A2',
         topic: 'plans-conversations',
         topic_label: 'Plans & Conversations',
-        text_en: 'What are your plans for tomorrow?',
-        text_ar: 'ما هي خططك للغد؟',
-        english: 'What are your plans for tomorrow?',
-        arabic: 'ما هي خططك للغد؟',
+        text_en: 'What are your plans for tomorrow',
+        text_ar: 'ما هي خططك للغد',
+        english: 'What are your plans for tomorrow',
+        arabic: 'ما هي خططك للغد',
         words: [
           {
             word: 'tomorrow',
@@ -375,10 +375,10 @@ export class SentenceRepository {
         level: 'A2',
         topic: 'general',
         topic_label: 'General Essentials',
-        text_en: 'Everything will be fine.',
-        text_ar: 'كل شيء سيكون على ما يرام.',
-        english: 'Everything will be fine.',
-        arabic: 'كل شيء سيكون على ما يرام.',
+        text_en: 'Everything will be fine',
+        text_ar: 'كل شيء سيكون على ما يرام',
+        english: 'Everything will be fine',
+        arabic: 'كل شيء سيكون على ما يرام',
         words: [
           {
             word: 'fine',

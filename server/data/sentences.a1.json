@@ -4,10 +4,10 @@
     "level": "A1",
     "topic": "greetings",
     "topic_label": "Greetings & Introductions",
-    "text_en": "Hello!",
-    "text_ar": "مرحبًا!",
-    "english": "Hello!",
-    "arabic": "مرحبًا!",
+    "text_en": "Hello",
+    "text_ar": "مرحبًا",
+    "english": "Hello",
+    "arabic": "مرحبًا",
     "tags": [
       "greetings",
       "introductions"
@@ -26,10 +26,10 @@
     "level": "A1",
     "topic": "greetings",
     "topic_label": "Greetings & Introductions",
-    "text_en": "Hi, how are you?",
-    "text_ar": "مرحبًا، كيف حالك؟",
-    "english": "Hi, how are you?",
-    "arabic": "مرحبًا، كيف حالك؟",
+    "text_en": "Hi, how are you",
+    "text_ar": "مرحبًا، كيف حالك",
+    "english": "Hi, how are you",
+    "arabic": "مرحبًا، كيف حالك",
     "tags": [
       "greetings",
       "introductions"
@@ -66,10 +66,10 @@
     "level": "A1",
     "topic": "greetings",
     "topic_label": "Greetings & Introductions",
-    "text_en": "I am fine, thank you.",
-    "text_ar": "أنا بخير، شكرًا لك.",
-    "english": "I am fine, thank you.",
-    "arabic": "أنا بخير، شكرًا لك.",
+    "text_en": "I am fine, thank you",
+    "text_ar": "أنا بخير، شكرًا لك",
+    "english": "I am fine, thank you",
+    "arabic": "أنا بخير، شكرًا لك",
     "tags": [
       "greetings",
       "introductions"
@@ -112,10 +112,10 @@
     "level": "A1",
     "topic": "greetings",
     "topic_label": "Greetings & Introductions",
-    "text_en": "Nice to meet you.",
-    "text_ar": "سعيد بلقائك.",
-    "english": "Nice to meet you.",
-    "arabic": "سعيد بلقائك.",
+    "text_en": "Nice to meet you",
+    "text_ar": "سعيد بلقائك",
+    "english": "Nice to meet you",
+    "arabic": "سعيد بلقائك",
     "tags": [
       "greetings",
       "introductions"
@@ -152,10 +152,10 @@
     "level": "A1",
     "topic": "greetings",
     "topic_label": "Greetings & Introductions",
-    "text_en": "Nice to see you again.",
-    "text_ar": "سعيد برؤيتك مرة أخرى.",
-    "english": "Nice to see you again.",
-    "arabic": "سعيد برؤيتك مرة أخرى.",
+    "text_en": "Nice to see you again",
+    "text_ar": "سعيد برؤيتك مرة أخرى",
+    "english": "Nice to see you again",
+    "arabic": "سعيد برؤيتك مرة أخرى",
     "tags": [
       "greetings",
       "introductions"
@@ -198,10 +198,10 @@
     "level": "A1",
     "topic": "greetings",
     "topic_label": "Greetings & Introductions",
-    "text_en": "What is your name?",
-    "text_ar": "ما اسمك؟",
-    "english": "What is your name?",
-    "arabic": "ما اسمك؟",
+    "text_en": "What is your name",
+    "text_ar": "ما اسمك",
+    "english": "What is your name",
+    "arabic": "ما اسمك",
     "tags": [
       "greetings",
       "introductions"
@@ -238,10 +238,10 @@
     "level": "A1",
     "topic": "greetings",
     "topic_label": "Greetings & Introductions",
-    "text_en": "My name is Nour.",
-    "text_ar": "اسمي نور.",
-    "english": "My name is Nour.",
-    "arabic": "اسمي نور.",
+    "text_en": "My name is Nour",
+    "text_ar": "اسمي نور",
+    "english": "My name is Nour",
+    "arabic": "اسمي نور",
     "tags": [
       "greetings",
       "introductions"
@@ -278,10 +278,10 @@
     "level": "A1",
     "topic": "greetings",
     "topic_label": "Greetings & Introductions",
-    "text_en": "Where are you from?",
-    "text_ar": "من أين أنت؟",
-    "english": "Where are you from?",
-    "arabic": "من أين أنت؟",
+    "text_en": "Where are you from",
+    "text_ar": "من أين أنت",
+    "english": "Where are you from",
+    "arabic": "من أين أنت",
     "tags": [
       "greetings",
       "introductions"
@@ -318,10 +318,10 @@
     "level": "A1",
     "topic": "greetings",
     "topic_label": "Greetings & Introductions",
-    "text_en": "I am from Egypt.",
-    "text_ar": "أنا من مصر.",
-    "english": "I am from Egypt.",
-    "arabic": "أنا من مصر.",
+    "text_en": "I am from Egypt",
+    "text_ar": "أنا من مصر",
+    "english": "I am from Egypt",
+    "arabic": "أنا من مصر",
     "tags": [
       "greetings",
       "introductions"
@@ -358,10 +358,10 @@
     "level": "A1",
     "topic": "greetings",
     "topic_label": "Greetings & Introductions",
-    "text_en": "Where do you live?",
-    "text_ar": "أين تعيش؟",
-    "english": "Where do you live?",
-    "arabic": "أين تعيش؟",
+    "text_en": "Where do you live",
+    "text_ar": "أين تعيش",
+    "english": "Where do you live",
+    "arabic": "أين تعيش",
     "tags": [
       "greetings",
       "introductions"
@@ -398,10 +398,10 @@
     "level": "A1",
     "topic": "greetings",
     "topic_label": "Greetings & Introductions",
-    "text_en": "I live in Cairo.",
-    "text_ar": "أعيش في القاهرة.",
-    "english": "I live in Cairo.",
-    "arabic": "أعيش في القاهرة.",
+    "text_en": "I live in Cairo",
+    "text_ar": "أعيش في القاهرة",
+    "english": "I live in Cairo",
+    "arabic": "أعيش في القاهرة",
     "tags": [
       "greetings",
       "introductions"
@@ -438,10 +438,10 @@
     "level": "A1",
     "topic": "greetings",
     "topic_label": "Greetings & Introductions",
-    "text_en": "How old are you?",
-    "text_ar": "كم عمرك؟",
-    "english": "How old are you?",
-    "arabic": "كم عمرك؟",
+    "text_en": "How old are you",
+    "text_ar": "كم عمرك",
+    "english": "How old are you",
+    "arabic": "كم عمرك",
     "tags": [
       "greetings",
       "introductions"
@@ -478,10 +478,10 @@
     "level": "A1",
     "topic": "greetings",
     "topic_label": "Greetings & Introductions",
-    "text_en": "I am twenty years old.",
-    "text_ar": "عمري عشرون عامًا.",
-    "english": "I am twenty years old.",
-    "arabic": "عمري عشرون عامًا.",
+    "text_en": "I am twenty years old",
+    "text_ar": "عمري عشرون عامًا",
+    "english": "I am twenty years old",
+    "arabic": "عمري عشرون عامًا",
     "tags": [
       "greetings",
       "introductions"
@@ -524,10 +524,10 @@
     "level": "A1",
     "topic": "greetings",
     "topic_label": "Greetings & Introductions",
-    "text_en": "What do you do?",
-    "text_ar": "ماذا تعمل؟",
-    "english": "What do you do?",
-    "arabic": "ماذا تعمل؟",
+    "text_en": "What do you do",
+    "text_ar": "ماذا تعمل",
+    "english": "What do you do",
+    "arabic": "ماذا تعمل",
     "tags": [
       "greetings",
       "introductions"
@@ -558,10 +558,10 @@
     "level": "A1",
     "topic": "greetings",
     "topic_label": "Greetings & Introductions",
-    "text_en": "I am a student.",
-    "text_ar": "أنا طالب.",
-    "english": "I am a student.",
-    "arabic": "أنا طالب.",
+    "text_en": "I am a student",
+    "text_ar": "أنا طالب",
+    "english": "I am a student",
+    "arabic": "أنا طالب",
     "tags": [
       "greetings",
       "introductions"
@@ -598,10 +598,10 @@
     "level": "A1",
     "topic": "greetings",
     "topic_label": "Greetings & Introductions",
-    "text_en": "What are you studying?",
-    "text_ar": "ماذا تدرس؟",
-    "english": "What are you studying?",
-    "arabic": "ماذا تدرس؟",
+    "text_en": "What are you studying",
+    "text_ar": "ماذا تدرس",
+    "english": "What are you studying",
+    "arabic": "ماذا تدرس",
     "tags": [
       "greetings",
       "introductions"
@@ -638,10 +638,10 @@
     "level": "A1",
     "topic": "greetings",
     "topic_label": "Greetings & Introductions",
-    "text_en": "I study artificial intelligence.",
-    "text_ar": "أدرس الذكاء الاصطناعي.",
-    "english": "I study artificial intelligence.",
-    "arabic": "أدرس الذكاء الاصطناعي.",
+    "text_en": "I study artificial intelligence",
+    "text_ar": "أدرس الذكاء الاصطناعي",
+    "english": "I study artificial intelligence",
+    "arabic": "أدرس الذكاء الاصطناعي",
     "tags": [
       "greetings",
       "introductions"
@@ -678,10 +678,10 @@
     "level": "A1",
     "topic": "greetings",
     "topic_label": "Greetings & Introductions",
-    "text_en": "Do you speak English?",
-    "text_ar": "هل تتحدث الإنجليزية؟",
-    "english": "Do you speak English?",
-    "arabic": "هل تتحدث الإنجليزية؟",
+    "text_en": "Do you speak English",
+    "text_ar": "هل تتحدث الإنجليزية",
+    "english": "Do you speak English",
+    "arabic": "هل تتحدث الإنجليزية",
     "tags": [
       "greetings",
       "introductions"
@@ -718,10 +718,10 @@
     "level": "A1",
     "topic": "greetings",
     "topic_label": "Greetings & Introductions",
-    "text_en": "I speak a little English.",
-    "text_ar": "أتحدث الإنجليزية قليلًا.",
-    "english": "I speak a little English.",
-    "arabic": "أتحدث الإنجليزية قليلًا.",
+    "text_en": "I speak a little English",
+    "text_ar": "أتحدث الإنجليزية قليلًا",
+    "english": "I speak a little English",
+    "arabic": "أتحدث الإنجليزية قليلًا",
     "tags": [
       "greetings",
       "introductions"
@@ -764,10 +764,10 @@
     "level": "A1",
     "topic": "greetings",
     "topic_label": "Greetings & Introductions",
-    "text_en": "Could you speak more slowly?",
-    "text_ar": "هل يمكنك التحدث ببطء أكثر؟",
-    "english": "Could you speak more slowly?",
-    "arabic": "هل يمكنك التحدث ببطء أكثر؟",
+    "text_en": "Could you speak more slowly",
+    "text_ar": "هل يمكنك التحدث ببطء أكثر",
+    "english": "Could you speak more slowly",
+    "arabic": "هل يمكنك التحدث ببطء أكثر",
     "tags": [
       "greetings",
       "introductions"
@@ -810,10 +810,10 @@
     "level": "A1",
     "topic": "greetings",
     "topic_label": "Greetings & Introductions",
-    "text_en": "Please say that again.",
-    "text_ar": "من فضلك قل ذلك مرة أخرى.",
-    "english": "Please say that again.",
-    "arabic": "من فضلك قل ذلك مرة أخرى.",
+    "text_en": "Please say that again",
+    "text_ar": "من فضلك قل ذلك مرة أخرى",
+    "english": "Please say that again",
+    "arabic": "من فضلك قل ذلك مرة أخرى",
     "tags": [
       "greetings",
       "introductions"
@@ -850,10 +850,10 @@
     "level": "A1",
     "topic": "greetings",
     "topic_label": "Greetings & Introductions",
-    "text_en": "I do not understand.",
-    "text_ar": "أنا لا أفهم.",
-    "english": "I do not understand.",
-    "arabic": "أنا لا أفهم.",
+    "text_en": "I do not understand",
+    "text_ar": "أنا لا أفهم",
+    "english": "I do not understand",
+    "arabic": "أنا لا أفهم",
     "tags": [
       "greetings",
       "introductions"
@@ -890,10 +890,10 @@
     "level": "A1",
     "topic": "greetings",
     "topic_label": "Greetings & Introductions",
-    "text_en": "What does this word mean?",
-    "text_ar": "ماذا تعني هذه الكلمة؟",
-    "english": "What does this word mean?",
-    "arabic": "ماذا تعني هذه الكلمة؟",
+    "text_en": "What does this word mean",
+    "text_ar": "ماذا تعني هذه الكلمة",
+    "english": "What does this word mean",
+    "arabic": "ماذا تعني هذه الكلمة",
     "tags": [
       "greetings",
       "introductions"
@@ -936,10 +936,10 @@
     "level": "A1",
     "topic": "greetings",
     "topic_label": "Greetings & Introductions",
-    "text_en": "How do you spell it?",
-    "text_ar": "كيف تتهجى هذه الكلمة؟",
-    "english": "How do you spell it?",
-    "arabic": "كيف تتهجى هذه الكلمة؟",
+    "text_en": "How do you spell it",
+    "text_ar": "كيف تتهجى هذه الكلمة",
+    "english": "How do you spell it",
+    "arabic": "كيف تتهجى هذه الكلمة",
     "tags": [
       "greetings",
       "introductions"
@@ -982,10 +982,10 @@
     "level": "A1",
     "topic": "greetings",
     "topic_label": "Greetings & Introductions",
-    "text_en": "Can you help me?",
-    "text_ar": "هل يمكنك مساعدتي؟",
-    "english": "Can you help me?",
-    "arabic": "هل يمكنك مساعدتي؟",
+    "text_en": "Can you help me",
+    "text_ar": "هل يمكنك مساعدتي",
+    "english": "Can you help me",
+    "arabic": "هل يمكنك مساعدتي",
     "tags": [
       "greetings",
       "introductions"
@@ -1022,10 +1022,10 @@
     "level": "A1",
     "topic": "greetings",
     "topic_label": "Greetings & Introductions",
-    "text_en": "Thank you very much.",
-    "text_ar": "شكرًا جزيلًا لك.",
-    "english": "Thank you very much.",
-    "arabic": "شكرًا جزيلًا لك.",
+    "text_en": "Thank you very much",
+    "text_ar": "شكرًا جزيلًا لك",
+    "english": "Thank you very much",
+    "arabic": "شكرًا جزيلًا لك",
     "tags": [
       "greetings",
       "introductions"
@@ -1062,10 +1062,10 @@
     "level": "A1",
     "topic": "greetings",
     "topic_label": "Greetings & Introductions",
-    "text_en": "You are welcome.",
-    "text_ar": "على الرحب والسعة.",
-    "english": "You are welcome.",
-    "arabic": "على الرحب والسعة.",
+    "text_en": "You are welcome",
+    "text_ar": "على الرحب والسعة",
+    "english": "You are welcome",
+    "arabic": "على الرحب والسعة",
     "tags": [
       "greetings",
       "introductions"
@@ -1096,10 +1096,10 @@
     "level": "A1",
     "topic": "greetings",
     "topic_label": "Greetings & Introductions",
-    "text_en": "No problem.",
-    "text_ar": "لا مشكلة.",
-    "english": "No problem.",
-    "arabic": "لا مشكلة.",
+    "text_en": "No problem",
+    "text_ar": "لا مشكلة",
+    "english": "No problem",
+    "arabic": "لا مشكلة",
     "tags": [
       "greetings",
       "introductions"
@@ -1124,10 +1124,10 @@
     "level": "A1",
     "topic": "greetings",
     "topic_label": "Greetings & Introductions",
-    "text_en": "Excuse me.",
-    "text_ar": "عذرًا.",
-    "english": "Excuse me.",
-    "arabic": "عذرًا.",
+    "text_en": "Excuse me",
+    "text_ar": "عذرًا",
+    "english": "Excuse me",
+    "arabic": "عذرًا",
     "tags": [
       "greetings",
       "introductions"
@@ -1152,10 +1152,10 @@
     "level": "A1",
     "topic": "greetings",
     "topic_label": "Greetings & Introductions",
-    "text_en": "I am sorry.",
-    "text_ar": "أنا آسف.",
-    "english": "I am sorry.",
-    "arabic": "أنا آسف.",
+    "text_en": "I am sorry",
+    "text_ar": "أنا آسف",
+    "english": "I am sorry",
+    "arabic": "أنا آسف",
     "tags": [
       "greetings",
       "introductions"
@@ -1186,10 +1186,10 @@
     "level": "A1",
     "topic": "greetings",
     "topic_label": "Greetings & Introductions",
-    "text_en": "That is okay.",
-    "text_ar": "لا بأس.",
-    "english": "That is okay.",
-    "arabic": "لا بأس.",
+    "text_en": "That is okay",
+    "text_ar": "لا بأس",
+    "english": "That is okay",
+    "arabic": "لا بأس",
     "tags": [
       "greetings",
       "introductions"
@@ -1220,10 +1220,10 @@
     "level": "A1",
     "topic": "greetings",
     "topic_label": "Greetings & Introductions",
-    "text_en": "See you later.",
-    "text_ar": "أراك لاحقًا.",
-    "english": "See you later.",
-    "arabic": "أراك لاحقًا.",
+    "text_en": "See you later",
+    "text_ar": "أراك لاحقًا",
+    "english": "See you later",
+    "arabic": "أراك لاحقًا",
     "tags": [
       "greetings",
       "introductions"
@@ -1254,10 +1254,10 @@
     "level": "A1",
     "topic": "greetings",
     "topic_label": "Greetings & Introductions",
-    "text_en": "See you tomorrow.",
-    "text_ar": "أراك غدًا.",
-    "english": "See you tomorrow.",
-    "arabic": "أراك غدًا.",
+    "text_en": "See you tomorrow",
+    "text_ar": "أراك غدًا",
+    "english": "See you tomorrow",
+    "arabic": "أراك غدًا",
     "tags": [
       "greetings",
       "introductions"
@@ -1288,10 +1288,10 @@
     "level": "A1",
     "topic": "greetings",
     "topic_label": "Greetings & Introductions",
-    "text_en": "Have a nice day.",
-    "text_ar": "أتمنى لك يومًا سعيدًا.",
-    "english": "Have a nice day.",
-    "arabic": "أتمنى لك يومًا سعيدًا.",
+    "text_en": "Have a nice day",
+    "text_ar": "أتمنى لك يومًا سعيدًا",
+    "english": "Have a nice day",
+    "arabic": "أتمنى لك يومًا سعيدًا",
     "tags": [
       "greetings",
       "introductions"
@@ -1328,10 +1328,10 @@
     "level": "A1",
     "topic": "greetings",
     "topic_label": "Greetings & Introductions",
-    "text_en": "Have a good evening.",
-    "text_ar": "أتمنى لك مساءً سعيدًا.",
-    "english": "Have a good evening.",
-    "arabic": "أتمنى لك مساءً سعيدًا.",
+    "text_en": "Have a good evening",
+    "text_ar": "أتمنى لك مساءً سعيدًا",
+    "english": "Have a good evening",
+    "arabic": "أتمنى لك مساءً سعيدًا",
     "tags": [
       "greetings",
       "introductions"
@@ -1368,10 +1368,10 @@
     "level": "A1",
     "topic": "greetings",
     "topic_label": "Greetings & Introductions",
-    "text_en": "Good night.",
-    "text_ar": "تصبح على خير.",
-    "english": "Good night.",
-    "arabic": "تصبح على خير.",
+    "text_en": "Good night",
+    "text_ar": "تصبح على خير",
+    "english": "Good night",
+    "arabic": "تصبح على خير",
     "tags": [
       "greetings",
       "introductions"
@@ -1396,10 +1396,10 @@
     "level": "A1",
     "topic": "greetings",
     "topic_label": "Greetings & Introductions",
-    "text_en": "Take care.",
-    "text_ar": "اعتنِ بنفسك.",
-    "english": "Take care.",
-    "arabic": "اعتنِ بنفسك.",
+    "text_en": "Take care",
+    "text_ar": "اعتنِ بنفسك",
+    "english": "Take care",
+    "arabic": "اعتنِ بنفسك",
     "tags": [
       "greetings",
       "introductions"
@@ -1424,10 +1424,10 @@
     "level": "A1",
     "topic": "greetings",
     "topic_label": "Greetings & Introductions",
-    "text_en": "Good luck!",
-    "text_ar": "حظًا موفقًا!",
-    "english": "Good luck!",
-    "arabic": "حظًا موفقًا!",
+    "text_en": "Good luck",
+    "text_ar": "حظًا موفقًا",
+    "english": "Good luck",
+    "arabic": "حظًا موفقًا",
     "tags": [
       "greetings",
       "introductions"
@@ -1452,10 +1452,10 @@
     "level": "A1",
     "topic": "greetings",
     "topic_label": "Greetings & Introductions",
-    "text_en": "Congratulations!",
-    "text_ar": "مبروك!",
-    "english": "Congratulations!",
-    "arabic": "مبروك!",
+    "text_en": "Congratulations",
+    "text_ar": "مبروك",
+    "english": "Congratulations",
+    "arabic": "مبروك",
     "tags": [
       "greetings",
       "introductions"
@@ -1474,10 +1474,10 @@
     "level": "A1",
     "topic": "greetings",
     "topic_label": "Greetings & Introductions",
-    "text_en": "Happy birthday!",
-    "text_ar": "عيد ميلاد سعيد!",
-    "english": "Happy birthday!",
-    "arabic": "عيد ميلاد سعيد!",
+    "text_en": "Happy birthday",
+    "text_ar": "عيد ميلاد سعيد",
+    "english": "Happy birthday",
+    "arabic": "عيد ميلاد سعيد",
     "tags": [
       "greetings",
       "introductions"
@@ -1502,10 +1502,10 @@
     "level": "A1",
     "topic": "greetings",
     "topic_label": "Greetings & Introductions",
-    "text_en": "How have you been?",
-    "text_ar": "كيف حالك منذ آخر مرة؟",
-    "english": "How have you been?",
-    "arabic": "كيف حالك منذ آخر مرة؟",
+    "text_en": "How have you been",
+    "text_ar": "كيف حالك منذ آخر مرة",
+    "english": "How have you been",
+    "arabic": "كيف حالك منذ آخر مرة",
     "tags": [
       "greetings",
       "introductions"
@@ -1542,10 +1542,10 @@
     "level": "A1",
     "topic": "greetings",
     "topic_label": "Greetings & Introductions",
-    "text_en": "Long time no see.",
-    "text_ar": "لم أرك منذ وقت طويل.",
-    "english": "Long time no see.",
-    "arabic": "لم أرك منذ وقت طويل.",
+    "text_en": "Long time no see",
+    "text_ar": "لم أرك منذ وقت طويل",
+    "english": "Long time no see",
+    "arabic": "لم أرك منذ وقت طويل",
     "tags": [
       "greetings",
       "introductions"
@@ -1582,10 +1582,10 @@
     "level": "A1",
     "topic": "greetings",
     "topic_label": "Greetings & Introductions",
-    "text_en": "What is new?",
-    "text_ar": "ما الجديد؟",
-    "english": "What is new?",
-    "arabic": "ما الجديد؟",
+    "text_en": "What is new",
+    "text_ar": "ما الجديد",
+    "english": "What is new",
+    "arabic": "ما الجديد",
     "tags": [
       "greetings",
       "introductions"
@@ -1616,10 +1616,10 @@
     "level": "A1",
     "topic": "greetings",
     "topic_label": "Greetings & Introductions",
-    "text_en": "Everything is good.",
-    "text_ar": "كل شيء بخير.",
-    "english": "Everything is good.",
-    "arabic": "كل شيء بخير.",
+    "text_en": "Everything is good",
+    "text_ar": "كل شيء بخير",
+    "english": "Everything is good",
+    "arabic": "كل شيء بخير",
     "tags": [
       "greetings",
       "introductions"
@@ -1650,10 +1650,10 @@
     "level": "A1",
     "topic": "greetings",
     "topic_label": "Greetings & Introductions",
-    "text_en": "I am glad to meet you.",
-    "text_ar": "أنا سعيد بلقائك.",
-    "english": "I am glad to meet you.",
-    "arabic": "أنا سعيد بلقائك.",
+    "text_en": "I am glad to meet you",
+    "text_ar": "أنا سعيد بلقائك",
+    "english": "I am glad to meet you",
+    "arabic": "أنا سعيد بلقائك",
     "tags": [
       "greetings",
       "introductions"
@@ -1702,10 +1702,10 @@
     "level": "A1",
     "topic": "greetings",
     "topic_label": "Greetings & Introductions",
-    "text_en": "Let me introduce myself.",
-    "text_ar": "اسمح لي أن أقدم نفسي.",
-    "english": "Let me introduce myself.",
-    "arabic": "اسمح لي أن أقدم نفسي.",
+    "text_en": "Let me introduce myself",
+    "text_ar": "اسمح لي أن أقدم نفسي",
+    "english": "Let me introduce myself",
+    "arabic": "اسمح لي أن أقدم نفسي",
     "tags": [
       "greetings",
       "introductions"
@@ -1742,10 +1742,10 @@
     "level": "A1",
     "topic": "greetings",
     "topic_label": "Greetings & Introductions",
-    "text_en": "This is my friend Ahmed.",
-    "text_ar": "هذا صديقي أحمد.",
-    "english": "This is my friend Ahmed.",
-    "arabic": "هذا صديقي أحمد.",
+    "text_en": "This is my friend Ahmed",
+    "text_ar": "هذا صديقي أحمد",
+    "english": "This is my friend Ahmed",
+    "arabic": "هذا صديقي أحمد",
     "tags": [
       "greetings",
       "introductions"
@@ -1788,10 +1788,10 @@
     "level": "A1",
     "topic": "greetings",
     "topic_label": "Greetings & Introductions",
-    "text_en": "I hope you are doing well.",
-    "text_ar": "أتمنى أن تكون بخير.",
-    "english": "I hope you are doing well.",
-    "arabic": "أتمنى أن تكون بخير.",
+    "text_en": "I hope you are doing well",
+    "text_ar": "أتمنى أن تكون بخير",
+    "english": "I hope you are doing well",
+    "arabic": "أتمنى أن تكون بخير",
     "tags": [
       "greetings",
       "introductions"
@@ -1840,10 +1840,10 @@
     "level": "A1",
     "topic": "greetings",
     "topic_label": "Greetings & Introductions",
-    "text_en": "It is nice to be here.",
-    "text_ar": "من الجميل أن أكون هنا.",
-    "english": "It is nice to be here.",
-    "arabic": "من الجميل أن أكون هنا.",
+    "text_en": "It is nice to be here",
+    "text_ar": "من الجميل أن أكون هنا",
+    "english": "It is nice to be here",
+    "arabic": "من الجميل أن أكون هنا",
     "tags": [
       "greetings",
       "introductions"
@@ -1892,10 +1892,10 @@
     "level": "A1",
     "topic": "greetings",
     "topic_label": "Greetings & Introductions",
-    "text_en": "See you soon.",
-    "text_ar": "أراك قريبًا.",
-    "english": "See you soon.",
-    "arabic": "أراك قريبًا.",
+    "text_en": "See you soon",
+    "text_ar": "أراك قريبًا",
+    "english": "See you soon",
+    "arabic": "أراك قريبًا",
     "tags": [
       "greetings",
       "introductions"
@@ -1926,10 +1926,10 @@
     "level": "A1",
     "topic": "daily-life",
     "topic_label": "Daily Life & Routine",
-    "text_en": "I usually wake up at seven.",
-    "text_ar": "عادةً أستيقظ في السابعة.",
-    "english": "I usually wake up at seven.",
-    "arabic": "عادةً أستيقظ في السابعة.",
+    "text_en": "I usually wake up at seven",
+    "text_ar": "عادةً أستيقظ في السابعة",
+    "english": "I usually wake up at seven",
+    "arabic": "عادةً أستيقظ في السابعة",
     "tags": [
       "daily-life",
       "routine"
@@ -1978,10 +1978,10 @@
     "level": "A1",
     "topic": "daily-life",
     "topic_label": "Daily Life & Routine",
-    "text_en": "I get out of bed quickly.",
-    "text_ar": "أنهض من السرير بسرعة.",
-    "english": "I get out of bed quickly.",
-    "arabic": "أنهض من السرير بسرعة.",
+    "text_en": "I get out of bed quickly",
+    "text_ar": "أنهض من السرير بسرعة",
+    "english": "I get out of bed quickly",
+    "arabic": "أنهض من السرير بسرعة",
     "tags": [
       "daily-life",
       "routine"
@@ -2030,10 +2030,10 @@
     "level": "A1",
     "topic": "daily-life",
     "topic_label": "Daily Life & Routine",
-    "text_en": "I make my bed every morning.",
-    "text_ar": "أرتب سريري كل صباح.",
-    "english": "I make my bed every morning.",
-    "arabic": "أرتب سريري كل صباح.",
+    "text_en": "I make my bed every morning",
+    "text_ar": "أرتب سريري كل صباح",
+    "english": "I make my bed every morning",
+    "arabic": "أرتب سريري كل صباح",
     "tags": [
       "daily-life",
       "routine"
@@ -2082,10 +2082,10 @@
     "level": "A1",
     "topic": "daily-life",
     "topic_label": "Daily Life & Routine",
-    "text_en": "I brush my teeth twice a day.",
-    "text_ar": "أنظف أسناني مرتين يوميًا.",
-    "english": "I brush my teeth twice a day.",
-    "arabic": "أنظف أسناني مرتين يوميًا.",
+    "text_en": "I brush my teeth twice a day",
+    "text_ar": "أنظف أسناني مرتين يوميًا",
+    "english": "I brush my teeth twice a day",
+    "arabic": "أنظف أسناني مرتين يوميًا",
     "tags": [
       "daily-life",
       "routine"
@@ -2140,10 +2140,10 @@
     "level": "A1",
     "topic": "daily-life",
     "topic_label": "Daily Life & Routine",
-    "text_en": "I take a shower before breakfast.",
-    "text_ar": "أستحم قبل الإفطار.",
-    "english": "I take a shower before breakfast.",
-    "arabic": "أستحم قبل الإفطار.",
+    "text_en": "I take a shower before breakfast",
+    "text_ar": "أستحم قبل الإفطار",
+    "english": "I take a shower before breakfast",
+    "arabic": "أستحم قبل الإفطار",
     "tags": [
       "daily-life",
       "routine"
@@ -2192,10 +2192,10 @@
     "level": "A1",
     "topic": "daily-life",
     "topic_label": "Daily Life & Routine",
-    "text_en": "I get dressed for school.",
-    "text_ar": "أرتدي ملابسي للذهاب إلى المدرسة.",
-    "english": "I get dressed for school.",
-    "arabic": "أرتدي ملابسي للذهاب إلى المدرسة.",
+    "text_en": "I get dressed for school",
+    "text_ar": "أرتدي ملابسي للذهاب إلى المدرسة",
+    "english": "I get dressed for school",
+    "arabic": "أرتدي ملابسي للذهاب إلى المدرسة",
     "tags": [
       "daily-life",
       "routine"
@@ -2238,10 +2238,10 @@
     "level": "A1",
     "topic": "daily-life",
     "topic_label": "Daily Life & Routine",
-    "text_en": "I have breakfast at home.",
-    "text_ar": "أتناول الإفطار في المنزل.",
-    "english": "I have breakfast at home.",
-    "arabic": "أتناول الإفطار في المنزل.",
+    "text_en": "I have breakfast at home",
+    "text_ar": "أتناول الإفطار في المنزل",
+    "english": "I have breakfast at home",
+    "arabic": "أتناول الإفطار في المنزل",
     "tags": [
       "daily-life",
       "routine"
@@ -2284,10 +2284,10 @@
     "level": "A1",
     "topic": "daily-life",
     "topic_label": "Daily Life & Routine",
-    "text_en": "I usually drink coffee in the morning.",
-    "text_ar": "عادةً أشرب القهوة في الصباح.",
-    "english": "I usually drink coffee in the morning.",
-    "arabic": "عادةً أشرب القهوة في الصباح.",
+    "text_en": "I usually drink coffee in the morning",
+    "text_ar": "عادةً أشرب القهوة في الصباح",
+    "english": "I usually drink coffee in the morning",
+    "arabic": "عادةً أشرب القهوة في الصباح",
     "tags": [
       "daily-life",
       "routine"
@@ -2342,10 +2342,10 @@
     "level": "A1",
     "topic": "daily-life",
     "topic_label": "Daily Life & Routine",
-    "text_en": "I leave home at eight.",
-    "text_ar": "أغادر المنزل في الثامنة.",
-    "english": "I leave home at eight.",
-    "arabic": "أغادر المنزل في الثامنة.",
+    "text_en": "I leave home at eight",
+    "text_ar": "أغادر المنزل في الثامنة",
+    "english": "I leave home at eight",
+    "arabic": "أغادر المنزل في الثامنة",
     "tags": [
       "daily-life",
       "routine"
@@ -2388,10 +2388,10 @@
     "level": "A1",
     "topic": "daily-life",
     "topic_label": "Daily Life & Routine",
-    "text_en": "I go to university by bus.",
-    "text_ar": "أذهب إلى الجامعة بالحافلة.",
-    "english": "I go to university by bus.",
-    "arabic": "أذهب إلى الجامعة بالحافلة.",
+    "text_en": "I go to university by bus",
+    "text_ar": "أذهب إلى الجامعة بالحافلة",
+    "english": "I go to university by bus",
+    "arabic": "أذهب إلى الجامعة بالحافلة",
     "tags": [
       "daily-life",
       "routine"
@@ -2440,10 +2440,10 @@
     "level": "A1",
     "topic": "daily-life",
     "topic_label": "Daily Life & Routine",
-    "text_en": "My class starts at nine.",
-    "text_ar": "تبدأ محاضرتي في التاسعة.",
-    "english": "My class starts at nine.",
-    "arabic": "تبدأ محاضرتي في التاسعة.",
+    "text_en": "My class starts at nine",
+    "text_ar": "تبدأ محاضرتي في التاسعة",
+    "english": "My class starts at nine",
+    "arabic": "تبدأ محاضرتي في التاسعة",
     "tags": [
       "daily-life",
       "routine"
@@ -2486,10 +2486,10 @@
     "level": "A1",
     "topic": "daily-life",
     "topic_label": "Daily Life & Routine",
-    "text_en": "I take notes during the lecture.",
-    "text_ar": "أدوّن الملاحظات أثناء المحاضرة.",
-    "english": "I take notes during the lecture.",
-    "arabic": "أدوّن الملاحظات أثناء المحاضرة.",
+    "text_en": "I take notes during the lecture",
+    "text_ar": "أدوّن الملاحظات أثناء المحاضرة",
+    "english": "I take notes during the lecture",
+    "arabic": "أدوّن الملاحظات أثناء المحاضرة",
     "tags": [
       "daily-life",
       "routine"
@@ -2538,10 +2538,10 @@
     "level": "A1",
     "topic": "daily-life",
     "topic_label": "Daily Life & Routine",
-    "text_en": "I study in the library.",
-    "text_ar": "أدرس في المكتبة.",
-    "english": "I study in the library.",
-    "arabic": "أدرس في المكتبة.",
+    "text_en": "I study in the library",
+    "text_ar": "أدرس في المكتبة",
+    "english": "I study in the library",
+    "arabic": "أدرس في المكتبة",
     "tags": [
       "daily-life",
       "routine"
@@ -2584,10 +2584,10 @@
     "level": "A1",
     "topic": "daily-life",
     "topic_label": "Daily Life & Routine",
-    "text_en": "I have lunch at noon.",
-    "text_ar": "أتناول الغداء عند الظهر.",
-    "english": "I have lunch at noon.",
-    "arabic": "أتناول الغداء عند الظهر.",
+    "text_en": "I have lunch at noon",
+    "text_ar": "أتناول الغداء عند الظهر",
+    "english": "I have lunch at noon",
+    "arabic": "أتناول الغداء عند الظهر",
     "tags": [
       "daily-life",
       "routine"
@@ -2630,10 +2630,10 @@
     "level": "A1",
     "topic": "daily-life",
     "topic_label": "Daily Life & Routine",
-    "text_en": "I come home in the afternoon.",
-    "text_ar": "أعود إلى المنزل بعد الظهر.",
-    "english": "I come home in the afternoon.",
-    "arabic": "أعود إلى المنزل بعد الظهر.",
+    "text_en": "I come home in the afternoon",
+    "text_ar": "أعود إلى المنزل بعد الظهر",
+    "english": "I come home in the afternoon",
+    "arabic": "أعود إلى المنزل بعد الظهر",
     "tags": [
       "daily-life",
       "routine"
@@ -2682,10 +2682,10 @@
     "level": "A1",
     "topic": "daily-life",
     "topic_label": "Daily Life & Routine",
-    "text_en": "I need a short break.",
-    "text_ar": "أحتاج إلى استراحة قصيرة.",
-    "english": "I need a short break.",
-    "arabic": "أحتاج إلى استراحة قصيرة.",
+    "text_en": "I need a short break",
+    "text_ar": "أحتاج إلى استراحة قصيرة",
+    "english": "I need a short break",
+    "arabic": "أحتاج إلى استراحة قصيرة",
     "tags": [
       "daily-life",
       "routine"
@@ -2728,10 +2728,10 @@
     "level": "A1",
     "topic": "daily-life",
     "topic_label": "Daily Life & Routine",
-    "text_en": "I usually exercise in the evening.",
-    "text_ar": "عادةً أمارس الرياضة في المساء.",
-    "english": "I usually exercise in the evening.",
-    "arabic": "عادةً أمارس الرياضة في المساء.",
+    "text_en": "I usually exercise in the evening",
+    "text_ar": "عادةً أمارس الرياضة في المساء",
+    "english": "I usually exercise in the evening",
+    "arabic": "عادةً أمارس الرياضة في المساء",
     "tags": [
       "daily-life",
       "routine"
@@ -2780,10 +2780,10 @@
     "level": "A1",
     "topic": "daily-life",
     "topic_label": "Daily Life & Routine",
-    "text_en": "I like walking after dinner.",
-    "text_ar": "أحب المشي بعد العشاء.",
-    "english": "I like walking after dinner.",
-    "arabic": "أحب المشي بعد العشاء.",
+    "text_en": "I like walking after dinner",
+    "text_ar": "أحب المشي بعد العشاء",
+    "english": "I like walking after dinner",
+    "arabic": "أحب المشي بعد العشاء",
     "tags": [
       "daily-life",
       "routine"
@@ -2826,10 +2826,10 @@
     "level": "A1",
     "topic": "daily-life",
     "topic_label": "Daily Life & Routine",
-    "text_en": "I check my phone before bed.",
-    "text_ar": "أفحص هاتفي قبل النوم.",
-    "english": "I check my phone before bed.",
-    "arabic": "أفحص هاتفي قبل النوم.",
+    "text_en": "I check my phone before bed",
+    "text_ar": "أفحص هاتفي قبل النوم",
+    "english": "I check my phone before bed",
+    "arabic": "أفحص هاتفي قبل النوم",
     "tags": [
       "daily-life",
       "routine"
@@ -2878,10 +2878,10 @@
     "level": "A1",
     "topic": "daily-life",
     "topic_label": "Daily Life & Routine",
-    "text_en": "I go to sleep around eleven.",
-    "text_ar": "أذهب للنوم حوالي الساعة الحادية عشرة.",
-    "english": "I go to sleep around eleven.",
-    "arabic": "أذهب للنوم حوالي الساعة الحادية عشرة.",
+    "text_en": "I go to sleep around eleven",
+    "text_ar": "أذهب للنوم حوالي الساعة الحادية عشرة",
+    "english": "I go to sleep around eleven",
+    "arabic": "أذهب للنوم حوالي الساعة الحادية عشرة",
     "tags": [
       "daily-life",
       "routine"
@@ -2930,10 +2930,10 @@
     "level": "A1",
     "topic": "daily-life",
     "topic_label": "Daily Life & Routine",
-    "text_en": "I am tired today.",
-    "text_ar": "أنا متعب اليوم.",
-    "english": "I am tired today.",
-    "arabic": "أنا متعب اليوم.",
+    "text_en": "I am tired today",
+    "text_ar": "أنا متعب اليوم",
+    "english": "I am tired today",
+    "arabic": "أنا متعب اليوم",
     "tags": [
       "daily-life",
       "routine"
@@ -2970,10 +2970,10 @@
     "level": "A1",
     "topic": "daily-life",
     "topic_label": "Daily Life & Routine",
-    "text_en": "I am very busy this week.",
-    "text_ar": "أنا مشغول جدًا هذا الأسبوع.",
-    "english": "I am very busy this week.",
-    "arabic": "أنا مشغول جدًا هذا الأسبوع.",
+    "text_en": "I am very busy this week",
+    "text_ar": "أنا مشغول جدًا هذا الأسبوع",
+    "english": "I am very busy this week",
+    "arabic": "أنا مشغول جدًا هذا الأسبوع",
     "tags": [
       "daily-life",
       "routine"
@@ -3022,10 +3022,10 @@
     "level": "A1",
     "topic": "daily-life",
     "topic_label": "Daily Life & Routine",
-    "text_en": "I have a lot to do.",
-    "text_ar": "لدي الكثير لأفعله.",
-    "english": "I have a lot to do.",
-    "arabic": "لدي الكثير لأفعله.",
+    "text_en": "I have a lot to do",
+    "text_ar": "لدي الكثير لأفعله",
+    "english": "I have a lot to do",
+    "arabic": "لدي الكثير لأفعله",
     "tags": [
       "daily-life",
       "routine"
@@ -3074,10 +3074,10 @@
     "level": "A1",
     "topic": "daily-life",
     "topic_label": "Daily Life & Routine",
-    "text_en": "I need to finish my homework.",
-    "text_ar": "أحتاج إلى إنهاء واجبي.",
-    "english": "I need to finish my homework.",
-    "arabic": "أحتاج إلى إنهاء واجبي.",
+    "text_en": "I need to finish my homework",
+    "text_ar": "أحتاج إلى إنهاء واجبي",
+    "english": "I need to finish my homework",
+    "arabic": "أحتاج إلى إنهاء واجبي",
     "tags": [
       "daily-life",
       "routine"
@@ -3126,10 +3126,10 @@
     "level": "A1",
     "topic": "daily-life",
     "topic_label": "Daily Life & Routine",
-    "text_en": "I have an appointment this afternoon.",
-    "text_ar": "لدي موعد بعد ظهر اليوم.",
-    "english": "I have an appointment this afternoon.",
-    "arabic": "لدي موعد بعد ظهر اليوم.",
+    "text_en": "I have an appointment this afternoon",
+    "text_ar": "لدي موعد بعد ظهر اليوم",
+    "english": "I have an appointment this afternoon",
+    "arabic": "لدي موعد بعد ظهر اليوم",
     "tags": [
       "daily-life",
       "routine"
@@ -3178,10 +3178,10 @@
     "level": "A1",
     "topic": "daily-life",
     "topic_label": "Daily Life & Routine",
-    "text_en": "I am free tonight.",
-    "text_ar": "أنا متفرغ الليلة.",
-    "english": "I am free tonight.",
-    "arabic": "أنا متفرغ الليلة.",
+    "text_en": "I am free tonight",
+    "text_ar": "أنا متفرغ الليلة",
+    "english": "I am free tonight",
+    "arabic": "أنا متفرغ الليلة",
     "tags": [
       "daily-life",
       "routine"
@@ -3218,10 +3218,10 @@
     "level": "A1",
     "topic": "daily-life",
     "topic_label": "Daily Life & Routine",
-    "text_en": "I am not free right now.",
-    "text_ar": "أنا لست متفرغًا الآن.",
-    "english": "I am not free right now.",
-    "arabic": "أنا لست متفرغًا الآن.",
+    "text_en": "I am not free right now",
+    "text_ar": "أنا لست متفرغًا الآن",
+    "english": "I am not free right now",
+    "arabic": "أنا لست متفرغًا الآن",
     "tags": [
       "daily-life",
       "routine"
@@ -3270,10 +3270,10 @@
     "level": "A1",
     "topic": "daily-life",
     "topic_label": "Daily Life & Routine",
-    "text_en": "What time do you usually wake up?",
-    "text_ar": "متى تستيقظ عادةً؟",
-    "english": "What time do you usually wake up?",
-    "arabic": "متى تستيقظ عادةً؟",
+    "text_en": "What time do you usually wake up",
+    "text_ar": "متى تستيقظ عادةً",
+    "english": "What time do you usually wake up",
+    "arabic": "متى تستيقظ عادةً",
     "tags": [
       "daily-life",
       "routine"
@@ -3328,10 +3328,10 @@
     "level": "A1",
     "topic": "daily-life",
     "topic_label": "Daily Life & Routine",
-    "text_en": "What time do you go to bed?",
-    "text_ar": "متى تذهب إلى النوم؟",
-    "english": "What time do you go to bed?",
-    "arabic": "متى تذهب إلى النوم؟",
+    "text_en": "What time do you go to bed",
+    "text_ar": "متى تذهب إلى النوم",
+    "english": "What time do you go to bed",
+    "arabic": "متى تذهب إلى النوم",
     "tags": [
       "daily-life",
       "routine"
@@ -3386,10 +3386,10 @@
     "level": "A1",
     "topic": "daily-life",
     "topic_label": "Daily Life & Routine",
-    "text_en": "How often do you exercise?",
-    "text_ar": "كم مرة تمارس الرياضة؟",
-    "english": "How often do you exercise?",
-    "arabic": "كم مرة تمارس الرياضة؟",
+    "text_en": "How often do you exercise",
+    "text_ar": "كم مرة تمارس الرياضة",
+    "english": "How often do you exercise",
+    "arabic": "كم مرة تمارس الرياضة",
     "tags": [
       "daily-life",
       "routine"
@@ -3432,10 +3432,10 @@
     "level": "A1",
     "topic": "daily-life",
     "topic_label": "Daily Life & Routine",
-    "text_en": "I exercise three times a week.",
-    "text_ar": "أمارس الرياضة ثلاث مرات في الأسبوع.",
-    "english": "I exercise three times a week.",
-    "arabic": "أمارس الرياضة ثلاث مرات في الأسبوع.",
+    "text_en": "I exercise three times a week",
+    "text_ar": "أمارس الرياضة ثلاث مرات في الأسبوع",
+    "english": "I exercise three times a week",
+    "arabic": "أمارس الرياضة ثلاث مرات في الأسبوع",
     "tags": [
       "daily-life",
       "routine"
@@ -3484,10 +3484,10 @@
     "level": "A1",
     "topic": "daily-life",
     "topic_label": "Daily Life & Routine",
-    "text_en": "I rarely watch television.",
-    "text_ar": "نادراً ما أشاهد التلفاز.",
-    "english": "I rarely watch television.",
-    "arabic": "نادراً ما أشاهد التلفاز.",
+    "text_en": "I rarely watch television",
+    "text_ar": "نادراً ما أشاهد التلفاز",
+    "english": "I rarely watch television",
+    "arabic": "نادراً ما أشاهد التلفاز",
     "tags": [
       "daily-life",
       "routine"
@@ -3524,10 +3524,10 @@
     "level": "A1",
     "topic": "daily-life",
     "topic_label": "Daily Life & Routine",
-    "text_en": "I often listen to music.",
-    "text_ar": "غالبًا ما أستمع إلى الموسيقى.",
-    "english": "I often listen to music.",
-    "arabic": "غالبًا ما أستمع إلى الموسيقى.",
+    "text_en": "I often listen to music",
+    "text_ar": "غالبًا ما أستمع إلى الموسيقى",
+    "english": "I often listen to music",
+    "arabic": "غالبًا ما أستمع إلى الموسيقى",
     "tags": [
       "daily-life",
       "routine"
@@ -3570,10 +3570,10 @@
     "level": "A1",
     "topic": "daily-life",
     "topic_label": "Daily Life & Routine",
-    "text_en": "I sometimes cook dinner.",
-    "text_ar": "أحيانًا أطبخ العشاء.",
-    "english": "I sometimes cook dinner.",
-    "arabic": "أحيانًا أطبخ العشاء.",
+    "text_en": "I sometimes cook dinner",
+    "text_ar": "أحيانًا أطبخ العشاء",
+    "english": "I sometimes cook dinner",
+    "arabic": "أحيانًا أطبخ العشاء",
     "tags": [
       "daily-life",
       "routine"
@@ -3610,10 +3610,10 @@
     "level": "A1",
     "topic": "daily-life",
     "topic_label": "Daily Life & Routine",
-    "text_en": "I never skip breakfast.",
-    "text_ar": "لا أتخطى الإفطار أبدًا.",
-    "english": "I never skip breakfast.",
-    "arabic": "لا أتخطى الإفطار أبدًا.",
+    "text_en": "I never skip breakfast",
+    "text_ar": "لا أتخطى الإفطار أبدًا",
+    "english": "I never skip breakfast",
+    "arabic": "لا أتخطى الإفطار أبدًا",
     "tags": [
       "daily-life",
       "routine"
@@ -3650,10 +3650,10 @@
     "level": "A1",
     "topic": "daily-life",
     "topic_label": "Daily Life & Routine",
-    "text_en": "I need to clean my room.",
-    "text_ar": "أحتاج إلى تنظيف غرفتي.",
-    "english": "I need to clean my room.",
-    "arabic": "أحتاج إلى تنظيف غرفتي.",
+    "text_en": "I need to clean my room",
+    "text_ar": "أحتاج إلى تنظيف غرفتي",
+    "english": "I need to clean my room",
+    "arabic": "أحتاج إلى تنظيف غرفتي",
     "tags": [
       "daily-life",
       "routine"
@@ -3702,10 +3702,10 @@
     "level": "A1",
     "topic": "daily-life",
     "topic_label": "Daily Life & Routine",
-    "text_en": "I have to do the laundry.",
-    "text_ar": "يجب أن أغسل الملابس.",
-    "english": "I have to do the laundry.",
-    "arabic": "يجب أن أغسل الملابس.",
+    "text_en": "I have to do the laundry",
+    "text_ar": "يجب أن أغسل الملابس",
+    "english": "I have to do the laundry",
+    "arabic": "يجب أن أغسل الملابس",
     "tags": [
       "daily-life",
       "routine"
@@ -3754,10 +3754,10 @@
     "level": "A1",
     "topic": "daily-life",
     "topic_label": "Daily Life & Routine",
-    "text_en": "The house is very quiet today.",
-    "text_ar": "المنزل هادئ جدًا اليوم.",
-    "english": "The house is very quiet today.",
-    "arabic": "المنزل هادئ جدًا اليوم.",
+    "text_en": "The house is very quiet today",
+    "text_ar": "المنزل هادئ جدًا اليوم",
+    "english": "The house is very quiet today",
+    "arabic": "المنزل هادئ جدًا اليوم",
     "tags": [
       "daily-life",
       "routine"
@@ -3806,10 +3806,10 @@
     "level": "A1",
     "topic": "daily-life",
     "topic_label": "Daily Life & Routine",
-    "text_en": "I am waiting for my friend.",
-    "text_ar": "أنا أنتظر صديقي.",
-    "english": "I am waiting for my friend.",
-    "arabic": "أنا أنتظر صديقي.",
+    "text_en": "I am waiting for my friend",
+    "text_ar": "أنا أنتظر صديقي",
+    "english": "I am waiting for my friend",
+    "arabic": "أنا أنتظر صديقي",
     "tags": [
       "daily-life",
       "routine"
@@ -3858,10 +3858,10 @@
     "level": "A1",
     "topic": "daily-life",
     "topic_label": "Daily Life & Routine",
-    "text_en": "I will call you later.",
-    "text_ar": "سأتصل بك لاحقًا.",
-    "english": "I will call you later.",
-    "arabic": "سأتصل بك لاحقًا.",
+    "text_en": "I will call you later",
+    "text_ar": "سأتصل بك لاحقًا",
+    "english": "I will call you later",
+    "arabic": "سأتصل بك لاحقًا",
     "tags": [
       "daily-life",
       "routine"
@@ -3904,10 +3904,10 @@
     "level": "A1",
     "topic": "daily-life",
     "topic_label": "Daily Life & Routine",
-    "text_en": "I will text you when I arrive.",
-    "text_ar": "سأرسل لك رسالة عندما أصل.",
-    "english": "I will text you when I arrive.",
-    "arabic": "سأرسل لك رسالة عندما أصل.",
+    "text_en": "I will text you when I arrive",
+    "text_ar": "سأرسل لك رسالة عندما أصل",
+    "english": "I will text you when I arrive",
+    "arabic": "سأرسل لك رسالة عندما أصل",
     "tags": [
       "daily-life",
       "routine"
@@ -3956,10 +3956,10 @@
     "level": "A1",
     "topic": "daily-life",
     "topic_label": "Daily Life & Routine",
-    "text_en": "I am on my way.",
-    "text_ar": "أنا في طريقي.",
-    "english": "I am on my way.",
-    "arabic": "أنا في طريقي.",
+    "text_en": "I am on my way",
+    "text_ar": "أنا في طريقي",
+    "english": "I am on my way",
+    "arabic": "أنا في طريقي",
     "tags": [
       "daily-life",
       "routine"
@@ -4002,10 +4002,10 @@
     "level": "A1",
     "topic": "daily-life",
     "topic_label": "Daily Life & Routine",
-    "text_en": "I just got home.",
-    "text_ar": "لقد وصلت إلى المنزل للتو.",
-    "english": "I just got home.",
-    "arabic": "لقد وصلت إلى المنزل للتو.",
+    "text_en": "I just got home",
+    "text_ar": "لقد وصلت إلى المنزل للتو",
+    "english": "I just got home",
+    "arabic": "لقد وصلت إلى المنزل للتو",
     "tags": [
       "daily-life",
       "routine"
@@ -4042,10 +4042,10 @@
     "level": "A1",
     "topic": "daily-life",
     "topic_label": "Daily Life & Routine",
-    "text_en": "I am almost ready.",
-    "text_ar": "أنا جاهز تقريبًا.",
-    "english": "I am almost ready.",
-    "arabic": "أنا جاهز تقريبًا.",
+    "text_en": "I am almost ready",
+    "text_ar": "أنا جاهز تقريبًا",
+    "english": "I am almost ready",
+    "arabic": "أنا جاهز تقريبًا",
     "tags": [
       "daily-life",
       "routine"
@@ -4082,10 +4082,10 @@
     "level": "A1",
     "topic": "daily-life",
     "topic_label": "Daily Life & Routine",
-    "text_en": "Give me five minutes, please.",
-    "text_ar": "أعطني خمس دقائق من فضلك.",
-    "english": "Give me five minutes, please.",
-    "arabic": "أعطني خمس دقائق من فضلك.",
+    "text_en": "Give me five minutes, please",
+    "text_ar": "أعطني خمس دقائق من فضلك",
+    "english": "Give me five minutes, please",
+    "arabic": "أعطني خمس دقائق من فضلك",
     "tags": [
       "daily-life",
       "routine"
@@ -4128,10 +4128,10 @@
     "level": "A1",
     "topic": "daily-life",
     "topic_label": "Daily Life & Routine",
-    "text_en": "I need some fresh air.",
-    "text_ar": "أحتاج إلى بعض الهواء النقي.",
-    "english": "I need some fresh air.",
-    "arabic": "أحتاج إلى بعض الهواء النقي.",
+    "text_en": "I need some fresh air",
+    "text_ar": "أحتاج إلى بعض الهواء النقي",
+    "english": "I need some fresh air",
+    "arabic": "أحتاج إلى بعض الهواء النقي",
     "tags": [
       "daily-life",
       "routine"
@@ -4174,10 +4174,10 @@
     "level": "A1",
     "topic": "daily-life",
     "topic_label": "Daily Life & Routine",
-    "text_en": "Today was a long day.",
-    "text_ar": "كان اليوم طويلًا.",
-    "english": "Today was a long day.",
-    "arabic": "كان اليوم طويلًا.",
+    "text_en": "Today was a long day",
+    "text_ar": "كان اليوم طويلًا",
+    "english": "Today was a long day",
+    "arabic": "كان اليوم طويلًا",
     "tags": [
       "daily-life",
       "routine"
@@ -4220,10 +4220,10 @@
     "level": "A1",
     "topic": "daily-life",
     "topic_label": "Daily Life & Routine",
-    "text_en": "I feel better now.",
-    "text_ar": "أشعر بتحسن الآن.",
-    "english": "I feel better now.",
-    "arabic": "أشعر بتحسن الآن.",
+    "text_en": "I feel better now",
+    "text_ar": "أشعر بتحسن الآن",
+    "english": "I feel better now",
+    "arabic": "أشعر بتحسن الآن",
     "tags": [
       "daily-life",
       "routine"
@@ -4260,10 +4260,10 @@
     "level": "A1",
     "topic": "daily-life",
     "topic_label": "Daily Life & Routine",
-    "text_en": "I am ready to start.",
-    "text_ar": "أنا مستعد للبدء.",
-    "english": "I am ready to start.",
-    "arabic": "أنا مستعد للبدء.",
+    "text_en": "I am ready to start",
+    "text_ar": "أنا مستعد للبدء",
+    "english": "I am ready to start",
+    "arabic": "أنا مستعد للبدء",
     "tags": [
       "daily-life",
       "routine"
@@ -4306,10 +4306,10 @@
     "level": "A1",
     "topic": "daily-life",
     "topic_label": "Daily Life & Routine",
-    "text_en": "Let us take a break.",
-    "text_ar": "دعنا نأخذ استراحة.",
-    "english": "Let us take a break.",
-    "arabic": "دعنا نأخذ استراحة.",
+    "text_en": "Let us take a break",
+    "text_ar": "دعنا نأخذ استراحة",
+    "english": "Let us take a break",
+    "arabic": "دعنا نأخذ استراحة",
     "tags": [
       "daily-life",
       "routine"
@@ -4352,10 +4352,10 @@
     "level": "A1",
     "topic": "work-study",
     "topic_label": "Study & Work",
-    "text_en": "I have a lot of homework.",
-    "text_ar": "لدي الكثير من الواجبات.",
-    "english": "I have a lot of homework.",
-    "arabic": "لدي الكثير من الواجبات.",
+    "text_en": "I have a lot of homework",
+    "text_ar": "لدي الكثير من الواجبات",
+    "english": "I have a lot of homework",
+    "arabic": "لدي الكثير من الواجبات",
     "tags": [
       "study",
       "work"
@@ -4404,10 +4404,10 @@
     "level": "A1",
     "topic": "work-study",
     "topic_label": "Study & Work",
-    "text_en": "I need to study for the exam.",
-    "text_ar": "أحتاج إلى المذاكرة للامتحان.",
-    "english": "I need to study for the exam.",
-    "arabic": "أحتاج إلى المذاكرة للامتحان.",
+    "text_en": "I need to study for the exam",
+    "text_ar": "أحتاج إلى المذاكرة للامتحان",
+    "english": "I need to study for the exam",
+    "arabic": "أحتاج إلى المذاكرة للامتحان",
     "tags": [
       "study",
       "work"
@@ -4462,10 +4462,10 @@
     "level": "A1",
     "topic": "work-study",
     "topic_label": "Study & Work",
-    "text_en": "The exam is next week.",
-    "text_ar": "الامتحان الأسبوع المقبل.",
-    "english": "The exam is next week.",
-    "arabic": "الامتحان الأسبوع المقبل.",
+    "text_en": "The exam is next week",
+    "text_ar": "الامتحان الأسبوع المقبل",
+    "english": "The exam is next week",
+    "arabic": "الامتحان الأسبوع المقبل",
     "tags": [
       "study",
       "work"
@@ -4508,10 +4508,10 @@
     "level": "A1",
     "topic": "work-study",
     "topic_label": "Study & Work",
-    "text_en": "I am preparing for my presentation.",
-    "text_ar": "أستعد لعرضي التقديمي.",
-    "english": "I am preparing for my presentation.",
-    "arabic": "أستعد لعرضي التقديمي.",
+    "text_en": "I am preparing for my presentation",
+    "text_ar": "أستعد لعرضي التقديمي",
+    "english": "I am preparing for my presentation",
+    "arabic": "أستعد لعرضي التقديمي",
     "tags": [
       "study",
       "work"
@@ -4560,10 +4560,10 @@
     "level": "A1",
     "topic": "work-study",
     "topic_label": "Study & Work",
-    "text_en": "Can you explain this question?",
-    "text_ar": "هل يمكنك شرح هذا السؤال؟",
-    "english": "Can you explain this question?",
-    "arabic": "هل يمكنك شرح هذا السؤال؟",
+    "text_en": "Can you explain this question",
+    "text_ar": "هل يمكنك شرح هذا السؤال",
+    "english": "Can you explain this question",
+    "arabic": "هل يمكنك شرح هذا السؤال",
     "tags": [
       "study",
       "work"
@@ -4606,10 +4606,10 @@
     "level": "A1",
     "topic": "work-study",
     "topic_label": "Study & Work",
-    "text_en": "I do not know the answer.",
-    "text_ar": "لا أعرف الإجابة.",
-    "english": "I do not know the answer.",
-    "arabic": "لا أعرف الإجابة.",
+    "text_en": "I do not know the answer",
+    "text_ar": "لا أعرف الإجابة",
+    "english": "I do not know the answer",
+    "arabic": "لا أعرف الإجابة",
     "tags": [
       "study",
       "work"
@@ -4658,10 +4658,10 @@
     "level": "A1",
     "topic": "work-study",
     "topic_label": "Study & Work",
-    "text_en": "I think the answer is correct.",
-    "text_ar": "أعتقد أن الإجابة صحيحة.",
-    "english": "I think the answer is correct.",
-    "arabic": "أعتقد أن الإجابة صحيحة.",
+    "text_en": "I think the answer is correct",
+    "text_ar": "أعتقد أن الإجابة صحيحة",
+    "english": "I think the answer is correct",
+    "arabic": "أعتقد أن الإجابة صحيحة",
     "tags": [
       "study",
       "work"
@@ -4710,10 +4710,10 @@
     "level": "A1",
     "topic": "work-study",
     "topic_label": "Study & Work",
-    "text_en": "Let us review the lesson.",
-    "text_ar": "دعنا نراجع الدرس.",
-    "english": "Let us review the lesson.",
-    "arabic": "دعنا نراجع الدرس.",
+    "text_en": "Let us review the lesson",
+    "text_ar": "دعنا نراجع الدرس",
+    "english": "Let us review the lesson",
+    "arabic": "دعنا نراجع الدرس",
     "tags": [
       "study",
       "work"
@@ -4756,10 +4756,10 @@
     "level": "A1",
     "topic": "work-study",
     "topic_label": "Study & Work",
-    "text_en": "Please open your book.",
-    "text_ar": "من فضلك افتح كتابك.",
-    "english": "Please open your book.",
-    "arabic": "من فضلك افتح كتابك.",
+    "text_en": "Please open your book",
+    "text_ar": "من فضلك افتح كتابك",
+    "english": "Please open your book",
+    "arabic": "من فضلك افتح كتابك",
     "tags": [
       "study",
       "work"
@@ -4796,10 +4796,10 @@
     "level": "A1",
     "topic": "work-study",
     "topic_label": "Study & Work",
-    "text_en": "Please turn to page ten.",
-    "text_ar": "من فضلك افتح الصفحة العاشرة.",
-    "english": "Please turn to page ten.",
-    "arabic": "من فضلك افتح الصفحة العاشرة.",
+    "text_en": "Please turn to page ten",
+    "text_ar": "من فضلك افتح الصفحة العاشرة",
+    "english": "Please turn to page ten",
+    "arabic": "من فضلك افتح الصفحة العاشرة",
     "tags": [
       "study",
       "work"
@@ -4842,10 +4842,10 @@
     "level": "A1",
     "topic": "work-study",
     "topic_label": "Study & Work",
-    "text_en": "The teacher is explaining the topic.",
-    "text_ar": "المعلم يشرح الموضوع.",
-    "english": "The teacher is explaining the topic.",
-    "arabic": "المعلم يشرح الموضوع.",
+    "text_en": "The teacher is explaining the topic",
+    "text_ar": "المعلم يشرح الموضوع",
+    "english": "The teacher is explaining the topic",
+    "arabic": "المعلم يشرح الموضوع",
     "tags": [
       "study",
       "work"
@@ -4888,10 +4888,10 @@
     "level": "A1",
     "topic": "work-study",
     "topic_label": "Study & Work",
-    "text_en": "I need more practice.",
-    "text_ar": "أحتاج إلى مزيد من التدريب.",
-    "english": "I need more practice.",
-    "arabic": "أحتاج إلى مزيد من التدريب.",
+    "text_en": "I need more practice",
+    "text_ar": "أحتاج إلى مزيد من التدريب",
+    "english": "I need more practice",
+    "arabic": "أحتاج إلى مزيد من التدريب",
     "tags": [
       "study",
       "work"
@@ -4928,10 +4928,10 @@
     "level": "A1",
     "topic": "work-study",
     "topic_label": "Study & Work",
-    "text_en": "Practice makes progress.",
-    "text_ar": "التدريب يؤدي إلى التقدم.",
-    "english": "Practice makes progress.",
-    "arabic": "التدريب يؤدي إلى التقدم.",
+    "text_en": "Practice makes progress",
+    "text_ar": "التدريب يؤدي إلى التقدم",
+    "english": "Practice makes progress",
+    "arabic": "التدريب يؤدي إلى التقدم",
     "tags": [
       "study",
       "work"
@@ -4962,10 +4962,10 @@
     "level": "A1",
     "topic": "work-study",
     "topic_label": "Study & Work",
-    "text_en": "I made a small mistake.",
-    "text_ar": "ارتكبت خطأً صغيرًا.",
-    "english": "I made a small mistake.",
-    "arabic": "ارتكبت خطأً صغيرًا.",
+    "text_en": "I made a small mistake",
+    "text_ar": "ارتكبت خطأً صغيرًا",
+    "english": "I made a small mistake",
+    "arabic": "ارتكبت خطأً صغيرًا",
     "tags": [
       "study",
       "work"
@@ -5008,10 +5008,10 @@
     "level": "A1",
     "topic": "work-study",
     "topic_label": "Study & Work",
-    "text_en": "I will try again.",
-    "text_ar": "سأحاول مرة أخرى.",
-    "english": "I will try again.",
-    "arabic": "سأحاول مرة أخرى.",
+    "text_en": "I will try again",
+    "text_ar": "سأحاول مرة أخرى",
+    "english": "I will try again",
+    "arabic": "سأحاول مرة أخرى",
     "tags": [
       "study",
       "work"
@@ -5048,10 +5048,10 @@
     "level": "A1",
     "topic": "work-study",
     "topic_label": "Study & Work",
-    "text_en": "I understand the idea now.",
-    "text_ar": "أفهم الفكرة الآن.",
-    "english": "I understand the idea now.",
-    "arabic": "أفهم الفكرة الآن.",
+    "text_en": "I understand the idea now",
+    "text_ar": "أفهم الفكرة الآن",
+    "english": "I understand the idea now",
+    "arabic": "أفهم الفكرة الآن",
     "tags": [
       "study",
       "work"
@@ -5094,10 +5094,10 @@
     "level": "A1",
     "topic": "work-study",
     "topic_label": "Study & Work",
-    "text_en": "This lesson is difficult.",
-    "text_ar": "هذا الدرس صعب.",
-    "english": "This lesson is difficult.",
-    "arabic": "هذا الدرس صعب.",
+    "text_en": "This lesson is difficult",
+    "text_ar": "هذا الدرس صعب",
+    "english": "This lesson is difficult",
+    "arabic": "هذا الدرس صعب",
     "tags": [
       "study",
       "work"
@@ -5134,10 +5134,10 @@
     "level": "A1",
     "topic": "work-study",
     "topic_label": "Study & Work",
-    "text_en": "This exercise is easy.",
-    "text_ar": "هذا التمرين سهل.",
-    "english": "This exercise is easy.",
-    "arabic": "هذا التمرين سهل.",
+    "text_en": "This exercise is easy",
+    "text_ar": "هذا التمرين سهل",
+    "english": "This exercise is easy",
+    "arabic": "هذا التمرين سهل",
     "tags": [
       "study",
       "work"
@@ -5174,10 +5174,10 @@
     "level": "A1",
     "topic": "work-study",
     "topic_label": "Study & Work",
-    "text_en": "I need help with this project.",
-    "text_ar": "أحتاج إلى مساعدة في هذا المشروع.",
-    "english": "I need help with this project.",
-    "arabic": "أحتاج إلى مساعدة في هذا المشروع.",
+    "text_en": "I need help with this project",
+    "text_ar": "أحتاج إلى مساعدة في هذا المشروع",
+    "english": "I need help with this project",
+    "arabic": "أحتاج إلى مساعدة في هذا المشروع",
     "tags": [
       "study",
       "work"
@@ -5226,10 +5226,10 @@
     "level": "A1",
     "topic": "work-study",
     "topic_label": "Study & Work",
-    "text_en": "When is the deadline?",
-    "text_ar": "متى الموعد النهائي؟",
-    "english": "When is the deadline?",
-    "arabic": "متى الموعد النهائي؟",
+    "text_en": "When is the deadline",
+    "text_ar": "متى الموعد النهائي",
+    "english": "When is the deadline",
+    "arabic": "متى الموعد النهائي",
     "tags": [
       "study",
       "work"
@@ -5266,10 +5266,10 @@
     "level": "A1",
     "topic": "work-study",
     "topic_label": "Study & Work",
-    "text_en": "The deadline is tomorrow.",
-    "text_ar": "الموعد النهائي غدًا.",
-    "english": "The deadline is tomorrow.",
-    "arabic": "الموعد النهائي غدًا.",
+    "text_en": "The deadline is tomorrow",
+    "text_ar": "الموعد النهائي غدًا",
+    "english": "The deadline is tomorrow",
+    "arabic": "الموعد النهائي غدًا",
     "tags": [
       "study",
       "work"
@@ -5306,10 +5306,10 @@
     "level": "A1",
     "topic": "work-study",
     "topic_label": "Study & Work",
-    "text_en": "Please send me the file.",
-    "text_ar": "من فضلك أرسل لي الملف.",
-    "english": "Please send me the file.",
-    "arabic": "من فضلك أرسل لي الملف.",
+    "text_en": "Please send me the file",
+    "text_ar": "من فضلك أرسل لي الملف",
+    "english": "Please send me the file",
+    "arabic": "من فضلك أرسل لي الملف",
     "tags": [
       "study",
       "work"
@@ -5352,10 +5352,10 @@
     "level": "A1",
     "topic": "work-study",
     "topic_label": "Study & Work",
-    "text_en": "I will send it by email.",
-    "text_ar": "سأرسله عبر البريد الإلكتروني.",
-    "english": "I will send it by email.",
-    "arabic": "سأرسله عبر البريد الإلكتروني.",
+    "text_en": "I will send it by email",
+    "text_ar": "سأرسله عبر البريد الإلكتروني",
+    "english": "I will send it by email",
+    "arabic": "سأرسله عبر البريد الإلكتروني",
     "tags": [
       "study",
       "work"
@@ -5404,10 +5404,10 @@
     "level": "A1",
     "topic": "work-study",
     "topic_label": "Study & Work",
-    "text_en": "Did you finish the report?",
-    "text_ar": "هل أنهيت التقرير؟",
-    "english": "Did you finish the report?",
-    "arabic": "هل أنهيت التقرير؟",
+    "text_en": "Did you finish the report",
+    "text_ar": "هل أنهيت التقرير",
+    "english": "Did you finish the report",
+    "arabic": "هل أنهيت التقرير",
     "tags": [
       "study",
       "work"
@@ -5450,10 +5450,10 @@
     "level": "A1",
     "topic": "work-study",
     "topic_label": "Study & Work",
-    "text_en": "I finished it yesterday.",
-    "text_ar": "أنهيته أمس.",
-    "english": "I finished it yesterday.",
-    "arabic": "أنهيته أمس.",
+    "text_en": "I finished it yesterday",
+    "text_ar": "أنهيته أمس",
+    "english": "I finished it yesterday",
+    "arabic": "أنهيته أمس",
     "tags": [
       "study",
       "work"
@@ -5490,10 +5490,10 @@
     "level": "A1",
     "topic": "work-study",
     "topic_label": "Study & Work",
-    "text_en": "I am still working on it.",
-    "text_ar": "ما زلت أعمل عليه.",
-    "english": "I am still working on it.",
-    "arabic": "ما زلت أعمل عليه.",
+    "text_en": "I am still working on it",
+    "text_ar": "ما زلت أعمل عليه",
+    "english": "I am still working on it",
+    "arabic": "ما زلت أعمل عليه",
     "tags": [
       "study",
       "work"
@@ -5542,10 +5542,10 @@
     "level": "A1",
     "topic": "work-study",
     "topic_label": "Study & Work",
-    "text_en": "We have a meeting at ten.",
-    "text_ar": "لدينا اجتماع في العاشرة.",
-    "english": "We have a meeting at ten.",
-    "arabic": "لدينا اجتماع في العاشرة.",
+    "text_en": "We have a meeting at ten",
+    "text_ar": "لدينا اجتماع في العاشرة",
+    "english": "We have a meeting at ten",
+    "arabic": "لدينا اجتماع في العاشرة",
     "tags": [
       "study",
       "work"
@@ -5594,10 +5594,10 @@
     "level": "A1",
     "topic": "work-study",
     "topic_label": "Study & Work",
-    "text_en": "The meeting starts in five minutes.",
-    "text_ar": "يبدأ الاجتماع بعد خمس دقائق.",
-    "english": "The meeting starts in five minutes.",
-    "arabic": "يبدأ الاجتماع بعد خمس دقائق.",
+    "text_en": "The meeting starts in five minutes",
+    "text_ar": "يبدأ الاجتماع بعد خمس دقائق",
+    "english": "The meeting starts in five minutes",
+    "arabic": "يبدأ الاجتماع بعد خمس دقائق",
     "tags": [
       "study",
       "work"
@@ -5646,10 +5646,10 @@
     "level": "A1",
     "topic": "work-study",
     "topic_label": "Study & Work",
-    "text_en": "I will join the meeting online.",
-    "text_ar": "سأنضم إلى الاجتماع عبر الإنترنت.",
-    "english": "I will join the meeting online.",
-    "arabic": "سأنضم إلى الاجتماع عبر الإنترنت.",
+    "text_en": "I will join the meeting online",
+    "text_ar": "سأنضم إلى الاجتماع عبر الإنترنت",
+    "english": "I will join the meeting online",
+    "arabic": "سأنضم إلى الاجتماع عبر الإنترنت",
     "tags": [
       "study",
       "work"
@@ -5698,10 +5698,10 @@
     "level": "A1",
     "topic": "work-study",
     "topic_label": "Study & Work",
-    "text_en": "Can we reschedule the meeting?",
-    "text_ar": "هل يمكننا إعادة جدولة الاجتماع؟",
-    "english": "Can we reschedule the meeting?",
-    "arabic": "هل يمكننا إعادة جدولة الاجتماع؟",
+    "text_en": "Can we reschedule the meeting",
+    "text_ar": "هل يمكننا إعادة جدولة الاجتماع",
+    "english": "Can we reschedule the meeting",
+    "arabic": "هل يمكننا إعادة جدولة الاجتماع",
     "tags": [
       "study",
       "work"
@@ -5744,10 +5744,10 @@
     "level": "A1",
     "topic": "work-study",
     "topic_label": "Study & Work",
-    "text_en": "I need a day off.",
-    "text_ar": "أحتاج إلى يوم إجازة.",
-    "english": "I need a day off.",
-    "arabic": "أحتاج إلى يوم إجازة.",
+    "text_en": "I need a day off",
+    "text_ar": "أحتاج إلى يوم إجازة",
+    "english": "I need a day off",
+    "arabic": "أحتاج إلى يوم إجازة",
     "tags": [
       "study",
       "work"
@@ -5790,10 +5790,10 @@
     "level": "A1",
     "topic": "work-study",
     "topic_label": "Study & Work",
-    "text_en": "I am looking for a job.",
-    "text_ar": "أبحث عن وظيفة.",
-    "english": "I am looking for a job.",
-    "arabic": "أبحث عن وظيفة.",
+    "text_en": "I am looking for a job",
+    "text_ar": "أبحث عن وظيفة",
+    "english": "I am looking for a job",
+    "arabic": "أبحث عن وظيفة",
     "tags": [
       "study",
       "work"
@@ -5842,10 +5842,10 @@
     "level": "A1",
     "topic": "work-study",
     "topic_label": "Study & Work",
-    "text_en": "I have an interview tomorrow.",
-    "text_ar": "لدي مقابلة غدًا.",
-    "english": "I have an interview tomorrow.",
-    "arabic": "لدي مقابلة غدًا.",
+    "text_en": "I have an interview tomorrow",
+    "text_ar": "لدي مقابلة غدًا",
+    "english": "I have an interview tomorrow",
+    "arabic": "لدي مقابلة غدًا",
     "tags": [
       "study",
       "work"
@@ -5888,10 +5888,10 @@
     "level": "A1",
     "topic": "work-study",
     "topic_label": "Study & Work",
-    "text_en": "I want to improve my skills.",
-    "text_ar": "أريد تحسين مهاراتي.",
-    "english": "I want to improve my skills.",
-    "arabic": "أريد تحسين مهاراتي.",
+    "text_en": "I want to improve my skills",
+    "text_ar": "أريد تحسين مهاراتي",
+    "english": "I want to improve my skills",
+    "arabic": "أريد تحسين مهاراتي",
     "tags": [
       "study",
       "work"
@@ -5940,10 +5940,10 @@
     "level": "A1",
     "topic": "work-study",
     "topic_label": "Study & Work",
-    "text_en": "I am learning programming.",
-    "text_ar": "أتعلم البرمجة.",
-    "english": "I am learning programming.",
-    "arabic": "أتعلم البرمجة.",
+    "text_en": "I am learning programming",
+    "text_ar": "أتعلم البرمجة",
+    "english": "I am learning programming",
+    "arabic": "أتعلم البرمجة",
     "tags": [
       "study",
       "work"
@@ -5980,10 +5980,10 @@
     "level": "A1",
     "topic": "work-study",
     "topic_label": "Study & Work",
-    "text_en": "I enjoy working with computers.",
-    "text_ar": "أستمتع بالعمل مع أجهزة الكمبيوتر.",
-    "english": "I enjoy working with computers.",
-    "arabic": "أستمتع بالعمل مع أجهزة الكمبيوتر.",
+    "text_en": "I enjoy working with computers",
+    "text_ar": "أستمتع بالعمل مع أجهزة الكمبيوتر",
+    "english": "I enjoy working with computers",
+    "arabic": "أستمتع بالعمل مع أجهزة الكمبيوتر",
     "tags": [
       "study",
       "work"
@@ -6026,10 +6026,10 @@
     "level": "A1",
     "topic": "work-study",
     "topic_label": "Study & Work",
-    "text_en": "I work from home sometimes.",
-    "text_ar": "أعمل من المنزل أحيانًا.",
-    "english": "I work from home sometimes.",
-    "arabic": "أعمل من المنزل أحيانًا.",
+    "text_en": "I work from home sometimes",
+    "text_ar": "أعمل من المنزل أحيانًا",
+    "english": "I work from home sometimes",
+    "arabic": "أعمل من المنزل أحيانًا",
     "tags": [
       "study",
       "work"
@@ -6072,10 +6072,10 @@
     "level": "A1",
     "topic": "work-study",
     "topic_label": "Study & Work",
-    "text_en": "Could you send the details?",
-    "text_ar": "هل يمكنك إرسال التفاصيل؟",
-    "english": "Could you send the details?",
-    "arabic": "هل يمكنك إرسال التفاصيل؟",
+    "text_en": "Could you send the details",
+    "text_ar": "هل يمكنك إرسال التفاصيل",
+    "english": "Could you send the details",
+    "arabic": "هل يمكنك إرسال التفاصيل",
     "tags": [
       "study",
       "work"
@@ -6118,10 +6118,10 @@
     "level": "A1",
     "topic": "work-study",
     "topic_label": "Study & Work",
-    "text_en": "Please check your email.",
-    "text_ar": "من فضلك تحقق من بريدك الإلكتروني.",
-    "english": "Please check your email.",
-    "arabic": "من فضلك تحقق من بريدك الإلكتروني.",
+    "text_en": "Please check your email",
+    "text_ar": "من فضلك تحقق من بريدك الإلكتروني",
+    "english": "Please check your email",
+    "arabic": "من فضلك تحقق من بريدك الإلكتروني",
     "tags": [
       "study",
       "work"
@@ -6158,10 +6158,10 @@
     "level": "A1",
     "topic": "work-study",
     "topic_label": "Study & Work",
-    "text_en": "I will get back to you soon.",
-    "text_ar": "سأعود إليك قريبًا.",
-    "english": "I will get back to you soon.",
-    "arabic": "سأعود إليك قريبًا.",
+    "text_en": "I will get back to you soon",
+    "text_ar": "سأعود إليك قريبًا",
+    "english": "I will get back to you soon",
+    "arabic": "سأعود إليك قريبًا",
     "tags": [
       "study",
       "work"
@@ -6216,10 +6216,10 @@
     "level": "A1",
     "topic": "work-study",
     "topic_label": "Study & Work",
-    "text_en": "Thank you for your help.",
-    "text_ar": "شكرًا لمساعدتك.",
-    "english": "Thank you for your help.",
-    "arabic": "شكرًا لمساعدتك.",
+    "text_en": "Thank you for your help",
+    "text_ar": "شكرًا لمساعدتك",
+    "english": "Thank you for your help",
+    "arabic": "شكرًا لمساعدتك",
     "tags": [
       "study",
       "work"
@@ -6262,10 +6262,10 @@
     "level": "A1",
     "topic": "work-study",
     "topic_label": "Study & Work",
-    "text_en": "Good job!",
-    "text_ar": "عمل رائع!",
-    "english": "Good job!",
-    "arabic": "عمل رائع!",
+    "text_en": "Good job",
+    "text_ar": "عمل رائع",
+    "english": "Good job",
+    "arabic": "عمل رائع",
     "tags": [
       "study",
       "work"
@@ -6290,10 +6290,10 @@
     "level": "A1",
     "topic": "work-study",
     "topic_label": "Study & Work",
-    "text_en": "Keep going.",
-    "text_ar": "استمر.",
-    "english": "Keep going.",
-    "arabic": "استمر.",
+    "text_en": "Keep going",
+    "text_ar": "استمر",
+    "english": "Keep going",
+    "arabic": "استمر",
     "tags": [
       "study",
       "work"
@@ -6318,10 +6318,10 @@
     "level": "A1",
     "topic": "work-study",
     "topic_label": "Study & Work",
-    "text_en": "Do not give up.",
-    "text_ar": "لا تستسلم.",
-    "english": "Do not give up.",
-    "arabic": "لا تستسلم.",
+    "text_en": "Do not give up",
+    "text_ar": "لا تستسلم",
+    "english": "Do not give up",
+    "arabic": "لا تستسلم",
     "tags": [
       "study",
       "work"
@@ -6358,10 +6358,10 @@
     "level": "A1",
     "topic": "work-study",
     "topic_label": "Study & Work",
-    "text_en": "I am proud of my progress.",
-    "text_ar": "أنا فخور بتقدمي.",
-    "english": "I am proud of my progress.",
-    "arabic": "أنا فخور بتقدمي.",
+    "text_en": "I am proud of my progress",
+    "text_ar": "أنا فخور بتقدمي",
+    "english": "I am proud of my progress",
+    "arabic": "أنا فخور بتقدمي",
     "tags": [
       "study",
       "work"
@@ -6410,10 +6410,10 @@
     "level": "A1",
     "topic": "work-study",
     "topic_label": "Study & Work",
-    "text_en": "Let us work together.",
-    "text_ar": "دعنا نعمل معًا.",
-    "english": "Let us work together.",
-    "arabic": "دعنا نعمل معًا.",
+    "text_en": "Let us work together",
+    "text_ar": "دعنا نعمل معًا",
+    "english": "Let us work together",
+    "arabic": "دعنا نعمل معًا",
     "tags": [
       "study",
       "work"
@@ -6450,10 +6450,10 @@
     "level": "A1",
     "topic": "work-study",
     "topic_label": "Study & Work",
-    "text_en": "I have an important task.",
-    "text_ar": "لدي مهمة مهمة.",
-    "english": "I have an important task.",
-    "arabic": "لدي مهمة مهمة.",
+    "text_en": "I have an important task",
+    "text_ar": "لدي مهمة مهمة",
+    "english": "I have an important task",
+    "arabic": "لدي مهمة مهمة",
     "tags": [
       "study",
       "work"
@@ -6496,10 +6496,10 @@
     "level": "A1",
     "topic": "work-study",
     "topic_label": "Study & Work",
-    "text_en": "I need to focus now.",
-    "text_ar": "أحتاج إلى التركيز الآن.",
-    "english": "I need to focus now.",
-    "arabic": "أحتاج إلى التركيز الآن.",
+    "text_en": "I need to focus now",
+    "text_ar": "أحتاج إلى التركيز الآن",
+    "english": "I need to focus now",
+    "arabic": "أحتاج إلى التركيز الآن",
     "tags": [
       "study",
       "work"
@@ -6542,10 +6542,10 @@
     "level": "A1",
     "topic": "work-study",
     "topic_label": "Study & Work",
-    "text_en": "I will finish this today.",
-    "text_ar": "سأنهي هذا اليوم.",
-    "english": "I will finish this today.",
-    "arabic": "سأنهي هذا اليوم.",
+    "text_en": "I will finish this today",
+    "text_ar": "سأنهي هذا اليوم",
+    "english": "I will finish this today",
+    "arabic": "سأنهي هذا اليوم",
     "tags": [
       "study",
       "work"
@@ -6588,10 +6588,10 @@
     "level": "A1",
     "topic": "work-study",
     "topic_label": "Study & Work",
-    "text_en": "Everything is ready for the presentation.",
-    "text_ar": "كل شيء جاهز للعرض التقديمي.",
-    "english": "Everything is ready for the presentation.",
-    "arabic": "كل شيء جاهز للعرض التقديمي.",
+    "text_en": "Everything is ready for the presentation",
+    "text_ar": "كل شيء جاهز للعرض التقديمي",
+    "english": "Everything is ready for the presentation",
+    "arabic": "كل شيء جاهز للعرض التقديمي",
     "tags": [
       "study",
       "work"
@@ -6640,10 +6640,10 @@
     "level": "A1",
     "topic": "shopping-food",
     "topic_label": "Shopping & Food",
-    "text_en": "How much is this?",
-    "text_ar": "بكم هذا؟",
-    "english": "How much is this?",
-    "arabic": "بكم هذا؟",
+    "text_en": "How much is this",
+    "text_ar": "بكم هذا",
+    "english": "How much is this",
+    "arabic": "بكم هذا",
     "tags": [
       "shopping",
       "food"
@@ -6680,10 +6680,10 @@
     "level": "A1",
     "topic": "shopping-food",
     "topic_label": "Shopping & Food",
-    "text_en": "How much are these shoes?",
-    "text_ar": "بكم هذه الأحذية؟",
-    "english": "How much are these shoes?",
-    "arabic": "بكم هذه الأحذية؟",
+    "text_en": "How much are these shoes",
+    "text_ar": "بكم هذه الأحذية",
+    "english": "How much are these shoes",
+    "arabic": "بكم هذه الأحذية",
     "tags": [
       "shopping",
       "food"
@@ -6726,10 +6726,10 @@
     "level": "A1",
     "topic": "shopping-food",
     "topic_label": "Shopping & Food",
-    "text_en": "Do you have this in another size?",
-    "text_ar": "هل لديكم هذا بمقاس آخر؟",
-    "english": "Do you have this in another size?",
-    "arabic": "هل لديكم هذا بمقاس آخر؟",
+    "text_en": "Do you have this in another size",
+    "text_ar": "هل لديكم هذا بمقاس آخر",
+    "english": "Do you have this in another size",
+    "arabic": "هل لديكم هذا بمقاس آخر",
     "tags": [
       "shopping",
       "food"
@@ -6784,10 +6784,10 @@
     "level": "A1",
     "topic": "shopping-food",
     "topic_label": "Shopping & Food",
-    "text_en": "Do you have this in black?",
-    "text_ar": "هل لديكم هذا باللون الأسود؟",
-    "english": "Do you have this in black?",
-    "arabic": "هل لديكم هذا باللون الأسود؟",
+    "text_en": "Do you have this in black",
+    "text_ar": "هل لديكم هذا باللون الأسود",
+    "english": "Do you have this in black",
+    "arabic": "هل لديكم هذا باللون الأسود",
     "tags": [
       "shopping",
       "food"
@@ -6836,10 +6836,10 @@
     "level": "A1",
     "topic": "shopping-food",
     "topic_label": "Shopping & Food",
-    "text_en": "I am just looking, thank you.",
-    "text_ar": "أنا فقط أتفرج، شكرًا.",
-    "english": "I am just looking, thank you.",
-    "arabic": "أنا فقط أتفرج، شكرًا.",
+    "text_en": "I am just looking, thank you",
+    "text_ar": "أنا فقط أتفرج، شكرًا",
+    "english": "I am just looking, thank you",
+    "arabic": "أنا فقط أتفرج، شكرًا",
     "tags": [
       "shopping",
       "food"
@@ -6888,10 +6888,10 @@
     "level": "A1",
     "topic": "shopping-food",
     "topic_label": "Shopping & Food",
-    "text_en": "Can I try this on?",
-    "text_ar": "هل يمكنني تجربة هذا؟",
-    "english": "Can I try this on?",
-    "arabic": "هل يمكنني تجربة هذا؟",
+    "text_en": "Can I try this on",
+    "text_ar": "هل يمكنني تجربة هذا",
+    "english": "Can I try this on",
+    "arabic": "هل يمكنني تجربة هذا",
     "tags": [
       "shopping",
       "food"
@@ -6934,10 +6934,10 @@
     "level": "A1",
     "topic": "shopping-food",
     "topic_label": "Shopping & Food",
-    "text_en": "Where is the fitting room?",
-    "text_ar": "أين غرفة القياس؟",
-    "english": "Where is the fitting room?",
-    "arabic": "أين غرفة القياس؟",
+    "text_en": "Where is the fitting room",
+    "text_ar": "أين غرفة القياس",
+    "english": "Where is the fitting room",
+    "arabic": "أين غرفة القياس",
     "tags": [
       "shopping",
       "food"
@@ -6980,10 +6980,10 @@
     "level": "A1",
     "topic": "shopping-food",
     "topic_label": "Shopping & Food",
-    "text_en": "Do you accept credit cards?",
-    "text_ar": "هل تقبلون بطاقات الائتمان؟",
-    "english": "Do you accept credit cards?",
-    "arabic": "هل تقبلون بطاقات الائتمان؟",
+    "text_en": "Do you accept credit cards",
+    "text_ar": "هل تقبلون بطاقات الائتمان",
+    "english": "Do you accept credit cards",
+    "arabic": "هل تقبلون بطاقات الائتمان",
     "tags": [
       "shopping",
       "food"
@@ -7026,10 +7026,10 @@
     "level": "A1",
     "topic": "shopping-food",
     "topic_label": "Shopping & Food",
-    "text_en": "Can I pay in cash?",
-    "text_ar": "هل يمكنني الدفع نقدًا؟",
-    "english": "Can I pay in cash?",
-    "arabic": "هل يمكنني الدفع نقدًا؟",
+    "text_en": "Can I pay in cash",
+    "text_ar": "هل يمكنني الدفع نقدًا",
+    "english": "Can I pay in cash",
+    "arabic": "هل يمكنني الدفع نقدًا",
     "tags": [
       "shopping",
       "food"
@@ -7072,10 +7072,10 @@
     "level": "A1",
     "topic": "shopping-food",
     "topic_label": "Shopping & Food",
-    "text_en": "I would like to buy this.",
-    "text_ar": "أود شراء هذا.",
-    "english": "I would like to buy this.",
-    "arabic": "أود شراء هذا.",
+    "text_en": "I would like to buy this",
+    "text_ar": "أود شراء هذا",
+    "english": "I would like to buy this",
+    "arabic": "أود شراء هذا",
     "tags": [
       "shopping",
       "food"
@@ -7124,10 +7124,10 @@
     "level": "A1",
     "topic": "shopping-food",
     "topic_label": "Shopping & Food",
-    "text_en": "Can I have a receipt, please?",
-    "text_ar": "هل يمكنني الحصول على إيصال من فضلك؟",
-    "english": "Can I have a receipt, please?",
-    "arabic": "هل يمكنني الحصول على إيصال من فضلك؟",
+    "text_en": "Can I have a receipt, please",
+    "text_ar": "هل يمكنني الحصول على إيصال من فضلك",
+    "english": "Can I have a receipt, please",
+    "arabic": "هل يمكنني الحصول على إيصال من فضلك",
     "tags": [
       "shopping",
       "food"
@@ -7176,10 +7176,10 @@
     "level": "A1",
     "topic": "shopping-food",
     "topic_label": "Shopping & Food",
-    "text_en": "Is there a discount?",
-    "text_ar": "هل يوجد خصم؟",
-    "english": "Is there a discount?",
-    "arabic": "هل يوجد خصم؟",
+    "text_en": "Is there a discount",
+    "text_ar": "هل يوجد خصم",
+    "english": "Is there a discount",
+    "arabic": "هل يوجد خصم",
     "tags": [
       "shopping",
       "food"
@@ -7216,10 +7216,10 @@
     "level": "A1",
     "topic": "shopping-food",
     "topic_label": "Shopping & Food",
-    "text_en": "This is too expensive for me.",
-    "text_ar": "هذا غالي جدًا بالنسبة لي.",
-    "english": "This is too expensive for me.",
-    "arabic": "هذا غالي جدًا بالنسبة لي.",
+    "text_en": "This is too expensive for me",
+    "text_ar": "هذا غالي جدًا بالنسبة لي",
+    "english": "This is too expensive for me",
+    "arabic": "هذا غالي جدًا بالنسبة لي",
     "tags": [
       "shopping",
       "food"
@@ -7268,10 +7268,10 @@
     "level": "A1",
     "topic": "shopping-food",
     "topic_label": "Shopping & Food",
-    "text_en": "Do you have anything cheaper?",
-    "text_ar": "هل لديكم شيء أرخص؟",
-    "english": "Do you have anything cheaper?",
-    "arabic": "هل لديكم شيء أرخص؟",
+    "text_en": "Do you have anything cheaper",
+    "text_ar": "هل لديكم شيء أرخص",
+    "english": "Do you have anything cheaper",
+    "arabic": "هل لديكم شيء أرخص",
     "tags": [
       "shopping",
       "food"
@@ -7314,10 +7314,10 @@
     "level": "A1",
     "topic": "shopping-food",
     "topic_label": "Shopping & Food",
-    "text_en": "The price is reasonable.",
-    "text_ar": "السعر مناسب.",
-    "english": "The price is reasonable.",
-    "arabic": "السعر مناسب.",
+    "text_en": "The price is reasonable",
+    "text_ar": "السعر مناسب",
+    "english": "The price is reasonable",
+    "arabic": "السعر مناسب",
     "tags": [
       "shopping",
       "food"
@@ -7354,10 +7354,10 @@
     "level": "A1",
     "topic": "shopping-food",
     "topic_label": "Shopping & Food",
-    "text_en": "I need a bottle of water.",
-    "text_ar": "أحتاج إلى زجاجة ماء.",
-    "english": "I need a bottle of water.",
-    "arabic": "أحتاج إلى زجاجة ماء.",
+    "text_en": "I need a bottle of water",
+    "text_ar": "أحتاج إلى زجاجة ماء",
+    "english": "I need a bottle of water",
+    "arabic": "أحتاج إلى زجاجة ماء",
     "tags": [
       "shopping",
       "food"
@@ -7406,10 +7406,10 @@
     "level": "A1",
     "topic": "shopping-food",
     "topic_label": "Shopping & Food",
-    "text_en": "I would like a cup of tea.",
-    "text_ar": "أود كوبًا من الشاي.",
-    "english": "I would like a cup of tea.",
-    "arabic": "أود كوبًا من الشاي.",
+    "text_en": "I would like a cup of tea",
+    "text_ar": "أود كوبًا من الشاي",
+    "english": "I would like a cup of tea",
+    "arabic": "أود كوبًا من الشاي",
     "tags": [
       "shopping",
       "food"
@@ -7464,10 +7464,10 @@
     "level": "A1",
     "topic": "shopping-food",
     "topic_label": "Shopping & Food",
-    "text_en": "Can I see the menu, please?",
-    "text_ar": "هل يمكنني رؤية قائمة الطعام من فضلك؟",
-    "english": "Can I see the menu, please?",
-    "arabic": "هل يمكنني رؤية قائمة الطعام من فضلك؟",
+    "text_en": "Can I see the menu, please",
+    "text_ar": "هل يمكنني رؤية قائمة الطعام من فضلك",
+    "english": "Can I see the menu, please",
+    "arabic": "هل يمكنني رؤية قائمة الطعام من فضلك",
     "tags": [
       "shopping",
       "food"
@@ -7516,10 +7516,10 @@
     "level": "A1",
     "topic": "shopping-food",
     "topic_label": "Shopping & Food",
-    "text_en": "What do you recommend?",
-    "text_ar": "ماذا تنصحني؟",
-    "english": "What do you recommend?",
-    "arabic": "ماذا تنصحني؟",
+    "text_en": "What do you recommend",
+    "text_ar": "ماذا تنصحني",
+    "english": "What do you recommend",
+    "arabic": "ماذا تنصحني",
     "tags": [
       "shopping",
       "food"
@@ -7556,10 +7556,10 @@
     "level": "A1",
     "topic": "shopping-food",
     "topic_label": "Shopping & Food",
-    "text_en": "I would like the chicken, please.",
-    "text_ar": "أريد الدجاج من فضلك.",
-    "english": "I would like the chicken, please.",
-    "arabic": "أريد الدجاج من فضلك.",
+    "text_en": "I would like the chicken, please",
+    "text_ar": "أريد الدجاج من فضلك",
+    "english": "I would like the chicken, please",
+    "arabic": "أريد الدجاج من فضلك",
     "tags": [
       "shopping",
       "food"
@@ -7608,10 +7608,10 @@
     "level": "A1",
     "topic": "shopping-food",
     "topic_label": "Shopping & Food",
-    "text_en": "I do not eat meat.",
-    "text_ar": "أنا لا آكل اللحوم.",
-    "english": "I do not eat meat.",
-    "arabic": "أنا لا آكل اللحوم.",
+    "text_en": "I do not eat meat",
+    "text_ar": "أنا لا آكل اللحوم",
+    "english": "I do not eat meat",
+    "arabic": "أنا لا آكل اللحوم",
     "tags": [
       "shopping",
       "food"
@@ -7654,10 +7654,10 @@
     "level": "A1",
     "topic": "shopping-food",
     "topic_label": "Shopping & Food",
-    "text_en": "I am allergic to nuts.",
-    "text_ar": "لدي حساسية من المكسرات.",
-    "english": "I am allergic to nuts.",
-    "arabic": "لدي حساسية من المكسرات.",
+    "text_en": "I am allergic to nuts",
+    "text_ar": "لدي حساسية من المكسرات",
+    "english": "I am allergic to nuts",
+    "arabic": "لدي حساسية من المكسرات",
     "tags": [
       "shopping",
       "food"
@@ -7700,10 +7700,10 @@
     "level": "A1",
     "topic": "shopping-food",
     "topic_label": "Shopping & Food",
-    "text_en": "Can I have this without onions?",
-    "text_ar": "هل يمكنني الحصول على هذا من دون بصل؟",
-    "english": "Can I have this without onions?",
-    "arabic": "هل يمكنني الحصول على هذا من دون بصل؟",
+    "text_en": "Can I have this without onions",
+    "text_ar": "هل يمكنني الحصول على هذا من دون بصل",
+    "english": "Can I have this without onions",
+    "arabic": "هل يمكنني الحصول على هذا من دون بصل",
     "tags": [
       "shopping",
       "food"
@@ -7752,10 +7752,10 @@
     "level": "A1",
     "topic": "shopping-food",
     "topic_label": "Shopping & Food",
-    "text_en": "Is this spicy?",
-    "text_ar": "هل هذا حار؟",
-    "english": "Is this spicy?",
-    "arabic": "هل هذا حار؟",
+    "text_en": "Is this spicy",
+    "text_ar": "هل هذا حار",
+    "english": "Is this spicy",
+    "arabic": "هل هذا حار",
     "tags": [
       "shopping",
       "food"
@@ -7786,10 +7786,10 @@
     "level": "A1",
     "topic": "shopping-food",
     "topic_label": "Shopping & Food",
-    "text_en": "The food is delicious.",
-    "text_ar": "الطعام لذيذ.",
-    "english": "The food is delicious.",
-    "arabic": "الطعام لذيذ.",
+    "text_en": "The food is delicious",
+    "text_ar": "الطعام لذيذ",
+    "english": "The food is delicious",
+    "arabic": "الطعام لذيذ",
     "tags": [
       "shopping",
       "food"
@@ -7826,10 +7826,10 @@
     "level": "A1",
     "topic": "shopping-food",
     "topic_label": "Shopping & Food",
-    "text_en": "The coffee is too hot.",
-    "text_ar": "القهوة ساخنة جدًا.",
-    "english": "The coffee is too hot.",
-    "arabic": "القهوة ساخنة جدًا.",
+    "text_en": "The coffee is too hot",
+    "text_ar": "القهوة ساخنة جدًا",
+    "english": "The coffee is too hot",
+    "arabic": "القهوة ساخنة جدًا",
     "tags": [
       "shopping",
       "food"
@@ -7872,10 +7872,10 @@
     "level": "A1",
     "topic": "shopping-food",
     "topic_label": "Shopping & Food",
-    "text_en": "Could we have some water?",
-    "text_ar": "هل يمكننا الحصول على بعض الماء؟",
-    "english": "Could we have some water?",
-    "arabic": "هل يمكننا الحصول على بعض الماء؟",
+    "text_en": "Could we have some water",
+    "text_ar": "هل يمكننا الحصول على بعض الماء",
+    "english": "Could we have some water",
+    "arabic": "هل يمكننا الحصول على بعض الماء",
     "tags": [
       "shopping",
       "food"
@@ -7918,10 +7918,10 @@
     "level": "A1",
     "topic": "shopping-food",
     "topic_label": "Shopping & Food",
-    "text_en": "Can we have the bill, please?",
-    "text_ar": "هل يمكننا الحصول على الحساب من فضلك؟",
-    "english": "Can we have the bill, please?",
-    "arabic": "هل يمكننا الحصول على الحساب من فضلك؟",
+    "text_en": "Can we have the bill, please",
+    "text_ar": "هل يمكننا الحصول على الحساب من فضلك",
+    "english": "Can we have the bill, please",
+    "arabic": "هل يمكننا الحصول على الحساب من فضلك",
     "tags": [
       "shopping",
       "food"
@@ -7970,10 +7970,10 @@
     "level": "A1",
     "topic": "shopping-food",
     "topic_label": "Shopping & Food",
-    "text_en": "Keep the change.",
-    "text_ar": "احتفظ بالباقي.",
-    "english": "Keep the change.",
-    "arabic": "احتفظ بالباقي.",
+    "text_en": "Keep the change",
+    "text_ar": "احتفظ بالباقي",
+    "english": "Keep the change",
+    "arabic": "احتفظ بالباقي",
     "tags": [
       "shopping",
       "food"
@@ -8004,10 +8004,10 @@
     "level": "A1",
     "topic": "shopping-food",
     "topic_label": "Shopping & Food",
-    "text_en": "I am full.",
-    "text_ar": "لقد شبعت.",
-    "english": "I am full.",
-    "arabic": "لقد شبعت.",
+    "text_en": "I am full",
+    "text_ar": "لقد شبعت",
+    "english": "I am full",
+    "arabic": "لقد شبعت",
     "tags": [
       "shopping",
       "food"
@@ -8038,10 +8038,10 @@
     "level": "A1",
     "topic": "shopping-food",
     "topic_label": "Shopping & Food",
-    "text_en": "I am hungry.",
-    "text_ar": "أنا جائع.",
-    "english": "I am hungry.",
-    "arabic": "أنا جائع.",
+    "text_en": "I am hungry",
+    "text_ar": "أنا جائع",
+    "english": "I am hungry",
+    "arabic": "أنا جائع",
     "tags": [
       "shopping",
       "food"
@@ -8072,10 +8072,10 @@
     "level": "A1",
     "topic": "shopping-food",
     "topic_label": "Shopping & Food",
-    "text_en": "I am thirsty.",
-    "text_ar": "أنا عطشان.",
-    "english": "I am thirsty.",
-    "arabic": "أنا عطشان.",
+    "text_en": "I am thirsty",
+    "text_ar": "أنا عطشان",
+    "english": "I am thirsty",
+    "arabic": "أنا عطشان",
     "tags": [
       "shopping",
       "food"
@@ -8106,10 +8106,10 @@
     "level": "A1",
     "topic": "shopping-food",
     "topic_label": "Shopping & Food",
-    "text_en": "Let us order something to eat.",
-    "text_ar": "دعنا نطلب شيئًا لنأكله.",
-    "english": "Let us order something to eat.",
-    "arabic": "دعنا نطلب شيئًا لنأكله.",
+    "text_en": "Let us order something to eat",
+    "text_ar": "دعنا نطلب شيئًا لنأكله",
+    "english": "Let us order something to eat",
+    "arabic": "دعنا نطلب شيئًا لنأكله",
     "tags": [
       "shopping",
       "food"
@@ -8158,10 +8158,10 @@
     "level": "A1",
     "topic": "shopping-food",
     "topic_label": "Shopping & Food",
-    "text_en": "What would you like to eat?",
-    "text_ar": "ماذا تريد أن تأكل؟",
-    "english": "What would you like to eat?",
-    "arabic": "ماذا تريد أن تأكل؟",
+    "text_en": "What would you like to eat",
+    "text_ar": "ماذا تريد أن تأكل",
+    "english": "What would you like to eat",
+    "arabic": "ماذا تريد أن تأكل",
     "tags": [
       "shopping",
       "food"
@@ -8210,10 +8210,10 @@
     "level": "A1",
     "topic": "shopping-food",
     "topic_label": "Shopping & Food",
-    "text_en": "I would like a sandwich.",
-    "text_ar": "أريد شطيرة.",
-    "english": "I would like a sandwich.",
-    "arabic": "أريد شطيرة.",
+    "text_en": "I would like a sandwich",
+    "text_ar": "أريد شطيرة",
+    "english": "I would like a sandwich",
+    "arabic": "أريد شطيرة",
     "tags": [
       "shopping",
       "food"
@@ -8256,10 +8256,10 @@
     "level": "A1",
     "topic": "shopping-food",
     "topic_label": "Shopping & Food",
-    "text_en": "Can I have extra cheese?",
-    "text_ar": "هل يمكنني الحصول على جبن إضافي؟",
-    "english": "Can I have extra cheese?",
-    "arabic": "هل يمكنني الحصول على جبن إضافي؟",
+    "text_en": "Can I have extra cheese",
+    "text_ar": "هل يمكنني الحصول على جبن إضافي",
+    "english": "Can I have extra cheese",
+    "arabic": "هل يمكنني الحصول على جبن إضافي",
     "tags": [
       "shopping",
       "food"
@@ -8302,10 +8302,10 @@
     "level": "A1",
     "topic": "shopping-food",
     "topic_label": "Shopping & Food",
-    "text_en": "I prefer tea to coffee.",
-    "text_ar": "أفضل الشاي على القهوة.",
-    "english": "I prefer tea to coffee.",
-    "arabic": "أفضل الشاي على القهوة.",
+    "text_en": "I prefer tea to coffee",
+    "text_ar": "أفضل الشاي على القهوة",
+    "english": "I prefer tea to coffee",
+    "arabic": "أفضل الشاي على القهوة",
     "tags": [
       "shopping",
       "food"
@@ -8348,10 +8348,10 @@
     "level": "A1",
     "topic": "shopping-food",
     "topic_label": "Shopping & Food",
-    "text_en": "This tastes great.",
-    "text_ar": "هذا مذاقه رائع.",
-    "english": "This tastes great.",
-    "arabic": "هذا مذاقه رائع.",
+    "text_en": "This tastes great",
+    "text_ar": "هذا مذاقه رائع",
+    "english": "This tastes great",
+    "arabic": "هذا مذاقه رائع",
     "tags": [
       "shopping",
       "food"
@@ -8382,10 +8382,10 @@
     "level": "A1",
     "topic": "shopping-food",
     "topic_label": "Shopping & Food",
-    "text_en": "The restaurant is crowded.",
-    "text_ar": "المطعم مزدحم.",
-    "english": "The restaurant is crowded.",
-    "arabic": "المطعم مزدحم.",
+    "text_en": "The restaurant is crowded",
+    "text_ar": "المطعم مزدحم",
+    "english": "The restaurant is crowded",
+    "arabic": "المطعم مزدحم",
     "tags": [
       "shopping",
       "food"
@@ -8422,10 +8422,10 @@
     "level": "A1",
     "topic": "shopping-food",
     "topic_label": "Shopping & Food",
-    "text_en": "Do we need a reservation?",
-    "text_ar": "هل نحتاج إلى حجز؟",
-    "english": "Do we need a reservation?",
-    "arabic": "هل نحتاج إلى حجز؟",
+    "text_en": "Do we need a reservation",
+    "text_ar": "هل نحتاج إلى حجز",
+    "english": "Do we need a reservation",
+    "arabic": "هل نحتاج إلى حجز",
     "tags": [
       "shopping",
       "food"
@@ -8468,10 +8468,10 @@
     "level": "A1",
     "topic": "shopping-food",
     "topic_label": "Shopping & Food",
-    "text_en": "Is there a table for two?",
-    "text_ar": "هل توجد طاولة لشخصين؟",
-    "english": "Is there a table for two?",
-    "arabic": "هل توجد طاولة لشخصين؟",
+    "text_en": "Is there a table for two",
+    "text_ar": "هل توجد طاولة لشخصين",
+    "english": "Is there a table for two",
+    "arabic": "هل توجد طاولة لشخصين",
     "tags": [
       "shopping",
       "food"
@@ -8520,10 +8520,10 @@
     "level": "A1",
     "topic": "shopping-food",
     "topic_label": "Shopping & Food",
-    "text_en": "I will have the same thing.",
-    "text_ar": "سأطلب الشيء نفسه.",
-    "english": "I will have the same thing.",
-    "arabic": "سأطلب الشيء نفسه.",
+    "text_en": "I will have the same thing",
+    "text_ar": "سأطلب الشيء نفسه",
+    "english": "I will have the same thing",
+    "arabic": "سأطلب الشيء نفسه",
     "tags": [
       "shopping",
       "food"
@@ -8572,10 +8572,10 @@
     "level": "A1",
     "topic": "shopping-food",
     "topic_label": "Shopping & Food",
-    "text_en": "Can you make it less salty?",
-    "text_ar": "هل يمكنك جعله أقل ملوحة؟",
-    "english": "Can you make it less salty?",
-    "arabic": "هل يمكنك جعله أقل ملوحة؟",
+    "text_en": "Can you make it less salty",
+    "text_ar": "هل يمكنك جعله أقل ملوحة",
+    "english": "Can you make it less salty",
+    "arabic": "هل يمكنك جعله أقل ملوحة",
     "tags": [
       "shopping",
       "food"
@@ -8624,10 +8624,10 @@
     "level": "A1",
     "topic": "shopping-food",
     "topic_label": "Shopping & Food",
-    "text_en": "Please pack this to go.",
-    "text_ar": "من فضلك ضع هذا في علبة لأخذه معي.",
-    "english": "Please pack this to go.",
-    "arabic": "من فضلك ضع هذا في علبة لأخذه معي.",
+    "text_en": "Please pack this to go",
+    "text_ar": "من فضلك ضع هذا في علبة لأخذه معي",
+    "english": "Please pack this to go",
+    "arabic": "من فضلك ضع هذا في علبة لأخذه معي",
     "tags": [
       "shopping",
       "food"
@@ -8670,10 +8670,10 @@
     "level": "A1",
     "topic": "shopping-food",
     "topic_label": "Shopping & Food",
-    "text_en": "I want to buy some fruit.",
-    "text_ar": "أريد شراء بعض الفاكهة.",
-    "english": "I want to buy some fruit.",
-    "arabic": "أريد شراء بعض الفاكهة.",
+    "text_en": "I want to buy some fruit",
+    "text_ar": "أريد شراء بعض الفاكهة",
+    "english": "I want to buy some fruit",
+    "arabic": "أريد شراء بعض الفاكهة",
     "tags": [
       "shopping",
       "food"
@@ -8722,10 +8722,10 @@
     "level": "A1",
     "topic": "shopping-food",
     "topic_label": "Shopping & Food",
-    "text_en": "Where can I find milk?",
-    "text_ar": "أين يمكنني العثور على الحليب؟",
-    "english": "Where can I find milk?",
-    "arabic": "أين يمكنني العثور على الحليب؟",
+    "text_en": "Where can I find milk",
+    "text_ar": "أين يمكنني العثور على الحليب",
+    "english": "Where can I find milk",
+    "arabic": "أين يمكنني العثور على الحليب",
     "tags": [
       "shopping",
       "food"
@@ -8768,10 +8768,10 @@
     "level": "A1",
     "topic": "shopping-food",
     "topic_label": "Shopping & Food",
-    "text_en": "The supermarket is nearby.",
-    "text_ar": "السوبرماركت قريب.",
-    "english": "The supermarket is nearby.",
-    "arabic": "السوبرماركت قريب.",
+    "text_en": "The supermarket is nearby",
+    "text_ar": "السوبرماركت قريب",
+    "english": "The supermarket is nearby",
+    "arabic": "السوبرماركت قريب",
     "tags": [
       "shopping",
       "food"
@@ -8808,10 +8808,10 @@
     "level": "A1",
     "topic": "shopping-food",
     "topic_label": "Shopping & Food",
-    "text_en": "I need a shopping bag.",
-    "text_ar": "أحتاج إلى حقيبة تسوق.",
-    "english": "I need a shopping bag.",
-    "arabic": "أحتاج إلى حقيبة تسوق.",
+    "text_en": "I need a shopping bag",
+    "text_ar": "أحتاج إلى حقيبة تسوق",
+    "english": "I need a shopping bag",
+    "arabic": "أحتاج إلى حقيبة تسوق",
     "tags": [
       "shopping",
       "food"
@@ -8854,10 +8854,10 @@
     "level": "A1",
     "topic": "shopping-food",
     "topic_label": "Shopping & Food",
-    "text_en": "This product is on sale.",
-    "text_ar": "هذا المنتج عليه خصم.",
-    "english": "This product is on sale.",
-    "arabic": "هذا المنتج عليه خصم.",
+    "text_en": "This product is on sale",
+    "text_ar": "هذا المنتج عليه خصم",
+    "english": "This product is on sale",
+    "arabic": "هذا المنتج عليه خصم",
     "tags": [
       "shopping",
       "food"
@@ -8900,10 +8900,10 @@
     "level": "A1",
     "topic": "shopping-food",
     "topic_label": "Shopping & Food",
-    "text_en": "I bought everything I needed.",
-    "text_ar": "اشتريت كل ما أحتاجه.",
-    "english": "I bought everything I needed.",
-    "arabic": "اشتريت كل ما أحتاجه.",
+    "text_en": "I bought everything I needed",
+    "text_ar": "اشتريت كل ما أحتاجه",
+    "english": "I bought everything I needed",
+    "arabic": "اشتريت كل ما أحتاجه",
     "tags": [
       "shopping",
       "food"
@@ -8940,10 +8940,10 @@
     "level": "A1",
     "topic": "travel",
     "topic_label": "Travel & Transport",
-    "text_en": "Where is the airport?",
-    "text_ar": "أين المطار؟",
-    "english": "Where is the airport?",
-    "arabic": "أين المطار؟",
+    "text_en": "Where is the airport",
+    "text_ar": "أين المطار",
+    "english": "Where is the airport",
+    "arabic": "أين المطار",
     "tags": [
       "travel",
       "transport"
@@ -8980,10 +8980,10 @@
     "level": "A1",
     "topic": "travel",
     "topic_label": "Travel & Transport",
-    "text_en": "How can I get to the station?",
-    "text_ar": "كيف يمكنني الوصول إلى المحطة؟",
-    "english": "How can I get to the station?",
-    "arabic": "كيف يمكنني الوصول إلى المحطة؟",
+    "text_en": "How can I get to the station",
+    "text_ar": "كيف يمكنني الوصول إلى المحطة",
+    "english": "How can I get to the station",
+    "arabic": "كيف يمكنني الوصول إلى المحطة",
     "tags": [
       "travel",
       "transport"
@@ -9038,10 +9038,10 @@
     "level": "A1",
     "topic": "travel",
     "topic_label": "Travel & Transport",
-    "text_en": "I need a taxi.",
-    "text_ar": "أحتاج إلى سيارة أجرة.",
-    "english": "I need a taxi.",
-    "arabic": "أحتاج إلى سيارة أجرة.",
+    "text_en": "I need a taxi",
+    "text_ar": "أحتاج إلى سيارة أجرة",
+    "english": "I need a taxi",
+    "arabic": "أحتاج إلى سيارة أجرة",
     "tags": [
       "travel",
       "transport"
@@ -9078,10 +9078,10 @@
     "level": "A1",
     "topic": "travel",
     "topic_label": "Travel & Transport",
-    "text_en": "How much is the fare?",
-    "text_ar": "كم تبلغ الأجرة؟",
-    "english": "How much is the fare?",
-    "arabic": "كم تبلغ الأجرة؟",
+    "text_en": "How much is the fare",
+    "text_ar": "كم تبلغ الأجرة",
+    "english": "How much is the fare",
+    "arabic": "كم تبلغ الأجرة",
     "tags": [
       "travel",
       "transport"
@@ -9124,10 +9124,10 @@
     "level": "A1",
     "topic": "travel",
     "topic_label": "Travel & Transport",
-    "text_en": "Please take me to this address.",
-    "text_ar": "من فضلك خذني إلى هذا العنوان.",
-    "english": "Please take me to this address.",
-    "arabic": "من فضلك خذني إلى هذا العنوان.",
+    "text_en": "Please take me to this address",
+    "text_ar": "من فضلك خذني إلى هذا العنوان",
+    "english": "Please take me to this address",
+    "arabic": "من فضلك خذني إلى هذا العنوان",
     "tags": [
       "travel",
       "transport"
@@ -9176,10 +9176,10 @@
     "level": "A1",
     "topic": "travel",
     "topic_label": "Travel & Transport",
-    "text_en": "How long will it take?",
-    "text_ar": "كم من الوقت سيستغرق الأمر؟",
-    "english": "How long will it take?",
-    "arabic": "كم من الوقت سيستغرق الأمر؟",
+    "text_en": "How long will it take",
+    "text_ar": "كم من الوقت سيستغرق الأمر",
+    "english": "How long will it take",
+    "arabic": "كم من الوقت سيستغرق الأمر",
     "tags": [
       "travel",
       "transport"
@@ -9222,10 +9222,10 @@
     "level": "A1",
     "topic": "travel",
     "topic_label": "Travel & Transport",
-    "text_en": "What time does the bus leave?",
-    "text_ar": "متى تغادر الحافلة؟",
-    "english": "What time does the bus leave?",
-    "arabic": "متى تغادر الحافلة؟",
+    "text_en": "What time does the bus leave",
+    "text_ar": "متى تغادر الحافلة",
+    "english": "What time does the bus leave",
+    "arabic": "متى تغادر الحافلة",
     "tags": [
       "travel",
       "transport"
@@ -9274,10 +9274,10 @@
     "level": "A1",
     "topic": "travel",
     "topic_label": "Travel & Transport",
-    "text_en": "What time does the train arrive?",
-    "text_ar": "متى يصل القطار؟",
-    "english": "What time does the train arrive?",
-    "arabic": "متى يصل القطار؟",
+    "text_en": "What time does the train arrive",
+    "text_ar": "متى يصل القطار",
+    "english": "What time does the train arrive",
+    "arabic": "متى يصل القطار",
     "tags": [
       "travel",
       "transport"
@@ -9326,10 +9326,10 @@
     "level": "A1",
     "topic": "travel",
     "topic_label": "Travel & Transport",
-    "text_en": "Where can I buy a ticket?",
-    "text_ar": "أين يمكنني شراء تذكرة؟",
-    "english": "Where can I buy a ticket?",
-    "arabic": "أين يمكنني شراء تذكرة؟",
+    "text_en": "Where can I buy a ticket",
+    "text_ar": "أين يمكنني شراء تذكرة",
+    "english": "Where can I buy a ticket",
+    "arabic": "أين يمكنني شراء تذكرة",
     "tags": [
       "travel",
       "transport"
@@ -9378,10 +9378,10 @@
     "level": "A1",
     "topic": "travel",
     "topic_label": "Travel & Transport",
-    "text_en": "I would like a one-way ticket.",
-    "text_ar": "أريد تذكرة ذهاب فقط.",
-    "english": "I would like a one-way ticket.",
-    "arabic": "أريد تذكرة ذهاب فقط.",
+    "text_en": "I would like a one-way ticket",
+    "text_ar": "أريد تذكرة ذهاب فقط",
+    "english": "I would like a one-way ticket",
+    "arabic": "أريد تذكرة ذهاب فقط",
     "tags": [
       "travel",
       "transport"
@@ -9436,10 +9436,10 @@
     "level": "A1",
     "topic": "travel",
     "topic_label": "Travel & Transport",
-    "text_en": "I need a round-trip ticket.",
-    "text_ar": "أحتاج إلى تذكرة ذهاب وعودة.",
-    "english": "I need a round-trip ticket.",
-    "arabic": "أحتاج إلى تذكرة ذهاب وعودة.",
+    "text_en": "I need a round-trip ticket",
+    "text_ar": "أحتاج إلى تذكرة ذهاب وعودة",
+    "english": "I need a round-trip ticket",
+    "arabic": "أحتاج إلى تذكرة ذهاب وعودة",
     "tags": [
       "travel",
       "transport"
@@ -9488,10 +9488,10 @@
     "level": "A1",
     "topic": "travel",
     "topic_label": "Travel & Transport",
-    "text_en": "Which platform should I use?",
-    "text_ar": "أي رصيف يجب أن أستخدم؟",
-    "english": "Which platform should I use?",
-    "arabic": "أي رصيف يجب أن أستخدم؟",
+    "text_en": "Which platform should I use",
+    "text_ar": "أي رصيف يجب أن أستخدم",
+    "english": "Which platform should I use",
+    "arabic": "أي رصيف يجب أن أستخدم",
     "tags": [
       "travel",
       "transport"
@@ -9534,10 +9534,10 @@
     "level": "A1",
     "topic": "travel",
     "topic_label": "Travel & Transport",
-    "text_en": "Is this seat taken?",
-    "text_ar": "هل هذا المقعد محجوز؟",
-    "english": "Is this seat taken?",
-    "arabic": "هل هذا المقعد محجوز؟",
+    "text_en": "Is this seat taken",
+    "text_ar": "هل هذا المقعد محجوز",
+    "english": "Is this seat taken",
+    "arabic": "هل هذا المقعد محجوز",
     "tags": [
       "travel",
       "transport"
@@ -9574,10 +9574,10 @@
     "level": "A1",
     "topic": "travel",
     "topic_label": "Travel & Transport",
-    "text_en": "Where is the departure gate?",
-    "text_ar": "أين بوابة المغادرة؟",
-    "english": "Where is the departure gate?",
-    "arabic": "أين بوابة المغادرة؟",
+    "text_en": "Where is the departure gate",
+    "text_ar": "أين بوابة المغادرة",
+    "english": "Where is the departure gate",
+    "arabic": "أين بوابة المغادرة",
     "tags": [
       "travel",
       "transport"
@@ -9620,10 +9620,10 @@
     "level": "A1",
     "topic": "travel",
     "topic_label": "Travel & Transport",
-    "text_en": "My flight is delayed.",
-    "text_ar": "رحلتي الجوية متأخرة.",
-    "english": "My flight is delayed.",
-    "arabic": "رحلتي الجوية متأخرة.",
+    "text_en": "My flight is delayed",
+    "text_ar": "رحلتي الجوية متأخرة",
+    "english": "My flight is delayed",
+    "arabic": "رحلتي الجوية متأخرة",
     "tags": [
       "travel",
       "transport"
@@ -9660,10 +9660,10 @@
     "level": "A1",
     "topic": "travel",
     "topic_label": "Travel & Transport",
-    "text_en": "My flight has been canceled.",
-    "text_ar": "تم إلغاء رحلتي الجوية.",
-    "english": "My flight has been canceled.",
-    "arabic": "تم إلغاء رحلتي الجوية.",
+    "text_en": "My flight has been canceled",
+    "text_ar": "تم إلغاء رحلتي الجوية",
+    "english": "My flight has been canceled",
+    "arabic": "تم إلغاء رحلتي الجوية",
     "tags": [
       "travel",
       "transport"
@@ -9706,10 +9706,10 @@
     "level": "A1",
     "topic": "travel",
     "topic_label": "Travel & Transport",
-    "text_en": "Where is the baggage claim?",
-    "text_ar": "أين استلام الأمتعة؟",
-    "english": "Where is the baggage claim?",
-    "arabic": "أين استلام الأمتعة؟",
+    "text_en": "Where is the baggage claim",
+    "text_ar": "أين استلام الأمتعة",
+    "english": "Where is the baggage claim",
+    "arabic": "أين استلام الأمتعة",
     "tags": [
       "travel",
       "transport"
@@ -9752,10 +9752,10 @@
     "level": "A1",
     "topic": "travel",
     "topic_label": "Travel & Transport",
-    "text_en": "My bag is missing.",
-    "text_ar": "حقيبتي مفقودة.",
-    "english": "My bag is missing.",
-    "arabic": "حقيبتي مفقودة.",
+    "text_en": "My bag is missing",
+    "text_ar": "حقيبتي مفقودة",
+    "english": "My bag is missing",
+    "arabic": "حقيبتي مفقودة",
     "tags": [
       "travel",
       "transport"
@@ -9792,10 +9792,10 @@
     "level": "A1",
     "topic": "travel",
     "topic_label": "Travel & Transport",
-    "text_en": "I have a reservation.",
-    "text_ar": "لدي حجز.",
-    "english": "I have a reservation.",
-    "arabic": "لدي حجز.",
+    "text_en": "I have a reservation",
+    "text_ar": "لدي حجز",
+    "english": "I have a reservation",
+    "arabic": "لدي حجز",
     "tags": [
       "travel",
       "transport"
@@ -9832,10 +9832,10 @@
     "level": "A1",
     "topic": "travel",
     "topic_label": "Travel & Transport",
-    "text_en": "I need to check in.",
-    "text_ar": "أحتاج إلى تسجيل الوصول.",
-    "english": "I need to check in.",
-    "arabic": "أحتاج إلى تسجيل الوصول.",
+    "text_en": "I need to check in",
+    "text_ar": "أحتاج إلى تسجيل الوصول",
+    "english": "I need to check in",
+    "arabic": "أحتاج إلى تسجيل الوصول",
     "tags": [
       "travel",
       "transport"
@@ -9878,10 +9878,10 @@
     "level": "A1",
     "topic": "travel",
     "topic_label": "Travel & Transport",
-    "text_en": "Here is my passport.",
-    "text_ar": "هذا جواز سفري.",
-    "english": "Here is my passport.",
-    "arabic": "هذا جواز سفري.",
+    "text_en": "Here is my passport",
+    "text_ar": "هذا جواز سفري",
+    "english": "Here is my passport",
+    "arabic": "هذا جواز سفري",
     "tags": [
       "travel",
       "transport"
@@ -9918,10 +9918,10 @@
     "level": "A1",
     "topic": "travel",
     "topic_label": "Travel & Transport",
-    "text_en": "Where is the hotel?",
-    "text_ar": "أين الفندق؟",
-    "english": "Where is the hotel?",
-    "arabic": "أين الفندق؟",
+    "text_en": "Where is the hotel",
+    "text_ar": "أين الفندق",
+    "english": "Where is the hotel",
+    "arabic": "أين الفندق",
     "tags": [
       "travel",
       "transport"
@@ -9958,10 +9958,10 @@
     "level": "A1",
     "topic": "travel",
     "topic_label": "Travel & Transport",
-    "text_en": "Is there a hotel nearby?",
-    "text_ar": "هل يوجد فندق قريب؟",
-    "english": "Is there a hotel nearby?",
-    "arabic": "هل يوجد فندق قريب؟",
+    "text_en": "Is there a hotel nearby",
+    "text_ar": "هل يوجد فندق قريب",
+    "english": "Is there a hotel nearby",
+    "arabic": "هل يوجد فندق قريب",
     "tags": [
       "travel",
       "transport"
@@ -10004,10 +10004,10 @@
     "level": "A1",
     "topic": "travel",
     "topic_label": "Travel & Transport",
-    "text_en": "I would like to book a room.",
-    "text_ar": "أود حجز غرفة.",
-    "english": "I would like to book a room.",
-    "arabic": "أود حجز غرفة.",
+    "text_en": "I would like to book a room",
+    "text_ar": "أود حجز غرفة",
+    "english": "I would like to book a room",
+    "arabic": "أود حجز غرفة",
     "tags": [
       "travel",
       "transport"
@@ -10062,10 +10062,10 @@
     "level": "A1",
     "topic": "travel",
     "topic_label": "Travel & Transport",
-    "text_en": "I have a room reserved under my name.",
-    "text_ar": "لدي غرفة محجوزة باسمي.",
-    "english": "I have a room reserved under my name.",
-    "arabic": "لدي غرفة محجوزة باسمي.",
+    "text_en": "I have a room reserved under my name",
+    "text_ar": "لدي غرفة محجوزة باسمي",
+    "english": "I have a room reserved under my name",
+    "arabic": "لدي غرفة محجوزة باسمي",
     "tags": [
       "travel",
       "transport"
@@ -10126,10 +10126,10 @@
     "level": "A1",
     "topic": "travel",
     "topic_label": "Travel & Transport",
-    "text_en": "What time is check-out?",
-    "text_ar": "متى يكون تسجيل المغادرة؟",
-    "english": "What time is check-out?",
-    "arabic": "متى يكون تسجيل المغادرة؟",
+    "text_en": "What time is check-out",
+    "text_ar": "متى يكون تسجيل المغادرة",
+    "english": "What time is check-out",
+    "arabic": "متى يكون تسجيل المغادرة",
     "tags": [
       "travel",
       "transport"
@@ -10172,10 +10172,10 @@
     "level": "A1",
     "topic": "travel",
     "topic_label": "Travel & Transport",
-    "text_en": "Can I leave my luggage here?",
-    "text_ar": "هل يمكنني ترك أمتعتي هنا؟",
-    "english": "Can I leave my luggage here?",
-    "arabic": "هل يمكنني ترك أمتعتي هنا؟",
+    "text_en": "Can I leave my luggage here",
+    "text_ar": "هل يمكنني ترك أمتعتي هنا",
+    "english": "Can I leave my luggage here",
+    "arabic": "هل يمكنني ترك أمتعتي هنا",
     "tags": [
       "travel",
       "transport"
@@ -10224,10 +10224,10 @@
     "level": "A1",
     "topic": "travel",
     "topic_label": "Travel & Transport",
-    "text_en": "Is breakfast included?",
-    "text_ar": "هل الإفطار مشمول؟",
-    "english": "Is breakfast included?",
-    "arabic": "هل الإفطار مشمول؟",
+    "text_en": "Is breakfast included",
+    "text_ar": "هل الإفطار مشمول",
+    "english": "Is breakfast included",
+    "arabic": "هل الإفطار مشمول",
     "tags": [
       "travel",
       "transport"
@@ -10258,10 +10258,10 @@
     "level": "A1",
     "topic": "travel",
     "topic_label": "Travel & Transport",
-    "text_en": "I need the Wi-Fi password.",
-    "text_ar": "أحتاج إلى كلمة مرور الواي فاي.",
-    "english": "I need the Wi-Fi password.",
-    "arabic": "أحتاج إلى كلمة مرور الواي فاي.",
+    "text_en": "I need the Wi-Fi password",
+    "text_ar": "أحتاج إلى كلمة مرور الواي فاي",
+    "english": "I need the Wi-Fi password",
+    "arabic": "أحتاج إلى كلمة مرور الواي فاي",
     "tags": [
       "travel",
       "transport"
@@ -10310,10 +10310,10 @@
     "level": "A1",
     "topic": "travel",
     "topic_label": "Travel & Transport",
-    "text_en": "Could you call me a taxi?",
-    "text_ar": "هل يمكنك طلب سيارة أجرة لي؟",
-    "english": "Could you call me a taxi?",
-    "arabic": "هل يمكنك طلب سيارة أجرة لي؟",
+    "text_en": "Could you call me a taxi",
+    "text_ar": "هل يمكنك طلب سيارة أجرة لي",
+    "english": "Could you call me a taxi",
+    "arabic": "هل يمكنك طلب سيارة أجرة لي",
     "tags": [
       "travel",
       "transport"
@@ -10362,10 +10362,10 @@
     "level": "A1",
     "topic": "travel",
     "topic_label": "Travel & Transport",
-    "text_en": "Where is the nearest bus stop?",
-    "text_ar": "أين أقرب موقف حافلات؟",
-    "english": "Where is the nearest bus stop?",
-    "arabic": "أين أقرب موقف حافلات؟",
+    "text_en": "Where is the nearest bus stop",
+    "text_ar": "أين أقرب موقف حافلات",
+    "english": "Where is the nearest bus stop",
+    "arabic": "أين أقرب موقف حافلات",
     "tags": [
       "travel",
       "transport"
@@ -10414,10 +10414,10 @@
     "level": "A1",
     "topic": "travel",
     "topic_label": "Travel & Transport",
-    "text_en": "Turn left at the next street.",
-    "text_ar": "انعطف يسارًا عند الشارع التالي.",
-    "english": "Turn left at the next street.",
-    "arabic": "انعطف يسارًا عند الشارع التالي.",
+    "text_en": "Turn left at the next street",
+    "text_ar": "انعطف يسارًا عند الشارع التالي",
+    "english": "Turn left at the next street",
+    "arabic": "انعطف يسارًا عند الشارع التالي",
     "tags": [
       "travel",
       "transport"
@@ -10466,10 +10466,10 @@
     "level": "A1",
     "topic": "travel",
     "topic_label": "Travel & Transport",
-    "text_en": "Turn right at the traffic light.",
-    "text_ar": "انعطف يمينًا عند إشارة المرور.",
-    "english": "Turn right at the traffic light.",
-    "arabic": "انعطف يمينًا عند إشارة المرور.",
+    "text_en": "Turn right at the traffic light",
+    "text_ar": "انعطف يمينًا عند إشارة المرور",
+    "english": "Turn right at the traffic light",
+    "arabic": "انعطف يمينًا عند إشارة المرور",
     "tags": [
       "travel",
       "transport"
@@ -10518,10 +10518,10 @@
     "level": "A1",
     "topic": "travel",
     "topic_label": "Travel & Transport",
-    "text_en": "Go straight ahead.",
-    "text_ar": "اذهب مباشرةً إلى الأمام.",
-    "english": "Go straight ahead.",
-    "arabic": "اذهب مباشرةً إلى الأمام.",
+    "text_en": "Go straight ahead",
+    "text_ar": "اذهب مباشرةً إلى الأمام",
+    "english": "Go straight ahead",
+    "arabic": "اذهب مباشرةً إلى الأمام",
     "tags": [
       "travel",
       "transport"
@@ -10552,10 +10552,10 @@
     "level": "A1",
     "topic": "travel",
     "topic_label": "Travel & Transport",
-    "text_en": "It is within walking distance.",
-    "text_ar": "إنه على مسافة يمكن قطعها سيرًا.",
-    "english": "It is within walking distance.",
-    "arabic": "إنه على مسافة يمكن قطعها سيرًا.",
+    "text_en": "It is within walking distance",
+    "text_ar": "إنه على مسافة يمكن قطعها سيرًا",
+    "english": "It is within walking distance",
+    "arabic": "إنه على مسافة يمكن قطعها سيرًا",
     "tags": [
       "travel",
       "transport"
@@ -10598,10 +10598,10 @@
     "level": "A1",
     "topic": "travel",
     "topic_label": "Travel & Transport",
-    "text_en": "I think we are lost.",
-    "text_ar": "أعتقد أننا تائهون.",
-    "english": "I think we are lost.",
-    "arabic": "أعتقد أننا تائهون.",
+    "text_en": "I think we are lost",
+    "text_ar": "أعتقد أننا تائهون",
+    "english": "I think we are lost",
+    "arabic": "أعتقد أننا تائهون",
     "tags": [
       "travel",
       "transport"
@@ -10644,10 +10644,10 @@
     "level": "A1",
     "topic": "travel",
     "topic_label": "Travel & Transport",
-    "text_en": "Can you show me on the map?",
-    "text_ar": "هل يمكنك أن تريني ذلك على الخريطة؟",
-    "english": "Can you show me on the map?",
-    "arabic": "هل يمكنك أن تريني ذلك على الخريطة؟",
+    "text_en": "Can you show me on the map",
+    "text_ar": "هل يمكنك أن تريني ذلك على الخريطة",
+    "english": "Can you show me on the map",
+    "arabic": "هل يمكنك أن تريني ذلك على الخريطة",
     "tags": [
       "travel",
       "transport"
@@ -10702,10 +10702,10 @@
     "level": "A1",
     "topic": "travel",
     "topic_label": "Travel & Transport",
-    "text_en": "How far is it from here?",
-    "text_ar": "كم يبعد من هنا؟",
-    "english": "How far is it from here?",
-    "arabic": "كم يبعد من هنا؟",
+    "text_en": "How far is it from here",
+    "text_ar": "كم يبعد من هنا",
+    "english": "How far is it from here",
+    "arabic": "كم يبعد من هنا",
     "tags": [
       "travel",
       "transport"
@@ -10754,10 +10754,10 @@
     "level": "A1",
     "topic": "travel",
     "topic_label": "Travel & Transport",
-    "text_en": "I need directions to the museum.",
-    "text_ar": "أحتاج إلى الاتجاهات إلى المتحف.",
-    "english": "I need directions to the museum.",
-    "arabic": "أحتاج إلى الاتجاهات إلى المتحف.",
+    "text_en": "I need directions to the museum",
+    "text_ar": "أحتاج إلى الاتجاهات إلى المتحف",
+    "english": "I need directions to the museum",
+    "arabic": "أحتاج إلى الاتجاهات إلى المتحف",
     "tags": [
       "travel",
       "transport"
@@ -10806,10 +10806,10 @@
     "level": "A1",
     "topic": "travel",
     "topic_label": "Travel & Transport",
-    "text_en": "What is the best way to get there?",
-    "text_ar": "ما أفضل طريقة للوصول إلى هناك؟",
-    "english": "What is the best way to get there?",
-    "arabic": "ما أفضل طريقة للوصول إلى هناك؟",
+    "text_en": "What is the best way to get there",
+    "text_ar": "ما أفضل طريقة للوصول إلى هناك",
+    "english": "What is the best way to get there",
+    "arabic": "ما أفضل طريقة للوصول إلى هناك",
     "tags": [
       "travel",
       "transport"
@@ -10870,10 +10870,10 @@
     "level": "A1",
     "topic": "travel",
     "topic_label": "Travel & Transport",
-    "text_en": "I prefer to travel by train.",
-    "text_ar": "أفضل السفر بالقطار.",
-    "english": "I prefer to travel by train.",
-    "arabic": "أفضل السفر بالقطار.",
+    "text_en": "I prefer to travel by train",
+    "text_ar": "أفضل السفر بالقطار",
+    "english": "I prefer to travel by train",
+    "arabic": "أفضل السفر بالقطار",
     "tags": [
       "travel",
       "transport"
@@ -10922,10 +10922,10 @@
     "level": "A1",
     "topic": "travel",
     "topic_label": "Travel & Transport",
-    "text_en": "The traffic is heavy today.",
-    "text_ar": "حركة المرور مزدحمة اليوم.",
-    "english": "The traffic is heavy today.",
-    "arabic": "حركة المرور مزدحمة اليوم.",
+    "text_en": "The traffic is heavy today",
+    "text_ar": "حركة المرور مزدحمة اليوم",
+    "english": "The traffic is heavy today",
+    "arabic": "حركة المرور مزدحمة اليوم",
     "tags": [
       "travel",
       "transport"
@@ -10968,10 +10968,10 @@
     "level": "A1",
     "topic": "travel",
     "topic_label": "Travel & Transport",
-    "text_en": "The road is closed.",
-    "text_ar": "الطريق مغلق.",
-    "english": "The road is closed.",
-    "arabic": "الطريق مغلق.",
+    "text_en": "The road is closed",
+    "text_ar": "الطريق مغلق",
+    "english": "The road is closed",
+    "arabic": "الطريق مغلق",
     "tags": [
       "travel",
       "transport"
@@ -11008,10 +11008,10 @@
     "level": "A1",
     "topic": "travel",
     "topic_label": "Travel & Transport",
-    "text_en": "We arrived on time.",
-    "text_ar": "وصلنا في الموعد.",
-    "english": "We arrived on time.",
-    "arabic": "وصلنا في الموعد.",
+    "text_en": "We arrived on time",
+    "text_ar": "وصلنا في الموعد",
+    "english": "We arrived on time",
+    "arabic": "وصلنا في الموعد",
     "tags": [
       "travel",
       "transport"
@@ -11048,10 +11048,10 @@
     "level": "A1",
     "topic": "travel",
     "topic_label": "Travel & Transport",
-    "text_en": "The bus is late.",
-    "text_ar": "الحافلة متأخرة.",
-    "english": "The bus is late.",
-    "arabic": "الحافلة متأخرة.",
+    "text_en": "The bus is late",
+    "text_ar": "الحافلة متأخرة",
+    "english": "The bus is late",
+    "arabic": "الحافلة متأخرة",
     "tags": [
       "travel",
       "transport"
@@ -11088,10 +11088,10 @@
     "level": "A1",
     "topic": "travel",
     "topic_label": "Travel & Transport",
-    "text_en": "I missed the train.",
-    "text_ar": "فاتني القطار.",
-    "english": "I missed the train.",
-    "arabic": "فاتني القطار.",
+    "text_en": "I missed the train",
+    "text_ar": "فاتني القطار",
+    "english": "I missed the train",
+    "arabic": "فاتني القطار",
     "tags": [
       "travel",
       "transport"
@@ -11128,10 +11128,10 @@
     "level": "A1",
     "topic": "travel",
     "topic_label": "Travel & Transport",
-    "text_en": "Please tell me when we arrive.",
-    "text_ar": "من فضلك أخبرني عندما نصل.",
-    "english": "Please tell me when we arrive.",
-    "arabic": "من فضلك أخبرني عندما نصل.",
+    "text_en": "Please tell me when we arrive",
+    "text_ar": "من فضلك أخبرني عندما نصل",
+    "english": "Please tell me when we arrive",
+    "arabic": "من فضلك أخبرني عندما نصل",
     "tags": [
       "travel",
       "transport"
@@ -11180,10 +11180,10 @@
     "level": "A1",
     "topic": "travel",
     "topic_label": "Travel & Transport",
-    "text_en": "Have a safe trip.",
-    "text_ar": "رحلة آمنة.",
-    "english": "Have a safe trip.",
-    "arabic": "رحلة آمنة.",
+    "text_en": "Have a safe trip",
+    "text_ar": "رحلة آمنة",
+    "english": "Have a safe trip",
+    "arabic": "رحلة آمنة",
     "tags": [
       "travel",
       "transport"
@@ -11220,10 +11220,10 @@
     "level": "A1",
     "topic": "travel",
     "topic_label": "Travel & Transport",
-    "text_en": "Enjoy your trip.",
-    "text_ar": "استمتع برحلتك.",
-    "english": "Enjoy your trip.",
-    "arabic": "استمتع برحلتك.",
+    "text_en": "Enjoy your trip",
+    "text_ar": "استمتع برحلتك",
+    "english": "Enjoy your trip",
+    "arabic": "استمتع برحلتك",
     "tags": [
       "travel",
       "transport"
@@ -11254,10 +11254,10 @@
     "level": "A1",
     "topic": "travel",
     "topic_label": "Travel & Transport",
-    "text_en": "I had a great trip.",
-    "text_ar": "كانت رحلتي رائعة.",
-    "english": "I had a great trip.",
-    "arabic": "كانت رحلتي رائعة.",
+    "text_en": "I had a great trip",
+    "text_ar": "كانت رحلتي رائعة",
+    "english": "I had a great trip",
+    "arabic": "كانت رحلتي رائعة",
     "tags": [
       "travel",
       "transport"
