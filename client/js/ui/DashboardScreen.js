@@ -87,7 +87,7 @@ export class DashboardScreen extends EventEmitter {
     }
 
     const ctaRoute = hasHistory
-      ? `#/practice?level=${levelLabel}`
+      ? `#/practice?level=${levelLabel}&resume=true`
       : '#/practice?level=A1';
 
     this.el.innerHTML = `

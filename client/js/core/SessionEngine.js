@@ -117,7 +117,7 @@ export class SessionEngine extends EventEmitter {
    * (the required user gesture) transitions it toward LISTENING.
    * @param {Array<{ id: number|string, text_en: string, text_ar: string, level?: string }>} sentences
    */
-  setSentences(sentences) {
+  setSentences(sentences, startIndex = 0) {
     this.sentences =
       Array.isArray(sentences) && sentences.length > 0 ? sentences : [];
     this.lessonHistory = [];
@@ -133,7 +133,11 @@ export class SessionEngine extends EventEmitter {
       return;
     }
 
-    this.loadSentence(0);
+    const initialIndex = Math.max(
+      0,
+      Math.min(startIndex, this.sentences.length - 1)
+    );
+    this.loadSentence(initialIndex);
   }
 
   /**

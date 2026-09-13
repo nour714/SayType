@@ -48,7 +48,8 @@ export class ProgressService extends EventEmitter {
       currentStreak: 0,
       longestStreak: 0,
       perfectAccuracyCount: 0,
-      unlockedBadges: []
+      unlockedBadges: [],
+      trackPositions: {}
     };
   }
 
@@ -375,6 +376,80 @@ export class ProgressService extends EventEmitter {
   isFavorite(sentenceId) {
     if (sentenceId === undefined || sentenceId === null) return false;
     return this.data.favorites.includes(String(sentenceId));
+  }
+
+  /**
+   * Check if a sentence is marked as completed.
+   * @param {number|string} sentenceId
+   * @returns {boolean}
+   */
+  isSentenceCompleted(sentenceId) {
+    if (sentenceId === undefined || sentenceId === null) return false;
+    return (this.data.completedSentenceIds || []).includes(String(sentenceId));
+  }
+
+  /**
+   * Save the current sentence index for a specific track (level + topic).
+   * @param {string} level
+   * @param {string} [topic='']
+   * @param {number} index
+   */
+  saveTrackPosition(level, topic = '', index = 0) {
+    if (!this.data.trackPositions) {
+      this.data.trackPositions = {};
+    }
+    const key = topic ? `${level}:${topic}` : level;
+    this.data.trackPositions[key] = Math.max(0, index);
+    this._save();
+  }
+
+  /**
+   * Calculate which sentence index to resume from for a collection of sentences.
+   * Prioritizes the saved track position if valid and uncompleted,
+   * otherwise finds the first uncompleted sentence in the track.
+   * If all sentences are completed, returns 0.
+   * @param {Array<{ id: number|string }>} sentences
+   * @param {string} level
+   * @param {string} [topic='']
+   * @returns {number} 0-based index to resume from
+   */
+  getResumeIndex(sentences, level, topic = '') {
+    if (!Array.isArray(sentences) || sentences.length === 0) return 0;
+
+    const completedSet = new Set(
+      (this.data.completedSentenceIds || []).map(String)
+    );
+
+    const key = topic ? `${level}:${topic}` : level;
+    const savedIndex = this.data.trackPositions?.[key];
+
+    if (
+      typeof savedIndex === 'number' &&
+      savedIndex >= 0 &&
+      savedIndex < sentences.length
+    ) {
+      // If the sentence at savedIndex is not completed, resume exactly there
+      if (!completedSet.has(String(sentences[savedIndex]?.id))) {
+        return savedIndex;
+      }
+      // If the sentence at savedIndex was completed, find the first uncompleted sentence at or after savedIndex
+      for (let i = savedIndex; i < sentences.length; i++) {
+        if (!completedSet.has(String(sentences[i]?.id))) {
+          return i;
+        }
+      }
+    }
+
+    // Otherwise, find the first uncompleted sentence in this track
+    const firstUnfinished = sentences.findIndex(
+      (s) => !completedSet.has(String(s.id))
+    );
+    if (firstUnfinished !== -1) {
+      return firstUnfinished;
+    }
+
+    // If all sentences in the track are completed, restart from 0
+    return 0;
   }
 
   /**

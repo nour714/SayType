@@ -85,6 +85,17 @@ export class SettingsScreen extends EventEmitter {
               }
             </div>
           </div>
+
+          <div class="settings-group">
+            <h2 class="settings-group-title">Progress & Data</h2>
+            <div class="settings-item">
+              <div class="settings-item-info">
+                <span class="settings-item-label">Reset Progress</span>
+                <span class="settings-item-desc">Clear completed sentences and start over from sentence 1</span>
+              </div>
+              <button id="setting-reset-btn" class="action-btn danger-btn">Reset</button>
+            </div>
+          </div>
         </div>
       </div>
     `;
@@ -137,6 +148,13 @@ export class SettingsScreen extends EventEmitter {
       signOutBtn.addEventListener('click', async () => {
         await authService.signOut();
         this.render({ settingsService, authService });
+      });
+    }
+
+    const resetBtn = document.getElementById('setting-reset-btn');
+    if (resetBtn) {
+      resetBtn.addEventListener('click', () => {
+        this.emit('setting:reset');
       });
     }
   }

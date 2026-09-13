@@ -1096,6 +1096,122 @@ console.log('--- Testing Phase 4: Toast and ProfileModal UI Classes ---');
   console.log('✓ Toast and ProfileModal classes verified!');
 }
 
+console.log('--- Testing TrackModal Dismiss & Navigation ---');
+{
+  const { TrackModal } = await import('../client/js/ui/TrackModal.js');
+  assert.strictEqual(typeof TrackModal, 'function');
+
+  const modal = new TrackModal(null);
+  let dismissedReason = null;
+  let dismissCount = 0;
+  modal.on('track:dismiss', ({ reason } = {}) => {
+    dismissCount++;
+    dismissedReason = reason;
+  });
+
+  // 1. Close button dismissal
+  modal.close({ reason: 'close-btn' });
+  assert.strictEqual(dismissCount, 1);
+  assert.strictEqual(dismissedReason, 'close-btn');
+
+  // 2. Backdrop dismissal
+  modal.close({ reason: 'backdrop' });
+  assert.strictEqual(dismissCount, 2);
+  assert.strictEqual(dismissedReason, 'backdrop');
+
+  // 3. Escape key dismissal
+  modal.close({ reason: 'escape' });
+  assert.strictEqual(dismissCount, 3);
+  assert.strictEqual(dismissedReason, 'escape');
+
+  // 4. Silent close does not emit track:dismiss
+  modal.close({ silent: true });
+  assert.strictEqual(dismissCount, 3, 'Silent close should not emit track:dismiss');
+
+  // 5. _handleStart emits track:selected and closes silently
+  let selectedTrack = null;
+  modal.on('track:selected', (track) => {
+    selectedTrack = track;
+  });
+  modal._handleStart();
+  assert.strictEqual(dismissCount, 3, '_handleStart should not emit track:dismiss');
+  assert.ok(selectedTrack, '_handleStart should emit track:selected');
+  assert.strictEqual(selectedTrack.level, 'A1');
+
+  console.log('✓ TrackModal dismissal and start events verified!');
+}
+
+console.log('--- Testing Progress Resume & Track Position ---');
+{
+  const { ProgressService } = await import('../client/js/services/ProgressService.js');
+  const { SessionEngine } = await import('../client/js/core/SessionEngine.js');
+  const { SentenceEngine } = await import('../client/js/core/SentenceEngine.js');
+  const { MetricsCalculator } = await import('../client/js/core/MetricsCalculator.js');
+
+  const ps = new ProgressService('test_resume_progress_key');
+  ps.reset();
+
+  const testSentences = [
+    { id: 's1', text_en: 'Sentence 1.', text_ar: 'الجملة 1' },
+    { id: 's2', text_en: 'Sentence 2.', text_ar: 'الجملة 2' },
+    { id: 's3', text_en: 'Sentence 3.', text_ar: 'الجملة 3' },
+    { id: 's4', text_en: 'Sentence 4.', text_ar: 'الجملة 4' },
+    { id: 's5', text_en: 'Sentence 5.', text_ar: 'الجملة 5' }
+  ];
+
+  // Initially: resume index is 0
+  assert.strictEqual(ps.getResumeIndex(testSentences, 'A1', ''), 0);
+
+  // Complete sentences s1 and s2
+  ps.recordSentenceCompletion({ sentenceId: 's1', wpm: 30, accuracy: 100, mistakes: 0 });
+  ps.recordSentenceCompletion({ sentenceId: 's2', wpm: 35, accuracy: 95, mistakes: 1 });
+
+  assert.strictEqual(ps.isSentenceCompleted('s1'), true);
+  assert.strictEqual(ps.isSentenceCompleted('s2'), true);
+  assert.strictEqual(ps.isSentenceCompleted('s3'), false);
+
+  // Resume index should now be 2 (sentence s3, index 2)
+  assert.strictEqual(ps.getResumeIndex(testSentences, 'A1', ''), 2);
+
+  // Test saveTrackPosition
+  ps.saveTrackPosition('A1', '', 2);
+  assert.strictEqual(ps.data.trackPositions['A1'], 2);
+  assert.strictEqual(ps.getResumeIndex(testSentences, 'A1', ''), 2);
+
+  // If s3 is completed, savedIndex 2 advances to index 3
+  ps.recordSentenceCompletion({ sentenceId: 's3', wpm: 40, accuracy: 100, mistakes: 0 });
+  assert.strictEqual(ps.getResumeIndex(testSentences, 'A1', ''), 3);
+
+  // Test sessionEngine.setSentences with startIndex
+  const sEngine = new SentenceEngine();
+  const mCalc = new MetricsCalculator();
+  const session = new SessionEngine(sEngine, mCalc);
+
+  let loadedIndex = -1;
+  session.on('sentence:loaded', ({ index }) => {
+    loadedIndex = index;
+  });
+
+  session.setSentences(testSentences, 3);
+  assert.strictEqual(session.currentSentenceIndex, 3);
+  assert.strictEqual(session.currentSentence.id, 's4');
+  assert.strictEqual(loadedIndex, 3);
+
+  // Complete all sentences
+  ps.recordSentenceCompletion({ sentenceId: 's4', wpm: 40, accuracy: 100, mistakes: 0 });
+  ps.recordSentenceCompletion({ sentenceId: 's5', wpm: 40, accuracy: 100, mistakes: 0 });
+  // All completed -> wrap around to 0
+  assert.strictEqual(ps.getResumeIndex(testSentences, 'A1', ''), 0);
+
+  // Test reset: clears all and restarts from 0
+  ps.reset();
+  assert.strictEqual(ps.data.completedSentenceIds.length, 0);
+  assert.deepStrictEqual(ps.data.trackPositions, {});
+  assert.strictEqual(ps.getResumeIndex(testSentences, 'A1', ''), 0);
+
+  console.log('✓ Progress resume and track position tests passed!');
+}
+
 console.log('ALL REGRESSION TESTS PASSED SUCCESSFULLY! 🎉');
 process.exit(0);
 

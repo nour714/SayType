@@ -158,6 +158,9 @@ async function bootstrap() {
     if (trainingScreen.focusReminder) {
       trainingScreen.focusReminder.style.display = 'none';
     }
+    if (trackModal && trackModal.isOpen()) {
+      trackModal.close({ silent: true });
+    }
   }
 
   const PAGE_ROUTES = {
@@ -385,6 +388,9 @@ async function bootstrap() {
 
   trainingScreen.on('action:restart', () => {
     speechService.stop();
+    if (currentLevel) {
+      progressService.saveTrackPosition(currentLevel, currentTopic, 0);
+    }
     sessionEngine.restartLesson();
   });
 
@@ -430,6 +436,9 @@ async function bootstrap() {
     trainingScreen.setReviewBadge(sentence);
     progressIndicator.update({ current: index + 1, total });
     statsPills.reset();
+    if (sentence && currentLevel) {
+      progressService.saveTrackPosition(currentLevel, currentTopic, index);
+    }
   });
 
   sessionEngine.on('char:correct', (p) => trainingScreen.onCharCorrect(p));
@@ -495,7 +504,12 @@ async function bootstrap() {
         if (!Array.isArray(sentences)) {
           sentences = [];
         }
-        sessionEngine.setSentences(sentences);
+        const resumeIndex = progressService.getResumeIndex(
+          sentences,
+          currentLevel,
+          currentTopic
+        );
+        sessionEngine.setSentences(sentences, resumeIndex);
         if (sentences.length > 0) {
           trainingScreen.closeStartOverlay();
           sessionEngine.beginLesson();
@@ -551,12 +565,19 @@ async function bootstrap() {
     trainingScreen.ensureTypingFocus();
   });
 
-  trackModal.on('track:dismiss', () => {
+  trackModal.on('track:dismiss', ({ reason } = {}) => {
     if (currentPage === '/practice') {
-      if (!sessionEngine.sentences || sessionEngine.sentences.length === 0) {
-        loadSentencesForCurrentFilters();
+      if (
+        reason === 'close-btn' ||
+        !sessionEngine.sentences ||
+        sessionEngine.sentences.length === 0
+      ) {
+        router.navigate('/');
+      } else {
+        trainingScreen.ensureTypingFocus();
       }
-      trainingScreen.ensureTypingFocus();
+    } else {
+      router.navigate('/');
     }
   });
 
@@ -627,8 +648,9 @@ async function bootstrap() {
       topicSelector.setSelectedTopic(params.topic);
     }
 
-    // Prompt user to choose track if no topic in URL and not already running this track
+    // Prompt user to choose track if not continuing/resuming, no topic in URL, and not already running this track
     if (
+      params.resume !== 'true' &&
       params.topic === undefined &&
       (prevPage !== '/practice' ||
         !sessionEngine.sentences ||
@@ -637,7 +659,11 @@ async function bootstrap() {
       refreshTopicsForLevel();
       trackModal.open({ level: currentLevel, topic: currentTopic });
     } else {
-      if (prevPage !== '/practice' || filtersChanged) {
+      if (
+        prevPage !== '/practice' ||
+        filtersChanged ||
+        params.resume === 'true'
+      ) {
         refreshTopicsForLevel();
         loadSentencesForCurrentFilters();
       }
@@ -713,6 +739,22 @@ async function bootstrap() {
 
   settingsScreen.on('setting:theme', () => {
     themeService.toggle();
+  });
+
+  settingsScreen.on('setting:reset', () => {
+    if (
+      typeof window !== 'undefined' &&
+      window.confirm(
+        'هل أنت متأكد من رغبتك في إعادة تعيين كل التقدم؟ سيبدأ التدريب مجددًا من الجملة 1.'
+      )
+    ) {
+      progressService.reset();
+      toast.show({
+        icon: '🔄',
+        title: 'تمت إعادة الضبط',
+        subtitle: 'تمت إعادة تعيين تقدم الجمل بنجاح.'
+      });
+    }
   });
 
   // =========================================================================

@@ -54,13 +54,16 @@ export class TrackModal extends EventEmitter {
 
   _bindEvents() {
     if (this.closeBtn) {
-      this.closeBtn.addEventListener('click', () => this.close());
+      this.closeBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        this.close({ reason: 'close-btn' });
+      });
     }
 
     if (this.backdrop) {
       this.backdrop.addEventListener('click', (e) => {
         if (e.target === this.backdrop) {
-          this.close();
+          this.close({ reason: 'backdrop' });
         }
       });
     }
@@ -90,7 +93,7 @@ export class TrackModal extends EventEmitter {
     if (typeof document !== 'undefined') {
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && this.isOpen()) {
-          this.close();
+          this.close({ reason: 'escape' });
         }
       });
     }
@@ -126,13 +129,16 @@ export class TrackModal extends EventEmitter {
 
   /**
    * Close the modal.
+   * @param {{ silent?: boolean, reason?: string }} [options]
    */
-  close() {
+  close(options = {}) {
     if (this.backdrop) {
       this.backdrop.classList.remove('is-open');
       this.backdrop.setAttribute('aria-hidden', 'true');
     }
-    this.emit('track:dismiss');
+    if (!options.silent) {
+      this.emit('track:dismiss', options);
+    }
   }
 
   /**
@@ -226,7 +232,7 @@ export class TrackModal extends EventEmitter {
   }
 
   _handleStart() {
-    this.close();
+    this.close({ silent: true });
     this.emit('track:selected', {
       level: this._selectedLevel,
       topic: this._selectedTopic
