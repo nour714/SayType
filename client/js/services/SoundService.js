@@ -77,16 +77,16 @@ export class SoundService extends EventEmitter {
       osc.frequency.setValueAtTime(startFreq, now);
       osc.frequency.exponentialRampToValueAtTime(endFreq, now + 0.035);
 
-      // Fast attack (2ms), quick gentle decay (40ms), very gentle peak volume (0.09)
+      // Fast attack (2ms), quick gentle decay (55ms), audible tactile peak volume (0.25)
       gain.gain.setValueAtTime(0.0001, now);
-      gain.gain.linearRampToValueAtTime(0.09, now + 0.002);
-      gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.045);
+      gain.gain.linearRampToValueAtTime(0.25, now + 0.002);
+      gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.055);
 
       osc.connect(gain);
       gain.connect(ctx.destination);
 
       osc.start(now);
-      osc.stop(now + 0.05);
+      osc.stop(now + 0.06);
 
       osc.onended = () => {
         try {
@@ -113,18 +113,18 @@ export class SoundService extends EventEmitter {
       // Lower frequency with pitch drop to produce a muted "bonk/thud"
       osc.type = 'sine';
       osc.frequency.setValueAtTime(180, now);
-      osc.frequency.exponentialRampToValueAtTime(110, now + 0.08);
+      osc.frequency.exponentialRampToValueAtTime(110, now + 0.09);
 
-      // Distinct but not loud or jarring (gain 0.14)
+      // Distinct, clearly audible error feedback (gain 0.30)
       gain.gain.setValueAtTime(0.0001, now);
-      gain.gain.linearRampToValueAtTime(0.14, now + 0.004);
-      gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.09);
+      gain.gain.linearRampToValueAtTime(0.30, now + 0.004);
+      gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.11);
 
       osc.connect(gain);
       gain.connect(ctx.destination);
 
       osc.start(now);
-      osc.stop(now + 0.1);
+      osc.stop(now + 0.12);
 
       osc.onended = () => {
         try {
@@ -154,17 +154,17 @@ export class SoundService extends EventEmitter {
       const endFreq = 200;
 
       osc.frequency.setValueAtTime(startFreq, now);
-      osc.frequency.exponentialRampToValueAtTime(endFreq, now + 0.03);
+      osc.frequency.exponentialRampToValueAtTime(endFreq, now + 0.035);
 
       gain.gain.setValueAtTime(0.0001, now);
-      gain.gain.linearRampToValueAtTime(0.06, now + 0.002);
-      gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.035);
+      gain.gain.linearRampToValueAtTime(0.18, now + 0.002);
+      gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.045);
 
       osc.connect(gain);
       gain.connect(ctx.destination);
 
       osc.start(now);
-      osc.stop(now + 0.04);
+      osc.stop(now + 0.05);
 
       osc.onended = () => {
         try {
