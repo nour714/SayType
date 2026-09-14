@@ -15,6 +15,19 @@ export class DictionaryTooltip {
     );
     this.tooltipTranslation = document.getElementById('tooltip-translation');
     this.tooltipExample = document.getElementById('tooltip-example');
+    this.speakBtn = document.getElementById('tooltip-speak-btn');
+
+    this._lastWord = '';
+    this.onSpeakWord = null;
+
+    if (this.speakBtn) {
+      this.speakBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (this._lastWord && typeof this.onSpeakWord === 'function') {
+          this.onSpeakWord(this._lastWord);
+        }
+      });
+    }
 
     /**
      * Sentence the inspected word appears in, used for the example line.
@@ -32,6 +45,7 @@ export class DictionaryTooltip {
   showTooltip(info, targetRect) {
     if (!this.wordTooltip || !info) return;
 
+    this._lastWord = info.word || '';
     if (this.tooltipWord) this.tooltipWord.textContent = info.word;
     if (this.tooltipPos) this.tooltipPos.textContent = info.partOfSpeech || '';
     if (this.tooltipPronunciation)

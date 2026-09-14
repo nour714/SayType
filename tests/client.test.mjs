@@ -1212,6 +1212,294 @@ console.log('--- Testing Progress Resume & Track Position ---');
   console.log('✓ Progress resume and track position tests passed!');
 }
 
+console.log('--- Testing Word Pronunciation on Click & Tooltip Speak Button ---');
+{
+  const { DictionaryTooltip } = await import('../client/js/ui/DictionaryTooltip.js');
+  const { TrainingScreen } = await import('../client/js/ui/TrainingScreen.js');
+
+  let spokenWordFromTooltip = null;
+  let speakBtnHandler = null;
+  const mockSpeakBtn = {
+    addEventListener: (event, handler) => {
+      if (event === 'click') speakBtnHandler = handler;
+    }
+  };
+
+  let sentenceClickHandler = null;
+  const mockSentenceEn = {
+    addEventListener(event, handler) {
+      if (event === 'click') sentenceClickHandler = handler;
+    }
+  };
+
+  const createMockElement = () => ({
+    textContent: '',
+    style: {},
+    classList: {
+      add() {},
+      remove() {},
+      contains() { return false; }
+    },
+    setAttribute() {},
+    addEventListener() {},
+    focus() {},
+    getBoundingClientRect() { return { height: 100, width: 200, top: 0, left: 0, bottom: 100 }; }
+  });
+
+  const origDoc = globalThis.document;
+  const origWindow = globalThis.window;
+  globalThis.document = {
+    getElementById: (id) => {
+      if (id === 'tooltip-speak-btn') return mockSpeakBtn;
+      if (id === 'sentence-en') return mockSentenceEn;
+      return createMockElement();
+    },
+    addEventListener: () => {}
+  };
+  globalThis.window = {
+    innerWidth: 1024,
+    innerHeight: 768,
+    addEventListener: () => {}
+  };
+
+  // 1. DictionaryTooltip speak button
+  const tooltip = new DictionaryTooltip();
+  tooltip.onSpeakWord = (word) => {
+    spokenWordFromTooltip = word;
+  };
+
+  tooltip.showTooltip({ word: 'welcome', translation: 'مرحبا' }, { top: 100, bottom: 120, left: 50, width: 60 });
+  assert.strictEqual(tooltip._lastWord, 'welcome');
+
+  assert.ok(speakBtnHandler, 'speakBtn should have click listener registered');
+  speakBtnHandler({ stopPropagation() {} });
+  assert.strictEqual(spokenWordFromTooltip, 'welcome');
+
+  // 2. TrainingScreen action:speak-word via dictionaryTooltip
+  let spokenWordFromTrainingScreen = null;
+  const screen = new TrainingScreen();
+  screen.on('action:speak-word', ({ word }) => {
+    spokenWordFromTrainingScreen = word;
+  });
+
+  screen.dictionaryTooltip.onSpeakWord('awesome');
+  assert.strictEqual(spokenWordFromTrainingScreen, 'awesome');
+
+  // 3. TrainingScreen word token click emits action:speak-word
+  const mockToken = {
+    dataset: { word: 'crystal' },
+    offsetWidth: 50,
+    classList: {
+      _classes: new Set(),
+      add(cls) { this._classes.add(cls); },
+      remove(cls) { this._classes.delete(cls); },
+      contains(cls) { return this._classes.has(cls); }
+    },
+    getBoundingClientRect() { return { top: 50, bottom: 70, left: 10, width: 50, height: 20 }; }
+  };
+  mockToken.closest = (selector) => (selector === '.word-token' ? mockToken : null);
+
+  assert.ok(sentenceClickHandler, 'sentenceEnEl should have click listener');
+  sentenceClickHandler({
+    target: mockToken,
+    stopPropagation() {}
+  });
+
+  assert.strictEqual(spokenWordFromTrainingScreen, 'crystal');
+  assert.strictEqual(mockToken.classList.contains('is-speaking'), true);
+
+  if (origDoc) globalThis.document = origDoc;
+  else delete globalThis.document;
+  if (origWindow) globalThis.window = origWindow;
+  else delete globalThis.window;
+
+  console.log('✓ Word pronunciation on click and tooltip speak button passed!');
+}
+
+console.log('--- Testing SoundService and Typing Sound Effects ---');
+{
+  const { SoundService } = await import('../client/js/services/SoundService.js');
+  const { SettingsService } = await import('../client/js/services/SettingsService.js');
+  const { SettingsScreen } = await import('../client/js/ui/SettingsScreen.js');
+
+  // 1. Default Node environment (unsupported audio)
+  const soundDefault = new SoundService();
+  assert.strictEqual(soundDefault.isEnabled, true);
+  assert.strictEqual(soundDefault.isSupported, false);
+  // Calling methods should not throw even when unsupported
+  assert.doesNotThrow(() => soundDefault.playCorrectKey('a'));
+  assert.doesNotThrow(() => soundDefault.playMistakeKey());
+  assert.doesNotThrow(() => soundDefault.playBackspace());
+
+  soundDefault.setEnabled(false);
+  assert.strictEqual(soundDefault.isEnabled, false);
+
+  // 2. Mocked Web Audio API environment
+  let createdOscillators = [];
+  let createdGains = [];
+  let resumedContext = false;
+
+  class MockOscillator {
+    constructor() {
+      this.type = 'sine';
+      this.frequency = {
+        value: 440,
+        setValueAtTime(val) { this.value = val; },
+        exponentialRampToValueAtTime(val) { this.endValue = val; }
+      };
+      this.connectedTo = null;
+      this.started = false;
+      this.stopped = false;
+    }
+    connect(target) { this.connectedTo = target; }
+    disconnect() {}
+    start() { this.started = true; }
+    stop() { this.stopped = true; }
+  }
+
+  class MockGain {
+    constructor() {
+      this.gain = {
+        value: 1,
+        setValueAtTime(val) { this.value = val; },
+        linearRampToValueAtTime(val) { this.peak = val; },
+        exponentialRampToValueAtTime(val) { this.end = val; }
+      };
+      this.connectedTo = null;
+    }
+    connect(target) { this.connectedTo = target; }
+    disconnect() {}
+  }
+
+  class MockAudioContext {
+    constructor() {
+      this.currentTime = 100;
+      this.state = 'suspended';
+      this.destination = {};
+    }
+    async resume() {
+      resumedContext = true;
+      this.state = 'running';
+    }
+    createOscillator() {
+      const osc = new MockOscillator();
+      createdOscillators.push(osc);
+      return osc;
+    }
+    createGain() {
+      const gain = new MockGain();
+      createdGains.push(gain);
+      return gain;
+    }
+  }
+
+  const origWindow = globalThis.window;
+  globalThis.window = {
+    AudioContext: MockAudioContext
+  };
+
+  const soundService = new SoundService({ enabled: true });
+  assert.strictEqual(soundService.isSupported, true);
+  assert.strictEqual(soundService.isEnabled, true);
+
+  // Correct key sound: calm triangle wave click
+  soundService.playCorrectKey('x');
+  assert.strictEqual(resumedContext, true);
+  assert.strictEqual(createdOscillators.length, 1);
+  assert.strictEqual(createdGains.length, 1);
+  const correctOsc = createdOscillators[0];
+  assert.strictEqual(correctOsc.type, 'triangle');
+  assert.ok(correctOsc.frequency.value >= 580 && correctOsc.frequency.value <= 660, 'Start frequency should be calm mid-range');
+  assert.strictEqual(correctOsc.started, true);
+
+  // Mistake key sound: distinct, low-pitched sine wave thud
+  soundService.playMistakeKey();
+  assert.strictEqual(createdOscillators.length, 2);
+  const mistakeOsc = createdOscillators[1];
+  assert.strictEqual(mistakeOsc.type, 'sine');
+  assert.strictEqual(mistakeOsc.frequency.value, 180, 'Mistake should have distinct low 180Hz start frequency');
+  assert.strictEqual(mistakeOsc.started, true);
+
+  // Backspace sound: subtle tap
+  soundService.playBackspace(false);
+  assert.strictEqual(createdOscillators.length, 3);
+  const backspaceOsc = createdOscillators[2];
+  assert.strictEqual(backspaceOsc.type, 'triangle');
+  assert.strictEqual(backspaceOsc.frequency.value, 310);
+
+  // When disabled: no sound produced
+  soundService.setEnabled(false);
+  soundService.playCorrectKey('z');
+  soundService.playMistakeKey();
+  soundService.playBackspace();
+  assert.strictEqual(createdOscillators.length, 3, 'No new oscillators should be created when disabled');
+
+  // 3. SettingsScreen sound toggle integration
+  const origDoc = globalThis.document;
+  const elements = new Map();
+  const mockContainer = {
+    innerHTML: '',
+    querySelector(sel) { return null; }
+  };
+
+  let toggleListener = null;
+  const mockToggle = {
+    classList: {
+      _classes: new Set(['settings-toggle', 'is-on']),
+      add(cls) { this._classes.add(cls); },
+      remove(cls) { this._classes.delete(cls); },
+      toggle(cls, force) {
+        if (force) this._classes.add(cls);
+        else this._classes.delete(cls);
+      },
+      contains(cls) { return this._classes.has(cls); }
+    },
+    setAttribute(attr, val) { this[attr] = val; },
+    addEventListener(evt, fn) { if (evt === 'click') toggleListener = fn; }
+  };
+
+  globalThis.document = {
+    documentElement: { getAttribute: () => 'light' },
+    getElementById(id) {
+      if (id === 'page-settings') return mockContainer;
+      if (id === 'setting-sound-toggle') return mockToggle;
+      return null;
+    }
+  };
+
+  const settingsService = new SettingsService();
+  const settingsScreen = new SettingsScreen();
+  let emittedSoundSetting = null;
+  settingsScreen.on('setting:soundEnabled', ({ value }) => {
+    emittedSoundSetting = value;
+  });
+
+  settingsScreen.render({ settingsService, authService: null });
+  assert.ok(mockContainer.innerHTML.includes('Typing Sound Effects'), 'SettingsScreen should render Typing Sound Effects');
+  assert.ok(toggleListener, 'Sound toggle click listener should be bound');
+
+  // Click toggle to turn sound off
+  toggleListener();
+  assert.strictEqual(settingsService.get('soundEnabled'), false);
+  assert.strictEqual(emittedSoundSetting, false);
+  assert.strictEqual(mockToggle.classList.contains('is-on'), false);
+  assert.strictEqual(mockToggle['aria-checked'], 'false');
+
+  // Click toggle to turn sound back on
+  toggleListener();
+  assert.strictEqual(settingsService.get('soundEnabled'), true);
+  assert.strictEqual(emittedSoundSetting, true);
+  assert.strictEqual(mockToggle.classList.contains('is-on'), true);
+  assert.strictEqual(mockToggle['aria-checked'], 'true');
+
+  if (origDoc) globalThis.document = origDoc;
+  else delete globalThis.document;
+  if (origWindow) globalThis.window = origWindow;
+  else delete globalThis.window;
+
+  console.log('✓ SoundService and Typing Sound Effects passed!');
+}
+
 console.log('ALL REGRESSION TESTS PASSED SUCCESSFULLY! 🎉');
 process.exit(0);
 

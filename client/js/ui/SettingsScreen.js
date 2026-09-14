@@ -10,6 +10,7 @@ export class SettingsScreen extends EventEmitter {
     if (!this.el) return;
 
     const settings = settingsService.getAll();
+    const soundEnabled = settings.soundEnabled !== false;
     const isDark =
       document.documentElement.getAttribute('data-theme') === 'dark';
     const isAuthenticated = authService?.isAuthenticated || false;
@@ -52,6 +53,15 @@ export class SettingsScreen extends EventEmitter {
 
           <div class="settings-group">
             <h2 class="settings-group-title">Audio</h2>
+            <div class="settings-item">
+              <div class="settings-item-info">
+                <span class="settings-item-label">Typing Sound Effects</span>
+                <span class="settings-item-desc">Calm sound on typing, distinct feedback on error</span>
+              </div>
+              <button id="setting-sound-toggle" class="settings-toggle ${soundEnabled ? 'is-on' : ''}" role="switch" aria-checked="${soundEnabled}" aria-label="Toggle typing sound effects">
+                <span class="settings-toggle-thumb"></span>
+              </button>
+            </div>
             <div class="settings-item">
               <div class="settings-item-info">
                 <span class="settings-item-label">Speech Rate</span>
@@ -120,6 +130,18 @@ export class SettingsScreen extends EventEmitter {
         const val = parseFloat(speechRate.value);
         settingsService.set('speechRate', val);
         this.emit('setting:speechRate', { value: val });
+      });
+    }
+
+    const soundToggle = document.getElementById('setting-sound-toggle');
+    if (soundToggle) {
+      soundToggle.addEventListener('click', () => {
+        const currentVal = settingsService.get('soundEnabled') !== false;
+        const newVal = !currentVal;
+        settingsService.set('soundEnabled', newVal);
+        soundToggle.classList.toggle('is-on', newVal);
+        soundToggle.setAttribute('aria-checked', String(newVal));
+        this.emit('setting:soundEnabled', { value: newVal });
       });
     }
 

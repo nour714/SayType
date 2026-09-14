@@ -18,6 +18,7 @@ import { AuthService } from './services/AuthService.js';
 import { SyncService } from './services/SyncService.js';
 import { StreakService } from './services/StreakService.js';
 import { SettingsService } from './services/SettingsService.js';
+import { SoundService } from './services/SoundService.js';
 import { AchievementService } from './services/AchievementService.js';
 import { Toast } from './ui/Toast.js';
 import { ProfileModal } from './ui/ProfileModal.js';
@@ -94,6 +95,9 @@ async function bootstrap() {
   const reviewScheduler = new ReviewScheduler();
   const streakService = new StreakService();
   const settingsService = new SettingsService();
+  const soundService = new SoundService({
+    enabled: settingsService.get('soundEnabled') !== false
+  });
   const achievementService = new AchievementService();
   const toast = new Toast();
   const profileModal = new ProfileModal();
@@ -382,6 +386,12 @@ async function bootstrap() {
     }
   });
 
+  trainingScreen.on('action:speak-word', ({ word }) => {
+    if (word) {
+      speechService.speak(word);
+    }
+  });
+
   trainingScreen.on('action:next', () => {
     sessionEngine.advanceToNextSentence();
   });
@@ -441,9 +451,18 @@ async function bootstrap() {
     }
   });
 
-  sessionEngine.on('char:correct', (p) => trainingScreen.onCharCorrect(p));
-  sessionEngine.on('char:wrong', (p) => trainingScreen.onCharWrong(p));
-  sessionEngine.on('backspace', (p) => trainingScreen.onBackspace(p));
+  sessionEngine.on('char:correct', (p) => {
+    trainingScreen.onCharCorrect(p);
+    soundService.playCorrectKey(p.char);
+  });
+  sessionEngine.on('char:wrong', (p) => {
+    trainingScreen.onCharWrong(p);
+    soundService.playMistakeKey();
+  });
+  sessionEngine.on('backspace', (p) => {
+    trainingScreen.onBackspace(p);
+    soundService.playBackspace(p.clearedError);
+  });
   sessionEngine.on('caret:update', (p) => trainingScreen.updateCaret(p));
   sessionEngine.on('metrics:update', (stats) => statsPills.update(stats));
 
@@ -735,6 +754,16 @@ async function bootstrap() {
 
   settingsScreen.on('setting:speechRate', ({ value }) => {
     speechService.setRate(value);
+  });
+
+  settingsScreen.on('setting:soundEnabled', ({ value }) => {
+    soundService.setEnabled(value);
+  });
+
+  settingsService.on('settings:change', ({ settings }) => {
+    if (settings && settings.soundEnabled !== undefined) {
+      soundService.setEnabled(settings.soundEnabled !== false);
+    }
   });
 
   settingsScreen.on('setting:theme', () => {

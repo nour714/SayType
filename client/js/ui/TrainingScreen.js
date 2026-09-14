@@ -64,6 +64,12 @@ export class TrainingScreen extends EventEmitter {
 
     /** Composed sub-components, each owning its own DOM refs. */
     this.dictionaryTooltip = new DictionaryTooltip();
+    this.dictionaryTooltip.onSpeakWord = (word) => {
+      if (word) {
+        this.emit('action:speak-word', { word });
+        this.ensureTypingFocus();
+      }
+    };
     this.typingRenderer = new TypingRenderer();
 
     this._modalTimeout = null;
@@ -172,15 +178,29 @@ export class TrainingScreen extends EventEmitter {
         }
       });
 
-      // Mobile / click tap toggle
+      // Mobile / click tap toggle & word pronunciation
       this.sentenceEnEl.addEventListener('click', (e) => {
         const token = e.target.closest('.word-token');
-        if (token && token.dataset.word && this.dictionaryService) {
+        if (token && token.dataset.word) {
           e.stopPropagation();
-          const info = this.dictionaryService.lookup(
-            token.dataset.word,
-            this.currentSentence
-          );
+          const rawWord = token.dataset.word;
+          const info = this.dictionaryService
+            ? this.dictionaryService.lookup(rawWord, this.currentSentence)
+            : null;
+          const wordToSpeak = info?.word || rawWord;
+
+          // Visual feedback on token being pronounced
+          token.classList.remove('is-speaking');
+          void token.offsetWidth;
+          token.classList.add('is-speaking');
+          setTimeout(() => {
+            token.classList.remove('is-speaking');
+          }, 600);
+
+          if (wordToSpeak) {
+            this.emit('action:speak-word', { word: wordToSpeak });
+          }
+
           if (info) {
             if (this.dictionaryTooltip.isShowingWord(info.word)) {
               this.hideTooltip();
@@ -188,6 +208,8 @@ export class TrainingScreen extends EventEmitter {
               this.showTooltip(info, token.getBoundingClientRect());
             }
           }
+
+          this.ensureTypingFocus();
         } else {
           this.hideTooltip();
         }
